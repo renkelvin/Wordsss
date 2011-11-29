@@ -449,13 +449,13 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		FE3FF9AC14384DF400687C80 /* XMLPhaser */ = {
+		FE3FF9AC14384DF400687C80 /* XMLParser */ = {
 			isa = PBXGroup;
 			children = (
 				FEA70AC714387F6C0025313C /* XMLManager.h */,
 				FEA70AC814387F6C0025313C /* XMLManager.m */,
 			);
-			name = XMLPhaser;
+			name = XMLParser;
 			sourceTree = "<group>";
 		};
 		FE3FF9AD14384E1500687C80 /* DataManager */ = {
@@ -546,7 +546,7 @@
 			name = Legacy;
 			sourceTree = "<group>";
 		};
-		FEA70AC214387D0E0025313C /* ActorDelegater */ = {
+		FEA70AC214387D0E0025313C /* VirtualActor */ = {
 			isa = PBXGroup;
 			children = (
 				FEA70ACA14387FC20025313C /* UserDelegater.h */,
@@ -556,7 +556,7 @@
 				FEA70AC414387F4F0025313C /* TestDelegater.h */,
 				FEA70AC514387F4F0025313C /* TestDelegater.m */,
 			);
-			name = ActorDelegater;
+			name = VirtualActor;
 			sourceTree = "<group>";
 		};
 		FEABC549143C88D6005AB8C1 /* Word Scene */ = {
@@ -627,11 +627,11 @@
 				FEBFBF0F1436DAF20028630E /* WordsssAppDelegate.h */,
 				FEBFBF101436DAF20028630E /* WordsssAppDelegate.m */,
 				FEE37BB814370F7F00A0E6AC /* Scene */,
-				FEA70AC214387D0E0025313C /* ActorDelegater */,
+				FEA70AC214387D0E0025313C /* VirtualActor */,
 				FE77396F143EE1A300554A99 /* Model */,
 				FE3FF9AD14384E1500687C80 /* DataManager */,
 				FE2720941436DCA100CC45FC /* Data */,
-				FE3FF9AC14384DF400687C80 /* XMLPhaser */,
+				FE3FF9AC14384DF400687C80 /* XMLParser */,
 				FEE053D2143798490068CDEC /* Resources */,
 				FEBFBF071436DAF20028630E /* Supporting Files */,
 			);
@@ -862,10 +862,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */,
 				FEBFBF0B1436DAF20028630E /* InfoPlist.strings in Resources */,
 				FEE053DF14379ADC0068CDEC /* Default@2x.png in Resources */,
 				FEEE31AA1439DFC2001F7E90 /* Default.png in Resources */,
-				FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */,
 				FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */,
 				FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */,
 				FE17D58B143B02110067E780 /* tab_wordtoday.png in Resources */,
