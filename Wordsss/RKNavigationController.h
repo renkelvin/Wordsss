@@ -22,7 +22,9 @@
 - (void)showCustomNavigationBar;
 
 - (void)setLeftButtonText:(NSString*)text image:(UIImage*)image;
-- (void)setTitleLabelText:(NSString*)text image:(UIImage*)image;
+- (void)setTitleLabelText:(NSString*)text;
+- (void)setTitleImageViewImage:(UIImage*)image;
+- (void)setTitleText:(NSString*)text image:(UIImage*)image;
 - (void)setRightButtonText:(NSString*)text image:(UIImage*)image;
 
 - (IBAction)leftButtonDown:(id)sender;

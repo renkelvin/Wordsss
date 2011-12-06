@@ -64,7 +64,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma - Custom
+#pragma mark - Custom
 
 //
 - (void)hideBuiltinNavigationBar{
@@ -87,7 +87,7 @@
 	[self.view addSubview:customNavigationbBarView];
 }
 
-#pragma - 
+#pragma mark
 
 - (void)setLeftButtonText:(NSString*)text image:(UIImage*)image
 {
@@ -95,7 +95,7 @@
     [self.leftButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
-- (void)setTitleLabelText:(NSString*)text image:(UIImage*)image
+- (void)setTitleLabelText:(NSString*)text
 {
     [self.titleLabel setText:text];
 }
@@ -117,7 +117,7 @@
     [self.rightButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
-#pragma - 
+#pragma mark
 
 - (IBAction)leftButtonDown:(id)sender
 {

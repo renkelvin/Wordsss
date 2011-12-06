@@ -69,9 +69,9 @@ static BOOL FIRSTTIME = YES;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma -
+#pragma mark -
 
-//
+// Hide builtin tabbar
 - (void)hideBuiltinTabBar{
 	for(UIView *view in self.view.subviews){
 		if([view isKindOfClass:[UITabBar class]]){
@@ -81,7 +81,7 @@ static BOOL FIRSTTIME = YES;
 	}
 }
 
-// 
+// Show custom tabbar
 - (void)showCustomTabBar{
     
     //
@@ -100,14 +100,14 @@ static BOOL FIRSTTIME = YES;
         {
             case 0:
             {
-                btn.frame = CGRectMake(32 - 25, 62 - 49, 50, 48);
+                btn.frame = CGRectMake(32 - 25, 62 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"profile.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"profile_active.png"] forState:UIControlStateSelected];
                 break;
             }
             case 1:
             {
-                btn.frame = CGRectMake(96 - 25, 62 - 49, 50, 48);
+                btn.frame = CGRectMake(96 - 25, 62 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"search.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"search_active.png"] forState:UIControlStateSelected];
                 break;
@@ -121,14 +121,14 @@ static BOOL FIRSTTIME = YES;
             }
             case 3:
             {
-                btn.frame = CGRectMake(224 - 25, 62 - 49, 50, 48);
+                btn.frame = CGRectMake(224 - 25, 62 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"wordlist.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"wordlist_active.png"] forState:UIControlStateSelected];
                 break;
             }
             case 4:
             {
-                btn.frame = CGRectMake(288 - 25, 62 - 49, 50, 48);
+                btn.frame = CGRectMake(288 - 25, 62 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"settings.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"settings_active.png"] forState:UIControlStateSelected];
                 break;

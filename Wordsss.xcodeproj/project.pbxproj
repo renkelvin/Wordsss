@@ -139,7 +139,6 @@
 		FE87370F143DDFB8002FDDE8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE87370E143DDFB8002FDDE8 /* icon@2x.png */; };
 		FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */; };
 		FEA70AC614387F4F0025313C /* TestDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA70AC514387F4F0025313C /* TestDelegater.m */; };
-		FEA70AC914387F6C0025313C /* XMLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA70AC814387F6C0025313C /* XMLManager.m */; };
 		FEA70ACC14387FC20025313C /* UserDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA70ACB14387FC20025313C /* UserDelegater.m */; };
 		FEABC54C143C8A2E005AB8C1 /* WordBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */; };
 		FEABC54F143C8A41005AB8C1 /* WordMemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E143C8A41005AB8C1 /* WordMemsViewController.m */; };
@@ -175,6 +174,7 @@
 		FEEE31AA1439DFC2001F7E90 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE31A91439DFC2001F7E90 /* Default.png */; };
 		FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */; };
 		FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */; };
+		FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4DE9C148E2B7A00E88653 /* XMLParser.m */; };
 		FEFFDE28143F731D002B7126 /* TodayDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFFDE27143F731D002B7126 /* TodayDelegater.m */; };
 		FEFFDE2A143F737E002B7126 /* pre_word_translation_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFFDE29143F737E002B7126 /* pre_word_translation_bg.png */; };
 /* End PBXBuildFile section */
@@ -334,8 +334,6 @@
 		FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRelationsViewController.m; sourceTree = "<group>"; };
 		FEA70AC414387F4F0025313C /* TestDelegater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDelegater.h; sourceTree = "<group>"; };
 		FEA70AC514387F4F0025313C /* TestDelegater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDelegater.m; sourceTree = "<group>"; };
-		FEA70AC714387F6C0025313C /* XMLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLManager.h; sourceTree = "<group>"; };
-		FEA70AC814387F6C0025313C /* XMLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLManager.m; sourceTree = "<group>"; };
 		FEA70ACA14387FC20025313C /* UserDelegater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDelegater.h; sourceTree = "<group>"; };
 		FEA70ACB14387FC20025313C /* UserDelegater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDelegater.m; sourceTree = "<group>"; };
 		FEABC54A143C8A2E005AB8C1 /* WordBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordBooksViewController.h; sourceTree = "<group>"; };
@@ -382,6 +380,8 @@
 		FEEE31A91439DFC2001F7E90 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_bg.png; sourceTree = "<group>"; };
 		FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bg@2x.png"; sourceTree = "<group>"; };
+		FEF4DE9B148E2B7A00E88653 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		FEF4DE9C148E2B7A00E88653 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		FEFFDE26143F731D002B7126 /* TodayDelegater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayDelegater.h; sourceTree = "<group>"; };
 		FEFFDE27143F731D002B7126 /* TodayDelegater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayDelegater.m; sourceTree = "<group>"; };
 		FEFFDE29143F737E002B7126 /* pre_word_translation_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pre_word_translation_bg.png; sourceTree = "<group>"; };
@@ -452,8 +452,8 @@
 		FE3FF9AC14384DF400687C80 /* XMLParser */ = {
 			isa = PBXGroup;
 			children = (
-				FEA70AC714387F6C0025313C /* XMLManager.h */,
-				FEA70AC814387F6C0025313C /* XMLManager.m */,
+				FEF4DE9B148E2B7A00E88653 /* XMLParser.h */,
+				FEF4DE9C148E2B7A00E88653 /* XMLParser.m */,
 			);
 			name = XMLParser;
 			sourceTree = "<group>";
@@ -678,7 +678,10 @@
 				FE17D587143AFCA90067E780 /* RKTabBar */,
 				FEB8ED23143B47200097E267 /* RKNavigation */,
 				FEEE31251439D39C001F7E90 /* ProfileView */,
+				FEF4DE98148E2B0B00E88653 /* ExploreView */,
 				FEEE31A41439DF61001F7E90 /* TodayView */,
+				FEF4DE9A148E2B2E00E88653 /* ListsView */,
+				FEF4DE99148E2B0F00E88653 /* SettingView */,
 				FE8736BF143DDC53002FDDE8 /* WordView */,
 			);
 			name = Resources;
@@ -688,16 +691,9 @@
 			isa = PBXGroup;
 			children = (
 				FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */,
-				FE772DBB143D9CC9004DDA0D /* UIDashBoard.xib */,
-				FE060C5D143CD7040026228C /* RKTabBarController.h */,
-				FE060C5B143CD7040026228C /* RKTabBarController.m */,
-				FE060C5C143CD7040026228C /* RKTabBarController.xib */,
-				FE060C62143CD78A0026228C /* RKNavigationController.h */,
-				FE060C60143CD78A0026228C /* RkNavigationController.m */,
-				FE060C61143CD78A0026228C /* RKNavigationController.xib */,
-				FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */,
 				FE6C8DBF14385AD900DC9784 /* 5 Main */,
 				FEABC549143C88D6005AB8C1 /* Word Scene */,
+				FEF4DE96148E2A6D00E88653 /* RKUIKit */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -789,6 +785,42 @@
 				FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */,
 			);
 			name = TodayView;
+			sourceTree = "<group>";
+		};
+		FEF4DE96148E2A6D00E88653 /* RKUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FE772DBB143D9CC9004DDA0D /* UIDashBoard.xib */,
+				FE060C5D143CD7040026228C /* RKTabBarController.h */,
+				FE060C5B143CD7040026228C /* RKTabBarController.m */,
+				FE060C5C143CD7040026228C /* RKTabBarController.xib */,
+				FE060C62143CD78A0026228C /* RKNavigationController.h */,
+				FE060C60143CD78A0026228C /* RkNavigationController.m */,
+				FE060C61143CD78A0026228C /* RKNavigationController.xib */,
+				FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */,
+			);
+			name = RKUIKit;
+			sourceTree = "<group>";
+		};
+		FEF4DE98148E2B0B00E88653 /* ExploreView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ExploreView;
+			sourceTree = "<group>";
+		};
+		FEF4DE99148E2B0F00E88653 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SettingView;
+			sourceTree = "<group>";
+		};
+		FEF4DE9A148E2B2E00E88653 /* ListsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ListsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1040,7 +1072,6 @@
 				FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */,
 				FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */,
 				FEA70AC614387F4F0025313C /* TestDelegater.m in Sources */,
-				FEA70AC914387F6C0025313C /* XMLManager.m in Sources */,
 				FEA70ACC14387FC20025313C /* UserDelegater.m in Sources */,
 				FEEE311A1439CB1B001F7E90 /* SettingViewController.m in Sources */,
 				FEEE311F1439CB85001F7E90 /* ExploreViewController.m in Sources */,
@@ -1055,6 +1086,7 @@
 				FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */,
 				FEFFDE28143F731D002B7126 /* TodayDelegater.m in Sources */,
 				FE66D2D8143F7B0A00B9C780 /* User.m in Sources */,
+				FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
