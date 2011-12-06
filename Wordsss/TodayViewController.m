@@ -35,14 +35,6 @@
 
 #pragma mark - View lifecycle
 
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -53,10 +45,12 @@
     // WordSlider gesture recognizer
     UIPanGestureRecognizer* recognizerCenter = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderPanning:)];
     [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
-    UITapGestureRecognizer* recognizerLeft = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderLeftTap:)];
-    [[self wordSliderLeftTapArea] addGestureRecognizer:recognizerLeft];
-    UITapGestureRecognizer* recognizerRight = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderRightTap:)];
-    [[self wordSliderRightTapArea] addGestureRecognizer:recognizerRight];
+    
+    //    UITapGestureRecognizer* recognizerLeft = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderLeftTap:)];
+    //    [[self wordSliderLeftTapArea] addGestureRecognizer:recognizerLeft];
+    //    
+    //    UITapGestureRecognizer* recognizerRight = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderRightTap:)];
+    //    [[self wordSliderRightTapArea] addGestureRecognizer:recognizerRight];
 }
 
 - (void)viewDidUnload
@@ -72,13 +66,61 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma - 
+#pragma - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender
 {
     WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] initSectionViewControllers];
     
     [[self navigationController] pushViewController:wordViewController animated:YES];
+}
+
+- (IBAction)wordSliderLeftTouchDown:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Right
+    rect.origin.x = 84;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+}
+
+- (IBAction)wordSliderLeftTouchUpInside:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Center
+    rect.origin.x = 42;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+}
+
+- (IBAction)wordSliderRightTouchDown:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Left
+    rect.origin.x = 0;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+}
+
+- (IBAction)wordSliderRightTouchUpInside:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Center
+    rect.origin.x = 42;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
 }
 
 #pragma -
@@ -118,7 +160,7 @@
             // Move Slider
             rect.origin.x = 84;
             [self.wordSliderImageView setFrame:rect];
-
+            
             // No operation
             
             // Move Slider
@@ -145,7 +187,7 @@
 - (void)wordSliderLeftTap:(UITapGestureRecognizer*)recognizer
 {
     CGRect rect = [self.wordSliderImageView frame];
-
+    
     // Move Slider
     rect.origin.x = 0;
     [self.wordSliderImageView setFrame:rect];
@@ -153,8 +195,8 @@
     // + operation
     
     // Move Slider
-//    rect.origin.x = 42;
-//    [self.wordSliderImageView setFrame:rect];
+    rect.origin.x = 42;
+    [self.wordSliderImageView setFrame:rect];
 }
 
 - (void)wordSliderRightTap:(UITapGestureRecognizer*)recognizer
@@ -164,7 +206,7 @@
     // Move Slider
     rect.origin.x = 84;
     [self.wordSliderImageView setFrame:rect];
-        
+    
     // - operation
     
     // Move Slider
@@ -174,9 +216,9 @@
 
 #pragma - RKNavigationControllerDelegate
 
-- (void)initNavigationBar:(RKNavigationController*)navigationController
+- (void)initNavigationBar
 {    
-    [[self navigationController] setDelegate:self];
+    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
     [[navigationController titleLabel] setText:@""];
     [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
@@ -196,9 +238,14 @@
 
 #pragma - UINavigationControllerDelegate
 
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
+}
+
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [[[self navigationController] topViewController] performSelector:@selector(initNavigationBar:) withObject:[self navigationController]];
+    [self initNavigationBar];
 }
 
 @end

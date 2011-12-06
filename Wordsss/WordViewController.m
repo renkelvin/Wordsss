@@ -37,20 +37,13 @@
 
 #pragma mark - View lifecycle
 
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //
-    [self initNavigationBar:(RKNavigationController*)[self navigationController]];
-
+    // set delegate
+    //    [[self navigationController] setDelegate:self];
+    
     //
     [self selectSectionWithIndex:0];
 }
@@ -66,12 +59,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma - -
+#pragma mark - IBAction
 
 - (IBAction)selectSectionButtonDown:(UIButton*)button
 {
     [self selectSectionWithIndex:button.tag];
 }
+
+#pragma mark -
 
 - (void)selectSectionWithIndex:(NSInteger)index
 {
@@ -108,6 +103,7 @@
 
 - (id)initSectionViewControllers
 {
+    //
     WordBooksViewController* wordBooksViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WordBooksViewController"];
     [[wordBooksViewController view] setFrame:CGRectMake(0, 47, 320, 480)];  // 第四个参数480有问题，本应为320，未知问题
     
@@ -120,6 +116,7 @@
     WordStatisticsViewController* wordStatisticsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WordStatisticsViewController"];
     [[wordStatisticsViewController view] setFrame:CGRectMake(0, 47, 320, 320)];
     
+    //
     NSMutableArray* tempViewControllersArray = [NSMutableArray arrayWithCapacity:4];
     [tempViewControllersArray addObject:wordBooksViewController];
     [tempViewControllersArray addObject:wordRelationsViewController];
@@ -133,9 +130,9 @@
 
 #pragma - RKNavigationControllerDelegate
 
-- (void)initNavigationBar:(RKNavigationController*)navigationController
+- (void)initNavigationBar
 {
-    [[self navigationController] setDelegate:self];
+    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
     [[navigationController titleLabel] setText:@"apple"];
     [[navigationController titleImageView] setImage:nil];
@@ -145,7 +142,7 @@
 
 - (void)navigationBarLeftButtonDown
 {
-    [[self navigationController] popViewControllerAnimated:YES];
+    [[self navigationController] popViewControllerAnimated:YES];   
 }
 
 - (void)navigationBarRightButtonDown
@@ -155,9 +152,14 @@
 
 #pragma - UINavigationControllerDelegate
 
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
+}
+
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [[[self navigationController] topViewController] performSelector:@selector(initNavigationBar:) withObject:[self navigationController]];
+    [self initNavigationBar];
 }
 
 @end

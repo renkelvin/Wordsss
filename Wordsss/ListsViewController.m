@@ -41,7 +41,7 @@
 {
     [super viewDidLoad];
     
-    [self initNavigationBar:(RKNavigationController*)[self navigationController]];
+    [self initNavigationBar];
 }
 
 - (void)viewDidUnload
@@ -112,8 +112,10 @@
 
 #pragma - RKNavigationControllerDelegate
 
-- (void)initNavigationBar:(RKNavigationController*)navigationController
+- (void)initNavigationBar
 {    
+    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+
     [[navigationController titleLabel] setText:@"精选词表"];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];

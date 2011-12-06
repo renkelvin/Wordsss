@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    [self initNavigationBar:(RKNavigationController*)[self navigationController]];
+    [self initNavigationBar];
 }
 
 - (void)viewDidUnload
@@ -51,8 +51,10 @@
 
 #pragma - RKNavigationControllerDelegate
 
-- (void)initNavigationBar:(RKNavigationController*)navigationController
+- (void)initNavigationBar
 {    
+    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+
     [[navigationController titleLabel] setText:@"设置"];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];

@@ -12,7 +12,7 @@
 
 @protocol RKNavigationControllerDelegate <NSObject>
 
-- (void)initNavigationBar:(RKNavigationController*)navigationController;
+- (void)initNavigationBar;
 
 - (void)navigationBarLeftButtonDown;
 - (void)navigationBarRightButtonDown;
