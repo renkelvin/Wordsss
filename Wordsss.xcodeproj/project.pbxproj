@@ -136,8 +136,6 @@
 		FE873707143DDC7E002FDDE8 /* translation_to_wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8736E3143DDC7E002FDDE8 /* translation_to_wordlist@2x.png */; };
 		FE87370F143DDFB8002FDDE8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE87370E143DDFB8002FDDE8 /* icon@2x.png */; };
 		FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */; };
-		FEA70AC614387F4F0025313C /* TestDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA70AC514387F4F0025313C /* TestDelegater.m */; };
-		FEA70ACC14387FC20025313C /* UserDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA70ACB14387FC20025313C /* UserDelegater.m */; };
 		FEABC54C143C8A2E005AB8C1 /* WordBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */; };
 		FEABC54F143C8A41005AB8C1 /* WordMemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E143C8A41005AB8C1 /* WordMemsViewController.m */; };
 		FEABC552143C8A53005AB8C1 /* WordListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC551143C8A53005AB8C1 /* WordListsViewController.m */; };
@@ -173,7 +171,6 @@
 		FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */; };
 		FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */; };
 		FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4DE9C148E2B7A00E88653 /* XMLParser.m */; };
-		FEFFDE28143F731D002B7126 /* TodayDelegater.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFFDE27143F731D002B7126 /* TodayDelegater.m */; };
 		FEFFDE2A143F737E002B7126 /* pre_word_translation_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFFDE29143F737E002B7126 /* pre_word_translation_bg.png */; };
 /* End PBXBuildFile section */
 
@@ -326,10 +323,6 @@
 		FE87370E143DDFB8002FDDE8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		FE873711143DECCF002FDDE8 /* WordRelationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRelationsViewController.h; sourceTree = "<group>"; };
 		FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRelationsViewController.m; sourceTree = "<group>"; };
-		FEA70AC414387F4F0025313C /* TestDelegater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDelegater.h; sourceTree = "<group>"; };
-		FEA70AC514387F4F0025313C /* TestDelegater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDelegater.m; sourceTree = "<group>"; };
-		FEA70ACA14387FC20025313C /* UserDelegater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDelegater.h; sourceTree = "<group>"; };
-		FEA70ACB14387FC20025313C /* UserDelegater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDelegater.m; sourceTree = "<group>"; };
 		FEABC54A143C8A2E005AB8C1 /* WordBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordBooksViewController.h; sourceTree = "<group>"; };
 		FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordBooksViewController.m; sourceTree = "<group>"; };
 		FEABC54D143C8A41005AB8C1 /* WordMemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordMemsViewController.h; sourceTree = "<group>"; };
@@ -376,8 +369,6 @@
 		FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bg@2x.png"; sourceTree = "<group>"; };
 		FEF4DE9B148E2B7A00E88653 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		FEF4DE9C148E2B7A00E88653 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
-		FEFFDE26143F731D002B7126 /* TodayDelegater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayDelegater.h; sourceTree = "<group>"; };
-		FEFFDE27143F731D002B7126 /* TodayDelegater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayDelegater.m; sourceTree = "<group>"; };
 		FEFFDE29143F737E002B7126 /* pre_word_translation_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pre_word_translation_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -539,12 +530,6 @@
 		FEA70AC214387D0E0025313C /* VirtualActor */ = {
 			isa = PBXGroup;
 			children = (
-				FEA70ACA14387FC20025313C /* UserDelegater.h */,
-				FEA70ACB14387FC20025313C /* UserDelegater.m */,
-				FEFFDE26143F731D002B7126 /* TodayDelegater.h */,
-				FEFFDE27143F731D002B7126 /* TodayDelegater.m */,
-				FEA70AC414387F4F0025313C /* TestDelegater.h */,
-				FEA70AC514387F4F0025313C /* TestDelegater.m */,
 			);
 			name = VirtualActor;
 			sourceTree = "<group>";
@@ -1069,8 +1054,6 @@
 				FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */,
 				FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */,
 				FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */,
-				FEA70AC614387F4F0025313C /* TestDelegater.m in Sources */,
-				FEA70ACC14387FC20025313C /* UserDelegater.m in Sources */,
 				FEEE311A1439CB1B001F7E90 /* SettingViewController.m in Sources */,
 				FEEE311F1439CB85001F7E90 /* ExploreViewController.m in Sources */,
 				FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */,
@@ -1081,7 +1064,6 @@
 				FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */,
 				FE060C63143CD78A0026228C /* RkNavigationController.m in Sources */,
 				FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */,
-				FEFFDE28143F731D002B7126 /* TodayDelegater.m in Sources */,
 				FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
