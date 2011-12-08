@@ -31,8 +31,6 @@
 		FE2E835D143B289A004A2C56 /* wordlist.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834D143B289A004A2C56 /* wordlist.png */; };
 		FE2E835E143B289A004A2C56 /* wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834E143B289A004A2C56 /* wordlist@2x.png */; };
 		FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E8360143B2FAC004A2C56 /* WordViewController.m */; };
-		FE523EB3143C6EEE00B2F4FF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE523EB2143C6EEE00B2F4FF /* Word.m */; };
-		FE66D2D8143F7B0A00B9C780 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE66D2D7143F7B0A00B9C780 /* User.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
@@ -217,11 +215,7 @@
 		FE2E834E143B289A004A2C56 /* wordlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordlist@2x.png"; sourceTree = "<group>"; };
 		FE2E835F143B2FAC004A2C56 /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
 		FE2E8360143B2FAC004A2C56 /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
-		FE523EB1143C6EEE00B2F4FF /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
-		FE523EB2143C6EEE00B2F4FF /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
-		FE66D2D6143F7B0A00B9C780 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FE66D2D7143F7B0A00B9C780 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		FE6C8DB414385A2F00DC9784 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
 		FE6C8DB614385AAD00DC9784 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -488,10 +482,6 @@
 		FE77396F143EE1A300554A99 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FE523EB1143C6EEE00B2F4FF /* Word.h */,
-				FE523EB2143C6EEE00B2F4FF /* Word.m */,
-				FE66D2D6143F7B0A00B9C780 /* User.h */,
-				FE66D2D7143F7B0A00B9C780 /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -559,7 +549,7 @@
 			name = VirtualActor;
 			sourceTree = "<group>";
 		};
-		FEABC549143C88D6005AB8C1 /* Word Scene */ = {
+		FEABC549143C88D6005AB8C1 /* WordDetail */ = {
 			isa = PBXGroup;
 			children = (
 				FE873710143DEC21002FDDE8 /* Legacy */,
@@ -574,7 +564,7 @@
 				FEABC553143C8A62005AB8C1 /* WordStatisticsViewController.h */,
 				FEABC554143C8A62005AB8C1 /* WordStatisticsViewController.m */,
 			);
-			name = "Word Scene";
+			name = WordDetail;
 			sourceTree = "<group>";
 		};
 		FEB8ED23143B47200097E267 /* RKNavigation */ = {
@@ -693,7 +683,7 @@
 			children = (
 				FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */,
 				FE6C8DBF14385AD900DC9784 /* 5 Main */,
-				FEABC549143C88D6005AB8C1 /* Word Scene */,
+				FEABC549143C88D6005AB8C1 /* WordDetail */,
 				FEF4DE96148E2A6D00E88653 /* RKUIKit */,
 			);
 			name = Scene;
@@ -1088,12 +1078,10 @@
 				FEABC54F143C8A41005AB8C1 /* WordMemsViewController.m in Sources */,
 				FEABC552143C8A53005AB8C1 /* WordListsViewController.m in Sources */,
 				FEABC555143C8A62005AB8C1 /* WordStatisticsViewController.m in Sources */,
-				FE523EB3143C6EEE00B2F4FF /* Word.m in Sources */,
 				FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */,
 				FE060C63143CD78A0026228C /* RkNavigationController.m in Sources */,
 				FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */,
 				FEFFDE28143F731D002B7126 /* TodayDelegater.m in Sources */,
-				FE66D2D8143F7B0A00B9C780 /* User.m in Sources */,
 				FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
