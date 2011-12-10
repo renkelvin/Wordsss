@@ -11,6 +11,8 @@
 #import "RKTabBarController.h"
 #import "RKNavigationController.h"
 
+#import "XMLParser.h"
+
 @interface WordsssAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

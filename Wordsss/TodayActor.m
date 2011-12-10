@@ -1,13 +1,13 @@
 //
-//  WordsssActor.h
+//  TodayActor.m
 //  Wordsss
 //
 //  Created by Kelvin Ren on 12/10/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "TodayActor.h"
 
-@interface WordsssActor : NSObject
+@implementation TodayActor
 
 @end

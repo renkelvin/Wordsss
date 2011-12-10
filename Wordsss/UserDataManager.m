@@ -8,6 +8,8 @@
 
 #import "UserDataManager.h"
 
+static UserDataManager* sharedUserDataManager;
+
 @implementation UserDataManager
 
 - (id)init
@@ -18,6 +20,15 @@
     }
     
     return self;
+}
+
++ (UserDataManager*)userdataManager
+{
+    if (!sharedUserDataManager) {
+        sharedUserDataManager = [[UserDataManager alloc] init];
+    }
+    
+    return sharedUserDataManager;
 }
 
 @end

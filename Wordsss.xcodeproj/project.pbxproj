@@ -32,7 +32,7 @@
 		FE2E835E143B289A004A2C56 /* wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834E143B289A004A2C56 /* wordlist@2x.png */; };
 		FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E8360143B2FAC004A2C56 /* WordViewController.m */; };
 		FE2E9DD61493502B006A79AE /* UserActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E9DD51493502B006A79AE /* UserActor.m */; };
-		FE2E9DD914935038006A79AE /* WordsssActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E9DD814935038006A79AE /* WordsssActor.m */; };
+		FE2E9DDC149356A7006A79AE /* TodayActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E9DDB149356A7006A79AE /* TodayActor.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
@@ -216,8 +216,8 @@
 		FE2E8360143B2FAC004A2C56 /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
 		FE2E9DD41493502B006A79AE /* UserActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActor.h; sourceTree = "<group>"; };
 		FE2E9DD51493502B006A79AE /* UserActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActor.m; sourceTree = "<group>"; };
-		FE2E9DD714935038006A79AE /* WordsssActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssActor.h; sourceTree = "<group>"; };
-		FE2E9DD814935038006A79AE /* WordsssActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssActor.m; sourceTree = "<group>"; };
+		FE2E9DDA149356A7006A79AE /* TodayActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayActor.h; sourceTree = "<group>"; };
+		FE2E9DDB149356A7006A79AE /* TodayActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayActor.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		FE6C8DB414385A2F00DC9784 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
@@ -432,14 +432,6 @@
 			name = RKTabBar;
 			sourceTree = "<group>";
 		};
-		FE2720941436DCA100CC45FC /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				FEBFBF121436DAF20028630E /* Wordsss.xcdatamodeld */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
 		FE3FF9AC14384DF400687C80 /* XMLParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +471,7 @@
 		FE77396F143EE1A300554A99 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEBFBF121436DAF20028630E /* Wordsss.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -536,10 +529,10 @@
 		FEA70AC214387D0E0025313C /* VirtualActor */ = {
 			isa = PBXGroup;
 			children = (
-				FE2E9DD714935038006A79AE /* WordsssActor.h */,
-				FE2E9DD814935038006A79AE /* WordsssActor.m */,
 				FE2E9DD41493502B006A79AE /* UserActor.h */,
 				FE2E9DD51493502B006A79AE /* UserActor.m */,
+				FE2E9DDA149356A7006A79AE /* TodayActor.h */,
+				FE2E9DDB149356A7006A79AE /* TodayActor.m */,
 			);
 			name = VirtualActor;
 			sourceTree = "<group>";
@@ -615,7 +608,6 @@
 				FEA70AC214387D0E0025313C /* VirtualActor */,
 				FE77396F143EE1A300554A99 /* Model */,
 				FE3FF9AD14384E1500687C80 /* DataManager */,
-				FE2720941436DCA100CC45FC /* Data */,
 				FE3FF9AC14384DF400687C80 /* XMLParser */,
 				FEE053D2143798490068CDEC /* Resources */,
 				FEBFBF071436DAF20028630E /* Supporting Files */,
@@ -1076,7 +1068,7 @@
 				FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */,
 				FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */,
 				FE2E9DD61493502B006A79AE /* UserActor.m in Sources */,
-				FE2E9DD914935038006A79AE /* WordsssActor.m in Sources */,
+				FE2E9DDC149356A7006A79AE /* TodayActor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

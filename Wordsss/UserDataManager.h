@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserDataManager : NSObject
+@interface UserDataManager : NSObject {
 
+}
 
++ (UserDataManager*)userdataManager;
 
 @end

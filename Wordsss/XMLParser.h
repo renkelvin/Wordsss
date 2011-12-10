@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XMLParser : NSObject
+@interface XMLParser : NSObject {
+
+}
+
++ (XMLParser*)xmlParser;
+
+- (void)go;
 
 @end

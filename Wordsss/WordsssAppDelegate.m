@@ -16,8 +16,18 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{        
-    [self.window makeKeyAndVisible];
+{   
+    if (YES) {
+        [self.window makeKeyAndVisible];
+    }
+    else {
+        // get xmlParser
+        XMLParser* xmlParser = [XMLParser xmlParser];
+        
+        // generate WordsssDB.sqlite
+        [xmlParser go];
+    }
+    
     return YES;
 }
 
