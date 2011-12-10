@@ -12,13 +12,9 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
-#import "UserDelegater.h"
-#import "TodayDelegater.h"
-
 @interface TodayViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
 {
-    UserDelegater* userDelegater;
-    TodayDelegater* todayDelegater;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView* wordSliderImageView;

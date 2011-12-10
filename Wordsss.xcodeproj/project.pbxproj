@@ -31,6 +31,8 @@
 		FE2E835D143B289A004A2C56 /* wordlist.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834D143B289A004A2C56 /* wordlist.png */; };
 		FE2E835E143B289A004A2C56 /* wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834E143B289A004A2C56 /* wordlist@2x.png */; };
 		FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E8360143B2FAC004A2C56 /* WordViewController.m */; };
+		FE2E9DD61493502B006A79AE /* UserActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E9DD51493502B006A79AE /* UserActor.m */; };
+		FE2E9DD914935038006A79AE /* WordsssActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E9DD814935038006A79AE /* WordsssActor.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
@@ -212,6 +214,10 @@
 		FE2E834E143B289A004A2C56 /* wordlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordlist@2x.png"; sourceTree = "<group>"; };
 		FE2E835F143B2FAC004A2C56 /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
 		FE2E8360143B2FAC004A2C56 /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
+		FE2E9DD41493502B006A79AE /* UserActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActor.h; sourceTree = "<group>"; };
+		FE2E9DD51493502B006A79AE /* UserActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActor.m; sourceTree = "<group>"; };
+		FE2E9DD714935038006A79AE /* WordsssActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssActor.h; sourceTree = "<group>"; };
+		FE2E9DD814935038006A79AE /* WordsssActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssActor.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		FE6C8DB414385A2F00DC9784 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
@@ -530,6 +536,10 @@
 		FEA70AC214387D0E0025313C /* VirtualActor */ = {
 			isa = PBXGroup;
 			children = (
+				FE2E9DD714935038006A79AE /* WordsssActor.h */,
+				FE2E9DD814935038006A79AE /* WordsssActor.m */,
+				FE2E9DD41493502B006A79AE /* UserActor.h */,
+				FE2E9DD51493502B006A79AE /* UserActor.m */,
 			);
 			name = VirtualActor;
 			sourceTree = "<group>";
@@ -1065,6 +1075,8 @@
 				FE060C63143CD78A0026228C /* RkNavigationController.m in Sources */,
 				FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */,
 				FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */,
+				FE2E9DD61493502B006A79AE /* UserActor.m in Sources */,
+				FE2E9DD914935038006A79AE /* WordsssActor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,7 +1124,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Apple Club Tongji (752DRL3CLE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Apple Club Tongji (752DRL3CLE)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1127,6 +1140,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1137,7 +1152,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Apple Club Tongji (752DRL3CLE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Apple Club Tongji (752DRL3CLE)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1146,6 +1162,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
