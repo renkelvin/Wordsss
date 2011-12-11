@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Association" syncable="YES">
+    <entity name="Association" representedClassName="Association" syncable="YES">
         <attribute name="description_cn" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="word" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="association" inverseEntity="Word" syncable="YES"/>
     </entity>
-    <entity name="DotaListWord" syncable="YES">
+    <entity name="DotaListWord" representedClassName="DotaListWord" syncable="YES">
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="dotaListWord" inverseEntity="Word_List" syncable="YES"/>
     </entity>
-    <entity name="McecDictWord" syncable="YES">
+    <entity name="McecDictWord" representedClassName="McecDictWord" syncable="YES">
         <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="McecDictWordMeaning" inverseName="mcecDictWord" inverseEntity="McecDictWordMeaning" syncable="YES"/>
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="mcecDictWord" inverseEntity="Word_Dict" syncable="YES"/>
     </entity>
-    <entity name="McecDictWordMeaning" syncable="YES">
+    <entity name="McecDictWordMeaning" representedClassName="McecDictWordMeaning" syncable="YES">
         <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="mcecDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="McecDictWord" inverseName="meaning" inverseEntity="McecDictWord" syncable="YES"/>
     </entity>
-    <entity name="MwcDictWord" syncable="YES">
+    <entity name="MwcDictWord" representedClassName="MwcDictWord" syncable="YES">
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="mwcDictWord" inverseEntity="Word_Dict" syncable="YES"/>
     </entity>
-    <entity name="Rootaffix" syncable="YES">
+    <entity name="Rootaffix" representedClassName="Rootaffix" syncable="YES">
         <attribute name="deformation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="description_cn" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="description_en" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,7 +32,7 @@
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="word" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="rootaffix" inverseEntity="Word" syncable="YES"/>
     </entity>
-    <entity name="Sense" syncable="YES">
+    <entity name="Sense" representedClassName="Sense" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
@@ -40,7 +40,7 @@
         <relationship name="son" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sense" inverseName="parent" inverseEntity="Sense" syncable="YES"/>
         <relationship name="word" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="sense" inverseEntity="Word" syncable="YES"/>
     </entity>
-    <entity name="Word" syncable="YES">
+    <entity name="Word" representedClassName="Word" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="association" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Association" inverseName="word" inverseEntity="Association" syncable="YES"/>
@@ -49,13 +49,13 @@
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="word" inverseEntity="Word_Dict" syncable="YES"/>
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="word" inverseEntity="Word_List" syncable="YES"/>
     </entity>
-    <entity name="Word_Dict" syncable="YES">
+    <entity name="Word_Dict" representedClassName="Word_Dict" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="mcecDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="McecDictWord" inverseName="word_dict" inverseEntity="McecDictWord" syncable="YES"/>
         <relationship name="mwcDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MwcDictWord" inverseName="word_dict" inverseEntity="MwcDictWord" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_dict" inverseEntity="Word" syncable="YES"/>
     </entity>
-    <entity name="Word_List" syncable="YES">
+    <entity name="Word_List" representedClassName="Word_List" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="dotaListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DotaListWord" inverseName="word_list" inverseEntity="DotaListWord" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_list" inverseEntity="Word" syncable="YES"/>
