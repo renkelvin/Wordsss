@@ -18,7 +18,8 @@ static enum IterStat_F isf = FNONE;
 
 NSManagedObject* object = nil;
 
-static NSDictionary* attrDict;
+static NSDictionary* attrDict = nil;
+static NSString* attrString = nil;
 
 @implementation XMLParser
 
@@ -172,11 +173,20 @@ static NSDictionary* attrDict;
                         }
                         case TTABLEDATA_WORD:   // word
                         {
-                            //
-                            NSString* field = [attrDict objectForKey:@"name"];
+                            if (!attrDict)
+                                break;
                             
-                            if (field && [field compare:@"word_id"] == NSOrderedSame) {
+                            attrString = [attrDict objectForKey:@"name"];
+                            
+                            if (!attrString)
+                                break;
+                            
+                            if ([attrString compare:@"word_name"] == NSOrderedSame) {
                                 ((Word*)object).name = string;
+                                NSLog(@"-------%@", string);
+
+                                attrString = nil;
+                                attrDict = nil;
                             }
                             
                             break;

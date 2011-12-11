@@ -17,14 +17,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {   
-    if (NO) {
+    if (YES) {
         [self.window makeKeyAndVisible];
+        
+        // TEST WORDSSSDB.SQLITE
+        WordsssDBDataManager* dbm = [WordsssDBDataManager wordsssDBDataManager];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:[NSEntityDescription entityForName:@"Word" inManagedObjectContext:dbm.managedObjectContext]];
+        Word* w = [[dbm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
+        NSLog(@"%@", w.name);
     }
     else {
-        // get xmlParser
+        // Create xmlParser
         XMLParser* xmlParser = [XMLParser xmlParser];
         
-        // generate WordsssDB.sqlite
+        // Generate WordsssDB.sqlite
         [xmlParser go];
     }
     
