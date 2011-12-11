@@ -204,8 +204,7 @@ static NSDictionary* attrDict;
     }
 }
 
-#pragma mark -
-#pragma mark NSXMLParserDelegate
+#pragma mark - NSXMLParserDelegate
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser
 {
