@@ -8,11 +8,22 @@
 
 #import "WordsssDBDataManager.h"
 
+static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
+
 @implementation WordsssDBDataManager
 
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+
++ (WordsssDBDataManager*)wordsssDBDataManager
+{
+    if (!sharedWordsssDBDataManager) {
+        sharedWordsssDBDataManager = [[WordsssDBDataManager alloc] init];
+    }
+    
+    return sharedWordsssDBDataManager;
+}
 
 - (void)saveContext
 {
