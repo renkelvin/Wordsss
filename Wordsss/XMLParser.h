@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <Foundation/NSXMLParser.h>
 
+#import "WordsssDBDataManager.h"
+#import "Word.h"
+
 @interface XMLParser : NSObject <NSXMLParserDelegate> {
     NSXMLParser* _parser;
+    
+    WordsssDBDataManager* _dbm;
 }
 
 + (XMLParser*)xmlParser;
