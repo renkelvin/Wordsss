@@ -39,6 +39,7 @@
 		FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */; };
 		FE772DBC143D9CC9004DDA0D /* UIDashBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE772DBB143D9CC9004DDA0D /* UIDashBoard.xib */; };
 		FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */; };
+		FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D614949E0400211A97 /* WordsssDBDataManager.m */; };
 		FE873674143DDBFD002FDDE8 /* basicinfo_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FE873642143DDBFD002FDDE8 /* basicinfo_bg.png */; };
 		FE873675143DDBFD002FDDE8 /* basicinfo_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE873643143DDBFD002FDDE8 /* basicinfo_bg@2x.png */; };
 		FE873676143DDBFD002FDDE8 /* cet4.png in Resources */ = {isa = PBXBuildFile; fileRef = FE873644143DDBFD002FDDE8 /* cet4.png */; };
@@ -229,6 +230,8 @@
 		FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
 		FE772DBB143D9CC9004DDA0D /* UIDashBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIDashBoard.xib; sourceTree = "<group>"; };
 		FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FE8108D514949E0400211A97 /* WordsssDBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBDataManager.h; sourceTree = "<group>"; };
+		FE8108D614949E0400211A97 /* WordsssDBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBDataManager.m; sourceTree = "<group>"; };
 		FE873642143DDBFD002FDDE8 /* basicinfo_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basicinfo_bg.png; path = profile/basicinfo_bg.png; sourceTree = "<group>"; };
 		FE873643143DDBFD002FDDE8 /* basicinfo_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "basicinfo_bg@2x.png"; path = "profile/basicinfo_bg@2x.png"; sourceTree = "<group>"; };
 		FE873644143DDBFD002FDDE8 /* cet4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cet4.png; path = profile/cet4.png; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 			children = (
 				FE6C8DB314385A2F00DC9784 /* UserDataManager.h */,
 				FE6C8DB414385A2F00DC9784 /* UserDataManager.m */,
+				FE8108D514949E0400211A97 /* WordsssDBDataManager.h */,
+				FE8108D614949E0400211A97 /* WordsssDBDataManager.m */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -1069,6 +1074,7 @@
 				FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */,
 				FE2E9DD61493502B006A79AE /* UserActor.m in Sources */,
 				FE2E9DDC149356A7006A79AE /* TodayActor.m in Sources */,
+				FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
