@@ -77,7 +77,7 @@ static NSDictionary* attrDict;
 
 #pragma mark -
 
-- (void)createObject
+- (void)generateObject
 {
     // M
     switch (ism) {
@@ -204,67 +204,6 @@ static NSDictionary* attrDict;
     }
 }
 
-- (void)insertObject
-{
-    // M
-    switch (ism) {
-        case MNONE:
-        {
-            break;
-        }
-        case MMYSQLDUMP:
-        {
-            // D
-            switch (isd) {
-                case DNONE:
-                {
-                    break;
-                }
-                case DDATABASE:
-                {
-                    // T
-                    switch (ist) {
-                        case TNONE:
-                        {
-                            break;
-                        }
-                        case TTABLESTRUCTURE:
-                        {
-                            break;
-                        }
-                        case TTABLEDATA:
-                        {
-                            break;
-                        }
-                        case TTABLEDATA_WORD:   // word
-                        {
-                            //
-                            
-                            break;
-                        }
-                        default:
-                        {
-                            break;
-                        }
-                    }
-                    
-                    break;
-                }
-                default:
-                {
-                    break; 
-                }
-            }
-            
-            break;
-        }
-        default:
-        {
-            break;
-        }
-    }
-}
-
 #pragma mark -
 #pragma mark NSXMLParserDelegate
 
@@ -293,6 +232,8 @@ static NSDictionary* attrDict;
     }
     else if ([elementName compare:@"table_data"] == NSOrderedSame) {
         ist = TTABLEDATA;
+        
+        //
         NSString* name = [attributeDict objectForKey:@"name"];
         if ([name compare:@"word"] == NSOrderedSame) {
             ist = TTABLEDATA_WORD;
@@ -302,7 +243,7 @@ static NSDictionary* attrDict;
         isr = RROW;
         
         // Create object
-        [self createObject];
+        [self generateObject];
     }
     else if ([elementName compare:@"field"] == NSOrderedSame) {
         isf = FFIELD;
@@ -328,9 +269,6 @@ static NSDictionary* attrDict;
     }
     else if ([elementName compare:@"row"] == NSOrderedSame) {
         isr = RNONE;
-        
-        // Insert object
-        [self insertObject];
     }
     else if ([elementName compare:@"field"] == NSOrderedSame) {
         isf = FNONE;
