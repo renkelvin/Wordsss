@@ -12,6 +12,8 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 @implementation UserVirtualActor
 
+@synthesize wordRecordCur = _wordRecordCur;
+
 #pragma mark -
 
 - (id)init
@@ -46,8 +48,30 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
     _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
     
-    //
-    //    _user.memdata.wordRecord;
+    // Get wordRecord for today
+    NSFetchRequest* request2 = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
+    [request2 setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
+    _wordRecordArray = [NSMutableArray arrayWithArray:[udm.managedObjectContext executeFetchRequest:request2 error:nil]];
+    
+    // More wordRecord for today
+    if (YES) {
+        ;
+    }
+}
+
+- (void)updateWordRecord
+{
+    
+}
+
+- (void)setWordRecordCurLevelInc
+{
+
+}
+
+- (void)setWordRecordCurLevelDec
+{
+    
 }
 
 @end

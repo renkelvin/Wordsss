@@ -125,6 +125,28 @@
 
 #pragma -
 
+// 
+- (void)incOperation
+{
+    // Set wordRecord
+    [_userVirtualActor setWordRecordCurLevelInc];
+    
+    // Update UserVirtualActor WordRecord
+    [_userVirtualActor updateWordRecord];
+ 
+    // Update TodayVirtualActor Word
+    NSNumber* word_id = [[_userVirtualActor wordRecordCur] word_id];
+    [_todayVirtualActor updateWordWithWordId:word_id];
+    
+    // Update view
+}
+
+// 
+- (void)decOperation
+{
+    
+}
+
 - (void)wordSliderPanning:(UIPanGestureRecognizer*)recognizer
 {
     CGPoint translation = [recognizer translationInView:self.view];

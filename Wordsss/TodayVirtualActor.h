@@ -26,4 +26,6 @@
 
 + (TodayVirtualActor*)todayVirtualActor;
 
+- (void)updateWordWithWordId:(NSNumber*)word_id;
+
 @end

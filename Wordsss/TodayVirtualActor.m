@@ -37,4 +37,11 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     return sharedTodayVirtualActor;
 }
 
+#pragma mark - 
+
+- (void)updateWordWithWordId:(NSNumber*)word_id
+{
+    
+}
+
 @end

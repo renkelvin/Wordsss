@@ -14,8 +14,12 @@
 #import "WordStatisticsViewController.h"
 
 #import "RKNavigationControllerDelegate.h"
+#import "Word.h"
 
 @interface WordViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+{
+    Word* _word;
+}
 
 @property (nonatomic, retain) IBOutlet UIButton* wordBooksSectionButton;
 @property (nonatomic, retain) IBOutlet UIButton* wordRelationsSectionButton;

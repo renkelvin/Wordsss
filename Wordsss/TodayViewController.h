@@ -18,8 +18,8 @@
 @interface TodayViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
 {
     //
-    TodayVirtualActor* todayVirtualActor;
-    UserVirtualActor* userVirtualActor;
+    TodayVirtualActor* _todayVirtualActor;
+    UserVirtualActor* _userVirtualActor;
 }
 
 #pragma mark - property

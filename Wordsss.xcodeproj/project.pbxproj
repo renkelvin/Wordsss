@@ -31,17 +31,18 @@
 		FE2E835D143B289A004A2C56 /* wordlist.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834D143B289A004A2C56 /* wordlist.png */; };
 		FE2E835E143B289A004A2C56 /* wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834E143B289A004A2C56 /* wordlist@2x.png */; };
 		FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E8360143B2FAC004A2C56 /* WordViewController.m */; };
+		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
+		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
+		FE398C1714963A6C00D9408C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1614963A6C00D9408C /* User.m */; };
+		FE398C1A14963A6C00D9408C /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1914963A6C00D9408C /* Status.m */; };
+		FE398C1D14963A6C00D9408C /* WordRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1C14963A6C00D9408C /* WordRecord.m */; };
+		FE398C2014963A6C00D9408C /* Defult.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1F14963A6C00D9408C /* Defult.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
 		FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */; };
 		FE772DBC143D9CC9004DDA0D /* UIDashBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE772DBB143D9CC9004DDA0D /* UIDashBoard.xib */; };
 		FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */; };
-		FE78A9731495A0DC007F9520 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78A9721495A0DC007F9520 /* Status.m */; };
-		FE78A9791495A0DC007F9520 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78A9781495A0DC007F9520 /* Profile.m */; };
-		FE78A97C1495A0DC007F9520 /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78A97B1495A0DC007F9520 /* MemData.m */; };
-		FE78A97F1495A0DC007F9520 /* WordRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78A97E1495A0DC007F9520 /* WordRecord.m */; };
-		FE78A9821495A11A007F9520 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78A9811495A11A007F9520 /* User.m */; };
 		FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D614949E0400211A97 /* WordsssDBDataManager.m */; };
 		FE8108DB14949E5C00211A97 /* WordsssDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D914949E5C00211A97 /* WordsssDB.xcdatamodeld */; };
 		FE873674143DDBFD002FDDE8 /* basicinfo_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FE873642143DDBFD002FDDE8 /* basicinfo_bg.png */; };
@@ -232,6 +233,18 @@
 		FE2E834E143B289A004A2C56 /* wordlist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordlist@2x.png"; sourceTree = "<group>"; };
 		FE2E835F143B2FAC004A2C56 /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
 		FE2E8360143B2FAC004A2C56 /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
+		FE398C0F14963A6C00D9408C /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		FE398C1014963A6C00D9408C /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		FE398C1214963A6C00D9408C /* MemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemData.h; sourceTree = "<group>"; };
+		FE398C1314963A6C00D9408C /* MemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemData.m; sourceTree = "<group>"; };
+		FE398C1514963A6C00D9408C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FE398C1614963A6C00D9408C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FE398C1814963A6C00D9408C /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		FE398C1914963A6C00D9408C /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		FE398C1B14963A6C00D9408C /* WordRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRecord.h; sourceTree = "<group>"; };
+		FE398C1C14963A6C00D9408C /* WordRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRecord.m; sourceTree = "<group>"; };
+		FE398C1E14963A6C00D9408C /* Defult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defult.h; sourceTree = "<group>"; };
+		FE398C1F14963A6C00D9408C /* Defult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defult.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		FE6C8DB414385A2F00DC9784 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
@@ -243,16 +256,6 @@
 		FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
 		FE772DBB143D9CC9004DDA0D /* UIDashBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIDashBoard.xib; sourceTree = "<group>"; };
 		FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FE78A9711495A0DC007F9520 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
-		FE78A9721495A0DC007F9520 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
-		FE78A9771495A0DC007F9520 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
-		FE78A9781495A0DC007F9520 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
-		FE78A97A1495A0DC007F9520 /* MemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemData.h; sourceTree = "<group>"; };
-		FE78A97B1495A0DC007F9520 /* MemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemData.m; sourceTree = "<group>"; };
-		FE78A97D1495A0DC007F9520 /* WordRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRecord.h; sourceTree = "<group>"; };
-		FE78A97E1495A0DC007F9520 /* WordRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRecord.m; sourceTree = "<group>"; };
-		FE78A9801495A11A007F9520 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FE78A9811495A11A007F9520 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FE8108D514949E0400211A97 /* WordsssDBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBDataManager.h; sourceTree = "<group>"; };
 		FE8108D614949E0400211A97 /* WordsssDBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBDataManager.m; sourceTree = "<group>"; };
 		FE8108DA14949E5C00211A97 /* WordsssDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsssDB.xcdatamodel; sourceTree = "<group>"; };
@@ -896,16 +899,18 @@
 		FEF732ED1495998300919A7C /* Wordsss */ = {
 			isa = PBXGroup;
 			children = (
-				FE78A97D1495A0DC007F9520 /* WordRecord.h */,
-				FE78A97E1495A0DC007F9520 /* WordRecord.m */,
-				FE78A97A1495A0DC007F9520 /* MemData.h */,
-				FE78A97B1495A0DC007F9520 /* MemData.m */,
-				FE78A9771495A0DC007F9520 /* Profile.h */,
-				FE78A9781495A0DC007F9520 /* Profile.m */,
-				FE78A9801495A11A007F9520 /* User.h */,
-				FE78A9811495A11A007F9520 /* User.m */,
-				FE78A9711495A0DC007F9520 /* Status.h */,
-				FE78A9721495A0DC007F9520 /* Status.m */,
+				FE398C1E14963A6C00D9408C /* Defult.h */,
+				FE398C1F14963A6C00D9408C /* Defult.m */,
+				FE398C1B14963A6C00D9408C /* WordRecord.h */,
+				FE398C1C14963A6C00D9408C /* WordRecord.m */,
+				FE398C1814963A6C00D9408C /* Status.h */,
+				FE398C1914963A6C00D9408C /* Status.m */,
+				FE398C1514963A6C00D9408C /* User.h */,
+				FE398C1614963A6C00D9408C /* User.m */,
+				FE398C1214963A6C00D9408C /* MemData.h */,
+				FE398C1314963A6C00D9408C /* MemData.m */,
+				FE398C0F14963A6C00D9408C /* Profile.h */,
+				FE398C1014963A6C00D9408C /* Profile.m */,
 			);
 			name = Wordsss;
 			sourceTree = "<group>";
@@ -1184,11 +1189,12 @@
 				FEA569DC1494D3A10071C0DB /* MwcDictWord.m in Sources */,
 				FEF732E81495955100919A7C /* TodayVirtualActor.m in Sources */,
 				FEF732EB1495956600919A7C /* UserVirtualActor.m in Sources */,
-				FE78A9731495A0DC007F9520 /* Status.m in Sources */,
-				FE78A9791495A0DC007F9520 /* Profile.m in Sources */,
-				FE78A97C1495A0DC007F9520 /* MemData.m in Sources */,
-				FE78A97F1495A0DC007F9520 /* WordRecord.m in Sources */,
-				FE78A9821495A11A007F9520 /* User.m in Sources */,
+				FE398C1114963A6C00D9408C /* Profile.m in Sources */,
+				FE398C1414963A6C00D9408C /* MemData.m in Sources */,
+				FE398C1714963A6C00D9408C /* User.m in Sources */,
+				FE398C1A14963A6C00D9408C /* Status.m in Sources */,
+				FE398C1D14963A6C00D9408C /* WordRecord.m in Sources */,
+				FE398C2014963A6C00D9408C /* Defult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,15 +9,24 @@
 #import <Foundation/Foundation.h>
 
 #import "UserDataManager.h"
+
 #import "User.h"
+#import "Status.h"
+#import "WordRecord.h"
 
 @interface UserVirtualActor : NSObject
 {
     //
     User* _user;
+    NSMutableArray* _wordRecordArray;
+    
+    //
+    WordRecord* _wordRecordCur;
 }
 
-#pragma mark - property
+#pragma mark - Property
+
+@property (nonatomic, retain) WordRecord* wordRecordCur;
 
 #pragma mark - Class method
 
@@ -26,5 +35,9 @@
 #pragma mark - Instance method
 
 - (void)prepare;
+
+- (void)updateWordRecord;
+- (void)setWordRecordCurLevelInc;
+- (void)setWordRecordCurLevelDec;
 
 @end
