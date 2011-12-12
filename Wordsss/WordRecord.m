@@ -7,7 +7,7 @@
 //
 
 #import "WordRecord.h"
-#import "Metadata.h"
+#import "MemData.h"
 
 
 @implementation WordRecord

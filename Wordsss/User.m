@@ -7,7 +7,9 @@
 //
 
 #import "User.h"
-#import "Metadata.h"
+#import "MemData.h"
+#import "Profile.h"
+#import "Status.h"
 
 
 @implementation User
@@ -15,7 +17,7 @@
 @dynamic id;
 @dynamic password;
 @dynamic username;
-@dynamic metadata;
+@dynamic memdata;
 @dynamic profile;
 @dynamic status;
 

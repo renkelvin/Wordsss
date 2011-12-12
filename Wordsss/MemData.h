@@ -1,5 +1,5 @@
 //
-//  Metadata.h
+//  MemData.h
 //  Wordsss
 //
 //  Created by Kelvin Ren on 12/12/11.
@@ -9,17 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class User, WordRecord;
 
-@interface Metadata : NSManagedObject
+@interface MemData : NSManagedObject
 
-@property (nonatomic, retain) NSManagedObject *user;
+@property (nonatomic, retain) User *user;
 @property (nonatomic, retain) NSSet *wordRecord;
 @end
 
-@interface Metadata (CoreDataGeneratedAccessors)
+@interface MemData (CoreDataGeneratedAccessors)
 
-- (void)addWordRecordObject:(NSManagedObject *)value;
-- (void)removeWordRecordObject:(NSManagedObject *)value;
+- (void)addWordRecordObject:(WordRecord *)value;
+- (void)removeWordRecordObject:(WordRecord *)value;
 - (void)addWordRecord:(NSSet *)values;
 - (void)removeWordRecord:(NSSet *)values;
 

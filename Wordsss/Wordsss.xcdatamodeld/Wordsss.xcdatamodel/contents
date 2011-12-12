@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Metadata" representedClassName="Metadata" syncable="YES">
-        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="metadata" inverseEntity="User" syncable="YES"/>
+    <entity name="MemData" representedClassName="MemData" syncable="YES">
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memdata" inverseEntity="User" syncable="YES"/>
         <relationship name="wordRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WordRecord" inverseName="matadata" inverseEntity="WordRecord" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
@@ -16,7 +16,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="metadata" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Metadata" inverseName="user" inverseEntity="Metadata" syncable="YES"/>
+        <relationship name="memdata" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MemData" inverseName="user" inverseEntity="MemData" syncable="YES"/>
         <relationship name="profile" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="user" inverseEntity="Profile" syncable="YES"/>
         <relationship name="status" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="user" inverseEntity="Status" syncable="YES"/>
     </entity>
@@ -25,10 +25,10 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="word_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="matadata" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Metadata" inverseName="wordRecord" inverseEntity="Metadata" syncable="YES"/>
+        <relationship name="matadata" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MemData" inverseName="wordRecord" inverseEntity="MemData" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Metadata" positionX="-4178" positionY="-1638" width="128" height="75"/>
+        <element name="MemData" positionX="-4178" positionY="-1638" width="128" height="75"/>
         <element name="Profile" positionX="-4178" positionY="-1791" width="128" height="75"/>
         <element name="Status" positionX="-4176" positionY="-1485" width="128" height="75"/>
         <element name="User" positionX="-4464" positionY="-1683" width="128" height="135"/>

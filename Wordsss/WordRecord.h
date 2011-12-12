@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Metadata;
+@class MemData;
 
 @interface WordRecord : NSManagedObject
 
@@ -17,6 +17,6 @@
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSNumber * level;
 @property (nonatomic, retain) NSNumber * word_id;
-@property (nonatomic, retain) Metadata *matadata;
+@property (nonatomic, retain) MemData *matadata;
 
 @end

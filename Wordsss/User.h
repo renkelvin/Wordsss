@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Metadata;
+@class MemData, Profile, Status;
 
 @interface User : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * username;
-@property (nonatomic, retain) Metadata *metadata;
-@property (nonatomic, retain) NSManagedObject *profile;
-@property (nonatomic, retain) NSManagedObject *status;
+@property (nonatomic, retain) MemData *memdata;
+@property (nonatomic, retain) Profile *profile;
+@property (nonatomic, retain) Status *status;
 
 @end
