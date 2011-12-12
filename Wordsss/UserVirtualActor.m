@@ -44,9 +44,10 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     
     // Get user
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
-//    _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
-//    
-//    ((Metadata*)_user.metadata).wordRecord;
+    _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
+    
+    //
+    //    _user.memdata.wordRecord;
 }
 
 @end
