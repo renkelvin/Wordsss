@@ -8,6 +8,35 @@
 
 #import "UserVirtualActor.h"
 
+static UserVirtualActor* sharedUserVirtualActor = nil;
+
 @implementation UserVirtualActor
+
+@synthesize user = _user;
+
+#pragma mark -
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        // Initialization code here.
+    }
+    
+    return self;
+}
+
+#pragma mark -
+
++ (UserVirtualActor*)userVirtualActor
+{
+    if (!sharedUserVirtualActor) {
+        sharedUserVirtualActor = [[UserVirtualActor alloc] init];
+    }
+    
+    return sharedUserVirtualActor;
+}
+
+#pragma mark -
 
 @end

@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "User.h"
+
 @interface UserVirtualActor : NSObject
+{
+    //
+    User* _user;
+}
+
+@property (nonatomic, retain) User* user;
+
++ (UserVirtualActor*)userVirtualActor;
 
 @end

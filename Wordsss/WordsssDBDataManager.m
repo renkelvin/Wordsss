@@ -16,6 +16,16 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        // Initialization code here.
+    }
+    
+    return self;
+}
+
 + (WordsssDBDataManager*)wordsssDBDataManager
 {
     if (!sharedWordsssDBDataManager) {

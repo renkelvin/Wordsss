@@ -8,6 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Word.h"
+
 @interface TodayVirtualActor : NSObject
+{
+    // 
+    Word* _wordPre;
+    Word* _wordCur;
+    Word* _wordPos;
+    
+    //
+}
+
+@property (nonatomic, retain) Word* wordPre;
+@property (nonatomic, retain) Word* wordCur;
+@property (nonatomic, retain) Word* wordPos;
+
++ (TodayVirtualActor*)todayVirtualActor;
 
 @end
