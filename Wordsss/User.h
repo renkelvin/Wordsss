@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class MemData, Profile, Status;
+@class Defult, MemData, Profile, Status;
 
 @interface User : NSManagedObject
 
@@ -19,5 +19,6 @@
 @property (nonatomic, retain) MemData *memdata;
 @property (nonatomic, retain) Profile *profile;
 @property (nonatomic, retain) Status *status;
+@property (nonatomic, retain) Defult *defult;
 
 @end

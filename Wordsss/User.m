@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "Defult.h"
 #import "MemData.h"
 #import "Profile.h"
 #import "Status.h"
@@ -20,5 +21,6 @@
 @dynamic memdata;
 @dynamic profile;
 @dynamic status;
+@dynamic defult;
 
 @end
