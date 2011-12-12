@@ -594,7 +594,7 @@
 			name = VirtualActor;
 			sourceTree = "<group>";
 		};
-		FEABC549143C88D6005AB8C1 /* WordDetail */ = {
+		FEABC549143C88D6005AB8C1 /* Word */ = {
 			isa = PBXGroup;
 			children = (
 				FE873710143DEC21002FDDE8 /* Legacy */,
@@ -609,7 +609,7 @@
 				FEABC553143C8A62005AB8C1 /* WordStatisticsViewController.h */,
 				FEABC554143C8A62005AB8C1 /* WordStatisticsViewController.m */,
 			);
-			name = WordDetail;
+			name = Word;
 			sourceTree = "<group>";
 		};
 		FEB8ED23143B47200097E267 /* RKNavigation */ = {
@@ -727,7 +727,7 @@
 			children = (
 				FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */,
 				FE6C8DBF14385AD900DC9784 /* 5 Main */,
-				FEABC549143C88D6005AB8C1 /* WordDetail */,
+				FEABC549143C88D6005AB8C1 /* Word */,
 				FEF4DE96148E2A6D00E88653 /* RKUIKit */,
 			);
 			name = Scene;

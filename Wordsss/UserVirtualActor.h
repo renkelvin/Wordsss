@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 
 #import "UserDataManager.h"
+#import "User.h"
 
 @interface UserVirtualActor : NSObject
 {
     //
-//    User* _user;
+    User* _user;
 }
 
 #pragma mark - property
