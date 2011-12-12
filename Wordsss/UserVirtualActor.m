@@ -12,8 +12,6 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 @implementation UserVirtualActor
 
-@synthesize user = _user;
-
 #pragma mark -
 
 - (id)init
@@ -38,5 +36,15 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 }
 
 #pragma mark -
+
+- (void)prepare
+{
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // Get user
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
+}
 
 @end
