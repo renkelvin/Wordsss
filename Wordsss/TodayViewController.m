@@ -51,6 +51,10 @@
     //    
     //    UITapGestureRecognizer* recognizerRight = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderRightTap:)];
     //    [[self wordSliderRightTapArea] addGestureRecognizer:recognizerRight];
+    
+    //
+    _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
+    _userVirtualActor = [UserVirtualActor userVirtualActor];
 }
 
 - (void)viewDidUnload
@@ -132,7 +136,7 @@
     [_userVirtualActor setWordRecordCurLevelInc];
     
     // Update UserVirtualActor WordRecord
-    [_userVirtualActor updateWordRecord];
+    [_userVirtualActor updateWordRecordCur];
  
     // Update TodayVirtualActor Word
     NSNumber* word_id = [[_userVirtualActor wordRecordCur] word_id];

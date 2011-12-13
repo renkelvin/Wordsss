@@ -35,6 +35,31 @@ static UserDataManager* sharedUserDataManager;
     return sharedUserDataManager;
 }
 
+#pragma mark - Instance method
+
+- (User*)createUser
+{
+    User* user = nil;
+    
+    //
+    user = [User insertUser:nil inManagedObjectContext:__managedObjectContext];
+    
+    return user;
+}
+
+- (User*)createUser:(NSDictionary*)dict
+{
+    User* user = nil;
+    
+    //
+    user = [User insertUser:dict inManagedObjectContext:__managedObjectContext];
+
+    return user;
+}
+
+
+#pragma mark - Core Data
+
 - (void)saveContext
 {
     NSError *error = nil;

@@ -21,4 +21,6 @@
 @property (nonatomic, retain) Status *status;
 @property (nonatomic, retain) Defult *defult;
 
++ (User*)insertUser:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
+
 @end

@@ -26,6 +26,10 @@
 
 + (TodayVirtualActor*)todayVirtualActor;
 
+#pragma mark - Instance method
+
+- (void)prepare;
+
 - (void)updateWordWithWordId:(NSNumber*)word_id;
 
 @end

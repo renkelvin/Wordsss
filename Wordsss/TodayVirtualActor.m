@@ -32,12 +32,18 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 {
     if (!sharedTodayVirtualActor) {
         sharedTodayVirtualActor = [[TodayVirtualActor alloc] init];
+        [sharedTodayVirtualActor prepare];
     }
     
     return sharedTodayVirtualActor;
 }
 
 #pragma mark - 
+
+- (void)prepare
+{
+    
+}
 
 - (void)updateWordWithWordId:(NSNumber*)word_id
 {

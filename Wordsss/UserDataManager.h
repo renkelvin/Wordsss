@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "User.h"
+
 @interface UserDataManager : NSObject {
 
 }
@@ -21,5 +23,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (User*)createUser;
+- (User*)createUser:(NSDictionary*)dict;
 
 @end

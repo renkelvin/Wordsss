@@ -23,4 +23,13 @@
 @dynamic status;
 @dynamic defult;
 
++ (User*)insertUser:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    User* user = nil;
+    
+    user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+
+    return user;
+}
+
 @end

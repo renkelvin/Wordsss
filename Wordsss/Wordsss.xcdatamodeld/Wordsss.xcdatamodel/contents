@@ -2,7 +2,15 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Defult" representedClassName="Defult" syncable="YES">
         <attribute name="todayWordLimit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Defult" inverseName="user" inverseEntity="Defult" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="defult" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="HisData" syncable="YES">
+        <relationship name="hisRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HisRecord" inverseName="hisData" inverseEntity="HisRecord" syncable="YES"/>
+    </entity>
+    <entity name="HisRecord" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="hisData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HisData" inverseName="hisRecord" inverseEntity="HisData" syncable="YES"/>
     </entity>
     <entity name="MemData" representedClassName="MemData" syncable="YES">
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memdata" inverseEntity="User" syncable="YES"/>
@@ -20,7 +28,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="defult" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Defult" syncable="YES"/>
+        <relationship name="defult" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Defult" inverseName="user" inverseEntity="Defult" syncable="YES"/>
         <relationship name="memdata" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MemData" inverseName="user" inverseEntity="MemData" syncable="YES"/>
         <relationship name="profile" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="user" inverseEntity="Profile" syncable="YES"/>
         <relationship name="status" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="user" inverseEntity="Status" syncable="YES"/>
@@ -33,11 +41,13 @@
         <relationship name="matadata" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MemData" inverseName="wordRecord" inverseEntity="MemData" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MemData" positionX="-4178" positionY="-1638" width="128" height="75"/>
-        <element name="Profile" positionX="-4178" positionY="-1791" width="128" height="75"/>
-        <element name="Status" positionX="-4176" positionY="-1485" width="128" height="75"/>
-        <element name="User" positionX="-4464" positionY="-1683" width="128" height="135"/>
-        <element name="WordRecord" positionX="-3917" positionY="-1638" width="128" height="120"/>
-        <element name="Defult" positionX="-4302" positionY="-1476" width="128" height="75"/>
+        <element name="MemData" positionX="-4142" positionY="-1656" width="128" height="75"/>
+        <element name="Profile" positionX="-4536" positionY="-1794" width="128" height="75"/>
+        <element name="Status" positionX="-4536" positionY="-1650" width="128" height="75"/>
+        <element name="User" positionX="-4331" positionY="-1692" width="128" height="135"/>
+        <element name="WordRecord" positionX="-3917" positionY="-1674" width="128" height="120"/>
+        <element name="Defult" positionX="-4536" positionY="-1488" width="128" height="75"/>
+        <element name="HisData" positionX="-4142" positionY="-1521" width="128" height="60"/>
+        <element name="HisRecord" positionX="-3915" positionY="-1521" width="128" height="90"/>
     </elements>
 </model>

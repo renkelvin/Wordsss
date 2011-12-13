@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Wordsss/TodayViewController.m"
-         timestampString = "344866551.170211"
+         timestampString = "345471854.379809"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "189"
-         endingLineNumber = "189"
+         startingLineNumber = "215"
+         endingLineNumber = "215"
          landmarkName = "-wordSliderLeftTap:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Wordsss/TodayViewController.m"
-         timestampString = "344866552.193888"
+         timestampString = "345471854.379809"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "204"
-         endingLineNumber = "204"
+         startingLineNumber = "230"
+         endingLineNumber = "230"
          landmarkName = "-wordSliderRightTap:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Wordsss/TodayViewController.m"
-         timestampString = "344869443.488193"
+         timestampString = "345471854.379809"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "231"
-         endingLineNumber = "231"
+         startingLineNumber = "257"
+         endingLineNumber = "257"
          landmarkName = "-navigationBarLeftButtonDown"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Wordsss/TodayViewController.m"
-         timestampString = "344869443.488193"
+         timestampString = "345471854.379809"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "236"
-         endingLineNumber = "236"
+         startingLineNumber = "262"
+         endingLineNumber = "262"
          landmarkName = "-navigationBarRightButtonDown"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,11 +65,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Wordsss/TodayViewController.m"
-         timestampString = "344867341.312441"
+         timestampString = "345471854.379809"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
          landmarkName = "-wordDetailSelected:"
          landmarkType = "5">
       </FileBreakpoint>

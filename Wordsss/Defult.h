@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Defult;
+@class Defult, User;
 
 @interface Defult : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * todayWordLimit;
-@property (nonatomic, retain) Defult *user;
+@property (nonatomic, retain) User *user;
 
 @end

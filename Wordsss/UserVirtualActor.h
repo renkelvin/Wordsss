@@ -11,6 +11,7 @@
 #import "UserDataManager.h"
 
 #import "User.h"
+#import "Defult.h"
 #import "Status.h"
 #import "WordRecord.h"
 
@@ -36,7 +37,7 @@
 
 - (void)prepare;
 
-- (void)updateWordRecord;
+- (void)updateWordRecordCur;
 - (void)setWordRecordCurLevelInc;
 - (void)setWordRecordCurLevelDec;
 

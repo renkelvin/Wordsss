@@ -32,6 +32,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 {
     if (!sharedUserVirtualActor) {
         sharedUserVirtualActor = [[UserVirtualActor alloc] init];
+        [sharedUserVirtualActor prepare];
     }
     
     return sharedUserVirtualActor;
@@ -39,7 +40,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 #pragma mark -
 
-- (void)prepare
+- (void)getUser
 {
     // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
@@ -47,26 +48,58 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     // Get user
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
     _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
-    
-    // Get wordRecord for today
-    NSFetchRequest* request2 = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
-    [request2 setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
-    _wordRecordArray = [NSMutableArray arrayWithArray:[udm.managedObjectContext executeFetchRequest:request2 error:nil]];
-    
-    // More wordRecord for today
-    if (YES) {
-        ;
+    if (!_user) {
+        _user = [udm createUser];
     }
 }
 
-- (void)updateWordRecord
+- (void)getWordRecordArray
+{
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // Get wordRecordArray
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
+    _wordRecordArray = [NSMutableArray arrayWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
+    
+}
+
+- (void)fillWordRecordArray
+{
+    if ([_wordRecordArray count] < [_user.defult.todayWordLimit intValue]) {
+        
+    }
+}
+
+- (void)getWordRecordCur
+{
+    
+}
+
+- (void)prepare
+{
+    // Get user
+    [self getUser];
+    
+    // Get wordRecordArray
+    [self getWordRecordArray];
+    
+    // More wordRecordArray
+    [self fillWordRecordArray];
+    
+    // Get WordRecordCur
+    [self getWordRecordCur];
+}
+
+- (void)updateWordRecordCur
 {
     
 }
 
 - (void)setWordRecordCurLevelInc
 {
-
+    
 }
 
 - (void)setWordRecordCurLevelDec

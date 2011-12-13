@@ -35,6 +35,12 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return sharedWordsssDBDataManager;
 }
 
+#pragma mark - Instance method
+
+
+
+#pragma mark - Core Data
+
 - (void)saveContext
 {
     NSError *error = nil;
