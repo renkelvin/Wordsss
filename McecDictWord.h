@@ -13,6 +13,7 @@
 
 @interface McecDictWord : NSManagedObject
 
+@property (nonatomic, retain) NSNumber *id;
 @property (nonatomic, retain) Word_Dict *word_dict;
 @property (nonatomic, retain) NSSet *meaning;
 @end

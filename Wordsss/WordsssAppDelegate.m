@@ -21,8 +21,6 @@
         WordsssDBDataManager* dbm = [WordsssDBDataManager wordsssDBDataManager];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         [request setEntity:[NSEntityDescription entityForName:@"Word" inManagedObjectContext:dbm.managedObjectContext]];
-        Word* w = [[dbm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
-        NSLog(@"%@", w.name);
     }
     
     else {
