@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NSNumber * day;
 @property (nonatomic, retain) User *user;
 
++ (Status*)insertStatus:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
+
 @end

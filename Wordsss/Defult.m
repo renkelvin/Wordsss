@@ -7,12 +7,19 @@
 //
 
 #import "Defult.h"
-#import "Defult.h"
-
 
 @implementation Defult
 
 @dynamic todayWordLimit;
 @dynamic user;
+
++ (Defult*)insertDefult:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    Defult* defult = nil;
+    
+    defult = [NSEntityDescription insertNewObjectForEntityForName:@"Defult" inManagedObjectContext:context];
+    
+    return defult;
+}
 
 @end

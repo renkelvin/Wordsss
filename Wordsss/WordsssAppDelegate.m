@@ -16,11 +16,6 @@
 {   
     if (YES) {
         [self.window makeKeyAndVisible];
-        
-        // TEST WORDSSSDB.SQLITE
-        WordsssDBDataManager* dbm = [WordsssDBDataManager wordsssDBDataManager];
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        [request setEntity:[NSEntityDescription entityForName:@"Word" inManagedObjectContext:dbm.managedObjectContext]];
     }
     
     else {

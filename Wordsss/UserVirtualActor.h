@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "UserDataManager.h"
+#import "WordsssDBDataManager.h"
 
+#import "Word.h"
 #import "User.h"
 #import "Defult.h"
 #import "Status.h"

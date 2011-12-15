@@ -16,6 +16,21 @@
 @dynamic id;
 @dynamic level;
 @dynamic word_id;
-@dynamic matadata;
+@dynamic memdata;
+
++ (WordRecord*)insertWordRecord:(Word*)word user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    WordRecord* wordRecord = nil;
+    
+    //
+    wordRecord = [NSEntityDescription insertNewObjectForEntityForName:@"WordRecord" inManagedObjectContext:context];
+    
+    //
+    wordRecord.word_id = word.id;
+    wordRecord.memdata = user.memdata;
+    
+    //
+    return wordRecord;
+}
 
 @end

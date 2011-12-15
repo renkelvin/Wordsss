@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Word.h"
 #import "User.h"
+#import "Defult.h"
+#import "Status.h"
+#import "WordRecord.h"
 
 @interface UserDataManager : NSObject {
 
@@ -25,5 +29,7 @@
 
 - (User*)createUser;
 - (User*)createUser:(NSDictionary*)dict;
+
+- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
 
 @end

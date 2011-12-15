@@ -48,6 +48,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     // Get user
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
     _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
+    
     if (!_user) {
         _user = [udm createUser];
     }
@@ -61,15 +62,42 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     // Get wordRecordArray
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
-    _wordRecordArray = [NSMutableArray arrayWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    
+    _wordRecordArray = [NSMutableArray arrayWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
 }
 
 - (void)fillWordRecordArray
 {
-    if ([_wordRecordArray count] < [_user.defult.todayWordLimit intValue]) {
-        
+    // Enough
+    if ([_wordRecordArray count] >= [_user.defult.todayWordLimit intValue])
+        return;
+    
+    // NOT Enough
+    // Get existing wordRecord
+    NSMutableArray* word_id_array = [NSMutableArray array];
+    for (WordRecord* wr in _wordRecordArray) {
+        [word_id_array addObject:wr.word_id];
     }
+    
+    // Get WordsssDBDataManager
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    
+    // Get new word
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"NOT (id in %@)", word_id_array]];
+    NSArray* new_word_array = [NSMutableArray arrayWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
+
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+
+    // Create new wordRecord
+    for (Word* w in new_word_array) {
+        WordRecord* wr = [udm createWordRecord:w forUser:_user];
+        [_wordRecordArray addObject:wr];
+        
+        if ([_wordRecordArray count] >= [_user.defult.todayWordLimit intValue])
+            return;
+    }
+    
 }
 
 - (void)getWordRecordCur

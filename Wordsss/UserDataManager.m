@@ -44,19 +44,29 @@ static UserDataManager* sharedUserDataManager;
     //
     user = [User insertUser:nil inManagedObjectContext:__managedObjectContext];
     
+    //
+    user.status = [Status insertStatus:nil inManagedObjectContext:__managedObjectContext];
+    user.defult = [Defult insertDefult:nil inManagedObjectContext:__managedObjectContext];
+    
+    user.status.day = [NSNumber numberWithInt:1];
+    user.defult.todayWordLimit = [NSNumber numberWithInt:100];
+    
     return user;
 }
 
 - (User*)createUser:(NSDictionary*)dict
 {
-    User* user = nil;
-    
-    //
-    user = [User insertUser:dict inManagedObjectContext:__managedObjectContext];
-
-    return user;
+    return nil;
 }
 
+- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user
+{
+    WordRecord* wordRecord = nil;
+    
+    wordRecord = [WordRecord insertWordRecord:word user:user inManagedObjectContext:__managedObjectContext];
+    
+    return wordRecord;
+}
 
 #pragma mark - Core Data
 
