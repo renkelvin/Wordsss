@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Word.h"
+
 @interface WordsssDBDataManager : NSObject
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -18,5 +20,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+- (Word*)getWordWithId:(NSNumber*)wordId;
 
 @end

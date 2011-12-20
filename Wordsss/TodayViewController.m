@@ -16,6 +16,11 @@
 @synthesize wordSliderLeftTapArea;
 @synthesize wordSliderRightTapArea;
 
+@synthesize wordLabelPre = _wordLabelPre;
+@synthesize wordLabelCur = _wordLabelCur;
+@synthesize wordLabelPos = _wordLabelPos;
+@synthesize briefMeaningLabel = _briefMeaningLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -53,8 +58,10 @@
     //    [[self wordSliderRightTapArea] addGestureRecognizer:recognizerRight];
     
     //
-    _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
     _userVirtualActor = [UserVirtualActor userVirtualActor];
+    _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
+    
+    [self update];
 }
 
 - (void)viewDidUnload
@@ -70,64 +77,25 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma - IBAction
-
-- (IBAction)wordDetailSelected:(id)sender
-{
-    WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] initSectionViewControllers];
-    
-    [[self navigationController] pushViewController:wordViewController animated:YES];
-}
-
-- (IBAction)wordSliderLeftTouchDown:(id)sender {
-    CGRect rect = [self.wordSliderImageView frame];
-    
-    // Move Slider to Right
-    rect.origin.x = 84;
-    [UIView animateWithDuration:0.1
-                     animations:^(void){
-                         [self.wordSliderImageView setFrame:rect];
-                     }
-     ];
-}
-
-- (IBAction)wordSliderLeftTouchUpInside:(id)sender {
-    CGRect rect = [self.wordSliderImageView frame];
-    
-    // Move Slider to Center
-    rect.origin.x = 42;
-    [UIView animateWithDuration:0.1
-                     animations:^(void){
-                         [self.wordSliderImageView setFrame:rect];
-                     }
-     ];
-}
-
-- (IBAction)wordSliderRightTouchDown:(id)sender {
-    CGRect rect = [self.wordSliderImageView frame];
-    
-    // Move Slider to Left
-    rect.origin.x = 0;
-    [UIView animateWithDuration:0.1
-                     animations:^(void){
-                         [self.wordSliderImageView setFrame:rect];
-                     }
-     ];
-}
-
-- (IBAction)wordSliderRightTouchUpInside:(id)sender {
-    CGRect rect = [self.wordSliderImageView frame];
-    
-    // Move Slider to Center
-    rect.origin.x = 42;
-    [UIView animateWithDuration:0.1
-                     animations:^(void){
-                         [self.wordSliderImageView setFrame:rect];
-                     }
-     ];
-}
-
 #pragma -
+
+// update
+- (void)update
+{
+    //
+    if ([_todayVirtualActor wordPre])
+        self.wordLabelPre.text = [_todayVirtualActor wordPre].name;
+    if ([_todayVirtualActor wordCur])
+        self.wordLabelCur.text = [_todayVirtualActor wordCur].name;
+    if ([_todayVirtualActor wordPos])
+        self.wordLabelPos.text = [_todayVirtualActor wordPos].name;
+    
+    //
+    McecDictWord* mcecDictWord = [_todayVirtualActor wordPos].word_dict.mcecDictWord;
+    if (mcecDictWord) {
+        self.briefMeaningLabel.text = [[mcecDictWord id] stringValue];
+    }
+}
 
 // 
 - (void)incOperation
@@ -137,18 +105,28 @@
     
     // Update UserVirtualActor WordRecord
     [_userVirtualActor updateWordRecordCur];
- 
+    
     // Update TodayVirtualActor Word
-    NSNumber* word_id = [[_userVirtualActor wordRecordCur] word_id];
-    [_todayVirtualActor updateWordWithWordId:word_id];
+    [_todayVirtualActor updateWord];
     
     // Update view
+    [self update];
 }
 
 // 
 - (void)decOperation
 {
+    // Set wordRecord
+    [_userVirtualActor setWordRecordCurLevelDec];
     
+    // Update UserVirtualActor WordRecord
+    [_userVirtualActor updateWordRecordCur];
+    
+    // Update TodayVirtualActor Word
+    [_todayVirtualActor updateWord];
+    
+    // Update view
+    [self update];
 }
 
 - (void)wordSliderPanning:(UIPanGestureRecognizer*)recognizer
@@ -238,6 +216,69 @@
     // Move Slider
     rect.origin.x = 42;
     [self.wordSliderImageView setFrame:rect];
+}
+
+#pragma - IBAction
+
+- (IBAction)wordDetailSelected:(id)sender
+{
+    WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] initSectionViewControllers];
+    
+    [[self navigationController] pushViewController:wordViewController animated:YES];
+}
+
+- (IBAction)wordSliderLeftTouchDown:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Right
+    rect.origin.x = 84;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+}
+
+- (IBAction)wordSliderLeftTouchUpInside:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Center
+    rect.origin.x = 42;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+    
+    //
+    [self decOperation];
+}
+
+- (IBAction)wordSliderRightTouchDown:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Left
+    rect.origin.x = 0;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+}
+
+- (IBAction)wordSliderRightTouchUpInside:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Center
+    rect.origin.x = 42;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+    
+    //
+    [self incOperation];
 }
 
 #pragma - RKNavigationControllerDelegate

@@ -37,7 +37,10 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 
 #pragma mark - Instance method
 
-
+- (Word*)getWordWithId:(NSNumber*)wordId
+{
+    return [Word wordWithWordId:wordId inManagedObjectContext:_managedObjectContext];
+}
 
 #pragma mark - Core Data
 

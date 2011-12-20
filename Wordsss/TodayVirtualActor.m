@@ -40,13 +40,42 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 
 #pragma mark - 
 
-- (void)prepare
+
+- (void)updateWord
 {
+    // Move
+    _wordPos = _wordCur;
+    _wordCur = _wordPre;
     
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    
+    //
+    NSNumber* word_id = [uva wordRecordCur].word_id;
+    _wordPre = [wdm getWordWithId:word_id];
 }
 
 - (void)updateWordWithWordId:(NSNumber*)word_id
 {
+    // Move
+    _wordPos = _wordCur;
+    _wordCur = _wordPre;
+
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+
+    _wordPre = [wdm getWordWithId:word_id];
+}
+
+- (void)prepare
+{
+    //
+    _wordPre = _wordCur = _wordPos = nil;
+    
+    //
+    [self updateWord];
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    [uva updateWordRecordCur];
+    [self updateWord];
     
 }
 

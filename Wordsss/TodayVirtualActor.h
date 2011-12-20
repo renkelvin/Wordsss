@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Word.h"
+#import "UserVirtualActor.h"
 
 @interface TodayVirtualActor : NSObject
 {
@@ -30,6 +31,7 @@
 
 - (void)prepare;
 
+- (void)updateWord;
 - (void)updateWordWithWordId:(NSNumber*)word_id;
 
 @end

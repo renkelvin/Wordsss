@@ -14,12 +14,21 @@
 
 #import "TodayVirtualActor.h"
 #import "UserVirtualActor.h"
+#import "Word_Dict.h"
+#import "McecDictWord.h"
 
 @interface TodayViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
 {
     //
     TodayVirtualActor* _todayVirtualActor;
     UserVirtualActor* _userVirtualActor;
+    
+    //
+    UILabel* _wordLabelPre;
+    UILabel* _wordLabelCur;
+    UILabel* _wordLabelPos;
+    
+    UILabel* _briefMeaningLabel;
 }
 
 #pragma mark - property
@@ -28,6 +37,12 @@
 @property (nonatomic, retain) IBOutlet UIView* wordSliderTouchArea;
 @property (nonatomic, retain) IBOutlet UIView* wordSliderLeftTapArea;
 @property (nonatomic, retain) IBOutlet UIView* wordSliderRightTapArea;
+
+@property (nonatomic, retain) IBOutlet UILabel* wordLabelPre;
+@property (nonatomic, retain) IBOutlet UILabel* wordLabelCur;
+@property (nonatomic, retain) IBOutlet UILabel* wordLabelPos;
+
+@property (nonatomic, retain) IBOutlet UILabel* briefMeaningLabel;
 
 #pragma mark - IBAction
 
@@ -42,5 +57,7 @@
 - (void)wordSliderPanning:(UIPanGestureRecognizer*)recognizer;
 - (void)wordSliderLeftTap:(UITapGestureRecognizer*)recognizer;
 - (void)wordSliderRightTap:(UITapGestureRecognizer*)recognizer;
+
+- (void)update;
 
 @end

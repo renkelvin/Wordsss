@@ -26,7 +26,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     return self;
 }
 
-#pragma mark -
+#pragma mark - 
 
 + (UserVirtualActor*)userVirtualActor
 {
@@ -40,7 +40,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 #pragma mark -
 
-- (void)getUser
+- (void)updateUser
 {
     // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
@@ -54,7 +54,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     }
 }
 
-- (void)getWordRecordArray
+- (void)updateWordRecordArray
 {
     // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
@@ -100,29 +100,25 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     
 }
 
-- (void)getWordRecordCur
+- (void)updateWordRecordCur
 {
-    
+    int index = rand() % [_wordRecordArray count];
+    _wordRecordCur = [_wordRecordArray objectAtIndex:index];
 }
 
 - (void)prepare
 {
     // Get user
-    [self getUser];
+    [self updateUser];
     
     // Get wordRecordArray
-    [self getWordRecordArray];
+    [self updateWordRecordArray];
     
     // More wordRecordArray
     [self fillWordRecordArray];
     
     // Get WordRecordCur
-    [self getWordRecordCur];
-}
-
-- (void)updateWordRecordCur
-{
-    
+    [self updateWordRecordCur];
 }
 
 - (void)setWordRecordCurLevelInc

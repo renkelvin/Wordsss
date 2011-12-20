@@ -66,8 +66,8 @@
     <elements>
         <element name="Association" positionX="-1001" positionY="-684" width="128" height="105"/>
         <element name="DotaListWord" positionX="-767" positionY="-234" width="128" height="60"/>
-        <element name="McecDictWord" positionX="-774" positionY="-783" width="128" height="75"/>
         <element name="McecDictMeaning" positionX="-776" positionY="-882" width="128" height="105"/>
+        <element name="McecDictWord" positionX="-776" positionY="-759" width="128" height="75"/>
         <element name="MwcDictWord" positionX="-576" positionY="-783" width="128" height="60"/>
         <element name="Rootaffix" positionX="-999" positionY="-555" width="128" height="195"/>
         <element name="Sense" positionX="-999" positionY="-339" width="128" height="135"/>
