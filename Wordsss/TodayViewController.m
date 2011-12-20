@@ -93,7 +93,7 @@
     //
     McecDictWord* mcecDictWord = [_todayVirtualActor wordPos].word_dict.mcecDictWord;
     if (mcecDictWord) {
-        self.briefMeaningLabel.text = [[mcecDictWord id] stringValue];
+        self.briefMeaningLabel.text = ((McecDictMeaning*)[mcecDictWord.meaning anyObject]).meaning_cn;
     }
 }
 

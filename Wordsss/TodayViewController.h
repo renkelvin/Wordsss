@@ -16,6 +16,7 @@
 #import "UserVirtualActor.h"
 #import "Word_Dict.h"
 #import "McecDictWord.h"
+#import "McecDictMeaning.h"
 
 @interface TodayViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
 {

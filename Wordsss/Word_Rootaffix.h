@@ -1,5 +1,5 @@
 //
-//  Word_Dict.h
+//  Word_Rootaffix.h
 //  Wordsss
 //
 //  Created by Kelvin Ren on 12/21/11.
@@ -9,13 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class McecDictWord, MwcDictWord, Word;
+@class Rootaffix, Word;
 
-@interface Word_Dict : NSManagedObject
+@interface Word_Rootaffix : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
-@property (nonatomic, retain) McecDictWord *mcecDictWord;
-@property (nonatomic, retain) MwcDictWord *mwcDictWord;
 @property (nonatomic, retain) Word *word;
+@property (nonatomic, retain) Rootaffix *rootaffix;
 
 @end

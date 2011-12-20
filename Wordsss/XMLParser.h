@@ -22,6 +22,8 @@
     NSXMLParser* _parser;
     
     WordsssDBDataManager* _dbm;
+    
+    char _ERIndicator;
 }
 
 + (XMLParser*)xmlParser;
