@@ -4,17 +4,17 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Wordsss/UserVirtualActor.m"
-         timestampString = "345652954.921686"
+         filePath = "Wordsss/XMLParser.m"
+         timestampString = "346101387.116372"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
-         landmarkName = "-fillWordRecordArray"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
+         landmarkName = "-generateObject"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -22,13 +22,41 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Wordsss/UserVirtualActor.m"
-         timestampString = "345653201.56305"
+         filePath = "Wordsss/XMLParser.m"
+         timestampString = "346101387.116372"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
-         landmarkName = "-fillWordRecordArray"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
+         landmarkName = "-generateObject"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Wordsss/XMLParser.m"
+         timestampString = "346101387.116372"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
+         landmarkName = "-go"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Wordsss/XMLParser.m"
+         timestampString = "346101387.116372"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "708"
+         endingLineNumber = "708"
+         landmarkName = "-parser:parseErrorOccurred:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

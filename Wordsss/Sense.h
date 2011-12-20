@@ -33,4 +33,6 @@
 - (void)addWord_sense:(NSSet *)values;
 - (void)removeWord_sense:(NSSet *)values;
 
++ (Sense *)senseWithId:(NSNumber *)senseId inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

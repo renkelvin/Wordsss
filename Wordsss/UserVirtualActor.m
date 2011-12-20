@@ -85,10 +85,10 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"NOT (id in %@)", word_id_array]];
     NSArray* new_word_array = [NSMutableArray arrayWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
-
+    
     // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
-
+    
     // Create new wordRecord
     for (Word* w in new_word_array) {
         WordRecord* wr = [udm createWordRecord:w forUser:_user];
@@ -102,8 +102,11 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 - (void)updateWordRecordCur
 {
-    int index = rand() % [_wordRecordArray count];
-    _wordRecordCur = [_wordRecordArray objectAtIndex:index];
+    if ([_wordRecordArray count] != 0)
+    {
+        int index = rand() % [_wordRecordArray count];
+        _wordRecordCur = [_wordRecordArray objectAtIndex:index];
+    }
 }
 
 - (void)prepare

@@ -14,6 +14,8 @@
 @interface Word_Sense : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * meaning_cn;
+@property (nonatomic, retain) NSNumber * type;
 @property (nonatomic, retain) Word *word;
 @property (nonatomic, retain) Sense *sense;
 

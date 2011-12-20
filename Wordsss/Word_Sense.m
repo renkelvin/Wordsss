@@ -14,6 +14,8 @@
 @implementation Word_Sense
 
 @dynamic id;
+@dynamic meaning_cn;
+@dynamic type;
 @dynamic word;
 @dynamic sense;
 

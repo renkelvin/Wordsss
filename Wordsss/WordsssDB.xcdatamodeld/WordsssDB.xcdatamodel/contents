@@ -75,6 +75,8 @@
     </entity>
     <entity name="Word_Sense" representedClassName="Word_Sense" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="sense" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sense" inverseName="word_sense" inverseEntity="Sense" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_sense" inverseEntity="Word" syncable="YES"/>
     </entity>
@@ -91,6 +93,6 @@
         <element name="Word_List" positionX="-587" positionY="-369" width="128" height="90"/>
         <element name="Word_Association" positionX="-1019" positionY="-648" width="128" height="90"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
-        <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="90"/>
+        <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
     </elements>
 </model>

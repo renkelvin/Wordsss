@@ -18,4 +18,6 @@
 @property (nonatomic, retain) NSNumber * type;
 @property (nonatomic, retain) McecDictWord *mcecDictWord;
 
++ (McecDictMeaning *)meaningWithId:(NSNumber *)meaningId inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

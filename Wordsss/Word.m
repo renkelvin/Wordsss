@@ -24,7 +24,7 @@
 @dynamic word_dict;
 @dynamic word_list;
 
-+ (Word *)wordWithID:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context
++ (Word *)wordWithId:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
