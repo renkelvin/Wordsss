@@ -124,12 +124,12 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 - (void)setWordRecordCurLevelInc
 {
-    
+    [_wordRecordCur levelInc];
 }
 
 - (void)setWordRecordCurLevelDec
 {
-    
+    [_wordRecordCur levelDec];
 }
 
 @end

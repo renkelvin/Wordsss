@@ -159,6 +159,8 @@
 		FE873707143DDC7E002FDDE8 /* translation_to_wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8736E3143DDC7E002FDDE8 /* translation_to_wordlist@2x.png */; };
 		FE87370F143DDFB8002FDDE8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE87370E143DDFB8002FDDE8 /* icon@2x.png */; };
 		FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */; };
+		FE8818F814A2027200B5FE98 /* Wordsss.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE8818F614A2027200B5FE98 /* Wordsss.sqlite */; };
+		FE8818F914A2027200B5FE98 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */; };
 		FEA569B81494A0C80071C0DB /* Wordsss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEA569B61494A0C80071C0DB /* Wordsss.xcdatamodeld */; };
 		FEABC54C143C8A2E005AB8C1 /* WordBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */; };
 		FEABC54F143C8A41005AB8C1 /* WordMemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E143C8A41005AB8C1 /* WordMemsViewController.m */; };
@@ -391,6 +393,8 @@
 		FE87370E143DDFB8002FDDE8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		FE873711143DECCF002FDDE8 /* WordRelationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRelationsViewController.h; sourceTree = "<group>"; };
 		FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRelationsViewController.m; sourceTree = "<group>"; };
+		FE8818F614A2027200B5FE98 /* Wordsss.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Wordsss.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/Wordsss.sqlite"; sourceTree = "<group>"; };
+		FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FEA569B71494A0C80071C0DB /* Wordsss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wordsss.xcdatamodel; sourceTree = "<group>"; };
 		FEABC54A143C8A2E005AB8C1 /* WordBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordBooksViewController.h; sourceTree = "<group>"; };
 		FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordBooksViewController.m; sourceTree = "<group>"; };
@@ -595,6 +599,24 @@
 				FEABC551143C8A53005AB8C1 /* WordListsViewController.m */,
 			);
 			name = Legacy;
+			sourceTree = "<group>";
+		};
+		FE8818FB14A2027900B5FE98 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				FE1627981499E0E7003E6DBF /* WordsssDB.xml */,
+				FE1627961499C8E8003E6DBF /* WordsssDBTest.xml */,
+			);
+			name = XML;
+			sourceTree = "<group>";
+		};
+		FE8818FC14A2029000B5FE98 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				FE8818F614A2027200B5FE98 /* Wordsss.sqlite */,
+				FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */,
+			);
+			name = SQLite;
 			sourceTree = "<group>";
 		};
 		FEA70AC214387D0E0025313C /* VirtualActor */ = {
@@ -875,8 +897,8 @@
 		FEF4DE9E148E2BED00E88653 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				FE1627981499E0E7003E6DBF /* WordsssDB.xml */,
-				FE1627961499C8E8003E6DBF /* WordsssDBTest.xml */,
+				FE8818FB14A2027900B5FE98 /* XML */,
+				FE8818FC14A2029000B5FE98 /* SQLite */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -1139,6 +1161,8 @@
 				FE2B069D14401C3900E1D159 /* icon.png in Resources */,
 				FE1627971499C8E8003E6DBF /* WordsssDBTest.xml in Resources */,
 				FE1627991499E0E7003E6DBF /* WordsssDB.xml in Resources */,
+				FE8818F814A2027200B5FE98 /* Wordsss.sqlite in Resources */,
+				FE8818F914A2027200B5FE98 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

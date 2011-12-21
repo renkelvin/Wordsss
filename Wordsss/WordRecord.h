@@ -25,4 +25,7 @@
 
 + (WordRecord*)insertWordRecord:(Word*)word user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context;
 
+- (void)levelInc;
+- (void)levelDec;
+
 @end
