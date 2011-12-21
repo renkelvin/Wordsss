@@ -100,15 +100,19 @@
 // 
 - (void)incOperation
 {
-    // Set wordRecord
+    NSLog(@"1");
+    // Set wordRecord level
     [_userVirtualActor setWordRecordCurLevelInc];
     
+    NSLog(@"2");
     // Update UserVirtualActor WordRecord
     [_userVirtualActor updateWordRecordCur];
     
+    NSLog(@"3");
     // Update TodayVirtualActor Word
     [_todayVirtualActor updateWord];
     
+    NSLog(@"4");
     // Update view
     [self update];
 }
@@ -116,7 +120,7 @@
 // 
 - (void)decOperation
 {
-    // Set wordRecord
+    // Set wordRecord level
     [_userVirtualActor setWordRecordCurLevelDec];
     
     // Update UserVirtualActor WordRecord

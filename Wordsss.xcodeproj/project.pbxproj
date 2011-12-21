@@ -48,7 +48,6 @@
 		FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E8360143B2FAC004A2C56 /* WordViewController.m */; };
 		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
-		FE398C1714963A6C00D9408C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1614963A6C00D9408C /* User.m */; };
 		FE398C1A14963A6C00D9408C /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1914963A6C00D9408C /* Status.m */; };
 		FE398C1D14963A6C00D9408C /* WordRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1C14963A6C00D9408C /* WordRecord.m */; };
 		FE398C2014963A6C00D9408C /* Defult.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1F14963A6C00D9408C /* Defult.m */; };
@@ -161,6 +160,9 @@
 		FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */; };
 		FE8818F814A2027200B5FE98 /* Wordsss.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE8818F614A2027200B5FE98 /* Wordsss.sqlite */; };
 		FE8818F914A2027200B5FE98 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */; };
+		FE8818FF14A24E1800B5FE98 /* HisRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8818FE14A24E1800B5FE98 /* HisRecord.m */; };
+		FE88190214A24E1900B5FE98 /* HisData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190114A24E1900B5FE98 /* HisData.m */; };
+		FE88190514A24E1A00B5FE98 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190414A24E1900B5FE98 /* User.m */; };
 		FEA569B81494A0C80071C0DB /* Wordsss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEA569B61494A0C80071C0DB /* Wordsss.xcdatamodeld */; };
 		FEABC54C143C8A2E005AB8C1 /* WordBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */; };
 		FEABC54F143C8A41005AB8C1 /* WordMemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E143C8A41005AB8C1 /* WordMemsViewController.m */; };
@@ -271,8 +273,6 @@
 		FE398C1014963A6C00D9408C /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		FE398C1214963A6C00D9408C /* MemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemData.h; sourceTree = "<group>"; };
 		FE398C1314963A6C00D9408C /* MemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemData.m; sourceTree = "<group>"; };
-		FE398C1514963A6C00D9408C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FE398C1614963A6C00D9408C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FE398C1814963A6C00D9408C /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		FE398C1914963A6C00D9408C /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		FE398C1B14963A6C00D9408C /* WordRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRecord.h; sourceTree = "<group>"; };
@@ -395,6 +395,12 @@
 		FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRelationsViewController.m; sourceTree = "<group>"; };
 		FE8818F614A2027200B5FE98 /* Wordsss.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Wordsss.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/Wordsss.sqlite"; sourceTree = "<group>"; };
 		FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
+		FE8818FD14A24E1800B5FE98 /* HisRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisRecord.h; sourceTree = "<group>"; };
+		FE8818FE14A24E1800B5FE98 /* HisRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisRecord.m; sourceTree = "<group>"; };
+		FE88190014A24E1800B5FE98 /* HisData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisData.h; sourceTree = "<group>"; };
+		FE88190114A24E1900B5FE98 /* HisData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisData.m; sourceTree = "<group>"; };
+		FE88190314A24E1900B5FE98 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FE88190414A24E1900B5FE98 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FEA569B71494A0C80071C0DB /* Wordsss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wordsss.xcdatamodel; sourceTree = "<group>"; };
 		FEABC54A143C8A2E005AB8C1 /* WordBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordBooksViewController.h; sourceTree = "<group>"; };
 		FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordBooksViewController.m; sourceTree = "<group>"; };
@@ -945,12 +951,16 @@
 				FE398C1C14963A6C00D9408C /* WordRecord.m */,
 				FE398C1814963A6C00D9408C /* Status.h */,
 				FE398C1914963A6C00D9408C /* Status.m */,
-				FE398C1514963A6C00D9408C /* User.h */,
-				FE398C1614963A6C00D9408C /* User.m */,
 				FE398C1214963A6C00D9408C /* MemData.h */,
 				FE398C1314963A6C00D9408C /* MemData.m */,
 				FE398C0F14963A6C00D9408C /* Profile.h */,
 				FE398C1014963A6C00D9408C /* Profile.m */,
+				FE88190314A24E1900B5FE98 /* User.h */,
+				FE88190414A24E1900B5FE98 /* User.m */,
+				FE88190014A24E1800B5FE98 /* HisData.h */,
+				FE88190114A24E1900B5FE98 /* HisData.m */,
+				FE8818FD14A24E1800B5FE98 /* HisRecord.h */,
+				FE8818FE14A24E1800B5FE98 /* HisRecord.m */,
 			);
 			name = Wordsss;
 			sourceTree = "<group>";
@@ -1224,7 +1234,6 @@
 				FEF732EB1495956600919A7C /* UserVirtualActor.m in Sources */,
 				FE398C1114963A6C00D9408C /* Profile.m in Sources */,
 				FE398C1414963A6C00D9408C /* MemData.m in Sources */,
-				FE398C1714963A6C00D9408C /* User.m in Sources */,
 				FE398C1A14963A6C00D9408C /* Status.m in Sources */,
 				FE398C1D14963A6C00D9408C /* WordRecord.m in Sources */,
 				FE398C2014963A6C00D9408C /* Defult.m in Sources */,
@@ -1241,6 +1250,9 @@
 				FE10A09814A0F003005F1EC9 /* Word_List.m in Sources */,
 				FE10A09B14A0F003005F1EC9 /* MwcDictWord.m in Sources */,
 				FE10A0A214A0F7D3005F1EC9 /* Word_Sense.m in Sources */,
+				FE8818FF14A24E1800B5FE98 /* HisRecord.m in Sources */,
+				FE88190214A24E1900B5FE98 /* HisData.m in Sources */,
+				FE88190514A24E1A00B5FE98 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
