@@ -158,8 +158,6 @@
 		FE873707143DDC7E002FDDE8 /* translation_to_wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8736E3143DDC7E002FDDE8 /* translation_to_wordlist@2x.png */; };
 		FE87370F143DDFB8002FDDE8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE87370E143DDFB8002FDDE8 /* icon@2x.png */; };
 		FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */; };
-		FE8818F814A2027200B5FE98 /* Wordsss.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE8818F614A2027200B5FE98 /* Wordsss.sqlite */; };
-		FE8818F914A2027200B5FE98 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */; };
 		FE8818FF14A24E1800B5FE98 /* HisRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8818FE14A24E1800B5FE98 /* HisRecord.m */; };
 		FE88190214A24E1900B5FE98 /* HisData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190114A24E1900B5FE98 /* HisData.m */; };
 		FE88190514A24E1A00B5FE98 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190414A24E1900B5FE98 /* User.m */; };
@@ -393,8 +391,6 @@
 		FE87370E143DDFB8002FDDE8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		FE873711143DECCF002FDDE8 /* WordRelationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRelationsViewController.h; sourceTree = "<group>"; };
 		FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRelationsViewController.m; sourceTree = "<group>"; };
-		FE8818F614A2027200B5FE98 /* Wordsss.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Wordsss.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/Wordsss.sqlite"; sourceTree = "<group>"; };
-		FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE8818FD14A24E1800B5FE98 /* HisRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisRecord.h; sourceTree = "<group>"; };
 		FE8818FE14A24E1800B5FE98 /* HisRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisRecord.m; sourceTree = "<group>"; };
 		FE88190014A24E1800B5FE98 /* HisData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisData.h; sourceTree = "<group>"; };
@@ -619,8 +615,6 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FE8818F614A2027200B5FE98 /* Wordsss.sqlite */,
-				FE8818F714A2027200B5FE98 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1171,8 +1165,6 @@
 				FE2B069D14401C3900E1D159 /* icon.png in Resources */,
 				FE1627971499C8E8003E6DBF /* WordsssDBTest.xml in Resources */,
 				FE1627991499E0E7003E6DBF /* WordsssDB.xml in Resources */,
-				FE8818F814A2027200B5FE98 /* Wordsss.sqlite in Resources */,
-				FE8818F914A2027200B5FE98 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

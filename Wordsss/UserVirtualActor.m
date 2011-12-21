@@ -90,6 +90,8 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     // Set new wordRecord
     for (Word* w in new_word_array) {
         WordRecord* wr = [udm createWordRecord:w forUser:_user];
+        wr.day = [NSNumber numberWithInt:[_user.status.day intValue]];
+        wr.level = [NSNumber numberWithInt:1];
         [_wordRecordArray addObject:wr];
         
         if ([_wordRecordArray count] >= [_user.defult.todayWordLimit intValue])

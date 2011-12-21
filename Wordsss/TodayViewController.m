@@ -86,7 +86,7 @@
     if ([_todayVirtualActor wordPre])
         self.wordLabelPre.text = [_todayVirtualActor wordPre].name;
     if ([_todayVirtualActor wordCur])
-        self.wordLabelCur.text = [_todayVirtualActor wordCur].name;
+        self.wordLabelCur.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordCur].name, [[_userVirtualActor wordRecordCur].level stringValue], [[_userVirtualActor wordRecordCur].day stringValue]];
     if ([_todayVirtualActor wordPos])
         self.wordLabelPos.text = [_todayVirtualActor wordPos].name;
     

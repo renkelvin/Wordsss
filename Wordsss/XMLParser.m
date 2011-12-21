@@ -69,11 +69,11 @@ static NSString* attrString = nil;
     // CreateXMLParser
     [self createXmlParser];
     
-//    // Init ERIndicator
-//    _ERIndicator = 'E';
-//    
-//    // Start parse Entity
-//    [_parser parse];
+    // Init ERIndicator
+    _ERIndicator = 'E';
+    
+    // Start parse Entity
+    [_parser parse];
     
     // Change ERIndicator
     _ERIndicator = 'R';

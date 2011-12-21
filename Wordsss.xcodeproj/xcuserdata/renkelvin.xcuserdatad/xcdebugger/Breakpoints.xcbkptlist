@@ -93,26 +93,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Wordsss/UserVirtualActor.m"
-         timestampString = "346176966.468001"
+         timestampString = "346193651.853886"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "59"
-         endingLineNumber = "59"
-         landmarkName = "-updateWordRecordArray"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Wordsss/UserVirtualActor.m"
-         timestampString = "346176974.305439"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
-         landmarkName = "-fillWordRecordArray"
+         startingLineNumber = "105"
+         endingLineNumber = "105"
+         landmarkName = "-updateWordRecordCur"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
