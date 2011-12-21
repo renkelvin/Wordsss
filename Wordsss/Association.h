@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * description_cn;
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSNumber * type;
-@property (nonatomic, retain) NSSet *word_association;
+@property (nonatomic, retain) NSMutableSet *word_association;
 @end
 
 @interface Association (CoreDataGeneratedAccessors)

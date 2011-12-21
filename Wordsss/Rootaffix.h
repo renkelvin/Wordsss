@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSString * origin;
 @property (nonatomic, retain) NSString * phrase;
 @property (nonatomic, retain) NSNumber * type;
-@property (nonatomic, retain) NSSet *word_rootaffix;
+@property (nonatomic, retain) NSMutableSet *word_rootaffix;
 @end
 
 @interface Rootaffix (CoreDataGeneratedAccessors)

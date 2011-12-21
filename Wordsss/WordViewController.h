@@ -21,6 +21,8 @@
     Word* _word;
 }
 
+@property (nonatomic, retain) Word* word;
+
 @property (nonatomic, retain) IBOutlet UIButton* wordBooksSectionButton;
 @property (nonatomic, retain) IBOutlet UIButton* wordRelationsSectionButton;
 @property (nonatomic, retain) IBOutlet UIButton* wordMemsSectionButton;

@@ -78,7 +78,6 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
         [word_id_array addObject:wr.word_id];
     }
     
-    // Get WordsssDBDataManager
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     
     // Get new word
@@ -86,10 +85,9 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"NOT (id in %@)", word_id_array]];
     NSArray* new_word_array = [NSMutableArray arrayWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
-    // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
     
-    // Create new wordRecord
+    // Set new wordRecord
     for (Word* w in new_word_array) {
         WordRecord* wr = [udm createWordRecord:w forUser:_user];
         [_wordRecordArray addObject:wr];

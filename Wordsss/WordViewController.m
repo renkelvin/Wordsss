@@ -10,6 +10,8 @@
 
 @implementation WordViewController
 
+@synthesize word = _word;
+
 @synthesize sectionViewControllers;
 @synthesize currentSectionView;
 
@@ -40,9 +42,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // set delegate
-    //    [[self navigationController] setDelegate:self];
     
     //
     [self selectSectionWithIndex:0];
@@ -134,7 +133,8 @@
 {
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
-    [[navigationController titleLabel] setText:@"apple"];
+    if (_word)
+        [[navigationController titleLabel] setText:_word.name];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
     [[navigationController rightButton] setImage:[UIImage imageNamed:@"info_gre.png"] forState:UIControlStateNormal];

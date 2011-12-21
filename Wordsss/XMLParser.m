@@ -69,11 +69,11 @@ static NSString* attrString = nil;
     // CreateXMLParser
     [self createXmlParser];
     
-    // Init ERIndicator
-    _ERIndicator = 'E';
-    
-    // Start parse Entity
-    [_parser parse];
+//    // Init ERIndicator
+//    _ERIndicator = 'E';
+//    
+//    // Start parse Entity
+//    [_parser parse];
     
     // Change ERIndicator
     _ERIndicator = 'R';
@@ -404,7 +404,7 @@ static NSString* attrString = nil;
                                         
                                         break;
                                     }
-                                    case TTABLEDATA_MCECDICTMEANING:   // MCECDictWord
+                                    case TTABLEDATA_MCECDICTMEANING:   // MCECDictMeaning
                                     {
                                         if (!attrDict)
                                             break;
@@ -459,18 +459,18 @@ static NSString* attrString = nil;
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
-                                            //                                            if (word) {
-                                            //                                                ((Word_Dict*)object).word = word;
-                                            //                                                word.word_dict = ((Word_Dict*)object);
-                                            //                                            }
+                                            if (word) {
+                                                ((Word_Dict*)object).word = word;
+                                                word.word_dict = ((Word_Dict*)object);
+                                            }
                                         }
                                         else if ([attrString compare:@"mcec_dict_word_id"] == NSOrderedSame) {
                                             McecDictWord* word = [McecDictWord wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
-                                            //                                            if (word) {
-                                            //                                                ((Word_Dict*)object).mcecDictWord = word;
-                                            //                                                word.word_dict = ((Word_Dict*)object);
-                                            //                                            }
+                                            if (word) {
+                                                ((Word_Dict*)object).mcecDictWord = word;
+                                                word.word_dict = ((Word_Dict*)object);
+                                            }
                                         }
                                         else if ([attrString compare:@"mwc_dict_word_id"] == NSOrderedSame) {
                                             
@@ -505,22 +505,18 @@ static NSString* attrString = nil;
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
-                                            //                                            if (word) {
-                                            //                                                ((Word_Sense*)object).word = word;
-                                            //                                                NSMutableSet* tempSet = [NSMutableSet setWithSet:word.word_sense];
-                                            //                                                [tempSet addObject:((Word_Sense*)object)];
-                                            //                                                word.word_sense = tempSet;
-                                            //                                            }
+                                            if (word) {
+                                                ((Word_Sense*)object).word = word;
+                                                [word.word_sense addObject:((Word_Sense*)object)];
+                                            }
                                         }
                                         else if ([attrString compare:@"sense_id"] == NSOrderedSame) {
                                             Sense* sense = [Sense senseWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
-                                            //                                            if (sense) {
-                                            //                                                ((Word_Sense*)object).sense = sense;
-                                            //                                                NSMutableSet* tempSet = [NSMutableSet setWithSet:sense.word_sense];
-                                            //                                                [tempSet addObject:((Word_Sense*)object)];
-                                            //                                                sense.word_sense = tempSet;
-                                            //                                            }
+                                            if (sense) {
+                                                ((Word_Sense*)object).sense = sense;
+                                                [sense.word_sense addObject:((Word_Sense*)object)];
+                                            }
                                         }
                                         
                                         attrString = nil;
@@ -538,7 +534,7 @@ static NSString* attrString = nil;
                                         if (!attrString)
                                             break;
                                         
-                                        if ([attrString compare:@"id"] == NSOrderedSame) {
+                                        if ([attrString compare:@"mcec_dict_meaning_id"] == NSOrderedSame) {
                                             object = [McecDictMeaning meaningWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                         }
                                         else if ([attrString compare:@"mcec_dict_word_id"] == NSOrderedSame) {
@@ -546,12 +542,10 @@ static NSString* attrString = nil;
                                             
                                             McecDictWord* word = [McecDictWord wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
-                                            //                                            if (word) {
-                                            //                                                ((McecDictMeaning*)object).mcecDictWord = word;
-                                            //                                                NSMutableSet* tempSet = [NSMutableSet setWithSet:word.meaning];
-                                            //                                                [tempSet addObject:((McecDictMeaning*)object)];
-                                            //                                                word.meaning = tempSet;
-                                            //                                            }
+                                            if (word && object) {
+                                                ((McecDictMeaning*)object).mcecDictWord = word;
+                                                [word.meaning addObject:((McecDictMeaning*)object)];
+                                            }
                                         }
                                         
                                         attrString = nil;

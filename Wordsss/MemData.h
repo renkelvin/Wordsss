@@ -14,7 +14,7 @@
 @interface MemData : NSManagedObject
 
 @property (nonatomic, retain) User *user;
-@property (nonatomic, retain) NSSet *wordRecord;
+@property (nonatomic, retain) NSMutableSet *wordRecord;
 @end
 
 @interface MemData (CoreDataGeneratedAccessors)

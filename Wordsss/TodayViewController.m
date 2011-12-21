@@ -220,9 +220,9 @@
 
 #pragma - IBAction
 
-- (IBAction)wordDetailSelected:(id)sender
-{
+- (IBAction)wordDetailSelected:(id)sender{
     WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] initSectionViewControllers];
+    [wordViewController setWord:_todayVirtualActor.wordPos];
     
     [[self navigationController] pushViewController:wordViewController animated:YES];
 }

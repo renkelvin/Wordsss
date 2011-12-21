@@ -22,12 +22,15 @@
 {
     WordRecord* wordRecord = nil;
     
-    //
+    // Create
     wordRecord = [NSEntityDescription insertNewObjectForEntityForName:@"WordRecord" inManagedObjectContext:context];
     
-    //
+    // Configure wordRecord
     wordRecord.word_id = word.id;
     wordRecord.memdata = user.memdata;
+    
+    // Configure user
+    [user.memdata.wordRecord addObject:wordRecord];
     
     //
     return wordRecord;

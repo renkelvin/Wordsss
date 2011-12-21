@@ -15,9 +15,9 @@
 
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *word_association;
-@property (nonatomic, retain) NSSet *word_rootaffix;
-@property (nonatomic, retain) NSSet *word_sense;
+@property (nonatomic, retain) NSMutableSet *word_association;
+@property (nonatomic, retain) NSMutableSet *word_rootaffix;
+@property (nonatomic, retain) NSMutableSet *word_sense;
 @property (nonatomic, retain) Word_Dict *word_dict;
 @property (nonatomic, retain) Word_List *word_list;
 @end
