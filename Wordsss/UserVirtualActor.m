@@ -12,7 +12,9 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 @implementation UserVirtualActor
 
+@synthesize wordRecordPre = _wordRecordPre;
 @synthesize wordRecordCur = _wordRecordCur;
+@synthesize wordRecordPos = _wordRecordPos;
 
 #pragma mark -
 
@@ -54,59 +56,61 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     }
 }
 
-- (void)updateWordRecordArray
+- (void)updateWordRecordSet
 {
     // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
     
-    // Get wordRecordArray
+    // Get wordRecordSet
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
-    _wordRecordArray = [NSMutableArray arrayWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    _wordRecordSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    
+    // Init enumerator
+    _wordRecordSetEnumerator = [_wordRecordSet objectEnumerator];
 }
 
-- (void)fillWordRecordArray
+- (void)fillWordRecordSet
 {
     // Enough
-    if ([_wordRecordArray count] >= [_user.defult.todayWordLimit intValue])
+    if ([_wordRecordSet count] >= [_user.defult.todayWordLimit intValue])
         return;
     
     // NOT Enough
     // Get existing wordRecord
-    NSMutableArray* word_id_array = [NSMutableArray array];
-    for (WordRecord* wr in _wordRecordArray) {
-        [word_id_array addObject:wr.word_id];
+    NSMutableSet* word_id_set = [NSMutableArray array];
+    for (WordRecord* wr in _wordRecordSet) {
+        [word_id_set addObject:wr.word_id];
     }
     
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     
     // Get new word
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"NOT (id in %@)", word_id_array]];
-    NSArray* new_word_array = [NSMutableArray arrayWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"NOT (id in %@)", word_id_set]];
+    NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
     UserDataManager* udm = [UserDataManager userdataManager];
     
     // Set new wordRecord
-    for (Word* w in new_word_array) {
+    for (Word* w in new_word_set) {
         WordRecord* wr = [udm createWordRecord:w forUser:_user];
         wr.day = [NSNumber numberWithInt:[_user.status.day intValue]];
         wr.level = [NSNumber numberWithInt:1];
-        [_wordRecordArray addObject:wr];
+        [_wordRecordSet addObject:wr];
         
-        if ([_wordRecordArray count] >= [_user.defult.todayWordLimit intValue])
+        if ([_wordRecordSet count] >= [_user.defult.todayWordLimit intValue])
             return;
     }
     
 }
 
-- (void)updateWordRecordCur
+- (void)updateWordRecord
 {
-    if ([_wordRecordArray count] != 0)
-    {
-        int index = rand() % [_wordRecordArray count];
-        _wordRecordCur = [_wordRecordArray objectAtIndex:index];
-    }
+    _wordRecordPos = _wordRecordCur;
+    _wordRecordCur = _wordRecordPre;
+    
+    _wordRecordPre = (WordRecord*)([_wordRecordSetEnumerator nextObject]);
 }
 
 - (void)prepare
@@ -115,13 +119,36 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     [self updateUser];
     
     // Get wordRecordArray
-    [self updateWordRecordArray];
+    [self updateWordRecordSet];
     
     // More wordRecordArray
-    [self fillWordRecordArray];
+    [self fillWordRecordSet];
     
-    // Get WordRecordCur
-    [self updateWordRecordCur];
+    // Get WordRecord
+    [self updateWordRecord];
+}
+
+- (void)nextDay
+{
+    // Day++
+    [_user nextDay];
+    
+    // WordRecord++
+    for (WordRecord* wr in _wordRecordSet) {
+        [wr nextDay];
+    }
+ 
+    // Get user
+    [self updateUser];
+    
+    // Get wordRecordArray
+    [self updateWordRecordSet];
+    
+    // More wordRecordArray
+    [self fillWordRecordSet];
+    
+    // Get WordRecord
+    [self updateWordRecord];
 }
 
 - (void)setWordRecordCurLevelInc

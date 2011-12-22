@@ -9,6 +9,7 @@
 #import "WordRecord.h"
 #import "MemData.h"
 
+static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 
 @implementation WordRecord
 
@@ -36,50 +37,62 @@
     return wordRecord;
 }
 
+// Inc level 0,1-10,-1
 - (void)levelInc
 {
-    switch ([self.level intValue]) {
-        case 0:     // Error! nothing happened
-            break;
-        case 1:
-            self.level = [NSNumber numberWithInt:2];
-            break;
-        case 2:
-            self.level = [NSNumber numberWithInt:3];
-            break;
-        case 3:
-            self.level = [NSNumber numberWithInt:5];
-            break;
-        case 5:
-            self.level = [NSNumber numberWithInt:7];
-            break;
-        case 7:
-            self.level = [NSNumber numberWithInt:15];
-            break;
-        case 15:
-            self.level = [NSNumber numberWithInt:30];
-            break;
-        case 30:
-            self.level = [NSNumber numberWithInt:60];
-            break;
-        case 60:
-            self.level = [NSNumber numberWithInt:90];
-            break;
-        case 90:
-            self.level = [NSNumber numberWithInt:-1];
-            break;
-        case -1:    // Error! still -1
-            self.level = [NSNumber numberWithInt:-1];
-            break;
-        default:    // Error!
-            self.level = [NSNumber numberWithInt:90];
-            break;
+    // NEW set to 1
+    if ([self.level intValue] == 0) {
+        self.level = [NSNumber numberWithInt:1];
+    }
+    // GOT set to -1
+    else if ([self.level intValue] == 10) {
+        self.level = [NSNumber numberWithInt:-1];
+    }
+    // ERR set to -1
+    else if ([self.level intValue] == -1) {
+        self.level = [NSNumber numberWithInt:-1];
+    }
+    // NORMAL ++
+    else {
+        self.level = [NSNumber numberWithInt:([self.level intValue] + 1)];
     }
 }
 
+// Dec level 0,1-10,-1
 - (void)levelDec
 {
+    // ERR set to 1
+    if ([self.level intValue] == 0) {
+        self.level = [NSNumber numberWithInt:1];
+    }
+    // 1 set to 1
+    else if ([self.level intValue] == 1) {
+        self.level = [NSNumber numberWithInt:1];
+    }
+    // ERR set to -1
+    else if ([self.level intValue] == -1) {
+        self.level = [NSNumber numberWithInt:-1];
+    }
+    // NORMAL --
+    else {
+        self.level = [NSNumber numberWithInt:([self.level intValue] - 1)];
+    }
+}
 
+- (int)delta
+{
+    if (1 <= [self.level intValue] && [self.level intValue] <= 10) {
+        return deltaArray[[self.level intValue] - 1];
+    }
+    else {
+        self.level = [NSNumber numberWithInt:10];
+        return deltaArray[[self.level intValue] - 1];
+    }
+}
+
+- (void)nextDay
+{
+    self.day = [NSNumber numberWithInt:([self.day intValue] + [self delta])];
 }
 
 @end

@@ -34,4 +34,9 @@
     return user;
 }
 
+- (void)nextDay
+{
+    self.status.day = [NSNumber numberWithInt:([self.status.day intValue] + 1)];
+}
+
 @end

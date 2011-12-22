@@ -21,15 +21,22 @@
 {
     //
     User* _user;
-    NSMutableArray* _wordRecordArray;
+
+    NSMutableSet* _wordRecordSet;
+    
+    NSEnumerator* _wordRecordSetEnumerator;
     
     //
+    WordRecord* _wordRecordPre;
     WordRecord* _wordRecordCur;
+    WordRecord* _wordRecordPos;
 }
 
 #pragma mark - Property
 
+@property (nonatomic, retain) WordRecord* wordRecordPre;
 @property (nonatomic, retain) WordRecord* wordRecordCur;
+@property (nonatomic, retain) WordRecord* wordRecordPos;
 
 #pragma mark - Class method
 
@@ -39,7 +46,10 @@
 
 - (void)prepare;
 
-- (void)updateWordRecordCur;
+- (void)nextDay;
+
+- (void)updateWordRecord;
+
 - (void)setWordRecordCurLevelInc;
 - (void)setWordRecordCurLevelDec;
 

@@ -24,4 +24,6 @@
 
 + (User*)insertUser:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
 
+- (void)nextDay;
+
 @end

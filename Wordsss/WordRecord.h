@@ -28,4 +28,6 @@
 - (void)levelInc;
 - (void)levelDec;
 
+- (void)nextDay;
+
 @end

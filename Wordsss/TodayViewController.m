@@ -106,7 +106,7 @@
     
     NSLog(@"2");
     // Update UserVirtualActor WordRecord
-    [_userVirtualActor updateWordRecordCur];
+    [_userVirtualActor updateWordRecord];
     
     NSLog(@"3");
     // Update TodayVirtualActor Word
@@ -124,7 +124,7 @@
     [_userVirtualActor setWordRecordCurLevelDec];
     
     // Update UserVirtualActor WordRecord
-    [_userVirtualActor updateWordRecordCur];
+    [_userVirtualActor updateWordRecord];
     
     // Update TodayVirtualActor Word
     [_todayVirtualActor updateWord];

@@ -47,11 +47,11 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     _wordPos = _wordCur;
     _wordCur = _wordPre;
     
+    //
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     
-    //
-    NSNumber* word_id = [uva wordRecordCur].word_id;
+    NSNumber* word_id = [uva wordRecordPre].word_id;
     _wordPre = [wdm getWordWithId:word_id];
 }
 
@@ -73,10 +73,11 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     //
     [self updateWord];
-    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
-    [uva updateWordRecordCur];
-    [self updateWord];
     
+    // 
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    [uva updateWordRecord];
+    [self updateWord];
 }
 
 @end
