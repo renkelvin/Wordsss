@@ -7,6 +7,7 @@
 //
 
 #import "HisRecord.h"
+#import "HisData.h"
 
 
 @implementation HisRecord
@@ -15,5 +16,26 @@
 @dynamic day;
 @dynamic level;
 @dynamic hisData;
+
++ (HisRecord*)insertHisRecord:(WordRecord*)wordRecord user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    HisRecord* hisRecord = nil;
+    
+    // Create
+    hisRecord = [NSEntityDescription insertNewObjectForEntityForName:@"HisRecord" inManagedObjectContext:context];
+    
+    // Configure hisRecord
+    hisRecord.word_id = wordRecord.word_id;
+    hisRecord.day = wordRecord.day;
+    hisRecord.level = wordRecord.level;
+    
+    hisRecord.hisData = user.hisdata;
+    
+    // Configure user
+    [user.hisdata.hisRecord addObject:hisRecord];
+    
+    //
+    return hisRecord;
+}
 
 @end

@@ -13,7 +13,7 @@
 
 @interface HisData : NSManagedObject
 
-@property (nonatomic, retain) NSSet *hisRecord;
+@property (nonatomic, retain) NSMutableSet *hisRecord;
 @property (nonatomic, retain) User *user;
 @end
 

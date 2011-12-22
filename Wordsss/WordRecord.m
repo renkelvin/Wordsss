@@ -2,7 +2,7 @@
 //  WordRecord.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/12/11.
+//  Created by Kelvin Ren on 12/22/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
@@ -14,9 +14,10 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 @implementation WordRecord
 
 @dynamic day;
-@dynamic id;
 @dynamic level;
 @dynamic word_id;
+@dynamic dlc;
+@dynamic dls;
 @dynamic memdata;
 
 + (WordRecord*)insertWordRecord:(Word*)word user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context
@@ -28,6 +29,9 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     
     // Configure wordRecord
     wordRecord.word_id = word.id;
+    wordRecord.level = [NSNumber numberWithInt:1];
+    wordRecord.day = [NSNumber numberWithInt:[user.status.day intValue]];
+
     wordRecord.memdata = user.memdata;
     
     // Configure user
@@ -77,6 +81,30 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     else {
         self.level = [NSNumber numberWithInt:([self.level intValue] - 1)];
     }
+}
+
+- (void)dlInc
+{
+    self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
+    self.dls = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
+}
+
+- (void)dlDec
+{
+    self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
+    self.dls = [NSNumber numberWithInt:([self.dlc intValue] - 1)];
+}
+
+- (void)prepare
+{
+    self.dlc = [NSNumber numberWithInt:0];
+    self.dls = [NSNumber numberWithInt:0];
+}
+
+- (void)cleardl
+{
+    self.dlc = [NSNumber numberWithInt:0];
+    self.dls = [NSNumber numberWithInt:0];
 }
 
 - (int)delta

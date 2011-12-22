@@ -38,19 +38,20 @@
     </entity>
     <entity name="WordRecord" representedClassName="WordRecord" syncable="YES">
         <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dlc" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dls" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="word_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="memdata" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MemData" inverseName="wordRecord" inverseEntity="MemData" syncable="YES"/>
     </entity>
     <elements>
         <element name="Defult" positionX="-4536" positionY="-1488" width="128" height="75"/>
-        <element name="HisData" positionX="-4142" positionY="-1521" width="128" height="75"/>
-        <element name="HisRecord" positionX="-3915" positionY="-1521" width="128" height="105"/>
+        <element name="HisData" positionX="-4142" positionY="-1521" width="128" height="60"/>
+        <element name="HisRecord" positionX="-3915" positionY="-1521" width="128" height="90"/>
         <element name="MemData" positionX="-4142" positionY="-1656" width="128" height="75"/>
         <element name="Profile" positionX="-4536" positionY="-1794" width="128" height="75"/>
         <element name="Status" positionX="-4536" positionY="-1650" width="128" height="75"/>
         <element name="User" positionX="-4331" positionY="-1692" width="128" height="135"/>
-        <element name="WordRecord" positionX="-3917" positionY="-1674" width="128" height="120"/>
+        <element name="WordRecord" positionX="-3917" positionY="-1674" width="128" height="135"/>
     </elements>
 </model>

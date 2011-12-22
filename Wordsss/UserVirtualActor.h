@@ -15,6 +15,7 @@
 #import "User.h"
 #import "Defult.h"
 #import "Status.h"
+#import "HisRecord.h"
 #import "WordRecord.h"
 
 @interface UserVirtualActor : NSObject

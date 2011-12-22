@@ -12,6 +12,7 @@
 #import "User.h"
 #import "Defult.h"
 #import "Status.h"
+#import "HisRecord.h"
 #import "WordRecord.h"
 
 @interface UserDataManager : NSObject {
@@ -31,5 +32,6 @@
 - (User*)createUser:(NSDictionary*)dict;
 
 - (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
+- (HisRecord*)createHisRecord:(WordRecord*)wordRecord forUser:(User*)user;
 
 @end

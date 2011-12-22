@@ -49,7 +49,6 @@
 		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE398C1A14963A6C00D9408C /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1914963A6C00D9408C /* Status.m */; };
-		FE398C1D14963A6C00D9408C /* WordRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1C14963A6C00D9408C /* WordRecord.m */; };
 		FE398C2014963A6C00D9408C /* Defult.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1F14963A6C00D9408C /* Defult.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
@@ -158,9 +157,10 @@
 		FE873707143DDC7E002FDDE8 /* translation_to_wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8736E3143DDC7E002FDDE8 /* translation_to_wordlist@2x.png */; };
 		FE87370F143DDFB8002FDDE8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE87370E143DDFB8002FDDE8 /* icon@2x.png */; };
 		FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */; };
-		FE8818FF14A24E1800B5FE98 /* HisRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8818FE14A24E1800B5FE98 /* HisRecord.m */; };
 		FE88190214A24E1900B5FE98 /* HisData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190114A24E1900B5FE98 /* HisData.m */; };
 		FE88190514A24E1A00B5FE98 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190414A24E1900B5FE98 /* User.m */; };
+		FE88190814A37BAD00B5FE98 /* HisRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190714A37BAC00B5FE98 /* HisRecord.m */; };
+		FE88190B14A37C4700B5FE98 /* WordRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88190A14A37C4200B5FE98 /* WordRecord.m */; };
 		FEA569B81494A0C80071C0DB /* Wordsss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEA569B61494A0C80071C0DB /* Wordsss.xcdatamodeld */; };
 		FEABC54C143C8A2E005AB8C1 /* WordBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */; };
 		FEABC54F143C8A41005AB8C1 /* WordMemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E143C8A41005AB8C1 /* WordMemsViewController.m */; };
@@ -273,8 +273,6 @@
 		FE398C1314963A6C00D9408C /* MemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemData.m; sourceTree = "<group>"; };
 		FE398C1814963A6C00D9408C /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		FE398C1914963A6C00D9408C /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
-		FE398C1B14963A6C00D9408C /* WordRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRecord.h; sourceTree = "<group>"; };
-		FE398C1C14963A6C00D9408C /* WordRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRecord.m; sourceTree = "<group>"; };
 		FE398C1E14963A6C00D9408C /* Defult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defult.h; sourceTree = "<group>"; };
 		FE398C1F14963A6C00D9408C /* Defult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defult.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
@@ -391,12 +389,14 @@
 		FE87370E143DDFB8002FDDE8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		FE873711143DECCF002FDDE8 /* WordRelationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRelationsViewController.h; sourceTree = "<group>"; };
 		FE873712143DECCF002FDDE8 /* WordRelationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRelationsViewController.m; sourceTree = "<group>"; };
-		FE8818FD14A24E1800B5FE98 /* HisRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisRecord.h; sourceTree = "<group>"; };
-		FE8818FE14A24E1800B5FE98 /* HisRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisRecord.m; sourceTree = "<group>"; };
 		FE88190014A24E1800B5FE98 /* HisData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisData.h; sourceTree = "<group>"; };
 		FE88190114A24E1900B5FE98 /* HisData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisData.m; sourceTree = "<group>"; };
 		FE88190314A24E1900B5FE98 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FE88190414A24E1900B5FE98 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FE88190614A37BAA00B5FE98 /* HisRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisRecord.h; sourceTree = "<group>"; };
+		FE88190714A37BAC00B5FE98 /* HisRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisRecord.m; sourceTree = "<group>"; };
+		FE88190914A37C3F00B5FE98 /* WordRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordRecord.h; sourceTree = "<group>"; };
+		FE88190A14A37C4200B5FE98 /* WordRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordRecord.m; sourceTree = "<group>"; };
 		FEA569B71494A0C80071C0DB /* Wordsss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wordsss.xcdatamodel; sourceTree = "<group>"; };
 		FEABC54A143C8A2E005AB8C1 /* WordBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordBooksViewController.h; sourceTree = "<group>"; };
 		FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordBooksViewController.m; sourceTree = "<group>"; };
@@ -941,8 +941,6 @@
 			children = (
 				FE398C1E14963A6C00D9408C /* Defult.h */,
 				FE398C1F14963A6C00D9408C /* Defult.m */,
-				FE398C1B14963A6C00D9408C /* WordRecord.h */,
-				FE398C1C14963A6C00D9408C /* WordRecord.m */,
 				FE398C1814963A6C00D9408C /* Status.h */,
 				FE398C1914963A6C00D9408C /* Status.m */,
 				FE398C1214963A6C00D9408C /* MemData.h */,
@@ -953,8 +951,10 @@
 				FE88190414A24E1900B5FE98 /* User.m */,
 				FE88190014A24E1800B5FE98 /* HisData.h */,
 				FE88190114A24E1900B5FE98 /* HisData.m */,
-				FE8818FD14A24E1800B5FE98 /* HisRecord.h */,
-				FE8818FE14A24E1800B5FE98 /* HisRecord.m */,
+				FE88190614A37BAA00B5FE98 /* HisRecord.h */,
+				FE88190714A37BAC00B5FE98 /* HisRecord.m */,
+				FE88190914A37C3F00B5FE98 /* WordRecord.h */,
+				FE88190A14A37C4200B5FE98 /* WordRecord.m */,
 			);
 			name = Wordsss;
 			sourceTree = "<group>";
@@ -1227,7 +1227,6 @@
 				FE398C1114963A6C00D9408C /* Profile.m in Sources */,
 				FE398C1414963A6C00D9408C /* MemData.m in Sources */,
 				FE398C1A14963A6C00D9408C /* Status.m in Sources */,
-				FE398C1D14963A6C00D9408C /* WordRecord.m in Sources */,
 				FE398C2014963A6C00D9408C /* Defult.m in Sources */,
 				FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */,
 				FE10A07D14A0F002005F1EC9 /* Association.m in Sources */,
@@ -1242,9 +1241,10 @@
 				FE10A09814A0F003005F1EC9 /* Word_List.m in Sources */,
 				FE10A09B14A0F003005F1EC9 /* MwcDictWord.m in Sources */,
 				FE10A0A214A0F7D3005F1EC9 /* Word_Sense.m in Sources */,
-				FE8818FF14A24E1800B5FE98 /* HisRecord.m in Sources */,
 				FE88190214A24E1900B5FE98 /* HisData.m in Sources */,
 				FE88190514A24E1A00B5FE98 /* User.m in Sources */,
+				FE88190814A37BAD00B5FE98 /* HisRecord.m in Sources */,
+				FE88190B14A37C4700B5FE98 /* WordRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

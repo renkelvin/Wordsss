@@ -68,6 +68,15 @@ static UserDataManager* sharedUserDataManager;
     return wordRecord;
 }
 
+- (HisRecord*)createHisRecord:(WordRecord*)wordRecord forUser:(User*)user
+{
+    HisRecord* hisRecord = nil;
+    
+    hisRecord = [HisRecord insertHisRecord:wordRecord user:user inManagedObjectContext:__managedObjectContext];
+    
+    return hisRecord;
+}
+
 #pragma mark - Core Data
 
 - (void)saveContext

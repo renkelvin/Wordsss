@@ -101,8 +101,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     // Set new wordRecord
     for (Word* w in new_word_set) {
         WordRecord* wr = [udm createWordRecord:w forUser:_user];
-        wr.day = [NSNumber numberWithInt:[_user.status.day intValue]];
-        wr.level = [NSNumber numberWithInt:1];
+        [wr prepare];
         [_wordRecordSet addObject:wr];
         
         if ([_wordRecordSet count] >= [_user.defult.todayWordLimit intValue])
@@ -138,8 +137,10 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     // Day++
     [_user nextDay];
     
-    // WordRecord++
+    // WordRecord++ & store HisRecord
+    UserDataManager* udm = [UserDataManager userdataManager];
     for (WordRecord* wr in _wordRecordSet) {
+        [udm createHisRecord:wr forUser:_user];
         [wr nextDay];
     }
     
@@ -159,11 +160,13 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 - (void)setWordRecordCurLevelInc
 {
     [_wordRecordCur levelInc];
+    [_wordRecordCur dlInc];
 }
 
 - (void)setWordRecordCurLevelDec
 {
     [_wordRecordCur levelDec];
+    [_wordRecordCur dlDec];
 }
 
 @end
