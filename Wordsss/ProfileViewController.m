@@ -44,7 +44,11 @@
 {
     [super viewDidLoad];
     
+    //
     [self initNavigationBar];
+
+    //
+    _userVirtualActor = [UserVirtualActor userVirtualActor];
 }
 
 - (void)viewDidUnload
@@ -68,7 +72,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 // Header
@@ -81,8 +85,9 @@
     // TitleLabel
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(12, 0, 320, 28);
+    label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
-    label.text = @"-----";
+    label.text = @"Info";
     [headerView addSubview:label];
     
     return headerView;
@@ -91,7 +96,7 @@
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 2;
 }
 
 // Cell
@@ -99,9 +104,41 @@
 {
     static NSString* WordBooksTableViewCellIndentifier = @"ProfileTableViewCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:WordBooksTableViewCellIndentifier];
+    
     if (cell == nil) {
         // need [ autorealse]
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
+    }
+    
+    // Configure cell
+    switch (indexPath.section) {
+        case 0:
+        {
+            switch (indexPath.row) {
+                case 0:
+                {
+                    UILabel *label = [[UILabel alloc] init];
+                    label.frame = CGRectMake(12, 0, 320, 42);
+                    label.textColor = [UIColor whiteColor];
+                    label.backgroundColor = [UIColor clearColor];
+                    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+                    label.text = [NSString stringWithFormat:@"Day: %@", uva.user.status.day];
+                    [cell addSubview:label];
+                    
+                    break;
+                }   
+                default:
+                { 
+                    break;
+                }
+            }
+            
+            break;
+        }    
+        default:
+        {
+            break;
+        } 
     }
     
     return cell;

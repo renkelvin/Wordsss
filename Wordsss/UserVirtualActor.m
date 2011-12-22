@@ -12,6 +12,8 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 @implementation UserVirtualActor
 
+@synthesize user = _user;
+
 @synthesize wordRecordPre = _wordRecordPre;
 @synthesize wordRecordCur = _wordRecordCur;
 @synthesize wordRecordPos = _wordRecordPos;
@@ -68,6 +70,8 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     
     // Init enumerator
     _wordRecordSetEnumerator = [_wordRecordSet objectEnumerator];
+    
+    NSLog(@"updataWordRecordSet: %d", [_wordRecordSet count]);
 }
 
 - (void)fillWordRecordSet
@@ -90,6 +94,8 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"NOT (id in %@)", word_id_set]];
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
+    NSLog(@"fillWordRecordSet: %d", [new_word_set count]);
+    
     UserDataManager* udm = [UserDataManager userdataManager];
     
     // Set new wordRecord
@@ -102,7 +108,6 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
         if ([_wordRecordSet count] >= [_user.defult.todayWordLimit intValue])
             return;
     }
-    
 }
 
 - (void)updateWordRecord
@@ -137,7 +142,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     for (WordRecord* wr in _wordRecordSet) {
         [wr nextDay];
     }
- 
+    
     // Get user
     [self updateUser];
     

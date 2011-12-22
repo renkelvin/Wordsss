@@ -61,4 +61,6 @@
 
 - (void)update;
 
+- (void)nextDay;
+
 @end

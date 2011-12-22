@@ -34,6 +34,8 @@
 
 #pragma mark - Property
 
+@property (nonatomic, retain) User* user;
+
 @property (nonatomic, retain) WordRecord* wordRecordPre;
 @property (nonatomic, retain) WordRecord* wordRecordCur;
 @property (nonatomic, retain) WordRecord* wordRecordPos;

@@ -51,12 +51,6 @@
     UIPanGestureRecognizer* recognizerCenter = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderPanning:)];
     [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
     
-    //    UITapGestureRecognizer* recognizerLeft = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderLeftTap:)];
-    //    [[self wordSliderLeftTapArea] addGestureRecognizer:recognizerLeft];
-    //    
-    //    UITapGestureRecognizer* recognizerRight = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderRightTap:)];
-    //    [[self wordSliderRightTapArea] addGestureRecognizer:recognizerRight];
-    
     //
     _userVirtualActor = [UserVirtualActor userVirtualActor];
     _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
@@ -95,6 +89,11 @@
     if (mcecDictWord) {
         self.briefMeaningLabel.text = ((McecDictMeaning*)[mcecDictWord.meaning anyObject]).meaning_cn;
     }
+}
+
+- (void)nextDay
+{
+    [_userVirtualActor nextDay];
 }
 
 // 
@@ -304,7 +303,7 @@
 
 - (void)navigationBarRightButtonDown
 {
-    
+    [self nextDay];
 }
 
 #pragma - UINavigationControllerDelegate

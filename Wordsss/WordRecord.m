@@ -84,6 +84,12 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     if (1 <= [self.level intValue] && [self.level intValue] <= 10) {
         return deltaArray[[self.level intValue] - 1];
     }
+    else if ([self.level intValue] == 0) {
+        return 1;
+    }
+    else if ([self.level intValue] == -1) {
+        return -1 - [self.day intValue];
+    }
     else {
         self.level = [NSNumber numberWithInt:10];
         return deltaArray[[self.level intValue] - 1];
