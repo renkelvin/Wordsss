@@ -19,4 +19,18 @@
 @dynamic word;
 @dynamic sense;
 
++ (Word_Sense *)entityWithId:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    [request setEntity:[NSEntityDescription entityForName:@"Word_Sense" inManagedObjectContext:context]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", entityId]];
+    
+    Word_Sense *result = [[context executeFetchRequest:request error:NULL] lastObject];
+    
+    // [request release];
+    
+    return result;
+}
+
 @end

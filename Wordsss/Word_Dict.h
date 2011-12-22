@@ -18,4 +18,6 @@
 @property (nonatomic, retain) MwcDictWord *mwcDictWord;
 @property (nonatomic, retain) Word *word;
 
++ (Word_Dict *)entityWithId:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

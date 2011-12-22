@@ -19,4 +19,18 @@
 @dynamic mwcDictWord;
 @dynamic word;
 
++ (Word_Dict *)entityWithId:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    [request setEntity:[NSEntityDescription entityForName:@"Word_Dict" inManagedObjectContext:context]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"id == %@", entityId]];
+    
+    Word_Dict *result = [[context executeFetchRequest:request error:NULL] lastObject];
+    
+    // [request release];
+    
+    return result;
+}
+
 @end

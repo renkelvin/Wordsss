@@ -19,4 +19,6 @@
 @property (nonatomic, retain) Word *word;
 @property (nonatomic, retain) Sense *sense;
 
++ (Word_Sense *)entityWithId:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {   
-    if (YES) {
+    if (NO) {
         [self.window makeKeyAndVisible];
     }
     else {
