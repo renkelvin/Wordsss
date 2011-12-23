@@ -16,4 +16,13 @@
 @dynamic user;
 @dynamic wordRecord;
 
++ (MemData*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    MemData* entity = nil;
+    
+    entity = [NSEntityDescription insertNewObjectForEntityForName:@"MemData" inManagedObjectContext:context];
+    
+    return entity;
+}
+
 @end

@@ -19,6 +19,8 @@
 
 @interface MemData (CoreDataGeneratedAccessors)
 
++ (MemData*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
+
 - (void)addWordRecordObject:(WordRecord *)value;
 - (void)removeWordRecordObject:(WordRecord *)value;
 - (void)addWordRecord:(NSSet *)values;

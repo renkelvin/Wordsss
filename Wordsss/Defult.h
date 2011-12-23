@@ -16,6 +16,6 @@
 @property (nonatomic, retain) NSNumber * todayWordLimit;
 @property (nonatomic, retain) User *user;
 
-+ (Defult*)insertDefult:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
++ (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

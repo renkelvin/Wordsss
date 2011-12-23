@@ -16,4 +16,13 @@
 @dynamic hisRecord;
 @dynamic user;
 
++ (HisData*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    HisData* entity = nil;
+    
+    entity = [NSEntityDescription insertNewObjectForEntityForName:@"HisData" inManagedObjectContext:context];
+    
+    return entity;
+}
+
 @end

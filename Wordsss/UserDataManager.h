@@ -12,6 +12,8 @@
 #import "User.h"
 #import "Defult.h"
 #import "Status.h"
+#import "Profile.h"
+#import "HisData.h"
 #import "HisRecord.h"
 #import "WordRecord.h"
 

@@ -13,7 +13,7 @@
 @dynamic todayWordLimit;
 @dynamic user;
 
-+ (Defult*)insertDefult:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
++ (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
 {
     Defult* defult = nil;
     

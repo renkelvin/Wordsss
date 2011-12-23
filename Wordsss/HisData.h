@@ -19,6 +19,8 @@
 
 @interface HisData (CoreDataGeneratedAccessors)
 
++ (HisData*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
+
 - (void)addHisRecordObject:(HisRecord *)value;
 - (void)removeHisRecordObject:(HisRecord *)value;
 - (void)addHisRecord:(NSSet *)values;

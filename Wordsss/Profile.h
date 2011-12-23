@@ -16,4 +16,6 @@
 @property (nonatomic, retain) NSString * nickname;
 @property (nonatomic, retain) User *user;
 
++ (Profile*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
+
 @end

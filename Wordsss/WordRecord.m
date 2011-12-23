@@ -86,13 +86,13 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 - (void)dlInc
 {
     self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
-    self.dls = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
+    self.dls = [NSNumber numberWithInt:([self.dls intValue] + 1)];
 }
 
 - (void)dlDec
 {
     self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
-    self.dls = [NSNumber numberWithInt:([self.dlc intValue] - 1)];
+    self.dls = [NSNumber numberWithInt:([self.dls intValue] - 1)];
 }
 
 - (void)prepare

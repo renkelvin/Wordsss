@@ -45,9 +45,14 @@ static UserDataManager* sharedUserDataManager;
     user = [User insertUser:nil inManagedObjectContext:__managedObjectContext];
     
     //
-    user.status = [Status insertStatus:nil inManagedObjectContext:__managedObjectContext];
-    user.defult = [Defult insertDefult:nil inManagedObjectContext:__managedObjectContext];
+    user.status = [Status insertEntity:nil inManagedObjectContext:__managedObjectContext];
+    user.defult = [Defult insertEntity:nil inManagedObjectContext:__managedObjectContext];
+    user.profile = [Profile insertEntity:nil inManagedObjectContext:__managedObjectContext];
     
+    user.memdata = [MemData insertEntity:nil inManagedObjectContext:__managedObjectContext];
+    user.hisdata = [HisData insertEntity:nil inManagedObjectContext:__managedObjectContext];    
+    
+    //
     user.status.day = [NSNumber numberWithInt:1];
     user.defult.todayWordLimit = [NSNumber numberWithInt:100];
     

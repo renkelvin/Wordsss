@@ -15,4 +15,13 @@
 @dynamic nickname;
 @dynamic user;
 
++ (Profile*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    Profile* entity = nil;
+    
+    entity = [NSEntityDescription insertNewObjectForEntityForName:@"Profile" inManagedObjectContext:context];
+    
+    return entity;
+}
+
 @end

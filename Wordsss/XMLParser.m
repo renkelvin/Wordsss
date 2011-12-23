@@ -21,6 +21,20 @@ NSManagedObject* object = nil;
 static NSDictionary* attrDict = nil;
 static NSString* attrString = nil;
 
+NSMutableDictionary* wordDICT = nil;    //TTABLEDATA_WORD
+NSMutableDictionary* wordAssociationDICT = nil;    //TTABLEDATA_WORDASSOCIATION
+NSMutableDictionary* associationDICT = nil;    //TTABLEDATA_ASSOCIATION
+NSMutableDictionary* wordRootaffixDICT = nil;    //TTABLEDATA_WORDROOTAFFIX
+NSMutableDictionary* rootaffixDICT = nil;    //TTABLEDATA_ROOTAFFIX  
+NSMutableDictionary* wordSenseDICT = nil;    //TTABLEDATA_WORDSENSE
+NSMutableDictionary* senseDICT = nil;    //TTABLEDATA_SENSE
+NSMutableDictionary* senseFamilyDICT = nil;    //TTABLEDATA_SENSEFAMILY
+NSMutableDictionary* wordDictDICT = nil;    //TTABLEDATA_WORDDICT
+NSMutableDictionary* mcecDictWordDICT = nil;    //TTABLEDATA_MCECDICTWORD
+NSMutableDictionary* mcecDictMeaningDICT = nil;    //TTABLEDATA_MCECDICTMEANING
+NSMutableDictionary* mwcDictWordDICT = nil;    //TTABLEDATA_MWCDICTWORD
+NSMutableDictionary* mwcDictMeaningDICT = nil;    //TTABLEDATA_MWCDICTMEANING
+
 @implementation XMLParser
 
 #pragma mark -
@@ -51,7 +65,7 @@ static NSString* attrString = nil;
 
 - (void)createXmlParser
 {
-    NSString* pathRes = [[NSBundle mainBundle] pathForResource:@"WordsssDBTest" ofType:@"xml"];
+    NSString* pathRes = [[NSBundle mainBundle] pathForResource:@"WordsssDB" ofType:@"xml"];
     NSURL* pathUrl = [NSURL fileURLWithPath:pathRes];
     
     _parser = [[NSXMLParser alloc] initWithContentsOfURL:pathUrl];
@@ -61,28 +75,40 @@ static NSString* attrString = nil;
 
 #pragma mark -
 
+- (void)initDicts
+{
+    wordDICT = [NSMutableDictionary dictionary];
+}
+
 // generate WordsssDB.sqlite
 - (void)go
 {
     _dbm = [WordsssDBDataManager wordsssDBDataManager];
     
-    // CreateXMLParser
-    [self createXmlParser];
+    // Init Dicts
+    [self initDicts];
     
-    // Init ERIndicator
-    _ERIndicator = 'E';
+    if (YES) {
+        // CreateXMLParser
+        [self createXmlParser];
+        
+        // Init ERIndicator
+        _ERIndicator = 'E';
+        
+        // Start parse Entity
+        [_parser parse];
+    }
     
-    // Start parse Entity
-    [_parser parse];
-    
-    // CreateXMLParser
-    [self createXmlParser];
-    
-    // Change ERIndicator
-    _ERIndicator = 'R';
-    
-    // Start parse Relationship
-    [_parser parse];
+    if (NO) {
+        // CreateXMLParser
+        [self createXmlParser];
+        
+        // Change ERIndicator
+        _ERIndicator = 'R';
+        
+        // Start parse Relationship
+        [_parser parse];
+    }
     
     // Save context
     [_dbm saveContext];
@@ -276,6 +302,8 @@ static NSString* attrString = nil;
                                         if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             ((Word*)object).id = [NSNumber numberWithInt:[string intValue]];
                                             
+                                            [wordDICT setValue:object forKey:string];
+                                            
                                             NSLog(@"Word - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_name"] == NSOrderedSame) {
@@ -299,6 +327,8 @@ static NSString* attrString = nil;
                                         
                                         if ([attrString compare:@"association_id"] == NSOrderedSame) {
                                             ((Association*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [associationDICT setValue:object forKey:string];
                                             
                                             NSLog(@"Association - id: %@", string);
                                         }
@@ -326,6 +356,8 @@ static NSString* attrString = nil;
                                         
                                         if ([attrString compare:@"rootaffix_id"] == NSOrderedSame) {
                                             ((Rootaffix*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [rootaffixDICT setValue:object forKey:string];
                                             
                                             NSLog(@"Rootaffix - id: %@", string);
                                         }
@@ -372,6 +404,8 @@ static NSString* attrString = nil;
                                         if ([attrString compare:@"sense_id"] == NSOrderedSame) {
                                             ((Sense*)object).id = [NSNumber numberWithInt:[string intValue]];
                                             
+                                            [senseDICT setValue:object forKey:string];
+                                            
                                             NSLog(@"Sense - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
@@ -399,6 +433,8 @@ static NSString* attrString = nil;
                                         if ([attrString compare:@"mcec_dict_word_id"] == NSOrderedSame) {
                                             ((McecDictWord*)object).id = [NSNumber numberWithInt:[string intValue]];
                                             
+                                            [mcecDictWordDICT setValue:object forKey:string];
+                                            
                                             NSLog(@"McecDictWord - id: %@", string);
                                         }
                                         
@@ -419,6 +455,8 @@ static NSString* attrString = nil;
                                         
                                         if ([attrString compare:@"mcec_dict_meaning_id"] == NSOrderedSame) {
                                             ((McecDictMeaning*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [mcecDictMeaningDICT setValue:object forKey:string];
                                             
                                             NSLog(@"McecDictMeaning - id: %@", string);
                                         }
@@ -447,6 +485,8 @@ static NSString* attrString = nil;
                                         if ([attrString compare:@"word_dict_id"] == NSOrderedSame) {
                                             ((Word_Dict*)object).id = [NSNumber numberWithInt:[string intValue]];
                                             
+                                            [wordDictDICT setValue:object forKey:string];
+                                            
                                             NSLog(@"WordDict - id: %@", string);
                                         }
                                         
@@ -468,7 +508,9 @@ static NSString* attrString = nil;
                                         if ([attrString compare:@"word_sense_id"] == NSOrderedSame) {
                                             ((Word_Sense*)object).id = [NSNumber numberWithInt:[string intValue]];
                                             
-                                            NSLog(@"McecDictMeaning - id: %@", string);
+                                            [wordSenseDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"WordSense - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_type"] == NSOrderedSame) {
                                             ((Word_Sense*)object).type = [NSNumber numberWithInt:[string intValue]];
@@ -503,7 +545,8 @@ static NSString* attrString = nil;
                                             break;
                                         
                                         if ([attrString compare:@"word_dict_id"] == NSOrderedSame) {
-                                            object = [Word_Dict entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            // object = [Word_Dict entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            object = (Word_Dict *)[wordDictDICT objectForKey:string];
                                             
                                             NSLog(@"WordDict - id: %@", string);
                                         }
@@ -532,49 +575,49 @@ static NSString* attrString = nil;
                                         
                                         break;
                                     }
-/*                                    case TTABLEDATA_WORDSENSE:   // Word_Sense
-                                    {
-                                        if (!attrDict)
-                                            break;
-                                        
-                                        attrString = [attrDict objectForKey:@"name"];
-                                        
-                                        if (!attrString)
-                                            break;
-                                        
-                                        if ([attrString compare:@"word_sense_id"] == NSOrderedSame) {
-                                            object = [Word_Sense entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
-                                            
-                                            NSLog(@"WordSense - id: %@", string);
-                                        }
-                                        else if ([attrString compare:@"word_type"] == NSOrderedSame) {
-                                            ((Word_Sense*)object).type = [NSNumber numberWithInt:[string intValue]];
-                                        }
-                                        else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
-                                            ((Word_Sense*)object).meaning_cn = string;
-                                        }
-                                        else if ([attrString compare:@"word_id"] == NSOrderedSame) {
-                                            Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
-                                            
-                                            if (word) {
-                                                ((Word_Sense*)object).word = word;
-                                                [word.word_sense addObject:((Word_Sense*)object)];
-                                            }
-                                        }
-                                        else if ([attrString compare:@"sense_id"] == NSOrderedSame) {
-                                            Sense* sense = [Sense senseWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
-                                            
-                                            if (sense) {
-                                                ((Word_Sense*)object).sense = sense;
-                                                [sense.word_sense addObject:((Word_Sense*)object)];
-                                            }
-                                        }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
-                                        break;
-                                    } */
+                                        /*                                    case TTABLEDATA_WORDSENSE:   // Word_Sense
+                                         {
+                                         if (!attrDict)
+                                         break;
+                                         
+                                         attrString = [attrDict objectForKey:@"name"];
+                                         
+                                         if (!attrString)
+                                         break;
+                                         
+                                         if ([attrString compare:@"word_sense_id"] == NSOrderedSame) {
+                                         object = [Word_Sense entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                         
+                                         NSLog(@"WordSense - id: %@", string);
+                                         }
+                                         else if ([attrString compare:@"word_type"] == NSOrderedSame) {
+                                         ((Word_Sense*)object).type = [NSNumber numberWithInt:[string intValue]];
+                                         }
+                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
+                                         ((Word_Sense*)object).meaning_cn = string;
+                                         }
+                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
+                                         Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                         
+                                         if (word) {
+                                         ((Word_Sense*)object).word = word;
+                                         [word.word_sense addObject:((Word_Sense*)object)];
+                                         }
+                                         }
+                                         else if ([attrString compare:@"sense_id"] == NSOrderedSame) {
+                                         Sense* sense = [Sense senseWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                         
+                                         if (sense) {
+                                         ((Word_Sense*)object).sense = sense;
+                                         [sense.word_sense addObject:((Word_Sense*)object)];
+                                         }
+                                         }
+                                         
+                                         attrString = nil;
+                                         attrDict = nil;
+                                         
+                                         break;
+                                         } */
                                     case TTABLEDATA_MCECDICTMEANING:   // McecDictMeaning
                                     {
                                         if (!attrDict)
@@ -584,11 +627,13 @@ static NSString* attrString = nil;
                                         
                                         if (!attrString)
                                             break;
-                                                                                
+                                        
                                         if ([attrString compare:@"mcec_dict_meaning_id"] == NSOrderedSame) {
-                                            NSLog(@"McecDictMeaning - id: %@", string);
+                                            // object = [McecDictMeaning meaningWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
-                                            object = [McecDictMeaning meaningWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            object = (McecDictMeaning*)[mcecDictMeaningDICT objectForKey:string];
+                                            
+                                            NSLog(@"McecDictMeaning - id: %@", string);
                                         }
                                         else if ([attrString compare:@"mcec_dict_word_id"] == NSOrderedSame) {                                            
                                             McecDictWord* word = [McecDictWord wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];

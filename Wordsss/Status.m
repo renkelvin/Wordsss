@@ -15,7 +15,7 @@
 @dynamic day;
 @dynamic user;
 
-+ (Status*)insertStatus:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
++ (Status*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
 {
     Status* status = nil;
     
