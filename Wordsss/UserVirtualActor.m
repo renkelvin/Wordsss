@@ -81,19 +81,22 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     }
     
     NSSet* tempSet = nil;
-    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 1"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+0", [_user.status.day intValue]]];
+    tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    NSLog(@"Word record in day 0: %d", [tempSet count]);
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+1", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
     NSLog(@"Word record in day 1: %d", [tempSet count]);
-    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 2"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+2", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
     NSLog(@"Word record in day 2: %d", [tempSet count]);
-    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 3"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+3", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
     NSLog(@"Word record in day 3: %d", [tempSet count]);
-    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 4"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+4", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
     NSLog(@"Word record in day 4: %d", [tempSet count]);
-    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 5"]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+5", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
     NSLog(@"Word record in day 5: %d", [tempSet count]);
     
