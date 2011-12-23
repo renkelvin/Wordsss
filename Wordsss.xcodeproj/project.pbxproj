@@ -11,6 +11,7 @@
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
 		FE060C63143CD78A0026228C /* RkNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C60143CD78A0026228C /* RkNavigationController.m */; };
 		FE060C64143CD78A0026228C /* RKNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C61143CD78A0026228C /* RKNavigationController.xib */; };
+		FE10629914A4DBAC00D3A028 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10629814A4DBAC00D3A028 /* Status.m */; };
 		FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */; };
 		FE10A07D14A0F002005F1EC9 /* Association.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07C14A0F001005F1EC9 /* Association.m */; };
 		FE10A08014A0F002005F1EC9 /* DotaListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07F14A0F002005F1EC9 /* DotaListWord.m */; };
@@ -48,7 +49,6 @@
 		FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E8360143B2FAC004A2C56 /* WordViewController.m */; };
 		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
-		FE398C1A14963A6C00D9408C /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1914963A6C00D9408C /* Status.m */; };
 		FE398C2014963A6C00D9408C /* Defult.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1F14963A6C00D9408C /* Defult.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
@@ -218,6 +218,8 @@
 		FE060C60143CD78A0026228C /* RkNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RkNavigationController.m; sourceTree = "<group>"; };
 		FE060C61143CD78A0026228C /* RKNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKNavigationController.xib; sourceTree = "<group>"; };
 		FE060C62143CD78A0026228C /* RKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationController.h; sourceTree = "<group>"; };
+		FE10629714A4DBAC00D3A028 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		FE10629814A4DBAC00D3A028 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		FE10A07514A0F001005F1EC9 /* McecDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McecDictMeaning.h; sourceTree = "<group>"; };
 		FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = McecDictMeaning.m; sourceTree = "<group>"; };
 		FE10A07B14A0F001005F1EC9 /* Association.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Association.h; sourceTree = "<group>"; };
@@ -271,8 +273,6 @@
 		FE398C1014963A6C00D9408C /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		FE398C1214963A6C00D9408C /* MemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemData.h; sourceTree = "<group>"; };
 		FE398C1314963A6C00D9408C /* MemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemData.m; sourceTree = "<group>"; };
-		FE398C1814963A6C00D9408C /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
-		FE398C1914963A6C00D9408C /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		FE398C1E14963A6C00D9408C /* Defult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defult.h; sourceTree = "<group>"; };
 		FE398C1F14963A6C00D9408C /* Defult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defult.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
@@ -941,10 +941,10 @@
 			children = (
 				FE398C1E14963A6C00D9408C /* Defult.h */,
 				FE398C1F14963A6C00D9408C /* Defult.m */,
-				FE398C1814963A6C00D9408C /* Status.h */,
-				FE398C1914963A6C00D9408C /* Status.m */,
 				FE398C1214963A6C00D9408C /* MemData.h */,
 				FE398C1314963A6C00D9408C /* MemData.m */,
+				FE10629714A4DBAC00D3A028 /* Status.h */,
+				FE10629814A4DBAC00D3A028 /* Status.m */,
 				FE398C0F14963A6C00D9408C /* Profile.h */,
 				FE398C1014963A6C00D9408C /* Profile.m */,
 				FE88190314A24E1900B5FE98 /* User.h */,
@@ -1226,7 +1226,6 @@
 				FEF732EB1495956600919A7C /* UserVirtualActor.m in Sources */,
 				FE398C1114963A6C00D9408C /* Profile.m in Sources */,
 				FE398C1414963A6C00D9408C /* MemData.m in Sources */,
-				FE398C1A14963A6C00D9408C /* Status.m in Sources */,
 				FE398C2014963A6C00D9408C /* Defult.m in Sources */,
 				FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */,
 				FE10A07D14A0F002005F1EC9 /* Association.m in Sources */,
@@ -1245,6 +1244,7 @@
 				FE88190514A24E1A00B5FE98 /* User.m in Sources */,
 				FE88190814A37BAD00B5FE98 /* HisRecord.m in Sources */,
 				FE88190B14A37C4700B5FE98 /* WordRecord.m in Sources */,
+				FE10629914A4DBAC00D3A028 /* Status.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

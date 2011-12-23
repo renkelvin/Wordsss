@@ -36,7 +36,14 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 {
     if (!sharedUserVirtualActor) {
         sharedUserVirtualActor = [[UserVirtualActor alloc] init];
+        
+        //
         [sharedUserVirtualActor prepare];
+        
+        //
+        if ([sharedUserVirtualActor checkNextDayByTime]) {
+            [sharedUserVirtualActor nextDay];
+        }
     }
     
     return sharedUserVirtualActor;
@@ -73,8 +80,22 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
         [wr cleardl];
     }
     
-    // Init enumerator
-    _wordRecordSetEnumerator = [_wordRecordSet objectEnumerator];
+    NSSet* tempSet = nil;
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 1"]];
+    tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    NSLog(@"Word record in day 1: %d", [tempSet count]);
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 2"]];
+    tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    NSLog(@"Word record in day 2: %d", [tempSet count]);
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 3"]];
+    tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    NSLog(@"Word record in day 3: %d", [tempSet count]);
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 4"]];
+    tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    NSLog(@"Word record in day 4: %d", [tempSet count]);
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 5"]];
+    tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    NSLog(@"Word record in day 5: %d", [tempSet count]);
     
     NSLog(@"updataWordRecordSet: %d", [_wordRecordSet count]);
 }
@@ -82,7 +103,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 - (void)fillWordRecordSet
 {
     // Enough
-    if ([_wordRecordSet count] >= [_user.defult.todayWordLimit intValue])
+    if ([_wordRecordSet count] >= kTodayWordLimit)
         return;
     
     // NOT Enough
@@ -109,7 +130,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
         [wr prepare];
         [_wordRecordSet addObject:wr];
         
-        if ([_wordRecordSet count] >= [_user.defult.todayWordLimit intValue])
+        if ([_wordRecordSet count] >= kTodayWordLimit)
             return;
     }
 }
@@ -131,26 +152,46 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     // Get wordRecordArray
     [self updateWordRecordSet];
     
-    // More wordRecordArray
-    [self fillWordRecordSet];
+    // First time launch
+    if ([_wordRecordSet count] == 0) {
+        // More wordRecordArray
+        [self fillWordRecordSet];
+    }
     
     // Get WordRecord
-    [self updateWordRecord];
+    [sharedUserVirtualActor updateWordRecord];
 }
 
 //
-- (BOOL)checkNextDay:(NSDate*)lastViewed
+- (BOOL)checkNextDayByTime
 {
+    if (!_user.status.lastViewed) {
+        return NO;
+    }
     
+    float deltaTime = [[NSDate date] timeIntervalSinceDate:_user.status.lastViewed];
+    
+    if (deltaTime > 3 * 60 * 60) {
+        return YES;
+    }
     
     return NO;
 }
 
 //
-- (BOOL)checkNextDay
+- (BOOL)checkNextDayByCount
 {
+    float targetMemDegree = [_user.defult.targetMemDegree floatValue];
+    
     //
-    if ([_wordRecordSet count] <= 10) {
+    int wordRemainLimit = kTodayWordLimit * ((1-targetMemDegree)*kWordRemainFactorMin + targetMemDegree*kWordRemainFactorMax);
+    if ([_wordRecordSet count] <= wordRemainLimit) {
+        return YES;
+    }
+    
+    //
+    int totalViewLimit = kTodayWordLimit * ((1-targetMemDegree)*kTotalViewFactorMin + targetMemDegree*kTotalViewFactorMax);
+    if ([_user.status.dlc intValue] >= totalViewLimit) {
         return YES;
     }
     
@@ -161,14 +202,15 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 {
     // Day++
     [_user nextDay];
+    [_user cleardl];
     
     // WordRecord++ & store HisRecord
     UserDataManager* udm = [UserDataManager userdataManager];
     for (WordRecord* wr in _wordRecordSet) {
         [udm createHisRecord:wr forUser:_user];
         
-        [wr cleardl];
         [wr nextDay];
+        [wr cleardl];
     }
     
     // Get user
@@ -202,15 +244,15 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     
     [udm createHisRecord:wordRecord forUser:_user];
     
-    [wordRecord cleardl];
     [wordRecord nextDay];
+    [wordRecord cleardl];
     
     [_wordRecordSet removeObject:wordRecord];
 }
 
 - (void)setWordRecordCurLevelInc
 {
-    [_wordRecordCur levelInc];
+    [_user dlInc];
     [_wordRecordCur dlInc];
     
     //
@@ -218,31 +260,24 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
         [self dropWordRecord:_wordRecordCur];
     }
     
-    NSLog(@"WordRecordCur: day-%d level-%d dls-%d dlc-%d", [_wordRecordCur.day intValue], [_wordRecordCur.level intValue], [_wordRecordCur.dls intValue], [_wordRecordCur.dlc intValue]);
-    NSLog(@"Set count: %d", [_wordRecordSet count]);
-    
     //
-    if ([self checkNextDay]) {
+    if ([self checkNextDayByCount]) {
         [self nextDay];
     }
 }
 
 - (void)setWordRecordCurLevelDec
 {
-    [_wordRecordCur levelDec];
+    [_user dlInc];
     [_wordRecordCur dlDec];
     
     //
     if ([self checkWordRecord:_wordRecordCur]) {
-        [_wordRecordCur cleardl];
         [self dropWordRecord:_wordRecordCur];
     }
     
-    NSLog(@"WordRecordCur: day-%d level-%d dls-%d dlc-%d", [_wordRecordCur.day intValue], [_wordRecordCur.level intValue], [_wordRecordCur.dls intValue], [_wordRecordCur.dlc intValue]);
-    NSLog(@"Set count: %d", [_wordRecordSet count]);
-
     //
-    if ([self checkNextDay]) {
+    if ([self checkNextDayByCount]) {
         [self nextDay];
     }
 }

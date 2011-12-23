@@ -31,7 +31,7 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     wordRecord.word_id = word.id;
     wordRecord.level = [NSNumber numberWithInt:1];
     wordRecord.day = [NSNumber numberWithInt:[user.status.day intValue]];
-
+    
     wordRecord.memdata = user.memdata;
     
     // Configure user
@@ -39,6 +39,23 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     
     //
     return wordRecord;
+}
+
+- (int)delta
+{
+    if (1 <= [self.level intValue] && [self.level intValue] <= 10) {
+        return deltaArray[[self.level intValue] - 1];
+    }
+    else if ([self.level intValue] == 0) {
+        return 1;
+    }
+    else if ([self.level intValue] == -1) {
+        return -1 - [self.day intValue];
+    }
+    else {
+        self.level = [NSNumber numberWithInt:10];
+        return deltaArray[[self.level intValue] - 1];
+    }
 }
 
 // Inc level 0,1-10,-1
@@ -83,6 +100,31 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     }
 }
 
+// Dec level 0,1-10,-1
+- (void)levelUpdate
+{
+    if ([self.dls intValue] == 0) {
+        return;
+    }
+    else if ([self.dls intValue] > 0) {
+        [self levelInc];
+    }
+    else if ([self.dls intValue] < 0) {
+        [self levelDec];
+    }
+}
+
+//
+- (void)dayUpdate
+{
+    if ([self.dlc intValue] == 0) {
+        self.day = [NSNumber numberWithInt:([self.day intValue] + 1)];
+    }
+    else {
+        self.day = [NSNumber numberWithInt:([self.day intValue] + [self delta])];
+    }
+}
+
 - (void)dlInc
 {
     self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
@@ -107,26 +149,13 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     self.dls = [NSNumber numberWithInt:0];
 }
 
-- (int)delta
-{
-    if (1 <= [self.level intValue] && [self.level intValue] <= 10) {
-        return deltaArray[[self.level intValue] - 1];
-    }
-    else if ([self.level intValue] == 0) {
-        return 1;
-    }
-    else if ([self.level intValue] == -1) {
-        return -1 - [self.day intValue];
-    }
-    else {
-        self.level = [NSNumber numberWithInt:10];
-        return deltaArray[[self.level intValue] - 1];
-    }
-}
-
 - (void)nextDay
 {
-    self.day = [NSNumber numberWithInt:([self.day intValue] + [self delta])];
+    //
+    [self levelUpdate];
+    
+    //
+    [self dayUpdate];
 }
 
 @end

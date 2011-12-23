@@ -60,17 +60,31 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Wordsss/WordRecord.m"
-         timestampString = "346337976.532139"
+         filePath = "Wordsss/UserVirtualActor.m"
+         timestampString = "346359342.220648"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
-         landmarkName = "+insertWordRecord:user:inManagedObjectContext:"
+         startingLineNumber = "211"
+         endingLineNumber = "211"
+         landmarkName = "-nextDay"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Wordsss/UserVirtualActor.m"
+         timestampString = "346359446.472244"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "214"
+         endingLineNumber = "214"
+         landmarkName = "-nextDay"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

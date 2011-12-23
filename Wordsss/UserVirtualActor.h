@@ -18,15 +18,19 @@
 #import "HisRecord.h"
 #import "WordRecord.h"
 
+#define kTodayWordLimit       100
+#define kTotalViewFactorMin   1.5
+#define kTotalViewFactorMax   4.5
+#define kWordRemainFactorMin  0.1
+#define kWordRemainFactorMax  0.3
+
 @interface UserVirtualActor : NSObject
 {
     //
     User* _user;
 
     NSMutableSet* _wordRecordSet;
-    
-    NSEnumerator* _wordRecordSetEnumerator;
-    
+        
     //
     WordRecord* _wordRecordPre;
     WordRecord* _wordRecordCur;
@@ -52,6 +56,9 @@
 - (void)nextDay;
 
 - (void)updateWordRecord;
+
+- (BOOL)checkNextDayByTime;
+- (BOOL)checkNextDayByCount;
 
 - (void)setWordRecordCurLevelInc;
 - (void)setWordRecordCurLevelDec;

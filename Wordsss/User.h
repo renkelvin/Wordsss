@@ -26,4 +26,7 @@
 
 - (void)nextDay;
 
+- (void)dlInc;
+- (void)cleardl;
+
 @end

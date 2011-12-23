@@ -54,7 +54,6 @@ static UserDataManager* sharedUserDataManager;
     
     //
     user.status.day = [NSNumber numberWithInt:1];
-    user.defult.todayWordLimit = [NSNumber numberWithInt:100];
     
     return user;
 }

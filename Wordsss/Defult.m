@@ -2,24 +2,26 @@
 //  Defult.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/12/11.
+//  Created by Kelvin Ren on 12/23/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
 #import "Defult.h"
+#import "User.h"
+
 
 @implementation Defult
 
-@dynamic todayWordLimit;
+@dynamic targetMemDegree;
 @dynamic user;
 
 + (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context
 {
-    Defult* defult = nil;
+    Defult* entity = nil;
     
-    defult = [NSEntityDescription insertNewObjectForEntityForName:@"Defult" inManagedObjectContext:context];
+    entity = [NSEntityDescription insertNewObjectForEntityForName:@"Defult" inManagedObjectContext:context];
     
-    return defult;
+    return entity;
 }
 
 @end

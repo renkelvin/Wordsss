@@ -39,4 +39,14 @@
     self.status.day = [NSNumber numberWithInt:([self.status.day intValue] + 1)];
 }
 
+- (void)dlInc
+{
+    self.status.dlc = [NSNumber numberWithInt:([self.status.dlc intValue] + 1)];
+}
+
+- (void)cleardl
+{
+    self.status.dlc = [NSNumber numberWithInt:0];
+}
+
 @end
