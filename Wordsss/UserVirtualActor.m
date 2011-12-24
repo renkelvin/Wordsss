@@ -203,15 +203,20 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 - (void)nextDay
 {
+    UserDataManager* udm = [UserDataManager userdataManager];
+
     // Day++
+    [udm createStaRecord:_user];
+    
     [_user nextDay];
     [_user cleardl];
     
     // WordRecord++ & store HisRecord
-    UserDataManager* udm = [UserDataManager userdataManager];
     for (WordRecord* wr in _wordRecordSet) {
+        //
         [udm createHisRecord:wr forUser:_user];
         
+        //
         [wr nextDay];
         [wr cleardl];
     }
@@ -245,8 +250,10 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 {
     UserDataManager* udm = [UserDataManager userdataManager];
     
+    //
     [udm createHisRecord:wordRecord forUser:_user];
     
+    //
     [wordRecord nextDay];
     [wordRecord cleardl];
     

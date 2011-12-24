@@ -17,4 +17,25 @@
 @dynamic dlc;
 @dynamic hisData;
 
++ (StaRecord*)insertStaRecord:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context
+{
+    StaRecord* staRecord = nil;
+    
+    // Create
+    staRecord = [NSEntityDescription insertNewObjectForEntityForName:@"StaRecord" inManagedObjectContext:context];
+    
+    // Configure wordRecord
+    staRecord.day = user.status.day;
+    staRecord.date = user.status.date;
+    staRecord.dlc = user.status.dlc;
+    
+    staRecord.hisData = user.hisdata;
+    
+    // Configure user
+    [user.hisdata.staRecord addObject:staRecord];
+    
+    //
+    return staRecord;
+}
+
 @end

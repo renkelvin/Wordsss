@@ -9,13 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "User.h"
+#import "Status.h"
+
 @class HisData;
 
 @interface StaRecord : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * day;
-@property (nonatomic, retain) NSNumber * date;
+@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * dlc;
 @property (nonatomic, retain) HisData *hisData;
+
++ (StaRecord*)insertStaRecord:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

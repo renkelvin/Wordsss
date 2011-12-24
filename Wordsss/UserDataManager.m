@@ -81,6 +81,15 @@ static UserDataManager* sharedUserDataManager;
     return hisRecord;
 }
 
+- (StaRecord*)createStaRecord:(User*)user
+{
+    StaRecord* staRecord = nil;
+    
+    staRecord = [StaRecord insertStaRecord:user inManagedObjectContext:__managedObjectContext];
+    
+    return staRecord;
+}
+
 #pragma mark - Core Data
 
 - (void)saveContext

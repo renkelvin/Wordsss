@@ -15,6 +15,7 @@
 #import "Profile.h"
 #import "HisData.h"
 #import "HisRecord.h"
+#import "StaRecord.h"
 #import "WordRecord.h"
 
 @interface UserDataManager : NSObject {
@@ -33,7 +34,8 @@
 - (User*)createUser;
 - (User*)createUser:(NSDictionary*)dict;
 
-- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
+- (StaRecord*)createStaRecord:(User*)user;
 - (HisRecord*)createHisRecord:(WordRecord*)wordRecord forUser:(User*)user;
+- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
 
 @end
