@@ -29,6 +29,6 @@
 
 - (void)prepare;
 
-- (NSArray*)getChartPoints;
+- (NSDictionary*)getChartPoints;
 
 @end

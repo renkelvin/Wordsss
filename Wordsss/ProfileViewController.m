@@ -65,6 +65,7 @@
 {
     //
     [_chartView setPoints:[_profileVirtualActor getChartPoints]];
+    [_chartView setType:USER];
 }
 
 #pragma mark - UITableViewDelegate
