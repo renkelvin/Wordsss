@@ -37,6 +37,8 @@
 - (void)nextDay
 {
     self.status.day = [NSNumber numberWithInt:([self.status.day intValue] + 1)];
+    
+    self.status.date = [NSDate date];
 }
 
 - (void)dlInc

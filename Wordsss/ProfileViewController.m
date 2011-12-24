@@ -63,7 +63,8 @@
 
 - (void)update
 {
-
+    //
+    [_chartView setPoints:[_profileVirtualActor getChartPoints]];
 }
 
 #pragma mark - UITableViewDelegate

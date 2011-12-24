@@ -54,6 +54,7 @@ static UserDataManager* sharedUserDataManager;
     
     //
     user.status.day = [NSNumber numberWithInt:1];
+    user.status.date = [NSDate date];
     
     return user;
 }

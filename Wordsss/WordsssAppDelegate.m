@@ -43,8 +43,6 @@
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
     
-    [[TodayVirtualActor todayVirtualActor].user.status setDate:[NSDate date]];
-    
     [[UserDataManager userdataManager] saveContext];
 }
 

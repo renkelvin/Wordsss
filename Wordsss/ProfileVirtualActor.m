@@ -60,4 +60,23 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
     [self updateUser];
 }
 
+- (NSArray*)getChartPoints
+{
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // Get user
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"StaRecord"];
+    [request setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES]]];
+    NSArray* srArray = [udm.managedObjectContext executeFetchRequest:request error:nil];
+
+    NSMutableArray* array = [NSMutableArray array];
+    for (StaRecord* sr in srArray) {
+        RKPoint* p = [[RKPoint alloc] x:[sr.day floatValue] y:[sr.dlc floatValue]];
+        [array addObject:p];
+    }
+    
+    return array;
+}
+
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "User.h"
+#import "RKChartView.h"
 #import "UserDataManager.h"
 
 @interface ProfileVirtualActor : NSObject
@@ -27,5 +28,7 @@
 #pragma mark - Instance method
 
 - (void)prepare;
+
+- (NSArray*)getChartPoints;
 
 @end

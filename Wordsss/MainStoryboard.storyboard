@@ -83,11 +83,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" id="MKv-Ah-jaQ" customClass="RKChartView">
-                                        <rect key="frame" x="0.0" y="36" width="320" height="144"/>
+                                        <rect key="frame" x="0.0" y="36" width="320" height="131"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chart_popover_bg.png" id="305">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" image="chart_popover_bg.png" id="305">
                                         <rect key="frame" x="10" y="5" width="300" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

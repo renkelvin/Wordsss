@@ -8,7 +8,22 @@
 
 #import "RKChartView.h"
 
+@implementation RKPoint
+
+@synthesize point = _point;
+
+- (RKPoint*)x:(CGFloat)x y:(CGFloat)y
+{
+    _point = CGPointMake(x, y);
+    
+    return self;
+}
+
+@end
+
 @implementation RKChartView
+
+@synthesize points;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -34,8 +49,13 @@
     CGContextSetStrokeColorWithColor(context, color);
 
     //
-    CGContextMoveToPoint(context, 0, 0);
-    CGContextAddLineToPoint(context, 300, 400);
+    CGPoint a, b;
+    for (RKPoint* p in points) {
+        CGContextMoveToPoint(context, a.x*10, a.y);
+        b = p.point;
+        CGContextAddLineToPoint(context, b.x*10, b.y);
+        a = b;
+    }
     
     //
     CGContextStrokePath(context);
