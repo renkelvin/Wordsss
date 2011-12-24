@@ -10,8 +10,7 @@
 
 @implementation ProfileViewController
 
-@synthesize profileImageView;
-@synthesize nicknameLabel;
+@synthesize chartView = _chartView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +41,9 @@
 
     //
     _profileVirtualActor = [ProfileVirtualActor profileVirtualActor];
+    
+    //
+    [self update];
 }
 
 - (void)viewDidUnload
@@ -57,11 +59,18 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma - UITableViewDelegate
+#pragma mark - 
+
+- (void)update
+{
+
+}
+
+#pragma mark - UITableViewDelegate
 
 
 
-#pragma - UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

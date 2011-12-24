@@ -175,6 +175,7 @@
 		FEBF172414A5E4400045B8A5 /* ProfileVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */; };
 		FEBF172714A5EC7B0045B8A5 /* StaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172614A5EC7B0045B8A5 /* StaRecord.m */; };
 		FEBF173014A5ED3F0045B8A5 /* HisRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172F14A5ED3F0045B8A5 /* HisRecord.m */; };
+		FEBF173814A648B10045B8A5 /* RKChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF173714A648B10045B8A5 /* RKChartView.m */; };
 		FEBFBEFF1436DAF20028630E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBFBEFE1436DAF20028630E /* UIKit.framework */; };
 		FEBFBF011436DAF20028630E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBFBF001436DAF20028630E /* Foundation.framework */; };
 		FEBFBF031436DAF20028630E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBFBF021436DAF20028630E /* CoreGraphics.framework */; };
@@ -420,6 +421,8 @@
 		FEBF172614A5EC7B0045B8A5 /* StaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaRecord.m; sourceTree = "<group>"; };
 		FEBF172E14A5ED3F0045B8A5 /* HisRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisRecord.h; sourceTree = "<group>"; };
 		FEBF172F14A5ED3F0045B8A5 /* HisRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HisRecord.m; sourceTree = "<group>"; };
+		FEBF173614A648B10045B8A5 /* RKChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKChartView.h; sourceTree = "<group>"; };
+		FEBF173714A648B10045B8A5 /* RKChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKChartView.m; sourceTree = "<group>"; };
 		FEBFBEFA1436DAF20028630E /* Wordsss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBFBEFE1436DAF20028630E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FEBFBF001436DAF20028630E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -877,6 +880,8 @@
 				FE060C60143CD78A0026228C /* RkNavigationController.m */,
 				FE060C61143CD78A0026228C /* RKNavigationController.xib */,
 				FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */,
+				FEBF173614A648B10045B8A5 /* RKChartView.h */,
+				FEBF173714A648B10045B8A5 /* RKChartView.m */,
 			);
 			name = RKUIKit;
 			sourceTree = "<group>";
@@ -1257,6 +1262,7 @@
 				FEBF172414A5E4400045B8A5 /* ProfileVirtualActor.m in Sources */,
 				FEBF172714A5EC7B0045B8A5 /* StaRecord.m in Sources */,
 				FEBF173014A5ED3F0045B8A5 /* HisRecord.m in Sources */,
+				FEBF173814A648B10045B8A5 /* RKChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

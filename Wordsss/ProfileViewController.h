@@ -11,15 +11,21 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
+#import "RKChartView.h"
+
 #import "ProfileVirtualActor.h"
 
 @interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RKNavigationControllerDelegate>
 {
     //
     ProfileVirtualActor* _profileVirtualActor;
+    
+    //
+    RKChartView* _chartView;
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView* profileImageView;
-@property (nonatomic, retain) IBOutlet UILabel* nicknameLabel;
+@property (nonatomic, retain) IBOutlet RKChartView* chartView;
+
+- (void)update;
 
 @end
