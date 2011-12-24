@@ -52,7 +52,6 @@
     [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
     
     //
-    _userVirtualActor = [UserVirtualActor userVirtualActor];
     _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
     
     [self update];
@@ -80,7 +79,7 @@
     if ([_todayVirtualActor wordPre])
         self.wordLabelPre.text = [_todayVirtualActor wordPre].name;
     if ([_todayVirtualActor wordCur])
-        self.wordLabelCur.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordCur].name, [[_userVirtualActor wordRecordCur].level stringValue], [[_userVirtualActor wordRecordCur].day stringValue]];
+        self.wordLabelCur.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordCur].name, [[_todayVirtualActor wordRecordCur].level stringValue], [[_todayVirtualActor wordRecordCur].day stringValue]];
     if ([_todayVirtualActor wordPos])
         self.wordLabelPos.text = [_todayVirtualActor wordPos].name;
     
@@ -93,25 +92,21 @@
 
 - (void)nextDay
 {
-    [_userVirtualActor nextDay];
+    [_todayVirtualActor nextDay];
 }
 
 // 
 - (void)incOperation
 {
-    NSLog(@"1");
     // Set wordRecord level
-    [_userVirtualActor setWordRecordCurLevelInc];
+    [_todayVirtualActor setWordRecordCurLevelInc];
     
-    NSLog(@"2");
-    // Update UserVirtualActor WordRecord
-    [_userVirtualActor updateWordRecord];
+    // Update WordRecord
+    [_todayVirtualActor updateWordRecord];
     
-    NSLog(@"3");
-    // Update TodayVirtualActor Word
+    // Update Word
     [_todayVirtualActor updateWord];
     
-    NSLog(@"4");
     // Update view
     [self update];
 }
@@ -120,12 +115,12 @@
 - (void)decOperation
 {
     // Set wordRecord level
-    [_userVirtualActor setWordRecordCurLevelDec];
+    [_todayVirtualActor setWordRecordCurLevelDec];
     
-    // Update UserVirtualActor WordRecord
-    [_userVirtualActor updateWordRecord];
+    // Update WordRecord
+    [_todayVirtualActor updateWordRecord];
     
-    // Update TodayVirtualActor Word
+    // Update Word
     [_todayVirtualActor updateWord];
     
     // Update view

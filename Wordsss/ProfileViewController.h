@@ -11,12 +11,9 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
-#import "UserVirtualActor.h"
-
 @interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RKNavigationControllerDelegate>
 {
-    //
-    UserVirtualActor* _userVirtualActor;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView* profileImageView;

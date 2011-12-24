@@ -12,6 +12,8 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
 
 @implementation ProfileVirtualActor
 
+@synthesize user = _user;
+
 #pragma mark -
 
 - (id)init
@@ -34,5 +36,9 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
     
     return sharedProfileVirtualActor;
 }
+
+#pragma mark -
+
+
 
 @end

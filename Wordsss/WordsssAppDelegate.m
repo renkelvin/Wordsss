@@ -43,7 +43,8 @@
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
     
-    [[UserVirtualActor userVirtualActor] user].status.date = [NSDate date];
+    [[TodayVirtualActor todayVirtualActor].user.status setDate:[NSDate date]];
+    
     [[UserDataManager userdataManager] saveContext];
 }
 
@@ -53,8 +54,8 @@
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
 
-    if ([[UserVirtualActor userVirtualActor] checkNextDayByTime]) {
-        [[UserVirtualActor userVirtualActor] nextDay];
+    if ([[TodayVirtualActor todayVirtualActor] checkNextDayByTime]) {
+        [[TodayVirtualActor todayVirtualActor] nextDay];
     }
 }
 

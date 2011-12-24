@@ -200,7 +200,6 @@
 		FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */; };
 		FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4DE9C148E2B7A00E88653 /* XMLParser.m */; };
 		FEF732E81495955100919A7C /* TodayVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF732E71495955100919A7C /* TodayVirtualActor.m */; };
-		FEF732EB1495956600919A7C /* UserVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF732EA1495956600919A7C /* UserVirtualActor.m */; };
 		FEFFDE2A143F737E002B7126 /* pre_word_translation_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFFDE29143F737E002B7126 /* pre_word_translation_bg.png */; };
 /* End PBXBuildFile section */
 
@@ -454,8 +453,6 @@
 		FEF4DE9C148E2B7A00E88653 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		FEF732E61495955100919A7C /* TodayVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayVirtualActor.h; sourceTree = "<group>"; };
 		FEF732E71495955100919A7C /* TodayVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayVirtualActor.m; sourceTree = "<group>"; };
-		FEF732E91495956600919A7C /* UserVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserVirtualActor.h; sourceTree = "<group>"; };
-		FEF732EA1495956600919A7C /* UserVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserVirtualActor.m; sourceTree = "<group>"; };
 		FEFFDE29143F737E002B7126 /* pre_word_translation_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pre_word_translation_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -631,8 +628,6 @@
 		FEA70AC214387D0E0025313C /* VirtualActor */ = {
 			isa = PBXGroup;
 			children = (
-				FEF732E91495956600919A7C /* UserVirtualActor.h */,
-				FEF732EA1495956600919A7C /* UserVirtualActor.m */,
 				FEF732E61495955100919A7C /* TodayVirtualActor.h */,
 				FEF732E71495955100919A7C /* TodayVirtualActor.m */,
 				FEBF172214A5E4400045B8A5 /* ProfileVirtualActor.h */,
@@ -1238,7 +1233,6 @@
 				FE8108DB14949E5C00211A97 /* WordsssDB.xcdatamodeld in Sources */,
 				FEA569B81494A0C80071C0DB /* Wordsss.xcdatamodeld in Sources */,
 				FEF732E81495955100919A7C /* TodayVirtualActor.m in Sources */,
-				FEF732EB1495956600919A7C /* UserVirtualActor.m in Sources */,
 				FE398C1114963A6C00D9408C /* Profile.m in Sources */,
 				FE398C1414963A6C00D9408C /* MemData.m in Sources */,
 				FE398C2014963A6C00D9408C /* Defult.m in Sources */,

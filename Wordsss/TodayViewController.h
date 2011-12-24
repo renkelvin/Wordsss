@@ -13,7 +13,7 @@
 #import "RKNavigationControllerDelegate.h"
 
 #import "TodayVirtualActor.h"
-#import "UserVirtualActor.h"
+
 #import "Word_Dict.h"
 #import "McecDictWord.h"
 #import "McecDictMeaning.h"
@@ -22,7 +22,6 @@
 {
     //
     TodayVirtualActor* _todayVirtualActor;
-    UserVirtualActor* _userVirtualActor;
     
     //
     UILabel* _wordLabelPre;

@@ -13,7 +13,7 @@
 
 #import "XMLParser.h"
 #import "UserDataManager.h"
-#import "UserVirtualActor.h"
+#import "TodayVirtualActor.h"
 
 @interface WordsssAppDelegate : UIResponder <UIApplicationDelegate>
 

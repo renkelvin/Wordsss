@@ -48,7 +48,6 @@
     [self initNavigationBar];
 
     //
-    _userVirtualActor = [UserVirtualActor userVirtualActor];
 }
 
 - (void)viewDidUnload
@@ -121,8 +120,7 @@
                     label.frame = CGRectMake(12, 0, 320, 42);
                     label.textColor = [UIColor whiteColor];
                     label.backgroundColor = [UIColor clearColor];
-                    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
-                    label.text = [NSString stringWithFormat:@"Day: %@", uva.user.status.day];
+//                    label.text = [NSString stringWithFormat:@"Day: "];
                     [cell addSubview:label];
                     
                     break;
