@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "User.h"
+#import "UserDataManager.h"
 
 @interface ProfileVirtualActor : NSObject
 {
@@ -19,6 +20,12 @@
 
 @property (nonatomic, retain) User* user;
 
+#pragma mark - Class method
+
 + (ProfileVirtualActor*)profileVirtualActor;
+
+#pragma mark - Instance method
+
+- (void)prepare;
 
 @end

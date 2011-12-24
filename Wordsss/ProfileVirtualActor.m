@@ -32,6 +32,7 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
 {
     if (!sharedProfileVirtualActor) {
         sharedProfileVirtualActor = [[ProfileVirtualActor alloc] init];
+        [sharedProfileVirtualActor prepare];
     }
     
     return sharedProfileVirtualActor;
@@ -39,6 +40,24 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
 
 #pragma mark -
 
+- (void)updateUser
+{
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // Get user
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
+    
+    if (!_user) {
+        _user = [udm createUser];
+    }
+}
 
+- (void)prepare
+{
+    // Get user
+    [self updateUser];
+}
 
 @end
