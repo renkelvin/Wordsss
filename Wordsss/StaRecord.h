@@ -1,5 +1,5 @@
 //
-//  HisRecord.h
+//  StaRecord.h
 //  Wordsss
 //
 //  Created by Kelvin Ren on 12/24/11.
@@ -9,19 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "User.h"
-#import "WordRecord.h"
-
 @class HisData;
 
-@interface HisRecord : NSManagedObject
+@interface StaRecord : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * day;
-@property (nonatomic, retain) NSNumber * level;
-@property (nonatomic, retain) NSNumber * word_id;
+@property (nonatomic, retain) NSNumber * date;
 @property (nonatomic, retain) NSNumber * dlc;
 @property (nonatomic, retain) HisData *hisData;
-
-+ (HisRecord*)insertHisRecord:(WordRecord*)wordRecord user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context;
 
 @end

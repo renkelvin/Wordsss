@@ -43,7 +43,7 @@
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
     
-    [[UserVirtualActor userVirtualActor] user].status.lastViewed = [NSDate date];
+    [[UserVirtualActor userVirtualActor] user].status.date = [NSDate date];
     [[UserDataManager userdataManager] saveContext];
 }
 

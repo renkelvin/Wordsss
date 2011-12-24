@@ -2,7 +2,7 @@
 //  Status.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/23/11.
+//  Created by Kelvin Ren on 12/24/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
@@ -13,9 +13,9 @@
 @implementation Status
 
 @dynamic day;
-@dynamic lastViewed;
-@dynamic level;
 @dynamic dlc;
+@dynamic date;
+@dynamic level;
 @dynamic user;
 
 + (Status*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context

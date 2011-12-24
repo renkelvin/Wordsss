@@ -2,7 +2,7 @@
 //  HisRecord.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/22/11.
+//  Created by Kelvin Ren on 12/24/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
@@ -12,9 +12,10 @@
 
 @implementation HisRecord
 
-@dynamic word_id;
 @dynamic day;
 @dynamic level;
+@dynamic word_id;
+@dynamic dlc;
 @dynamic hisData;
 
 + (HisRecord*)insertHisRecord:(WordRecord*)wordRecord user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context
@@ -24,10 +25,10 @@
     // Create
     hisRecord = [NSEntityDescription insertNewObjectForEntityForName:@"HisRecord" inManagedObjectContext:context];
     
-    // Configure hisRecord
+    // Configure wordRecord
     hisRecord.word_id = wordRecord.word_id;
-    hisRecord.day = wordRecord.day;
     hisRecord.level = wordRecord.level;
+    hisRecord.day = wordRecord.day;
     
     hisRecord.hisData = user.hisdata;
     

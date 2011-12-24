@@ -6,10 +6,12 @@
     </entity>
     <entity name="HisData" representedClassName="HisData" syncable="YES">
         <relationship name="hisRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HisRecord" inverseName="hisData" inverseEntity="HisRecord" syncable="YES"/>
+        <relationship name="staRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StaRecord" inverseName="hisData" inverseEntity="StaRecord" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hisdata" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="HisRecord" representedClassName="HisRecord" syncable="YES">
         <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dlc" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="word_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="hisData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HisData" inverseName="hisRecord" inverseEntity="HisData" syncable="YES"/>
@@ -22,10 +24,16 @@
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="profile" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Status" representedClassName="Status" syncable="YES">
+    <entity name="StaRecord" representedClassName="StaRecord" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="dlc" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="lastViewed" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="hisData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HisData" inverseName="staRecord" inverseEntity="HisData" syncable="YES"/>
+    </entity>
+    <entity name="Status" representedClassName="Status" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dlc" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="status" inverseEntity="User" syncable="YES"/>
     </entity>
@@ -56,5 +64,6 @@
         <element name="Status" positionX="-4536" positionY="-1650" width="128" height="75"/>
         <element name="User" positionX="-4331" positionY="-1692" width="128" height="135"/>
         <element name="WordRecord" positionX="-3917" positionY="-1674" width="128" height="135"/>
+        <element name="StaRecord" positionX="-3917" positionY="-1401" width="128" height="105"/>
     </elements>
 </model>

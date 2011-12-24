@@ -25,6 +25,8 @@
 @property (nonatomic, retain) Word* wordCur;
 @property (nonatomic, retain) Word* wordPos;
 
+#pragma mark - Class method
+
 + (TodayVirtualActor*)todayVirtualActor;
 
 #pragma mark - Instance method
