@@ -11,6 +11,16 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
-@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, RKNavigationControllerDelegate>
+@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, RKNavigationControllerDelegate> {
+    //
+    UISearchBar* _searchBar;    
+    
+    //
+    UITableView* _tableView;
+}
+
+@property (nonatomic, retain) IBOutlet UISearchBar* searchBar;
+
+@property (nonatomic, retain) IBOutlet UITableView* tableView;
 
 @end

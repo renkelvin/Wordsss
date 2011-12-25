@@ -170,6 +170,7 @@
 		FEB8ED2D143B47C30097E267 /* bg_body@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED29143B47C30097E267 /* bg_body@2x.png */; };
 		FEB8ED2E143B47C30097E267 /* bg_deeper.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED2A143B47C30097E267 /* bg_deeper.png */; };
 		FEB8ED2F143B47C30097E267 /* bg_deeper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */; };
+		FEBB3B3014A793DE0047D21C /* WordVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */; };
 		FEBF172014A5E2F30045B8A5 /* SettingVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */; };
 		FEBF172414A5E4400045B8A5 /* ProfileVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */; };
 		FEBF173014A5ED3F0045B8A5 /* HisRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172F14A5ED3F0045B8A5 /* HisRecord.m */; };
@@ -411,6 +412,8 @@
 		FEB8ED29143B47C30097E267 /* bg_body@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_body@2x.png"; sourceTree = "<group>"; };
 		FEB8ED2A143B47C30097E267 /* bg_deeper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_deeper.png; sourceTree = "<group>"; };
 		FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_deeper@2x.png"; sourceTree = "<group>"; };
+		FEBB3B2E14A793DE0047D21C /* WordVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordVirtualActor.h; sourceTree = "<group>"; };
+		FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordVirtualActor.m; sourceTree = "<group>"; };
 		FEBF171E14A5E2F30045B8A5 /* SettingVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVirtualActor.h; sourceTree = "<group>"; };
 		FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVirtualActor.m; sourceTree = "<group>"; };
 		FEBF172214A5E4400045B8A5 /* ProfileVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVirtualActor.h; sourceTree = "<group>"; };
@@ -637,6 +640,8 @@
 				FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */,
 				FEBF171E14A5E2F30045B8A5 /* SettingVirtualActor.h */,
 				FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */,
+				FEBB3B2E14A793DE0047D21C /* WordVirtualActor.h */,
+				FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */,
 			);
 			name = VirtualActor;
 			sourceTree = "<group>";
@@ -1263,6 +1268,7 @@
 				FEBF173814A648B10045B8A5 /* RKChartView.m in Sources */,
 				FEDE225C14A73C0D008908B0 /* Status.m in Sources */,
 				FEDE225F14A74EDB008908B0 /* StaRecord.m in Sources */,
+				FEBB3B3014A793DE0047D21C /* WordVirtualActor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

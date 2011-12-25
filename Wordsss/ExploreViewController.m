@@ -10,6 +10,10 @@
 
 @implementation ExploreViewController
 
+@synthesize searchBar = _searchBar;
+
+@synthesize tableView = _tableView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,19 +33,28 @@
 
 #pragma mark - View lifecycle
 
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
+//
+- (void)initSearchBar
+{
+    //    _searchBar.autocorrectionType = UITextAutocorrectionTypeNo;  
+    //    _searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;  
+    //    _searchBar.keyboardType = UIKeyboardTypeAlphabet;  
+    _searchBar.hidden = NO;  
+    _searchBar.placeholder=[NSString stringWithCString:"请输入需要查找的文本内容" encoding: NSUTF8StringEncoding];  
+    
+    _tableView.tableHeaderView = self.searchBar;  
+}
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+//
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //
     [self initNavigationBar];
+    
+    //
+    [self initSearchBar];
 }
 
 - (void)viewDidUnload

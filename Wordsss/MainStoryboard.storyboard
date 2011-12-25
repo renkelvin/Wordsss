@@ -338,11 +338,33 @@
                                     <outlet property="delegate" destination="11" id="320"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" id="Xo0-Mw-Dyp">
+                                <rect key="frame" x="0.0" y="199" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="11" id="nKL-Ds-ff6"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Xo0-Mw-Dyp" id="6H2-Ia-rFh"/>
+                        <outlet property="searchDisplayController" destination="3hM-3Q-jGq" id="aCz-Ds-H7B"/>
+                        <outlet property="tableView" destination="282" id="QVe-Wo-eX3"/>
+                    </connections>
                 </viewController>
+                <searchDisplayController id="3hM-3Q-jGq">
+                    <connections>
+                        <outlet property="delegate" destination="11" id="GvD-KL-B6h"/>
+                        <outlet property="searchBar" destination="Xo0-Mw-Dyp" id="91E-IC-8Qz"/>
+                        <outlet property="searchContentsController" destination="11" id="1fR-JD-ScB"/>
+                        <outlet property="searchResultsDataSource" destination="11" id="R0B-qw-tvu"/>
+                        <outlet property="searchResultsDelegate" destination="11" id="1gO-lA-Fou"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="492" y="-352"/>
         </scene>
