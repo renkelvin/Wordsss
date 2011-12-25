@@ -191,7 +191,7 @@ static UserDataManager* sharedUserDataManager;
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }    
+    }
     
     return __persistentStoreCoordinator;
 }

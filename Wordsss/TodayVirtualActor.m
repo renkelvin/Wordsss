@@ -158,8 +158,13 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     // Set new wordRecord
     for (Word* w in new_word_set) {
+        // Get
         WordRecord* wr = [udm createWordRecord:w forUser:_user];
-        [wr prepare];
+        
+        // Set
+        [wr prepare:_user];
+        
+        // Add
         [_wordRecordSet addObject:wr];
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
@@ -234,12 +239,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 {
     UserDataManager* udm = [UserDataManager userdataManager];
     
-    // Day++
-    [udm createStaRecord:_user];
-    
-    [_user nextDay];
-    [_user cleardl];
-    
     // WordRecord++ & store HisRecord
     for (WordRecord* wr in _wordRecordSet) {
         //
@@ -249,6 +248,12 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         [wr nextDay];
         [wr cleardl];
     }
+    
+    // Day++
+    [udm createStaRecord:_user];
+    
+    [_user nextDay];
+    [_user cleardl];
     
     // Get user
     [self updateUser];

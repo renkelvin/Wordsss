@@ -8,13 +8,27 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Wordsss/RKChartView.m"
-         timestampString = "346496764.9235"
+         filePath = "Wordsss/TodayVirtualActor.m"
+         timestampString = "346513315.385368"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
-         landmarkName = "-drawRect:"
+         startingLineNumber = "240"
+         endingLineNumber = "240"
+         landmarkName = "-nextDay"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Wordsss/UserDataManager.m"
+         timestampString = "346513393.636956"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "87"
+         endingLineNumber = "87"
+         landmarkName = "-createStaRecord:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

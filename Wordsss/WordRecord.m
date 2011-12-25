@@ -29,16 +29,29 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     
     // Configure wordRecord
     wordRecord.word_id = word.id;
-    wordRecord.level = [NSNumber numberWithInt:1];
-    wordRecord.day = [NSNumber numberWithInt:[user.status.day intValue]];
-    
+    wordRecord.level = [NSNumber numberWithInt:0];
+    wordRecord.day = [NSNumber numberWithInt:0];
     wordRecord.memdata = user.memdata;
     
     // Configure user
     [user.memdata.wordRecord addObject:wordRecord];
     
     //
+    user.status.count0 = [NSNumber numberWithInt:([user.status.count0 intValue]+1)];
+    
+    //
     return wordRecord;
+}
+
+- (void)prepare:(User*)user
+{
+    self.level = [NSNumber numberWithInt:1];
+    self.day = [NSNumber numberWithInt:[user.status.day intValue]];
+    
+    self.dlc = [NSNumber numberWithInt:0];
+    self.dls = [NSNumber numberWithInt:0];
+    
+    [user.status updateCount:1 from:0];
 }
 
 - (int)delta
@@ -125,6 +138,30 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     }
 }
 
+//
+- (void)countUpdate
+{
+    int level = [self.level intValue];
+    
+    if ([self.dls intValue] == 0) {
+        return;
+    }
+    else if ([self.dls intValue] > 0) {
+        if (level == 10) {
+            [self.memdata.user.status updateCount:-1 from:level];
+        }
+        else {
+            [self.memdata.user.status updateCount:(level+1) from:level];
+        }
+    }
+    else if ([self.dls intValue] < 0) {
+        if (level != -1 && level != 0 && level != 1) {
+            [self.memdata.user.status updateCount:(level-1) from:level];
+        }
+    }
+    
+}
+
 - (void)dlInc
 {
     self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
@@ -137,12 +174,6 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     self.dls = [NSNumber numberWithInt:([self.dls intValue] - 1)];
 }
 
-- (void)prepare
-{
-    self.dlc = [NSNumber numberWithInt:0];
-    self.dls = [NSNumber numberWithInt:0];
-}
-
 - (void)cleardl
 {
     self.dlc = [NSNumber numberWithInt:0];
@@ -151,6 +182,9 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 
 - (void)nextDay
 {
+    //
+    [self countUpdate];
+    
     //
     [self levelUpdate];
     

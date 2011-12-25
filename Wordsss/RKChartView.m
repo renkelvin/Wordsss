@@ -33,7 +33,18 @@
     point.x = (1 - k)*kStaX + k*kEndX;
     
     // y
-    point.y = [sr.dlc floatValue];
+    float count =   [sr.count1 floatValue]*0.0 + 
+                    [sr.count2 floatValue]*0.1 + 
+                    [sr.count3 floatValue]*0.2 +
+                    [sr.count4 floatValue]*0.3 + 
+                    [sr.count5 floatValue]*0.4 + 
+                    [sr.count6 floatValue]*0.5 + 
+                    [sr.count7 floatValue]*0.6 +
+                    [sr.count8 floatValue]*0.7 + 
+                    [sr.count9 floatValue]*0.8 + 
+                    [sr.count10 floatValue]*0.9 + 
+                    [sr.countm floatValue]*1.0;
+    point.y = count;
     
     return point;
 }

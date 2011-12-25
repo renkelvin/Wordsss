@@ -27,13 +27,14 @@
 
 + (WordRecord*)insertWordRecord:(Word*)word user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context;
 
+- (void)prepare:(User*)user;
+
 - (void)levelInc;
 - (void)levelDec;
 
 - (void)dlInc;
 - (void)dlDec;
 
-- (void)prepare;
 - (void)cleardl;
 
 - (void)nextDay;
