@@ -172,6 +172,8 @@
 		FEB8ED2F143B47C30097E267 /* bg_deeper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */; };
 		FEBB3B3014A793DE0047D21C /* WordVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */; };
 		FEBB3B3514A7A51B0047D21C /* WordCellMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBB3B3414A7A51B0047D21C /* WordCellMeaning.m */; };
+		FEBB3B3814A7AA5E0047D21C /* Wordsss.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEBB3B3614A7AA5E0047D21C /* Wordsss.sqlite */; };
+		FEBB3B3914A7AA5E0047D21C /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEBB3B3714A7AA5E0047D21C /* WordsssDB.sqlite */; };
 		FEBF172014A5E2F30045B8A5 /* SettingVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */; };
 		FEBF172414A5E4400045B8A5 /* ProfileVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */; };
 		FEBF173014A5ED3F0045B8A5 /* HisRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172F14A5ED3F0045B8A5 /* HisRecord.m */; };
@@ -417,6 +419,8 @@
 		FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordVirtualActor.m; sourceTree = "<group>"; };
 		FEBB3B3314A7A51B0047D21C /* WordCellMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellMeaning.h; sourceTree = "<group>"; };
 		FEBB3B3414A7A51B0047D21C /* WordCellMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCellMeaning.m; sourceTree = "<group>"; };
+		FEBB3B3614A7AA5E0047D21C /* Wordsss.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Wordsss.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/Wordsss.sqlite"; sourceTree = "<group>"; };
+		FEBB3B3714A7AA5E0047D21C /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FEBF171E14A5E2F30045B8A5 /* SettingVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVirtualActor.h; sourceTree = "<group>"; };
 		FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVirtualActor.m; sourceTree = "<group>"; };
 		FEBF172214A5E4400045B8A5 /* ProfileVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVirtualActor.h; sourceTree = "<group>"; };
@@ -630,6 +634,8 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				FEBB3B3614A7AA5E0047D21C /* Wordsss.sqlite */,
+				FEBB3B3714A7AA5E0047D21C /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1198,6 +1204,8 @@
 				FE2B069D14401C3900E1D159 /* icon.png in Resources */,
 				FE1627971499C8E8003E6DBF /* WordsssDBTest.xml in Resources */,
 				FE1627991499E0E7003E6DBF /* WordsssDB.xml in Resources */,
+				FEBB3B3814A7AA5E0047D21C /* Wordsss.sqlite in Resources */,
+				FEBB3B3914A7AA5E0047D21C /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
