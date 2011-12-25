@@ -60,22 +60,17 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
     [self updateUser];
 }
 
-- (NSDictionary*)getChartPoints
+- (NSArray*)getStaRecords
 {
     // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
     
-    // Get user
+    // Get StaRecords
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"StaRecord"];
     [request setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES]]];
     NSArray* srArray = [udm.managedObjectContext executeFetchRequest:request error:nil];
-
-    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
-    for (StaRecord* sr in srArray) {
-        [dict setObject:sr forKey:sr.day];
-    }
     
-    return dict;
+    return srArray;
 }
 
 @end

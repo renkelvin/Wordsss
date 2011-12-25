@@ -24,10 +24,28 @@
     return self;
 }
 
+- (CGPoint)getPoint:(StaRecord*)sr
+{
+    CGPoint point = CGPointMake(0, 0);
+    
+    // x
+    float k = (float)([sr.day intValue] - staDay) / (float)(endDay - staDay);
+    point.x = (1 - k)*kStaX + k*kEndX;
+    
+    // y
+    point.y = [sr.dlc floatValue];
+    
+    return point;
+}
+
 - (void)drawRect:(CGRect)rect
 {
     // Context
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // Conordinate
+    CGContextTranslateCTM(context, 0, self.bounds.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
     
     // Line width
     CGContextSetLineWidth(context, 2.0);
@@ -42,6 +60,23 @@
     switch (self.type) {
         case USER:
         {
+            self.staDay = [((StaRecord*)[points objectAtIndex:0]).day intValue];
+            self.endDay = [((StaRecord*)[points lastObject]).day intValue];
+            
+            CGPoint a = CGPointMake(-1, 0), b = CGPointMake(0, 0);
+            for (StaRecord* sr in points) {
+                b = [self getPoint:sr];
+                
+                if (a.x == -1) {
+                    a = b;
+                    continue;
+                }
+                
+                CGContextMoveToPoint(context, a.x, a.y);
+                CGContextAddLineToPoint(context, b.x, b.y);
+                
+                a = b;
+            }
             
             break;
         }   
@@ -55,14 +90,6 @@
         }
     }
     
-    //
-    //    CGPoint a, b;
-    //    for (RKPoint* p in points) {
-    //        CGContextMoveToPoint(context, a.x*10, a.y);
-    //        b = p.point;
-    //        CGContextAddLineToPoint(context, b.x*10, b.y);
-    //        a = b;
-    //    }
     
     //
     CGContextStrokePath(context);

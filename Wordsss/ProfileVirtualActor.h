@@ -29,6 +29,6 @@
 
 - (void)prepare;
 
-- (NSDictionary*)getChartPoints;
+- (NSArray*)getStaRecords;
 
 @end
