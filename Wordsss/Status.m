@@ -125,7 +125,7 @@
             break;
     }
     
-    NSLog(@"%d - %d - %d", [self.count0 intValue], [self.count1 intValue], [self.count2 intValue]);
+    // NSLog(@"%d - %d - %d", [self.count0 intValue], [self.count1 intValue], [self.count2 intValue]);
 }
 
 @end

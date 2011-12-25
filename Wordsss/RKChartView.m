@@ -46,7 +46,7 @@
     [sr.countm floatValue]*1.0;
     point.y = count;
     
-    point.y = [sr.dlc floatValue];
+    // point.y = [sr.dlc floatValue];
     
     return point;
 }
