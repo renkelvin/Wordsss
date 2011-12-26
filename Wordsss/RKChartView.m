@@ -12,8 +12,10 @@
 
 @synthesize points;
 @synthesize type;
-@synthesize staDay;
-@synthesize endDay;
+@synthesize minDay;
+@synthesize maxDay;
+@synthesize minValue;
+@synthesize maxValue;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -29,24 +31,12 @@
     CGPoint point = CGPointMake(0, 0);
     
     // x
-    float k = (float)([sr.day intValue] - staDay) / (float)(endDay - staDay);
-    point.x = (1 - k)*kStaX + k*kEndX;
+    float k = (float)([sr.day intValue] - minDay) / (float)(maxDay - minDay);
+    point.x = (1 - k)*kMinX + k*kMaxX;
     
     // y
-    float count =   [sr.count1 floatValue]*0.0 + 
-    [sr.count2 floatValue]*0.1 + 
-    [sr.count3 floatValue]*0.2 +
-    [sr.count4 floatValue]*0.3 + 
-    [sr.count5 floatValue]*0.4 + 
-    [sr.count6 floatValue]*0.5 + 
-    [sr.count7 floatValue]*0.6 +
-    [sr.count8 floatValue]*0.7 + 
-    [sr.count9 floatValue]*0.8 + 
-    [sr.count10 floatValue]*0.9 + 
-    [sr.countm floatValue]*1.0;
-    point.y = count;
-    
-    // point.y = [sr.dlc floatValue];
+    float l = (float)([sr getCount] - minValue) / (float)(maxValue - minValue);
+    point.y = (1 - l)*kMinY + l*kMaxY;
     
     return point;
 }
@@ -109,8 +99,16 @@
             }
             
             //
-            self.staDay = [((StaRecord*)[points objectAtIndex:0]).day intValue];
-            self.endDay = [((StaRecord*)[points lastObject]).day intValue];
+            self.minDay = [((StaRecord*)[points objectAtIndex:0]).day intValue];
+            self.maxDay = [((StaRecord*)[points lastObject]).day intValue];
+            
+            self.maxValue = (float)((((int)[((StaRecord*)[points lastObject]) getCount]) / 100 + 1) * 100);
+            if (self.maxValue <= 400) {
+                self.minValue = 0;
+            }
+            else {
+                self.minValue = self.maxValue - 4 * 100;
+            }
             
             //
             UIBezierPath* aPath = [UIBezierPath bezierPath];

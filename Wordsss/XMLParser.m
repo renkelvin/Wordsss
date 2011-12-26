@@ -159,6 +159,12 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_FREQUENCY:   // Frequency
+                                    {
+                                        object = (Frequency*)[NSEntityDescription insertNewObjectForEntityForName:@"Frequency" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_ASSOCIATION:   // Association
                                     {
                                         object = (Association*)[NSEntityDescription insertNewObjectForEntityForName:@"Association" inManagedObjectContext:[_dbm managedObjectContext]];
@@ -413,6 +419,36 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
                                             ((Rootaffix*)object).meaning_cn = string;
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_FREQUENCY:   // Frequency
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"frequency_id"] == NSOrderedSame) {
+                                            ((Frequency*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            NSLog(@"Frequency - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"frequency"] == NSOrderedSame) {
+                                            ((Frequency*)object).freq = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"frequency2"] == NSOrderedSame) {
+                                            ((Frequency*)object).ra = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"frequency3"] == NSOrderedSame) {
+                                            ((Frequency*)object).disp = [NSNumber numberWithFloat:[string floatValue]];
                                         }
                                         
                                         attrString = nil;
@@ -709,15 +745,18 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
         if ([name compare:@"association"] == NSOrderedSame) {
             ist = TTABLEDATA_ASSOCIATION;
         }
+        else if ([name compare:@"frequency"] == NSOrderedSame) {
+            ist = TTABLEDATA_FREQUENCY;
+        }
         else if ([name compare:@"dota_list"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALIST;
         }
-//        else if ([name compare:@"mcec_dict_meaning"] == NSOrderedSame) {
-//            ist = TTABLEDATA_MCECDICTMEANING;
-//        }
-//        else if ([name compare:@"mcec_dict_word"] == NSOrderedSame) {
-//            ist = TTABLEDATA_MCECDICTWORD;
-//        }
+        //        else if ([name compare:@"mcec_dict_meaning"] == NSOrderedSame) {
+        //            ist = TTABLEDATA_MCECDICTMEANING;
+        //        }
+        //        else if ([name compare:@"mcec_dict_word"] == NSOrderedSame) {
+        //            ist = TTABLEDATA_MCECDICTWORD;
+        //        }
         else if ([name compare:@"mwc_dict_meaning"] == NSOrderedSame) {
             ist = TTABLEDATA_MWCDICTMEANING;
         }

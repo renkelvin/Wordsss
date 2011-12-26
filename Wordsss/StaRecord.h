@@ -36,4 +36,6 @@
 
 + (StaRecord*)insertStaRecord:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context;
 
+- (float)getCount;
+
 @end

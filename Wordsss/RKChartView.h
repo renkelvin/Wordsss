@@ -11,10 +11,10 @@
 #import "HisRecord.h"
 #import "StaRecord.h"
 
-#define kStaX   0.0
-#define kEndX   320.0
-#define kStaY   0.0
-#define kEndY   131.0
+#define kMinX   0.0
+#define kMaxX   320.0
+#define kMinY   0.0
+#define kMaxY   131.0
 
 @interface RKChartView : UIView
 
@@ -24,7 +24,9 @@ enum RKChartType {USER, WORD};
 
 @property (nonatomic) enum RKChartType type;
 
-@property (nonatomic) int staDay;
-@property (nonatomic) int endDay;
+@property (nonatomic) int minDay;
+@property (nonatomic) int maxDay;
+@property (nonatomic) float minValue;
+@property (nonatomic) float maxValue;
 
 @end

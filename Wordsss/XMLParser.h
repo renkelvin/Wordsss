@@ -14,6 +14,7 @@
 #import "Association.h"
 #import "Rootaffix.h"
 #import "Sense.h"
+#import "Frequency.h"
 #import "Word_Association.h"
 #import "Word_Rootaffix.h"
 #import "Word_Sense.h"
@@ -43,6 +44,7 @@ enum IterStat_D { DNONE, DDATABASE };
 enum IterStat_T { TNONE,    TTABLESTRUCTURE, 
                             TTABLEDATA,
                             TTABLEDATA_WORD, 
+                            TTABLEDATA_FREQUENCY, 
                             TTABLEDATA_WORDASSOCIATION, TTABLEDATA_ASSOCIATION, 
                             TTABLEDATA_WORDROOTAFFIX, TTABLEDATA_ROOTAFFIX,  
                             TTABLEDATA_WORDSENSE, TTABLEDATA_SENSE, TTABLEDATA_SENSEFAMILY,

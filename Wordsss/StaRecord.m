@@ -63,4 +63,24 @@
     return staRecord;
 }
 
+- (float)getCount
+{
+    float count = 0;
+    
+    count = 
+    [self.count1 floatValue]*0.0 + 
+    [self.count2 floatValue]*0.1 + 
+    [self.count3 floatValue]*0.2 +
+    [self.count4 floatValue]*0.3 + 
+    [self.count5 floatValue]*0.4 + 
+    [self.count6 floatValue]*0.5 + 
+    [self.count7 floatValue]*0.6 +
+    [self.count8 floatValue]*0.7 + 
+    [self.count9 floatValue]*0.8 + 
+    [self.count10 floatValue]*0.9 + 
+    [self.countm floatValue]*1.0;
+    
+    return count;
+}
+
 @end
