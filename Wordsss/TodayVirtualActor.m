@@ -77,7 +77,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     _wordRecordPre = (WordRecord*)[[_wordRecordSet allObjects] objectAtIndex:index];
 }
 
-
 #pragma mark -
 
 - (void)updateUser

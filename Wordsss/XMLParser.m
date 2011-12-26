@@ -21,19 +21,19 @@ NSManagedObject* object = nil;
 static NSDictionary* attrDict = nil;
 static NSString* attrString = nil;
 
-NSMutableDictionary* wordDICT = nil;    //TTABLEDATA_WORD
-NSMutableDictionary* wordAssociationDICT = nil;    //TTABLEDATA_WORDASSOCIATION
-NSMutableDictionary* associationDICT = nil;    //TTABLEDATA_ASSOCIATION
-NSMutableDictionary* wordRootaffixDICT = nil;    //TTABLEDATA_WORDROOTAFFIX
-NSMutableDictionary* rootaffixDICT = nil;    //TTABLEDATA_ROOTAFFIX  
-NSMutableDictionary* wordSenseDICT = nil;    //TTABLEDATA_WORDSENSE
-NSMutableDictionary* senseDICT = nil;    //TTABLEDATA_SENSE
-NSMutableDictionary* senseFamilyDICT = nil;    //TTABLEDATA_SENSEFAMILY
-NSMutableDictionary* wordDictDICT = nil;    //TTABLEDATA_WORDDICT
-NSMutableDictionary* mcecDictWordDICT = nil;    //TTABLEDATA_MCECDICTWORD
-NSMutableDictionary* mcecDictMeaningDICT = nil;    //TTABLEDATA_MCECDICTMEANING
-NSMutableDictionary* mwcDictWordDICT = nil;    //TTABLEDATA_MWCDICTWORD
-NSMutableDictionary* mwcDictMeaningDICT = nil;    //TTABLEDATA_MWCDICTMEANING
+NSMutableDictionary* wordDICT = nil;                //TTABLEDATA_WORD
+NSMutableDictionary* wordAssociationDICT = nil;     //TTABLEDATA_WORDASSOCIATION
+NSMutableDictionary* associationDICT = nil;         //TTABLEDATA_ASSOCIATION
+NSMutableDictionary* wordRootaffixDICT = nil;       //TTABLEDATA_WORDROOTAFFIX
+NSMutableDictionary* rootaffixDICT = nil;           //TTABLEDATA_ROOTAFFIX  
+NSMutableDictionary* wordSenseDICT = nil;           //TTABLEDATA_WORDSENSE
+NSMutableDictionary* senseDICT = nil;               //TTABLEDATA_SENSE
+NSMutableDictionary* senseFamilyDICT = nil;         //TTABLEDATA_SENSEFAMILY
+NSMutableDictionary* wordDictDICT = nil;            //TTABLEDATA_WORDDICT
+NSMutableDictionary* mcecDictWordDICT = nil;        //TTABLEDATA_MCECDICTWORD
+NSMutableDictionary* mcecDictMeaningDICT = nil;     //TTABLEDATA_MCECDICTMEANING
+NSMutableDictionary* mwcDictWordDICT = nil;         //TTABLEDATA_MWCDICTWORD
+NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
 
 @implementation XMLParser
 
@@ -562,7 +562,7 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;    //TTABLEDATA_MWCDICTMEANING
                                             McecDictWord* word = [McecDictWord wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
                                             if (word) {
-                                                ((Word_Dict*)object).mcecDictWord = word;
+                                                [((Word_Dict*)object).mcecDictWord addObject:word];
                                                 word.word_dict = ((Word_Dict*)object);
                                             }
                                         }
@@ -712,12 +712,12 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;    //TTABLEDATA_MWCDICTMEANING
         else if ([name compare:@"dota_list"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALIST;
         }
-        else if ([name compare:@"mcec_dict_meaning"] == NSOrderedSame) {
-            ist = TTABLEDATA_MCECDICTMEANING;
-        }
-        else if ([name compare:@"mcec_dict_word"] == NSOrderedSame) {
-            ist = TTABLEDATA_MCECDICTWORD;
-        }
+//        else if ([name compare:@"mcec_dict_meaning"] == NSOrderedSame) {
+//            ist = TTABLEDATA_MCECDICTMEANING;
+//        }
+//        else if ([name compare:@"mcec_dict_word"] == NSOrderedSame) {
+//            ist = TTABLEDATA_MCECDICTWORD;
+//        }
         else if ([name compare:@"mwc_dict_meaning"] == NSOrderedSame) {
             ist = TTABLEDATA_MWCDICTMEANING;
         }

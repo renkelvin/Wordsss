@@ -52,8 +52,12 @@
     [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
     
     //
+    srand(time(NULL));
+    
+    //
     _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
     
+    //
     [self update];
 }
 
@@ -84,10 +88,7 @@
         self.wordLabelPos.text = [_todayVirtualActor wordPos].name;
     
     //
-    McecDictWord* mcecDictWord = [_todayVirtualActor wordPos].word_dict.mcecDictWord;
-    if (mcecDictWord) {
-        self.briefMeaningLabel.text = ((McecDictMeaning*)[mcecDictWord.meaning anyObject]).meaning_cn;
-    }
+    
 }
 
 - (void)nextDay

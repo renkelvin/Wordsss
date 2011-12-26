@@ -2,7 +2,7 @@
 //  Word_Dict.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/21/11.
+//  Created by Ren Chuan on 12/26/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
@@ -18,6 +18,7 @@
 @dynamic mcecDictWord;
 @dynamic mwcDictWord;
 @dynamic word;
+@dynamic ahdDictWord;
 
 + (Word_Dict *)entityWithId:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context
 {
