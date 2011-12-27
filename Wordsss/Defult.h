@@ -13,7 +13,7 @@
 
 @interface Defult : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * targetMemDegree;
+@property (nonatomic, retain) NSNumber * memDegree;
 @property (nonatomic, retain) User *user;
 
 + (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;

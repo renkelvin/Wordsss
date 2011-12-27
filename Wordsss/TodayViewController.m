@@ -16,10 +16,11 @@
 @synthesize wordSliderLeftTapArea;
 @synthesize wordSliderRightTapArea;
 
-@synthesize wordLabelPre = _wordLabelPre;
-@synthesize wordLabelCur = _wordLabelCur;
-@synthesize wordLabelPos = _wordLabelPos;
-@synthesize briefMeaningLabel = _briefMeaningLabel;
+@synthesize wordPreLabel;
+@synthesize wordCurLabel;
+@synthesize wordPosLabel;
+@synthesize wordPosLevelImageView;
+@synthesize briefMeaningLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,15 +80,15 @@
 // update
 - (void)update
 {
-    //
+    // 3 Word Label
     if ([_todayVirtualActor wordPre])
-        self.wordLabelPre.text = [_todayVirtualActor wordPre].name;
+        self.wordPreLabel.text = [_todayVirtualActor wordPre].name;
     if ([_todayVirtualActor wordCur])
-        self.wordLabelCur.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordCur].name, [[_todayVirtualActor wordRecordCur].level stringValue], [[_todayVirtualActor wordRecordCur].day stringValue]];
+        self.wordCurLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordCur].name, [[_todayVirtualActor wordRecordCur].level stringValue], [[_todayVirtualActor wordRecordCur].day stringValue]];
     if ([_todayVirtualActor wordPos])
-        self.wordLabelPos.text = [_todayVirtualActor wordPos].name;
+        self.wordPosLabel.text = [_todayVirtualActor wordPos].name;
     
-    //
+    // WordPos Level Bar
     
 }
 

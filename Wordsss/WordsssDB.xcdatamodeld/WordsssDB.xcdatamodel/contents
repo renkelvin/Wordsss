@@ -136,7 +136,7 @@
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
         <element name="Frequency" positionX="-882" positionY="-165" width="128" height="120"/>
         <element name="McecDictMeaning" positionX="-776" positionY="-882" width="128" height="105"/>
-        <element name="McecDictWord" positionX="-774" positionY="-783" width="128" height="75"/>
+        <element name="McecDictWord" positionX="-774" positionY="-759" width="128" height="75"/>
         <element name="MwcDictMeaning" positionX="-657" positionY="-351" width="128" height="75"/>
         <element name="MwcDictWord" positionX="-576" positionY="-783" width="128" height="90"/>
         <element name="Rootaffix" positionX="-999" positionY="-555" width="128" height="195"/>

@@ -217,16 +217,16 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 //
 - (BOOL)checkNextDayByCount
 {
-    float targetMemDegree = [_user.defult.targetMemDegree floatValue];
+    float memDegree = [_user.defult.memDegree floatValue];
     
     //
-    int wordRemainLimit = kTodayWordLimit * ((1-targetMemDegree)*kWordRemainFactorMin + targetMemDegree*kWordRemainFactorMax);
+    int wordRemainLimit = kTodayWordLimit * ((1-memDegree)*kWordRemainFactorMin + memDegree*kWordRemainFactorMax);
     if ([_wordRecordSet count] <= wordRemainLimit) {
         return YES;
     }
     
     //
-    int totalViewLimit = kTodayWordLimit * ((1-targetMemDegree)*kTotalViewFactorMin + targetMemDegree*kTotalViewFactorMax);
+    int totalViewLimit = kTodayWordLimit * ((1-memDegree)*kTotalViewFactorMin + memDegree*kTotalViewFactorMax);
     if ([_user.status.dlc intValue] >= totalViewLimit) {
         return YES;
     }

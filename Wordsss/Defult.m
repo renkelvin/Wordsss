@@ -12,7 +12,7 @@
 
 @implementation Defult
 
-@dynamic targetMemDegree;
+@dynamic memDegree;
 @dynamic user;
 
 + (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context

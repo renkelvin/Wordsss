@@ -22,13 +22,6 @@
 {
     //
     TodayVirtualActor* _todayVirtualActor;
-    
-    //
-    UILabel* _wordLabelPre;
-    UILabel* _wordLabelCur;
-    UILabel* _wordLabelPos;
-    
-    UILabel* _briefMeaningLabel;
 }
 
 #pragma mark - property
@@ -38,9 +31,11 @@
 @property (nonatomic, retain) IBOutlet UIView* wordSliderLeftTapArea;
 @property (nonatomic, retain) IBOutlet UIView* wordSliderRightTapArea;
 
-@property (nonatomic, retain) IBOutlet UILabel* wordLabelPre;
-@property (nonatomic, retain) IBOutlet UILabel* wordLabelCur;
-@property (nonatomic, retain) IBOutlet UILabel* wordLabelPos;
+@property (nonatomic, retain) IBOutlet UILabel* wordPreLabel;
+@property (nonatomic, retain) IBOutlet UILabel* wordCurLabel;
+@property (nonatomic, retain) IBOutlet UILabel* wordPosLabel;
+
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelImageView;
 
 @property (nonatomic, retain) IBOutlet UILabel* briefMeaningLabel;
 
