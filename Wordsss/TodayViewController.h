@@ -12,6 +12,9 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
+#import "WordsssAppDelegate.h"
+#import "Init1stViewController.h"
+
 #import "TodayVirtualActor.h"
 
 #import "Word_Dict.h"
@@ -52,6 +55,8 @@
 - (void)wordSliderPanning:(UIPanGestureRecognizer*)recognizer;
 - (void)wordSliderLeftTap:(UITapGestureRecognizer*)recognizer;
 - (void)wordSliderRightTap:(UITapGestureRecognizer*)recognizer;
+
+- (BOOL)check1stTimeLogIn;
 
 - (void)update;
 

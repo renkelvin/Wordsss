@@ -15,6 +15,8 @@
 #import "UserDataManager.h"
 #import "TodayVirtualActor.h"
 
+#define kUserDefaultKeyLoginCount @"kUserDefaultKeyLoginCount"
+
 @interface WordsssAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

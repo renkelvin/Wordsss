@@ -1,5 +1,5 @@
 //
-//  Init1stViewController.h
+//  WordCellMem.h
 //  Wordsss
 //
 //  Created by Ren Chuan on 12/27/11.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RKNavigationController.h"
-
-@interface Init1stViewController : UIViewController
+@interface WordCellMem : UITableViewCell
 
 @end

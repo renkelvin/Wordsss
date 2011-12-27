@@ -14,10 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {   
-    if (YES) {
-        [self.window makeKeyAndVisible];
-    }
-    else {
+    if (NO) {
         // Create xmlParser
         XMLParser* xmlParser = [XMLParser xmlParser];
         
@@ -25,7 +22,22 @@
         [xmlParser go];
     }
     
+    // Create main view
+    [self.window makeKeyAndVisible];
+    
     return YES;
+}
+
++ (void)initialize
+{
+    //
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
+    
+	[dict setObject:[NSNumber numberWithInt:0] forKey:kUserDefaultKeyLoginCount];
+	
+	[userDefault registerDefaults:dict];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -43,6 +55,7 @@
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
     
+    // Save context
     [[UserDataManager userdataManager] saveContext];
 }
 
@@ -51,7 +64,8 @@
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
-
+    
+    // Check next day
     if ([[TodayVirtualActor todayVirtualActor] checkNextDayByTime]) {
         [[TodayVirtualActor todayVirtualActor] nextDay];
     }
@@ -62,6 +76,13 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    
+    // Log in count ++
+    int count = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefaultKeyLoginCount];
+	[[NSUserDefaults standardUserDefaults] setInteger:(count + 1) forKey:kUserDefaultKeyLoginCount];
+    
+    // Init rand seed
+    srand(time(NULL));
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

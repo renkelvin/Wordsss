@@ -26,7 +26,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // WordSlider gesture recognizer
+        UIPanGestureRecognizer* recognizerCenter = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderPanning:)];
+        [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
     }
     return self;
 }
@@ -45,21 +47,17 @@
 {
     [super viewDidLoad];
     
-    //
-    [[self navigationController] setDelegate:self];
-    
-    // WordSlider gesture recognizer
-    UIPanGestureRecognizer* recognizerCenter = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderPanning:)];
-    [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
-    
-    //
-    srand(time(NULL));
-    
-    //
-    _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
-    
-    //
-    [self update];
+    // Check 1st time log in
+    if (![self check1stTimeLogIn]) {
+        // Get todayVirtualActor
+        _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
+        
+        // Init rknc delegate
+        [[self navigationController] setDelegate:self];
+        
+        // Update view
+        [self update];
+    }
 }
 
 - (void)viewDidUnload
@@ -216,6 +214,24 @@
     // Move Slider
     rect.origin.x = 42;
     [self.wordSliderImageView setFrame:rect];
+}
+
+- (BOOL)check1stTimeLogIn
+{
+    // TODO
+    int count = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefaultKeyLoginCount];
+    
+    if (count == 0) {
+        Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
+
+        RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
+
+        [self presentModalViewController:nc animated:YES];
+        
+        return YES;
+    }    
+    
+    return NO;
 }
 
 #pragma - IBAction

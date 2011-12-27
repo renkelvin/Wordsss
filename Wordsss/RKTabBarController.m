@@ -33,13 +33,6 @@ static BOOL FIRSTTIME = YES;
 
 #pragma mark - View lifecycle
 
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -88,7 +81,7 @@ static BOOL FIRSTTIME = YES;
     CGRect tabBarFrame = CGRectMake(0, 480 - 62, 320, 62);    
 	customTabBarView = [[[NSBundle mainBundle] loadNibNamed:@"RKTabBarController" owner:self options:nil] lastObject];
     [customTabBarView setFrame:tabBarFrame];
-    	
+    
 	// Create buttons
 	int viewCount = self.viewControllers.count;
 	self.buttons = [NSMutableArray arrayWithCapacity:viewCount];

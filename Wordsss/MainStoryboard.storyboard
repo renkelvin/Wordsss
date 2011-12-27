@@ -137,10 +137,6 @@
                                 <rect key="frame" x="0.0" y="47" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="340">
-                                <rect key="frame" x="0.0" y="255" width="320" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="word_slider.png" id="334">
                                 <rect key="frame" x="42" y="151" width="236" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,6 +226,10 @@
                                 <color key="textColor" red="0.62306441175850746" green="1" blue="0.43573358607276758" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="340">
+                                <rect key="frame" x="0.0" y="255" width="320" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" alpha="0.29999999999999999" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="347">
                                 <rect key="frame" x="128" y="150" width="64" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -249,9 +249,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="briefMeaningLabel" destination="pEf-ze-Pjn" id="h20-rp-16Y"/>
-                        <outlet property="wordLabelCur" destination="338" id="IoF-iq-swG"/>
-                        <outlet property="wordLabelPos" destination="337" id="CgS-Am-TBB"/>
-                        <outlet property="wordLabelPre" destination="339" id="YWi-WI-SLT"/>
+                        <outlet property="wordCurLabel" destination="338" id="U1s-9t-0Vr"/>
+                        <outlet property="wordPosLabel" destination="337" id="iX9-rk-w5P"/>
+                        <outlet property="wordPosLevelImageView" destination="340" id="8up-md-9mD"/>
+                        <outlet property="wordPreLabel" destination="339" id="qpq-H7-Z5w"/>
                         <outlet property="wordSliderImageView" destination="334" id="348"/>
                         <outlet property="wordSliderLeftTapArea" destination="350" id="352"/>
                         <outlet property="wordSliderRightTapArea" destination="351" id="353"/>
@@ -523,13 +524,14 @@
         <scene sceneID="Cta-8S-Rx2">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCD-C7-C7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="o2t-ig-XYS" customClass="Init1stViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Init1stViewController" id="o2t-ig-XYS" customClass="Init1stViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7RM-ot-y8A">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Root View Controller" id="8Eg-GR-yKc"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="iRs-0F-x4h" kind="push" id="KpF-D4-CG4"/>
                     </connections>
@@ -567,21 +569,6 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1444" y="-1543"/>
-        </scene>
-        <scene sceneID="CxY-IG-t5W">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CfO-zF-ygf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="ZhQ-QD-fss" customClass="RKNavigationController" sceneMemberID="viewController">
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HIL-pg-jlM">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="o2t-ig-XYS" kind="relationship" relationship="rootViewController" id="jrV-6C-Pra"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="-1543"/>
         </scene>
         <scene sceneID="158">
             <objects>
@@ -868,6 +855,94 @@
         <image name="word_bg.png" width="320" height="142"/>
         <image name="word_slider.png" width="236" height="34"/>
     </resources>
+    <classes>
+        <class className="ExploreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExploreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="Init1stViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init1stViewController.h"/>
+        </class>
+        <class className="Init2ndViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init2ndViewController.h"/>
+        </class>
+        <class className="Init3rdViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init3rdViewController.h"/>
+        </class>
+        <class className="ListsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListsViewController.h"/>
+        </class>
+        <class className="ProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chartView" candidateClass="RKChartView"/>
+            </relationships>
+        </class>
+        <class className="RKChartView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKChartView.h"/>
+        </class>
+        <class className="RKNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKNavigationController.h"/>
+            <relationships>
+                <relationship kind="action" name="leftButtonDown:"/>
+                <relationship kind="action" name="rigntButtonDown:"/>
+                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="titleImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RKTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKTabBarController.h"/>
+        </class>
+        <class className="SettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
+        </class>
+        <class className="TodayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="wordDetailSelected:"/>
+                <relationship kind="action" name="wordSliderLeftTouchDown:"/>
+                <relationship kind="action" name="wordSliderLeftTouchUpInside:"/>
+                <relationship kind="action" name="wordSliderRightTouchDown:"/>
+                <relationship kind="action" name="wordSliderRightTouchUpInside:"/>
+                <relationship kind="outlet" name="briefMeaningLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordCurLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordSliderImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordSliderLeftTapArea" candidateClass="UIView"/>
+                <relationship kind="outlet" name="wordSliderRightTapArea" candidateClass="UIView"/>
+                <relationship kind="outlet" name="wordSliderTouchArea" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="WordBooksViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordBooksViewController.h"/>
+        </class>
+        <class className="WordMemsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordMemsViewController.h"/>
+        </class>
+        <class className="WordRelationsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordRelationsViewController.h"/>
+        </class>
+        <class className="WordStatisticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordStatisticsViewController.h"/>
+        </class>
+        <class className="WordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectSectionButtonDown:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordBooksSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordMemsSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordRelationsSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordStatisticsSectionButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
