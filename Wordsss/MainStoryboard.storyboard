@@ -108,7 +108,7 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2011 年 10 月 4 日" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="345">
-                                        <rect key="frame" x="180" y="5" width="125" height="28"/>
+                                        <rect key="frame" x="180" y="4" width="125" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,6 +145,10 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="135">
                                 <rect key="frame" x="0.0" y="47" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="340">
+                                <rect key="frame" x="0.0" y="251" width="320" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="word_slider.png" id="334">
@@ -245,10 +249,6 @@
                                 <color key="shadowColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="340">
-                                <rect key="frame" x="0.0" y="255" width="320" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" alpha="0.29999999999999999" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="347">
                                 <rect key="frame" x="128" y="150" width="64" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -270,7 +270,6 @@
                         <outlet property="briefMeaningLabel" destination="pEf-ze-Pjn" id="h20-rp-16Y"/>
                         <outlet property="wordCurLabel" destination="338" id="U1s-9t-0Vr"/>
                         <outlet property="wordPosLabel" destination="337" id="iX9-rk-w5P"/>
-                        <outlet property="wordPosLevelImageView" destination="340" id="8up-md-9mD"/>
                         <outlet property="wordPreLabel" destination="339" id="qpq-H7-Z5w"/>
                         <outlet property="wordSliderImageView" destination="334" id="348"/>
                         <outlet property="wordSliderLeftTapArea" destination="350" id="352"/>
