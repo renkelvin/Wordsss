@@ -83,6 +83,7 @@
     </entity>
     <entity name="Word_Association" representedClassName="Word_Association" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="association" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Association" inverseName="word_association" inverseEntity="Association" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_association" inverseEntity="Word" syncable="YES"/>
     </entity>

@@ -77,7 +77,19 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
 
 - (void)initDicts
 {
-    wordDICT = [NSMutableDictionary dictionary];
+    wordDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_WORD
+    wordAssociationDICT = [NSMutableDictionary dictionary];     //TTABLEDATA_WORDASSOCIATION
+     associationDICT = [NSMutableDictionary dictionary];         //TTABLEDATA_ASSOCIATION
+     wordRootaffixDICT = [NSMutableDictionary dictionary];       //TTABLEDATA_WORDROOTAFFIX
+     rootaffixDICT = [NSMutableDictionary dictionary];           //TTABLEDATA_ROOTAFFIX  
+    wordSenseDICT = [NSMutableDictionary dictionary];           //TTABLEDATA_WORDSENSE
+     senseDICT = [NSMutableDictionary dictionary];               //TTABLEDATA_SENSE
+    senseFamilyDICT = [NSMutableDictionary dictionary];         //TTABLEDATA_SENSEFAMILY
+     wordDictDICT = [NSMutableDictionary dictionary];            //TTABLEDATA_WORDDICT
+     mcecDictWordDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_MCECDICTWORD
+     mcecDictMeaningDICT = [NSMutableDictionary dictionary];     //TTABLEDATA_MCECDICTMEANING
+     mwcDictWordDICT = [NSMutableDictionary dictionary];         //TTABLEDATA_MWCDICTWORD
+     mwcDictMeaningDICT = [NSMutableDictionary dictionary];      
 }
 
 // generate WordsssDB.sqlite
@@ -99,7 +111,7 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
         [_parser parse];
     }
     
-    if (NO) {
+    if (YES) {
         // CreateXMLParser
         [self createXmlParser];
         
@@ -197,19 +209,19 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                     }    
                                     case TTABLEDATA_WORDASSOCIATION:   // Word_Association
                                     {
-                                        object = (Word_Association*)[NSEntityDescription insertNewObjectForEntityForName:@"Association" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        object = (Word_Association*)[NSEntityDescription insertNewObjectForEntityForName:@"Word_Association" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
                                     }
                                     case TTABLEDATA_WORDROOTAFFIX:   // Word_Rootaffix
                                     {
-                                        object = (Word_Rootaffix*)[NSEntityDescription insertNewObjectForEntityForName:@"Rootaffix" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        object = (Word_Rootaffix*)[NSEntityDescription insertNewObjectForEntityForName:@"Word_Rootaffix" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
                                     }
                                     case TTABLEDATA_WORDSENSE:   // Word_Sense
                                     {
-                                        object = (Word_Sense*)[NSEntityDescription insertNewObjectForEntityForName:@"Sense" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        object = (Word_Sense*)[NSEntityDescription insertNewObjectForEntityForName:@"Word_Sense" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
                                     }
@@ -338,7 +350,7 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             
                                             NSLog(@"Association - id: %@", string);
                                         }
-                                        else if ([attrString compare:@"association_name"] == NSOrderedSame) {
+                                        else if ([attrString compare:@"association_type"] == NSOrderedSame) {
                                             ((Association*)object).type = [NSNumber numberWithInt:[string intValue]];
                                         }
                                         else if ([attrString compare:@"association_description_cn"] == NSOrderedSame) {
@@ -531,6 +543,32 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_WORDASSOCIATION:   // Word_Association
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_association_id"] == NSOrderedSame) {
+                                            ((Word_Association*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [wordAssociationDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"WordAssociation - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
+                                            ((Word_Association*)object).meaning_cn = string;
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_WORDSENSE:   // Word_Sense
                                     {
                                         if (!attrDict)
@@ -572,6 +610,9 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                 switch (ist) {
                                     case TTABLEDATA_WORDDICT:   // Word_Dict
                                     {
+                                        #warning debug
+                                        break;
+                                        
                                         if (!attrDict)
                                             break;
                                         
@@ -611,51 +652,97 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         
                                         break;
                                     }
-                                        /*                                    case TTABLEDATA_WORDSENSE:   // Word_Sense
-                                         {
-                                         if (!attrDict)
-                                         break;
-                                         
-                                         attrString = [attrDict objectForKey:@"name"];
-                                         
-                                         if (!attrString)
-                                         break;
-                                         
-                                         if ([attrString compare:@"word_sense_id"] == NSOrderedSame) {
-                                         object = [Word_Sense entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
-                                         
-                                         NSLog(@"WordSense - id: %@", string);
-                                         }
-                                         else if ([attrString compare:@"word_type"] == NSOrderedSame) {
-                                         ((Word_Sense*)object).type = [NSNumber numberWithInt:[string intValue]];
-                                         }
-                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
-                                         ((Word_Sense*)object).meaning_cn = string;
-                                         }
-                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
-                                         Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
-                                         
-                                         if (word) {
-                                         ((Word_Sense*)object).word = word;
-                                         [word.word_sense addObject:((Word_Sense*)object)];
-                                         }
-                                         }
-                                         else if ([attrString compare:@"sense_id"] == NSOrderedSame) {
-                                         Sense* sense = [Sense senseWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
-                                         
-                                         if (sense) {
-                                         ((Word_Sense*)object).sense = sense;
-                                         [sense.word_sense addObject:((Word_Sense*)object)];
-                                         }
-                                         }
-                                         
-                                         attrString = nil;
-                                         attrDict = nil;
-                                         
-                                         break;
-                                         } */
+                                    case TTABLEDATA_WORDASSOCIATION:   // Word_Association
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_association_id"] == NSOrderedSame) {
+                                            // object = [Word_Sense entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            object = [wordAssociationDICT objectForKey:string];
+                                            
+                                            NSLog(@"WordAssociation - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_id"] == NSOrderedSame) {
+                                            // Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                ((Word_Association*)object).word = word;
+                                                [word.word_association addObject:((Word_Association*)object)];
+                                            }
+                                        }
+                                        else if ([attrString compare:@"association_id"] == NSOrderedSame) {
+                                            // Association* association = [Association entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            Association* association = [associationDICT objectForKey:string];
+                                            
+                                            if (association) {
+                                                ((Word_Association*)object).association = association;
+                                                [association.word_association addObject:((Word_Association*)object)];
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_WORDSENSE:   // Word_Sense
+                                    {
+#warning debug
+                                        break;
+                                        
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_sense_id"] == NSOrderedSame) {
+                                            object = [Word_Sense entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            
+                                            NSLog(@"WordSense - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_type"] == NSOrderedSame) {
+                                            ((Word_Sense*)object).type = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
+                                            ((Word_Sense*)object).meaning_cn = string;
+                                        }
+                                        else if ([attrString compare:@"word_id"] == NSOrderedSame) {
+                                            Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            
+                                            if (word) {
+                                                ((Word_Sense*)object).word = word;
+                                                [word.word_sense addObject:((Word_Sense*)object)];
+                                            }
+                                        }
+                                        else if ([attrString compare:@"sense_id"] == NSOrderedSame) {
+                                            Sense* sense = [Sense senseWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
+                                            
+                                            if (sense) {
+                                                ((Word_Sense*)object).sense = sense;
+                                                [sense.word_sense addObject:((Word_Sense*)object)];
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_MCECDICTMEANING:   // McecDictMeaning
                                     {
+#warning debug
+                                        break;
+                                        
                                         if (!attrDict)
                                             break;
                                         

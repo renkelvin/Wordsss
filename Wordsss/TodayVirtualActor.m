@@ -154,7 +154,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     NSLog(@"fillWordRecordSet: %d", [new_word_set count]);
     
     UserDataManager* udm = [UserDataManager userdataManager];
-    
     // Set new wordRecord
     for (Word* w in new_word_set) {
         // Get
@@ -171,6 +170,33 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     }
 }
 
+- (void)updateTestWordRecord
+{
+    // Get new word
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"name == \"pregnant\""]];
+    
+    NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
+    
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    _wordRecordSet = [NSMutableSet set];  
+    
+    // Set new wordRecord
+    for (Word* w in new_word_set) {
+        // Get
+        WordRecord* wr = [udm createWordRecord:w forUser:_user];
+        
+        // Set
+        [wr prepare:_user];
+        
+        // Add
+        [_wordRecordSet addObject:wr];
+    }
+}
+
 - (void)prepare
 {
     // Init
@@ -181,7 +207,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self updateUser];
     
     // Get wordRecordArray
-    [self updateWordRecordSet];
+    //    [self updateWordRecordSet];
+    [self updateTestWordRecord];
     
     // First time launch
     if ([_wordRecordSet count] == 0) {
@@ -206,6 +233,10 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     }
     
     float deltaTime = [[NSDate date] timeIntervalSinceDate:_user.status.date];
+    
+    if ([_wordRecordSet count] >= 160) {
+        return NO;
+    }
     
     if (deltaTime > 3 * 60 * 60) {
         return YES;

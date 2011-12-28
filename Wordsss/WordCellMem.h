@@ -10,4 +10,8 @@
 
 @interface WordCellMem : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet UILabel* nameLabel;
+@property (nonatomic, retain) IBOutlet UILabel* meaningLabel;
+@property (nonatomic, retain) IBOutlet UILabel* memLabel;
+
 @end

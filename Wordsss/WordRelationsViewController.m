@@ -133,19 +133,28 @@
 {
     switch (section) {
         case 0:
-            if (![[_wordVirtualActor getWordDerivative]count]) {
+            if ([[_wordVirtualActor getWordDerivative]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
         case 1:
-            if (![[_wordVirtualActor getWordSynonym]count]) {
+            if ([[_wordVirtualActor getWordSynonym]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
-        case 2:
-            if (![[_wordVirtualActor getWordAntonym]count]) {
+       case 2:
+            if ([[_wordVirtualActor getWordAntonym]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
-        default:
-            return 28;
+       default:
+            return 0;
     }
 }
 

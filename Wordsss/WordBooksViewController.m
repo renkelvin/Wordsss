@@ -117,19 +117,28 @@
 {
     switch (section) {
         case 0:
-            if (![[_wordVirtualActor getAhdDictWord]count]) {
+            if ([[_wordVirtualActor getAhdDictWord]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
         case 1:
-            if (![[_wordVirtualActor getMwcDictWord]count]) {
+            if ([[_wordVirtualActor getMwcDictWord]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
         case 2:
-            if (![[_wordVirtualActor getSentence]count]) {
+            if ([[_wordVirtualActor getSentence]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
         default:
-            return 28;
+            return 0;
     }
 }
 

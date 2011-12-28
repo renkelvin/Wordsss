@@ -709,6 +709,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="meaningLabel" destination="La8-Hc-Zj2" id="b3J-qW-4Xp"/>
+                                            <outlet property="memLabel" destination="p5N-uF-b92" id="fMm-cP-prq"/>
+                                            <outlet property="nameLabel" destination="4fE-YF-idz" id="uF8-f8-uOt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

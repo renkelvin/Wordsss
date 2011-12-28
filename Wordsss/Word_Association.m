@@ -2,7 +2,7 @@
 //  Word_Association.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/21/11.
+//  Created by Ren Chuan on 12/29/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
@@ -14,7 +14,20 @@
 @implementation Word_Association
 
 @dynamic id;
-@dynamic word;
+@dynamic meaning_cn;
 @dynamic association;
+@dynamic word;
+
+- (void)configCell:(WordCellMem*)cell
+{
+    //
+    [cell.nameLabel setText:self.word.name];
+    
+    //
+    [cell.meaningLabel setText:self.meaning_cn];
+    
+    //
+    [cell.memLabel setText:self.association.description_cn];
+}
 
 @end

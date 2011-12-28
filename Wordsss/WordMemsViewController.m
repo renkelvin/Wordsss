@@ -140,19 +140,28 @@
 {
     switch (section) {
         case 0:
-            if (![[_wordVirtualActor getWordAssociation]count]) {
+            if ([[_wordVirtualActor getWordAssociation]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
-        case 1:
-            if (![[_wordVirtualActor getWordRootaffix]count]) {
+       case 1:
+            if ([[_wordVirtualActor getWordRootaffix]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
         case 2:
-            if (![[_wordVirtualActor getWordSense]count]) {
+            if ([[_wordVirtualActor getWordSense]count]) {
+                return 28;
+            }
+            else {
                 return 0;
             }
         default:
-            return 28;
+            return 0;
     }
 }
 
@@ -165,6 +174,29 @@
 
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
+    }
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            Word_Association* word_association = [[_wordVirtualActor getWordAssociation] objectAtIndex:indexPath.row];
+            [word_association configCell:(WordCellMem*)cell];
+            break;
+        }   
+        case 1:
+        {
+            ;
+            break;
+        }   
+        case 2:
+        {
+            ;
+            break;
+        }   
+        default:
+        {
+            break;
+    }
     }
     
     return cell;

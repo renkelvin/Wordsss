@@ -10,6 +10,8 @@
 
 #import "WordVirtualActor.h"
 
+#import "Word_Association.h"
+
 @interface WordMemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //
