@@ -4,7 +4,14 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ahdDictSentence" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AhdDictSentence" inverseName="ahdDictMeaning" inverseEntity="AhdDictSentence" syncable="YES"/>
         <relationship name="ahdDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AhdDictWord" inverseName="meaning" inverseEntity="AhdDictWord" syncable="YES"/>
+    </entity>
+    <entity name="AhdDictSentence" representedClassName="AhdDictSentence" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ahdDictMeaning" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AhdDictMeaning" inverseName="ahdDictSentence" inverseEntity="AhdDictMeaning" syncable="YES"/>
     </entity>
     <entity name="AhdDictWord" representedClassName="AhdDictWord" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -131,7 +138,7 @@
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_sense" inverseEntity="Word" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AhdDictMeaning" positionX="-389" positionY="-882" width="128" height="75"/>
+        <element name="AhdDictMeaning" positionX="-389" positionY="-882" width="128" height="120"/>
         <element name="AhdDictWord" positionX="-389" positionY="-783" width="128" height="90"/>
         <element name="Association" positionX="-1001" positionY="-684" width="128" height="105"/>
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
@@ -150,5 +157,6 @@
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="120"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
+        <element name="AhdDictSentence" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

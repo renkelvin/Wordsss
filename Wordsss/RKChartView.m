@@ -81,11 +81,11 @@
     CGContextScaleCTM(context, 1.0, -1.0);
     
     // Line width
-    CGContextSetLineWidth(context, 2.0);
+    CGContextSetLineWidth(context, 16.0);
     
     // Line Color
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-    CGFloat components[] = {0.0, 0.0, 1.0, 1.0};
+    CGFloat components[] = {255.0, 255.0, 255.0, 1.0};
     CGColorRef color = CGColorCreate(colorspace, components);
     CGContextSetStrokeColorWithColor(context, color);
     
@@ -152,6 +152,7 @@
                  }
              }];
             
+            //
             [aPath stroke];
             
             break;
@@ -165,7 +166,6 @@
             break;
         }
     }
-    
     
     //
     CGContextStrokePath(context);

@@ -21,6 +21,11 @@
 #import "Word_Dict.h"
 #import "McecDictWord.h"
 #import "McecDictMeaning.h"
+#import "MwcDictWord.h"
+#import "MwcDictMeaning.h"
+#import "AhdDictWord.h"
+#import "AhdDictMeaning.h"
+#import "AhdDictSentence.h"
 
 @interface XMLParser : NSObject <NSXMLParserDelegate> {
     NSXMLParser* _parser;
@@ -50,6 +55,7 @@ enum IterStat_T { TNONE,    TTABLESTRUCTURE,
                             TTABLEDATA_WORDSENSE, TTABLEDATA_SENSE, TTABLEDATA_SENSEFAMILY,
                             TTABLEDATA_WORDDICT,
                             TTABLEDATA_MCECDICTWORD, TTABLEDATA_MCECDICTMEANING,
+                            TTABLEDATA_AHDDICTWORD, TTABLEDATA_AHDDICTMEANING, TTABLEDATA_AHDDICTSENTENCE,
                             TTABLEDATA_MWCDICTWORD, TTABLEDATA_MWCDICTMEANING,
                             TTABLEDATA_WORDLIST,
                             TTABLEDATA_DOTALIST
