@@ -30,13 +30,6 @@
 #pragma mark - View lifecycle
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -57,18 +50,53 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (WordRelationsViewController*)init:(WordVirtualActor*)wordVirtualActor
+{
+    //
+    _wordVirtualActor = wordVirtualActor;
+    
+    return self;
+}
+
 #pragma - UITableViewDelegate
 
 
 
 #pragma - UITableViewDataSource
 
+// Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    int num = 0;
+    
+    if ([[_wordVirtualActor getWordDerivative]count])
+        num++;
+    
+    if (![[_wordVirtualActor getWordSynonym]count])
+        num++;
+    
+    if (![[_wordVirtualActor getWordAntonym]count])
+        num++;
+    
+    return num;
 }
 
-// Header
+// Cell number
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return [[_wordVirtualActor getWordDerivative]count];
+        case 1:
+            return [[_wordVirtualActor getWordSynonym]count];
+        case 2:
+            return [[_wordVirtualActor getWordAntonym]count];
+        default:
+            return 0;
+    }
+}
+
+// Header View
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
@@ -79,25 +107,56 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(12, 0, 320, 28);
     label.backgroundColor = [UIColor clearColor];
-    label.text = @"-----";
+    
+    switch (section) {
+        case 0:
+            label.text = @"派生词";
+            break;
+        case 1:
+            label.text = @"同义词";
+            break;
+        case 2:
+            label.text = @"反义词";
+            break;
+        default:
+            label.text = @"-----";
+            break;
+    }
+    
     [headerView addSubview:label];
     
     return headerView;
 }
 
-// Section
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+// Header height
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 3;
+    switch (section) {
+        case 0:
+            if (![[_wordVirtualActor getWordDerivative]count]) {
+                return 0;
+            }
+        case 1:
+            if (![[_wordVirtualActor getWordSynonym]count]) {
+                return 0;
+            }
+        case 2:
+            if (![[_wordVirtualActor getWordAntonym]count]) {
+                return 0;
+            }
+        default:
+            return 28;
+    }
 }
 
 // Cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* WordBooksTableViewCellIndentifier = @"WordRelationsTableViewCell";
+    
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:WordBooksTableViewCellIndentifier];
+    
     if (cell == nil) {
-        // need [ autorealse]
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     

@@ -134,19 +134,19 @@
         <element name="AhdDictWord" positionX="-389" positionY="-783" width="128" height="90"/>
         <element name="Association" positionX="-1001" positionY="-684" width="128" height="105"/>
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
-        <element name="Frequency" positionX="-882" positionY="-165" width="128" height="120"/>
+        <element name="Frequency" positionX="-963" positionY="-165" width="128" height="120"/>
         <element name="McecDictMeaning" positionX="-776" positionY="-882" width="128" height="105"/>
         <element name="McecDictWord" positionX="-774" positionY="-759" width="128" height="75"/>
-        <element name="MwcDictMeaning" positionX="-657" positionY="-351" width="128" height="75"/>
+        <element name="MwcDictMeaning" positionX="-641" positionY="-246" width="128" height="75"/>
         <element name="MwcDictWord" positionX="-576" positionY="-783" width="128" height="90"/>
         <element name="Rootaffix" positionX="-999" positionY="-555" width="128" height="195"/>
         <element name="Sense" positionX="-999" positionY="-339" width="128" height="135"/>
         <element name="Word" positionX="-783" positionY="-531" width="128" height="195"/>
         <element name="Word_Association" positionX="-1019" positionY="-648" width="128" height="90"/>
-        <element name="Word_Convertion" positionX="-648" positionY="-285" width="128" height="195"/>
+        <element name="Word_Convertion" positionX="-362" positionY="-243" width="128" height="195"/>
         <element name="Word_Dict" positionX="-533" positionY="-627" width="128" height="105"/>
         <element name="Word_List" positionX="-524" positionY="-441" width="128" height="90"/>
-        <element name="Word_Relation" positionX="-722" positionY="-192" width="128" height="120"/>
+        <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="120"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
     </elements>

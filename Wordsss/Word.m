@@ -2,14 +2,17 @@
 //  Word.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/21/11.
+//  Created by Ren Chuan on 12/28/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
 #import "Word.h"
+#import "Frequency.h"
 #import "Word_Association.h"
+#import "Word_Convertion.h"
 #import "Word_Dict.h"
 #import "Word_List.h"
+#import "Word_Relation.h"
 #import "Word_Rootaffix.h"
 #import "Word_Sense.h"
 
@@ -18,11 +21,14 @@
 
 @dynamic id;
 @dynamic name;
+@dynamic frequency;
 @dynamic word_association;
-@dynamic word_rootaffix;
-@dynamic word_sense;
+@dynamic word_convertion;
 @dynamic word_dict;
 @dynamic word_list;
+@dynamic word_relation;
+@dynamic word_rootaffix;
+@dynamic word_sense;
 
 + (Word *)wordWithId:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context
 {

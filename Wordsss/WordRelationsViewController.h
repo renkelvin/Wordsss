@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "WordVirtualActor.h"
+
 @interface WordRelationsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    //
+    WordVirtualActor* _wordVirtualActor;
+}
+
+- (WordRelationsViewController*)init:(WordVirtualActor*)wordVirtualActor;
 
 @end

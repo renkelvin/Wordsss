@@ -14,7 +14,6 @@
 		FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */; };
 		FE10A07D14A0F002005F1EC9 /* Association.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07C14A0F001005F1EC9 /* Association.m */; };
 		FE10A08014A0F002005F1EC9 /* DotaListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07F14A0F002005F1EC9 /* DotaListWord.m */; };
-		FE10A08314A0F002005F1EC9 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A08214A0F002005F1EC9 /* Word.m */; };
 		FE10A08914A0F002005F1EC9 /* Rootaffix.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A08814A0F002005F1EC9 /* Rootaffix.m */; };
 		FE10A08C14A0F002005F1EC9 /* McecDictWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A08B14A0F002005F1EC9 /* McecDictWord.m */; };
 		FE10A08F14A0F003005F1EC9 /* Sense.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A08E14A0F003005F1EC9 /* Sense.m */; };
@@ -52,6 +51,7 @@
 		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE398C2014963A6C00D9408C /* Defult.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1F14963A6C00D9408C /* Defult.m */; };
+		FE6B999314AB4F4200AA3DEF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B999214AB4F4200AA3DEF /* Word.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
@@ -240,8 +240,6 @@
 		FE10A07C14A0F001005F1EC9 /* Association.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Association.m; sourceTree = "<group>"; };
 		FE10A07E14A0F002005F1EC9 /* DotaListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotaListWord.h; sourceTree = "<group>"; };
 		FE10A07F14A0F002005F1EC9 /* DotaListWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaListWord.m; sourceTree = "<group>"; };
-		FE10A08114A0F002005F1EC9 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
-		FE10A08214A0F002005F1EC9 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		FE10A08714A0F002005F1EC9 /* Rootaffix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rootaffix.h; sourceTree = "<group>"; };
 		FE10A08814A0F002005F1EC9 /* Rootaffix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rootaffix.m; sourceTree = "<group>"; };
 		FE10A08A14A0F002005F1EC9 /* McecDictWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McecDictWord.h; sourceTree = "<group>"; };
@@ -297,6 +295,8 @@
 		FE398C1E14963A6C00D9408C /* Defult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defult.h; sourceTree = "<group>"; };
 		FE398C1F14963A6C00D9408C /* Defult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defult.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
+		FE6B999114AB4F4200AA3DEF /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		FE6B999214AB4F4200AA3DEF /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		FE6C8DB414385A2F00DC9784 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
 		FE6C8DB614385AAD00DC9784 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -1016,12 +1016,12 @@
 				FE10A08B14A0F002005F1EC9 /* McecDictWord.m */,
 				FE10A08714A0F002005F1EC9 /* Rootaffix.h */,
 				FE10A08814A0F002005F1EC9 /* Rootaffix.m */,
-				FE10A08114A0F002005F1EC9 /* Word.h */,
-				FE10A08214A0F002005F1EC9 /* Word.m */,
 				FEB5292F14A8B22600500B7C /* Word_Dict.h */,
 				FEB5293014A8B22600500B7C /* Word_Dict.m */,
 				FE10A07E14A0F002005F1EC9 /* DotaListWord.h */,
 				FE10A07F14A0F002005F1EC9 /* DotaListWord.m */,
+				FE6B999114AB4F4200AA3DEF /* Word.h */,
+				FE6B999214AB4F4200AA3DEF /* Word.m */,
 				FE10A07B14A0F001005F1EC9 /* Association.h */,
 				FE10A07C14A0F001005F1EC9 /* Association.m */,
 				FE10A0A014A0F7D3005F1EC9 /* Word_Sense.h */,
@@ -1326,7 +1326,6 @@
 				FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */,
 				FE10A07D14A0F002005F1EC9 /* Association.m in Sources */,
 				FE10A08014A0F002005F1EC9 /* DotaListWord.m in Sources */,
-				FE10A08314A0F002005F1EC9 /* Word.m in Sources */,
 				FE10A08914A0F002005F1EC9 /* Rootaffix.m in Sources */,
 				FE10A08C14A0F002005F1EC9 /* McecDictWord.m in Sources */,
 				FE10A08F14A0F003005F1EC9 /* Sense.m in Sources */,
@@ -1359,6 +1358,7 @@
 				FE94A0A514A9E24800BDCE18 /* WordCellMem.m in Sources */,
 				FE94A0A814A9E25400BDCE18 /* ListCell.m in Sources */,
 				FE94A0AB14A9E26100BDCE18 /* MeaningCell.m in Sources */,
+				FE6B999314AB4F4200AA3DEF /* Word.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

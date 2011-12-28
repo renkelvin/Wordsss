@@ -42,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     //
     [self selectSectionWithIndex:0];
 }
@@ -74,6 +74,7 @@
     [self.wordRelationsSectionButton setSelected:NO];
     [self.wordMemsSectionButton setSelected:NO];
     [self.wordStatisticsSectionButton setSelected:NO];
+    
     switch (index) {
         case 0:
             [self.wordBooksSectionButton setSelected:YES];
@@ -100,31 +101,43 @@
     [self.view addSubview:sectionView];
 }
 
-- (id)initSectionViewControllers
+- (WordViewController*)init:(Word*)word
 {
+    // Init word & wordVirtualActor
+    _word = word;
+    _wordVirtualActor = [WordVirtualActor wordVirtualActor:_word];
+    
     //
-    WordBooksViewController* wordBooksViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WordBooksViewController"];
+    [self initSectionViewControllers];
+    
+    //
+    return self;
+}
+
+- (void)initSectionViewControllers;
+{
+    // Init
+    WordBooksViewController* wordBooksViewController = [((WordBooksViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordBooksViewController"]) init:_wordVirtualActor];
     [[wordBooksViewController view] setFrame:CGRectMake(0, 47, 320, 480)];  // 第四个参数480有问题，本应为320，未知问题
     
-    WordRelationsViewController* wordRelationsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WordRelationsViewController"];
+    WordRelationsViewController* wordRelationsViewController = [((WordRelationsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordRelationsViewController"]) init:_wordVirtualActor];
     [[wordRelationsViewController view] setFrame:CGRectMake(0, 47, 320, 320)];
     
-    WordMemsViewController* wordMemsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WordMemsViewController"];
+    WordMemsViewController* wordMemsViewController = [((WordMemsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordMemsViewController"]) init:_wordVirtualActor];
     [[wordMemsViewController view] setFrame:CGRectMake(0, 47, 320, 320)];
     
-    WordStatisticsViewController* wordStatisticsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"WordStatisticsViewController"];
+    WordStatisticsViewController* wordStatisticsViewController = [((WordStatisticsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordStatisticsViewController"]) init:_wordVirtualActor];
     [[wordStatisticsViewController view] setFrame:CGRectMake(0, 47, 320, 320)];
     
-    //
+    // Add
     NSMutableArray* tempViewControllersArray = [NSMutableArray arrayWithCapacity:4];
     [tempViewControllersArray addObject:wordBooksViewController];
     [tempViewControllersArray addObject:wordRelationsViewController];
     [tempViewControllersArray addObject:wordMemsViewController];
     [tempViewControllersArray addObject:wordStatisticsViewController];
     
+    // Set
     [self setSectionViewControllers:tempViewControllersArray];
-    
-    return self;
 }
 
 #pragma - RKNavigationControllerDelegate
@@ -135,6 +148,7 @@
     
     if (_word)
         [[navigationController titleLabel] setText:_word.name];
+    
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
     [[navigationController rightButton] setImage:[UIImage imageNamed:@"info_gre.png"] forState:UIControlStateNormal];

@@ -14,11 +14,16 @@
 #import "WordStatisticsViewController.h"
 
 #import "RKNavigationControllerDelegate.h"
+
 #import "Word.h"
+
+#import "WordVirtualActor.h"
 
 @interface WordViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
 {
+    //
     Word* _word;
+    WordVirtualActor* _wordVirtualActor;
 }
 
 @property (nonatomic, retain) Word* word;
@@ -31,7 +36,9 @@
 @property (nonatomic, retain) NSArray* sectionViewControllers;
 @property (nonatomic, retain) UIView* currentSectionView;
 
-- (id)initSectionViewControllers;
+- (WordViewController*)init:(Word*)word;
+
+- (void)initSectionViewControllers;
 
 - (IBAction)selectSectionButtonDown:(UIButton*)button;
 - (void)selectSectionWithIndex:(NSInteger)index;
