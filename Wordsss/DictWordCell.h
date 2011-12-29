@@ -1,14 +1,14 @@
 //
-//  MeaningCell.h
+//  DictWordCell.h
 //  Wordsss
 //
-//  Created by Ren Chuan on 12/27/11.
+//  Created by Ren Chuan on 12/29/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface MeaningCell : UITableViewCell
+@interface DictWordCell : UITableViewCell
 
 @property (nonatomic, retain) IBOutlet UILabel* typeLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;

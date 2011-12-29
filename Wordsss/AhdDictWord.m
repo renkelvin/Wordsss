@@ -17,7 +17,79 @@
 @dynamic meaning;
 @dynamic word_dict;
 
-- (NSString*)getFullMeaingCN
+- (void)configCell:(DictWordCell*)cell
+{
+    //
+    [cell.typeLabel setText:[self.type stringValue]];
+    
+    //
+    [cell.meaningLabel setText:[self getFullMeaningCN]];
+}
+
+#pragma mark -
+
+- (NSString*)getTypeString
+{
+    switch ([self.type intValue]) {
+        case 0:
+            return @" oth.";
+            break;
+        case 1:
+            return @"   n.";
+            break;
+        case 2:
+            return @"   v.";
+            break;
+        case 3:
+            return @" adj.";
+            break;
+        case 4:
+            return @" adv.";
+            break;
+        case 5:
+            return @"prep.";
+            break;
+        case 6:
+            return @"conj.";
+            break;
+        case 7:
+            return @"  vt.";
+            break;
+        case 8:
+            return @"  vi.";
+            break;
+        case 9:
+            return @" oth.";
+            break;
+        default:
+        {
+            // 组合词性
+            return @"   .";
+            
+            break;
+        }
+    }
+}
+
+- (NSString*)getBriefMeaning
+{
+    NSString* string = [NSString stringWithFormat:@""];
+    
+    int i = 0;
+    for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
+        if (!i) {
+            string = [string stringByAppendingFormat:@"%@\t\t%@\n", [self getTypeString], [ahdDictMeaning getShortMeaning]];
+        } 
+        else {
+            string = [string stringByAppendingFormat:@"\t\t\t\t\t\t%@\n", [ahdDictMeaning getShortMeaning]];
+        }
+        i++;
+    }
+    
+    return string;
+}
+
+- (NSString*)getFullMeaningCN
 {
     NSString* string = [NSString stringWithFormat:@""];
     
@@ -28,15 +100,6 @@
     }
     
     return string;
-}
-
-- (void)configCell:(MeaningCell*)cell
-{
-    //
-    [cell.typeLabel setText:[self.type stringValue]];
-    
-    //
-    [cell.meaningLabel setText:[self getFullMeaingCN]];
 }
 
 @end

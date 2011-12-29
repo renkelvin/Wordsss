@@ -223,8 +223,8 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="中文解释" lineBreakMode="tailTruncation" minimumFontSize="10" id="pEf-ze-Pjn">
-                                <rect key="frame" x="33" y="290" width="242" height="25"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="中文解释" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="pEf-ze-Pjn" customClass="WordCellBrief">
+                                <rect key="frame" x="33" y="272" width="242" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -640,7 +640,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WordBooksTableViewCell" rowHeight="68" id="355" customClass="MeaningCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WordBooksTableViewCell" rowHeight="68" id="355" customClass="DictWordCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -965,6 +965,13 @@
         <image name="word_slider.png" width="236" height="34"/>
     </resources>
     <classes>
+        <class className="DictWordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DictWordCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="typeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="ExploreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExploreViewController.h"/>
             <relationships>
@@ -986,13 +993,6 @@
         </class>
         <class className="ListsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ListsViewController.h"/>
-        </class>
-        <class className="MeaningCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MeaningCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="typeLabel" candidateClass="UILabel"/>
-            </relationships>
         </class>
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
@@ -1030,7 +1030,7 @@
                 <relationship kind="action" name="wordSliderLeftTouchUpInside:"/>
                 <relationship kind="action" name="wordSliderRightTouchDown:"/>
                 <relationship kind="action" name="wordSliderRightTouchUpInside:"/>
-                <relationship kind="outlet" name="briefMeaningLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="briefMeaningLabel" candidateClass="WordCellBrief"/>
                 <relationship kind="outlet" name="wordCurLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wordPosLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
@@ -1044,8 +1044,8 @@
         <class className="WordBooksViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WordBooksViewController.h"/>
         </class>
-        <class className="WordCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCell.h"/>
+        <class className="WordCellBrief" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellBrief.h"/>
         </class>
         <class className="WordCellMem" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellMem.h"/>

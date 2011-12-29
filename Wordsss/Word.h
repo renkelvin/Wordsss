@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "AhdDictWord.h"
+
+#import "WordCellBrief.h"
+
 @class Frequency, Word_Association, Word_Convertion, Word_Dict, Word_List, Word_Relation, Word_Rootaffix, Word_Sense;
 
 @interface Word : NSManagedObject
@@ -43,5 +47,7 @@
 - (void)removeWord_sense:(NSSet *)values;
 
 + (Word *)wordWithId:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context;
+
+- (void)configLabel:(WordCellBrief*)label;
 
 @end

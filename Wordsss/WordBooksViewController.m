@@ -153,7 +153,7 @@
         case 0:
         {
             AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:indexPath.row];
-            [word configCell:(MeaningCell*)cell];
+            [word configCell:(DictWordCell*)cell];
             break;
         }   
         case 1:

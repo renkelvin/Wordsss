@@ -79,15 +79,22 @@
 - (void)update
 {
     // 3 Word Label
-    if ([_todayVirtualActor wordPre])
+    if ([_todayVirtualActor wordPre]) {
         self.wordPreLabel.text = [_todayVirtualActor wordPre].name;
-    if ([_todayVirtualActor wordCur])
+    }
+    if ([_todayVirtualActor wordCur]) {
         self.wordCurLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordCur].name, [[_todayVirtualActor wordRecordCur].level stringValue], [[_todayVirtualActor wordRecordCur].day stringValue]];
-    if ([_todayVirtualActor wordPos])
+    }
+    if ([_todayVirtualActor wordPos]) {
         self.wordPosLabel.text = [_todayVirtualActor wordPos].name;
+    }
     
     // WordPos Level Bar
     
+    // WordPos Brief Meaning
+    if ([_todayVirtualActor wordPos]) {
+        [[_todayVirtualActor wordPos] configLabel:self.briefMeaningLabel];
+    }
 }
 
 - (void)nextDay

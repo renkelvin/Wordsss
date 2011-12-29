@@ -44,4 +44,20 @@
     return result;
 }
 
+- (NSString*)getBriefMeaning
+{
+    NSString* string = [NSString stringWithFormat:@""];
+    
+    for (AhdDictWord* ahdDictWord in self.word_dict.ahdDictWord) {
+        string = [string stringByAppendingFormat:@"%@\n", [ahdDictWord getBriefMeaning]];
+    }
+    
+    return string;
+}
+
+- (void)configLabel:(WordCellBrief*)label
+{
+    [label setText:[self getBriefMeaning]];
+}
+
 @end

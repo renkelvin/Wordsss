@@ -18,4 +18,6 @@
 @property (nonatomic, retain) NSString * meaning_en;
 @property (nonatomic, retain) AhdDictWord *ahdDictWord;
 
+- (NSString*)getShortMeaning;
+
 @end

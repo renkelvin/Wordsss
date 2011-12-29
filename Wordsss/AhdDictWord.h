@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "MeaningCell.h"
+#import "DictWordCell.h"
 
 #import "AhdDictMeaning.h"
 
@@ -30,6 +30,10 @@
 - (void)addMeaning:(NSSet *)values;
 - (void)removeMeaning:(NSSet *)values;
 
-- (void)configCell:(MeaningCell*)cell;
+- (void)configCell:(DictWordCell*)cell;
+
+- (NSString*)getTypeString;
+- (NSString*)getBriefMeaning;
+- (NSString*)getFullMeaningCN;
 
 @end

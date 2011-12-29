@@ -12,7 +12,7 @@
 
 #import "AhdDictWord.h"
 
-#import "MeaningCell.h"
+#import "DictWordCell.h"
 
 @interface WordBooksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {

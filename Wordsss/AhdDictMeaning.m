@@ -17,4 +17,9 @@
 @dynamic meaning_en;
 @dynamic ahdDictWord;
 
+- (NSString*)getShortMeaning
+{
+    return [[self.meaning_cn componentsSeparatedByString:@"："] objectAtIndex:0];
+}
+
 @end
