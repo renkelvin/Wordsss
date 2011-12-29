@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Init2ndViewController : UIViewController
+#import "RKNavigationController.h"
+#import "RKNavigationControllerDelegate.h"
+
+#import "Init3rdViewController.h"
+
+#import "InitVirtualActor.h"
+
+@interface Init2ndViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+{
+    //
+    InitVirtualActor* _initVirtualActor;
+}
 
 @end
+
+enum VocabularyLevel {VLBASIC, VLMIDDLE, VLHIGH, VLCET4, VLCET6, VLTOFEL, VLGRE, VLGMAT, VLGODLIKE, VLHOlYSHIT};

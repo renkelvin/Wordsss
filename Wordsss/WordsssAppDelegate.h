@@ -16,6 +16,7 @@
 #import "TodayVirtualActor.h"
 
 #define kUserDefaultKeyLoginCount @"kUserDefaultKeyLoginCount"
+#define kUserDefaultKeyHasInitUser @"kUserDefaultKeyHasInitUser"
 
 @interface WordsssAppDelegate : UIResponder <UIApplicationDelegate>
 

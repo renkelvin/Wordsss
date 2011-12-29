@@ -2,7 +2,7 @@
 //  Defult.h
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/23/11.
+//  Created by Ren Chuan on 12/29/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
@@ -13,7 +13,11 @@
 
 @interface Defult : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * currentLevel;
+@property (nonatomic, retain) NSNumber * currentVocabulary;
 @property (nonatomic, retain) NSNumber * memDegree;
+@property (nonatomic, retain) NSNumber * targetLevel;
+@property (nonatomic, retain) NSNumber * targetVocabulary;
 @property (nonatomic, retain) User *user;
 
 + (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;

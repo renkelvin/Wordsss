@@ -47,8 +47,8 @@
 {
     [super viewDidLoad];
     
-    // Check 1st time log in
-    if (![self check1stTimeLogIn]) {
+    // Check has init user
+    if ([self checkHasInitUser]) {
         // Get todayVirtualActor
         _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
         
@@ -232,6 +232,23 @@
     }    
     
     return NO;
+}
+
+- (BOOL)checkHasInitUser
+{
+    BOOL hasInit = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKeyHasInitUser];
+    
+    if (!hasInit) {
+        Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
+        
+        RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
+        
+        [self presentModalViewController:nc animated:YES];
+        
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma - IBAction

@@ -390,7 +390,7 @@
         <scene sceneID="88">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController id="75" customClass="RKTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RKTabBarController" id="75" customClass="RKTabBarController" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="76">
@@ -546,9 +546,16 @@
                     <view key="view" contentMode="scaleToFill" id="7RM-ot-y8A">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="O9a-mI-Rht">
+                                <rect key="frame" x="112" y="89" width="97" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="8Eg-GR-yKc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="iRs-0F-x4h" kind="push" id="KpF-D4-CG4"/>
@@ -560,11 +567,11 @@
         <scene sceneID="IHK-u2-t38">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOF-7A-KQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="iRs-0F-x4h" customClass="Init2ndViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Init2ndViewController" id="iRs-0F-x4h" customClass="Init2ndViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eai-nV-1ZP">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="tOT-ms-2h7"/>
                     <connections>
@@ -577,11 +584,11 @@
         <scene sceneID="tS4-wI-zx6">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPd-mu-lZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="6cs-VQ-wTi" customClass="Init3rdViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Init3rdViewController" id="6cs-VQ-wTi" customClass="Init3rdViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mkm-vs-GBQ">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="lbU-L5-Med"/>
                 </viewController>

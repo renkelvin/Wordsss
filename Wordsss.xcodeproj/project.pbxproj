@@ -50,7 +50,6 @@
 		FE3427F414A994AE009EF9C2 /* Word_Convertion.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3427F314A994AE009EF9C2 /* Word_Convertion.m */; };
 		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
-		FE398C2014963A6C00D9408C /* Defult.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1F14963A6C00D9408C /* Defult.m */; };
 		FE6B999314AB4F4200AA3DEF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B999214AB4F4200AA3DEF /* Word.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
@@ -60,6 +59,8 @@
 		FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */; };
 		FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D614949E0400211A97 /* WordsssDBDataManager.m */; };
 		FE8108DB14949E5C00211A97 /* WordsssDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D914949E5C00211A97 /* WordsssDB.xcdatamodeld */; };
+		FE837ED814ABF32A00FEB867 /* InitVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE837ED714ABF32A00FEB867 /* InitVirtualActor.m */; };
+		FE837EDC14ABF57600FEB867 /* Defult.m in Sources */ = {isa = PBXBuildFile; fileRef = FE837EDB14ABF57500FEB867 /* Defult.m */; };
 		FE873674143DDBFD002FDDE8 /* basicinfo_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FE873642143DDBFD002FDDE8 /* basicinfo_bg.png */; };
 		FE873675143DDBFD002FDDE8 /* basicinfo_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE873643143DDBFD002FDDE8 /* basicinfo_bg@2x.png */; };
 		FE873676143DDBFD002FDDE8 /* cet4.png in Resources */ = {isa = PBXBuildFile; fileRef = FE873644143DDBFD002FDDE8 /* cet4.png */; };
@@ -293,8 +294,6 @@
 		FE398C1014963A6C00D9408C /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		FE398C1214963A6C00D9408C /* MemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemData.h; sourceTree = "<group>"; };
 		FE398C1314963A6C00D9408C /* MemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemData.m; sourceTree = "<group>"; };
-		FE398C1E14963A6C00D9408C /* Defult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defult.h; sourceTree = "<group>"; };
-		FE398C1F14963A6C00D9408C /* Defult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defult.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
 		FE6B999114AB4F4200AA3DEF /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		FE6B999214AB4F4200AA3DEF /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
@@ -311,6 +310,10 @@
 		FE8108D514949E0400211A97 /* WordsssDBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBDataManager.h; sourceTree = "<group>"; };
 		FE8108D614949E0400211A97 /* WordsssDBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBDataManager.m; sourceTree = "<group>"; };
 		FE8108DA14949E5C00211A97 /* WordsssDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsssDB.xcdatamodel; sourceTree = "<group>"; };
+		FE837ED614ABF32A00FEB867 /* InitVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitVirtualActor.h; sourceTree = "<group>"; };
+		FE837ED714ABF32A00FEB867 /* InitVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitVirtualActor.m; sourceTree = "<group>"; };
+		FE837EDA14ABF57500FEB867 /* Defult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defult.h; sourceTree = "<group>"; };
+		FE837EDB14ABF57500FEB867 /* Defult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defult.m; sourceTree = "<group>"; };
 		FE873642143DDBFD002FDDE8 /* basicinfo_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basicinfo_bg.png; path = profile/basicinfo_bg.png; sourceTree = "<group>"; };
 		FE873643143DDBFD002FDDE8 /* basicinfo_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "basicinfo_bg@2x.png"; path = "profile/basicinfo_bg@2x.png"; sourceTree = "<group>"; };
 		FE873644143DDBFD002FDDE8 /* cet4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cet4.png; path = profile/cet4.png; sourceTree = "<group>"; };
@@ -694,6 +697,8 @@
 				FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */,
 				FEBB3B2E14A793DE0047D21C /* WordVirtualActor.h */,
 				FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */,
+				FE837ED614ABF32A00FEB867 /* InitVirtualActor.h */,
+				FE837ED714ABF32A00FEB867 /* InitVirtualActor.m */,
 			);
 			name = VirtualActor;
 			sourceTree = "<group>";
@@ -1042,10 +1047,10 @@
 			children = (
 				FE88190314A24E1900B5FE98 /* User.h */,
 				FE88190414A24E1900B5FE98 /* User.m */,
-				FE398C1E14963A6C00D9408C /* Defult.h */,
-				FE398C1F14963A6C00D9408C /* Defult.m */,
 				FEDE225A14A73C0D008908B0 /* Status.h */,
 				FEDE225B14A73C0D008908B0 /* Status.m */,
+				FE837EDA14ABF57500FEB867 /* Defult.h */,
+				FE837EDB14ABF57500FEB867 /* Defult.m */,
 				FE398C0F14963A6C00D9408C /* Profile.h */,
 				FE398C1014963A6C00D9408C /* Profile.m */,
 				FE398C1214963A6C00D9408C /* MemData.h */,
@@ -1327,7 +1332,6 @@
 				FEF732E81495955100919A7C /* TodayVirtualActor.m in Sources */,
 				FE398C1114963A6C00D9408C /* Profile.m in Sources */,
 				FE398C1414963A6C00D9408C /* MemData.m in Sources */,
-				FE398C2014963A6C00D9408C /* Defult.m in Sources */,
 				FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */,
 				FE10A07D14A0F002005F1EC9 /* Association.m in Sources */,
 				FE10A08014A0F002005F1EC9 /* DotaListWord.m in Sources */,
@@ -1365,6 +1369,8 @@
 				FE94A0AB14A9E26100BDCE18 /* MeaningCell.m in Sources */,
 				FE6B999314AB4F4200AA3DEF /* Word.m in Sources */,
 				FED7747314ABA681007BB8D4 /* AhdDictSentence.m in Sources */,
+				FE837ED814ABF32A00FEB867 /* InitVirtualActor.m in Sources */,
+				FE837EDC14ABF57600FEB867 /* Defult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

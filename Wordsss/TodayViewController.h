@@ -57,6 +57,7 @@
 - (void)wordSliderRightTap:(UITapGestureRecognizer*)recognizer;
 
 - (BOOL)check1stTimeLogIn;
+- (BOOL)checkHasInitUser;
 
 - (void)update;
 

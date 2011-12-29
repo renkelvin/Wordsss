@@ -9,7 +9,16 @@
 #import <UIKit/UIKit.h>
 
 #import "RKNavigationController.h"
+#import "RKNavigationControllerDelegate.h"
 
-@interface Init1stViewController : UIViewController
+#import "Init2ndViewController.h"
+
+#import "InitVirtualActor.h"
+
+@interface Init1stViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+{
+    //
+    InitVirtualActor* _initVirtualActor;
+}
 
 @end

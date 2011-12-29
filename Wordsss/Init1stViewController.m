@@ -30,19 +30,23 @@
 #pragma mark - View lifecycle
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView
+ {
+ }
+ */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    //
     [super viewDidLoad];
+    
+    //
+    [self initNavigationBar];
+    
+    //
+    _initVirtualActor = [InitVirtualActor initVirtualActor];
 }
-*/
 
 - (void)viewDidUnload
 {
@@ -55,6 +59,54 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Instance method
+
+- (void)setNickname
+{
+    [_initVirtualActor.user.profile setNickname:@"RenKelvin"];
+}
+
+- (void)nextStep
+{
+    Init2ndViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init2ndViewController"];
+    
+    [[self navigationController] pushViewController:ivc animated:YES];
+}
+
+#pragma mark - RKNavigationControllerDelegate
+
+- (void)initNavigationBar
+{    
+    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+    
+    [[navigationController titleLabel] setText:@"Init 1"];
+    [[navigationController titleImageView] setImage:nil];
+    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
+    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
+}
+
+- (void)navigationBarLeftButtonDown
+{
+    
+}
+
+- (void)navigationBarRightButtonDown
+{
+    [self nextStep];
+}
+
+#pragma - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [self initNavigationBar];
 }
 
 @end

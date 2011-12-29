@@ -52,7 +52,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 
 #pragma mark - 
 
-
 - (void)updateWord
 {
     // Move
@@ -215,7 +214,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         // More wordRecordArray
         [self fillWordRecordSet];
     }
-    
+
     // Get WordRecord Word
     [self updateWordRecord];
     [self updateWord];

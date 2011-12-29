@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Init3rdViewController : UIViewController
+#import "WordsssAppDelegate.h"
+
+#import "RKNavigationController.h"
+#import "RKNavigationControllerDelegate.h"
+
+#import "TodayViewController.h"
+
+#import "InitVirtualActor.h"
+
+@interface Init3rdViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+{
+    //
+    InitVirtualActor* _initVirtualActor;
+}
+
+@property (nonatomic, retain) IBOutlet RKTabBarController* rootViewController;
 
 @end
