@@ -60,11 +60,13 @@
 - (void)setMemDegree
 {
     //
-    [_initVirtualActor.user.defult setMemDegree:[NSNumber numberWithInt:50]];
+    [_initVirtualActor.user.defult setMemDegree:[NSNumber numberWithFloat:0.5]];
 }
 
 - (void)nextStep
 {
+    [self setMemDegree];
+    
     // Set hasInitUser Key
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultKeyHasInitUser];
     

@@ -24,6 +24,9 @@
     RKChartView* _chartView;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel* infoLeftLabel;
+@property (nonatomic, retain) IBOutlet UILabel* infoRightLabel;
+
 @property (nonatomic, retain) IBOutlet RKChartView* chartView;
 
 - (void)update;

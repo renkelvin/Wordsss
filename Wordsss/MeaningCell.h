@@ -10,4 +10,7 @@
 
 @interface MeaningCell : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet UILabel* typeLabel;
+@property (nonatomic, retain) IBOutlet UILabel* meaningLabel;
+
 @end

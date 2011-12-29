@@ -10,6 +10,7 @@
 
 @implementation ProfileViewController
 
+@synthesize infoLeftLabel, infoRightLabel;
 @synthesize chartView = _chartView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,11 +38,11 @@
     [super viewDidLoad];
     
     //
-    [self initNavigationBar];
-
-    //
     _profileVirtualActor = [ProfileVirtualActor profileVirtualActor];
     
+    //
+    [self initNavigationBar];
+
     //
     [self update];
 }
@@ -63,6 +64,9 @@
 
 - (void)update
 {
+    //
+    
+    
     //
     [_chartView setType:USER];
     [_chartView setPoints:[_profileVirtualActor getStaRecords]];
@@ -153,7 +157,7 @@
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
-    [[navigationController titleLabel] setText:@"Evan Fun"];
+    [[navigationController titleLabel] setText:_profileVirtualActor.user.profile.nickname];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
     [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];

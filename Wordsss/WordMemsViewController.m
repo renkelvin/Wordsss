@@ -74,18 +74,7 @@
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    int num = 0;
-    
-    if ([[_wordVirtualActor getWordAssociation]count])
-        num++;
-    
-    if (![[_wordVirtualActor getWordRootaffix]count])
-        num++;
-    
-    if (![[_wordVirtualActor getWordSense]count])
-        num++;
-    
-    return num;
+    return 3;
 }
 
 // Cell number
@@ -101,6 +90,7 @@
         default:
             return 0;
     }
+    return 3;
 }
 
 // Header View
@@ -190,7 +180,8 @@
         }   
         case 2:
         {
-            ;
+            Word_Sense* word_sense = [[_wordVirtualActor getWordSense] objectAtIndex:indexPath.row];
+            [word_sense configCell:(WordCellMem*)cell];
             break;
         }   
         default:

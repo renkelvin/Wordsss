@@ -58,15 +58,7 @@
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    int num = 0;
-    
-    if ([[_wordVirtualActor getAhdDictWord]count])
-        num++;
-    
-    if ([[_wordVirtualActor getMwcDictWord]count])
-        num++;
-
-    return num;
+    return 3;
 }
 
 // Cell number
@@ -75,6 +67,10 @@
     switch (section) {
         case 0:
             return [[_wordVirtualActor getAhdDictWord]count];
+        case 1:
+            return [[_wordVirtualActor getMwcDictWord]count];
+        case 2:
+            return [[_wordVirtualActor getSentence]count];
         default:
             return 0;
     }
@@ -151,6 +147,27 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
+    }
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:indexPath.row];
+            [word configCell:(MeaningCell*)cell];
+            break;
+        }   
+        case 1:
+        {
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        default:
+        {
+            break;   
+        }
     }
     
     return cell;

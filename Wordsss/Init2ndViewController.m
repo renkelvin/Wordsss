@@ -70,6 +70,9 @@
 
 - (void)nextStep
 {
+    [self setCurrentLevel];
+    [self setTargetLevel];
+    
     Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
     
     [[self navigationController] pushViewController:ivc animated:YES];

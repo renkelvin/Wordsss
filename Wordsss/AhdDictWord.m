@@ -17,4 +17,26 @@
 @dynamic meaning;
 @dynamic word_dict;
 
+- (NSString*)getFullMeaingCN
+{
+    NSString* string = [NSString stringWithFormat:@""];
+    
+    int i = 1;
+    for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
+        string = [string stringByAppendingFormat:@"%d. %@\n", i, ahdDictMeaning.meaning_cn];
+        i++;
+    }
+    
+    return string;
+}
+
+- (void)configCell:(MeaningCell*)cell
+{
+    //
+    [cell.typeLabel setText:[self.type stringValue]];
+    
+    //
+    [cell.meaningLabel setText:[self getFullMeaingCN]];
+}
+
 @end

@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "MeaningCell.h"
+
+#import "AhdDictMeaning.h"
+
 @class Word_Dict;
 
 @interface AhdDictWord : NSManagedObject
@@ -25,5 +29,7 @@
 - (void)removeMeaningObject:(NSManagedObject *)value;
 - (void)addMeaning:(NSSet *)values;
 - (void)removeMeaning:(NSSet *)values;
+
+- (void)configCell:(MeaningCell*)cell;
 
 @end

@@ -102,10 +102,10 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
     _wordRecordSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
     
-    //
-    for (WordRecord* wr in _wordRecordSet) {
-        [wr cleardl];
-    }
+//    //
+//    for (WordRecord* wr in _wordRecordSet) {
+//        [wr cleardl];
+//    }
     
     NSSet* tempSet = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+0", [_user.status.day intValue]]];
@@ -151,8 +151,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
     NSLog(@"fillWordRecordSet: %d", [new_word_set count]);
-    
+
     UserDataManager* udm = [UserDataManager userdataManager];
+
     // Set new wordRecord
     for (Word* w in new_word_set) {
         // Get
@@ -206,8 +207,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self updateUser];
     
     // Get wordRecordArray
-    [self updateWordRecordSet];
-    // [self updateTestWordRecord];
+    // [self updateWordRecordSet];
+     [self updateTestWordRecord];
     
     // First time launch
     if ([_wordRecordSet count] == 0) {
@@ -234,7 +235,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     float deltaTime = [[NSDate date] timeIntervalSinceDate:_user.status.date];
     
     if ([_wordRecordSet count] >= 160) {
-        return NO;
+        return NO;  
     }
     
     if (deltaTime > 3 * 60 * 60) {

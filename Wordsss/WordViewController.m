@@ -118,16 +118,16 @@
 {
     // Init
     WordBooksViewController* wordBooksViewController = [((WordBooksViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordBooksViewController"]) init:_wordVirtualActor];
-    [[wordBooksViewController view] setFrame:CGRectMake(0, 47, 320, 480)];  // 第四个参数480有问题，本应为320，未知问题
+    [[wordBooksViewController view] setFrame:CGRectMake(0, 49, 320, 318)];  // 第四个参数480有问题，本应为320，未知问题
     
     WordRelationsViewController* wordRelationsViewController = [((WordRelationsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordRelationsViewController"]) init:_wordVirtualActor];
-    [[wordRelationsViewController view] setFrame:CGRectMake(0, 47, 320, 320)];
+    [[wordRelationsViewController view] setFrame:CGRectMake(0, 49, 320, 318)];
     
     WordMemsViewController* wordMemsViewController = [((WordMemsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordMemsViewController"]) init:_wordVirtualActor];
-    [[wordMemsViewController view] setFrame:CGRectMake(0, 47, 320, 320)];
+    [[wordMemsViewController view] setFrame:CGRectMake(0, 49, 320, 318)];
     
     WordStatisticsViewController* wordStatisticsViewController = [((WordStatisticsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordStatisticsViewController"]) init:_wordVirtualActor];
-    [[wordStatisticsViewController view] setFrame:CGRectMake(0, 47, 320, 320)];
+    [[wordStatisticsViewController view] setFrame:CGRectMake(0, 49, 320, 318)];
     
     // Add
     NSMutableArray* tempViewControllersArray = [NSMutableArray arrayWithCapacity:4];

@@ -10,6 +10,10 @@
 
 #import "WordVirtualActor.h"
 
+#import "AhdDictWord.h"
+
+#import "MeaningCell.h"
+
 @interface WordBooksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //

@@ -11,6 +11,7 @@
 #import "WordVirtualActor.h"
 
 #import "Word_Association.h"
+#import "Word_Sense.h"
 
 @interface WordMemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {

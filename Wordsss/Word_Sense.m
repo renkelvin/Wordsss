@@ -33,4 +33,16 @@
     return result;
 }
 
+- (void)configCell:(WordCellMem*)cell
+{
+    //
+    [cell.nameLabel setText:self.word.name];
+    
+    //
+    [cell.meaningLabel setText:self.meaning_cn];
+    
+    //
+    [cell.memLabel setText:self.sense.meaning_cn];
+}
+
 @end
