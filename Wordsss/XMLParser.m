@@ -662,6 +662,10 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                     }
                                     case TTABLEDATA_WORDSENSE:   // Word_Sense
                                     {
+                                        if (isr == RNONE || isf == FNONE) {
+                                            break;
+                                        }
+                                        
                                         if (!attrDict)
                                             break;
                                         
@@ -678,11 +682,16 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             NSLog(@"WordSense - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
-                                            ((Word_Sense*)object).meaning_cn = string;
+                                            if (!((Word_Sense*)object).meaning_cn) {
+                                                ((Word_Sense*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((Word_Sense*)object).meaning_cn = [((Word_Sense*)object).meaning_cn stringByAppendingFormat:@" %@", string];
+                                            }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
+//                                        attrString = nil;
+//                                        attrDict = nil;
                                         
                                         break;
                                     }

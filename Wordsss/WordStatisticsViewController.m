@@ -10,6 +10,8 @@
 
 @implementation WordStatisticsViewController
 
+@synthesize chartView = _chartView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,13 +38,13 @@
  }
  */
 
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad
- {
- [super viewDidLoad];
- }
- */
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //
+    [self update];
+}
 
 - (void)viewDidUnload
 {
@@ -63,6 +65,18 @@
     _wordVirtualActor = wordVirtualActor;
     
     return self;
+}
+
+#pragma mark - 
+
+- (void)update
+{
+    //
+    
+    
+    //
+    [_chartView setType:WORD];
+    [_chartView setPoints:[_wordVirtualActor getHisRecords]];
 }
 
 #pragma - UITableViewDelegate

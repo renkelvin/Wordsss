@@ -17,6 +17,8 @@
 @synthesize minValue;
 @synthesize maxValue;
 
+@synthesize preRecord;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -36,6 +38,40 @@
     
     // y
     float l = (float)([sr getCount] - minValue) / (float)(maxValue - minValue);
+    point.y = (1 - l)*kMinY + l*kMaxY;
+    
+    return point;
+}
+
+- (CGPoint)getStaPoint:(HisRecord*)hr
+{
+    CGPoint point = CGPointMake(0, 0);
+    
+    // x
+    float k = (float)([hr.day intValue] - minDay) / (float)(maxDay - minDay);
+    point.x = (1 - k)*kMinX + k*kMaxX;
+    
+    // y
+    float l = 1.0;
+    point.y = (1 - l)*kMinY + l*kMaxY;
+    
+    return point;
+}
+
+- (CGPoint)getEndPoint:(HisRecord*)hr
+{
+    CGPoint point = CGPointMake(0, 0);
+    
+    // x
+    float k = (float)([hr.day intValue] - minDay) / (float)(maxDay - minDay);
+    point.x = (1 - k)*kMinX + k*kMaxX;
+    
+    // y
+    float lev = [[self.preRecord level] floatValue];
+    float l = (1 - (([hr.day floatValue]-[preRecord.day floatValue]) / 4*lev*lev));
+    l *= l;
+    if ([hr.day intValue]-[preRecord.day intValue] > 4*lev*lev)
+        l = 0;
     point.y = (1 - l)*kMinY + l*kMaxY;
     
     return point;
@@ -89,15 +125,15 @@
     CGColorRef color = CGColorCreate(colorspace, components);
     CGContextSetStrokeColorWithColor(context, color);
     
+    // TOO few points 0 or 1 or 2
+    if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
+        return;
+    }
+
     //
     switch (self.type) {
         case USER:
-        {
-            // TOO few points 0 or 1
-            if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
-                break;
-            }
-            
+        {            
             //
             self.minDay = [((StaRecord*)[points objectAtIndex:0]).day intValue];
             self.maxDay = [((StaRecord*)[points lastObject]).day intValue];
@@ -159,6 +195,45 @@
         }   
         case WORD:
         {
+            //
+            self.minDay = [((HisRecord*)[points objectAtIndex:0]).day intValue];
+            self.maxDay = [((HisRecord*)[points lastObject]).day intValue];
+            
+            self.maxValue = 100.0;
+            self.minValue = 0.0;
+            
+            //
+            UIBezierPath* aPath = [UIBezierPath bezierPath];
+            
+            [points enumerateObjectsUsingBlock:^(id obj, NSUInteger inx, BOOL *stop)
+             {
+                 // Move to first point
+                 if (inx == 0) {
+                     //
+                     self.preRecord = obj;
+                     //
+                     [aPath moveToPoint:[self getStaPoint:obj]];
+                 }
+                 
+                 // Bazier to next point
+                 else {
+                     CGPoint p1 = [self getStaPoint:preRecord];
+                     CGPoint p2 = [self getEndPoint:obj];
+                     
+                     CGPoint p3 = CGPointMake(p1.x, p2.y);
+                     CGPoint p4 = [self getStaPoint:obj];
+                     
+                     [aPath addQuadCurveToPoint:p2 controlPoint:p3];
+                     
+                     [aPath addLineToPoint:p4];
+                     
+                     self.preRecord = obj;
+                 }
+             }];
+            
+            //
+            [aPath stroke];
+            
             break;
         }
         default:

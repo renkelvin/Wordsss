@@ -201,8 +201,6 @@
 		FEBFBF281436DAF20028630E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF261436DAF20028630E /* InfoPlist.strings */; };
 		FEBFBF2A1436DAF20028630E /* WordsssTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF291436DAF20028630E /* WordsssTests.h */; };
 		FEBFBF2C1436DAF20028630E /* WordsssTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBF2B1436DAF20028630E /* WordsssTests.m */; };
-		FEC34A5814AC4C620082E03C /* Wordsss.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEC34A5614AC4C620082E03C /* Wordsss.sqlite */; };
-		FEC34A5914AC4C620082E03C /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEC34A5714AC4C620082E03C /* WordsssDB.sqlite */; };
 		FED7747314ABA681007BB8D4 /* AhdDictSentence.m in Sources */ = {isa = PBXBuildFile; fileRef = FED7747214ABA681007BB8D4 /* AhdDictSentence.m */; };
 		FEDE225C14A73C0D008908B0 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225B14A73C0D008908B0 /* Status.m */; };
 		FEDE225F14A74EDB008908B0 /* StaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225E14A74EDB008908B0 /* StaRecord.m */; };
@@ -479,8 +477,6 @@
 		FEBFBF271436DAF20028630E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FEBFBF291436DAF20028630E /* WordsssTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsssTests.h; sourceTree = "<group>"; };
 		FEBFBF2B1436DAF20028630E /* WordsssTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsssTests.m; sourceTree = "<group>"; };
-		FEC34A5614AC4C620082E03C /* Wordsss.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Wordsss.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/Wordsss.sqlite"; sourceTree = "<group>"; };
-		FEC34A5714AC4C620082E03C /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/959688AD-3AB1-4D2B-B88F-71A7F0412CF6/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FED7747114ABA681007BB8D4 /* AhdDictSentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictSentence.h; sourceTree = "<group>"; };
 		FED7747214ABA681007BB8D4 /* AhdDictSentence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AhdDictSentence.m; sourceTree = "<group>"; };
 		FEDE225A14A73C0D008908B0 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
@@ -676,8 +672,6 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FEC34A5614AC4C620082E03C /* Wordsss.sqlite */,
-				FEC34A5714AC4C620082E03C /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1283,8 +1277,6 @@
 				FEFFDE2A143F737E002B7126 /* pre_word_translation_bg.png in Resources */,
 				FE2B069D14401C3900E1D159 /* icon.png in Resources */,
 				FE1627991499E0E7003E6DBF /* WordsssDB.xml in Resources */,
-				FEC34A5814AC4C620082E03C /* Wordsss.sqlite in Resources */,
-				FEC34A5914AC4C620082E03C /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

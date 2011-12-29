@@ -10,12 +10,23 @@
 
 #import "WordVirtualActor.h"
 
+#import "UserDataManager.h"
+
+#import "RKChartView.h"
+
 @interface WordStatisticsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //
     WordVirtualActor* _wordVirtualActor;
+    
+    //
+    RKChartView* _chartView;
 }
 
+@property (nonatomic, retain) IBOutlet RKChartView* chartView;
+
 - (WordStatisticsViewController*)init:(WordVirtualActor*)wordVirtualActor;
+
+- (void)update;
 
 @end

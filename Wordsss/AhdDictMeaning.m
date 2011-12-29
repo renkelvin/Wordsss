@@ -19,7 +19,13 @@
 
 - (NSString*)getShortMeaning
 {
-    return [[self.meaning_cn componentsSeparatedByString:@"："] objectAtIndex:0];
+    NSArray* array = [self.meaning_cn componentsSeparatedByString:@"："];
+    
+    if ([array count] == 1) {
+        array = [self.meaning_cn componentsSeparatedByString:@"；"];
+    }
+    
+    return [array objectAtIndex:0];
 }
 
 @end

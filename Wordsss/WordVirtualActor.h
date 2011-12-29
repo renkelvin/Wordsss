@@ -12,6 +12,8 @@
 #import "Word_Dict.h"
 #import "Word_Relation.h"
 
+#import "UserDataManager.h"
+
 @interface WordVirtualActor : NSObject {
     //
     Word* _word;
@@ -45,5 +47,7 @@
 - (NSArray*)getWordAssociation;
 - (NSArray*)getWordRootaffix;
 - (NSArray*)getWordSense;
+
+- (NSArray*)getHisRecords;
 
 @end

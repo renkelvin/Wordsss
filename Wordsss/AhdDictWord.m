@@ -101,5 +101,16 @@
     
     return string;
 }
+//
+//#pragma mark - override getter
+//
+//- (NSMutableSet*)meaning
+//{
+//    NSArray* array = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES]];
+//    
+//    [self.meaning sortedArrayUsingDescriptors:array];
+//    
+//    return nil;
+//}
 
 @end

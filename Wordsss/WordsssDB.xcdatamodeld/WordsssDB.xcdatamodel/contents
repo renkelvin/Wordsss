@@ -16,7 +16,7 @@
     <entity name="AhdDictWord" representedClassName="AhdDictWord" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AhdDictMeaning" inverseName="ahdDictWord" inverseEntity="AhdDictMeaning" syncable="YES"/>
+        <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AhdDictMeaning" inverseName="ahdDictWord" inverseEntity="AhdDictMeaning" syncable="YES"/>
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="ahdDictWord" inverseEntity="Word_Dict" syncable="YES"/>
     </entity>
     <entity name="Association" representedClassName="Association" syncable="YES">
@@ -139,7 +139,8 @@
     </entity>
     <elements>
         <element name="AhdDictMeaning" positionX="-389" positionY="-882" width="128" height="120"/>
-        <element name="AhdDictWord" positionX="-389" positionY="-783" width="128" height="90"/>
+        <element name="AhdDictSentence" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="AhdDictWord" positionX="-389" positionY="-783" width="128" height="105"/>
         <element name="Association" positionX="-1001" positionY="-684" width="128" height="105"/>
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
         <element name="Frequency" positionX="-963" positionY="-165" width="128" height="120"/>
@@ -157,6 +158,5 @@
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="120"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
-        <element name="AhdDictSentence" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

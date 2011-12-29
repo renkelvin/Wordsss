@@ -121,4 +121,19 @@
 
 }
 
+- (NSArray*)getHisRecords
+{
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // Get StaRecords
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"HisRecord"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"word_id == %@", _word.id]];
+    [request setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES]]];
+    NSArray* srArray = [udm.managedObjectContext executeFetchRequest:request error:nil];
+    
+    return srArray;
+    
+}
+
 @end

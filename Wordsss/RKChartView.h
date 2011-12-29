@@ -29,4 +29,6 @@ enum RKChartType {USER, WORD};
 @property (nonatomic) float minValue;
 @property (nonatomic) float maxValue;
 
+@property (nonatomic, retain) HisRecord* preRecord;
+
 @end

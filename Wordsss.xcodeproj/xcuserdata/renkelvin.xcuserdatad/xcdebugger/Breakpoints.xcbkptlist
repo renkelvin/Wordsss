@@ -8,55 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Wordsss/TodayVirtualActor.m"
-         timestampString = "346820116.114144"
+         filePath = "Wordsss/RKChartView.m"
+         timestampString = "346870030.193996"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "336"
-         endingLineNumber = "336"
-         landmarkName = "-setWordRecordCurLevelInc"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Wordsss/XMLParser.m"
-         timestampString = "346831216.611653"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "703"
-         endingLineNumber = "703"
-         landmarkName = "-setField:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Wordsss/XMLParser.m"
-         timestampString = "346831306.891735"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "772"
-         endingLineNumber = "772"
-         landmarkName = "-setField:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Wordsss/Word.m"
-         timestampString = "346852065.641444"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
-         landmarkName = "-configLabel:"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
+         landmarkName = "-getEndPoint:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
