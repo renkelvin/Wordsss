@@ -45,7 +45,8 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 28}</string>
 						<reference key="NSSuperview" ref="923042712"/>
-						<reference key="NSNextKeyView" ref="370771389"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="760564537"/>
 						<string key="NSReuseIdentifierKey">_NS:547</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -54,11 +55,12 @@
 							<string key="NSResourceName">tableview_section_head_bg.png</string>
 						</object>
 					</object>
-					<object class="IBUILabel" id="370771389">
+					<object class="IBUILabel" id="760564537">
 						<reference key="NSNextResponder" ref="923042712"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{12, 0}, {256, 28}}</string>
 						<reference key="NSSuperview" ref="923042712"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:328</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -69,17 +71,17 @@
 						<string key="IBUIText">Label</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
+							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">1</int>
+							<int key="type">2</int>
 							<double key="pointSize">17</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica</string>
+							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -87,6 +89,7 @@
 				</object>
 				<string key="NSFrameSize">{320, 28}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="361778111"/>
 				<string key="NSReuseIdentifierKey">_NS:181</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -106,7 +109,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">titleLabel</string>
 						<reference key="source" ref="923042712"/>
-						<reference key="destination" ref="370771389"/>
+						<reference key="destination" ref="760564537"/>
 					</object>
 					<int key="connectionID">6</int>
 				</object>
@@ -139,7 +142,7 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="361778111"/>
-							<reference ref="370771389"/>
+							<reference ref="760564537"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">RKTableViewHeader</string>
@@ -151,7 +154,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
-						<reference key="object" ref="370771389"/>
+						<reference key="object" ref="760564537"/>
 						<reference key="parent" ref="923042712"/>
 					</object>
 				</object>
@@ -193,7 +196,30 @@
 			<nil key="sourceID"/>
 			<int key="maxID">6</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">RKTableHeader</string>
+					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">titleLabel</string>
+						<string key="NS.object.0">UILabel</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">titleLabel</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">titleLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/RKTableHeader.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
