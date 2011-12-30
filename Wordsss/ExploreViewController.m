@@ -36,9 +36,6 @@
 //
 - (void)initSearchBar
 {
-    //    _searchBar.autocorrectionType = UITextAutocorrectionTypeNo;  
-    //    _searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;  
-    //    _searchBar.keyboardType = UIKeyboardTypeAlphabet;  
     _searchBar.hidden = NO;  
     _searchBar.placeholder=[NSString stringWithCString:"请输入需要查找的文本内容" encoding: NSUTF8StringEncoding];  
     
@@ -49,6 +46,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //
+    _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
     
     //
     [self initNavigationBar];

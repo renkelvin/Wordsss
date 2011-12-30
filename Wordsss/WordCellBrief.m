@@ -15,7 +15,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         //
-        [self setLineBreakMode:UILineBreakModeWordWrap];
     }
     return self;
 }

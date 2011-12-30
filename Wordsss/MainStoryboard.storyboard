@@ -223,7 +223,7 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="中文解释" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" id="pEf-ze-Pjn" customClass="WordCellBrief">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="中文解释" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="pEf-ze-Pjn" customClass="WordCellBrief">
                                 <rect key="frame" x="33" y="272" width="242" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

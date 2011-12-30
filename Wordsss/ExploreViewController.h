@@ -11,11 +11,14 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
+#import "ExploreVirtualActor.h"
+
 @interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, RKNavigationControllerDelegate> {
     //
-    UISearchBar* _searchBar;    
+    ExploreVirtualActor* _exploreVirtualActor;
     
     //
+    UISearchBar* _searchBar;    
     UITableView* _tableView;
 }
 

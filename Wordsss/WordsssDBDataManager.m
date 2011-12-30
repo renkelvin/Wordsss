@@ -42,6 +42,57 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return [Word wordWithId:wordId inManagedObjectContext:self.managedObjectContext];
 }
 
+- (NSArray*)getRandomAssociations:(int)count
+{
+    NSMutableArray* array = [NSArray array];
+    
+    // Get 
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Association"];
+    NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    // Rand
+    for (int i = 0; i < count; i++) {
+        Association* association = [fetchResult objectAtIndex:(rand() % [fetchResult count])];
+        [array addObject:association];
+    }
+    
+    return array;
+}
+
+- (NSArray*)getRandomRootaffixs:(int)count
+{
+    NSMutableArray* array = [NSArray array];
+    
+    // Get 
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Rootaffix"];
+    NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    // Rand
+    for (int i = 0; i < count; i++) {
+        Rootaffix* rootaffix = [fetchResult objectAtIndex:(rand() % [fetchResult count])];
+        [array addObject:rootaffix];
+    }
+    
+    return array;
+}
+
+- (NSArray*)getRandomSenses:(int)count
+{
+    NSMutableArray* array = [NSArray array];
+    
+    // Get 
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Sense"];
+    NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    // Rand
+    for (int i = 0; i < count; i++) {
+        Sense* sense = [fetchResult objectAtIndex:(rand() % [fetchResult count])];
+        [array addObject:sense];
+    }
+    
+    return array;
+}
+
 #pragma mark - Core Data
 
 - (void)saveContext
@@ -163,7 +214,5 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-
-#pragma mark - 
 
 @end

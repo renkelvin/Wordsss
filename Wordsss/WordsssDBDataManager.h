@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "Word.h"
+#import "Association.h"
+#import "Rootaffix.h"
+#import "Sense.h"
 
 @interface WordsssDBDataManager : NSObject
 
@@ -19,8 +22,15 @@
 + (WordsssDBDataManager*)wordsssDBDataManager;
 
 - (void)saveContext;
+
 - (NSURL *)applicationDocumentsDirectory;
 
+#pragma mark -
+
 - (Word*)getWordWithId:(NSNumber*)wordId;
+
+- (NSArray*)getRandomAssociations:(int)count;
+- (NSArray*)getRandomRootaffixs:(int)count;
+- (NSArray*)getRandomSenses:(int)count;
 
 @end
