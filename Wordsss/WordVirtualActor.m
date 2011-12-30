@@ -124,8 +124,9 @@
         
         // Association
         NSArray* aArray = [self getWordAssociation];
-        
-        [array addObject:aArray];
+        if ([aArray count]) {
+            [array addObject:aArray];
+        }
         
         // Rootaffix
         for (Word_Rootaffix* wr in [self getWordRootaffix]) {

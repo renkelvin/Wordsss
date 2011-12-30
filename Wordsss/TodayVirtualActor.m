@@ -224,8 +224,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self updateUser];
     
     // Get wordRecordArray
-    // [self updateWordRecordSet];
-    [self updateTestWordRecord];
+    [self updateWordRecordSet];
+    // [self updateTestWordRecord];
     
     // First time launch
     if ([_wordRecordSet count] == 0) {
