@@ -13,6 +13,12 @@
 
 #import "ExploreVirtualActor.h"
 
+#import "Word_Association.h"
+#import "Word_Rootaffix.h"
+#import "Word_Sense.h"
+
+#import "WordCellMem.h"
+
 @interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, RKNavigationControllerDelegate> {
     //
     ExploreVirtualActor* _exploreVirtualActor;

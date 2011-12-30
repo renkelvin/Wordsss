@@ -75,11 +75,11 @@
 {
     switch (section) {
         case 0:
-            return [[_wordVirtualActor getWordDerivative]count];
+            return [[_wordVirtualActor getDerivative]count];
         case 1:
-            return [[_wordVirtualActor getWordSynonym]count];
+            return [[_wordVirtualActor getSynonym]count];
         case 2:
-            return [[_wordVirtualActor getWordAntonym]count];
+            return [[_wordVirtualActor getAntonym]count];
         default:
             return 0;
     }
@@ -122,21 +122,21 @@
 {
     switch (section) {
         case 0:
-            if ([[_wordVirtualActor getWordDerivative]count]) {
+            if ([[_wordVirtualActor getDerivative]count]) {
                 return 28;
             }
             else {
                 return 0;
             }
         case 1:
-            if ([[_wordVirtualActor getWordSynonym]count]) {
+            if ([[_wordVirtualActor getSynonym]count]) {
                 return 28;
             }
             else {
                 return 0;
             }
        case 2:
-            if ([[_wordVirtualActor getWordAntonym]count]) {
+            if ([[_wordVirtualActor getAntonym]count]) {
                 return 28;
             }
             else {

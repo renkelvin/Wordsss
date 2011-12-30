@@ -124,11 +124,11 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     NSLog(@"Word record in day+5: %d", [tempSet count]);
     
     NSLog(@"updataWordRecordSet: %d", [_wordRecordSet count]);
-
+    
     // Enough
     if ([_wordRecordSet count] >= kTodayWordLimit)
         return;
-
+    
     // Get new wordRecord
     request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == 0", [_user.status.day intValue]]];
@@ -224,8 +224,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self updateUser];
     
     // Get wordRecordArray
-    [self updateWordRecordSet];
-   //  [self updateTestWordRecord];
+    // [self updateWordRecordSet];
+    [self updateTestWordRecord];
     
     // First time launch
     if ([_wordRecordSet count] == 0) {

@@ -44,51 +44,60 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 
 - (NSArray*)getRandomAssociations:(int)count
 {
-    NSMutableArray* array = [NSArray array];
+    NSArray* array = [NSArray array];
     
     // Get 
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Association"];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     // Rand
+    NSMutableIndexSet* indexSet = [NSMutableIndexSet indexSet];
     for (int i = 0; i < count; i++) {
-        Association* association = [fetchResult objectAtIndex:(rand() % [fetchResult count])];
-        [array addObject:association];
+        [indexSet addIndex:(rand() % [fetchResult count])];
     }
+    
+    // Set
+    array = [fetchResult objectsAtIndexes:indexSet];
     
     return array;
 }
 
 - (NSArray*)getRandomRootaffixs:(int)count
 {
-    NSMutableArray* array = [NSArray array];
+    NSArray* array = [NSArray array];
     
     // Get 
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Rootaffix"];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     // Rand
+    NSMutableIndexSet* indexSet = [NSMutableIndexSet indexSet];
     for (int i = 0; i < count; i++) {
-        Rootaffix* rootaffix = [fetchResult objectAtIndex:(rand() % [fetchResult count])];
-        [array addObject:rootaffix];
+        [indexSet addIndex:(rand() % [fetchResult count])];
     }
     
+    // Set
+    array = [fetchResult objectsAtIndexes:indexSet];
+
     return array;
 }
 
 - (NSArray*)getRandomSenses:(int)count
 {
-    NSMutableArray* array = [NSArray array];
+    NSArray* array = [NSArray array];
     
     // Get 
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Sense"];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     // Rand
+    NSMutableIndexSet* indexSet = [NSMutableIndexSet indexSet];
     for (int i = 0; i < count; i++) {
-        Sense* sense = [fetchResult objectAtIndex:(rand() % [fetchResult count])];
-        [array addObject:sense];
+        [indexSet addIndex:(rand() % [fetchResult count])];
     }
+    
+    // Set
+    array = [fetchResult objectsAtIndexes:indexSet];
     
     return array;
 }

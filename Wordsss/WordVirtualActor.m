@@ -57,33 +57,33 @@
 }
 
 //
-- (NSArray*)getWordDerivative
+- (NSArray*)getDerivative
 {
-    if (!_wordDerivativeArray) {
-        _wordDerivativeArray = [_word.word_relation.derivative allObjects];
+    if (!_derivativeArray) {
+        _derivativeArray = [_word.word_relation.derivative allObjects];
     }
     
-    return _wordDerivativeArray;
+    return _derivativeArray;
 }
 
 //
-- (NSArray*)getWordSynonym
+- (NSArray*)getSynonym
 {
-    if (!_wordSynonymArray) {
-        _wordSynonymArray = [_word.word_relation.synonym allObjects];
+    if (!_synonymArray) {
+        _synonymArray = [_word.word_relation.synonym allObjects];
     }
     
-    return _wordSynonymArray;
+    return _synonymArray;
 }
 
 //
-- (NSArray*)getWordAntonym
+- (NSArray*)getAntonym
 {
-    if (!_wordAntonymArray) {
-        _wordAntonymArray = [_word.word_relation.antonym allObjects];
+    if (!_antonymArray) {
+        _antonymArray = [_word.word_relation.antonym allObjects];
     }
     
-    return _wordAntonymArray;
+    return _antonymArray;
 }
 
 //
@@ -111,21 +111,55 @@
 {
     if (!_wordSenseArray) {
         _wordSenseArray = [_word.word_sense allObjects];
-        NSArray* array = [_word.word_sense allObjects];
-        
-        //
-        for (Word_Sense* ws in array) {
-            NSArray* wsa = [ws.sense.word_sense allObjects];
-            _wordSenseArray = [_wordSenseArray arrayByAddingObjectsFromArray:wsa];
-        }
     }
     
     return _wordSenseArray;
 }
 
+- (NSArray*)getWordMems
+{
+    if (!_wordMemsArray) {
+        //
+        NSMutableArray* array = [NSMutableArray array];
+        
+        // Association
+        NSArray* aArray = [self getWordAssociation];
+        
+        [array addObject:aArray];
+        
+        // Rootaffix
+        for (Word_Rootaffix* wr in [self getWordRootaffix]) {
+            NSMutableArray* rArray = [NSMutableArray array];
+            
+            [rArray addObject:wr.rootaffix];
+            
+            [rArray addObjectsFromArray:[wr.rootaffix.word_rootaffix allObjects]];
+            
+            [array addObject:rArray];
+        }
+        
+        // Sense
+        for (Word_Sense* ws in [self getWordSense]) {
+            NSMutableArray* rArray = [NSMutableArray array];
+            
+            [rArray addObject:ws.sense];
+            
+            [rArray addObjectsFromArray:[ws.sense.word_sense allObjects]];
+            
+            [array addObject:rArray];
+        }
+        
+        //
+        _wordMemsArray = array;
+    }
+    
+    return _wordMemsArray;
+}
+
+
 - (void)prepare
 {
-
+    
 }
 
 - (NSArray*)getHisRecords

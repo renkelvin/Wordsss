@@ -12,8 +12,12 @@
 #import "Word_Dict.h"
 #import "Word_Relation.h"
 
+#import "Word_Association.h"
+#import "Word_Rootaffix.h"
 #import "Word_Sense.h"
 
+#import "Association.h"
+#import "Rootaffix.h"
 #import "Sense.h"
 
 #import "UserDataManager.h"
@@ -26,12 +30,14 @@
     NSArray* _adcDictWordArray;
     NSArray* _mwcDictWordArray;
     NSArray* _sentenceArray;
-    NSArray* _wordDerivativeArray;
-    NSArray* _wordSynonymArray;
-    NSArray* _wordAntonymArray;
+    NSArray* _derivativeArray;
+    NSArray* _synonymArray;
+    NSArray* _antonymArray;
     NSArray* _wordAssociationArray;
     NSArray* _wordRootaffixArray;
     NSArray* _wordSenseArray;
+    
+    NSArray* _wordMemsArray;
 }
 
 @property (nonatomic, retain) Word* word;
@@ -45,12 +51,14 @@
 - (NSArray*)getAhdDictWord;
 - (NSArray*)getMwcDictWord;
 - (NSArray*)getSentence;
-- (NSArray*)getWordDerivative;
-- (NSArray*)getWordSynonym;
-- (NSArray*)getWordAntonym;
+- (NSArray*)getDerivative;
+- (NSArray*)getSynonym;
+- (NSArray*)getAntonym;
 - (NSArray*)getWordAssociation;
 - (NSArray*)getWordRootaffix;
 - (NSArray*)getWordSense;
+
+- (NSArray*)getWordMems;
 
 - (NSArray*)getHisRecords;
 

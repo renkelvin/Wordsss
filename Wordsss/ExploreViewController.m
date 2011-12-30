@@ -54,7 +54,7 @@
     [self initNavigationBar];
     
     //
-    [self initSearchBar];
+    // [self initSearchBar];
 }
 
 - (void)viewDidUnload
@@ -76,12 +76,28 @@
 
 #pragma - UITableViewDataSource
 
+// Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
-// Header
+// Cell number
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return [[_exploreVirtualActor getAssociation]count];
+        case 1:
+            return [[_exploreVirtualActor getRootaffix]count];
+        case 2:
+            return [[_exploreVirtualActor getSense]count];
+        default:
+            return 0;
+    }
+}
+
+// Header View
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
@@ -92,26 +108,98 @@
     UILabel *label = [[UILabel alloc] init];
     label.frame = CGRectMake(12, 0, 320, 28);
     label.backgroundColor = [UIColor clearColor];
-    label.text = @"-----";
+    
+    switch (section) {
+        case 0:
+            label.text = @"联想";
+            break;
+        case 1:
+            label.text = @"字根";
+            break;
+        case 2:
+            label.text = @"意群";
+            break;
+        default:
+            label.text = @"-----";
+            break;
+    }
+    
     [headerView addSubview:label];
     
     return headerView;
 }
 
-// Section
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+// Header height
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 3;
+    switch (section) {
+        case 0:
+            if ([[_exploreVirtualActor getAssociation]count]) {
+                return 28;
+            }
+            else {
+                return 0;
+            }
+        case 1:
+            if ([[_exploreVirtualActor getRootaffix]count]) {
+                return 28;
+            }
+            else {
+                return 0;
+            }
+        case 2:
+            if ([[_exploreVirtualActor getSense]count]) {
+                return 28;
+            }
+            else {
+                return 0;
+            }
+        default:
+            return 0;
+    }
 }
 
 // Cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* WordBooksTableViewCellIndentifier = @"ExploreTableViewCell";
+    
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:WordBooksTableViewCellIndentifier];
+    
     if (cell == nil) {
-        // need [ autorealse]
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
+    }
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            Word_Association* word_association = [[_exploreVirtualActor getAssociation] objectAtIndex:indexPath.row];
+            [word_association configCell:(WordCellMem*)cell];
+            
+            break;
+        }   
+        case 1:
+        {
+
+            break;
+        }   
+        case 2:
+        {
+            if (indexPath.row == 0) {
+                Sense* sense = [[_exploreVirtualActor getSense] objectAtIndex:indexPath.row];
+                [sense configCell:(WordCellMem*)cell];
+            }
+            else {
+                Word_Sense* word_sense = [[_exploreVirtualActor getSense] objectAtIndex:indexPath.row];
+                [word_sense configCell:(WordCellMem*)cell];
+            }
+            
+            break;
+        }   
+        default:
+        {
+            break;
+        }
     }
     
     return cell;

@@ -23,7 +23,7 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
 
 - (void)updateAssociation
 {
-    NSMutableArray* array = [NSArray array];
+    NSMutableArray* array = [NSMutableArray array];
     
     // Get wdm
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
@@ -31,7 +31,9 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
     
     // Add WordAssociation
     for (Association* association in fetchResult) {
-        [array addObject:[association.word_association anyObject]];
+        if ([association.word_association count]) {
+            [array addObject:[association.word_association anyObject]];
+        }
     }
     
     // Set
@@ -40,7 +42,7 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
 
 - (void)updateRootaffix
 {
-    NSMutableArray* array = [NSArray array];
+    NSMutableArray* array = [NSMutableArray array];
     
     // Get wdm
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
@@ -50,8 +52,10 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
     [array addObject:[fetchResult lastObject]];
     
     // Add WordRootaffix
-    for (Association* association in fetchResult) {
-        [array addObject:[association.word_association anyObject]];
+    for (Rootaffix* rootaffix in fetchResult) {
+        if ([rootaffix.word_rootaffix count]) {
+            [array addObjectsFromArray:[rootaffix.word_rootaffix allObjects]];
+        }
     }
     
     // Set
@@ -60,7 +64,7 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
 
 - (void)updateSense
 {
-    NSMutableArray* array = [NSArray array];
+    NSMutableArray* array = [NSMutableArray array];
     
     // Get wdm
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
@@ -70,8 +74,10 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
     [array addObject:[fetchResult lastObject]];
     
     // Add WordSense
-    for (Association* association in fetchResult) {
-        [array addObject:[association.word_association anyObject]];
+    for (Sense* sense in fetchResult) {
+        if ([sense.word_sense count]) {
+            [array addObjectsFromArray:[sense.word_sense allObjects]];
+        }
     }
     
     // Set

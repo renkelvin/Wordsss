@@ -74,22 +74,17 @@
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    int num = [[_wordVirtualActor getWordMems] count];
+    
+    return num;
 }
 
 // Cell number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            return [[_wordVirtualActor getWordAssociation]count];
-        case 1:
-            return [[_wordVirtualActor getWordRootaffix]count];
-        case 2:
-            return [[_wordVirtualActor getWordSense]count];
-        default:
-            return 0;
-    }
+    int num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count];
+    
+    return num;
 }
 
 // Header View
@@ -104,19 +99,24 @@
     label.frame = CGRectMake(12, 0, 320, 28);
     label.backgroundColor = [UIColor clearColor];
     
-    switch (section) {
-        case 0:
-            label.text = @"联想";
-            break;
-        case 1:
-            label.text = @"字根";
-            break;
-        case 2:
-            label.text = @"意群";
-            break;
-        default:
-            label.text = @"-----";
-            break;
+    NSArray* array = [[_wordVirtualActor getWordMems] objectAtIndex:section];
+    // Association
+    if ([[array lastObject] class] == [Word_Association class]) {
+        NSString* string = [NSString stringWithFormat:@"联想"];
+        
+        [label setText:string];
+    }
+    // Rootaffix
+    else if ([[array lastObject] class] == [Word_Rootaffix class]) {
+        NSString* string = [NSString stringWithFormat:@"词根 - %@", ((Rootaffix*)[array objectAtIndex:0]).phrase];
+        
+        [label setText:string];
+    }
+    // Sense
+    else if ([[array lastObject] class] == [Word_Sense class]) {
+        NSString* string = [NSString stringWithFormat:@"意群 - %@", ((Sense*)[array objectAtIndex:0]).meaning_cn];
+        
+        [label setText:string];
     }
     
     [headerView addSubview:label];
@@ -127,31 +127,7 @@
 // Header height
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            if ([[_wordVirtualActor getWordAssociation]count]) {
-                return 28;
-            }
-            else {
-                return 0;
-            }
-       case 1:
-            if ([[_wordVirtualActor getWordRootaffix]count]) {
-                return 28;
-            }
-            else {
-                return 0;
-            }
-        case 2:
-            if ([[_wordVirtualActor getWordSense]count]) {
-                return 28;
-            }
-            else {
-                return 0;
-            }
-        default:
-            return 0;
-    }
+    return 28;
 }
 
 // Cell
@@ -160,33 +136,38 @@
     static NSString* WordBooksTableViewCellIndentifier = @"WordMemsTableViewCell";
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:WordBooksTableViewCellIndentifier];
-
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    switch (indexPath.section) {
-        case 0:
-        {
-            Word_Association* word_association = [[_wordVirtualActor getWordAssociation] objectAtIndex:indexPath.row];
-            [word_association configCell:(WordCellMem*)cell];
-            break;
-        }   
-        case 1:
-        {
-            ;
-            break;
-        }   
-        case 2:
-        {
-            Word_Sense* word_sense = [[_wordVirtualActor getWordSense] objectAtIndex:indexPath.row];
-            [word_sense configCell:(WordCellMem*)cell];
-            break;
-        }   
-        default:
-        {
-            break;
+    NSArray* array = [[_wordVirtualActor getWordMems] objectAtIndex:indexPath.section];
+    // Association
+    if ([[array lastObject] class] == [Word_Association class]) {
+        Word_Association* ws = [array objectAtIndex:indexPath.row];
+        [ws configCell:(WordCellMem*)cell];
     }
+    // Rootaffix
+    else if ([[array lastObject] class] == [Word_Rootaffix class]) {
+        if (indexPath.row == 0) {
+            Rootaffix* r = [array objectAtIndex:indexPath.row];
+            // [r configCell:(WordCellMem*)cell];
+        }
+        else {
+            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
+            // [wr configCell:(WordCellMem*)cell];
+        }
+    }
+    // Sense
+    else if ([[array lastObject] class] == [Word_Sense class]) {
+        if (indexPath.row == 0) {
+            Sense* s = [array objectAtIndex:indexPath.row];
+            [s configCell:(WordCellMem*)cell];
+        }
+        else {
+            Word_Sense* ws = [array objectAtIndex:indexPath.row];
+            [ws configCell:(WordCellMem*)cell];
+        }
     }
     
     return cell;
