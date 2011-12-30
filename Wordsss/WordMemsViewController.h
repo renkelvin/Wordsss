@@ -13,6 +13,8 @@
 #import "Word_Association.h"
 #import "Word_Sense.h"
 
+#import "RKTableHeader.h"
+
 @interface WordMemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //

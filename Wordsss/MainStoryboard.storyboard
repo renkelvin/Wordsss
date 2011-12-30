@@ -333,7 +333,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="22" id="282">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="365"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>

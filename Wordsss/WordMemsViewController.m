@@ -90,37 +90,30 @@
 // Header View
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
+    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
     
     [headerView setBackgroundColor:[UIColor clearColor]];
-    
-    // TitleLabel
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(12, 0, 320, 28);
-    label.backgroundColor = [UIColor clearColor];
     
     NSArray* array = [[_wordVirtualActor getWordMems] objectAtIndex:section];
     // Association
     if ([[array lastObject] class] == [Word_Association class]) {
         NSString* string = [NSString stringWithFormat:@"联想"];
         
-        [label setText:string];
+        [headerView.titleLabel setText:string];
     }
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
         NSString* string = [NSString stringWithFormat:@"词根 - %@", ((Rootaffix*)[array objectAtIndex:0]).phrase];
         
-        [label setText:string];
+        [headerView.titleLabel setText:string];
     }
     // Sense
     else if ([[array lastObject] class] == [Word_Sense class]) {
         NSString* string = [NSString stringWithFormat:@"意群 - %@", ((Sense*)[array objectAtIndex:0]).meaning_cn];
         
-        [label setText:string];
+        [headerView.titleLabel setText:string];
     }
-    
-    [headerView addSubview:label];
-    
+        
     return headerView;
 }
 

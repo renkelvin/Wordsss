@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RKTableHeader.h"
+
 @interface WordListsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

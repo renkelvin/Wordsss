@@ -12,6 +12,7 @@
 #import "RKNavigationControllerDelegate.h"
 
 #import "RKChartView.h"
+#import "RKTableHeader.h"
 
 #import "ProfileVirtualActor.h"
 

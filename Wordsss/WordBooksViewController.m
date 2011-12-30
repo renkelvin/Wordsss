@@ -79,31 +79,24 @@
 // Header View
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
+    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
     
     [headerView setBackgroundColor:[UIColor clearColor]];
     
-    // TitleLabel
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(12, 0, 320, 28);
-    label.backgroundColor = [UIColor clearColor];
-    
     switch (section) {
         case 0:
-            label.text = @"美国传统词典";
+            headerView.titleLabel.text = @"美国传统词典";
             break;
         case 1:
-            label.text = @"韦氏大学词典";
+            headerView.titleLabel.text = @"韦氏大学词典";
             break;
         case 2:
-            label.text = @"例句";
+            headerView.titleLabel.text = @"例句";
             break;
         default:
-            label.text = @"-----";
+            headerView.titleLabel.text = @"-----";
             break;
     }
-    
-    [headerView addSubview:label];
     
     return headerView;
 }

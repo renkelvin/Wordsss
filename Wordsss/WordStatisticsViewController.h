@@ -13,6 +13,7 @@
 #import "UserDataManager.h"
 
 #import "RKChartView.h"
+#import "RKTableHeader.h"
 
 @interface WordStatisticsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {

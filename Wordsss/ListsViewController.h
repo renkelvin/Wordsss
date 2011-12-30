@@ -11,6 +11,8 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
+#import "RKTableHeader.h"
+
 @interface ListsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RKNavigationControllerDelegate>
 
 @end

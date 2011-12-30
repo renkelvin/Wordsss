@@ -18,6 +18,7 @@
 #import "Word_Sense.h"
 
 #import "WordCellMem.h"
+#import "RKTableHeader.h"
 
 @interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, RKNavigationControllerDelegate> {
     //

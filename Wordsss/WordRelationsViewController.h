@@ -10,6 +10,8 @@
 
 #import "WordVirtualActor.h"
 
+#import "RKTableHeader.h"
+
 @interface WordRelationsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //

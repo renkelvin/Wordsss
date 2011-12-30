@@ -13,6 +13,7 @@
 #import "AhdDictWord.h"
 
 #import "DictWordCell.h"
+#import "RKTableHeader.h"
 
 @interface WordBooksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
