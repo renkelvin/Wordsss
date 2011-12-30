@@ -12,6 +12,10 @@
 #import "Word_Dict.h"
 #import "Word_Relation.h"
 
+#import "Word_Sense.h"
+
+#import "Sense.h"
+
 #import "UserDataManager.h"
 
 @interface WordVirtualActor : NSObject {

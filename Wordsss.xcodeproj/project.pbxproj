@@ -57,6 +57,7 @@
 		FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */; };
 		FE772DBC143D9CC9004DDA0D /* RKDashBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE772DBB143D9CC9004DDA0D /* RKDashBoard.xib */; };
 		FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */; };
+		FE7D398114ADCF290002015A /* WordCellMem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7D398014ADCF290002015A /* WordCellMem.m */; };
 		FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D614949E0400211A97 /* WordsssDBDataManager.m */; };
 		FE8108DB14949E5C00211A97 /* WordsssDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D914949E5C00211A97 /* WordsssDB.xcdatamodeld */; };
 		FE837ED814ABF32A00FEB867 /* InitVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE837ED714ABF32A00FEB867 /* InitVirtualActor.m */; };
@@ -166,7 +167,6 @@
 		FE94A08D14A9B54300BDCE18 /* Init1stViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A08C14A9B54300BDCE18 /* Init1stViewController.m */; };
 		FE94A09014A9B55500BDCE18 /* Init2ndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A08F14A9B55500BDCE18 /* Init2ndViewController.m */; };
 		FE94A09314A9B57300BDCE18 /* Init3rdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A09214A9B57300BDCE18 /* Init3rdViewController.m */; };
-		FE94A0A514A9E24800BDCE18 /* WordCellMem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A0A414A9E24800BDCE18 /* WordCellMem.m */; };
 		FE94A0A814A9E25400BDCE18 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A0A714A9E25300BDCE18 /* ListCell.m */; };
 		FEA569B81494A0C80071C0DB /* Wordsss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEA569B61494A0C80071C0DB /* Wordsss.xcdatamodeld */; };
 		FEABC54C143C8A2E005AB8C1 /* WordBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */; };
@@ -308,6 +308,8 @@
 		FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
 		FE772DBB143D9CC9004DDA0D /* RKDashBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKDashBoard.xib; sourceTree = "<group>"; };
 		FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FE7D397F14ADCF290002015A /* WordCellMem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellMem.h; sourceTree = "<group>"; };
+		FE7D398014ADCF290002015A /* WordCellMem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCellMem.m; sourceTree = "<group>"; };
 		FE8108D514949E0400211A97 /* WordsssDBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBDataManager.h; sourceTree = "<group>"; };
 		FE8108D614949E0400211A97 /* WordsssDBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBDataManager.m; sourceTree = "<group>"; };
 		FE8108DA14949E5C00211A97 /* WordsssDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsssDB.xcdatamodel; sourceTree = "<group>"; };
@@ -427,8 +429,6 @@
 		FE94A08F14A9B55500BDCE18 /* Init2ndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Init2ndViewController.m; sourceTree = "<group>"; };
 		FE94A09114A9B57300BDCE18 /* Init3rdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Init3rdViewController.h; sourceTree = "<group>"; };
 		FE94A09214A9B57300BDCE18 /* Init3rdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Init3rdViewController.m; sourceTree = "<group>"; };
-		FE94A0A314A9E24800BDCE18 /* WordCellMem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellMem.h; sourceTree = "<group>"; };
-		FE94A0A414A9E24800BDCE18 /* WordCellMem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCellMem.m; sourceTree = "<group>"; };
 		FE94A0A614A9E25300BDCE18 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
 		FE94A0A714A9E25300BDCE18 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
 		FEA569B71494A0C80071C0DB /* Wordsss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wordsss.xcdatamodel; sourceTree = "<group>"; };
@@ -742,12 +742,12 @@
 			children = (
 				FEF3307314AC816200E5E3B5 /* WordCellBrief.h */,
 				FEF3307414AC816200E5E3B5 /* WordCellBrief.m */,
-				FEF3307014AC80E500E5E3B5 /* DictWordCell.h */,
-				FEF3307114AC80E500E5E3B5 /* DictWordCell.m */,
 				FEF3307614AC816E00E5E3B5 /* WordCellSummary.h */,
 				FEF3307714AC816E00E5E3B5 /* WordCellSummary.m */,
-				FE94A0A314A9E24800BDCE18 /* WordCellMem.h */,
-				FE94A0A414A9E24800BDCE18 /* WordCellMem.m */,
+				FE7D397F14ADCF290002015A /* WordCellMem.h */,
+				FE7D398014ADCF290002015A /* WordCellMem.m */,
+				FEF3307014AC80E500E5E3B5 /* DictWordCell.h */,
+				FEF3307114AC80E500E5E3B5 /* DictWordCell.m */,
 				FE94A0A614A9E25300BDCE18 /* ListCell.h */,
 				FE94A0A714A9E25300BDCE18 /* ListCell.m */,
 			);
@@ -1368,7 +1368,6 @@
 				FE94A08D14A9B54300BDCE18 /* Init1stViewController.m in Sources */,
 				FE94A09014A9B55500BDCE18 /* Init2ndViewController.m in Sources */,
 				FE94A09314A9B57300BDCE18 /* Init3rdViewController.m in Sources */,
-				FE94A0A514A9E24800BDCE18 /* WordCellMem.m in Sources */,
 				FE94A0A814A9E25400BDCE18 /* ListCell.m in Sources */,
 				FE6B999314AB4F4200AA3DEF /* Word.m in Sources */,
 				FED7747314ABA681007BB8D4 /* AhdDictSentence.m in Sources */,
@@ -1377,6 +1376,7 @@
 				FEF3307214AC80E500E5E3B5 /* DictWordCell.m in Sources */,
 				FEF3307514AC816200E5E3B5 /* WordCellBrief.m in Sources */,
 				FEF3307814AC816E00E5E3B5 /* WordCellSummary.m in Sources */,
+				FE7D398114ADCF290002015A /* WordCellMem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

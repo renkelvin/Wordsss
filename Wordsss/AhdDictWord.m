@@ -78,10 +78,10 @@
     int i = 0;
     for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
         if (!i) {
-            string = [string stringByAppendingFormat:@"%@\t\t%@\n", [self getTypeString], [ahdDictMeaning getShortMeaning]];
+            string = [string stringByAppendingFormat:@"%@ %@\n", [self getTypeString], [ahdDictMeaning getShortMeaning]];
         } 
         else {
-            string = [string stringByAppendingFormat:@"\t\t\t\t\t\t%@\n", [ahdDictMeaning getShortMeaning]];
+            string = [string stringByAppendingFormat:@"%@ %@\n", [self getTypeString], [ahdDictMeaning getShortMeaning]];
         }
         i++;
     }

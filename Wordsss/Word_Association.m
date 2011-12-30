@@ -25,7 +25,7 @@
     
     //
     [cell.meaningLabel setText:self.meaning_cn];
-    
+
     //
     [cell.memLabel setText:self.association.description_cn];
 }

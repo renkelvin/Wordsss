@@ -67,18 +67,7 @@
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    int num = 0;
-    
-    if ([[_wordVirtualActor getWordDerivative]count])
-        num++;
-    
-    if (![[_wordVirtualActor getWordSynonym]count])
-        num++;
-    
-    if (![[_wordVirtualActor getWordAntonym]count])
-        num++;
-    
-    return num;
+    return 3;
 }
 
 // Cell number

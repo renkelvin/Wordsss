@@ -111,6 +111,13 @@
 {
     if (!_wordSenseArray) {
         _wordSenseArray = [_word.word_sense allObjects];
+        NSArray* array = [_word.word_sense allObjects];
+        
+        //
+        for (Word_Sense* ws in array) {
+            NSArray* wsa = [ws.sense.word_sense allObjects];
+            _wordSenseArray = [_wordSenseArray arrayByAddingObjectsFromArray:wsa];
+        }
     }
     
     return _wordSenseArray;

@@ -90,7 +90,6 @@
         default:
             return 0;
     }
-    return 3;
 }
 
 // Header View
