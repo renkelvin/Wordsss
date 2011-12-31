@@ -45,18 +45,72 @@
     return string;
 }
 
+- (NSString*)getSummaryMeaning
+{
+    NSString* string = [NSString stringWithFormat:@""];
+    
+    for (AhdDictWord* ahdDictWord in self.word_dict.ahdDictWord) {
+        string = [string stringByAppendingFormat:@"%@\n", [ahdDictWord getSummaryMeaning]];
+    }
+    
+    return string;
+}
+
 - (void)configLabel:(WordCellBrief*)label
 {
-    [label setText:[self getBriefMeaning]];
+    // ahdDictWord Existing
+    if (self.word_dict.ahdDictWord) {
+        [label setText:[self getBriefMeaning]];
+    }
+    
+    // convOrig word Existing
+    else if (self.word_relation.convOrig) {
+        NSString* string = [NSString stringWithFormat:@"变形自\n%@ %@", self.word_relation.convOrig.name, [self.word_relation.convOrig getSummaryMeaning]];
+        [label setText:string];
+    }
+    
+    // deriOrig word Existing
+    else if (self.word_relation.deriOrig) {
+        NSString* string = [NSString stringWithFormat:@"继承自\n%@ %@", self.word_relation.deriOrig.name, [self.word_relation.deriOrig getSummaryMeaning]];
+        [label setText:string];
+    }
+    
+    //
+    else {
+        NSString* string = [NSString stringWithFormat:@"啊！这个词怎么会出现在这里的！"];
+        [label setText:string];
+    }
 }
 
 - (void)configCell:(WordCellSummary*)cell
 {
-    //
-    [cell.nameLabel setText:self.name];
+    // ahdDictWord Existing
+    if (self.word_dict.ahdDictWord) {
+        [cell.nameLabel setText:self.name];
+        [cell.meaningLabel setText:[self getSummaryMeaning]]; 
+    }
+    
+    // convOrig word Existing
+    else if (self.word_relation.convOrig) {
+        [cell.nameLabel setText:self.name];
+        NSString* string = [NSString stringWithFormat:@"变形自\n%@ %@", self.word_relation.convOrig.name, [self.word_relation.convOrig getSummaryMeaning]];
+        [cell.meaningLabel setText:string];
+    }
+    
+    // deriOrig word Existing
+    else if (self.word_relation.deriOrig) {
+        [cell.nameLabel setText:self.name];
+        NSString* string = [NSString stringWithFormat:@"继承自\n%@ %@", self.word_relation.deriOrig.name, [self.word_relation.deriOrig getSummaryMeaning]];
+        [cell.meaningLabel setText:string];
+    }
     
     //
-    [cell.meaningLabel setText:[self getBriefMeaning]];
+    else {
+        [cell.nameLabel setText:self.name];
+        NSString* string = [NSString stringWithFormat:@"啊！这个词怎么会出现在这里的！"];
+        [cell.meaningLabel setText:string];
+    }
+    
 }
 
 @end

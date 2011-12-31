@@ -89,6 +89,24 @@
     return string;
 }
 
+- (NSString*)getSummaryMeaning
+{
+    NSString* string = [self getTypeString];
+    
+    int i = 0;
+    for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
+        if (!i) {
+            string = [string stringByAppendingFormat:@" %@\n", [ahdDictMeaning getShortMeaning]];
+        } 
+        else {
+            string = [string stringByAppendingFormat:@"; %@\n", [ahdDictMeaning getShortMeaning]];
+        }
+        i++;
+    }
+    
+    return string;
+}
+
 - (NSString*)getFullMeaningCN
 {
     NSString* string = [NSString stringWithFormat:@""];

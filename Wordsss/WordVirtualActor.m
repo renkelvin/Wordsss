@@ -67,6 +67,16 @@
 }
 
 //
+- (NSArray*)getConversion
+{
+    if (!_conversionArray) {
+        _conversionArray = [_word.word_relation.conversion allObjects];
+    }
+    
+    return _conversionArray;
+}
+
+//
 - (NSArray*)getDerivative
 {
     if (!_derivativeArray) {

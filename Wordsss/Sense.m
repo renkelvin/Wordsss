@@ -34,13 +34,24 @@
     return result;
 }
 
+- (NSString*)getTrack
+{
+    NSString* string = [NSString string];
+    
+    if (self.parent) {
+        string = [NSString stringWithFormat:@"%@%@/", [self.parent getTrack], self.meaning_cn];
+    }
+
+    return string;
+}
+
 - (void)configCell:(WordCellMem*)cell
 {
     //
     [cell.nameLabel setText:self.meaning_cn];
     
     //
-    [cell.meaningLabel setText:self.meaning_en];
+    [cell.meaningLabel setText:[self getTrack]];
 }
 
 @end

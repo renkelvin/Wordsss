@@ -31,6 +31,7 @@
     NSArray* _mwcDictWordArray;
     NSArray* _sentenceArray;
     NSArray* _derivativeArray;
+    NSArray* _conversionArray;
     NSArray* _synonymArray;
     NSArray* _antonymArray;
     NSArray* _wordAssociationArray;
@@ -51,6 +52,7 @@
 - (NSArray*)getAhdDictWord;
 - (NSArray*)getMwcDictWord;
 - (NSArray*)getSentence;
+- (NSArray*)getConversion;
 - (NSArray*)getDerivative;
 - (NSArray*)getSynonym;
 - (NSArray*)getAntonym;

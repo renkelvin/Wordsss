@@ -83,7 +83,7 @@
         <relationship name="word_association" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Association" inverseName="word" inverseEntity="Word_Association" syncable="YES"/>
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="word" inverseEntity="Word_Dict" syncable="YES"/>
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="word" inverseEntity="Word_List" syncable="YES"/>
-        <relationship name="word_relation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Relation" inverseName="deriOrig" inverseEntity="Word_Relation" syncable="YES"/>
+        <relationship name="word_relation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Relation" syncable="YES"/>
         <relationship name="word_rootaffix" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Rootaffix" inverseName="word" inverseEntity="Word_Rootaffix" syncable="YES"/>
         <relationship name="word_sense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Sense" inverseName="word" inverseEntity="Word_Sense" syncable="YES"/>
     </entity>
@@ -107,12 +107,12 @@
     </entity>
     <entity name="Word_Relation" representedClassName="Word_Relation" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="antonym" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
-        <relationship name="conversion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
-        <relationship name="convOrig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
-        <relationship name="deriOrig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
-        <relationship name="derivative" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
-        <relationship name="synonym" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
+        <relationship name="antonym" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="conversion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="convOrig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="deriOrig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="derivative" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="synonym" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="Word_Rootaffix" representedClassName="Word_Rootaffix" syncable="YES">
@@ -140,11 +140,11 @@
         <element name="MwcDictWord" positionX="-576" positionY="-783" width="128" height="90"/>
         <element name="Rootaffix" positionX="-999" positionY="-555" width="128" height="195"/>
         <element name="Sense" positionX="-999" positionY="-339" width="128" height="135"/>
-        <element name="Word" positionX="-783" positionY="-531" width="128" height="195"/>
+        <element name="Word" positionX="-783" positionY="-531" width="128" height="180"/>
         <element name="Word_Association" positionX="-1019" positionY="-648" width="128" height="90"/>
         <element name="Word_Dict" positionX="-533" positionY="-627" width="128" height="105"/>
         <element name="Word_List" positionX="-524" positionY="-441" width="128" height="90"/>
-        <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="120"/>
+        <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
     </elements>
