@@ -22,6 +22,7 @@ static NSDictionary* attrDict = nil;
 static NSString* attrString = nil;
 
 NSMutableDictionary* wordDICT = nil;                //TTABLEDATA_WORD
+
 NSMutableDictionary* wordAssociationDICT = nil;     //TTABLEDATA_WORDASSOCIATION
 NSMutableDictionary* associationDICT = nil;         //TTABLEDATA_ASSOCIATION
 NSMutableDictionary* wordRootaffixDICT = nil;       //TTABLEDATA_WORDROOTAFFIX
@@ -29,7 +30,9 @@ NSMutableDictionary* rootaffixDICT = nil;           //TTABLEDATA_ROOTAFFIX
 NSMutableDictionary* wordSenseDICT = nil;           //TTABLEDATA_WORDSENSE
 NSMutableDictionary* senseDICT = nil;               //TTABLEDATA_SENSE
 NSMutableDictionary* senseFamilyDICT = nil;         //TTABLEDATA_SENSEFAMILY
+
 NSMutableDictionary* wordDictDICT = nil;            //TTABLEDATA_WORDDICT
+
 NSMutableDictionary* mcecDictWordDICT = nil;        //TTABLEDATA_MCECDICTWORD
 NSMutableDictionary* mcecDictMeaningDICT = nil;     //TTABLEDATA_MCECDICTMEANING
 NSMutableDictionary* ahdDictWordDICT = nil;         //TTABLEDATA_AHDDICTWORD
@@ -98,7 +101,6 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
     ahdDictSentenceDICT = [NSMutableDictionary dictionary];     //TTABLEDATA_AHDDICTSENTENCE
 }
 
-// generate WordsssDB.sqlite
 - (void)go
 {
     _dbm = [WordsssDBDataManager wordsssDBDataManager];
@@ -174,6 +176,11 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                     case TTABLEDATA_WORD:   // Word
                                     {
                                         object = (Word*)[NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        Word_Relation* relation = (Word_Relation*)[NSEntityDescription insertNewObjectForEntityForName:@"Word_Relation" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        relation.word = ((Word*)object);
+                                        ((Word*)object).word_relation = relation;
                                         
                                         break;
                                     }
@@ -340,6 +347,11 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                         }
                         default:
                         {
+                            //
+                            if (isr == RNONE || isf == FNONE) {
+                                break;
+                            }
+                            
                             // T Entity
                             if (_ERIndicator == 'E') {
                                 switch (ist) {
@@ -611,6 +623,35 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_AHDDICTSENTENCE:   // AhdDictSentence
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"ahd_dict_sentence_id"] == NSOrderedSame) {
+                                            ((AhdDictSentence*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [ahdDictSentenceDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"AhdDictSentence - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
+                                            ((AhdDictSentence*)object).meaning_cn = string;
+                                        }
+                                        else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
+                                            ((AhdDictSentence*)object).meaning_en = string;
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_WORDDICT:   // Word_Dict
                                     {
                                         if (!attrDict)
@@ -661,11 +702,7 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         break;
                                     }
                                     case TTABLEDATA_WORDSENSE:   // Word_Sense
-                                    {
-                                        if (isr == RNONE || isf == FNONE) {
-                                            break;
-                                        }
-                                        
+                                    {                                        
                                         if (!attrDict)
                                             break;
                                         
@@ -690,8 +727,8 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             }
                                         }
                                         
-//                                        attrString = nil;
-//                                        attrDict = nil;
+                                        // attrString = nil;
+                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -745,13 +782,11 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             break;
                                         
                                         if ([attrString compare:@"word_association_id"] == NSOrderedSame) {
-                                            // object = [Word_Sense entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             object = [wordAssociationDICT objectForKey:string];
                                             
                                             NSLog(@"WordAssociation - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
-                                            // Word* word = [Word wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             Word* word = [wordDICT objectForKey:string];
                                             
                                             if (word) {
@@ -760,7 +795,6 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             }
                                         }
                                         else if ([attrString compare:@"association_id"] == NSOrderedSame) {
-                                            // Association* association = [Association entityWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             Association* association = [associationDICT objectForKey:string];
                                             
                                             if (association) {
@@ -803,6 +837,36 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             if (sense) {
                                                 ((Word_Sense*)object).sense = sense;
                                                 [sense.word_sense addObject:((Word_Sense*)object)];
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_SENSEFAMILY:   // Sense_Family
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"sense_family_id"] == NSOrderedSame) {
+                                            NSLog(@"SenseFamily - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"parent_sense_id"] == NSOrderedSame) {
+                                            object = (Sense*)[senseDICT objectForKey:string];                                            
+                                        }
+                                        else if ([attrString compare:@"son_sense_id"] == NSOrderedSame) {
+                                            Sense* sense = [senseDICT objectForKey:string];
+                                            
+                                            if (sense) {
+                                                [((Sense*)object).son addObject:sense];
+                                                sense.parent = (Sense*)object;
                                             }
                                         }
                                         
@@ -901,6 +965,155 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_AHDDICTSENTENCE:   // AhdDictSentence
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"ahd_dict_sentence_id"] == NSOrderedSame) {
+                                            object = (AhdDictSentence*)[ahdDictSentenceDICT objectForKey:string];
+                                            
+                                            NSLog(@"AhdDictSentence - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"ahd_dict_meaning_id"] == NSOrderedSame) {
+                                            AhdDictMeaning* ahdDictMeaning = [ahdDictMeaningDICT objectForKey:string];
+                                            
+                                            if (ahdDictMeaning) {
+                                                ((AhdDictSentence*)object).ahdDictMeaning = ahdDictMeaning;
+                                                ahdDictMeaning.ahdDictSentence = ((AhdDictSentence*)object);
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_CONVERSION:   // Conversion
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_conversion_id"] == NSOrderedSame) {
+                                            NSLog(@"Conversion - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
+                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                        }
+                                        else if ([attrString compare:@"convresion_word_id"] == NSOrderedSame) {
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                [((Word*)object).word_relation.conversion addObject:word];
+                                                word.word_relation.convOrig = (Word*)object;
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_DERIVATION:   // Derivation
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_derivation_id"] == NSOrderedSame) {
+                                            NSLog(@"Derivation - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
+                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                        }
+                                        else if ([attrString compare:@"derivation_word_id"] == NSOrderedSame) {
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                [((Word*)object).word_relation.derivative addObject:word];
+                                                word.word_relation.deriOrig = (Word*)object;
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_SYNONYM:   // Synonym
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"synonym_id"] == NSOrderedSame) {
+                                            NSLog(@"Synonym - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
+                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                        }
+                                        else if ([attrString compare:@"synonym_word_id"] == NSOrderedSame) {
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                [((Word*)object).word_relation.synonym addObject:word];
+                                                [word.word_relation.synonym addObject:(Word*)object];
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_ANTONYM:   // Antonym
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"antonym_id"] == NSOrderedSame) {
+                                            NSLog(@"Antonym - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
+                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                        }
+                                        else if ([attrString compare:@"antonym_word_id"] == NSOrderedSame) {
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                [((Word*)object).word_relation.antonym addObject:word];
+                                                [word.word_relation.antonym addObject:(Word*)object];
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
                                     default:
                                     {
                                         break;
@@ -954,8 +1167,8 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
         else if ([name compare:@"frequency"] == NSOrderedSame) {
             ist = TTABLEDATA_FREQUENCY;
         }
-        else if ([name compare:@"dota_list"] == NSOrderedSame) {
-            ist = TTABLEDATA_DOTALIST;
+        else if ([name compare:@"dota_list_word"] == NSOrderedSame) {
+            ist = TTABLEDATA_DOTALISTWORD;
         }
         else if ([name compare:@"mcec_dict_meaning"] == NSOrderedSame) {
             ist = TTABLEDATA_MCECDICTMEANING;
@@ -1004,6 +1217,18 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
         }
         else if ([name compare:@"word_sense"] == NSOrderedSame) {
             ist = TTABLEDATA_WORDSENSE;
+        }
+        else if ([name compare:@"word_conversion"] == NSOrderedSame) {
+            ist = TTABLEDATA_CONVERSION;
+        }
+        else if ([name compare:@"word_derivation"] == NSOrderedSame) {
+            ist = TTABLEDATA_DERIVATION;
+        }
+        else if ([name compare:@"synonym"] == NSOrderedSame) {
+            ist = TTABLEDATA_SYNONYM;
+        }
+        else if ([name compare:@"antonym"] == NSOrderedSame) {
+            ist = TTABLEDATA_ANTONYM;
         }
     }
     else if ([elementName compare:@"row"] == NSOrderedSame) {

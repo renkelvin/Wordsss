@@ -30,12 +30,12 @@
 #pragma mark - View lifecycle
 
 /*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
+ // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+ - (void)viewDidLoad
+ {
+ [super viewDidLoad];
+ }
+ */
 
 - (void)viewDidUnload
 {
@@ -128,14 +128,14 @@
             else {
                 return 0;
             }
-       case 2:
+        case 2:
             if ([[_wordVirtualActor getAntonym]count]) {
                 return 28;
             }
             else {
                 return 0;
             }
-       default:
+        default:
             return 0;
     }
 }
@@ -149,6 +149,34 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
+    }
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            Word* deriWord = [[_wordVirtualActor getDerivative] objectAtIndex:indexPath.row];
+            [deriWord configCell:(WordCellSummary*)cell];
+            
+            break;
+        }
+        case 1:
+        {
+            Word* synoWord = [[_wordVirtualActor getSynonym] objectAtIndex:indexPath.row];
+            [synoWord configCell:(WordCellSummary*)cell];
+            
+            break;
+        }
+        case 2:
+        {
+            Word* antoWord = [[_wordVirtualActor getAntonym] objectAtIndex:indexPath.row];
+            [antoWord configCell:(WordCellSummary*)cell];
+            
+            break;
+        }
+        default:
+        {
+            break;
+        }
     }
     
     return cell;

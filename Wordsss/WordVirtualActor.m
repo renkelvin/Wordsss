@@ -53,7 +53,17 @@
 //
 - (NSArray*)getSentence
 {
-    return [NSArray array];
+    if (!_sentenceArray) {
+        NSArray* array = [NSArray array];
+        
+        for (AhdDictWord* ahdDictWord in _word.word_dict.ahdDictWord) {
+            array = [array arrayByAddingObjectsFromArray:[ahdDictWord getSentence]];
+        }
+        
+        _sentenceArray = array;
+    }
+    
+    return _sentenceArray;
 }
 
 //

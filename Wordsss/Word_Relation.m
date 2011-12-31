@@ -2,7 +2,7 @@
 //  Word_Relation.m
 //  Wordsss
 //
-//  Created by Ren Chuan on 12/27/11.
+//  Created by Ren Chuan on 12/31/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
@@ -17,5 +17,8 @@
 @dynamic derivative;
 @dynamic synonym;
 @dynamic word;
+@dynamic conversion;
+@dynamic convOrig;
+@dynamic deriOrig;
 
 @end

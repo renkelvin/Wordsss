@@ -58,7 +58,8 @@ enum IterStat_T { TNONE,    TTABLESTRUCTURE,
                             TTABLEDATA_AHDDICTWORD, TTABLEDATA_AHDDICTMEANING, TTABLEDATA_AHDDICTSENTENCE,
                             TTABLEDATA_MWCDICTWORD, TTABLEDATA_MWCDICTMEANING,
                             TTABLEDATA_WORDLIST,
-                            TTABLEDATA_DOTALIST
+                            TTABLEDATA_DOTALISTWORD,
+                            TTABLEDATA_CONVERSION, TTABLEDATA_DERIVATION, TTABLEDATA_SYNONYM, TTABLEDATA_ANTONYM, 
                             };
 enum IterStat_R { RNONE, RROW };
 enum IterStat_F { FNONE, FFIELD };

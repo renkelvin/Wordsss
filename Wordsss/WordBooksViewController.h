@@ -11,6 +11,8 @@
 #import "WordVirtualActor.h"
 
 #import "AhdDictWord.h"
+#import "AhdDictMeaning.h"
+#import "AhdDictSentence.h"
 
 #import "DictWordCell.h"
 #import "RKTableHeader.h"

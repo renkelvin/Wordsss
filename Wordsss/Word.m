@@ -7,15 +7,6 @@
 //
 
 #import "Word.h"
-#import "Frequency.h"
-#import "Word_Association.h"
-#import "Word_Convertion.h"
-#import "Word_Dict.h"
-#import "Word_List.h"
-#import "Word_Relation.h"
-#import "Word_Rootaffix.h"
-#import "Word_Sense.h"
-
 
 @implementation Word
 
@@ -23,7 +14,6 @@
 @dynamic name;
 @dynamic frequency;
 @dynamic word_association;
-@dynamic word_convertion;
 @dynamic word_dict;
 @dynamic word_list;
 @dynamic word_relation;
@@ -58,6 +48,15 @@
 - (void)configLabel:(WordCellBrief*)label
 {
     [label setText:[self getBriefMeaning]];
+}
+
+- (void)configCell:(WordCellSummary*)cell
+{
+    //
+    [cell.nameLabel setText:self.name];
+    
+    //
+    [cell.meaningLabel setText:[self getBriefMeaning]];
 }
 
 @end

@@ -2,11 +2,12 @@
 //  AhdDictMeaning.m
 //  Wordsss
 //
-//  Created by Ren Chuan on 12/27/11.
+//  Created by Ren Chuan on 12/31/11.
 //  Copyright (c) 2011 Ren Inc. All rights reserved.
 //
 
 #import "AhdDictMeaning.h"
+#import "AhdDictSentence.h"
 #import "AhdDictWord.h"
 
 
@@ -15,6 +16,7 @@
 @dynamic id;
 @dynamic meaning_cn;
 @dynamic meaning_en;
+@dynamic ahdDictSentence;
 @dynamic ahdDictWord;
 
 - (NSString*)getShortMeaning

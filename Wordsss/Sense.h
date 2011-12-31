@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * meaning_cn;
 @property (nonatomic, retain) NSString * meaning_en;
 @property (nonatomic, retain) Sense *parent;
-@property (nonatomic, retain) NSSet *son;
+@property (nonatomic, retain) NSMutableSet *son;
 @property (nonatomic, retain) NSMutableSet *word_sense;
 @end
 

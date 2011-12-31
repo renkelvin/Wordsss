@@ -147,6 +147,7 @@
         {
             AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:indexPath.row];
             [word configCell:(DictWordCell*)cell];
+            
             break;
         }   
         case 1:
@@ -155,6 +156,9 @@
         }
         case 2:
         {
+            AhdDictSentence* sentence = [[_wordVirtualActor getSentence] objectAtIndex:indexPath.row];
+            [sentence configCell:(DictWordCell*)cell];
+            
             break;
         }
         default:

@@ -101,6 +101,20 @@
     
     return string;
 }
+
+- (NSArray*)getSentence
+{
+    NSMutableArray* array = [NSMutableArray array];
+    
+    for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
+        if (ahdDictMeaning.ahdDictSentence) {
+            [array addObject:ahdDictMeaning.ahdDictSentence];
+        }
+    }
+    
+    return array;
+}
+
 //
 //#pragma mark - override getter
 //

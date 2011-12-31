@@ -11,6 +11,7 @@
 #import "WordVirtualActor.h"
 
 #import "RKTableHeader.h"
+#import "WordCellSummary.h"
 
 @interface WordRelationsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {

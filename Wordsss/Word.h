@@ -9,11 +9,21 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "WordCellBrief.h"
+#import "WordCellSummary.h"
+
+#import "Frequency.h"
+
+#import "Word_Association.h"
+#import "Word_Dict.h"
+#import "Word_List.h"
+#import "Word_Relation.h"
+#import "Word_Rootaffix.h"
+#import "Word_Sense.h"
+
 #import "AhdDictWord.h"
 
-#import "WordCellBrief.h"
-
-@class Frequency, Word_Association, Word_Convertion, Word_Dict, Word_List, Word_Relation, Word_Rootaffix, Word_Sense;
+@class Frequency, Word_Association, Word_Dict, Word_List, Word_Relation, Word_Rootaffix, Word_Sense;
 
 @interface Word : NSManagedObject
 
@@ -21,7 +31,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Frequency *frequency;
 @property (nonatomic, retain) NSMutableSet *word_association;
-@property (nonatomic, retain) Word_Convertion *word_convertion;
 @property (nonatomic, retain) Word_Dict *word_dict;
 @property (nonatomic, retain) Word_List *word_list;
 @property (nonatomic, retain) Word_Relation *word_relation;
@@ -49,5 +58,6 @@
 + (Word *)wordWithId:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context;
 
 - (void)configLabel:(WordCellBrief*)label;
+- (void)configCell:(WordCellSummary*)cell;
 
 @end
