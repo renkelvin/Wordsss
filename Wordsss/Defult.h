@@ -22,4 +22,7 @@
 
 + (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
 
+- (int)freqCurrent;
+- (int)freqTarget;
+
 @end

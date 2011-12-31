@@ -22,6 +22,7 @@ static NSDictionary* attrDict = nil;
 static NSString* attrString = nil;
 
 NSMutableDictionary* wordDICT = nil;                //TTABLEDATA_WORD
+NSMutableDictionary* frequencyDICT = nil;           //TTABLEDATA_FREQUENCY
 
 NSMutableDictionary* wordAssociationDICT = nil;     //TTABLEDATA_WORDASSOCIATION
 NSMutableDictionary* associationDICT = nil;         //TTABLEDATA_ASSOCIATION
@@ -84,6 +85,7 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
 - (void)initDicts
 {
     wordDICT = [NSMutableDictionary dictionary];                //TTABLEDATA_WORD
+    frequencyDICT = [NSMutableDictionary dictionary];           //TTABLEDATA_FREQUENCY
     wordAssociationDICT = [NSMutableDictionary dictionary];     //TTABLEDATA_WORDASSOCIATION
     associationDICT = [NSMutableDictionary dictionary];         //TTABLEDATA_ASSOCIATION
     wordRootaffixDICT = [NSMutableDictionary dictionary];       //TTABLEDATA_WORDROOTAFFIX
@@ -499,6 +501,8 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                         if ([attrString compare:@"frequency_id"] == NSOrderedSame) {
                                             ((Frequency*)object).id = [NSNumber numberWithInt:[string intValue]];
                                             
+                                            [frequencyDICT setValue:object forKey:string];
+                                            
                                             NSLog(@"Frequency - id: %@", string);
                                         }
                                         else if ([attrString compare:@"frequency"] == NSOrderedSame) {
@@ -763,6 +767,35 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             if (word) {
                                                 ((Word_Dict*)object).word = word;
                                                 word.word_dict = ((Word_Dict*)object);
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_FREQUENCY:   // Frequency
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"frequency_id"] == NSOrderedSame) {
+                                            object = (Frequency *)[frequencyDICT objectForKey:string];
+                                            
+                                            NSLog(@"Frequency - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_id"] == NSOrderedSame) {
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                ((Word_Dict*)object).word = word;
+                                                word.frequency = ((Frequency*)object);
                                             }
                                         }
                                         

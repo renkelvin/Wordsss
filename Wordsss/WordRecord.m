@@ -9,7 +9,7 @@
 #import "WordRecord.h"
 #import "MemData.h"
 
-static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
+static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 
 @implementation WordRecord
 
@@ -57,7 +57,7 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 - (int)delta
 {
     if (1 <= [self.level intValue] && [self.level intValue] <= 10) {
-        return deltaArray[[self.level intValue] - 1];
+        return deltaArray[[self.level intValue]];
     }
     else if ([self.level intValue] == 0) {
         return 1;
@@ -67,7 +67,7 @@ static int deltaArray[10] = {1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     }
     else {
         self.level = [NSNumber numberWithInt:10];
-        return deltaArray[[self.level intValue] - 1];
+        return deltaArray[[self.level intValue]];
     }
 }
 
