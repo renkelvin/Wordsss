@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "WordCellMem.h"
-
 @class Sense, Word_Sense;
 
 @interface Sense : NSManagedObject
@@ -37,6 +35,6 @@
 
 + (Sense *)senseWithId:(NSNumber *)senseId inManagedObjectContext:(NSManagedObjectContext *)context;
 
-- (void)configCell:(WordCellMem*)cell;
+- (NSString*)getTrack;
 
 @end

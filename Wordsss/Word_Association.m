@@ -18,16 +18,4 @@
 @dynamic association;
 @dynamic word;
 
-- (void)configCell:(WordCellMem*)cell
-{
-    //
-    [cell.nameLabel setText:self.word.name];
-    
-    //
-    [cell.meaningLabel setText:self.meaning_cn];
-
-    //
-    [cell.memLabel setText:self.association.description_cn];
-}
-
 @end

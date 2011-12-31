@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Word.h"
+
+#import "UserDataManager.h"
+
+#import "TodayVirtualActor.h"
+
 @interface WordCellSummary : UITableViewCell
+
+@property (nonatomic, retain) Word* word;
 
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;
+
+- (IBAction)addButtonClicked:(id)sender;
+
+- (void)configCell;
 
 @end

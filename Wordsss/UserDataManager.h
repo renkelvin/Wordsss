@@ -18,9 +18,7 @@
 #import "StaRecord.h"
 #import "WordRecord.h"
 
-@interface UserDataManager : NSObject {
-
-}
+@interface UserDataManager : NSObject 
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

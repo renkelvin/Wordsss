@@ -261,7 +261,7 @@
 #pragma - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender{
-    WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:_todayVirtualActor.wordPos];
+    WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[_todayVirtualActor.wordPos getTargetWord]];
     
     [[self navigationController] pushViewController:wordViewController animated:YES];
 }

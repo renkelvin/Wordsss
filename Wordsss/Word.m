@@ -34,6 +34,29 @@
     return result;
 }
 
+- (Word*)getTargetWord
+{
+    // ahdDictWord Existing
+    if (self.word_dict.ahdDictWord) {
+        return self;
+    }
+    
+    // convOrig word Existing
+    else if (self.word_relation.convOrig) {
+        return self.word_relation.convOrig;
+    }
+    
+    // deriOrig word Existing
+    else if (self.word_relation.deriOrig) {
+        return self.word_relation.deriOrig;
+    }
+    
+    //
+    else {
+        return self;
+    }
+}
+
 - (NSString*)getBriefMeaning
 {
     NSString* string = [NSString stringWithFormat:@""];
@@ -80,37 +103,6 @@
         NSString* string = [NSString stringWithFormat:@"啊！这个词怎么会出现在这里的！"];
         [label setText:string];
     }
-}
-
-- (void)configCell:(WordCellSummary*)cell
-{
-    // ahdDictWord Existing
-    if (self.word_dict.ahdDictWord) {
-        [cell.nameLabel setText:self.name];
-        [cell.meaningLabel setText:[self getSummaryMeaning]]; 
-    }
-    
-    // convOrig word Existing
-    else if (self.word_relation.convOrig) {
-        [cell.nameLabel setText:self.name];
-        NSString* string = [NSString stringWithFormat:@"变形自\n%@ %@", self.word_relation.convOrig.name, [self.word_relation.convOrig getSummaryMeaning]];
-        [cell.meaningLabel setText:string];
-    }
-    
-    // deriOrig word Existing
-    else if (self.word_relation.deriOrig) {
-        [cell.nameLabel setText:self.name];
-        NSString* string = [NSString stringWithFormat:@"继承自\n%@ %@", self.word_relation.deriOrig.name, [self.word_relation.deriOrig getSummaryMeaning]];
-        [cell.meaningLabel setText:string];
-    }
-    
-    //
-    else {
-        [cell.nameLabel setText:self.name];
-        NSString* string = [NSString stringWithFormat:@"啊！这个词怎么会出现在这里的！"];
-        [cell.meaningLabel setText:string];
-    }
-    
 }
 
 @end

@@ -877,7 +877,6 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                     }
                                     case TTABLEDATA_MCECDICTMEANING:   // McecDictMeaning
                                     {
-#warning debug
                                         break;
                                         
                                         if (!attrDict)

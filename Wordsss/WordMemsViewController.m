@@ -113,7 +113,7 @@
         
         [headerView.titleLabel setText:string];
     }
-        
+    
     return headerView;
 }
 
@@ -137,17 +137,19 @@
     NSArray* array = [[_wordVirtualActor getWordMems] objectAtIndex:indexPath.section];
     // Association
     if ([[array lastObject] class] == [Word_Association class]) {
-        Word_Association* ws = [array objectAtIndex:indexPath.row];
-        [ws configCell:(WordCellMem*)cell];
+        Word_Association* wa = [array objectAtIndex:indexPath.row];
+        [(WordCellMem*)cell clear];
+        [(WordCellMem*)cell setWord_association:wa];
+        [(WordCellMem*)cell configCell];
     }
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
         if (indexPath.row == 0) {
-            Rootaffix* r = [array objectAtIndex:indexPath.row];
+            // Rootaffix* r = [array objectAtIndex:indexPath.row];
             // [r configCell:(WordCellMem*)cell];
         }
         else {
-            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
+            // Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
             // [wr configCell:(WordCellMem*)cell];
         }
     }
@@ -155,11 +157,15 @@
     else if ([[array lastObject] class] == [Word_Sense class]) {
         if (indexPath.row == 0) {
             Sense* s = [array objectAtIndex:indexPath.row];
-            [s configCell:(WordCellMem*)cell];
+            [(WordCellMem*)cell clear];
+            [(WordCellMem*)cell setSense:s];
+            [(WordCellMem*)cell configCell];
         }
         else {
             Word_Sense* ws = [array objectAtIndex:indexPath.row];
-            [ws configCell:(WordCellMem*)cell];
+            [(WordCellMem*)cell clear];
+            [(WordCellMem*)cell setWord_sense:ws];
+            [(WordCellMem*)cell configCell];
         }
     }
     

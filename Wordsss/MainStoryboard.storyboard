@@ -387,6 +387,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addButtonClicked:" destination="283" eventType="touchUpInside" id="7J0-FR-H9X"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -795,6 +798,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addButtonClicked:" destination="254" eventType="touchUpInside" id="H06-X7-4YF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -874,6 +880,9 @@
                                                     <state key="highlighted">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addButtonClicked:" destination="262" eventType="touchUpInside" id="PCZ-4w-ouc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1139,6 +1148,7 @@
         <class className="WordCellMem" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellMem.h"/>
             <relationships>
+                <relationship kind="action" name="addButtonClicked:"/>
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="memLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
@@ -1147,6 +1157,7 @@
         <class className="WordCellSummary" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellSummary.h"/>
             <relationships>
+                <relationship kind="action" name="addButtonClicked:"/>
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
             </relationships>

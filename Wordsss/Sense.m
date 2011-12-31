@@ -45,13 +45,4 @@
     return string;
 }
 
-- (void)configCell:(WordCellMem*)cell
-{
-    //
-    [cell.nameLabel setText:self.meaning_cn];
-    
-    //
-    [cell.meaningLabel setText:[self getTrack]];
-}
-
 @end

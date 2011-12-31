@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "WordCellMem.h"
-
 @class Association, Word;
 
 @interface Word_Association : NSManagedObject
@@ -19,7 +17,5 @@
 @property (nonatomic, retain) NSString * meaning_cn;
 @property (nonatomic, retain) Association *association;
 @property (nonatomic, retain) Word *word;
-
-- (void)configCell:(WordCellMem*)cell;
 
 @end

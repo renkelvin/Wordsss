@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "WordCellMem.h"
-
 @class Sense, Word;
 
 @interface Word_Sense : NSManagedObject
@@ -22,7 +20,5 @@
 @property (nonatomic, retain) Sense *sense;
 
 + (Word_Sense *)entityWithId:(NSNumber *)entityId inManagedObjectContext:(NSManagedObjectContext *)context;
-
-- (void)configCell:(WordCellMem*)cell;
 
 @end

@@ -106,31 +106,38 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     NSSet* tempSet = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+0", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
-    NSLog(@"Word record in day+0: %d", [tempSet count]);
+    NSLog(@"Word record in day %d+0: %d", [_user.status.day intValue], [tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+1", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
-    NSLog(@"Word record in day+1: %d", [tempSet count]);
+    NSLog(@"Word record in day %d+1: %d", [_user.status.day intValue], [tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+2", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
-    NSLog(@"Word record in day+2: %d", [tempSet count]);
+    NSLog(@"Word record in day %d+2: %d", [_user.status.day intValue], [tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+3", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
-    NSLog(@"Word record in day+3: %d", [tempSet count]);
+    NSLog(@"Word record in day %d+3: %d", [_user.status.day intValue], [tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+4", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
-    NSLog(@"Word record in day+4: %d", [tempSet count]);
+    NSLog(@"Word record in day %d+4: %d", [_user.status.day intValue], [tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+5", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
-    NSLog(@"Word record in day+5: %d", [tempSet count]);
+    NSLog(@"Word record in day %d+5: %d", [_user.status.day intValue], [tempSet count]);
     
     NSLog(@"updataWordRecordSet: %d", [_wordRecordSet count]);
-    
+}
+
+- (void)fillWordRecordSetFromWordRecord
+{
     // Enough
     if ([_wordRecordSet count] >= kTodayWordLimit)
         return;
     
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // NOT Enough
     // Get new wordRecord
-    request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == 0", [_user.status.day intValue]]];
     NSArray* new_wordRecord_array = [udm.managedObjectContext executeFetchRequest:request error:nil]; 
     
@@ -143,11 +150,16 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         [_wordRecordSet addObject:wr];
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
+        {    
+            NSLog(@"updataWordRecordSetFromWordRecord!");
             return;
+        }
     }
+    
+    NSLog(@"updataWordRecordSetFromWordRecord: %d", [_wordRecordSet count]);
 }
 
-- (void)fillWordRecordSet
+- (void)fillWordRecordSetFromWord
 {
     // Enough
     if ([_wordRecordSet count] >= kTodayWordLimit)
@@ -167,7 +179,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"NOT (id in %@)", word_id_set]];
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
-    NSLog(@"fillWordRecordSet: %d", [new_word_set count]);
     
     UserDataManager* udm = [UserDataManager userdataManager];
     
@@ -183,8 +194,13 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         [_wordRecordSet addObject:wr];
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
+        {
+            NSLog(@"fillWordRecordSet!");
             return;
+        }
     }
+    
+    NSLog(@"fillWordRecordSetFromWord: %d", [_wordRecordSet count]);
 }
 
 - (void)updateTestWordRecord
@@ -230,7 +246,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // First time launch
     if ([_wordRecordSet count] == 0) {
         // More wordRecordArray
-        [self fillWordRecordSet];
+        [self fillWordRecordSetFromWordRecord];
+        [self fillWordRecordSetFromWord];
     }
     
     // Get WordRecord Word
@@ -309,7 +326,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self updateWordRecordSet];
     
     // More wordRecordArray
-    [self fillWordRecordSet];
+    [self fillWordRecordSetFromWordRecord];
+    // Even more wordRecordArray
+    [self fillWordRecordSetFromWord];
 }
 
 - (BOOL)checkWordRecord:(WordRecord*)wordRecord

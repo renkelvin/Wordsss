@@ -103,7 +103,7 @@
     RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
     
     [headerView setBackgroundColor:[UIColor clearColor]];
-        
+    
     switch (section) {
         case 0:
             headerView.titleLabel.text = @"联想";
@@ -167,24 +167,30 @@
         case 0:
         {
             Word_Association* word_association = [[_exploreVirtualActor getAssociation] objectAtIndex:indexPath.row];
-            [word_association configCell:(WordCellMem*)cell];
+            [(WordCellMem*)cell clear];
+            [(WordCellMem*)cell setWord_association:word_association];
+            [(WordCellMem*)cell configCell];
             
             break;
         }   
         case 1:
         {
-
+            
             break;
         }   
         case 2:
         {
             if (indexPath.row == 0) {
                 Sense* sense = [[_exploreVirtualActor getSense] objectAtIndex:indexPath.row];
-                [sense configCell:(WordCellMem*)cell];
+                [(WordCellMem*)cell clear];
+                [(WordCellMem*)cell setSense:sense];
+                [(WordCellMem*)cell configCell];
             }
             else {
                 Word_Sense* word_sense = [[_exploreVirtualActor getSense] objectAtIndex:indexPath.row];
-                [word_sense configCell:(WordCellMem*)cell];
+                [(WordCellMem*)cell clear];
+                [(WordCellMem*)cell setWord_sense:word_sense];
+                [(WordCellMem*)cell configCell];
             }
             
             break;

@@ -10,7 +10,6 @@
 #import <CoreData/CoreData.h>
 
 #import "WordCellBrief.h"
-#import "WordCellSummary.h"
 
 #import "Frequency.h"
 
@@ -57,7 +56,11 @@
 
 + (Word *)wordWithId:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context;
 
+- (Word*)getTargetWord;
+
 - (void)configLabel:(WordCellBrief*)label;
-- (void)configCell:(WordCellSummary*)cell;
+
+- (NSString*)getBriefMeaning;
+- (NSString*)getSummaryMeaning;
 
 @end

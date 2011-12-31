@@ -154,7 +154,11 @@
             
             [rArray addObject:wr.rootaffix];
             
-            [rArray addObjectsFromArray:[wr.rootaffix.word_rootaffix allObjects]];
+            [rArray addObject:wr];
+            
+            NSMutableArray* mArray = [NSMutableArray arrayWithArray:[wr.rootaffix.word_rootaffix allObjects]];
+            [mArray removeObject:wr];
+            [rArray addObjectsFromArray:mArray];
             
             [array addObject:rArray];
         }
@@ -165,7 +169,11 @@
             
             [rArray addObject:ws.sense];
             
-            [rArray addObjectsFromArray:[ws.sense.word_sense allObjects]];
+            [rArray addObject:ws];
+            
+            NSMutableArray* mArray = [NSMutableArray arrayWithArray:[ws.sense.word_sense allObjects]];
+            [mArray removeObject:ws];
+            [rArray addObjectsFromArray:mArray];
             
             [array addObject:rArray];
         }
