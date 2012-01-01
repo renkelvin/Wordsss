@@ -24,5 +24,7 @@
 
 - (int)freqCurrent;
 - (int)freqTarget;
+- (int)vocaCurrent;
+- (int)vocaTarget;
 
 @end

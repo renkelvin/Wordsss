@@ -28,6 +28,9 @@
 @property (nonatomic, retain) IBOutlet UILabel* infoLeftLabel;
 @property (nonatomic, retain) IBOutlet UILabel* infoRightLabel;
 
+@property (nonatomic, retain) IBOutlet UIImageView* progressImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* tagetImageView;
+
 @property (nonatomic, retain) IBOutlet RKChartView* chartView;
 
 - (void)update;

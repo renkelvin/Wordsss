@@ -88,6 +88,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     
     // Get 
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Sense"];
+//    [request setPredicate:[NSPredicate predicateWithFormat:@""]];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     // Rand

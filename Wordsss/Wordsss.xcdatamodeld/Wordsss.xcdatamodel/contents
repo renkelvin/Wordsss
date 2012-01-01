@@ -14,6 +14,7 @@
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hisdata" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="HisRecord" representedClassName="HisRecord" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="dlc" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>

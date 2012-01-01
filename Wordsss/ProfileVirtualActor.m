@@ -73,4 +73,21 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
     return srArray;
 }
 
+- (int)getVocaCurrent
+{
+    return [_user.defult vocaCurrent];
+}
+
+- (int)getVocaNow
+{
+    int vocaNow = [_user.defult vocaCurrent] + 2 * (int)[_user.status getCount];
+    
+    return vocaNow;
+}
+
+- (int)getVocaTarget
+{
+    return [_user.defult vocaTarget];
+}
+
 @end

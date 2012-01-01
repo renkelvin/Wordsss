@@ -2,8 +2,8 @@
 //  HisRecord.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/24/11.
-//  Copyright (c) 2011 Ren Inc. All rights reserved.
+//  Created by Ren Chuan on 1/1/12.
+//  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
 #import "HisRecord.h"
@@ -13,9 +13,10 @@
 @implementation HisRecord
 
 @dynamic day;
+@dynamic dlc;
 @dynamic level;
 @dynamic word_id;
-@dynamic dlc;
+@dynamic date;
 @dynamic hisData;
 
 + (HisRecord*)insertHisRecord:(WordRecord*)wordRecord user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context
@@ -29,6 +30,7 @@
     hisRecord.word_id = wordRecord.word_id;
     hisRecord.level = wordRecord.level;
     hisRecord.day = wordRecord.day;
+    hisRecord.date = user.status.date;
     
     hisRecord.hisData = user.hisdata;
     

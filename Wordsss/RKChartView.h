@@ -11,14 +11,19 @@
 #import "HisRecord.h"
 #import "StaRecord.h"
 
-#define kMinX   0.0
-#define kMaxX   320.0
-#define kMinY   0.0
-#define kMaxY   131.0
+#import "ProfileVirtualActor.h"
 
-@interface RKChartView : UIView
+#define kMinX   20.0
+#define kMaxX   293.0
+#define kMinY   1.0
+#define kMaxY   130.0
+
+@interface RKChartView : UIScrollView
 
 enum RKChartType {USER, WORD};
+
+@property (nonatomic, retain) IBOutlet UILabel* infoLabel;
+@property (nonatomic, retain) IBOutlet UILabel* dateLabel;
 
 @property (nonatomic, retain) NSArray* points;
 

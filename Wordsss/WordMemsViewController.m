@@ -145,12 +145,16 @@
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
         if (indexPath.row == 0) {
-            // Rootaffix* r = [array objectAtIndex:indexPath.row];
-            // [r configCell:(WordCellMem*)cell];
+            Rootaffix* r = [array objectAtIndex:indexPath.row];
+            [(WordCellMem*)cell clear];
+            [(WordCellMem*)cell setRootaffix:r];
+            [(WordCellMem*)cell configCell];
         }
         else {
-            // Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
-            // [wr configCell:(WordCellMem*)cell];
+            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
+            [(WordCellMem*)cell clear];
+            [(WordCellMem*)cell setWord_rootaffix:wr];
+            [(WordCellMem*)cell configCell];
         }
     }
     // Sense

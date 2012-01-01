@@ -175,7 +175,19 @@
         }   
         case 1:
         {
-            
+            if (indexPath.row == 0) {
+                Rootaffix* rootaffix = [[_exploreVirtualActor getRootaffix] objectAtIndex:indexPath.row];
+                [(WordCellMem*)cell clear];
+                [(WordCellMem*)cell setRootaffix:rootaffix];
+                [(WordCellMem*)cell configCell];
+            }
+            else {
+                Word_Rootaffix* word_rootaffix = [[_exploreVirtualActor getRootaffix] objectAtIndex:indexPath.row];
+                [(WordCellMem*)cell clear];
+                [(WordCellMem*)cell setWord_rootaffix:word_rootaffix];
+                [(WordCellMem*)cell configCell];
+            }
+   
             break;
         }   
         case 2:

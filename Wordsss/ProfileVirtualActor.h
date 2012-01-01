@@ -31,4 +31,8 @@
 
 - (NSArray*)getStaRecords;
 
+- (int)getVocaCurrent;
+- (int)getVocaNow;
+- (int)getVocaTarget;
+
 @end

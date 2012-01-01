@@ -10,6 +10,8 @@
 
 @implementation RKChartView
 
+@synthesize infoLabel, dateLabel;
+
 @synthesize points;
 @synthesize type;
 @synthesize minDay;
@@ -129,7 +131,7 @@
     if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
         return;
     }
-
+    
     //
     switch (self.type) {
         case USER:
@@ -191,6 +193,19 @@
             //
             [aPath stroke];
             
+            ProfileVirtualActor* pva = [ProfileVirtualActor profileVirtualActor];
+            
+            // Info label
+            //            float progress = (float)[pva getVocaNow] / (float)[pva getVocaTarget];
+            int nowVoca = [pva getVocaNow];
+            [self.infoLabel setText:[NSString stringWithFormat:@"迅辞记忆曲线 %d", nowVoca]];
+            
+            // Date label
+            NSDate* date = ((StaRecord*)[self.points lastObject]).date;
+            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"YYYY 年 MM 月 DD 日"];
+            [self.dateLabel setText:[dateFormatter stringFromDate:date]];
+            
             break;
         }   
         case WORD:
@@ -233,6 +248,15 @@
             
             //
             [aPath stroke];
+            
+            // Info label
+            [self.infoLabel setText:[NSString stringWithFormat:@"迅辞记忆曲线"]];
+            
+            // Date label
+            NSDate* date = ((HisRecord*)[self.points lastObject]).date;
+            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"YYYY 年 MM 月 DD 日"];
+            [self.dateLabel setText:[dateFormatter stringFromDate:date]];
             
             break;
         }

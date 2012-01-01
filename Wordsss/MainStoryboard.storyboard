@@ -87,17 +87,21 @@
                                         <rect key="frame" x="0.0" y="36" width="320" height="131"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" id="MKv-Ah-jaQ" customClass="RKChartView">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" bouncesZoom="NO" id="Uex-g8-ccX" customClass="RKChartView">
                                         <rect key="frame" x="0.0" y="36" width="320" height="131"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="345" id="f2O-lJ-Adn"/>
+                                            <outlet property="infoLabel" destination="346" id="C37-2d-j1J"/>
+                                        </connections>
+                                    </scrollView>
                                     <imageView userInteractionEnabled="NO" contentMode="center" image="chart_popover_bg.png" id="305">
                                         <rect key="frame" x="10" y="5" width="300" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="迅辞记忆曲线 74.3%" lineBreakMode="tailTruncation" minimumFontSize="10" id="346">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="迅辞记忆曲线" lineBreakMode="tailTruncation" minimumFontSize="10" id="346">
                                         <rect key="frame" x="20" y="4" width="152" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -107,7 +111,7 @@
                                         <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2011 年 10 月 4 日" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="345">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2000 年 00 月 00 日" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="345">
                                         <rect key="frame" x="180" y="4" width="125" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -125,9 +129,10 @@
                     <tabBarItem key="tabBarItem" title="Item" id="90"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="chartView" destination="MKv-Ah-jaQ" id="xmy-4c-Bxn"/>
                         <outlet property="infoLeftLabel" destination="344" id="d7h-AH-2Zq"/>
                         <outlet property="infoRightLabel" destination="343" id="57B-wb-tXE"/>
+                        <outlet property="progressImageView" destination="280" id="wIB-sQ-5w5"/>
+                        <outlet property="tagetImageView" destination="342" id="pfD-w3-ww7"/>
                     </connections>
                 </viewController>
             </objects>
@@ -1062,129 +1067,6 @@
         <image name="word_bg.png" width="320" height="142"/>
         <image name="word_slider.png" width="236" height="34"/>
     </resources>
-    <classes>
-        <class className="DictWordCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DictWordCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="typeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ExploreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExploreViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="Init1stViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init1stViewController.h"/>
-        </class>
-        <class className="Init2ndViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init2ndViewController.h"/>
-        </class>
-        <class className="Init3rdViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init3rdViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="rootViewController" candidateClass="RKTabBarController"/>
-            </relationships>
-        </class>
-        <class className="ListsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListsViewController.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chartView" candidateClass="RKChartView"/>
-                <relationship kind="outlet" name="infoLeftLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="infoRightLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RKChartView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKChartView.h"/>
-        </class>
-        <class className="RKNavigationController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKNavigationController.h"/>
-            <relationships>
-                <relationship kind="action" name="leftButtonDown:"/>
-                <relationship kind="action" name="rigntButtonDown:"/>
-                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="titleImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RKTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKTabBarController.h"/>
-        </class>
-        <class className="SettingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
-        </class>
-        <class className="TodayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="wordDetailSelected:"/>
-                <relationship kind="action" name="wordSliderLeftTouchDown:"/>
-                <relationship kind="action" name="wordSliderLeftTouchUpInside:"/>
-                <relationship kind="action" name="wordSliderRightTouchDown:"/>
-                <relationship kind="action" name="wordSliderRightTouchUpInside:"/>
-                <relationship kind="outlet" name="briefMeaningLabel" candidateClass="WordCellBrief"/>
-                <relationship kind="outlet" name="wordCurLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="wordPosLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="wordPreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="wordSliderImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="wordSliderLeftTapArea" candidateClass="UIView"/>
-                <relationship kind="outlet" name="wordSliderRightTapArea" candidateClass="UIView"/>
-                <relationship kind="outlet" name="wordSliderTouchArea" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="WordBooksViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordBooksViewController.h"/>
-        </class>
-        <class className="WordCellBrief" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellBrief.h"/>
-        </class>
-        <class className="WordCellMem" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellMem.h"/>
-            <relationships>
-                <relationship kind="action" name="addButtonClicked:"/>
-                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WordCellSummary" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellSummary.h"/>
-            <relationships>
-                <relationship kind="action" name="addButtonClicked:"/>
-                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WordMemsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordMemsViewController.h"/>
-        </class>
-        <class className="WordRelationsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordRelationsViewController.h"/>
-        </class>
-        <class className="WordStatisticsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordStatisticsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="chartView" candidateClass="RKChartView"/>
-            </relationships>
-        </class>
-        <class className="WordViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectSectionButtonDown:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="wordBooksSectionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="wordMemsSectionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="wordRelationsSectionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="wordStatisticsSectionButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

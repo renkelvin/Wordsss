@@ -65,7 +65,7 @@
 - (void)setTargetLevel
 {
     //
-    [_initVirtualActor.user.defult setCurrentLevel:[NSNumber numberWithInt:VLGRE]];    
+    [_initVirtualActor.user.defult setTargetLevel:[NSNumber numberWithInt:VLGRE]];    
 }
 
 - (void)nextStep

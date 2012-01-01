@@ -2,8 +2,8 @@
 //  Word_Rootaffix.m
 //  Wordsss
 //
-//  Created by Kelvin Ren on 12/21/11.
-//  Copyright (c) 2011 Ren Inc. All rights reserved.
+//  Created by Ren Chuan on 1/1/12.
+//  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
 #import "Word_Rootaffix.h"
@@ -14,7 +14,9 @@
 @implementation Word_Rootaffix
 
 @dynamic id;
-@dynamic word;
+@dynamic equation;
+@dynamic meaning_cn;
 @dynamic rootaffix;
+@dynamic word;
 
 @end

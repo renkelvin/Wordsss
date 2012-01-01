@@ -433,7 +433,12 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             ((Rootaffix*)object).phrase = string;
                                         }
                                         else if ([attrString compare:@"deformation"] == NSOrderedSame) {
-                                            ((Rootaffix*)object).deformation = string;
+                                            if (!((Rootaffix*)object).deformation) {
+                                                ((Rootaffix*)object).deformation = string;
+                                            }
+                                            else {
+                                                ((Rootaffix*)object).deformation = [((Rootaffix*)object).deformation stringByAppendingFormat:@" %@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"type"] == NSOrderedSame) {
                                             ((Rootaffix*)object).type = [NSNumber numberWithInt:[string intValue]];
@@ -442,10 +447,20 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             ((Rootaffix*)object).origin = string;
                                         }
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
-                                            ((Rootaffix*)object).meaning_en = string;
+                                            if (!((Rootaffix*)object).meaning_en) {
+                                                ((Rootaffix*)object).meaning_en = string;
+                                            }
+                                            else {
+                                                ((Rootaffix*)object).meaning_en = [((Rootaffix*)object).meaning_en stringByAppendingFormat:@" %@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
-                                            ((Rootaffix*)object).meaning_cn = string;
+                                            if (!((Rootaffix*)object).meaning_cn) {
+                                                ((Rootaffix*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((Rootaffix*)object).meaning_cn = [((Rootaffix*)object).meaning_cn stringByAppendingFormat:@" %@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"description_en"] == NSOrderedSame) {
                                             ((Rootaffix*)object).description_en = string;
@@ -454,8 +469,8 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             ((Rootaffix*)object).description_cn = string;
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
+//                                        attrString = nil;
+//                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -696,12 +711,51 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             
                                             NSLog(@"WordAssociation - id: %@", string);
                                         }
-                                        else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
+                                        else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             ((Word_Association*)object).meaning_cn = string;
                                         }
                                         
                                         attrString = nil;
                                         attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_WORDROOTAFFIX:   // Word_Rootaffix
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_rootaffix_id"] == NSOrderedSame) {
+                                            ((Word_Rootaffix*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [wordRootaffixDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"WordRootaffix - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
+                                            if (!((Word_Rootaffix*)object).meaning_cn) {
+                                                ((Word_Rootaffix*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((Word_Rootaffix*)object).meaning_cn = [((Word_Rootaffix*)object).meaning_cn stringByAppendingFormat:@" %@", string];
+                                            }
+                                        }
+                                        else if ([attrString compare:@"word_deformation"] == NSOrderedSame) {
+                                            if (!((Word_Rootaffix*)object).equation) {
+                                                ((Word_Rootaffix*)object).equation = string;
+                                            }
+                                            else {
+                                                ((Word_Rootaffix*)object).equation = [((Word_Rootaffix*)object).equation stringByAppendingFormat:@" %@", string];
+                                            }
+                                        }
+                                        
+//                                        attrString = nil;
+//                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -833,6 +887,43 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
                                             if (association) {
                                                 ((Word_Association*)object).association = association;
                                                 [association.word_association addObject:((Word_Association*)object)];
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_WORDROOTAFFIX:   // Word_Rootaffix
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_rootaffix_id"] == NSOrderedSame) {
+                                            object = [wordRootaffixDICT objectForKey:string];
+                                            
+                                            NSLog(@"WordRootaffix - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_id"] == NSOrderedSame) {
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                ((Word_Rootaffix*)object).word = word;
+                                                [word.word_rootaffix addObject:((Word_Rootaffix*)object)];
+                                            }
+                                        }
+                                        else if ([attrString compare:@"rootaffix_id"] == NSOrderedSame) {
+                                            Rootaffix* rootaffix = [rootaffixDICT objectForKey:string];
+                                            
+                                            if (rootaffix) {
+                                                ((Word_Rootaffix*)object).rootaffix = rootaffix;
+                                                [rootaffix.word_rootaffix addObject:((Word_Rootaffix*)object)];
                                             }
                                         }
                                         

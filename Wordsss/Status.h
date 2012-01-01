@@ -35,4 +35,6 @@
 
 - (void)updateCount:(int)level from:(int)fromLevel;
 
+- (float)getCount;
+
 @end

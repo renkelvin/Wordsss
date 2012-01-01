@@ -11,6 +11,7 @@
 @implementation ProfileViewController
 
 @synthesize infoLeftLabel, infoRightLabel;
+@synthesize progressImageView, tagetImageView;
 @synthesize chartView = _chartView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,7 +43,7 @@
     
     //
     [self initNavigationBar];
-
+    
     //
     [self update];
 }
@@ -62,11 +63,71 @@
 
 #pragma mark - 
 
+- (void)updateTitle
+{
+    // Left label
+    int nowVoca = [_profileVirtualActor getVocaNow];
+    int tarVoca = [_profileVirtualActor getVocaTarget]; 
+    [self.infoLeftLabel setText:[NSString stringWithFormat:@"%d / %d", nowVoca, tarVoca]];
+    
+    // Right label
+    [self.infoRightLabel setText:[NSString stringWithFormat:@"非常好"]];
+    
+    // Progress circle
+    int percent = (int)((float)nowVoca/(float)tarVoca * 100);
+    
+    NSString* imgString = nil;
+    if (0 <= percent && percent <= 0) {
+        imgString = @"process_0.png";
+    }
+    else if (0 < percent && percent <= 8) {
+        imgString = @"process_8.png";
+    }
+    else if (8 < percent && percent <= 17) {
+        imgString = @"process_17.png";
+    }
+    else if (17 < percent && percent <= 25) {
+        imgString = @"process_25.png";
+    }
+    else if (25 < percent && percent <= 34) {
+        imgString = @"process_34.png";
+    }
+    else if (34 < percent && percent <= 42) {
+        imgString = @"process_42.png";
+    }
+    else if (42 < percent && percent <= 50) {
+        imgString = @"process_50.png";
+    }
+    else if (50 < percent && percent <= 60) {
+        imgString = @"process_60.png";
+    }
+    else if (60 < percent && percent <= 68) {
+        imgString = @"process_68.png";
+    }
+    else if (68 < percent && percent <= 76) {
+        imgString = @"process_76.png";
+    }
+    else if (76 < percent && percent <= 84) {
+        imgString = @"process_84.png";
+    }
+    else if (84 < percent && percent <= 92) {
+        imgString = @"process_92.png";
+    }
+    else if (92 < percent && percent <= 100) {
+        imgString = @"process_100.png";
+    }
+    
+    [self.progressImageView setImage:[UIImage imageNamed:imgString]];
+    
+    // Target Label
+    // TODO
+}
+
 - (void)update
 {
     //
-    
-    
+    [self updateTitle];
+        
     //
     [_chartView setType:USER];
     [_chartView setPoints:[_profileVirtualActor getStaRecords]];
@@ -90,7 +151,7 @@
     
     [headerView setBackgroundColor:[UIColor clearColor]];
     
-    headerView.titleLabel.text = @"Info";
+    headerView.titleLabel.text = @"迅辞动态学习计划";
     
     return headerView;
 }
@@ -123,7 +184,7 @@
                     label.frame = CGRectMake(12, 0, 320, 42);
                     label.textColor = [UIColor whiteColor];
                     label.backgroundColor = [UIColor clearColor];
-//                    headerView.titleLabel.text = [NSString stringWithFormat:@"Day: "];
+                    //                    headerView.titleLabel.text = [NSString stringWithFormat:@"Day: "];
                     [cell addSubview:label];
                     
                     break;

@@ -116,7 +116,9 @@
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="Word_Rootaffix" representedClassName="Word_Rootaffix" syncable="YES">
+        <attribute name="equation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="rootaffix" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Rootaffix" inverseName="word_rootaffix" inverseEntity="Rootaffix" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_rootaffix" inverseEntity="Word" syncable="YES"/>
     </entity>

@@ -83,7 +83,9 @@
     
     //
     else if (self.rootaffix) {
-        ;
+        [self.nameLabel setText:self.rootaffix.phrase];
+        [self.meaningLabel setText:self.rootaffix.meaning_cn];
+        [self.memLabel setText:self.rootaffix.deformation];
     }
     
     // Sense
@@ -101,7 +103,9 @@
     
     //
     else if (self.word_rootaffix) {
-        ;
+        [self.nameLabel setText:self.word_rootaffix.word.name];
+        [self.meaningLabel setText:self.word_rootaffix.meaning_cn];
+        [self.memLabel setText:self.word_rootaffix.equation];
     }
     
     // Word_Sense
