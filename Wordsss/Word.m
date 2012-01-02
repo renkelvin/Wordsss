@@ -62,7 +62,7 @@
     NSString* string = [NSString stringWithFormat:@""];
     
     for (AhdDictWord* ahdDictWord in self.word_dict.ahdDictWord) {
-        string = [string stringByAppendingFormat:@"%@\n", [ahdDictWord getBriefMeaning]];
+        string = [string stringByAppendingFormat:@"%@", [ahdDictWord getBriefMeaning]];
     }
     
     return string;

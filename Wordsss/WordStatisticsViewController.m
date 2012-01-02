@@ -97,7 +97,7 @@
     
     [headerView setBackgroundColor:[UIColor clearColor]];
 
-    headerView.titleLabel.text = @"-----";
+    headerView.titleLabel.text = @"迅辞智能词汇分析";
     
     return headerView;
 }

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "WordViewController.h"
+
 #import "WordVirtualActor.h"
 
 #import "Word_Association.h"
@@ -22,6 +24,8 @@
     //
     WordVirtualActor* _wordVirtualActor;
 }
+
+@property (nonatomic, retain) UIViewController* wordViewController;
 
 - (WordMemsViewController*)init:(WordVirtualActor*)wordVirtualActor;
 

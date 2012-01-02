@@ -16,13 +16,4 @@
 @dynamic meaning_en;
 @dynamic ahdDictMeaning;
 
-- (void)configCell:(DictWordCell*)cell
-{
-    //
-    [cell.typeLabel setText:@"from: 美国传统词典"];
-    
-    //
-    [cell.meaningLabel setText:self.meaning_cn];
-}
-
 @end

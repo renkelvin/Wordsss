@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "DictWordCell.h"
-
 @class AhdDictMeaning;
 
 @interface AhdDictSentence : NSManagedObject
@@ -19,7 +17,5 @@
 @property (nonatomic, retain) NSString * meaning_cn;
 @property (nonatomic, retain) NSString * meaning_en;
 @property (nonatomic, retain) AhdDictMeaning *ahdDictMeaning;
-
-- (void)configCell:(DictWordCell*)cell;
 
 @end

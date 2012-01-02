@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "WordViewController.h"
+#import "TodayViewController.h"
+
 #import "WordVirtualActor.h"
 
 #import "RKTableHeader.h"
@@ -18,6 +21,8 @@
     //
     WordVirtualActor* _wordVirtualActor;
 }
+
+@property (nonatomic, retain) UIViewController* wordViewController;
 
 - (WordRelationsViewController*)init:(WordVirtualActor*)wordVirtualActor;
 

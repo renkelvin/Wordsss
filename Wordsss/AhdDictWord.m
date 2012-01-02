@@ -7,8 +7,6 @@
 //
 
 #import "AhdDictWord.h"
-#import "Word_Dict.h"
-
 
 @implementation AhdDictWord
 
@@ -16,15 +14,6 @@
 @dynamic type;
 @dynamic meaning;
 @dynamic word_dict;
-
-- (void)configCell:(DictWordCell*)cell
-{
-    //
-    [cell.typeLabel setText:[self.type stringValue]];
-    
-    //
-    [cell.meaningLabel setText:[self getFullMeaningCN]];
-}
 
 #pragma mark -
 
@@ -96,7 +85,7 @@
     int i = 0;
     for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
         if (!i) {
-            string = [string stringByAppendingFormat:@" %@\n", [ahdDictMeaning getShortMeaning]];
+            string = [string stringByAppendingFormat:@"%@\n", [ahdDictMeaning getShortMeaning]];
         } 
         else {
             string = [string stringByAppendingFormat:@"; %@\n", [ahdDictMeaning getShortMeaning]];

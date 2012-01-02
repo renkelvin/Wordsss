@@ -146,7 +146,9 @@
         case 0:
         {
             AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:indexPath.row];
-            [word configCell:(DictWordCell*)cell];
+            [(DictWordCell*)cell clear];
+            [(DictWordCell*)cell setAhdDictWord:word];
+            [(DictWordCell*)cell configCell];
             
             break;
         }   
@@ -157,7 +159,9 @@
         case 2:
         {
             AhdDictSentence* sentence = [[_wordVirtualActor getSentence] objectAtIndex:indexPath.row];
-            [sentence configCell:(DictWordCell*)cell];
+            [(DictWordCell*)cell clear];
+            [(DictWordCell*)cell setAhdDictSentence:sentence];
+            [(DictWordCell*)cell configCell];
             
             break;
         }
@@ -168,6 +172,47 @@
     }
     
     return cell;
+}
+
+// Cell height
+- (CGFloat)ableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DictWordCell* cell = [[DictWordCell alloc] init];
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:indexPath.row];
+            [(DictWordCell*)cell clear];
+            [(DictWordCell*)cell setAhdDictWord:word];
+            [(DictWordCell*)cell configCell];
+            
+            return [cell getHeight];
+            
+            break;
+        }   
+        case 1:
+        {
+            break;
+        }
+        case 2:
+        {
+            AhdDictSentence* sentence = [[_wordVirtualActor getSentence] objectAtIndex:indexPath.row];
+            [(DictWordCell*)cell clear];
+            [(DictWordCell*)cell setAhdDictSentence:sentence];
+            [(DictWordCell*)cell configCell];
+            
+            return [cell getHeight];
+            
+            break;
+        }
+        default:
+        {
+            break;   
+        }
+    }
+    
+    return [cell getHeight];
 }
 
 @end

@@ -39,7 +39,7 @@
     NSString* string = [NSString string];
     
     if (self.parent) {
-        string = [NSString stringWithFormat:@"%@%@/", [self.parent getTrack], self.meaning_cn];
+        string = [NSString stringWithFormat:@"%@%@ / ", [self.parent getTrack], self.meaning_cn];
     }
 
     return string;

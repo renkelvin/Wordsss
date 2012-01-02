@@ -10,6 +10,8 @@
 
 @implementation WordRelationsViewController
 
+@synthesize wordViewController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -60,7 +62,35 @@
 
 #pragma - UITableViewDelegate
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Word* word = nil;
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            word = [[_wordVirtualActor getDerivative] objectAtIndex:indexPath.row];
+            
+            break;
+        }
+        case 1:
+        {
+            word = [[_wordVirtualActor getSynonym] objectAtIndex:indexPath.row];
+            
+            break;
+        }
+        case 2:
+        {
+            word = [[_wordVirtualActor getAntonym] objectAtIndex:indexPath.row];
+            
+            break;
+        }
+    }
+    
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
+    
+    [[self.wordViewController navigationController] pushViewController:wvc animated:YES];
+}
 
 #pragma - UITableViewDataSource
 

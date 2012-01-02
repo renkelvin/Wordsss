@@ -10,6 +10,8 @@
 
 @implementation WordMemsViewController
 
+@synthesize wordViewController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -67,7 +69,45 @@
 
 #pragma - UITableViewDelegate
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Word* word = nil;
+    
+    NSArray* array = [[_wordVirtualActor getWordMems] objectAtIndex:indexPath.section];
+    // Association
+    if ([[array lastObject] class] == [Word_Association class]) {
+        Word_Association* wa = [array objectAtIndex:indexPath.row];
+        
+        word = wa.word;
+    }
+    // Rootaffix
+    else if ([[array lastObject] class] == [Word_Rootaffix class]) {
+        if (indexPath.row == 0) {
+            //            Rootaffix* r = [array objectAtIndex:indexPath.row];
+            
+        }
+        else {
+            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
+            
+            word = wr.word;
+        }
+    }
+    // Sense
+    else if ([[array lastObject] class] == [Word_Sense class]) {
+        if (indexPath.row == 0) {
+            //            Sense* s = [array objectAtIndex:indexPath.row];
+            
+        }
+        else {
+            Word_Sense* ws = [array objectAtIndex:indexPath.row];
+            
+            word = ws.word;
+        }
+    }    
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
+    
+    [[self.wordViewController navigationController] pushViewController:wvc animated:YES];
+}
 
 #pragma - UITableViewDataSource
 
