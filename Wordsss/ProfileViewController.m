@@ -180,12 +180,17 @@
             switch (indexPath.row) {
                 case 0:
                 {
-                    UILabel *label = [[UILabel alloc] init];
-                    label.frame = CGRectMake(12, 0, 320, 42);
-                    label.textColor = [UIColor whiteColor];
-                    label.backgroundColor = [UIColor clearColor];
-                    //                    headerView.titleLabel.text = [NSString stringWithFormat:@"Day: "];
-                    [cell addSubview:label];
+                    [((InfoCell*)cell).infoLabel setText:@"学习时间"];
+                    
+                    [((InfoCell*)cell).valuLabel setText:@"1个月21天"];
+                    
+                    break;
+                }   
+                case 1:
+                {
+                    [((InfoCell*)cell).infoLabel setText:@"预计完成时间"];
+                    
+                    [((InfoCell*)cell).valuLabel setText:@"19天"];
                     
                     break;
                 }   

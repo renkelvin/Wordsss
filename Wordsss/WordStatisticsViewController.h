@@ -15,6 +15,8 @@
 #import "RKChartView.h"
 #import "RKTableHeader.h"
 
+#import "InfoCell.h"
+
 @interface WordStatisticsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //

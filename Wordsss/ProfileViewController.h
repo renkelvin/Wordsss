@@ -14,6 +14,8 @@
 #import "RKChartView.h"
 #import "RKTableHeader.h"
 
+#import "InfoCell.h"
+
 #import "ProfileVirtualActor.h"
 
 @interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RKNavigationControllerDelegate>

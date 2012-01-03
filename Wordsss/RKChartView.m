@@ -203,7 +203,7 @@
             // Date label
             NSDate* date = ((StaRecord*)[self.points lastObject]).date;
             NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"YYYY 年 MM 月 DD 日"];
+            [dateFormatter setDateFormat:@"YYYY 年 M 月 D 日"];
             [self.dateLabel setText:[dateFormatter stringFromDate:date]];
             
             break;
@@ -255,7 +255,7 @@
             // Date label
             NSDate* date = ((HisRecord*)[self.points lastObject]).date;
             NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"YYYY 年 MM 月 DD 日"];
+            [dateFormatter setDateFormat:@"YYYY 年 M 月 D 日"];
             [self.dateLabel setText:[dateFormatter stringFromDate:date]];
             
             break;

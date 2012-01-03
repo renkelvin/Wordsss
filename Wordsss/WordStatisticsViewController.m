@@ -118,6 +118,41 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
+    // Configure cell
+    switch (indexPath.section) {
+        case 0:
+        {
+            switch (indexPath.row) {
+                case 0:
+                {
+                    [((InfoCell*)cell).infoLabel setText:@"记忆程度"];
+                    
+                    [((InfoCell*)cell).valuLabel setText:@"85.5%"];
+                    
+                    break;
+                }   
+                case 1:
+                {
+                    [((InfoCell*)cell).infoLabel setText:@"难度评估"];
+                    
+                    [((InfoCell*)cell).valuLabel setText:@"简单"];
+                    
+                    break;
+                }   
+                default:
+                { 
+                    break;
+                }
+            }
+            
+            break;
+        }    
+        default:
+        {
+            break;
+        } 
+    }
+    
     return cell;
 }
 

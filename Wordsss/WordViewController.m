@@ -116,20 +116,29 @@
 
 - (void)initSectionViewControllers;
 {
-    // Init
+    // Get frame
+    CGRect frame = kWordViewSectionFrame;
+    //    if (!_word.word_list) {
+    //        frame = kWordViewSectionFrameShort;
+    //        
+    //        // Show translate to list bar
+    //        [self.transToListButton setHidden:NO];
+    //    }
+    
+    // Set sections
     WordBooksViewController* wordBooksViewController = [((WordBooksViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordBooksViewController"]) init:_wordVirtualActor];
-    [[wordBooksViewController view] setFrame:CGRectMake(0, 49, 320, 478)];  // 第四个参数480有问题，本应为320，未知问题
+    [[wordBooksViewController view] setFrame:frame];
     
     WordRelationsViewController* wordRelationsViewController = [((WordRelationsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordRelationsViewController"]) init:_wordVirtualActor];
     [wordRelationsViewController setWordViewController:self];
-    [[wordRelationsViewController view] setFrame:CGRectMake(0, 49, 320, 318)];
+    [[wordRelationsViewController view] setFrame:frame];
     
     WordMemsViewController* wordMemsViewController = [((WordMemsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordMemsViewController"]) init:_wordVirtualActor];
     [wordMemsViewController setWordViewController:self];
-    [[wordMemsViewController view] setFrame:CGRectMake(0, 49, 320, 318)];
+    [[wordMemsViewController view] setFrame:frame];
     
     WordStatisticsViewController* wordStatisticsViewController = [((WordStatisticsViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordStatisticsViewController"]) init:_wordVirtualActor];
-    [[wordStatisticsViewController view] setFrame:CGRectMake(0, 49, 320, 318)];
+    [[wordStatisticsViewController view] setFrame:frame];
     
     // Add
     NSMutableArray* tempViewControllersArray = [NSMutableArray arrayWithCapacity:4];
