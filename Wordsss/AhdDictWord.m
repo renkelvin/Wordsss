@@ -21,19 +21,19 @@
 {
     switch ([self.type intValue]) {
         case 0:
-            return @" oth.";
+            return @"  oth.";
             break;
         case 1:
-            return @"   n.";
+            return @"      n.";
             break;
         case 2:
-            return @"   v.";
+            return @"      v.";
             break;
         case 3:
-            return @" adj.";
+            return @"  adj.";
             break;
         case 4:
-            return @" adv.";
+            return @"  adv.";
             break;
         case 5:
             return @"prep.";
@@ -42,18 +42,18 @@
             return @"conj.";
             break;
         case 7:
-            return @"  vt.";
+            return @"    vt.";
             break;
         case 8:
-            return @"  vi.";
+            return @"    vi.";
             break;
         case 9:
-            return @" oth.";
+            return @"      oth.";
             break;
         default:
         {
             // 组合词性
-            return @"   .";
+            return @"        .";
             
             break;
         }

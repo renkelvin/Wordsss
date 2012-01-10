@@ -55,18 +55,11 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 #pragma mark - Instance method
 
-- (void)setMemDegree
+- (void)runMain
 {
-    //
-    [_initVirtualActor.user.defult setMemDegree:[NSNumber numberWithFloat:0.5]];
-}
-
-- (void)nextStep
-{
-    [self setMemDegree];
-    
     // Set hasInitUser Key
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultKeyHasInitUser];
     
@@ -78,26 +71,31 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)runWordsssButtonClicked:(id)sender
+{
+    [self runMain];
+}
+
 #pragma mark - RKNavigationControllerDelegate
 
 - (void)initNavigationBar
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
-    [[navigationController titleLabel] setText:@"Init 3"];
+    [[navigationController titleLabel] setText:@""];
     [[navigationController titleImageView] setImage:nil];
-    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
+    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
+    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
 }
 
 - (void)navigationBarLeftButtonDown
 {
-    
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (void)navigationBarRightButtonDown
 {
-    [self nextStep];
+
 }
 
 #pragma - UINavigationControllerDelegate

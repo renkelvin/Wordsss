@@ -21,4 +21,6 @@
     InitVirtualActor* _initVirtualActor;
 }
 
+@property (nonatomic, retain) IBOutlet UITextField* nameTextField;
+
 @end

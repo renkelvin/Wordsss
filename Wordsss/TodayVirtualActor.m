@@ -157,12 +157,12 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {    
-            NSLog(@"updataWordRecordSetFromWordRecord!");
+            NSLog(@"fillWordRecordSetFromWordRecord!");
             return;
         }
     }
     
-    NSLog(@"updataWordRecordSetFromWordRecord: %d", [_wordRecordSet count]);
+    NSLog(@"fillWordRecordSetFromWordRecord: %d", [_wordRecordSet count]);
 }
 
 - (void)fillWordRecordSetFromWord
@@ -208,7 +208,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {
-            NSLog(@"fillWordRecordSet!");
+            NSLog(@"fillWordRecordSetFromWord!");
             return;
         }
     }

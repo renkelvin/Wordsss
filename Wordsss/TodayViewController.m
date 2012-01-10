@@ -73,7 +73,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma -
+#pragma mark -
 
 // update
 - (void)update
@@ -223,29 +223,12 @@
     [self.wordSliderImageView setFrame:rect];
 }
 
-- (BOOL)check1stTimeLogIn
-{
-    // TODO
-    int count = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefaultKeyLoginCount];
-    
-    if (count == 0) {
-        Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
-
-        RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
-
-        [self presentModalViewController:nc animated:YES];
-        
-        return YES;
-    }    
-    
-    return NO;
-}
-
 - (BOOL)checkHasInitUser
 {
     BOOL hasInit = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKeyHasInitUser];
     
     if (!hasInit) {
+//    if (YES)  {
         Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
         
         RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
@@ -258,7 +241,7 @@
     return YES;
 }
 
-#pragma - IBAction
+#pragma mark - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender{
     WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[_todayVirtualActor.wordPos getTargetWord]];
@@ -320,7 +303,7 @@
     [self incOperation];
 }
 
-#pragma - RKNavigationControllerDelegate
+#pragma mark - RKNavigationControllerDelegate
 
 - (void)initNavigationBar
 {    
@@ -342,7 +325,7 @@
     [self nextDay];
 }
 
-#pragma - UINavigationControllerDelegate
+#pragma mark - UINavigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {

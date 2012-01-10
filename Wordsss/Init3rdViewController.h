@@ -25,4 +25,6 @@
 
 @property (nonatomic, retain) IBOutlet RKTabBarController* rootViewController;
 
+- (IBAction)runWordsssButtonClicked:(id)sender;
+
 @end

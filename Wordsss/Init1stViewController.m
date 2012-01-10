@@ -10,6 +10,8 @@
 
 @implementation Init1stViewController
 
+@synthesize nameTextField;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -65,7 +67,9 @@
 
 - (void)setNickname
 {
-    [_initVirtualActor.user.profile setNickname:@"RenKelvin"];
+    NSString* nameString = [self.nameTextField text];
+    
+    [_initVirtualActor.user.profile setNickname:nameString];
 }
 
 - (void)nextStep
@@ -83,10 +87,10 @@
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
-    [[navigationController titleLabel] setText:@"Init 1"];
+    [[navigationController titleLabel] setText:@""];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
+    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
 }
 
 - (void)navigationBarLeftButtonDown

@@ -52,7 +52,7 @@
 						<int key="IBUIContentMode">4</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage" id="644551666">
+						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">topbar_bg.png</string>
 						</object>
@@ -60,7 +60,7 @@
 					<object class="IBUIButton" id="818376724">
 						<reference key="NSNextResponder" ref="175170058"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 7}, {50, 30}}</string>
+						<string key="NSFrame">{{12, 7}, {50, 30}}</string>
 						<reference key="NSSuperview" ref="175170058"/>
 						<reference key="NSNextKeyView" ref="49993375"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
@@ -94,7 +94,7 @@
 					<object class="IBUIButton" id="467862657">
 						<reference key="NSNextResponder" ref="175170058"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{250, 7}, {50, 30}}</string>
+						<string key="NSFrame">{{258, 7}, {50, 30}}</string>
 						<reference key="NSSuperview" ref="175170058"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
@@ -125,7 +125,6 @@
 						<int key="IBUIContentMode">4</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="644551666"/>
 					</object>
 					<object class="IBUILabel" id="927786290">
 						<reference key="NSNextResponder" ref="175170058"/>

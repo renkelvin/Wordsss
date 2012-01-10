@@ -15,7 +15,7 @@
 
 #import "InitVirtualActor.h"
 
-@interface Init2ndViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+@interface Init2ndViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 {
     //
     InitVirtualActor* _initVirtualActor;

@@ -802,6 +802,8 @@
 			children = (
 				FE8736C0143DDC7E002FDDE8 /* button_back.png */,
 				FE8736C1143DDC7E002FDDE8 /* button_back@2x.png */,
+				FEE0174214B3687A00DCC353 /* button_next.png */,
+				FEE0174314B3687A00DCC353 /* button_next@2x.png */,
 				FEB8ED24143B47420097E267 /* topbar_bg.png */,
 				FEB8ED25143B47420097E267 /* topbar_bg@2x.png */,
 				FE8736A7143DDC3E002FDDE8 /* button_info.png */,
@@ -909,8 +911,6 @@
 		FEE0174114B3685D00DCC353 /* InitView */ = {
 			isa = PBXGroup;
 			children = (
-				FEE0174214B3687A00DCC353 /* button_next.png */,
-				FEE0174314B3687A00DCC353 /* button_next@2x.png */,
 				FEE0174414B3687A00DCC353 /* guide_done.png */,
 				FEE0174514B3687A00DCC353 /* guide_done@2x.png */,
 				FEE0174614B3687A00DCC353 /* guide_processing.png */,
