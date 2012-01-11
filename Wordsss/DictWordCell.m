@@ -10,7 +10,7 @@
 
 @implementation DictWordCell
 
-@synthesize typeLabel, meaningLabel;
+@synthesize meaningCNLabel, meaningENLabel;
 @synthesize ahdDictWord, ahdDictSentence;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,30 +31,34 @@
 
 - (void)configCell
 {
-    if (!self.typeLabel) {
-        self.typeLabel = [[UILabel alloc] init];
+    if (!self.meaningCNLabel) {
+        self.meaningCNLabel = [[UILabel alloc] init];
     }
-    if (!self.meaningLabel) {
-        self.meaningLabel = [[UILabel alloc] init];
+    if (!self.meaningENLabel) {
+        self.meaningENLabel = [[UILabel alloc] init];
     }
     
     // AhdDictWord
     if (self.ahdDictWord) {
         //
-        [self.typeLabel setText:[self.ahdDictWord.type stringValue]];
-        [self.meaningLabel setText:[self.ahdDictWord getFullMeaningCN]];
-    }
+        [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
+        [self.meaningENLabel setText:@""];
+ }
     
     // AhdDictSentence
     else if (self.ahdDictSentence) {
         //
-        [self.typeLabel setText:@"from: 美国传统词典"];
-        [self.meaningLabel setText:self.ahdDictSentence.meaning_cn];
+        [self.meaningCNLabel setText:self.ahdDictSentence.meaning_cn];
+        [self.meaningENLabel setText:self.ahdDictSentence.meaning_en];
     }
     
     //
-    [self.typeLabel sizeToFit];
-    [self.meaningLabel sizeToFit];
+    [self.meaningCNLabel sizeToFit];
+    [self.meaningENLabel sizeToFit];
+    
+    CGRect frame = self.meaningENLabel.frame;
+    frame.origin.y = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height + 0;
+    self.meaningENLabel.frame = frame;
 }
 
 - (void)clear
@@ -65,9 +69,8 @@
 
 - (CGFloat)getHeight
 {
-    CGFloat height = 10 + self.typeLabel.frame.size.height + self.meaningLabel.frame.size.height;
+    CGFloat height = self.meaningENLabel.frame.origin.y + self.meaningENLabel.frame.size.height + 10;
     
-    //    return [NSNumber numberWithFloat:height];
     return height;
 }
 

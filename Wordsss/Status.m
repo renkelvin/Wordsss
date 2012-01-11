@@ -35,6 +35,10 @@
     
     entity = [NSEntityDescription insertNewObjectForEntityForName:@"Status" inManagedObjectContext:context];
     
+    //
+    entity.day = [NSNumber numberWithInt:1];
+    entity.date = [NSDate date];
+
     return entity;
 }
 

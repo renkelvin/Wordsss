@@ -52,6 +52,8 @@ static int vocaArray[11] = {
     
     entity = [NSEntityDescription insertNewObjectForEntityForName:@"Defult" inManagedObjectContext:context];
     
+    entity.memDegree = [NSNumber numberWithFloat:0.5];
+    
     return entity;
 }
 

@@ -175,10 +175,10 @@
 }
 
 // Cell height
-- (CGFloat)ableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DictWordCell* cell = [[DictWordCell alloc] init];
-    
+    DictWordCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:1];
+
     switch (indexPath.section) {
         case 0:
         {

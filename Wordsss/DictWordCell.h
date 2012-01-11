@@ -13,8 +13,9 @@
 
 @interface DictWordCell : UITableViewCell
 
-@property (nonatomic, retain) IBOutlet UILabel* typeLabel;
-@property (nonatomic, retain) IBOutlet UILabel* meaningLabel;
+//@property (nonatomic, retain) IBOutlet UILabel* typeLabel;
+@property (nonatomic, retain) IBOutlet UILabel* meaningCNLabel;
+@property (nonatomic, retain) IBOutlet UILabel* meaningENLabel;
 
 @property (nonatomic, retain) AhdDictWord* ahdDictWord;
 @property (nonatomic, retain) AhdDictSentence* ahdDictSentence;

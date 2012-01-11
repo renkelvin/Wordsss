@@ -51,11 +51,7 @@ static UserDataManager* sharedUserDataManager;
     
     user.memdata = [MemData insertEntity:nil inManagedObjectContext:__managedObjectContext];
     user.hisdata = [HisData insertEntity:nil inManagedObjectContext:__managedObjectContext];    
-    
-    //
-    user.status.day = [NSNumber numberWithInt:1];
-    user.status.date = [NSDate date];
-    
+        
     return user;
 }
 

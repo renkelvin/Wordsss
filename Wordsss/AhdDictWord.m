@@ -21,13 +21,56 @@
 {
     switch ([self.type intValue]) {
         case 0:
+            return @"oth.";
+            break;
+        case 1:
+            return @"n.";
+            break;
+        case 2:
+            return @"v.";
+            break;
+        case 3:
+            return @"adj.";
+            break;
+        case 4:
+            return @"adv.";
+            break;
+        case 5:
+            return @"prep.";
+            break;
+        case 6:
+            return @"conj.";
+            break;
+        case 7:
+            return @"vt.";
+            break;
+        case 8:
+            return @"vi.";
+            break;
+        case 9:
+            return @"oth.";
+            break;
+        default:
+        {
+            // 组合词性
+            return @".";
+            
+            break;
+        }
+    }
+}
+
+- (NSString*)getTypeStringWithBlank
+{
+    switch ([self.type intValue]) {
+        case 0:
             return @"  oth.";
             break;
         case 1:
-            return @"      n.";
+            return @"     n.";
             break;
         case 2:
-            return @"      v.";
+            return @"     v.";
             break;
         case 3:
             return @"  adj.";
@@ -66,11 +109,11 @@
     
     int i = 0;
     for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
-        if (!i) {
-            string = [string stringByAppendingFormat:@"%@ %@\n", [self getTypeString], [ahdDictMeaning getShortMeaning]];
+        if (i == 0) {
+            string = [string stringByAppendingFormat:@"%@ %@\n", [self getTypeStringWithBlank], [ahdDictMeaning getShortMeaning]];
         } 
         else {
-            string = [string stringByAppendingFormat:@"%@ %@\n", [self getTypeString], [ahdDictMeaning getShortMeaning]];
+            // string = [string stringByAppendingFormat:@"%@ %@\n", [self getTypeString], [ahdDictMeaning getShortMeaning]];
         }
         i++;
     }
@@ -80,15 +123,15 @@
 
 - (NSString*)getSummaryMeaning
 {
-    NSString* string = [self getTypeString];
+    NSString* string = [self getTypeStringWithBlank];
     
     int i = 0;
     for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
-        if (!i) {
-            string = [string stringByAppendingFormat:@"%@\n", [ahdDictMeaning getShortMeaning]];
+        if (i == 0) {
+            string = [string stringByAppendingFormat:@"%@", [ahdDictMeaning getShortMeaning]];
         } 
         else {
-            string = [string stringByAppendingFormat:@"; %@\n", [ahdDictMeaning getShortMeaning]];
+            string = [string stringByAppendingFormat:@"; %@", [ahdDictMeaning getShortMeaning]];
         }
         i++;
     }
@@ -98,7 +141,7 @@
 
 - (NSString*)getFullMeaningCN
 {
-    NSString* string = [NSString stringWithFormat:@""];
+    NSString* string = [NSString stringWithFormat:@"%@\n", [self getTypeString]];
     
     int i = 1;
     for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
