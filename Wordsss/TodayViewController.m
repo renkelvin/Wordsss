@@ -19,7 +19,9 @@
 @synthesize wordPreLabel;
 @synthesize wordCurLabel;
 @synthesize wordPosLabel;
-@synthesize wordPosLevelImageView;
+
+@synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
+
 @synthesize briefMeaningLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -83,13 +85,38 @@
         self.wordPreLabel.text = [_todayVirtualActor wordPre].name;
     }
     if ([_todayVirtualActor wordCur]) {
-        self.wordCurLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordCur].name, [[_todayVirtualActor wordRecordCur].level stringValue], [[_todayVirtualActor wordRecordCur].day stringValue]];
+        self.wordCurLabel.text = [NSString stringWithFormat:@"%@", [_todayVirtualActor wordCur].name, [[_todayVirtualActor wordRecordCur].level stringValue], [[_todayVirtualActor wordRecordCur].day stringValue]];
     }
     if ([_todayVirtualActor wordPos]) {
         self.wordPosLabel.text = [_todayVirtualActor wordPos].name;
+        //        self.wordPosLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordPos].name, [[_todayVirtualActor wordRecordPos].level stringValue], [[_todayVirtualActor wordRecordPos].day stringValue]];
     }
     
     // WordPos Level Bar
+    if ([_todayVirtualActor wordPos]) {
+        [self.wordPosLevelLeftImageView setHidden:NO];
+        [self.wordPosLevelBodyImageView setHidden:NO];
+        [self.wordPosLevelRightImageView setHidden:NO];
+        
+        int bodyWidth = 0;
+        
+        if ([[_todayVirtualActor wordRecordPos].level intValue] == -1) {
+            bodyWidth = 281;
+        }
+        else {
+            bodyWidth = 281 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
+        }
+        
+        CGRect frame;
+        
+        frame = self.wordPosLevelBodyImageView.frame;
+        frame.size.width = bodyWidth;
+        self.wordPosLevelBodyImageView.frame = frame;
+        
+        frame = self.wordPosLevelRightImageView.frame;
+        frame.origin.x = 20 + bodyWidth;
+        self.wordPosLevelRightImageView.frame = frame;
+    }
     
     // WordPos Brief Meaning
     if ([_todayVirtualActor wordPos]) {
@@ -228,7 +255,7 @@
     BOOL hasInit = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKeyHasInitUser];
     
     if (!hasInit) {
-//    if (YES)  {
+        //    if (YES)  {
         Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
         
         RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];

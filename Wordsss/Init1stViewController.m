@@ -74,10 +74,11 @@
 
 - (void)nextStep
 {
+    //
     [self setNickname];
     
+    //
     Init2ndViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init2ndViewController"];
-    
     [[self navigationController] pushViewController:ivc animated:YES];
 }
 

@@ -11,6 +11,19 @@
 #import "RKNavigationController.h"
 #import "RKNavigationControllerDelegate.h"
 
-@interface SettingViewController : UIViewController <RKNavigationControllerDelegate>
+#import "SettingVirtualActor.h"
+
+#import "Defult.h"
+
+#define kPickerViewFrameHide CGRectMake(0, 367, 320, 216)
+#define kPickerViewFrameShow CGRectMake(0, 151, 320, 216)
+
+@interface SettingViewController : UIViewController <RKNavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+{
+    SettingVirtualActor* _settingVirtualActor;
+}
+
+@property (nonatomic, retain) IBOutlet UITextField* nameTextField;
+@property (nonatomic, retain) IBOutlet UIPickerView* pickerView;
 
 @end

@@ -184,10 +184,7 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 {
     //
     [self countUpdate];
-    
-    //
-    [self levelUpdate];
-    
+        
     //
     [self dayUpdate];
 }

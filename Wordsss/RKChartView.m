@@ -50,7 +50,7 @@
     CGPoint point = CGPointMake(0, 0);
     
     // x
-    float k = (float)([hr.day intValue] - minDay) / (float)(maxDay - minDay);
+    float k = 1 - (float)(maxDay - [hr.day intValue]) / (float)(10);
     point.x = (1 - k)*kMinX + k*kMaxX;
     
     // y
@@ -65,14 +65,14 @@
     CGPoint point = CGPointMake(0, 0);
     
     // x
-    float k = (float)([hr.day intValue] - minDay) / (float)(maxDay - minDay);
+    float k = 1 - (float)(maxDay - [hr.day intValue]) / (float)(10);
     point.x = (1 - k)*kMinX + k*kMaxX;
     
     // y
     float lev = [[self.preRecord level] floatValue];
-    float l = (1 - (([hr.day floatValue]-[preRecord.day floatValue]) / 4*lev*lev));
+    float l = (1 - (([hr.day floatValue]-[preRecord.day floatValue]) / (2*lev*lev)));
     l *= l;
-    if ([hr.day intValue]-[preRecord.day intValue] > 4*lev*lev)
+    if ([hr.day intValue]-[preRecord.day intValue] > 2*lev*lev)
         l = 0;
     point.y = (1 - l)*kMinY + l*kMaxY;
     
@@ -109,6 +109,17 @@
     return CGPointMake(x4, y4);
 }
 
+//- (void)drawRect:(CGRect)rect
+//{
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetRGBStrokeColor (context, 142.0/ 255.0, 161.0/ 255.0, 189.0/ 255.0, 1.0);
+//    CGContextSetLineWidth(context, 30.0 );
+//    CGContextMoveToPoint(context, 1.0 , 24.0 );
+//    CGContextAddLineToPoint(context, 83.0 , 24.0 );
+//    CGContextClosePath(context);
+//    CGContextStrokePath(context);
+//}
+
 - (void)drawRect:(CGRect)rect
 {
     // Context
@@ -119,23 +130,24 @@
     CGContextScaleCTM(context, 1.0, -1.0);
     
     // Line width
-    CGContextSetLineWidth(context, 16.0);
+    CGContextSetLineWidth(context, 3.0);
+    CGContextSetLineJoin(context, kCGLineJoinRound);
     
     // Line Color
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-    CGFloat components[] = {255.0, 255.0, 255.0, 1.0};
+    CGFloat components[] = {0.2, 0.2, 0.7, 1.0};
     CGColorRef color = CGColorCreate(colorspace, components);
     CGContextSetStrokeColorWithColor(context, color);
-    
-    // TOO few points 0 or 1 or 2
-    if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
-        return;
-    }
+
+    // Shadow Color
+    CGFloat componentsShadow[] = {0.0, 0.0, 0.0, 1.0};
+    CGColorRef colorShadow = CGColorCreate(colorspace, componentsShadow);
+    CGContextSetShadowWithColor(context, CGSizeMake(2, 2), 0.1, colorShadow);
     
     //
     switch (self.type) {
         case USER:
-        {            
+        {        
             //
             self.minDay = [((StaRecord*)[points objectAtIndex:0]).day intValue];
             self.maxDay = [((StaRecord*)[points lastObject]).day intValue];
@@ -149,7 +161,24 @@
             }
             
             //
+            for (int i =0; i < [points count]; i++) {
+                StaRecord* sr = [points objectAtIndex:i];
+                if ([sr getCount] < (int)self.minValue) {
+                    [points removeObject:sr];
+                }
+                else {
+                    break;
+                }
+            }
+            
+            // TOO few points 0 or 1 or 2
+            if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
+                return;
+            }
+            
+            //
             UIBezierPath* aPath = [UIBezierPath bezierPath];
+            [aPath setLineWidth:3.0];
             
             [points enumerateObjectsUsingBlock:^(id obj, NSUInteger inx, BOOL *stop)
              {
@@ -196,7 +225,7 @@
             ProfileVirtualActor* pva = [ProfileVirtualActor profileVirtualActor];
             
             // Info label
-            //            float progress = (float)[pva getVocaNow] / (float)[pva getVocaTarget];
+            // float progress = (float)[pva getVocaNow] / (float)[pva getVocaTarget];
             int nowVoca = [pva getVocaNow];
             [self.infoLabel setText:[NSString stringWithFormat:@"迅辞记忆曲线 %d", nowVoca]];
             
@@ -211,11 +240,16 @@
         case WORD:
         {
             //
-            self.minDay = [((HisRecord*)[points objectAtIndex:0]).day intValue];
             self.maxDay = [((HisRecord*)[points lastObject]).day intValue];
+            self.minDay = self.maxDay - 14;
             
             self.maxValue = 100.0;
             self.minValue = 0.0;
+            
+            // TOO few points 0 or 1 or 2
+            if ([points count] == 0 || [points count] == 1) {
+                return;
+            }
             
             //
             UIBezierPath* aPath = [UIBezierPath bezierPath];
@@ -234,7 +268,6 @@
                  else {
                      CGPoint p1 = [self getStaPoint:preRecord];
                      CGPoint p2 = [self getEndPoint:obj];
-                     
                      CGPoint p3 = CGPointMake(p1.x, p2.y);
                      CGPoint p4 = [self getStaPoint:obj];
                      
@@ -250,7 +283,7 @@
             [aPath stroke];
             
             // Info label
-            [self.infoLabel setText:[NSString stringWithFormat:@"迅辞记忆曲线"]];
+            [self.infoLabel setText:[NSString stringWithFormat:@"记忆程度曲线"]];
             
             // Date label
             NSDate* date = ((HisRecord*)[self.points lastObject]).date;

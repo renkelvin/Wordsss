@@ -13,10 +13,10 @@
 
 #import "ProfileVirtualActor.h"
 
-#define kMinX   20.0
+#define kMinX   0.0
 #define kMaxX   293.0
-#define kMinY   1.0
-#define kMaxY   130.0
+#define kMinY   2.0
+#define kMaxY   129.0
 
 @interface RKChartView : UIScrollView
 
@@ -25,7 +25,7 @@ enum RKChartType {USER, WORD};
 @property (nonatomic, retain) IBOutlet UILabel* infoLabel;
 @property (nonatomic, retain) IBOutlet UILabel* dateLabel;
 
-@property (nonatomic, retain) NSArray* points;
+@property (nonatomic, retain) NSMutableArray* points;
 
 @property (nonatomic) enum RKChartType type;
 

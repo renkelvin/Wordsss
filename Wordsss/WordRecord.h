@@ -37,6 +37,8 @@
 
 - (void)cleardl;
 
+- (void)levelUpdate;
+
 - (void)nextDay;
 
 @end

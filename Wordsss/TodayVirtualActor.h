@@ -18,7 +18,7 @@
 #import "HisRecord.h"
 #import "WordRecord.h"
 
-#define kTodayWordLimit       80
+#define kTodayWordLimit       20
 #define kTotalViewFactorMin   1.5
 #define kTotalViewFactorMax   4.5
 #define kWordRemainFactorMin  0.1

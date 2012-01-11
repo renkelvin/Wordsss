@@ -41,6 +41,9 @@
 @property (nonatomic, retain) IBOutlet UILabel* wordPosLabel;
 
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
 
 @property (nonatomic, retain) IBOutlet WordCellBrief* briefMeaningLabel;
 

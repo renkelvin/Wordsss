@@ -19,8 +19,8 @@
 
 #import "WordVirtualActor.h"
 
-#define kWordViewSectionFrame CGRectMake(0, 49, 320, 458)
-#define kWordViewSectionFrameShort CGRectMake(0, 49 + 31 + 10, 320, 458 - 31 - 10)
+#define kWordViewSectionFrame CGRectMake(0, 49, 320, 318)
+#define kWordViewSectionFrameShort CGRectMake(0, 49 + 31 + 10, 320, 318 - 31 - 10)
 
 @interface WordViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
 {

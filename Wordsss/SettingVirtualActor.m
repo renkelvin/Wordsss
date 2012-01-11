@@ -12,6 +12,8 @@ static SettingVirtualActor* sharedSettingVirtualActor = nil;
 
 @implementation SettingVirtualActor
 
+@synthesize user = _user;
+
 - (id)init
 {
     self = [super init];
@@ -29,6 +31,28 @@ static SettingVirtualActor* sharedSettingVirtualActor = nil;
     }
     
     return sharedSettingVirtualActor;
+}
+
+#pragma mark -
+
+- (void)updateUser
+{
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // Get user
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
+    
+    if (!_user) {
+        _user = [udm createUser];
+    }
+}
+
+- (void)prepare
+{
+    // Get user
+    [self updateUser];
 }
 
 @end

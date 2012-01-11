@@ -62,6 +62,6 @@
 
 - (NSArray*)getWordMems;
 
-- (NSArray*)getHisRecords;
+- (NSMutableArray*)getHisRecords;
 
 @end

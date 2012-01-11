@@ -182,7 +182,29 @@
                 {
                     [((InfoCell*)cell).infoLabel setText:@"学习时间"];
                     
-                    [((InfoCell*)cell).valuLabel setText:@"1个月21天"];
+                    NSString* string = nil;
+                    NSArray* array = [_profileVirtualActor getStaRecords];
+                    if ([array count] == 0) {   //
+                        string = @"0天";
+                    }
+                    else {  //
+                        NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
+                        NSDate* endDate = _profileVirtualActor.user.status.date;
+                        NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
+                        
+                        inter = (int)inter;
+                        
+                        int month = inter / (60*60*24*30);
+                        inter /= (60*60*24*30);
+                        int day = inter / (60*60*24);
+                        
+                        string = [NSString stringWithFormat:@"%d天", day];
+                        if (month) {
+                            string = [[NSString stringWithFormat:@"%d月 ", month] stringByAppendingString:string];
+                        }
+                    }
+                    
+                    [((InfoCell*)cell).valuLabel setText:string];
                     
                     break;
                 }   
@@ -190,7 +212,33 @@
                 {
                     [((InfoCell*)cell).infoLabel setText:@"预计完成时间"];
                     
-                    [((InfoCell*)cell).valuLabel setText:@"19天"];
+                    NSString* string = nil;
+                    NSArray* array = [_profileVirtualActor getStaRecords];
+                    if ([array count] == 0) {   //
+                        string = @"无法计算";
+                    }
+                    else {  //
+                        NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
+                        NSDate* endDate = _profileVirtualActor.user.status.date;
+                        NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
+                        
+                        int nowVoca = [_profileVirtualActor getVocaNow] - [_profileVirtualActor getVocaCurrent];
+                        int tarVoca = [_profileVirtualActor getVocaTarget]; 
+                        float percent = (float)nowVoca/(float)tarVoca;
+                        inter /= percent;
+                        inter = (int)inter;
+                        
+                        int month = inter / (60*60*24*30);
+                        inter /= (60*60*24*30);
+                        int day = inter / (60*60*24);
+                        
+                        string = [NSString stringWithFormat:@"%d天", day];
+                        if (month) {
+                            string = [[NSString stringWithFormat:@"%d月 ", month] stringByAppendingString:string];
+                        }
+                    }
+                    
+                    [((InfoCell*)cell).valuLabel setText:string];
                     
                     break;
                 }   

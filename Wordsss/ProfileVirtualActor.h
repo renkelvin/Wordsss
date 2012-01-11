@@ -15,8 +15,7 @@
 @interface ProfileVirtualActor : NSObject
 {
     //
-    User* _user;
-    
+    User* _user;    
 }
 
 @property (nonatomic, retain) User* user;
@@ -29,7 +28,7 @@
 
 - (void)prepare;
 
-- (NSArray*)getStaRecords;
+- (NSMutableArray*)getStaRecords;
 
 - (int)getVocaCurrent;
 - (int)getVocaNow;

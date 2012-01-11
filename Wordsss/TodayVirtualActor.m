@@ -319,8 +319,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // WordRecord++ & store HisRecord
     for (WordRecord* wr in _wordRecordSet) {
         //
+        [wr levelUpdate];
+        //
         [udm createHisRecord:wr forUser:_user];
-        
         //
         [wr nextDay];
         [wr cleardl];

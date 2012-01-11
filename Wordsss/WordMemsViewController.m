@@ -83,11 +83,11 @@
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
         if (indexPath.row == 0) {
-            //            Rootaffix* r = [array objectAtIndex:indexPath.row];
+            // Rootaffix* r = [array objectAtIndex:indexPath.row];
             
         }
         else {
-            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
+            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row + 1];
             
             word = wr.word;
         }
@@ -95,11 +95,11 @@
     // Sense
     else if ([[array lastObject] class] == [Word_Sense class]) {
         if (indexPath.row == 0) {
-            //            Sense* s = [array objectAtIndex:indexPath.row];
+            // Sense* s = [array objectAtIndex:indexPath.row];
             
         }
         else {
-            Word_Sense* ws = [array objectAtIndex:indexPath.row];
+            Word_Sense* ws = [array objectAtIndex:indexPath.row + 1];
             
             word = ws.word;
         }
@@ -122,7 +122,7 @@
 // Cell number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count];
+    int num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
     
     return num;
 }
@@ -143,7 +143,7 @@
     }
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
-        NSString* string = [NSString stringWithFormat:@"词根 - %@", ((Rootaffix*)[array objectAtIndex:0]).phrase];
+        NSString* string = [NSString stringWithFormat:@"词根 - %@ %@", ((Rootaffix*)[array objectAtIndex:0]).phrase, ((Rootaffix*)[array objectAtIndex:0]).meaning_cn];
         
         [headerView.titleLabel setText:string];
     }
@@ -184,14 +184,15 @@
     }
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
-        if (indexPath.row == 0) {
+        //        if (indexPath.row == 0) {
+        if (NO) {
             Rootaffix* r = [array objectAtIndex:indexPath.row];
             [(WordCellMem*)cell clear];
             [(WordCellMem*)cell setRootaffix:r];
             [(WordCellMem*)cell configCell];
         }
         else {
-            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row];
+            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row + 1];
             [(WordCellMem*)cell clear];
             [(WordCellMem*)cell setWord_rootaffix:wr];
             [(WordCellMem*)cell configCell];
@@ -199,14 +200,15 @@
     }
     // Sense
     else if ([[array lastObject] class] == [Word_Sense class]) {
-        if (indexPath.row == 0) {
+        //        if (indexPath.row == 0) {
+        if (NO) {
             Sense* s = [array objectAtIndex:indexPath.row];
             [(WordCellMem*)cell clear];
             [(WordCellMem*)cell setSense:s];
             [(WordCellMem*)cell configCell];
         }
         else {
-            Word_Sense* ws = [array objectAtIndex:indexPath.row];
+            Word_Sense* ws = [array objectAtIndex:indexPath.row + 1];
             [(WordCellMem*)cell clear];
             [(WordCellMem*)cell setWord_sense:ws];
             [(WordCellMem*)cell configCell];
