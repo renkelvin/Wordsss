@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#import "WordCellBrief.h"
+#import "WordCellLabel.h"
 
 #import "Frequency.h"
 
@@ -58,7 +58,7 @@
 
 - (Word*)getTargetWord;
 
-- (void)configLabel:(WordCellBrief*)label;
+- (void)configLabel:(WordCellLabel*)label;
 
 - (NSString*)getBriefMeaning;
 - (NSString*)getSummaryMeaning;

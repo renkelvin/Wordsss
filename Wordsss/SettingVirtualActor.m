@@ -28,6 +28,9 @@ static SettingVirtualActor* sharedSettingVirtualActor = nil;
 {
     if (!sharedSettingVirtualActor) {
         sharedSettingVirtualActor = [[SettingVirtualActor alloc] init];
+        
+        //
+        [sharedSettingVirtualActor prepare];
     }
     
     return sharedSettingVirtualActor;

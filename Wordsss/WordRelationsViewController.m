@@ -185,24 +185,24 @@
         case 0:
         {
             Word* deriWord = [[_wordVirtualActor getDerivative] objectAtIndex:indexPath.row];
-            [(WordCellSummary*)cell setWord:deriWord];
-            [(WordCellSummary*)cell configCell];
+            [(WordCell*)cell setWord:deriWord];
+            [(WordCell*)cell configCell];
             
             break;
         }
         case 1:
         {
             Word* synoWord = [[_wordVirtualActor getSynonym] objectAtIndex:indexPath.row];
-            [(WordCellSummary*)cell setWord:synoWord];
-            [(WordCellSummary*)cell configCell];
+            [(WordCell*)cell setWord:synoWord];
+            [(WordCell*)cell configCell];
             
             break;
         }
         case 2:
         {
             Word* antoWord = [[_wordVirtualActor getAntonym] objectAtIndex:indexPath.row];
-            [(WordCellSummary*)cell setWord:antoWord];
-            [(WordCellSummary*)cell configCell];
+            [(WordCell*)cell setWord:antoWord];
+            [(WordCell*)cell configCell];
             
             break;
         }

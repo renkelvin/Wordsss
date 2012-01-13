@@ -24,7 +24,7 @@ static char* nameArray[11] = {
 
 @implementation SettingViewController
 
-@synthesize nameTextField, pickerView;
+@synthesize nameTextField, pickerView, pickerAccessoryView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,6 +56,12 @@ static char* nameArray[11] = {
 {
     [super viewDidLoad];
     
+    // Get todayVirtualActor
+    _settingVirtualActor = [SettingVirtualActor settingVirtualActor];
+    
+    // Init rknc delegate
+    [[self navigationController] setDelegate:self];
+
     //
     [self initNavigationBar];
     
@@ -88,6 +94,7 @@ static char* nameArray[11] = {
     [UIView animateWithDuration:0.3 animations:^(void)
      {
          [self.pickerView setFrame:kPickerViewFrameShow];
+         [self.pickerAccessoryView setFrame:kPickerAccessoryViewFrameShow];
      }
      ];
 }
@@ -97,11 +104,12 @@ static char* nameArray[11] = {
     //
     int row = [_settingVirtualActor.user.defult.targetLevel intValue] - 1;
     [self.pickerView selectRow:row inComponent:0 animated:YES];
-
+    
     // Show pickerView
     [UIView animateWithDuration:0.3 animations:^(void)
      {
          [self.pickerView setFrame:kPickerViewFrameShow];
+         [self.pickerAccessoryView setFrame:kPickerAccessoryViewFrameShow];
      }
      ];
 }

@@ -79,7 +79,7 @@
     return string;
 }
 
-- (void)configLabel:(WordCellBrief*)label
+- (void)configLabel:(WordCellLabel*)label
 {
     // ahdDictWord Existing
     if (self.word_dict.ahdDictWord) {

@@ -43,6 +43,9 @@
     //
     [super viewDidLoad];
     
+    // Init rknc delegate
+    [[self navigationController] setDelegate:self];
+
     //
     [self initNavigationBar];
     

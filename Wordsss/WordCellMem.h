@@ -19,6 +19,8 @@
 
 #import "TodayVirtualActor.h"
 
+#import "WordCell.h"
+
 @interface WordCellMem : UITableViewCell
 
 @property (nonatomic, retain) Word_Association* word_association;

@@ -15,11 +15,19 @@
 
 #import "InitVirtualActor.h"
 
+#define kInitPickerViewFrameHide CGRectMake(0, 416, 320, 216)
+#define kInitPickerViewFrameShow CGRectMake(0, 199, 320, 216)
+#define kInitPickerAccessoryViewFrameHide CGRectMake(0, 416, 320, 44)
+#define kInitPickerAccessoryViewFrameShow CGRectMake(0, 155, 320, 44)
+
 @interface Init2ndViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 {
     //
     InitVirtualActor* _initVirtualActor;
 }
+
+@property (nonatomic, retain) IBOutlet UIPickerView* pickerView;
+@property (nonatomic, retain) IBOutlet UIView* pickerAccessoryView;
 
 @end
 

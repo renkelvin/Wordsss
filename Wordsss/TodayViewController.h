@@ -21,7 +21,7 @@
 #import "McecDictWord.h"
 #import "McecDictMeaning.h"
 
-#import "WordCellBrief.h"
+#import "WordCellLabel.h"
 
 @interface TodayViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
 {
@@ -45,7 +45,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
 
-@property (nonatomic, retain) IBOutlet WordCellBrief* briefMeaningLabel;
+@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabel;
 
 #pragma mark - IBAction
 

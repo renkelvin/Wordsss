@@ -10,6 +10,8 @@
 
 @implementation Init2ndViewController
 
+@synthesize pickerView, pickerAccessoryView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,6 +54,38 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - IBAction
+
+- (IBAction)curLevelButtonClicked:(id)sender
+{
+    //
+    int row = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
+    [self.pickerView selectRow:row inComponent:0 animated:YES];
+    
+    // Show pickerView
+    [UIView animateWithDuration:0.3 animations:^(void)
+     {
+         [self.pickerView setFrame:kInitPickerViewFrameShow];
+         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameShow];
+     }
+     ];
+}
+
+- (IBAction)tarLevelButtonClicked:(id)sender
+{
+    //
+    int row = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
+    [self.pickerView selectRow:row inComponent:0 animated:YES];
+    
+    // Show pickerView
+    [UIView animateWithDuration:0.3 animations:^(void)
+     {
+         [self.pickerView setFrame:kInitPickerViewFrameShow];
+         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameShow];
+     }
+     ];
 }
 
 #pragma mark - Instance method

@@ -17,13 +17,16 @@
 
 #define kPickerViewFrameHide CGRectMake(0, 367, 320, 216)
 #define kPickerViewFrameShow CGRectMake(0, 151, 320, 216)
+#define kPickerAccessoryViewFrameHide CGRectMake(0, 367, 320, 44)
+#define kPickerAccessoryViewFrameShow CGRectMake(0, 107, 320, 44)
 
-@interface SettingViewController : UIViewController <RKNavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface SettingViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 {
     SettingVirtualActor* _settingVirtualActor;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField* nameTextField;
 @property (nonatomic, retain) IBOutlet UIPickerView* pickerView;
+@property (nonatomic, retain) IBOutlet UIView* pickerAccessoryView;
 
 @end

@@ -60,7 +60,6 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{12, 0}, {288, 28}}</string>
 						<reference key="NSSuperview" ref="923042712"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:328</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -115,7 +114,6 @@
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
 								<string key="NSFrame">{{0, 64}, {320, 3}}</string>
 								<reference key="NSSuperview" ref="148645365"/>
-								<reference key="NSNextKeyView"/>
 								<object class="NSColor" key="IBUIBackgroundColor" id="388795807">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MCAwAA</bytes>
@@ -130,7 +128,7 @@
 							</object>
 							<object class="IBUILabel" id="344224984">
 								<reference key="NSNextResponder" ref="148645365"/>
-								<int key="NSvFlags">1316</int>
+								<int key="NSvFlags">1318</int>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
 								<string key="NSFrame">{{20, 10}, {280, 20}}</string>
 								<reference key="NSSuperview" ref="148645365"/>
@@ -150,6 +148,7 @@
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 								<int key="IBUINumberOfLines">0</int>
+								<int key="IBUILineBreakMode">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">17</double>
@@ -162,7 +161,7 @@
 							</object>
 							<object class="IBUILabel" id="674569970">
 								<reference key="NSNextResponder" ref="148645365"/>
-								<int key="NSvFlags">1316</int>
+								<int key="NSvFlags">1318</int>
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
 								<string key="NSFrame">{{20, 30}, {280, 30}}</string>
 								<reference key="NSSuperview" ref="148645365"/>
@@ -182,6 +181,7 @@
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 								<int key="IBUINumberOfLines">0</int>
+								<int key="IBUILineBreakMode">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">16</double>

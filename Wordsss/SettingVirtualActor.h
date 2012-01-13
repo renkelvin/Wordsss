@@ -21,4 +21,6 @@
 
 + (SettingVirtualActor*)settingVirtualActor;
 
+- (void)prepare;
+
 @end
