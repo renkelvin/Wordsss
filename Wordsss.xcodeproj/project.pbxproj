@@ -562,7 +562,7 @@
 		FEF3307114AC80E500E5E3B5 /* DictWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictWordCell.m; sourceTree = "<group>"; };
 		FEF3307314AC816200E5E3B5 /* WordCellLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellLabel.h; sourceTree = "<group>"; };
 		FEF3307414AC816200E5E3B5 /* WordCellLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCellLabel.m; sourceTree = "<group>"; };
-		FEF3307614AC816E00E5E3B5 /* WordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; path = WordCell.h; sourceTree = "<group>"; };
+		FEF3307614AC816E00E5E3B5 /* WordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCell.h; sourceTree = "<group>"; };
 		FEF3307714AC816E00E5E3B5 /* WordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCell.m; sourceTree = "<group>"; };
 		FEF4DE9B148E2B7A00E88653 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		FEF4DE9C148E2B7A00E88653 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
@@ -980,18 +980,20 @@
 				FE63327414ADEE56005CBECF /* cet4@2x.png */,
 				FE63327514ADEE56005CBECF /* cet6.png */,
 				FE63327614ADEE56005CBECF /* cet6@2x.png */,
+				FE63327D14ADEE56005CBECF /* ielts.png */,
+				FE63327E14ADEE57005CBECF /* ielts@2x.png */,
+				FE63327B14ADEE56005CBECF /* gre.png */,
+				FE63327C14ADEE56005CBECF /* gre@2x.png */,
+				FE63328114ADEE57005CBECF /* netm.png */,
+				FE63328214ADEE57005CBECF /* netm@2x.png */,
+				FE6332A114ADEE5A005CBECF /* tofel.png */,
+				FE6332A214ADEE5A005CBECF /* tofel@2x.png */,
 				FE63327714ADEE56005CBECF /* chart_bg.png */,
 				FE63327814ADEE56005CBECF /* chart_bg@2x.png */,
 				FE63327914ADEE56005CBECF /* chart_popover_bg.png */,
 				FE63327A14ADEE56005CBECF /* chart_popover_bg@2x.png */,
-				FE63327B14ADEE56005CBECF /* gre.png */,
-				FE63327C14ADEE56005CBECF /* gre@2x.png */,
-				FE63327D14ADEE56005CBECF /* ielts.png */,
-				FE63327E14ADEE57005CBECF /* ielts@2x.png */,
 				FE63327F14ADEE57005CBECF /* info_blue.png */,
 				FE63328014ADEE57005CBECF /* info_blue@2x.png */,
-				FE63328114ADEE57005CBECF /* netm.png */,
-				FE63328214ADEE57005CBECF /* netm@2x.png */,
 				FE63328314ADEE57005CBECF /* process_0.png */,
 				FE63328414ADEE57005CBECF /* process_0@2x.png */,
 				FE63328514ADEE58005CBECF /* process_8.png */,
@@ -1022,8 +1024,6 @@
 				FE63329E14ADEE5A005CBECF /* tableview_cell_divider@2x.png */,
 				FE63329F14ADEE5A005CBECF /* tableview_section_head_bg.png */,
 				FE6332A014ADEE5A005CBECF /* tableview_section_head_bg@2x.png */,
-				FE6332A114ADEE5A005CBECF /* tofel.png */,
-				FE6332A214ADEE5A005CBECF /* tofel@2x.png */,
 			);
 			name = ProfileView;
 			sourceTree = "<group>";

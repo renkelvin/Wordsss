@@ -120,14 +120,54 @@
     [self.progressImageView setImage:[UIImage imageNamed:imgString]];
     
     // Target Label
-    // TODO
+    NSString* string = nil;
+    
+    switch ([_profileVirtualActor.user.defult.targetLevel intValue]) {
+        case 0:
+            ;
+            break;
+        case 1:
+            ;
+            break;
+        case 2:
+            ;
+            break;
+        case 3:
+            ;
+            break;
+        case 4:
+            ;
+            break;
+        case 5:
+            ;
+            break;
+        case 6:
+            ;
+            break;
+        case 7:
+            ;
+            break;
+        case 8:
+            ;
+            break;
+        case 9:
+            ;
+            break;
+        case 10:
+            ;
+            break;
+        default:
+            break;
+    }
+    
+    [self.tagetImageView setImage:[UIImage imageNamed:string]];
 }
 
 - (void)update
 {
     //
     [self updateTitle];
-        
+    
     //
     [_chartView setType:USER];
     [_chartView setPoints:[_profileVirtualActor getStaRecords]];
@@ -189,14 +229,12 @@
                     }
                     else {  //
                         NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
-                        NSDate* endDate = _profileVirtualActor.user.status.date;
+                        NSDate* endDate = [NSDate date];
                         NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
-                        
-                        inter = (int)inter;
-                        
-                        int month = inter / (60*60*24*30);
-                        inter /= (60*60*24*30);
-                        int day = inter / (60*60*24);
+                                                
+                        int month = (int)inter / (60*60*24*30);
+                        inter = (int)inter % (60*60*24*30);
+                        int day = (int)inter / (60*60*24);
                         
                         string = [NSString stringWithFormat:@"%d天", day];
                         if (month) {
@@ -219,18 +257,21 @@
                     }
                     else {  //
                         NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
-                        NSDate* endDate = _profileVirtualActor.user.status.date;
+                        NSDate* endDate = [NSDate date];
                         NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
                         
                         int nowVoca = [_profileVirtualActor getVocaNow] - [_profileVirtualActor getVocaCurrent];
-                        int tarVoca = [_profileVirtualActor getVocaTarget]; 
+                        int tarVoca = [_profileVirtualActor getVocaTarget] - [_profileVirtualActor getVocaCurrent]; 
+                        
+                        // 背85%足已
+                        tarVoca *= 0.85;
+                        
                         float percent = (float)nowVoca/(float)tarVoca;
                         inter /= percent;
-                        inter = (int)inter;
-                        
-                        int month = inter / (60*60*24*30);
-                        inter /= (60*60*24*30);
-                        int day = inter / (60*60*24);
+                                                
+                        int month = (int)inter / (60*60*24*30);
+                        inter = (int)inter % (60*60*24*30);
+                        int day = (int)inter / (60*60*24);
                         
                         string = [NSString stringWithFormat:@"%d天", day];
                         if (month) {
