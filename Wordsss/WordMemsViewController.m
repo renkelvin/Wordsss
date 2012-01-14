@@ -82,27 +82,15 @@
     }
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
-        if (indexPath.row == 0) {
-            // Rootaffix* r = [array objectAtIndex:indexPath.row];
-            
-        }
-        else {
-            Word_Rootaffix* wr = [array objectAtIndex:indexPath.row + 1];
-            
-            word = wr.word;
-        }
+        Word_Rootaffix* wr = [array objectAtIndex:indexPath.row + 1];
+        
+        word = wr.word;
     }
     // Sense
     else if ([[array lastObject] class] == [Word_Sense class]) {
-        if (indexPath.row == 0) {
-            // Sense* s = [array objectAtIndex:indexPath.row];
-            
-        }
-        else {
-            Word_Sense* ws = [array objectAtIndex:indexPath.row + 1];
-            
-            word = ws.word;
-        }
+        Word_Sense* ws = [array objectAtIndex:indexPath.row + 1];
+        
+        word = ws.word;
     }    
     WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
     

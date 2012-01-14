@@ -1,5 +1,5 @@
 //
-//  DotaListWord.h
+//  CSListWord.h
 //  Wordsss
 //
 //  Created by Ren Chuan on 1/14/12.
@@ -11,9 +11,11 @@
 
 @class Word_List;
 
-@interface DotaListWord : NSManagedObject
+@interface CSListWord : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * meaning;
+@property (nonatomic, retain) NSString * fullname;
 @property (nonatomic, retain) Word_List *word_list;
 
 @end

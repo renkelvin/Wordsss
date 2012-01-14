@@ -54,7 +54,7 @@
     [self initNavigationBar];
     
     //
-    // [self initSearchBar];
+    [self initSearchBar];
 }
 
 - (void)viewDidUnload

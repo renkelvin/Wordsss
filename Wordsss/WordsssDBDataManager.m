@@ -88,7 +88,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     
     // Get 
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Sense"];
-//    [request setPredicate:[NSPredicate predicateWithFormat:@""]];
+    //    [request setPredicate:[NSPredicate predicateWithFormat:@""]];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     // Rand
@@ -174,7 +174,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"WordsssDB.sqlite"];
     
-    // If no WordsssDB.sqlite
+//    // If no WordsssDB.sqlite
 //    NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];	
 //    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
 //        NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];

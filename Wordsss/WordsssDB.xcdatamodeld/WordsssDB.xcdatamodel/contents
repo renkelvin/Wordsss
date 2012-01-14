@@ -25,6 +25,12 @@
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="word_association" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Association" inverseName="association" inverseEntity="Word_Association" syncable="YES"/>
     </entity>
+    <entity name="CSListWord" representedClassName="CSListWord" syncable="YES">
+        <attribute name="fullname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="csListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
     <entity name="DotaListWord" representedClassName="DotaListWord" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="dotaListWord" inverseEntity="Word_List" syncable="YES"/>
@@ -102,6 +108,7 @@
     </entity>
     <entity name="Word_List" representedClassName="Word_List" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="csListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CSListWord" inverseName="word_list" inverseEntity="CSListWord" syncable="YES"/>
         <relationship name="dotaListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DotaListWord" inverseName="word_list" inverseEntity="DotaListWord" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_list" inverseEntity="Word" syncable="YES"/>
     </entity>
@@ -149,5 +156,6 @@
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
+        <element name="CSListWord" positionX="-308" positionY="-288" width="128" height="105"/>
     </elements>
 </model>

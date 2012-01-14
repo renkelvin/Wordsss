@@ -47,8 +47,8 @@
     [super viewDidLoad];
     
     //
-    // [self hideBuiltinNavigationBar];
-     [self showCustomNavigationBar];
+    [self hideBuiltinNavigationBar];
+    [self showCustomNavigationBar];
 }
 
 - (void)viewDidUnload
@@ -70,7 +70,8 @@
 - (void)hideBuiltinNavigationBar{
 	for(UIView *view in self.view.subviews){
 		if([view isKindOfClass:[UINavigationBar class]]){
-			view.hidden = YES;
+            //			view.hidden = YES;
+            view.backgroundColor = [UIColor clearColor];
 			break;
 		}
 	}
