@@ -11,6 +11,7 @@
 @implementation Init3rdViewController
 
 @synthesize rootViewController = _rootViewController;
+@synthesize loadingIndicatorImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +42,12 @@
     
     //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
+    
+    //
+    [self showLoadingIndicator];
+    
+    //
+    [self performSelectorInBackground:@selector(initPlan) withObject:nil];
 }
 
 - (void)viewDidUnload
@@ -71,8 +78,45 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)runWordsssButtonClicked:(id)sender
+- (void)showLoadingIndicator
 {
+    //
+    [self.loadingIndicatorImageView setHidden:NO];
+    
+	CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+	rotationAnimation.duration = 1.0;
+	rotationAnimation.fromValue = [NSNumber numberWithFloat:0.0];
+	rotationAnimation.toValue = [NSNumber numberWithFloat:-2.0 * M_PI];
+	rotationAnimation.repeatCount = 65535;
+	[self.loadingIndicatorImageView.layer addAnimation:rotationAnimation forKey:@"kLoadingIndicator"];
+}
+
+- (void)hideLoadingIndicator
+{
+    //
+    [UIView animateWithDuration:1.0
+                     animations:^(void) {
+                         [self.loadingIndicatorImageView setAlpha:0.0];
+                     }
+                     completion:^(BOOL finished) {
+                         [self.loadingIndicatorImageView setHidden:YES];
+                     }
+     ];
+}
+
+- (void)initPlan
+{
+    //
+    [TodayVirtualActor todayVirtualActor];
+    
+    //
+    [self hideLoadingIndicator];
+}
+
+#pragma mark - IBAction
+
+- (IBAction)runWordsssButtonClicked:(id)sender
+{    
     [self runMain];
 }
 
@@ -95,7 +139,7 @@
 
 - (void)navigationBarRightButtonDown
 {
-
+    
 }
 
 #pragma - UINavigationControllerDelegate

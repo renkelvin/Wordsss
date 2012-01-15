@@ -13,6 +13,12 @@
 
 #import "RKTableHeader.h"
 
+#import "ListsVirtualActor.h"
+
 @interface ListsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RKNavigationControllerDelegate>
+{
+    //
+    ListsVirtualActor* _listsVirtualActor;
+}
 
 @end

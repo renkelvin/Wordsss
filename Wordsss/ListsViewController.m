@@ -30,18 +30,22 @@
 #pragma mark - View lifecycle
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView
+ {
+ }
+ */
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //
     [self initNavigationBar];
+    
+    //
+    _listsVirtualActor = [ListsVirtualActor listsVirtualActor];
 }
 
 - (void)viewDidUnload
@@ -71,20 +75,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 // Header
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
-    
-    [headerView setBackgroundColor:[UIColor clearColor]];
-
-    headerView.titleLabel.text = @"-----";
-    
-    return headerView;
-}
+// - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+// {
+//    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
+//    
+//    [headerView setBackgroundColor:[UIColor clearColor]];
+//
+//    headerView.titleLabel.text = @"-----";
+//    
+//    return headerView;
+// }
 
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -98,7 +102,6 @@
     static NSString* WordBooksTableViewCellIndentifier = @"ListsTableViewCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:WordBooksTableViewCellIndentifier];
     if (cell == nil) {
-        // need [ autorealse]
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
@@ -110,7 +113,7 @@
 - (void)initNavigationBar
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-
+    
     [[navigationController titleLabel] setText:@"精选词表"];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];

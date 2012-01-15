@@ -23,8 +23,14 @@
     InitVirtualActor* _initVirtualActor;
 }
 
+@property (nonatomic, retain) IBOutlet UIImageView* loadingIndicatorImageView;
+
 @property (nonatomic, retain) IBOutlet RKTabBarController* rootViewController;
 
 - (IBAction)runWordsssButtonClicked:(id)sender;
+
+- (void)showLoadingIndicator;
+- (void)hideLoadingIndicator;
+- (void)initPlan;
 
 @end

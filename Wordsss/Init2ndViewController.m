@@ -8,6 +8,20 @@
 
 #import "Init2ndViewController.h"
 
+static char* nameArray[11] = {
+    "NONE",             // 0  - 1     - Zero
+    "Basic - 800",      // 1  - 800   - Basic
+    "Middle - 1500",    // 2  - 1500  - Middle
+    "High - 3000",      // 3  - 3000  - High
+    "CET4 - 4000",      // 4  - 4000  - CET4
+    "CET6 - 6000",      // 5  - 6000  - CET6
+    "IELTS - 8000",     // 6  - 8000  - IELTS
+    "TOFEL - 9000",     // 7  - 9000  - TOFEL
+    "SAT - 10000",      // 8  - 10000 - SAT
+    "GRE - 12000",      // 9  - 12448 - GRE
+    "GODLIKE - 40000"   // 10 - 42814 - HolyShit
+};
+
 @implementation Init2ndViewController
 
 @synthesize pickerView, pickerAccessoryView;
@@ -64,6 +78,9 @@
     int row = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
     [self.pickerView selectRow:row inComponent:0 animated:YES];
     
+    //
+    curORtar = 0;
+    
     // Show pickerView
     [UIView animateWithDuration:0.3 animations:^(void)
      {
@@ -79,11 +96,35 @@
     int row = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
     [self.pickerView selectRow:row inComponent:0 animated:YES];
     
+    //
+    curORtar = 1;
+    
     // Show pickerView
     [UIView animateWithDuration:0.3 animations:^(void)
      {
          [self.pickerView setFrame:kInitPickerViewFrameShow];
          [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameShow];
+     }
+     ];
+}
+
+- (IBAction)doneButtonClicked:(id)sender
+{
+    int row = [self.pickerView selectedRowInComponent:0];
+    
+    //
+    if (curORtar == 0) {
+        _initVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:row + 1];
+    }
+    else if (curORtar == 1) {
+        _initVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:row + 1];
+    }
+    
+    // Hide pickerView
+    [UIView animateWithDuration:0.3 animations:^(void)
+     {
+         [self.pickerView setFrame:kInitPickerViewFrameHide];
+         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
      }
      ];
 }
@@ -151,40 +192,7 @@
 {
     NSString* string = [NSString string];
     
-    switch (row) {
-        case 0:
-            string = @"0";
-            break;
-        case 1:
-            string = @"1";
-            break;
-        case 2:
-            string = @"2";
-            break;
-        case 3:
-            string = @"3";
-            break;
-        case 4:
-            string = @"4";
-            break;
-        case 5:
-            string = @"5";
-            break;
-        case 6:
-            string = @"6";
-            break;
-        case 7:
-            string = @"7";
-            break;
-        case 8:
-            string = @"8";
-            break;
-        case 9:
-            string = @"9";
-            break;
-        default:
-            break;
-    }
+    string = [NSString stringWithCString:nameArray[row+1]];
     
     return string;
 }
@@ -193,7 +201,7 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component

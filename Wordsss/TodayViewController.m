@@ -49,13 +49,13 @@
 {
     [super viewDidLoad];
     
+    // Init rknc delegate
+    [[self navigationController] setDelegate:self];
+    
     // Check has init user
     if ([self checkHasInitUser]) {
         // Get todayVirtualActor
         _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
-        
-        // Init rknc delegate
-        [[self navigationController] setDelegate:self];
         
         // Update view
         [self update];
@@ -255,7 +255,6 @@
     BOOL hasInit = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKeyHasInitUser];
     
     if (!hasInit) {
-        //    if (YES)  {
         Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
         
         RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];

@@ -51,6 +51,9 @@
     
     //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
+    
+    //
+    [self.nameTextField becomeFirstResponder];
 }
 
 - (void)viewDidUnload
@@ -117,6 +120,16 @@
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     [self initNavigationBar];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    //
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 @end

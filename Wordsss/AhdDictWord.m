@@ -123,7 +123,7 @@
 
 - (NSString*)getSummaryMeaning
 {
-    NSString* string = [self getTypeStringWithBlank];
+    NSString* string = [self getTypeString];
     
     int i = 0;
     for (AhdDictMeaning* ahdDictMeaning in self.meaning) {

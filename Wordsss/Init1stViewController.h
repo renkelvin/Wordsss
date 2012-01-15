@@ -15,7 +15,7 @@
 
 #import "InitVirtualActor.h"
 
-@interface Init1stViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+@interface Init1stViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 {
     //
     InitVirtualActor* _initVirtualActor;
