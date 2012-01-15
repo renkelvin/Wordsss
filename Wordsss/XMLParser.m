@@ -761,14 +761,28 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             NSLog(@"CSListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
-                                            ((CSListWord*)object).meaning = string;
+                                            if (!((CSListWord*)object).meaning) {
+                                                ((CSListWord*)object).meaning = string;
+                                            }
+                                            else {
+                                                ((CSListWord*)object).meaning = [((CSListWord*)object).meaning stringByAppendingFormat:@"%@", string];
+                                            }
+                                            
+                                            NSLog(@"%@", ((CSListWord*)object).meaning);
                                         }
                                         else if ([attrString compare:@"full_name"] == NSOrderedSame) {
-                                            ((CSListWord*)object).fullname = string;
+                                            if (!((CSListWord*)object).fullname) {
+                                                ((CSListWord*)object).fullname = string;
+                                            }
+                                            else {
+                                                ((CSListWord*)object).fullname = [((CSListWord*)object).fullname stringByAppendingFormat:@"%@", string];
+                                            }
+                                            
+                                            NSLog(@"%@", ((CSListWord*)object).fullname);
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
+                                        //                                        attrString = nil;
+                                        //                                        attrDict = nil;
                                         
                                         break;
                                     }

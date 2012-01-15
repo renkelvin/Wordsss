@@ -94,7 +94,7 @@
 - (void)hideLoadingIndicator
 {
     //
-    [UIView animateWithDuration:1.0
+    [UIView animateWithDuration:0.3
                      animations:^(void) {
                          [self.loadingIndicatorImageView setAlpha:0.0];
                      }

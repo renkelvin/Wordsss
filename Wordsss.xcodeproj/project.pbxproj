@@ -29,7 +29,6 @@
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
 		FE060C63143CD78A0026228C /* RkNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C60143CD78A0026228C /* RkNavigationController.m */; };
 		FE060C64143CD78A0026228C /* RKNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C61143CD78A0026228C /* RKNavigationController.xib */; };
-		FE0C9CAB14C2814100AA3819 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE0C9CAA14C2814100AA3819 /* WordsssDB.sqlite */; };
 		FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */; };
 		FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */; };
 		FE10A07D14A0F002005F1EC9 /* Association.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07C14A0F001005F1EC9 /* Association.m */; };
@@ -308,7 +307,6 @@
 		FE060C60143CD78A0026228C /* RkNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RkNavigationController.m; sourceTree = "<group>"; };
 		FE060C61143CD78A0026228C /* RKNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKNavigationController.xib; sourceTree = "<group>"; };
 		FE060C62143CD78A0026228C /* RKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationController.h; sourceTree = "<group>"; };
-		FE0C9CAA14C2814100AA3819 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/1698BF7A-D6CA-4879-BBA5-08EF10D69DEF/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FE10A07514A0F001005F1EC9 /* McecDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McecDictMeaning.h; sourceTree = "<group>"; };
 		FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = McecDictMeaning.m; sourceTree = "<group>"; };
@@ -792,7 +790,6 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FE0C9CAA14C2814100AA3819 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1090,25 +1087,25 @@
 				FEFFDE29143F737E002B7126 /* pre_word_translation_bg.png */,
 				FE8736AC143DDC3E002FDDE8 /* pre_word_translation_bg@2x.png */,
 				FE8736AD143DDC3E002FDDE8 /* title_small.png */,
-				2043606814C2853000170BD1 /* main_word_chn_bg.png */,
-				2043606914C2853000170BD1 /* main_word_bg@2x.png */,
+				FE8736AE143DDC3E002FDDE8 /* title_small@2x.png */,
 				2043606A14C2853000170BD1 /* main_word_pre_bg.png */,
 				2043606B14C2853000170BD1 /* main_word_pre_bg@2x.png */,
 				2043606C14C2853000170BD1 /* main_word_bg.png */,
+				2043606914C2853000170BD1 /* main_word_bg@2x.png */,
 				2043608514C2853900170BD1 /* mainbar_bg.png */,
 				2043608614C2853900170BD1 /* mainbar_bg@2x.png */,
 				2043608714C2853900170BD1 /* thumb.png */,
 				2043608814C2853900170BD1 /* thumb@2x.png */,
-				2043606D14C2853000170BD1 /* main_word_next_bg@2x.png */,
+				2043607014C2853000170BD1 /* forget_hl.png */,
 				2043606E14C2853000170BD1 /* forget_hl@2x.png */,
 				2043606F14C2853000170BD1 /* main_word_next_bg.png */,
-				2043607014C2853000170BD1 /* forget_hl.png */,
-				2043607114C2853000170BD1 /* main_word_chn_hlbg@2x.png */,
-				2043607214C2853000170BD1 /* confirm_hl@2x.png */,
+				2043606D14C2853000170BD1 /* main_word_next_bg@2x.png */,
 				2043607314C2853000170BD1 /* main_word_chn_hlbg.png */,
+				2043607114C2853000170BD1 /* main_word_chn_hlbg@2x.png */,
 				2043607414C2853000170BD1 /* confirm_hl.png */,
+				2043607214C2853000170BD1 /* confirm_hl@2x.png */,
+				2043606814C2853000170BD1 /* main_word_chn_bg.png */,
 				2043607514C2853000170BD1 /* main_word_chn_bg@2x.png */,
-				FE8736AE143DDC3E002FDDE8 /* title_small@2x.png */,
 				FE8736AF143DDC3E002FDDE8 /* word_bg.png */,
 				FE8736B0143DDC3E002FDDE8 /* word_bg@2x.png */,
 				FE8736B1143DDC3E002FDDE8 /* word_slider.png */,
@@ -1501,7 +1498,6 @@
 				2043608B14C2853900170BD1 /* thumb.png in Resources */,
 				2043608C14C2853900170BD1 /* thumb@2x.png in Resources */,
 				FE96614814C1C22E008E1C8C /* WordsssDB.xml in Resources */,
-				FE0C9CAB14C2814100AA3819 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

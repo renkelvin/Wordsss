@@ -25,6 +25,7 @@
 @interface WordVirtualActor : NSObject {
     //
     Word* _word;
+    WordRecord* _wordRecord;
     
     //
     NSArray* _adcDictWordArray;
@@ -42,6 +43,7 @@
 }
 
 @property (nonatomic, retain) Word* word;
+@property (nonatomic, retain) WordRecord* wordRecord;
 
 + (WordVirtualActor*)wordVirtualActor:(Word*)word;
 

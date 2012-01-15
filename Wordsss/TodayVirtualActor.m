@@ -300,12 +300,14 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     //
     int wordRemainLimit = kTodayWordLimit * ((1-memDegree)*kWordRemainFactorMin + memDegree*kWordRemainFactorMax);
     if ([_wordRecordSet count] <= wordRemainLimit) {
+        NSLog(@"wordRemain: %d", [_wordRecordSet count]);
         return YES;
     }
     
     //
     int totalViewLimit = kTodayWordLimit * ((1-memDegree)*kTotalViewFactorMin + memDegree*kTotalViewFactorMax);
     if ([_user.status.dlc intValue] >= totalViewLimit) {
+        NSLog(@"viewCount: %d", [_user.status.dlc intValue]);
         return YES;
     }
     

@@ -32,15 +32,14 @@ static ListsVirtualActor* sharedListsVirtualActor = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"CSListWord"];
     _array = [wdm.managedObjectContext executeFetchRequest:request error:nil];
     
-    for (CSListWord* csListWord in _array) {
+//    for (CSListWord* csListWord in _array) {
 //        Word_List* wl = csListWord.word_list;
 //        NSString* s = csListWord.fullname;
 //        NSString* t = csListWord.meaning;
-//        
 //        NSString* name = wl.word.name;
 //        
 //        NSLog(@"%@ - %@ - %@", name, t, s);
-    }
+//    }
 }
 
 @end

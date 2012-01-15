@@ -10,7 +10,7 @@
 
 @implementation WordVirtualActor
 
-@synthesize word = _word;
+@synthesize word = _word, wordRecord = _wordRecord;
 
 + (WordVirtualActor*)wordVirtualActor:(Word*)word
 {

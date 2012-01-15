@@ -39,7 +39,7 @@
 @property (nonatomic, retain) NSArray* sectionViewControllers;
 @property (nonatomic, retain) UIView* currentSectionView;
 
-- (WordViewController*)init:(Word*)word;
+- (WordViewController*)init:(Word*)word and:(WordRecord*)wordRecord;
 
 - (void)initSectionViewControllers;
 
