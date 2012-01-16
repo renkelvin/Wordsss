@@ -140,7 +140,7 @@
                     }
                     float fdeg = (float)deg / 10;
                     
-                    [((InfoCell*)cell).valuLabel setText:[NSString stringWithFormat:@"%.2f%%", fdeg]];
+                    [((InfoCell*)cell).valuLabel setText:[NSString stringWithFormat:@"%.1f%%", fdeg]];
                     
                     break;
                 }   

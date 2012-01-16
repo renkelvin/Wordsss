@@ -292,6 +292,9 @@
             
             // Date label
             NSDate* date = ((HisRecord*)[self.points lastObject]).date;
+            if (!date) {
+                date = [NSDate date];
+            }
             NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"YYYY 年 M 月 D 日"];
             [self.dateLabel setText:[dateFormatter stringFromDate:date]];

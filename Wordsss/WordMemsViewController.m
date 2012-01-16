@@ -92,7 +92,7 @@
         
         word = ws.word;
     }    
-    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord] and:nil];
     
     [[self.wordViewController navigationController] pushViewController:wvc animated:YES];
 }

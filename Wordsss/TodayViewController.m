@@ -270,7 +270,7 @@
 #pragma mark - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender{
-    WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[_todayVirtualActor.wordPos getTargetWord]];
+    WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[_todayVirtualActor.wordPos getTargetWord] and:_todayVirtualActor.wordRecordPos];
     
     [[self navigationController] pushViewController:wordViewController animated:YES];
 }

@@ -64,6 +64,7 @@
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
 		FE5C958A14AF11AD00DE10F2 /* AhdDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */; };
+		FE616A3514C419A10007F3C6 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE616A3414C419A10007F3C6 /* WordsssDB.sqlite */; };
 		FE63326F14ADE515005CBECF /* ExploreVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */; };
 		FE6332A314ADEE5B005CBECF /* basicinfo_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FE63327114ADEE55005CBECF /* basicinfo_bg.png */; };
 		FE6332A414ADEE5B005CBECF /* basicinfo_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE63327214ADEE55005CBECF /* basicinfo_bg@2x.png */; };
@@ -358,6 +359,7 @@
 		FE5C958814AF11AD00DE10F2 /* AhdDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictMeaning.h; sourceTree = "<group>"; };
 		FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AhdDictMeaning.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
+		FE616A3414C419A10007F3C6 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/1698BF7A-D6CA-4879-BBA5-08EF10D69DEF/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE63326D14ADE515005CBECF /* ExploreVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreVirtualActor.h; sourceTree = "<group>"; };
 		FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreVirtualActor.m; sourceTree = "<group>"; };
 		FE63327114ADEE55005CBECF /* basicinfo_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicinfo_bg.png; sourceTree = "<group>"; };
@@ -790,6 +792,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				FE616A3414C419A10007F3C6 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1092,16 +1095,16 @@
 				2043606B14C2853000170BD1 /* main_word_pre_bg@2x.png */,
 				2043606C14C2853000170BD1 /* main_word_bg.png */,
 				2043606914C2853000170BD1 /* main_word_bg@2x.png */,
+				2043606F14C2853000170BD1 /* main_word_next_bg.png */,
+				2043606D14C2853000170BD1 /* main_word_next_bg@2x.png */,
+				2043607314C2853000170BD1 /* main_word_chn_hlbg.png */,
+				2043607114C2853000170BD1 /* main_word_chn_hlbg@2x.png */,
 				2043608514C2853900170BD1 /* mainbar_bg.png */,
 				2043608614C2853900170BD1 /* mainbar_bg@2x.png */,
 				2043608714C2853900170BD1 /* thumb.png */,
 				2043608814C2853900170BD1 /* thumb@2x.png */,
 				2043607014C2853000170BD1 /* forget_hl.png */,
 				2043606E14C2853000170BD1 /* forget_hl@2x.png */,
-				2043606F14C2853000170BD1 /* main_word_next_bg.png */,
-				2043606D14C2853000170BD1 /* main_word_next_bg@2x.png */,
-				2043607314C2853000170BD1 /* main_word_chn_hlbg.png */,
-				2043607114C2853000170BD1 /* main_word_chn_hlbg@2x.png */,
 				2043607414C2853000170BD1 /* confirm_hl.png */,
 				2043607214C2853000170BD1 /* confirm_hl@2x.png */,
 				2043606814C2853000170BD1 /* main_word_chn_bg.png */,
@@ -1498,6 +1501,7 @@
 				2043608B14C2853900170BD1 /* thumb.png in Resources */,
 				2043608C14C2853900170BD1 /* thumb@2x.png in Resources */,
 				FE96614814C1C22E008E1C8C /* WordsssDB.xml in Resources */,
+				FE616A3514C419A10007F3C6 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

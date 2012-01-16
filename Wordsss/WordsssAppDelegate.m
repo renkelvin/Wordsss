@@ -21,7 +21,7 @@
         // Generate WordsssDB.sqlite
         [xmlParser go];
     }
-    
+
     // Create main view
     [self.window makeKeyAndVisible];
     
