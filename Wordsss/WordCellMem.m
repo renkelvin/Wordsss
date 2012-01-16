@@ -13,6 +13,7 @@
 @synthesize word_association, word_rootaffix, word_sense;
 @synthesize association, rootaffix, sense;
 @synthesize nameLabel, meaningLabel, memLabel;
+@synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

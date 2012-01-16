@@ -462,28 +462,38 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <pickerView contentMode="scaleToFill" id="hUp-zo-iWi">
-                                <rect key="frame" x="0.0" y="367" width="320" height="216"/>
+                            <pickerView contentMode="scaleToFill" id="Mmd-3C-t4j">
+                                <rect key="frame" x="0.0" y="460" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="10" id="v5W-Hc-Bya"/>
-                                    <outlet property="delegate" destination="10" id="SKn-p5-KzP"/>
+                                    <outlet property="dataSource" destination="10" id="TOG-gg-6UY"/>
+                                    <outlet property="delegate" destination="10" id="JCf-JK-le9"/>
                                 </connections>
                             </pickerView>
-                            <view contentMode="scaleToFill" id="tM3-xW-Svg">
-                                <rect key="frame" x="0.0" y="367" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="Vxb-pX-gIS">
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dtu-dh-z9e"/>
+                                    <barButtonItem title="完成" style="plain" id="IPb-m4-Nxi">
+                                        <connections>
+                                            <action selector="doneButtonClicked:" destination="10" id="2ZQ-lT-gfZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="98"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="curLabel" destination="Bsf-58-1tU" id="XXH-ax-KYS"/>
                         <outlet property="nameTextField" destination="eZ8-VX-dHQ" id="YVy-3B-y2I"/>
-                        <outlet property="pickerAccessoryView" destination="tM3-xW-Svg" id="5xQ-lX-w1J"/>
-                        <outlet property="pickerView" destination="hUp-zo-iWi" id="b0L-Es-cQO"/>
+                        <outlet property="pickerAccessoryView" destination="Vxb-pX-gIS" id="zLg-i4-Zip"/>
+                        <outlet property="pickerView" destination="Mmd-3C-t4j" id="acC-z6-eqw"/>
+                        <outlet property="tarLabel" destination="0DD-UR-UIi" id="jfN-qt-lv1"/>
                     </connections>
                 </viewController>
             </objects>
@@ -542,7 +552,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="mRS-Qf-miI">
-                                                    <rect key="frame" x="0.0" y="71" width="320" height="6"/>
+                                                    <rect key="frame" x="18" y="71" width="285" height="6"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="level_body.png" id="zKH-gQ-wcJ">
+                                                    <rect key="frame" x="20" y="73" width="281" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_left.png" id="hVR-x5-zFM">
+                                                    <rect key="frame" x="19" y="73" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_right.png" id="2kr-eX-Qy3">
+                                                    <rect key="frame" x="301" y="73" width="2" height="3"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aSX-Nd-tvc">
@@ -572,6 +594,10 @@
                                             <outlet property="meaningLabel" destination="7H2-RJ-VpJ" id="e5h-OR-Zhj"/>
                                             <outlet property="memLabel" destination="Bui-zB-5Tc" id="9iH-lf-6iT"/>
                                             <outlet property="nameLabel" destination="mRB-FG-QTb" id="YG7-VM-OKD"/>
+                                            <outlet property="wordPosLevelBodyImageView" destination="zKH-gQ-wcJ" id="0oU-sY-U4j"/>
+                                            <outlet property="wordPosLevelImageView" destination="mRS-Qf-miI" id="wu4-oD-LJL"/>
+                                            <outlet property="wordPosLevelLeftImageView" destination="hVR-x5-zFM" id="AcJ-N2-ZLp"/>
+                                            <outlet property="wordPosLevelRightImageView" destination="2kr-eX-Qy3" id="gA4-T9-82l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -695,6 +721,22 @@
                                     <action selector="selectSectionButtonDown:" destination="131" eventType="touchUpInside" id="298"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="270">
+                                <rect key="frame" x="18" y="0.0" width="285" height="6"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="level_body.png" id="jIH-ny-aeV">
+                                <rect key="frame" x="20" y="1" width="281" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_right.png" id="E2Q-nH-rmY">
+                                <rect key="frame" x="301" y="1" width="2" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_left.png" id="m1p-NV-Sxc">
+                                <rect key="frame" x="19" y="1" width="2" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="200">
                                 <rect key="frame" x="185" y="12" width="29" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -727,10 +769,6 @@
                                     <action selector="selectSectionButtonDown:" destination="131" eventType="touchUpInside" id="300"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="270">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="6"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -740,6 +778,10 @@
                     <connections>
                         <outlet property="wordBooksSectionButton" destination="198" id="291"/>
                         <outlet property="wordMemsSectionButton" destination="200" id="295"/>
+                        <outlet property="wordPosLevelBodyImageView" destination="jIH-ny-aeV" id="yA2-Ej-yhW"/>
+                        <outlet property="wordPosLevelImageView" destination="270" id="bcg-f6-36y"/>
+                        <outlet property="wordPosLevelLeftImageView" destination="m1p-NV-Sxc" id="hsO-WA-iPP"/>
+                        <outlet property="wordPosLevelRightImageView" destination="E2Q-nH-rmY" id="skD-4D-KLG"/>
                         <outlet property="wordRelationsSectionButton" destination="199" id="294"/>
                         <outlet property="wordStatisticsSectionButton" destination="201" id="296"/>
                     </connections>
@@ -908,7 +950,7 @@
                                 </connections>
                             </pickerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="4as-SD-wpC">
-                                <rect key="frame" x="0.0" y="300" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
@@ -1054,7 +1096,7 @@
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" id="dnV-zs-gSX">
                                                     <rect key="frame" x="20" y="10" width="280" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1062,7 +1104,7 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" id="Bat-mk-AlS">
                                                     <rect key="frame" x="20" y="30" width="280" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1139,11 +1181,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="M1l-st-M6y">
-                                                    <rect key="frame" x="0.0" y="74" width="320" height="6"/>
+                                                    <rect key="frame" x="18" y="71" width="285" height="6"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="level_body.png" id="alJ-Jh-GiZ">
+                                                    <rect key="frame" x="20" y="72" width="281" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_left.png" id="YTQ-10-BwE">
+                                                    <rect key="frame" x="19" y="72" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_right.png" id="HGd-pI-ytN">
+                                                    <rect key="frame" x="301" y="72" width="2" height="3"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GCv-by-Kqs">
-                                                    <rect key="frame" x="146" y="62" width="28" height="29"/>
+                                                    <rect key="frame" x="146" y="59" width="28" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
@@ -1169,6 +1223,10 @@
                                             <outlet property="meaningLabel" destination="La8-Hc-Zj2" id="b3J-qW-4Xp"/>
                                             <outlet property="memLabel" destination="hRk-kC-HSv" id="jvK-16-6YV"/>
                                             <outlet property="nameLabel" destination="4fE-YF-idz" id="uF8-f8-uOt"/>
+                                            <outlet property="wordPosLevelBodyImageView" destination="alJ-Jh-GiZ" id="beA-KE-NXx"/>
+                                            <outlet property="wordPosLevelImageView" destination="M1l-st-M6y" id="vCM-AM-GMd"/>
+                                            <outlet property="wordPosLevelLeftImageView" destination="YTQ-10-BwE" id="01E-up-ivI"/>
+                                            <outlet property="wordPosLevelRightImageView" destination="HGd-pI-ytN" id="xDG-bD-Xsn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1225,11 +1283,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="dDI-fP-JPa">
-                                                    <rect key="frame" x="0.0" y="64" width="320" height="6"/>
+                                                    <rect key="frame" x="18" y="71" width="285" height="6"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_left.png" id="U9A-XM-tNr">
+                                                    <rect key="frame" x="19" y="72" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_right.png" id="q6K-zA-cGq">
+                                                    <rect key="frame" x="301" y="72" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="level_body.png" id="KgY-Zg-ZR9">
+                                                    <rect key="frame" x="20" y="72" width="281" height="3"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="btI-IR-tzW">
-                                                    <rect key="frame" x="146" y="52" width="28" height="29"/>
+                                                    <rect key="frame" x="146" y="59" width="28" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
@@ -1254,6 +1324,10 @@
                                         <connections>
                                             <outlet property="meaningLabel" destination="1D9-cg-CBy" id="iWC-yA-X7r"/>
                                             <outlet property="nameLabel" destination="L0A-R8-YGl" id="aiJ-f8-S1j"/>
+                                            <outlet property="wordPosLevelBodyImageView" destination="KgY-Zg-ZR9" id="EiZ-cn-pN1"/>
+                                            <outlet property="wordPosLevelImageView" destination="dDI-fP-JPa" id="lSe-5h-bkg"/>
+                                            <outlet property="wordPosLevelLeftImageView" destination="U9A-XM-tNr" id="5lT-kO-k5i"/>
+                                            <outlet property="wordPosLevelRightImageView" destination="q6K-zA-cGq" id="d5c-2G-XrT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1699,9 +1773,11 @@
         <class className="SettingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="curLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="pickerAccessoryView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="tarLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TodayViewController" superclassName="UIViewController">
@@ -1735,6 +1811,10 @@
                 <relationship kind="action" name="addButtonClicked:"/>
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="WordCellLabel" superclassName="UILabel">
@@ -1747,6 +1827,10 @@
                 <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="memLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="WordMemsViewController" superclassName="UIViewController">
@@ -1767,6 +1851,10 @@
                 <relationship kind="action" name="selectSectionButtonDown:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="wordBooksSectionButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="wordMemsSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="wordRelationsSectionButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="wordStatisticsSectionButton" candidateClass="UIButton"/>
             </relationships>

@@ -15,15 +15,21 @@
 
 #import "Defult.h"
 
-#define kPickerViewFrameHide CGRectMake(0, 367, 320, 216)
-#define kPickerViewFrameShow CGRectMake(0, 151, 320, 216)
-#define kPickerAccessoryViewFrameHide CGRectMake(0, 367, 320, 44)
-#define kPickerAccessoryViewFrameShow CGRectMake(0, 107, 320, 44)
+#define kInitPickerViewFrameHide CGRectMake(0, 460, 320, 216)
+#define kInitPickerViewFrameShow CGRectMake(0, 199, 320, 216)
+#define kInitPickerAccessoryViewFrameHide CGRectMake(0, 416, 320, 44)
+#define kInitPickerAccessoryViewFrameShow CGRectMake(0, 155, 320, 44)
 
 @interface SettingViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 {
     SettingVirtualActor* _settingVirtualActor;
+
+    //
+    int curORtar;   // 0 or 1
 }
+
+@property (nonatomic, retain) IBOutlet UILabel* curLabel;
+@property (nonatomic, retain) IBOutlet UILabel* tarLabel;
 
 @property (nonatomic, retain) IBOutlet UITextField* nameTextField;
 @property (nonatomic, retain) IBOutlet UIPickerView* pickerView;

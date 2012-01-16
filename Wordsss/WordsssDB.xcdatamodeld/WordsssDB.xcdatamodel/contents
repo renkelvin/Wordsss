@@ -42,6 +42,11 @@
         <attribute name="ra" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="frequency" inverseEntity="Word" syncable="YES"/>
     </entity>
+    <entity name="MAListWord" representedClassName="MAListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="maListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
     <entity name="McecDictMeaning" representedClassName="McecDictMeaning" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
@@ -61,6 +66,11 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MwcDictMeaning" inverseName="mwcDictWord" inverseEntity="MwcDictMeaning" syncable="YES"/>
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="mwcDictWord" inverseEntity="Word_Dict" syncable="YES"/>
+    </entity>
+    <entity name="PHListWord" representedClassName="PHListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="phListWord" inverseEntity="Word_List" syncable="YES"/>
     </entity>
     <entity name="Rootaffix" representedClassName="Rootaffix" syncable="YES">
         <attribute name="deformation" optional="YES" attributeType="String" syncable="YES"/>
@@ -110,6 +120,8 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="csListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CSListWord" inverseName="word_list" inverseEntity="CSListWord" syncable="YES"/>
         <relationship name="dotaListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DotaListWord" inverseName="word_list" inverseEntity="DotaListWord" syncable="YES"/>
+        <relationship name="maListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MAListWord" inverseName="word_list" inverseEntity="MAListWord" syncable="YES"/>
+        <relationship name="phListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PHListWord" inverseName="word_list" inverseEntity="PHListWord" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_list" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="Word_Relation" representedClassName="Word_Relation" syncable="YES">
@@ -141,6 +153,7 @@
         <element name="AhdDictSentence" positionX="-243" positionY="-882" width="128" height="105"/>
         <element name="AhdDictWord" positionX="-389" positionY="-783" width="128" height="105"/>
         <element name="Association" positionX="-1001" positionY="-684" width="128" height="105"/>
+        <element name="CSListWord" positionX="-308" positionY="-288" width="128" height="105"/>
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
         <element name="Frequency" positionX="-963" positionY="-165" width="128" height="120"/>
         <element name="McecDictMeaning" positionX="-776" positionY="-882" width="128" height="105"/>
@@ -156,6 +169,7 @@
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
-        <element name="CSListWord" positionX="-308" positionY="-288" width="128" height="105"/>
+        <element name="MAListWord" positionX="-414" positionY="-216" width="128" height="90"/>
+        <element name="PHListWord" positionX="-263" positionY="-216" width="128" height="90"/>
     </elements>
 </model>

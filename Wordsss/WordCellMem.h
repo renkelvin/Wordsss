@@ -35,6 +35,11 @@
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;
 @property (nonatomic, retain) IBOutlet UILabel* memLabel;
 
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
+
 - (IBAction)addButtonClicked:(id)sender;
 
 - (void)configCell;

@@ -28,6 +28,8 @@
 #import "AhdDictSentence.h"
 #import "Word_List.h"
 #import "CSListWord.h"
+#import "MAListWord.h"
+#import "PHListWord.h"
 #import "DotaListWord.h"
 
 @interface XMLParser : NSObject <NSXMLParserDelegate> {
@@ -61,7 +63,7 @@ enum IterStat_T { TNONE,    TTABLESTRUCTURE,
                             TTABLEDATA_AHDDICTWORD, TTABLEDATA_AHDDICTMEANING, TTABLEDATA_AHDDICTSENTENCE,
                             TTABLEDATA_MWCDICTWORD, TTABLEDATA_MWCDICTMEANING,
                             TTABLEDATA_WORDLIST,
-                            TTABLEDATA_DOTALISTWORD, TTABLEDATA_CSLISTWORD,
+                            TTABLEDATA_DOTALISTWORD, TTABLEDATA_CSLISTWORD, TTABLEDATA_MALISTWORD, TTABLEDATA_PHLISTWORD, 
                             TTABLEDATA_CONVERSION, TTABLEDATA_DERIVATION, TTABLEDATA_SYNONYM, TTABLEDATA_ANTONYM, 
                             };
 enum IterStat_R { RNONE, RROW };

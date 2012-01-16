@@ -45,6 +45,8 @@ NSMutableDictionary* mwcDictMeaningDICT = nil;      //TTABLEDATA_MWCDICTMEANING
 NSMutableDictionary* wordListDICT = nil;            //TTABLEDATA_WORDLIST
 
 NSMutableDictionary* csListWordDICT = nil;          //TTABLEDATA_CSLISTWORD
+NSMutableDictionary* maListWordDICT = nil;          //TTABLEDATA_MALISTWORD
+NSMutableDictionary* phListWordDICT = nil;          //TTABLEDATA_PHLISTWORD
 NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
 
 @implementation XMLParser
@@ -108,6 +110,8 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
     ahdDictSentenceDICT = [NSMutableDictionary dictionary];     //TTABLEDATA_AHDDICTSENTENCE
     wordListDICT = [NSMutableDictionary dictionary];            //TTABLEDATA_WORDLIST
     csListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_CSLISTWORD
+    maListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_MALISTWORD
+    phListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_PHLISTWORD
     dotaListWordDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_DOTALISTWORD
 }
 
@@ -293,6 +297,18 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                     case TTABLEDATA_CSLISTWORD:   // CSListWord
                                     {
                                         object = (CSListWord*)[NSEntityDescription insertNewObjectForEntityForName:@"CSListWord" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_MALISTWORD:   // MAListWord
+                                    {
+                                        object = (MAListWord*)[NSEntityDescription insertNewObjectForEntityForName:@"MAListWord" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_PHLISTWORD:   // PHListWord
+                                    {
+                                        object = (PHListWord*)[NSEntityDescription insertNewObjectForEntityForName:@"PHListWord" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
                                     }
@@ -561,6 +577,29 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_WORDDICT:   // Word_Dict
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_dict_id"] == NSOrderedSame) {
+                                            ((Word_Dict*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [wordDictDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"WordDict - id: %@", string);
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_MCECDICTWORD:   // MCECDictWord
                                     {
                                         if (!attrDict)
@@ -697,29 +736,6 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         
                                         break;
                                     }
-                                    case TTABLEDATA_WORDDICT:   // Word_Dict
-                                    {
-                                        if (!attrDict)
-                                            break;
-                                        
-                                        attrString = [attrDict objectForKey:@"name"];
-                                        
-                                        if (!attrString)
-                                            break;
-                                        
-                                        if ([attrString compare:@"word_dict_id"] == NSOrderedSame) {
-                                            ((Word_Dict*)object).id = [NSNumber numberWithInt:[string intValue]];
-                                            
-                                            [wordDictDICT setValue:object forKey:string];
-                                            
-                                            NSLog(@"WordDict - id: %@", string);
-                                        }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
-                                        break;
-                                    }
                                     case TTABLEDATA_WORDLIST:   // Word_List
                                     {
                                         if (!attrDict)
@@ -767,8 +783,6 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             else {
                                                 ((CSListWord*)object).meaning = [((CSListWord*)object).meaning stringByAppendingFormat:@"%@", string];
                                             }
-                                            
-                                            NSLog(@"%@", ((CSListWord*)object).meaning);
                                         }
                                         else if ([attrString compare:@"full_name"] == NSOrderedSame) {
                                             if (!((CSListWord*)object).fullname) {
@@ -777,12 +791,74 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             else {
                                                 ((CSListWord*)object).fullname = [((CSListWord*)object).fullname stringByAppendingFormat:@"%@", string];
                                             }
-                                            
-                                            NSLog(@"%@", ((CSListWord*)object).fullname);
                                         }
                                         
                                         //                                        attrString = nil;
                                         //                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_MALISTWORD:   // MAListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"ma_list_word_id"] == NSOrderedSame) {
+                                            ((MAListWord*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [maListWordDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"MAListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
+                                            if (!((MAListWord*)object).meaning) {
+                                                ((MAListWord*)object).meaning = string;
+                                            }
+                                            else {
+                                                ((MAListWord*)object).meaning = [((MAListWord*)object).meaning stringByAppendingFormat:@"%@", string];
+                                            }
+                                            
+                                        }
+                                        
+                                        // attrString = nil;
+                                        // attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_PHLISTWORD:   // PHListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"ph_list_word_id"] == NSOrderedSame) {
+                                            ((PHListWord*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [phListWordDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"PHListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
+                                            if (!((PHListWord*)object).meaning) {
+                                                ((PHListWord*)object).meaning = string;
+                                            }
+                                            else {
+                                                ((PHListWord*)object).meaning = [((PHListWord*)object).meaning stringByAppendingFormat:@"%@", string];
+                                            }
+                                            
+                                        }
+                                        
+                                        // attrString = nil;
+                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -1290,6 +1366,64 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_MALISTWORD:   // MAListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"ma_list_word_id"] == NSOrderedSame) {
+                                            object = (MAListWord *)[maListWordDICT objectForKey:string];
+                                            
+                                            NSLog(@"MAListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
+                                            Word_List* word_list = [wordListDICT objectForKey:string];
+                                            
+                                            if (word_list) {
+                                                ((MAListWord*)object).word_list = word_list;
+                                                word_list.maListWord = ((MAListWord*)object);
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_PHLISTWORD:   // PHListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"ph_list_word_id"] == NSOrderedSame) {
+                                            object = (PHListWord *)[phListWordDICT objectForKey:string];
+                                            
+                                            NSLog(@"PHListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
+                                            Word_List* word_list = [wordListDICT objectForKey:string];
+                                            
+                                            if (word_list) {
+                                                ((PHListWord*)object).word_list = word_list;
+                                                word_list.phListWord = ((PHListWord*)object);
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_DOTALISTWORD:   // DotaListWord
                                     {
                                         if (!attrDict)
@@ -1539,6 +1673,12 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
         }
         else if ([name compare:@"cs_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_CSLISTWORD;
+        }
+        else if ([name compare:@"ma_list_word"] == NSOrderedSame) {
+            ist = TTABLEDATA_MALISTWORD;
+        }
+        else if ([name compare:@"ph_list_word"] == NSOrderedSame) {
+            ist = TTABLEDATA_PHLISTWORD;
         }
         else if ([name compare:@"dota_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALISTWORD;

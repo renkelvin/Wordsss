@@ -144,7 +144,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // NOT Enough
     // Get new wordRecord
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 0", [_user.status.day intValue]]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"day == 0"]];
     NSArray* new_wordRecord_array = [udm.managedObjectContext executeFetchRequest:request error:nil]; 
     
     // Set new wordRecord
@@ -363,6 +363,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 {
     UserDataManager* udm = [UserDataManager userdataManager];
     
+    [wordRecord levelUpdate];
+
     //
     [udm createHisRecord:wordRecord forUser:_user];
     

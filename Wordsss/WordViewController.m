@@ -20,6 +20,8 @@
 @synthesize wordMemsSectionButton;
 @synthesize wordStatisticsSectionButton;
 
+@synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,12 +41,45 @@
 
 #pragma mark - View lifecycle
 
+// update
+- (void)update
+{    
+    // WordPos Level Bar
+    if ([_wordVirtualActor wordRecord]) {
+        [self.wordPosLevelLeftImageView setHidden:NO];
+        [self.wordPosLevelBodyImageView setHidden:NO];
+        [self.wordPosLevelRightImageView setHidden:NO];
+        
+        int bodyWidth = 0;
+        
+        if ([[_wordVirtualActor wordRecord].level intValue] == -1) {
+            bodyWidth = 281;
+        }
+        else {
+            bodyWidth = 281 / 11.0 * [[_wordVirtualActor wordRecord].level intValue];
+        }
+        
+        CGRect frame;
+        
+        frame = self.wordPosLevelBodyImageView.frame;
+        frame.size.width = bodyWidth;
+        self.wordPosLevelBodyImageView.frame = frame;
+        
+        frame = self.wordPosLevelRightImageView.frame;
+        frame.origin.x = 20 + bodyWidth;
+        self.wordPosLevelRightImageView.frame = frame;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     //
     [self selectSectionWithIndex:0];
+    
+    //
+    [self update];
 }
 
 - (void)viewDidUnload
@@ -152,7 +187,7 @@
     [self setSectionViewControllers:tempViewControllersArray];
 }
 
-#pragma - RKNavigationControllerDelegate
+#pragma mark - RKNavigationControllerDelegate
 
 - (void)initNavigationBar
 {
@@ -176,7 +211,7 @@
     
 }
 
-#pragma - UINavigationControllerDelegate
+#pragma mark - UINavigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {

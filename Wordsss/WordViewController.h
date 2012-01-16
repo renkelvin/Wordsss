@@ -36,6 +36,11 @@
 @property (nonatomic, retain) IBOutlet UIButton* wordMemsSectionButton;
 @property (nonatomic, retain) IBOutlet UIButton* wordStatisticsSectionButton;
 
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
+
 @property (nonatomic, retain) NSArray* sectionViewControllers;
 @property (nonatomic, retain) UIView* currentSectionView;
 

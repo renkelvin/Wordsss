@@ -64,7 +64,6 @@
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
 		FE5C958A14AF11AD00DE10F2 /* AhdDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */; };
-		FE616A3514C419A10007F3C6 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE616A3414C419A10007F3C6 /* WordsssDB.sqlite */; };
 		FE63326F14ADE515005CBECF /* ExploreVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */; };
 		FE6332A314ADEE5B005CBECF /* basicinfo_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FE63327114ADEE55005CBECF /* basicinfo_bg.png */; };
 		FE6332A414ADEE5B005CBECF /* basicinfo_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE63327214ADEE55005CBECF /* basicinfo_bg@2x.png */; };
@@ -186,7 +185,6 @@
 		FE94A09014A9B55500BDCE18 /* Init2ndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A08F14A9B55500BDCE18 /* Init2ndViewController.m */; };
 		FE94A09314A9B57300BDCE18 /* Init3rdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A09214A9B57300BDCE18 /* Init3rdViewController.m */; };
 		FE94A0A814A9E25400BDCE18 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94A0A714A9E25300BDCE18 /* ListCell.m */; };
-		FE96613C14C1B42E008E1C8C /* Word_List.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96613B14C1B42E008E1C8C /* Word_List.m */; };
 		FE96613F14C1BDC8008E1C8C /* DotaListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96613E14C1BDC8008E1C8C /* DotaListWord.m */; };
 		FE96614214C1BE80008E1C8C /* CSListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96614114C1BE80008E1C8C /* CSListWord.m */; };
 		FE96614814C1C22E008E1C8C /* WordsssDB.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE96614714C1C22E008E1C8C /* WordsssDB.xml */; };
@@ -260,6 +258,10 @@
 		FEE351CB14AE2F8700BF6645 /* RKTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE351CA14AE2F8700BF6645 /* RKTableHeader.m */; };
 		FEE37B7714370C0700A0E6AC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE37B7614370C0700A0E6AC /* ProfileViewController.m */; };
 		FEE37BB714370F7600A0E6AC /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE37BB614370F7600A0E6AC /* TestViewController.m */; };
+		FEE99F4714C47D61003F70F9 /* MAListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4614C47D61003F70F9 /* MAListWord.m */; };
+		FEE99F4A14C47D82003F70F9 /* Word_List.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4914C47D82003F70F9 /* Word_List.m */; };
+		FEE99F4D14C480F4003F70F9 /* PHListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4C14C480F3003F70F9 /* PHListWord.m */; };
+		FEE99F5014C483A1003F70F9 /* UserVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4F14C483A1003F70F9 /* UserVirtualActor.m */; };
 		FEEE311A1439CB1B001F7E90 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEE31181439CB1B001F7E90 /* SettingViewController.m */; };
 		FEEE311F1439CB85001F7E90 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEE311E1439CB85001F7E90 /* ExploreViewController.m */; };
 		FEEE31AA1439DFC2001F7E90 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE31A91439DFC2001F7E90 /* Default.png */; };
@@ -359,7 +361,6 @@
 		FE5C958814AF11AD00DE10F2 /* AhdDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictMeaning.h; sourceTree = "<group>"; };
 		FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AhdDictMeaning.m; sourceTree = "<group>"; };
 		FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationControllerDelegate.h; sourceTree = "<group>"; };
-		FE616A3414C419A10007F3C6 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/1698BF7A-D6CA-4879-BBA5-08EF10D69DEF/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE63326D14ADE515005CBECF /* ExploreVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreVirtualActor.h; sourceTree = "<group>"; };
 		FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreVirtualActor.m; sourceTree = "<group>"; };
 		FE63327114ADEE55005CBECF /* basicinfo_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basicinfo_bg.png; sourceTree = "<group>"; };
@@ -501,8 +502,6 @@
 		FE94A09214A9B57300BDCE18 /* Init3rdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Init3rdViewController.m; sourceTree = "<group>"; };
 		FE94A0A614A9E25300BDCE18 /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
 		FE94A0A714A9E25300BDCE18 /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
-		FE96613A14C1B42E008E1C8C /* Word_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word_List.h; sourceTree = "<group>"; };
-		FE96613B14C1B42E008E1C8C /* Word_List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_List.m; sourceTree = "<group>"; };
 		FE96613D14C1BDC8008E1C8C /* DotaListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotaListWord.h; sourceTree = "<group>"; };
 		FE96613E14C1BDC8008E1C8C /* DotaListWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaListWord.m; sourceTree = "<group>"; };
 		FE96614014C1BE80008E1C8C /* CSListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListWord.h; sourceTree = "<group>"; };
@@ -599,6 +598,14 @@
 		FEE37B7614370C0700A0E6AC /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		FEE37BB514370F7600A0E6AC /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		FEE37BB614370F7600A0E6AC /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		FEE99F4514C47D61003F70F9 /* MAListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAListWord.h; sourceTree = "<group>"; };
+		FEE99F4614C47D61003F70F9 /* MAListWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAListWord.m; sourceTree = "<group>"; };
+		FEE99F4814C47D82003F70F9 /* Word_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word_List.h; sourceTree = "<group>"; };
+		FEE99F4914C47D82003F70F9 /* Word_List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_List.m; sourceTree = "<group>"; };
+		FEE99F4B14C480F3003F70F9 /* PHListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHListWord.h; sourceTree = "<group>"; };
+		FEE99F4C14C480F3003F70F9 /* PHListWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHListWord.m; sourceTree = "<group>"; };
+		FEE99F4E14C483A1003F70F9 /* UserVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserVirtualActor.h; sourceTree = "<group>"; };
+		FEE99F4F14C483A1003F70F9 /* UserVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserVirtualActor.m; sourceTree = "<group>"; };
 		FEEE31171439CB1B001F7E90 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		FEEE31181439CB1B001F7E90 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		FEEE311D1439CB85001F7E90 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
@@ -792,7 +799,6 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FE616A3414C419A10007F3C6 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -813,16 +819,18 @@
 		FEA70AC214387D0E0025313C /* VirtualActor */ = {
 			isa = PBXGroup;
 			children = (
+				FEBF172214A5E4400045B8A5 /* ProfileVirtualActor.h */,
+				FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */,
 				FE63326D14ADE515005CBECF /* ExploreVirtualActor.h */,
 				FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */,
 				FEF732E61495955100919A7C /* TodayVirtualActor.h */,
 				FEF732E71495955100919A7C /* TodayVirtualActor.m */,
-				FEBF172214A5E4400045B8A5 /* ProfileVirtualActor.h */,
-				FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */,
 				FE96614914C1D68B008E1C8C /* ListsVirtualActor.h */,
 				FE96614A14C1D68B008E1C8C /* ListsVirtualActor.m */,
 				FEBF171E14A5E2F30045B8A5 /* SettingVirtualActor.h */,
 				FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */,
+				FEE99F4E14C483A1003F70F9 /* UserVirtualActor.h */,
+				FEE99F4F14C483A1003F70F9 /* UserVirtualActor.m */,
 				FEBB3B2E14A793DE0047D21C /* WordVirtualActor.h */,
 				FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */,
 				FE837ED614ABF32A00FEB867 /* InitVirtualActor.h */,
@@ -1181,6 +1189,10 @@
 		FEF732EC1495998000919A7C /* WordsssDB */ = {
 			isa = PBXGroup;
 			children = (
+				FEE99F4514C47D61003F70F9 /* MAListWord.h */,
+				FEE99F4614C47D61003F70F9 /* MAListWord.m */,
+				FEE99F4B14C480F3003F70F9 /* PHListWord.h */,
+				FEE99F4C14C480F3003F70F9 /* PHListWord.m */,
 				FE5C958514AF0C6600DE10F2 /* Word_Relation.h */,
 				FE5C958614AF0C6600DE10F2 /* Word_Relation.m */,
 				FED7747114ABA681007BB8D4 /* AhdDictSentence.h */,
@@ -1215,12 +1227,12 @@
 				FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */,
 				FE5C958814AF11AD00DE10F2 /* AhdDictMeaning.h */,
 				FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */,
-				FE96613A14C1B42E008E1C8C /* Word_List.h */,
-				FE96613B14C1B42E008E1C8C /* Word_List.m */,
 				FE96613D14C1BDC8008E1C8C /* DotaListWord.h */,
 				FE96613E14C1BDC8008E1C8C /* DotaListWord.m */,
 				FE96614014C1BE80008E1C8C /* CSListWord.h */,
 				FE96614114C1BE80008E1C8C /* CSListWord.m */,
+				FEE99F4814C47D82003F70F9 /* Word_List.h */,
+				FEE99F4914C47D82003F70F9 /* Word_List.m */,
 			);
 			name = WordsssDB;
 			sourceTree = "<group>";
@@ -1501,7 +1513,6 @@
 				2043608B14C2853900170BD1 /* thumb.png in Resources */,
 				2043608C14C2853900170BD1 /* thumb@2x.png in Resources */,
 				FE96614814C1C22E008E1C8C /* WordsssDB.xml in Resources */,
-				FE616A3514C419A10007F3C6 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1603,10 +1614,13 @@
 				FE86133C14B0B249002A7D5E /* Word_Rootaffix.m in Sources */,
 				FEE0174014B366F100DCC353 /* InfoCell.m in Sources */,
 				FEAEF47914C08E5D004B1365 /* ListWordCell.m in Sources */,
-				FE96613C14C1B42E008E1C8C /* Word_List.m in Sources */,
 				FE96613F14C1BDC8008E1C8C /* DotaListWord.m in Sources */,
 				FE96614214C1BE80008E1C8C /* CSListWord.m in Sources */,
 				FE96614B14C1D68B008E1C8C /* ListsVirtualActor.m in Sources */,
+				FEE99F4714C47D61003F70F9 /* MAListWord.m in Sources */,
+				FEE99F4A14C47D82003F70F9 /* Word_List.m in Sources */,
+				FEE99F4D14C480F4003F70F9 /* PHListWord.m in Sources */,
+				FEE99F5014C483A1003F70F9 /* UserVirtualActor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
