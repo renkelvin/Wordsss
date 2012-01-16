@@ -667,7 +667,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7" kind="relationship" relationship="rootViewController" id="aBO-tz-Hd9"/>
+                        <segue destination="3fU-Ou-sjv" kind="relationship" relationship="rootViewController" id="0fe-WU-ikJ"/>
                     </connections>
                 </navigationController>
             </objects>
