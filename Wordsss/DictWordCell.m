@@ -43,7 +43,7 @@
         //
         [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
         [self.meaningENLabel setText:@""];
- }
+    }
     
     // AhdDictSentence
     else if (self.ahdDictSentence) {
@@ -53,9 +53,22 @@
     }
     
     //
-    [self.meaningCNLabel sizeToFit];
-    [self.meaningENLabel sizeToFit];
+    //    [self.meaningCNLabel sizeToFit];
+    //    [self.meaningENLabel sizeToFit];
     
+    NSString* stringCN = self.meaningCNLabel.text;
+    UIFont *fontCN = self.meaningCNLabel.font;
+    CGSize sizeCN = CGSizeMake(280,2000);
+    CGSize labelsizeCN = [stringCN sizeWithFont:fontCN constrainedToSize:sizeCN lineBreakMode:UILineBreakModeWordWrap];
+    self.meaningCNLabel.frame = CGRectMake(20,10, labelsizeCN.width, labelsizeCN.height);
+    
+    NSString* stringEN = self.meaningENLabel.text;
+    UIFont *fontEN = self.meaningENLabel.font;
+    CGSize sizeEN = CGSizeMake(280,2000);
+    CGSize labelsizeEN = [stringEN sizeWithFont:fontEN constrainedToSize:sizeEN lineBreakMode:UILineBreakModeWordWrap];
+    self.meaningENLabel.frame = CGRectMake(20,10, labelsizeEN.width, labelsizeEN.height);
+    
+    //
     CGRect frame = self.meaningENLabel.frame;
     frame.origin.y = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height + 0;
     self.meaningENLabel.frame = frame;

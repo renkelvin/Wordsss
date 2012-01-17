@@ -446,7 +446,12 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             ((Association*)object).type = [NSNumber numberWithInt:[string intValue]];
                                         }
                                         else if ([attrString compare:@"association_description_cn"] == NSOrderedSame) {
-                                            ((Association*)object).description_cn = string;
+                                            if (!((Association*)object).description_cn) {
+                                                ((Association*)object).description_cn = string;
+                                            }
+                                            else {
+                                                ((Association*)object).description_cn = [((Association*)object).description_cn stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         attrString = nil;
@@ -936,7 +941,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                                 ((Word_Rootaffix*)object).meaning_cn = [((Word_Rootaffix*)object).meaning_cn stringByAppendingFormat:@" %@", string];
                                             }
                                         }
-                                        else if ([attrString compare:@"word_deformation"] == NSOrderedSame) {
+                                        else if ([attrString compare:@"word_equation"] == NSOrderedSame) {
                                             if (!((Word_Rootaffix*)object).equation) {
                                                 ((Word_Rootaffix*)object).equation = string;
                                             }
