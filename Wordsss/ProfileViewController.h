@@ -32,6 +32,7 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* progressImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* tagetImageView;
+@property (nonatomic, retain) IBOutlet UILabel* tagetLabel;
 
 @property (nonatomic, retain) IBOutlet RKChartView* chartView;
 

@@ -20,7 +20,7 @@
 #define kInitPickerAccessoryViewFrameHide CGRectMake(0, 416, 320, 44)
 #define kInitPickerAccessoryViewFrameShow CGRectMake(0, 155, 320, 44)
 
-@interface SettingViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface SettingViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 {
     SettingVirtualActor* _settingVirtualActor;
 

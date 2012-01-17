@@ -110,7 +110,21 @@
 // Cell number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
+    int num = 0;
+    
+    NSArray* array = [[_wordVirtualActor getWordMems] objectAtIndex:section];
+    // Association
+    if ([[array lastObject] class] == [Word_Association class]) {
+        num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count];
+    }
+    // Rootaffix
+    else if ([[array lastObject] class] == [Word_Rootaffix class]) {
+        num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
+    }
+    // Sense
+    else if ([[array lastObject] class] == [Word_Sense class]) {
+        num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
+    }
     
     return num;
 }

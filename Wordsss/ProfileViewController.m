@@ -8,10 +8,24 @@
 
 #import "ProfileViewController.h"
 
+static char* nameArray[11] = {
+    "NONE",             // 0  - 1     - Zero
+    "Basic",            // 1  - 800   - Basic
+    "Middle",           // 2  - 1500  - Middle
+    "High",             // 3  - 3000  - High
+    "CET4",             // 4  - 4000  - CET4
+    "CET6",             // 5  - 6000  - CET6
+    "IELTS",            // 6  - 8000  - IELTS
+    "TOFEL",            // 7  - 9000  - TOFEL
+    "SAT",              // 8  - 10000 - SAT
+    "GRE",              // 9  - 12448 - GRE
+    "GODLIKE"           // 10 - 42814 - HolyShit
+};
+
 @implementation ProfileViewController
 
 @synthesize infoLeftLabel, infoRightLabel;
-@synthesize progressImageView, tagetImageView;
+@synthesize progressImageView, tagetImageView, tagetLabel;
 @synthesize chartView = _chartView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -59,6 +73,15 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    //
+    [self initNavigationBar];
+    
+    //
+    [self update];
 }
 
 #pragma mark - 
@@ -120,47 +143,8 @@
     [self.progressImageView setImage:[UIImage imageNamed:imgString]];
     
     // Target Label
-    NSString* string = nil;
-    
-    switch ([_profileVirtualActor.user.defult.targetLevel intValue]) {
-        case 0:
-            ;
-            break;
-        case 1:
-            ;
-            break;
-        case 2:
-            ;
-            break;
-        case 3:
-            ;
-            break;
-        case 4:
-            ;
-            break;
-        case 5:
-            ;
-            break;
-        case 6:
-            ;
-            break;
-        case 7:
-            ;
-            break;
-        case 8:
-            ;
-            break;
-        case 9:
-            ;
-            break;
-        case 10:
-            ;
-            break;
-        default:
-            break;
-    }
-    
-    [self.tagetImageView setImage:[UIImage imageNamed:string]];
+    NSString* string = [NSString stringWithCString:nameArray[[_profileVirtualActor.user.defult.targetLevel intValue]] encoding:4];
+    [self.tagetLabel setText:string];
 }
 
 - (void)update
@@ -231,7 +215,7 @@
                         NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
                         NSDate* endDate = [NSDate date];
                         NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
-                                                
+                        
                         int month = (int)inter / (60*60*24*30);
                         inter = (int)inter % (60*60*24*30);
                         int day = (int)inter / (60*60*24);
@@ -268,7 +252,7 @@
                         
                         float percent = (float)nowVoca/(float)tarVoca;
                         inter /= percent;
-                                                
+                        
                         int month = (int)inter / (60*60*24*30);
                         inter = (int)inter % (60*60*24*30);
                         int day = (int)inter / (60*60*24);

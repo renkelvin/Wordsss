@@ -71,6 +71,10 @@ static UserDataManager* sharedUserDataManager;
 
 - (HisRecord*)createHisRecord:(WordRecord*)wordRecord forUser:(User*)user
 {
+    if ([wordRecord.dlc intValue] == 0) {
+        return nil;
+    }
+    
     HisRecord* hisRecord = nil;
     
     hisRecord = [HisRecord insertHisRecord:wordRecord user:user inManagedObjectContext:__managedObjectContext];

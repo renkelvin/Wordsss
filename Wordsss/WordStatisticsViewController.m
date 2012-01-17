@@ -135,6 +135,9 @@
                     if (lvl == -1) {
                         deg = 1000;
                     }
+                    else if (lvl == 0) {
+                        deg = 1000;
+                    }
                     else {
                         deg = (lvl - 1) * 100 + rnd;
                     }

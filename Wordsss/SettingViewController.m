@@ -65,6 +65,14 @@ static char* vocaArray[11] = {
     //
     NSString* nameString = _settingVirtualActor.user.profile.nickname;
     [self.nameTextField setText:nameString];
+    
+    //
+    int curLvl = [_settingVirtualActor.user.defult.currentLevel intValue];
+    int tarLvl = [_settingVirtualActor.user.defult.targetLevel intValue];
+    
+    // Update label
+    [self.curLabel setText:[NSString stringWithCString:nameArray[curLvl] encoding:4]];
+    [self.tarLabel setText:[NSString stringWithCString:nameArray[tarLvl] encoding:4]];
 }
 
 - (void)viewDidLoad
@@ -203,6 +211,22 @@ static char* vocaArray[11] = {
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return 10;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    //
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    //
+    [_settingVirtualActor.user.profile setNickname:textField.text];
 }
 
 @end

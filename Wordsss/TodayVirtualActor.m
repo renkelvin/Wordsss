@@ -180,10 +180,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         [word_id_set addObject:wr.word_id];
     }
     // Get frequency range
-//    int freqCur = [_user.defult freqCurrent];
-//    int freqTar = [_user.defult freqTarget];
-    int freqCur = 23;
-    int freqTar = 5;
+    int freqCur = [_user.defult freqCurrent];
+    int freqTar = [_user.defult freqTarget];
     
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     
@@ -349,7 +347,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 
 - (BOOL)checkWordRecord:(WordRecord*)wordRecord
 {
-    if ([wordRecord.dls intValue] >= 3) {
+    if ([wordRecord.dls intValue] >= 2) {
         return YES;
     }
     if ([wordRecord.dlc intValue] >= 7) {
@@ -364,7 +362,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     UserDataManager* udm = [UserDataManager userdataManager];
     
     [wordRecord levelUpdate];
-
+    
     //
     [udm createHisRecord:wordRecord forUser:_user];
     

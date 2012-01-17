@@ -123,7 +123,7 @@
 - (void)drawRect:(CGRect)rect
 {
     // TOO few points 0 or 1 or 2
-    if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
+    if ([points count] == 0 || [points count] == 1) {
         return;
     }
 
