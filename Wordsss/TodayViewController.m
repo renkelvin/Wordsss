@@ -132,6 +132,8 @@
 // 
 - (void)incOperation
 {
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
+    
     // Set wordRecord level
     [_todayVirtualActor setWordRecordCurLevelInc];
     
@@ -143,11 +145,15 @@
     
     // Update view
     [self update];
+    
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
 // 
 - (void)decOperation
 {
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
+    
     // Set wordRecord level
     [_todayVirtualActor setWordRecordCurLevelDec];
     
@@ -159,6 +165,8 @@
     
     // Update view
     [self update];
+    
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
 - (void)wordSliderPanning:(UIPanGestureRecognizer*)recognizer

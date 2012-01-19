@@ -75,7 +75,7 @@ static char* nameArray[11] = {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     //
     [self initNavigationBar];
@@ -86,6 +86,39 @@ static char* nameArray[11] = {
 
 #pragma mark - 
 
+- (NSString*)getEval
+{
+    NSArray* array = [_profileVirtualActor getStaRecords];
+    
+    NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
+    NSDate* endDate = [NSDate date];
+    NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
+    
+    int nowVoca = [_profileVirtualActor getVocaNow] - [_profileVirtualActor getVocaCurrent];
+    int tarVoca = [_profileVirtualActor getVocaTarget] - [_profileVirtualActor getVocaCurrent]; 
+    
+    // 背85%足已
+    tarVoca *= 0.85;
+    
+    float percent = (float)nowVoca/(float)tarVoca;
+    inter /= percent;
+    
+    int month = (int)inter / (60*60*24*30);
+    inter = (int)inter % (60*60*24*30);
+    int day = (int)inter / (60*60*24);
+    
+    //
+    NSString* string = [NSString string];
+    if (month >= 4) {
+        string = @"加快速度";
+    }
+    else {
+        string = @"又快又好";
+    }
+    
+    return string;
+}
+
 - (void)updateTitle
 {
     // Left label
@@ -93,8 +126,8 @@ static char* nameArray[11] = {
     int tarVoca = [_profileVirtualActor getVocaTarget]; 
     [self.infoLeftLabel setText:[NSString stringWithFormat:@"%d / %d", nowVoca, tarVoca]];
     
-    // Right label
-    [self.infoRightLabel setText:[NSString stringWithFormat:@"非常好"]];
+    // Right labelr
+    [self.infoRightLabel setText:[NSString stringWithFormat:[self getEval]]];
     
     // Progress circle
     int percent = (int)((float)nowVoca/(float)tarVoca * 100);

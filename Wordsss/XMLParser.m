@@ -414,7 +414,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [wordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"Word - id: %@", string);
+                                            // NSLog(@"Word - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_name"] == NSOrderedSame) {
                                             ((Word*)object).name = string;
@@ -440,7 +440,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [associationDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"Association - id: %@", string);
+                                            // NSLog(@"Association - id: %@", string);
                                         }
                                         else if ([attrString compare:@"association_type"] == NSOrderedSame) {
                                             ((Association*)object).type = [NSNumber numberWithInt:[string intValue]];
@@ -452,10 +452,12 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             else {
                                                 ((Association*)object).description_cn = [((Association*)object).description_cn stringByAppendingFormat:@"%@", string];
                                             }
+                                            
+                                            NSLog(@"%@", ((Association*)object).description_cn);
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
+                                        // attrString = nil;
+                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -474,7 +476,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [rootaffixDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"Rootaffix - id: %@", string);
+                                            // NSLog(@"Rootaffix - id: %@", string);
                                         }
                                         else if ([attrString compare:@"phrase"] == NSOrderedSame) {
                                             ((Rootaffix*)object).phrase = string;
@@ -536,7 +538,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [senseDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"Sense - id: %@", string);
+                                            // NSLog(@"Sense - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
                                             ((Sense*)object).meaning_en = string;
@@ -565,7 +567,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [frequencyDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"Frequency - id: %@", string);
+                                            // NSLog(@"Frequency - id: %@", string);
                                         }
                                         else if ([attrString compare:@"frequency"] == NSOrderedSame) {
                                             ((Frequency*)object).freq = [NSNumber numberWithInt:[string intValue]];
@@ -597,7 +599,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [wordDictDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"WordDict - id: %@", string);
+                                            // NSLog(@"WordDict - id: %@", string);
                                         }
                                         
                                         attrString = nil;
@@ -620,7 +622,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [mcecDictWordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"McecDictWord - id: %@", string);
+                                            // NSLog(@"McecDictWord - id: %@", string);
                                         }
                                         
                                         attrString = nil;
@@ -643,7 +645,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [mcecDictMeaningDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"McecDictMeaning - id: %@", string);
+                                            // NSLog(@"McecDictMeaning - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
                                             ((McecDictMeaning*)object).meaning_cn = string;
@@ -672,7 +674,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [ahdDictWordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"AhdDictWord - id: %@", string);
+                                            // NSLog(@"AhdDictWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"type"] == NSOrderedSame) {
                                             ((AhdDictWord*)object).type = [NSNumber numberWithInt:[string intValue]];
@@ -698,7 +700,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [ahdDictMeaningDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"AhdDictMeaning - id: %@", string);
+                                            // NSLog(@"AhdDictMeaning - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
                                             ((AhdDictMeaning*)object).meaning_cn = string;
@@ -727,7 +729,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [ahdDictSentenceDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"AhdDictSentence - id: %@", string);
+                                            // NSLog(@"AhdDictSentence - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
                                             ((AhdDictSentence*)object).meaning_cn = string;
@@ -756,7 +758,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [wordListDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"WordList - id: %@", string);
+                                            // NSLog(@"WordList - id: %@", string);
                                         }
                                         
                                         attrString = nil;
@@ -779,7 +781,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [csListWordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"CSListWord - id: %@", string);
+                                            // NSLog(@"CSListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             if (!((CSListWord*)object).meaning) {
@@ -818,7 +820,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [maListWordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"MAListWord - id: %@", string);
+                                            // NSLog(@"MAListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             if (!((MAListWord*)object).meaning) {
@@ -850,7 +852,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [phListWordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"PHListWord - id: %@", string);
+                                            // NSLog(@"PHListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             if (!((PHListWord*)object).meaning) {
@@ -882,7 +884,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [dotaListWordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"DOTAListWord - id: %@", string);
+                                            // NSLog(@"DOTAListWord - id: %@", string);
                                         }
                                         
                                         attrString = nil;
@@ -905,7 +907,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [wordAssociationDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"WordAssociation - id: %@", string);
+                                            // NSLog(@"WordAssociation - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             ((Word_Association*)object).meaning_cn = string;
@@ -931,7 +933,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [wordRootaffixDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"WordRootaffix - id: %@", string);
+                                            // NSLog(@"WordRootaffix - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             if (!((Word_Rootaffix*)object).meaning_cn) {
@@ -950,8 +952,8 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             }
                                         }
                                         
-                                        //                                        attrString = nil;
-                                        //                                        attrDict = nil;
+                                        // attrString = nil;
+                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -970,7 +972,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             
                                             [wordSenseDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"WordSense - id: %@", string);
+                                            // NSLog(@"WordSense - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             if (!((Word_Sense*)object).meaning_cn) {
@@ -1009,7 +1011,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"frequency_id"] == NSOrderedSame) {
                                             object = (Frequency *)[frequencyDICT objectForKey:string];
                                             
-                                            NSLog(@"Frequency - id: %@", string);
+                                            // NSLog(@"Frequency - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1038,7 +1040,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"word_association_id"] == NSOrderedSame) {
                                             object = [wordAssociationDICT objectForKey:string];
                                             
-                                            NSLog(@"WordAssociation - id: %@", string);
+                                            // NSLog(@"WordAssociation - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1075,7 +1077,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"word_rootaffix_id"] == NSOrderedSame) {
                                             object = [wordRootaffixDICT objectForKey:string];
                                             
-                                            NSLog(@"WordRootaffix - id: %@", string);
+                                            // NSLog(@"WordRootaffix - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1112,7 +1114,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"word_sense_id"] == NSOrderedSame) {
                                             object = (Word_Sense*)[wordSenseDICT objectForKey:string];
                                             
-                                            NSLog(@"WordSense - id: %@", string);
+                                            // NSLog(@"WordSense - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1147,7 +1149,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             break;
                                         
                                         if ([attrString compare:@"sense_family_id"] == NSOrderedSame) {
-                                            NSLog(@"SenseFamily - id: %@", string);
+                                            // NSLog(@"SenseFamily - id: %@", string);
                                         }
                                         else if ([attrString compare:@"parent_sense_id"] == NSOrderedSame) {
                                             object = (Sense*)[senseDICT objectForKey:string];                                            
@@ -1179,7 +1181,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"word_dict_id"] == NSOrderedSame) {
                                             object = (Word_Dict *)[wordDictDICT objectForKey:string];
                                             
-                                            NSLog(@"WordDict - id: %@", string);
+                                            // NSLog(@"WordDict - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1210,7 +1212,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"mcec_dict_meaning_id"] == NSOrderedSame) {
                                             object = (McecDictMeaning*)[mcecDictMeaningDICT objectForKey:string];
                                             
-                                            NSLog(@"McecDictMeaning - id: %@", string);
+                                            // NSLog(@"McecDictMeaning - id: %@", string);
                                         }
                                         else if ([attrString compare:@"mcec_dict_word_id"] == NSOrderedSame) {                                            
                                             McecDictWord* word = [McecDictWord wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
@@ -1239,7 +1241,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"ahd_dict_word_id"] == NSOrderedSame) {
                                             object = (AhdDictWord*)[ahdDictWordDICT objectForKey:string];
                                             
-                                            NSLog(@"AhdDictWord - id: %@", string);
+                                            // NSLog(@"AhdDictWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_dict_id"] == NSOrderedSame) {
                                             Word_Dict* word_dict = [wordDictDICT objectForKey:string];
@@ -1268,7 +1270,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"ahd_dict_meaning_id"] == NSOrderedSame) {
                                             object = (AhdDictMeaning*)[ahdDictMeaningDICT objectForKey:string];
                                             
-                                            NSLog(@"AhdDictMeaning - id: %@", string);
+                                            // NSLog(@"AhdDictMeaning - id: %@", string);
                                         }
                                         else if ([attrString compare:@"ahd_dict_word_id"] == NSOrderedSame) {
                                             AhdDictWord* ahdDictWord = [ahdDictWordDICT objectForKey:string];
@@ -1297,7 +1299,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"ahd_dict_sentence_id"] == NSOrderedSame) {
                                             object = (AhdDictSentence*)[ahdDictSentenceDICT objectForKey:string];
                                             
-                                            NSLog(@"AhdDictSentence - id: %@", string);
+                                            // NSLog(@"AhdDictSentence - id: %@", string);
                                         }
                                         else if ([attrString compare:@"ahd_dict_meaning_id"] == NSOrderedSame) {
                                             AhdDictMeaning* ahdDictMeaning = [ahdDictMeaningDICT objectForKey:string];
@@ -1326,7 +1328,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             object = (Word_List *)[wordListDICT objectForKey:string];
                                             
-                                            NSLog(@"WordList - id: %@", string);
+                                            // NSLog(@"WordList - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1355,7 +1357,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"cs_list_word_id"] == NSOrderedSame) {
                                             object = (CSListWord *)[csListWordDICT objectForKey:string];
                                             
-                                            NSLog(@"CSListWord - id: %@", string);
+                                            // NSLog(@"CSListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             Word_List* word_list = [wordListDICT objectForKey:string];
@@ -1384,7 +1386,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"ma_list_word_id"] == NSOrderedSame) {
                                             object = (MAListWord *)[maListWordDICT objectForKey:string];
                                             
-                                            NSLog(@"MAListWord - id: %@", string);
+                                            // NSLog(@"MAListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             Word_List* word_list = [wordListDICT objectForKey:string];
@@ -1413,7 +1415,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"ph_list_word_id"] == NSOrderedSame) {
                                             object = (PHListWord *)[phListWordDICT objectForKey:string];
                                             
-                                            NSLog(@"PHListWord - id: %@", string);
+                                            // NSLog(@"PHListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             Word_List* word_list = [wordListDICT objectForKey:string];
@@ -1442,7 +1444,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         if ([attrString compare:@"dota_list_word_id"] == NSOrderedSame) {
                                             object = (CSListWord *)[csListWordDICT objectForKey:string];
                                             
-                                            NSLog(@"DotaListWord - id: %@", string);
+                                            // NSLog(@"DotaListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             Word_List* word_list = [wordListDICT objectForKey:string];
@@ -1469,7 +1471,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             break;
                                         
                                         if ([attrString compare:@"word_conversion_id"] == NSOrderedSame) {
-                                            NSLog(@"Conversion - id: %@", string);
+                                            // NSLog(@"Conversion - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
                                             object = (Word*)[wordDICT objectForKey:string];                                            
@@ -1499,7 +1501,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             break;
                                         
                                         if ([attrString compare:@"word_derivation_id"] == NSOrderedSame) {
-                                            NSLog(@"Derivation - id: %@", string);
+                                            // NSLog(@"Derivation - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
                                             object = (Word*)[wordDICT objectForKey:string];                                            
@@ -1529,7 +1531,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             break;
                                         
                                         if ([attrString compare:@"synonym_id"] == NSOrderedSame) {
-                                            NSLog(@"Synonym - id: %@", string);
+                                            // NSLog(@"Synonym - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
                                             object = (Word*)[wordDICT objectForKey:string];                                            
@@ -1559,7 +1561,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             break;
                                         
                                         if ([attrString compare:@"antonym_id"] == NSOrderedSame) {
-                                            NSLog(@"Antonym - id: %@", string);
+                                            // NSLog(@"Antonym - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
                                             object = (Word*)[wordDICT objectForKey:string];                                            
@@ -1627,84 +1629,111 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
         NSString* name = [attributeDict objectForKey:@"name"];
         if ([name compare:@"association"] == NSOrderedSame) {
             ist = TTABLEDATA_ASSOCIATION;
+            NSLog(@"association");
         }
         else if ([name compare:@"frequency"] == NSOrderedSame) {
             ist = TTABLEDATA_FREQUENCY;
+            NSLog(@"frequency");
         }
         else if ([name compare:@"dota_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALISTWORD;
+            NSLog(@"dota_list_word");
         }
         else if ([name compare:@"mcec_dict_meaning"] == NSOrderedSame) {
             ist = TTABLEDATA_MCECDICTMEANING;
+            NSLog(@"mcec_dict_meaning");
         }
         else if ([name compare:@"mcec_dict_word"] == NSOrderedSame) {
             ist = TTABLEDATA_MCECDICTWORD;
+            NSLog(@"mcec_dict_word");
         }
         else if ([name compare:@"mwc_dict_meaning"] == NSOrderedSame) {
             ist = TTABLEDATA_MWCDICTMEANING;
+            NSLog(@"mwc_dict_meaning");
         }
         else if ([name compare:@"mwc_dict_word"] == NSOrderedSame) {
             ist = TTABLEDATA_MWCDICTWORD;
+            NSLog(@"mwc_dict_word");
         }
         else if ([name compare:@"ahd_dict_meaning"] == NSOrderedSame) {
             ist = TTABLEDATA_AHDDICTMEANING;
+            NSLog(@"ahd_dict_meaning");
         }
         else if ([name compare:@"ahd_dict_word"] == NSOrderedSame) {
             ist = TTABLEDATA_AHDDICTWORD;
+            NSLog(@"ahd_dict_word");
         }
         else if ([name compare:@"ahd_dict_sentence"] == NSOrderedSame) {
             ist = TTABLEDATA_AHDDICTSENTENCE;
+            NSLog(@"ahd_dict_sentence");
         }
         else if ([name compare:@"rootaffix"] == NSOrderedSame) {
             ist = TTABLEDATA_ROOTAFFIX;
+            NSLog(@"rootaffix");
         }
         else if ([name compare:@"sense"] == NSOrderedSame) {
             ist = TTABLEDATA_SENSE;
+            NSLog(@"sense");
         }
         else if ([name compare:@"sense_family"] == NSOrderedSame) {
             ist = TTABLEDATA_SENSEFAMILY;
+            NSLog(@"sense_family");
         }
         else if ([name compare:@"word"] == NSOrderedSame) {
             ist = TTABLEDATA_WORD;
+            NSLog(@"word");
         }
         else if ([name compare:@"word_association"] == NSOrderedSame) {
             ist = TTABLEDATA_WORDASSOCIATION;
+            NSLog(@"word_association");
         }
         else if ([name compare:@"word_dict"] == NSOrderedSame) {
             ist = TTABLEDATA_WORDDICT;
+            NSLog(@"word_dict");
         }
         else if ([name compare:@"word_list"] == NSOrderedSame) {
             ist = TTABLEDATA_WORDLIST;
+            NSLog(@"word_list");
         }
         else if ([name compare:@"cs_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_CSLISTWORD;
+            NSLog(@"cs_list_word");
         }
         else if ([name compare:@"ma_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_MALISTWORD;
+            NSLog(@"ma_list_word");
         }
         else if ([name compare:@"ph_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_PHLISTWORD;
+            NSLog(@"ph_list_word");
         }
         else if ([name compare:@"dota_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALISTWORD;
+            NSLog(@"dota_list_word");
         }
         else if ([name compare:@"word_rootaffix"] == NSOrderedSame) {
             ist = TTABLEDATA_WORDROOTAFFIX;
+            NSLog(@"word_rootaffix");
         }
         else if ([name compare:@"word_sense"] == NSOrderedSame) {
             ist = TTABLEDATA_WORDSENSE;
+            NSLog(@"word_sense");
         }
         else if ([name compare:@"word_conversion"] == NSOrderedSame) {
             ist = TTABLEDATA_CONVERSION;
+            NSLog(@"word_conversion");
         }
         else if ([name compare:@"word_derivation"] == NSOrderedSame) {
             ist = TTABLEDATA_DERIVATION;
+            NSLog(@"word_derivation");
         }
         else if ([name compare:@"synonym"] == NSOrderedSame) {
             ist = TTABLEDATA_SYNONYM;
+            NSLog(@"synonym");
         }
         else if ([name compare:@"antonym"] == NSOrderedSame) {
             ist = TTABLEDATA_ANTONYM;
+            NSLog(@"antonym");
         }
     }
     else if ([elementName compare:@"row"] == NSOrderedSame) {

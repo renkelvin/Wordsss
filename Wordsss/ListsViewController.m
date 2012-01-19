@@ -79,16 +79,16 @@
 }
 
 // Header
-// - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-// {
-//    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
-//    
-//    [headerView setBackgroundColor:[UIColor clearColor]];
-//
-//    headerView.titleLabel.text = @"-----";
-//    
-//    return headerView;
-// }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
+    
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    
+    headerView.titleLabel.text = @"其他词表";
+    
+    return headerView;
+}
 
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -103,6 +103,20 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:WordBooksTableViewCellIndentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
+    }
+    
+    switch (indexPath.row) {
+        case 0:
+            ;
+            break;
+        case 1:
+            ;
+            break;
+        case 2:
+            ;
+            break;
+        default:
+            break;
     }
     
     return cell;

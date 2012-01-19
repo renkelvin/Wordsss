@@ -10,4 +10,8 @@
 
 @interface ListCell : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet UIImageView* thumbImageView;
+@property (nonatomic, retain) IBOutlet UILabel* nameLabel;
+@property (nonatomic, retain) IBOutlet UILabel* countLabel;
+
 @end
