@@ -14,6 +14,6 @@
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * type;
-@property (nonatomic, retain) NSNumber * count;
+@property (nonatomic, retain) NSNumber * num;
 
 @end

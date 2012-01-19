@@ -49,6 +49,8 @@ NSMutableDictionary* maListWordDICT = nil;          //TTABLEDATA_MALISTWORD
 NSMutableDictionary* phListWordDICT = nil;          //TTABLEDATA_PHLISTWORD
 NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
 
+NSMutableDictionary* listDICT = nil;            //TTABLEDATA_LIST
+
 @implementation XMLParser
 
 #pragma mark -
@@ -113,6 +115,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
     maListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_MALISTWORD
     phListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_PHLISTWORD
     dotaListWordDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_DOTALISTWORD
+    listDICT = [NSMutableDictionary dictionary];                //TTABLEDATA_LIST
 }
 
 - (void)go
@@ -318,6 +321,12 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_LIST:   // List
+                                    {
+                                        object = (List*)[NSEntityDescription insertNewObjectForEntityForName:@"List" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
                                     default:
                                     {
                                         break;
@@ -453,7 +462,7 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                                 ((Association*)object).description_cn = [((Association*)object).description_cn stringByAppendingFormat:@"%@", string];
                                             }
                                             
-                                            NSLog(@"%@", ((Association*)object).description_cn);
+                                            // NSLog(@"%@", ((Association*)object).description_cn);
                                         }
                                         
                                         // attrString = nil;
@@ -981,6 +990,38 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
                                             else {
                                                 ((Word_Sense*)object).meaning_cn = [((Word_Sense*)object).meaning_cn stringByAppendingFormat:@" %@", string];
                                             }
+                                        }
+                                        
+                                        // attrString = nil;
+                                        // attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_LIST:   // List
+                                    {                                        
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"list_id"] == NSOrderedSame) {
+                                            ((List*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [listDICT setValue:object forKey:string];
+                                            
+                                            // NSLog(@"List - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"name"] == NSOrderedSame) {
+                                            ((List*)object).name = string;
+                                        }
+                                        else if ([attrString compare:@"count"] == NSOrderedSame) {
+                                            ((List*)object).num = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"type"] == NSOrderedSame) {
+                                            ((List*)object).type = [NSNumber numberWithInt:[string intValue]];
                                         }
                                         
                                         // attrString = nil;
@@ -1734,6 +1775,10 @@ NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
         else if ([name compare:@"antonym"] == NSOrderedSame) {
             ist = TTABLEDATA_ANTONYM;
             NSLog(@"antonym");
+        }
+        else if ([name compare:@"list"] == NSOrderedSame) {
+            ist = TTABLEDATA_LIST;
+            NSLog(@"list");
         }
     }
     else if ([elementName compare:@"row"] == NSOrderedSame) {

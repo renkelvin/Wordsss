@@ -95,8 +95,7 @@
 {
     NSArray* array = [_listsVirtualActor getListArray];
     
-    //    return [array count];
-    return 1;
+    return [array count];
 }
 
 // Cell
@@ -108,9 +107,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    //    NSArray* array = [_listsVirtualActor getListArray];
-    //    [(ListCell*)cell setList:[array objectAtIndex:indexPath.row]];
-    //    [(ListCell*)cell configCell];
+    NSArray* array = [_listsVirtualActor getListArray];
+    [(ListCell*)cell setList:[array objectAtIndex:indexPath.row]];
+    [(ListCell*)cell configCell];
     
     return cell;
 }

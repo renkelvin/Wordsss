@@ -90,6 +90,10 @@ static char* nameArray[11] = {
 {
     NSArray* array = [_profileVirtualActor getStaRecords];
     
+    if ([array count] == 0) {
+        return @"无法评价";
+    }
+    
     NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
     NSDate* endDate = [NSDate date];
     NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
@@ -105,7 +109,6 @@ static char* nameArray[11] = {
     
     int month = (int)inter / (60*60*24*30);
     inter = (int)inter % (60*60*24*30);
-    int day = (int)inter / (60*60*24);
     
     //
     NSString* string = [NSString string];

@@ -56,7 +56,7 @@
     [self.nameLabel setText:list.name];
     
     //
-    [self.countLabel setText:[list.count stringValue]];
+    [self.countLabel setText:[list.num stringValue]];
     
     //
     [self.thumbImageView setImage:[UIImage imageNamed:[self getImgString]]];

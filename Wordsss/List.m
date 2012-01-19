@@ -14,6 +14,6 @@
 @dynamic id;
 @dynamic name;
 @dynamic type;
-@dynamic count;
+@dynamic num;
 
 @end

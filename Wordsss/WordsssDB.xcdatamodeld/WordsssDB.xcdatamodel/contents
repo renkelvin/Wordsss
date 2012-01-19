@@ -43,9 +43,9 @@
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="frequency" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="List" representedClassName="List" syncable="YES">
-        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="num" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="MAListWord" representedClassName="MAListWord" syncable="YES">
@@ -162,6 +162,7 @@
         <element name="CSListWord" positionX="-308" positionY="-288" width="128" height="105"/>
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
         <element name="Frequency" positionX="-963" positionY="-165" width="128" height="120"/>
+        <element name="List" positionX="160" positionY="192" width="128" height="105"/>
         <element name="MAListWord" positionX="-414" positionY="-216" width="128" height="90"/>
         <element name="McecDictMeaning" positionX="-776" positionY="-882" width="128" height="105"/>
         <element name="McecDictWord" positionX="-774" positionY="-759" width="128" height="75"/>
@@ -177,6 +178,5 @@
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
-        <element name="List" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>
