@@ -93,7 +93,10 @@
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    NSArray* array = [_listsVirtualActor getListArray];
+    
+    //    return [array count];
+    return 1;
 }
 
 // Cell
@@ -105,19 +108,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    switch (indexPath.row) {
-        case 0:
-            ;
-            break;
-        case 1:
-            ;
-            break;
-        case 2:
-            ;
-            break;
-        default:
-            break;
-    }
+    //    NSArray* array = [_listsVirtualActor getListArray];
+    //    [(ListCell*)cell setList:[array objectAtIndex:indexPath.row]];
+    //    [(ListCell*)cell configCell];
     
     return cell;
 }

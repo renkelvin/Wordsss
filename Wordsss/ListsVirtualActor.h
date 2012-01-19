@@ -15,11 +15,13 @@
 
 @interface ListsVirtualActor : NSObject
 {
-    NSArray* _array;
+    NSArray* _listArray;
 }
 
 + (ListsVirtualActor*)listsVirtualActor;
 
 - (void)prepare;
+
+- (NSArray*)getListArray;
 
 @end

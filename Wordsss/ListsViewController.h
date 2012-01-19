@@ -13,6 +13,8 @@
 
 #import "RKTableHeader.h"
 
+#import "ListCell.h"
+
 #import "ListsVirtualActor.h"
 
 @interface ListsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RKNavigationControllerDelegate>

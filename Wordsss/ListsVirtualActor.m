@@ -29,17 +29,17 @@ static ListsVirtualActor* sharedListsVirtualActor = nil;
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     
     // Get
-    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"CSListWord"];
-    _array = [wdm.managedObjectContext executeFetchRequest:request error:nil];
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"List"];
+    _listArray = [wdm.managedObjectContext executeFetchRequest:request error:nil];
+}
+
+- (NSArray*)getListArray
+{
+    if (!_listArray) {
+        [self prepare];
+    }
     
-//    for (CSListWord* csListWord in _array) {
-//        Word_List* wl = csListWord.word_list;
-//        NSString* s = csListWord.fullname;
-//        NSString* t = csListWord.meaning;
-//        NSString* name = wl.word.name;
-//        
-//        NSLog(@"%@ - %@ - %@", name, t, s);
-//    }
+    return _listArray;
 }
 
 @end

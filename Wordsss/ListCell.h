@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "List.h"
+
 @interface ListCell : UITableViewCell
+
+@property (nonatomic, retain) List* list;
 
 @property (nonatomic, retain) IBOutlet UIImageView* thumbImageView;
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* countLabel;
+
+- (void)configCell;
 
 @end

@@ -10,6 +10,7 @@
 
 @implementation ListCell
 
+@synthesize list;
 @synthesize thumbImageView, nameLabel, countLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -26,6 +27,39 @@
     [super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
+}
+
+- (NSString*)getImgString
+{
+    NSString* imgString = [NSString string];
+    
+    if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
+        imgString = @"cs_list_thumb.png";
+    }
+    else if ([list.name compare:@"数学词表"] == NSOrderedSame) {
+        imgString = @"ma_list_thumb.png";
+    }
+    if ([list.name compare:@"物理词表"] == NSOrderedSame) {
+        imgString = @"ph_list_thumb.png";
+    }
+    
+    return imgString;
+}
+
+- (void)configCell
+{
+    if (!self.list) {
+        return ;
+    }
+    
+    //
+    [self.nameLabel setText:list.name];
+    
+    //
+    [self.countLabel setText:[list.count stringValue]];
+    
+    //
+    [self.thumbImageView setImage:[UIImage imageNamed:[self getImgString]]];
 }
 
 @end
