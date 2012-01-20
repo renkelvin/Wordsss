@@ -21,6 +21,7 @@
 #import "Word_Sense.h"
 
 #import "AhdDictWord.h"
+#import "AhdDictMeaning.h"
 
 @class Frequency, Word_Association, Word_Dict, Word_List, Word_Relation, Word_Rootaffix, Word_Sense;
 

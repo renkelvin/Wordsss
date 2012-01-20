@@ -62,6 +62,7 @@
 		FE3427F114A994AE009EF9C2 /* MwcDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3427F014A994AE009EF9C2 /* MwcDictMeaning.m */; };
 		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
+		FE563CE414C9B08700E9DB15 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE563CE314C9B08700E9DB15 /* WordsssDB.sqlite */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
 		FE5C958A14AF11AD00DE10F2 /* AhdDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */; };
 		FE63326F14ADE515005CBECF /* ExploreVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */; };
@@ -360,6 +361,7 @@
 		FE398C1014963A6C00D9408C /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		FE398C1214963A6C00D9408C /* MemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemData.h; sourceTree = "<group>"; };
 		FE398C1314963A6C00D9408C /* MemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemData.m; sourceTree = "<group>"; };
+		FE563CE314C9B08700E9DB15 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/1698BF7A-D6CA-4879-BBA5-08EF10D69DEF/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE5C958514AF0C6600DE10F2 /* Word_Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word_Relation.h; sourceTree = "<group>"; };
 		FE5C958614AF0C6600DE10F2 /* Word_Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_Relation.m; sourceTree = "<group>"; };
 		FE5C958814AF11AD00DE10F2 /* AhdDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictMeaning.h; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				FE563CE314C9B08700E9DB15 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1530,6 +1533,7 @@
 				FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */,
 				FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */,
 				FEF70C7C14C8633300E20343 /* WordsssDB.xml in Resources */,
+				FE563CE414C9B08700E9DB15 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

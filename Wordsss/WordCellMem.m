@@ -107,8 +107,6 @@
         [self.nameLabel setText:self.word_rootaffix.word.name];
         [self.meaningLabel setText:self.word_rootaffix.meaning_cn];
         [self.memLabel setText:self.word_rootaffix.equation];
-        
-        NSLog(@"%@", self.word_rootaffix.equation);
     }
     
     // Word_Sense

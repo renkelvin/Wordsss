@@ -517,7 +517,7 @@ NSMutableDictionary* listDICT = nil;            //TTABLEDATA_LIST
                                                 ((Rootaffix*)object).meaning_cn = string;
                                             }
                                             else {
-                                                ((Rootaffix*)object).meaning_cn = [((Rootaffix*)object).meaning_cn stringByAppendingFormat:@" %@", string];
+                                                ((Rootaffix*)object).meaning_cn = [((Rootaffix*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
                                         else if ([attrString compare:@"description_en"] == NSOrderedSame) {
@@ -919,7 +919,12 @@ NSMutableDictionary* listDICT = nil;            //TTABLEDATA_LIST
                                             // NSLog(@"WordAssociation - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
-                                            ((Word_Association*)object).meaning_cn = string;
+                                            if (!((Word_Association*)object).meaning_cn) {
+                                                ((Word_Association*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((Word_Association*)object).meaning_cn = [((Word_Association*)object).meaning_cn stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         attrString = nil;
@@ -949,7 +954,7 @@ NSMutableDictionary* listDICT = nil;            //TTABLEDATA_LIST
                                                 ((Word_Rootaffix*)object).meaning_cn = string;
                                             }
                                             else {
-                                                ((Word_Rootaffix*)object).meaning_cn = [((Word_Rootaffix*)object).meaning_cn stringByAppendingFormat:@" %@", string];
+                                                ((Word_Rootaffix*)object).meaning_cn = [((Word_Rootaffix*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
                                         else if ([attrString compare:@"word_equation"] == NSOrderedSame) {
@@ -957,7 +962,7 @@ NSMutableDictionary* listDICT = nil;            //TTABLEDATA_LIST
                                                 ((Word_Rootaffix*)object).equation = string;
                                             }
                                             else {
-                                                ((Word_Rootaffix*)object).equation = [((Word_Rootaffix*)object).equation stringByAppendingFormat:@" %@", string];
+                                                ((Word_Rootaffix*)object).equation = [((Word_Rootaffix*)object).equation stringByAppendingFormat:@"%@", string];
                                             }
                                         }
                                         
@@ -988,7 +993,7 @@ NSMutableDictionary* listDICT = nil;            //TTABLEDATA_LIST
                                                 ((Word_Sense*)object).meaning_cn = string;
                                             }
                                             else {
-                                                ((Word_Sense*)object).meaning_cn = [((Word_Sense*)object).meaning_cn stringByAppendingFormat:@" %@", string];
+                                                ((Word_Sense*)object).meaning_cn = [((Word_Sense*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
                                         

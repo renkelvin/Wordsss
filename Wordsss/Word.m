@@ -83,6 +83,23 @@
 {
     // ahdDictWord Existing
     if (self.word_dict.ahdDictWord) {
+        //        //
+        //        if ([self.word_dict.ahdDictWord count] == 1) {
+        //            AhdDictWord* word = [self.word_dict.ahdDictWord anyObject];
+        //            if ([word.meaning count] == 1) {
+        //                AhdDictMeaning* meaning = [[word.meaning allObjects] lastObject];
+        //                NSString* string = meaning.meaning_cn;
+        //                int l1 = [string length];
+        //                char* s;
+        //                stpcpy(s, [string cStringUsingEncoding:1]);
+        //                int l2 = strlen(s);
+        //                if (l1 == l2) {
+        //                    ;
+        //                }
+        //            }
+        //        }
+        
+        // 
         [label setText:[self getBriefMeaning]];
     }
     
