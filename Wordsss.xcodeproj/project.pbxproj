@@ -40,6 +40,7 @@
 		FE10A0A214A0F7D3005F1EC9 /* Word_Sense.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A0A114A0F7D3005F1EC9 /* Word_Sense.m */; };
 		FE17D58B143B02110067E780 /* tab_wordtoday.png in Resources */ = {isa = PBXBuildFile; fileRef = FE17D589143B02110067E780 /* tab_wordtoday.png */; };
 		FE17D58C143B02110067E780 /* tab_wordtoday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE17D58A143B02110067E780 /* tab_wordtoday@2x.png */; };
+		FE2040D014F26244002E9EDC /* TodayViewControllerV2.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */; };
 		FE2B069D14401C3900E1D159 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2B069C14401C3900E1D159 /* icon.png */; };
 		FE2E834F143B289A004A2C56 /* profile_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E833F143B2899004A2C56 /* profile_active.png */; };
 		FE2E8350143B289A004A2C56 /* profile_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E8340143B2899004A2C56 /* profile_active@2x.png */; };
@@ -334,6 +335,8 @@
 		FE10A0A114A0F7D3005F1EC9 /* Word_Sense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_Sense.m; sourceTree = "<group>"; };
 		FE17D589143B02110067E780 /* tab_wordtoday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_wordtoday.png; sourceTree = "<group>"; };
 		FE17D58A143B02110067E780 /* tab_wordtoday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_wordtoday@2x.png"; sourceTree = "<group>"; };
+		FE2040CE14F26244002E9EDC /* TodayViewControllerV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewControllerV2.h; sourceTree = "<group>"; };
+		FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewControllerV2.m; sourceTree = "<group>"; };
 		FE2B069C14401C3900E1D159 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		FE2E833F143B2899004A2C56 /* profile_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_active.png; sourceTree = "<group>"; };
 		FE2E8340143B2899004A2C56 /* profile_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_active@2x.png"; sourceTree = "<group>"; };
@@ -722,6 +725,8 @@
 				FEEE311E1439CB85001F7E90 /* ExploreViewController.m */,
 				FE6C8DB614385AAD00DC9784 /* TodayViewController.h */,
 				FE6C8DB714385AAD00DC9784 /* TodayViewController.m */,
+				FE2040CE14F26244002E9EDC /* TodayViewControllerV2.h */,
+				FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */,
 				FEF3307314AC816200E5E3B5 /* WordCellLabel.h */,
 				FEF3307414AC816200E5E3B5 /* WordCellLabel.m */,
 				FE6C8DBC14385ACE00DC9784 /* ListsViewController.h */,
@@ -1643,6 +1648,7 @@
 				FEE99F4D14C480F4003F70F9 /* PHListWord.m in Sources */,
 				FEE99F5014C483A1003F70F9 /* UserVirtualActor.m in Sources */,
 				FED1E21914C813A800013D07 /* List.m in Sources */,
+				FE2040D014F26244002E9EDC /* TodayViewControllerV2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

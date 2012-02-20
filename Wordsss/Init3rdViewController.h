@@ -24,6 +24,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView* loadingIndicatorImageView;
+@property (nonatomic, retain) IBOutlet UIButton* startButton;
 
 @property (nonatomic, retain) IBOutlet RKTabBarController* rootViewController;
 
@@ -31,6 +32,8 @@
 
 - (void)showLoadingIndicator;
 - (void)hideLoadingIndicator;
+- (void)showStartButton;
+
 - (void)initPlan;
 
 @end

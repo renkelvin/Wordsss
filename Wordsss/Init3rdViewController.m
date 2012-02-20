@@ -12,6 +12,7 @@
 
 @synthesize rootViewController = _rootViewController;
 @synthesize loadingIndicatorImageView;
+@synthesize startButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -104,6 +105,12 @@
      ];
 }
 
+- (void)showStartButton
+{
+    //
+    [self.startButton setHidden:NO];
+}
+
 - (void)initPlan
 {
     //
@@ -111,6 +118,9 @@
     
     //
     [self hideLoadingIndicator];
+    
+    //
+    [self showStartButton];
 }
 
 #pragma mark - IBAction
