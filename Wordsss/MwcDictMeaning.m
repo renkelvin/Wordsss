@@ -2,8 +2,8 @@
 //  MwcDictMeaning.m
 //  Wordsss
 //
-//  Created by Ren Chuan on 12/27/11.
-//  Copyright (c) 2011 Ren Inc. All rights reserved.
+//  Created by Ren Chuan on 2/20/12.
+//  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
 #import "MwcDictMeaning.h"
@@ -13,6 +13,7 @@
 @implementation MwcDictMeaning
 
 @dynamic id;
+@dynamic meaning_en;
 @dynamic mwcDictWord;
 
 @end

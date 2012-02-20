@@ -2,8 +2,8 @@
 //  MwcDictMeaning.h
 //  Wordsss
 //
-//  Created by Ren Chuan on 12/27/11.
-//  Copyright (c) 2011 Ren Inc. All rights reserved.
+//  Created by Ren Chuan on 2/20/12.
+//  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,6 +14,7 @@
 @interface MwcDictMeaning : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * meaning_en;
 @property (nonatomic, retain) MwcDictWord *mwcDictWord;
 
 @end
