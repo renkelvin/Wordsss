@@ -138,7 +138,7 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     else {
         self.day = [NSNumber numberWithInt:([self.day intValue] + [self delta])];
         
-        NSLog(@"dayUpdate yew %d", [self delta]);
+        NSLog(@"dayUpdate yes %d", [self delta]);
     }
 }
 

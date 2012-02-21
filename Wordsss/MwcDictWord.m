@@ -21,4 +21,18 @@
 @dynamic meaning;
 @dynamic word_dict;
 
+- (NSString*)getFullMeaningEN
+{
+    // NSString* string = [NSString stringWithFormat:@"%@\n", [self getTypeString]];
+    NSString* string = [NSString stringWithFormat:@"\n"];
+    
+    int i = 1;
+    for (MwcDictMeaning* mwcDictMeaning in self.meaning) {
+        string = [string stringByAppendingFormat:@"%d. %@\n", i, mwcDictMeaning.meaning_en];
+        i++;
+    }
+    
+    return string;
+}
+
 @end

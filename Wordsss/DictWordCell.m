@@ -11,7 +11,7 @@
 @implementation DictWordCell
 
 @synthesize meaningCNLabel, meaningENLabel;
-@synthesize ahdDictWord, ahdDictSentence;
+@synthesize ahdDictWord, mwcDictWord, ahdDictSentence;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -44,7 +44,14 @@
         [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
         [self.meaningENLabel setText:@""];
     }
-    
+
+    // MwcDictWord
+    else if (self.mwcDictWord) {
+        //
+        [self.meaningCNLabel setText:@""];
+        [self.meaningENLabel setText:[self.mwcDictWord getFullMeaningEN]];
+    }
+
     // AhdDictSentence
     else if (self.ahdDictSentence) {
         //
@@ -53,9 +60,6 @@
     }
     
     //
-    //    [self.meaningCNLabel sizeToFit];
-    //    [self.meaningENLabel sizeToFit];
-    
     NSString* stringCN = self.meaningCNLabel.text;
     UIFont *fontCN = self.meaningCNLabel.font;
     CGSize sizeCN = CGSizeMake(280,2000);

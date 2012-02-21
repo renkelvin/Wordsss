@@ -89,7 +89,6 @@
     }
     if ([_todayVirtualActor wordPos]) {
         self.wordPosLabel.text = [_todayVirtualActor wordPos].name;
-        //        self.wordPosLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordPos].name, [[_todayVirtualActor wordRecordPos].level stringValue], [[_todayVirtualActor wordRecordPos].day stringValue]];
     }
     
     // WordPos Level Bar

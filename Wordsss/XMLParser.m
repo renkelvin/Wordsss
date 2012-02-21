@@ -741,16 +741,36 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"MwcDictWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"function"] == NSOrderedSame) {
-                                            ((MwcDictWord*)object).function = string;
+                                            if (!((MwcDictWord*)object).function) {
+                                                ((MwcDictWord*)object).function = string;
+                                            }
+                                            else {
+                                                ((MwcDictWord*)object).function = [((MwcDictWord*)object).function stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"etymology"] == NSOrderedSame) {
-                                            ((MwcDictWord*)object).etymology = string;
+                                            if (!((MwcDictWord*)object).etymology) {
+                                                ((MwcDictWord*)object).etymology = string;
+                                            }
+                                            else {
+                                                ((MwcDictWord*)object).etymology = [((MwcDictWord*)object).etymology stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"inflectform"] == NSOrderedSame) {
-                                            ((MwcDictWord*)object).inflectform = string;
+                                            if (!((MwcDictWord*)object).inflectform) {
+                                                ((MwcDictWord*)object).inflectform = string;
+                                            }
+                                            else {
+                                                ((MwcDictWord*)object).inflectform = [((MwcDictWord*)object).inflectform stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"date"] == NSOrderedSame) {
-                                            ((MwcDictWord*)object).date = string;
+                                            if (!((MwcDictWord*)object).date) {
+                                                ((MwcDictWord*)object).date = string;
+                                            }
+                                            else {
+                                                ((MwcDictWord*)object).date = [((MwcDictWord*)object).date stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         // attrString = nil;
@@ -773,10 +793,15 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             [mwcDictMeaningDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"MwcDictMeaning - id: %@", string);
+                                            // NSLog(@"MwcDictMeaning - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
-                                            ((MwcDictMeaning*)object).meaning_en = string;
+                                            if (!((MwcDictMeaning*)object).meaning_en) {
+                                                ((MwcDictMeaning*)object).meaning_en = string;
+                                            }
+                                            else {
+                                                ((MwcDictMeaning*)object).meaning_en = [((MwcDictMeaning*)object).meaning_en stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         // attrString = nil;
@@ -931,7 +956,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             else {
                                                 ((PHListWord*)object).meaning = [((PHListWord*)object).meaning stringByAppendingFormat:@"%@", string];
                                             }
-                                            
                                         }
                                         
                                         // attrString = nil;
@@ -1404,7 +1428,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             break;
                                         
                                         if ([attrString compare:@"mwc_dict_word_id"] == NSOrderedSame) {
-                                            object = (MwcDictWord*)[ahdDictWordDICT objectForKey:string];
+                                            object = (MwcDictWord*)[mwcDictWordDICT objectForKey:string];
                                             
                                             // NSLog(@"MwcDictWord - id: %@", string);
                                         }

@@ -33,8 +33,6 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView* wordSliderImageView;
 @property (nonatomic, retain) IBOutlet UIView* wordSliderTouchArea;
-@property (nonatomic, retain) IBOutlet UIView* wordSliderLeftTapArea;
-@property (nonatomic, retain) IBOutlet UIView* wordSliderRightTapArea;
 
 @property (nonatomic, retain) IBOutlet UILabel* wordPreLabel;
 @property (nonatomic, retain) IBOutlet UILabel* wordCurLabel;
@@ -45,21 +43,22 @@
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
 
-@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabel;
+@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelT;
+@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelM;
 
 #pragma mark - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender;
 - (IBAction)wordSliderLeftTouchDown:(id)sender;
 - (IBAction)wordSliderLeftTouchUpInside:(id)sender;
+- (IBAction)wordSliderLeftTouchUpOutside:(id)sender;
 - (IBAction)wordSliderRightTouchDown:(id)sender;
 - (IBAction)wordSliderRightTouchUpInside:(id)sender;
+- (IBAction)wordSliderRightTouchUpOutside:(id)sender;
 
 #pragma mark - Instance method
 
-- (void)wordSliderPanning:(UIPanGestureRecognizer*)recognizer;
-- (void)wordSliderLeftTap:(UITapGestureRecognizer*)recognizer;
-- (void)wordSliderRightTap:(UITapGestureRecognizer*)recognizer;
+- (IBAction)wordSliderPanning:(UIPanGestureRecognizer*)recognizer;
 
 - (BOOL)checkHasInitUser;
 

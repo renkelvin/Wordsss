@@ -13,8 +13,6 @@
 
 @synthesize wordSliderImageView;
 @synthesize wordSliderTouchArea;
-@synthesize wordSliderLeftTapArea;
-@synthesize wordSliderRightTapArea;
 
 @synthesize wordPreLabel;
 @synthesize wordCurLabel;
@@ -22,15 +20,15 @@
 
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
 
-@synthesize briefMeaningLabel;
+@synthesize briefMeaningLabelT, briefMeaningLabelM;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // WordSlider gesture recognizer
-        UIPanGestureRecognizer* recognizerCenter = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderPanning:)];
-        [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
+        //        UIPanGestureRecognizer* recognizerCenter = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderPanning:)];
+        //        [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
     }
     return self;
 }
@@ -120,7 +118,7 @@
     
     // WordPos Brief Meaning
     if ([_todayVirtualActor wordPos]) {
-        [[_todayVirtualActor wordPos] configLabel:self.briefMeaningLabel];
+        [[_todayVirtualActor wordPos] configLabel:self.briefMeaningLabelT label:self.briefMeaningLabelM];
     }
 }
 
@@ -166,10 +164,10 @@
     // Update view
     [self update];
     
-    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
-- (void)wordSliderPanning:(UIPanGestureRecognizer*)recognizer
+- (IBAction)wordSliderPanning:(UIPanGestureRecognizer*)recognizer
 {
     CGPoint translation = [recognizer translationInView:self.view];
     CGRect rect = [self.wordSliderImageView frame];
@@ -177,85 +175,57 @@
     if (recognizer.state == UIGestureRecognizerStateChanged)
     {
         rect.origin.x += translation.x;
-        if(rect.origin.x > 0 && rect.origin.x < 84)
+        if(rect.origin.x > 102 && rect.origin.x < 166)
             [self.wordSliderImageView setFrame:rect];
         
         [recognizer setTranslation:CGPointZero inView:self.view];
     }
     else if(recognizer.state == UIGestureRecognizerStateEnded) 
     {
+        // - operation
+        if(rect.origin.x < 118)
+        {            
+            // - operation
+            [self decOperation];
+            
+            // Move Slider
+            rect.origin.x = 134;
+            [UIView animateWithDuration:0.1
+                             animations:^(void){
+                                 [self.wordSliderImageView setFrame:rect];
+                             }
+             ];
+        }
+        
         // + operation
-        if(rect.origin.x < 21)
+        else if(rect.origin.x > 150)
         {
-            // Move Slider
-            rect.origin.x = 0;
-            [self.wordSliderImageView setFrame:rect];
-            
             // + operation
+            [self incOperation];
             
             // Move Slider
-            rect.origin.x = 42;
-            [self.wordSliderImageView setFrame:rect];
+            rect.origin.x = 134;
+            [UIView animateWithDuration:0.1
+                             animations:^(void){
+                                 [self.wordSliderImageView setFrame:rect];
+                             }
+             ];
         }
         
-        // no operation
-        else if(rect.origin.x > 63)
-        {
-            // Move Slider
-            rect.origin.x = 84;
-            [self.wordSliderImageView setFrame:rect];
-            
-            // No operation
-            
-            // Move Slider
-            rect.origin.x = 42;
-            [self.wordSliderImageView setFrame:rect];
-        }
-        
-        // - opration
+        // no opration
         else 
         {
-            // Move Slider
-            rect.origin.x = 42;
-            [self.wordSliderImageView setFrame:rect];
-            
-            // - operation
+            // no operation
             
             // Move Slider
-            rect.origin.x = 42;
-            [self.wordSliderImageView setFrame:rect];
+            rect.origin.x = 134;
+            [UIView animateWithDuration:0.1
+                             animations:^(void){
+                                 [self.wordSliderImageView setFrame:rect];
+                             }
+             ];
         }
     }
-}
-
-- (void)wordSliderLeftTap:(UITapGestureRecognizer*)recognizer
-{
-    CGRect rect = [self.wordSliderImageView frame];
-    
-    // Move Slider
-    rect.origin.x = 0;
-    [self.wordSliderImageView setFrame:rect];
-    
-    // + operation
-    
-    // Move Slider
-    rect.origin.x = 42;
-    [self.wordSliderImageView setFrame:rect];
-}
-
-- (void)wordSliderRightTap:(UITapGestureRecognizer*)recognizer
-{
-    CGRect rect = [self.wordSliderImageView frame];
-    
-    // Move Slider
-    rect.origin.x = 84;
-    [self.wordSliderImageView setFrame:rect];
-    
-    // - operation
-    
-    // Move Slider
-    rect.origin.x = 42;
-    [self.wordSliderImageView setFrame:rect];
 }
 
 - (BOOL)checkHasInitUser
@@ -287,7 +257,7 @@
     CGRect rect = [self.wordSliderImageView frame];
     
     // Move Slider to Right
-    rect.origin.x = 166;
+    rect.origin.x = 102;
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
@@ -310,11 +280,26 @@
     [self decOperation];
 }
 
+- (IBAction)wordSliderLeftTouchUpOutside:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Center
+    rect.origin.x = 134;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+    
+    //
+    //    [self decOperation];
+}
+
 - (IBAction)wordSliderRightTouchDown:(id)sender {
     CGRect rect = [self.wordSliderImageView frame];
     
     // Move Slider to Left
-    rect.origin.x = 102;
+    rect.origin.x = 166;
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
@@ -335,6 +320,21 @@
     
     //
     [self incOperation];
+}
+
+- (IBAction)wordSliderRightTouchUpOutside:(id)sender {
+    CGRect rect = [self.wordSliderImageView frame];
+    
+    // Move Slider to Center
+    rect.origin.x = 134;
+    [UIView animateWithDuration:0.1
+                     animations:^(void){
+                         [self.wordSliderImageView setFrame:rect];
+                     }
+     ];
+    
+    //
+    //    [self incOperation];
 }
 
 #pragma mark - RKNavigationControllerDelegate

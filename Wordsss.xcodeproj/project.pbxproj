@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		200E67FF14F27A2900963B95 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 200E67FE14F27A2900963B95 /* WordsssDB.sqlite */; };
-		200E680214F28FDC00963B95 /* button_grey_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680014F28FDC00963B95 /* button_grey_done.png */; };
-		200E680314F28FDC00963B95 /* button_grey_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680114F28FDC00963B95 /* button_grey_done@2x.png */; };
 		2043607614C2853000170BD1 /* main_word_chn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2043606814C2853000170BD1 /* main_word_chn_bg.png */; };
 		2043607714C2853000170BD1 /* main_word_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2043606914C2853000170BD1 /* main_word_bg@2x.png */; };
 		2043607814C2853000170BD1 /* main_word_pre_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2043606A14C2853000170BD1 /* main_word_pre_bg.png */; };
@@ -66,6 +63,7 @@
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE3B9BC314F280CC00B4CE2C /* MwcDictWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */; };
 		FE3B9BC614F280CD00B4CE2C /* MwcDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */; };
+		FE3B9BD114F2A27200B4CE2C /* WordsssDB.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE3B9BD014F2A27200B4CE2C /* WordsssDB.xml */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
 		FE5C958A14AF11AD00DE10F2 /* AhdDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */; };
 		FE63326F14ADE515005CBECF /* ExploreVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */; };
@@ -207,6 +205,7 @@
 		FEB8ED2E143B47C30097E267 /* bg_deeper.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED2A143B47C30097E267 /* bg_deeper.png */; };
 		FEB8ED2F143B47C30097E267 /* bg_deeper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */; };
 		FEBB3B3014A793DE0047D21C /* WordVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */; };
+		FEBB8EC714F36E7400F08517 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEBB8EC614F36E7400F08517 /* WordsssDB.sqlite */; };
 		FEBF172014A5E2F30045B8A5 /* SettingVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */; };
 		FEBF172414A5E4400045B8A5 /* ProfileVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */; };
 		FEBF173814A648B10045B8A5 /* RKChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF173714A648B10045B8A5 /* RKChartView.m */; };
@@ -293,7 +292,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		200E67FE14F27A2900963B95 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = ../../../../Downloads/WordsssDB.sqlite; sourceTree = "<group>"; };
 		200E680014F28FDC00963B95 /* button_grey_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_grey_done.png; sourceTree = "<group>"; };
 		200E680114F28FDC00963B95 /* button_grey_done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_grey_done@2x.png"; sourceTree = "<group>"; };
 		2043606814C2853000170BD1 /* main_word_chn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_word_chn_bg.png; sourceTree = "<group>"; };
@@ -368,6 +366,7 @@
 		FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MwcDictWord.m; sourceTree = "<group>"; };
 		FE3B9BC414F280CD00B4CE2C /* MwcDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MwcDictMeaning.h; sourceTree = "<group>"; };
 		FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MwcDictMeaning.m; sourceTree = "<group>"; };
+		FE3B9BD014F2A27200B4CE2C /* WordsssDB.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WordsssDB.xml; path = ../../../../Downloads/WordsssDB.xml; sourceTree = "<group>"; };
 		FE5C958514AF0C6600DE10F2 /* Word_Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word_Relation.h; sourceTree = "<group>"; };
 		FE5C958614AF0C6600DE10F2 /* Word_Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_Relation.m; sourceTree = "<group>"; };
 		FE5C958814AF11AD00DE10F2 /* AhdDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictMeaning.h; sourceTree = "<group>"; };
@@ -543,6 +542,7 @@
 		FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_deeper@2x.png"; sourceTree = "<group>"; };
 		FEBB3B2E14A793DE0047D21C /* WordVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordVirtualActor.h; sourceTree = "<group>"; };
 		FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordVirtualActor.m; sourceTree = "<group>"; };
+		FEBB8EC614F36E7400F08517 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/1698BF7A-D6CA-4879-BBA5-08EF10D69DEF/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FEBF171E14A5E2F30045B8A5 /* SettingVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVirtualActor.h; sourceTree = "<group>"; };
 		FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVirtualActor.m; sourceTree = "<group>"; };
 		FEBF172214A5E4400045B8A5 /* ProfileVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVirtualActor.h; sourceTree = "<group>"; };
@@ -809,6 +809,7 @@
 		FE8818FB14A2027900B5FE98 /* XML */ = {
 			isa = PBXGroup;
 			children = (
+				FE3B9BD014F2A27200B4CE2C /* WordsssDB.xml */,
 			);
 			name = XML;
 			sourceTree = "<group>";
@@ -816,6 +817,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				FEBB8EC614F36E7400F08517 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1539,7 +1541,8 @@
 				FEFA360D14C8496500A2FFBA /* cs_list_thumb.png in Resources */,
 				FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */,
 				FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */,
-				FEF70C7C14C8633300E20343 /* WordsssDB.xml in Resources */,
+				FE3B9BD114F2A27200B4CE2C /* WordsssDB.xml in Resources */,
+				FEBB8EC714F36E7400F08517 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1713,8 +1716,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "3CDE40A7-673A-4DD5-90AB-9304CC74E164";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3CDE40A7-673A-4DD5-90AB-9304CC74E164";
+				PROVISIONING_PROFILE = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1735,8 +1738,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "3CDE40A7-673A-4DD5-90AB-9304CC74E164";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3CDE40A7-673A-4DD5-90AB-9304CC74E164";
+				PROVISIONING_PROFILE = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

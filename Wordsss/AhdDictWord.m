@@ -131,7 +131,25 @@
             string = [string stringByAppendingFormat:@"%@", [ahdDictMeaning getShortMeaning]];
         } 
         else {
-            string = [string stringByAppendingFormat:@"; %@", [ahdDictMeaning getShortMeaning]];
+            string = [string stringByAppendingFormat:@"；%@", [ahdDictMeaning getShortMeaning]];
+        }
+        i++;
+    }
+    
+    return string;
+}
+
+- (NSString*)getMeaningCN
+{
+    NSString* string = [NSString stringWithFormat:@""];
+    
+    int i = 0;
+    for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
+        if (i == 0) {
+            string = [string stringByAppendingFormat:@"%@", [ahdDictMeaning getShortMeaning]];
+        } 
+        else {
+            string = [string stringByAppendingFormat:@"；%@", [ahdDictMeaning getShortMeaning]];
         }
         i++;
     }

@@ -154,6 +154,11 @@
         }   
         case 1:
         {
+            MwcDictWord* word = [[_wordVirtualActor getMwcDictWord] objectAtIndex:indexPath.row];
+            [(DictWordCell*)cell clear];
+            [(DictWordCell*)cell setMwcDictWord:word];
+            [(DictWordCell*)cell configCell];
+            
             break;
         }
         case 2:
@@ -178,7 +183,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DictWordCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:1];
-
+    
     switch (indexPath.section) {
         case 0:
         {
@@ -193,6 +198,13 @@
         }   
         case 1:
         {
+            MwcDictWord* word = [[_wordVirtualActor getMwcDictWord] objectAtIndex:indexPath.row];
+            [(DictWordCell*)cell clear];
+            [(DictWordCell*)cell setMwcDictWord:word];
+            [(DictWordCell*)cell configCell];
+            
+            return [cell getHeight];
+            
             break;
         }
         case 2:

@@ -14,7 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {   
-    if (YES) {
+    if (NO) {
         // Create xmlParser
         XMLParser* xmlParser = [XMLParser xmlParser];
         

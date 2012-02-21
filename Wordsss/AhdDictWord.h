@@ -34,6 +34,7 @@
 - (NSString*)getTypeStringWithBlank;
 - (NSString*)getBriefMeaning;
 - (NSString*)getSummaryMeaning;
+- (NSString*)getMeaningCN;
 - (NSString*)getFullMeaningCN;
 
 - (NSArray*)getSentence;

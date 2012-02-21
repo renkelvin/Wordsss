@@ -60,6 +60,7 @@
 - (Word*)getTargetWord;
 
 - (void)configLabel:(WordCellLabel*)label;
+- (void)configLabel:(WordCellLabel*)labelT label:(WordCellLabel*)labelM;
 
 - (NSString*)getBriefMeaning;
 - (NSString*)getSummaryMeaning;
