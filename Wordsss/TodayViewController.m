@@ -342,6 +342,8 @@
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
+    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+   
     [[navigationController titleLabel] setText:@""];
     [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];

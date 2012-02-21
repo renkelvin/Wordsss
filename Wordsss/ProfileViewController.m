@@ -326,6 +326,8 @@ static char* nameArray[11] = {
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
+    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+    
     [[navigationController titleLabel] setText:_profileVirtualActor.user.profile.nickname];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];

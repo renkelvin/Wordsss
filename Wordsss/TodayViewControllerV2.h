@@ -27,6 +27,9 @@
 {
     //
     TodayVirtualActor* _todayVirtualActor;
+    
+    //
+    BOOL ifDec;
 }
 
 #pragma mark - property
@@ -43,6 +46,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
 
+@property (nonatomic, retain) IBOutlet UIButton* briefMeaningButton;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelT;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelM;
 

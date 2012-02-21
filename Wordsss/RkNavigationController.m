@@ -10,6 +10,8 @@
 
 @implementation RKNavigationController
 
+@synthesize backgroundImageView;
+@synthesize todayBackgroundImageView;
 @synthesize leftButton;
 @synthesize titleLabel;
 @synthesize titleImageView;

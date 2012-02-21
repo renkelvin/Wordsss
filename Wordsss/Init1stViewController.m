@@ -45,7 +45,7 @@
     
     // Init rknc delegate
     [[self navigationController] setDelegate:self];
-
+    
     //
     [self initNavigationBar];
     
@@ -93,6 +93,8 @@
 - (void)initNavigationBar
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+    
+    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
     
     [[navigationController titleLabel] setText:@""];
     [[navigationController titleImageView] setImage:nil];

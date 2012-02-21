@@ -38,17 +38,20 @@
         self.meaningENLabel = [[UILabel alloc] init];
     }
     
+    [self.meaningCNLabel setText:@"E"];
+    [self.meaningENLabel setText:@"E"];
+
     // AhdDictWord
     if (self.ahdDictWord) {
         //
         [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
-        [self.meaningENLabel setText:@""];
+        [self.meaningENLabel setText:@"O"];
     }
 
     // MwcDictWord
     else if (self.mwcDictWord) {
         //
-        [self.meaningCNLabel setText:@""];
+        [self.meaningCNLabel setText:@"O"];
         [self.meaningENLabel setText:[self.mwcDictWord getFullMeaningEN]];
     }
 
@@ -81,6 +84,7 @@
 - (void)clear
 {
     self.ahdDictWord = nil;
+    self.mwcDictWord = nil;
     self.ahdDictSentence = nil;
 }
 

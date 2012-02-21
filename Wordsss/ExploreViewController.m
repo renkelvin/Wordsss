@@ -231,6 +231,8 @@
 {        
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
+    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+
     [[navigationController titleLabel] setText:@"Explore"];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];

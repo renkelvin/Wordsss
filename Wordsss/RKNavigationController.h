@@ -13,6 +13,8 @@
     UIView *customNavigationbBarView;
 }
 
+@property (nonatomic, retain) IBOutlet UIImageView* backgroundImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* todayBackgroundImageView;
 @property (nonatomic, retain) IBOutlet UIButton* leftButton;
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 @property (nonatomic, retain) IBOutlet UIImageView* titleImageView;

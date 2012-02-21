@@ -109,17 +109,6 @@
     return CGPointMake(x4, y4);
 }
 
-//- (void)drawRect:(CGRect)rect
-//{
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetRGBStrokeColor (context, 142.0/ 255.0, 161.0/ 255.0, 189.0/ 255.0, 1.0);
-//    CGContextSetLineWidth(context, 30.0 );
-//    CGContextMoveToPoint(context, 1.0 , 24.0 );
-//    CGContextAddLineToPoint(context, 83.0 , 24.0 );
-//    CGContextClosePath(context);
-//    CGContextStrokePath(context);
-//}
-
 - (void)drawRect:(CGRect)rect
 {
     // TOO few points 0 or 1 or 2
@@ -135,19 +124,19 @@
     CGContextScaleCTM(context, 1.0, -1.0);
     
     // Line width
-    CGContextSetLineWidth(context, 3.0);
+    CGContextSetLineWidth(context, 4.0);
     CGContextSetLineJoin(context, kCGLineJoinRound);
     
     // Line Color
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
-    CGFloat components[] = {0.2, 0.2, 0.7, 1.0};
+    CGFloat components[] = {47 / 255.0, 93 / 255.0, 128 / 255.0, 1.0};
     CGColorRef color = CGColorCreate(colorspace, components);
     CGContextSetStrokeColorWithColor(context, color);
 
     // Shadow Color
     CGFloat componentsShadow[] = {0.0, 0.0, 0.0, 1.0};
     CGColorRef colorShadow = CGColorCreate(colorspace, componentsShadow);
-    CGContextSetShadowWithColor(context, CGSizeMake(2, 2), 0.1, colorShadow);
+    CGContextSetShadowWithColor(context, CGSizeMake(0, 2), 2.0, colorShadow);
     
     //
     switch (self.type) {
@@ -183,7 +172,7 @@
             
             //
             UIBezierPath* aPath = [UIBezierPath bezierPath];
-            [aPath setLineWidth:3.0];
+            [aPath setLineWidth:4.0];
             
             [points enumerateObjectsUsingBlock:^(id obj, NSUInteger inx, BOOL *stop)
              {
@@ -227,12 +216,8 @@
             //
             [aPath stroke];
             
-            ProfileVirtualActor* pva = [ProfileVirtualActor profileVirtualActor];
-            
             // Info label
-            // float progress = (float)[pva getVocaNow] / (float)[pva getVocaTarget];
-            int nowVoca = [pva getVocaNow];
-            [self.infoLabel setText:[NSString stringWithFormat:@"迅辞记忆曲线 %d", nowVoca]];
+            [self.infoLabel setText:[NSString stringWithFormat:@"迅辞记忆曲线"]];
             
             // Date label
             NSDate* date = ((StaRecord*)[self.points lastObject]).date;
@@ -258,7 +243,8 @@
             
             //
             UIBezierPath* aPath = [UIBezierPath bezierPath];
-            
+            [aPath setLineWidth:4.0];
+
             [points enumerateObjectsUsingBlock:^(id obj, NSUInteger inx, BOOL *stop)
              {
                  // Move to first point

@@ -20,7 +20,7 @@
 
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
 
-@synthesize briefMeaningLabelT, briefMeaningLabelM;
+@synthesize briefMeaningButton, briefMeaningLabelT, briefMeaningLabelM;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -87,7 +87,6 @@
     }
     if ([_todayVirtualActor wordPos]) {
         self.wordPosLabel.text = [_todayVirtualActor wordPos].name;
-        //        self.wordPosLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", [_todayVirtualActor wordPos].name, [[_todayVirtualActor wordRecordPos].level stringValue], [[_todayVirtualActor wordRecordPos].day stringValue]];
     }
     
     // WordPos Level Bar
@@ -120,6 +119,14 @@
     if ([_todayVirtualActor wordPos]) {
         [[_todayVirtualActor wordPos] configLabel:self.briefMeaningLabelT label:self.briefMeaningLabelM];
     }
+    
+    //
+    if (ifDec) {
+        [self.briefMeaningButton setSelected:YES];
+    }
+    else {
+        [self.briefMeaningButton setSelected:NO];
+    }
 }
 
 - (void)nextDay
@@ -131,6 +138,8 @@
 - (void)incOperation
 {
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
+    
+    ifDec = NO;
     
     // Set wordRecord level
     [_todayVirtualActor setWordRecordCurLevelInc];
@@ -151,6 +160,8 @@
 - (void)decOperation
 {
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
+    
+    ifDec = YES;
     
     // Set wordRecord level
     [_todayVirtualActor setWordRecordCurLevelDec];
@@ -236,7 +247,7 @@
         Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
         
         RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
-        
+       
         [self presentModalViewController:nc animated:YES];
         
         return NO;
@@ -251,6 +262,18 @@
     WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[_todayVirtualActor.wordPos getTargetWord] and:_todayVirtualActor.wordRecordPos];
     
     [[self navigationController] pushViewController:wordViewController animated:YES];
+    
+    //
+    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+    
+    [UIView animateWithDuration:0.3 animations:^(void){
+        [[navigationController todayBackgroundImageView] setAlpha:0.0];
+        
+        [[navigationController titleLabel] setAlpha:0.0];
+        [[navigationController titleImageView] setAlpha:0.0];
+        [[navigationController leftButton] setAlpha:0.0];
+        [[navigationController rightButton] setAlpha:0.0];
+    }];
 }
 
 - (IBAction)wordSliderLeftTouchDown:(id)sender {
@@ -343,10 +366,21 @@
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
+    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+    
     [[navigationController titleLabel] setText:@""];
     [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
     [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
+    
+    [UIView animateWithDuration:0.3 animations:^(void){
+        [[navigationController todayBackgroundImageView] setAlpha:1.0];
+        
+        [[navigationController titleLabel] setAlpha:1.0];
+        [[navigationController titleImageView] setAlpha:1.0];
+        [[navigationController leftButton] setAlpha:1.0];
+        [[navigationController rightButton] setAlpha:1.0];
+    }];
 }
 
 - (void)navigationBarLeftButtonDown

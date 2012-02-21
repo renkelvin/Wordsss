@@ -120,6 +120,8 @@
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
+    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+    
     [[navigationController titleLabel] setText:@"精选词表"];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];

@@ -175,6 +175,8 @@ static char* vocaArray[11] = {
 {    
     RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
     
+    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+    
     [[navigationController titleLabel] setText:@"设置"];
     [[navigationController titleImageView] setImage:nil];
     [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
