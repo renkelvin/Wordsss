@@ -4,17 +4,17 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "Wordsss/TodayViewControllerV2.m"
-         timestampString = "351589248.685344"
+         filePath = "Wordsss/XMLParser.m"
+         timestampString = "351600678.687609"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "188"
-         endingLineNumber = "188"
-         landmarkName = "-wordSliderPanning:"
+         startingLineNumber = "1975"
+         endingLineNumber = "1975"
+         landmarkName = "-parser:parseErrorOccurred:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

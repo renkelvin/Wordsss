@@ -41,6 +41,9 @@
 @property (nonatomic, retain) IBOutlet UILabel* wordCurLabel;
 @property (nonatomic, retain) IBOutlet UILabel* wordPosLabel;
 
+@property (nonatomic, retain) IBOutlet UIImageView* forgetImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* confirmImageView;
+
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;

@@ -14,9 +14,9 @@
 @synthesize wordSliderImageView;
 @synthesize wordSliderTouchArea;
 
-@synthesize wordPreLabel;
-@synthesize wordCurLabel;
-@synthesize wordPosLabel;
+@synthesize forgetImageView, confirmImageView;
+
+@synthesize wordPreLabel, wordCurLabel, wordPosLabel;
 
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
 
@@ -191,8 +191,16 @@
     if (recognizer.state == UIGestureRecognizerStateChanged)
     {
         rect.origin.x += translation.x;
-        if(rect.origin.x > 102 && rect.origin.x < 166)
+        if (rect.origin.x > 102 && rect.origin.x < 166) {
             [self.wordSliderImageView setFrame:rect];
+            
+            if (rect.origin.x < 134) {
+                [self.forgetImageView setAlpha:(134-rect.origin.x)/32.0];
+            }
+            else if (rect.origin.x > 134) {
+                [self.confirmImageView setAlpha:(rect.origin.x-134)/32.0];
+            }
+        }
         
         [recognizer setTranslation:CGPointZero inView:self.view];
     }
@@ -209,6 +217,8 @@
             [UIView animateWithDuration:0.1
                              animations:^(void){
                                  [self.wordSliderImageView setFrame:rect];
+                                 [self.confirmImageView setAlpha:0.0];
+                                 [self.forgetImageView setAlpha:0.0];
                              }
              ];
         }
@@ -224,6 +234,8 @@
             [UIView animateWithDuration:0.1
                              animations:^(void){
                                  [self.wordSliderImageView setFrame:rect];
+                                 [self.confirmImageView setAlpha:0.0];
+                                 [self.forgetImageView setAlpha:0.0];
                              }
              ];
         }
@@ -238,6 +250,8 @@
             [UIView animateWithDuration:0.1
                              animations:^(void){
                                  [self.wordSliderImageView setFrame:rect];
+                                 [self.confirmImageView setAlpha:0.0];
+                                 [self.forgetImageView setAlpha:0.0];
                              }
              ];
         }
@@ -277,6 +291,7 @@
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
+                         [self.forgetImageView setAlpha:1.0];
                      }
      ];
 }
@@ -289,6 +304,7 @@
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
+                         [self.forgetImageView setAlpha:0.0];
                      }
      ];
     
@@ -304,6 +320,7 @@
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
+                         [self.forgetImageView setAlpha:0.0];
                      }
      ];
     
@@ -319,6 +336,7 @@
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
+                         [self.confirmImageView setAlpha:1.0];
                      }
      ];
 }
@@ -331,6 +349,7 @@
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
+                         [self.confirmImageView setAlpha:0.0];
                      }
      ];
     
@@ -346,6 +365,7 @@
     [UIView animateWithDuration:0.1
                      animations:^(void){
                          [self.wordSliderImageView setFrame:rect];
+                         [self.confirmImageView setAlpha:0.0];
                      }
      ];
     
