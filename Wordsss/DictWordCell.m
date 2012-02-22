@@ -40,21 +40,21 @@
     
     [self.meaningCNLabel setText:@"E"];
     [self.meaningENLabel setText:@"E"];
-
+    
     // AhdDictWord
     if (self.ahdDictWord) {
         //
         [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
         [self.meaningENLabel setText:@""];
     }
-
+    
     // MwcDictWord
     else if (self.mwcDictWord) {
         //
-        [self.meaningCNLabel setText:@""];
-        [self.meaningENLabel setText:[self.mwcDictWord getFullMeaningEN]];
+        [self.meaningCNLabel setText:[self.mwcDictWord getFullMeaningEN]];
+        [self.meaningENLabel setText:@""];
     }
-
+    
     // AhdDictSentence
     else if (self.ahdDictSentence) {
         //
@@ -77,7 +77,7 @@
     
     //
     CGRect frame = self.meaningENLabel.frame;
-    frame.origin.y = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height + 0;
+    frame.origin.y = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height - 3;
     self.meaningENLabel.frame = frame;
 }
 

@@ -773,7 +773,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="198">
-                                <rect key="frame" x="25" y="12" width="29" height="29"/>
+                                <rect key="frame" x="21" y="16" width="39" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="segments_translations.png">
@@ -789,7 +789,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="199">
-                                <rect key="frame" x="105" y="12" width="29" height="29"/>
+                                <rect key="frame" x="104" y="17" width="38" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="segments_related.png">
@@ -805,7 +805,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="200">
-                                <rect key="frame" x="185" y="12" width="29" height="29"/>
+                                <rect key="frame" x="183" y="17" width="39" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="segments_methods.png">
@@ -821,7 +821,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="201">
-                                <rect key="frame" x="265" y="12" width="29" height="29"/>
+                                <rect key="frame" x="257" y="16" width="38" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="segments_charts.png">
@@ -886,7 +886,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="MWj-BC-rZd">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DdW-Tv-s59">
+                            <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DdW-Tv-s59">
                                 <rect key="frame" x="244" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -947,21 +947,6 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="0.0" y="-957"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="41s-If-S5z">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3CV-E1-RhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="aQ4-IU-6l8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="PRy-dF-Owz">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="o2t-ig-XYS" kind="relationship" relationship="rootViewController" id="Zpy-iT-Ut0"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="-1543"/>
         </scene>
         <!--Init 1st View Controller-->
         <scene sceneID="Cta-8S-Rx2">
@@ -1384,7 +1369,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <color key="textColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
@@ -2081,6 +2066,7 @@
             </objects>
             <point key="canvasLocation" x="492" y="251"/>
         </scene>
+        <!--Lists View Controller-->
         <scene sceneID="bW6-HE-cm0">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IlN-v6-aCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2269,6 +2255,207 @@
         <image name="word_bg.png" width="320" height="142"/>
         <image name="word_slider.png" width="236" height="34"/>
     </resources>
+    <classes>
+        <class className="DictWordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DictWordCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="meaningCNLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="meaningENLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ExploreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExploreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="InfoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="valuLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="Init1stViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init1stViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextStep"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="Init2ndViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init2ndViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="lastStep"/>
+                <relationship kind="action" name="nextStep"/>
+                <relationship kind="outlet" name="curLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pickerAccessoryView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="tarLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="Init3rdViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Init3rdViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="runWordsssButtonClicked:"/>
+                <relationship kind="outlet" name="loadingIndicatorImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="rootViewController" candidateClass="RKTabBarController"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="countLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ListsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListsViewController.h"/>
+        </class>
+        <class className="ProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chartView" candidateClass="RKChartView"/>
+                <relationship kind="outlet" name="infoLeftLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoRightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="progressImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tagetLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RKChartView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKChartView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RKTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RKTabBarController.h"/>
+        </class>
+        <class className="SettingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="curLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pickerAccessoryView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="tarLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TodayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="wordDetailSelected:"/>
+                <relationship kind="action" name="wordSliderLeftTouchDown:"/>
+                <relationship kind="action" name="wordSliderLeftTouchUpInside:"/>
+                <relationship kind="action" name="wordSliderRightTouchDown:"/>
+                <relationship kind="action" name="wordSliderRightTouchUpInside:"/>
+                <relationship kind="outlet" name="briefMeaningLabel" candidateClass="WordCellLabel"/>
+                <relationship kind="outlet" name="wordCurLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordSliderImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordSliderLeftTapArea" candidateClass="UIView"/>
+                <relationship kind="outlet" name="wordSliderRightTapArea" candidateClass="UIView"/>
+                <relationship kind="outlet" name="wordSliderTouchArea" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="TodayViewControllerV2" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayViewControllerV2.h"/>
+            <relationships>
+                <relationship kind="action" name="wordDetailSelected:"/>
+                <relationship kind="action" name="wordSliderLeftTouchDown:"/>
+                <relationship kind="action" name="wordSliderLeftTouchUpInside:"/>
+                <relationship kind="action" name="wordSliderLeftTouchUpOutside:"/>
+                <relationship kind="action" name="wordSliderPanning:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="wordSliderRightTouchDown:"/>
+                <relationship kind="action" name="wordSliderRightTouchUpInside:"/>
+                <relationship kind="action" name="wordSliderRightTouchUpOutside:"/>
+                <relationship kind="outlet" name="briefMeaningButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="briefMeaningLabelM" candidateClass="WordCellLabel"/>
+                <relationship kind="outlet" name="briefMeaningLabelT" candidateClass="WordCellLabel"/>
+                <relationship kind="outlet" name="confirmImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="forgetImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordCurLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordSliderImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordSliderTouchArea" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="WordBooksViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordBooksViewController.h"/>
+        </class>
+        <class className="WordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCell.h"/>
+            <relationships>
+                <relationship kind="action" name="addButtonClicked:"/>
+                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="WordCellLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellLabel.h"/>
+        </class>
+        <class className="WordCellMem" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordCellMem.h"/>
+            <relationships>
+                <relationship kind="action" name="addButtonClicked:"/>
+                <relationship kind="outlet" name="meaningLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="memLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="WordMemsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordMemsViewController.h"/>
+        </class>
+        <class className="WordRelationsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordRelationsViewController.h"/>
+        </class>
+        <class className="WordStatisticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordStatisticsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chartView" candidateClass="RKChartView"/>
+            </relationships>
+        </class>
+        <class className="WordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="navigationBackButtonClicked:"/>
+                <relationship kind="action" name="selectSectionButtonDown:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="transToListButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordBooksSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordMemsSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelLeftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordPosLevelRightImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="wordRelationsSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordStatisticsSectionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wordTitleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

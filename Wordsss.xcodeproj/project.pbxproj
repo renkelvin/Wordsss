@@ -63,6 +63,8 @@
 		FE3B9BC314F280CC00B4CE2C /* MwcDictWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */; };
 		FE3B9BC614F280CD00B4CE2C /* MwcDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */; };
 		FE3B9BD114F2A27200B4CE2C /* WordsssDB.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE3B9BD014F2A27200B4CE2C /* WordsssDB.xml */; };
+		FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680014F28FDC00963B95 /* button_grey_done.png */; };
+		FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680114F28FDC00963B95 /* button_grey_done@2x.png */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
 		FE5C958A14AF11AD00DE10F2 /* AhdDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */; };
 		FE63326F14ADE515005CBECF /* ExploreVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE63326E14ADE515005CBECF /* ExploreVirtualActor.m */; };
@@ -1330,7 +1332,7 @@
 		FEBFBEF11436DAF20028630E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Ren Inc.";
 			};
 			buildConfigurationList = FEBFBEF41436DAF20028630E /* Build configuration list for PBXProject "Wordsss" */;
@@ -1356,6 +1358,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */,
+				FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */,
 				FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */,
 				FEBFBF0B1436DAF20028630E /* InfoPlist.strings in Resources */,
 				FEE053DF14379ADC0068CDEC /* Default@2x.png in Resources */,
@@ -1712,8 +1716,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "CB4BFA9B-C5DE-4F93-A707-4940CFBC8E2E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CB4BFA9B-C5DE-4F93-A707-4940CFBC8E2E";
+				PROVISIONING_PROFILE = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9F56844F-1890-4BF0-A478-B0ACD947CB11";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

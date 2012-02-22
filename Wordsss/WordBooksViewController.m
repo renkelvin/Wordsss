@@ -58,7 +58,7 @@
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 // Cell number
@@ -66,11 +66,9 @@
 {
     switch (section) {
         case 0:
-            return [[_wordVirtualActor getAhdDictWord]count];
+            return [[_wordVirtualActor getAhdDictWord]count] + [[_wordVirtualActor getSentence]count];
         case 1:
             return [[_wordVirtualActor getMwcDictWord]count];
-        case 2:
-            return [[_wordVirtualActor getSentence]count];
         default:
             return 0;
     }
@@ -90,9 +88,6 @@
         case 1:
             headerView.titleLabel.text = @"韦氏大学词典";
             break;
-        case 2:
-            headerView.titleLabel.text = @"例句";
-            break;
         default:
             headerView.titleLabel.text = @"-----";
             break;
@@ -106,7 +101,7 @@
 {
     switch (section) {
         case 0:
-            if ([[_wordVirtualActor getAhdDictWord]count]) {
+            if ([[_wordVirtualActor getAhdDictWord]count] + [[_wordVirtualActor getSentence]count]) {
                 return 28;
             }
             else {
@@ -114,13 +109,6 @@
             }
         case 1:
             if ([[_wordVirtualActor getMwcDictWord]count]) {
-                return 28;
-            }
-            else {
-                return 0;
-            }
-        case 2:
-            if ([[_wordVirtualActor getSentence]count]) {
                 return 28;
             }
             else {
@@ -145,10 +133,22 @@
     switch (indexPath.section) {
         case 0:
         {
-            AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:indexPath.row];
-            [(DictWordCell*)cell clear];
-            [(DictWordCell*)cell setAhdDictWord:word];
-            [(DictWordCell*)cell configCell];
+            int idx = indexPath.row;
+            
+            if (idx < [[_wordVirtualActor getAhdDictWord] count]) {
+                AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:idx];
+                [(DictWordCell*)cell clear];
+                [(DictWordCell*)cell setAhdDictWord:word];
+                [(DictWordCell*)cell configCell];
+            }
+            else {
+                idx -= [[_wordVirtualActor getAhdDictWord] count];
+                
+                AhdDictSentence* sentence = [[_wordVirtualActor getSentence] objectAtIndex:idx];
+                [(DictWordCell*)cell clear];
+                [(DictWordCell*)cell setAhdDictSentence:sentence];
+                [(DictWordCell*)cell configCell];
+            }
             
             break;
         }   
@@ -157,15 +157,6 @@
             MwcDictWord* word = [[_wordVirtualActor getMwcDictWord] objectAtIndex:indexPath.row];
             [(DictWordCell*)cell clear];
             [(DictWordCell*)cell setMwcDictWord:word];
-            [(DictWordCell*)cell configCell];
-            
-            break;
-        }
-        case 2:
-        {
-            AhdDictSentence* sentence = [[_wordVirtualActor getSentence] objectAtIndex:indexPath.row];
-            [(DictWordCell*)cell clear];
-            [(DictWordCell*)cell setAhdDictSentence:sentence];
             [(DictWordCell*)cell configCell];
             
             break;
@@ -187,10 +178,22 @@
     switch (indexPath.section) {
         case 0:
         {
-            AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:indexPath.row];
-            [(DictWordCell*)cell clear];
-            [(DictWordCell*)cell setAhdDictWord:word];
-            [(DictWordCell*)cell configCell];
+            int idx = indexPath.row;
+            
+            if (idx < [[_wordVirtualActor getAhdDictWord] count]) {
+                AhdDictWord* word = [[_wordVirtualActor getAhdDictWord] objectAtIndex:idx];
+                [(DictWordCell*)cell clear];
+                [(DictWordCell*)cell setAhdDictWord:word];
+                [(DictWordCell*)cell configCell];
+            }
+            else {
+                idx -= [[_wordVirtualActor getAhdDictWord] count];
+                
+                AhdDictSentence* sentence = [[_wordVirtualActor getSentence] objectAtIndex:idx];
+                [(DictWordCell*)cell clear];
+                [(DictWordCell*)cell setAhdDictSentence:sentence];
+                [(DictWordCell*)cell configCell];
+            }
             
             return [cell getHeight];
             
@@ -201,17 +204,6 @@
             MwcDictWord* word = [[_wordVirtualActor getMwcDictWord] objectAtIndex:indexPath.row];
             [(DictWordCell*)cell clear];
             [(DictWordCell*)cell setMwcDictWord:word];
-            [(DictWordCell*)cell configCell];
-            
-            return [cell getHeight];
-            
-            break;
-        }
-        case 2:
-        {
-            AhdDictSentence* sentence = [[_wordVirtualActor getSentence] objectAtIndex:indexPath.row];
-            [(DictWordCell*)cell clear];
-            [(DictWordCell*)cell setAhdDictSentence:sentence];
             [(DictWordCell*)cell configCell];
             
             return [cell getHeight];
