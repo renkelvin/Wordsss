@@ -45,13 +45,13 @@
     if (self.ahdDictWord) {
         //
         [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
-        [self.meaningENLabel setText:@"O"];
+        [self.meaningENLabel setText:@""];
     }
 
     // MwcDictWord
     else if (self.mwcDictWord) {
         //
-        [self.meaningCNLabel setText:@"O"];
+        [self.meaningCNLabel setText:@""];
         [self.meaningENLabel setText:[self.mwcDictWord getFullMeaningEN]];
     }
 

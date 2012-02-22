@@ -66,7 +66,7 @@ static char* vocaArray[11] = {
     [super viewDidLoad];
     
     //
-    [self initNavigationBar];
+//    [self initNavigationBar];
     
     //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
@@ -163,7 +163,7 @@ static char* vocaArray[11] = {
     [_initVirtualActor.user.defult setTargetLevel:[NSNumber numberWithInt:VLGRE]];    
 }
 
-- (void)nextStep
+- (IBAction)nextStep
 {
     [self setCurrentLevel];
     [self setTargetLevel];
@@ -173,29 +173,34 @@ static char* vocaArray[11] = {
     [[self navigationController] pushViewController:ivc animated:YES];
 }
 
-#pragma mark - RKNavigationControllerDelegate
-
-- (void)initNavigationBar
-{    
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-   
-    [[navigationController titleLabel] setText:@""];
-    [[navigationController titleImageView] setImage:nil];
-    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
-}
-
-- (void)navigationBarLeftButtonDown
+- (IBAction)lastStep
 {
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
-- (void)navigationBarRightButtonDown
-{
-    [self nextStep];    
-}
+//#pragma mark - RKNavigationControllerDelegate
+//
+//- (void)initNavigationBar
+//{    
+//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+//    
+//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+//   
+//    [[navigationController titleLabel] setText:@""];
+//    [[navigationController titleImageView] setImage:nil];
+//    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
+//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
+//}
+//
+//- (void)navigationBarLeftButtonDown
+//{
+//    [[self navigationController] popViewControllerAnimated:YES];
+//}
+//
+//- (void)navigationBarRightButtonDown
+//{
+//    [self nextStep];    
+//}
 
 #pragma mark - UINavigationControllerDelegate
 
@@ -206,7 +211,7 @@ static char* vocaArray[11] = {
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self initNavigationBar];
+//    [self initNavigationBar];
 }
 
 #pragma mark - UIPickerViewDelegate

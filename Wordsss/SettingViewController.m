@@ -84,12 +84,17 @@ static char* vocaArray[11] = {
     
     // Init rknc delegate
     [[self navigationController] setDelegate:self];
-
+    
     //
-    [self initNavigationBar];
+    //    [self initNavigationBar];
     
     //
     [self update];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidUnload
@@ -169,29 +174,29 @@ static char* vocaArray[11] = {
      ];
 }
 
-#pragma mark - RKNavigationControllerDelegate
-
-- (void)initNavigationBar
-{    
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    
-    [[navigationController titleLabel] setText:@"设置"];
-    [[navigationController titleImageView] setImage:nil];
-    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-}
-
-- (void)navigationBarLeftButtonDown
-{
-    
-}
-
-- (void)navigationBarRightButtonDown
-{
-    
-}
+//#pragma mark - RKNavigationControllerDelegate
+//
+//- (void)initNavigationBar
+//{    
+//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+//    
+//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+//    
+//    [[navigationController titleLabel] setText:@"设置"];
+//    [[navigationController titleImageView] setImage:nil];
+//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
+//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
+//}
+//
+//- (void)navigationBarLeftButtonDown
+//{
+//    
+//}
+//
+//- (void)navigationBarRightButtonDown
+//{
+//    
+//}
 
 #pragma mark - UIPickerViewDelegate
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component

@@ -60,6 +60,11 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"mainbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -246,8 +251,8 @@
     if (!hasInit) {
         Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
         
-        RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
-       
+        UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:ivc];
+        
         [self presentModalViewController:nc animated:YES];
         
         return NO;
@@ -262,18 +267,6 @@
     WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[_todayVirtualActor.wordPos getTargetWord] and:_todayVirtualActor.wordRecordPos];
     
     [[self navigationController] pushViewController:wordViewController animated:YES];
-    
-    //
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [UIView animateWithDuration:0.3 animations:^(void){
-        [[navigationController todayBackgroundImageView] setAlpha:0.0];
-        
-        [[navigationController titleLabel] setAlpha:0.0];
-        [[navigationController titleImageView] setAlpha:0.0];
-        [[navigationController leftButton] setAlpha:0.0];
-        [[navigationController rightButton] setAlpha:0.0];
-    }];
 }
 
 - (IBAction)wordSliderLeftTouchDown:(id)sender {
@@ -360,38 +353,38 @@
     //    [self incOperation];
 }
 
-#pragma mark - RKNavigationControllerDelegate
-
-- (void)initNavigationBar
-{    
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    
-    [[navigationController titleLabel] setText:@""];
-    [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
-    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
-    
-    [UIView animateWithDuration:0.3 animations:^(void){
-        [[navigationController todayBackgroundImageView] setAlpha:1.0];
-        
-        [[navigationController titleLabel] setAlpha:1.0];
-        [[navigationController titleImageView] setAlpha:1.0];
-        [[navigationController leftButton] setAlpha:1.0];
-        [[navigationController rightButton] setAlpha:1.0];
-    }];
-}
-
-- (void)navigationBarLeftButtonDown
-{
-    
-}
-
-- (void)navigationBarRightButtonDown
-{
-    [self nextDay];
-}
+//#pragma mark - RKNavigationControllerDelegate
+//
+//- (void)initNavigationBar
+//{    
+//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+//    
+//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+//    
+//    [[navigationController titleLabel] setText:@""];
+//    [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
+//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
+//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
+//    
+//    [UIView animateWithDuration:0.3 animations:^(void){
+//        [[navigationController todayBackgroundImageView] setAlpha:1.0];
+//        
+//        [[navigationController titleLabel] setAlpha:1.0];
+//        [[navigationController titleImageView] setAlpha:1.0];
+//        [[navigationController leftButton] setAlpha:1.0];
+//        [[navigationController rightButton] setAlpha:1.0];
+//    }];
+//}
+//
+//- (void)navigationBarLeftButtonDown
+//{
+//    
+//}
+//
+//- (void)navigationBarRightButtonDown
+//{
+//    [self nextDay];
+//}
 
 #pragma mark - UINavigationControllerDelegate
 
@@ -402,7 +395,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self initNavigationBar];
+    //    [self initNavigationBar];
 }
 
 @end

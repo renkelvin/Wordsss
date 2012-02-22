@@ -24,8 +24,9 @@ static char* nameArray[11] = {
 
 @implementation ProfileViewController
 
+@synthesize nameTitleLabel;
 @synthesize infoLeftLabel, infoRightLabel;
-@synthesize progressImageView, tagetImageView, tagetLabel;
+@synthesize progressImageView, tagetLabel;
 @synthesize chartView = _chartView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,7 +57,7 @@ static char* nameArray[11] = {
     _profileVirtualActor = [ProfileVirtualActor profileVirtualActor];
     
     //
-    [self initNavigationBar];
+    //    [self initNavigationBar];
     
     //
     [self update];
@@ -78,8 +79,8 @@ static char* nameArray[11] = {
 - (void)viewWillAppear:(BOOL)animated
 {
     //
-    [self initNavigationBar];
-    
+    //    [self initNavigationBar];
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     //
     [self update];
 }
@@ -124,6 +125,9 @@ static char* nameArray[11] = {
 
 - (void)updateTitle
 {
+    // Name label
+    [self.nameTitleLabel setText:_profileVirtualActor.user.profile.nickname];
+    
     // Left label
     int nowVoca = [_profileVirtualActor getVocaNow];
     int tarVoca = [_profileVirtualActor getVocaTarget]; 
@@ -320,28 +324,28 @@ static char* nameArray[11] = {
     return cell;
 }
 
-#pragma - RKNavigationControllerDelegate
-
-- (void)initNavigationBar
-{    
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    
-    [[navigationController titleLabel] setText:_profileVirtualActor.user.profile.nickname];
-    [[navigationController titleImageView] setImage:nil];
-    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-}
-
-- (void)navigationBarLeftButtonDown
-{
-    
-}
-
-- (void)navigationBarRightButtonDown
-{
-    
-}
+//#pragma - RKNavigationControllerDelegate
+//
+//- (void)initNavigationBar
+//{    
+//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+//    
+//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+//    
+//    [[navigationController titleLabel] setText:_profileVirtualActor.user.profile.nickname];
+//    [[navigationController titleImageView] setImage:nil];
+//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
+//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
+//}
+//
+//- (void)navigationBarLeftButtonDown
+//{
+//    
+//}
+//
+//- (void)navigationBarRightButtonDown
+//{
+//    
+//}
 
 @end

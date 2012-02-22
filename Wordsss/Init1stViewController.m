@@ -45,9 +45,10 @@
     
     // Init rknc delegate
     [[self navigationController] setDelegate:self];
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     
     //
-    [self initNavigationBar];
+//    [self initNavigationBar];
     
     //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
@@ -78,7 +79,7 @@
     [_initVirtualActor.user.profile setNickname:nameString];
 }
 
-- (void)nextStep
+- (IBAction)nextStep
 {
     //
     [self setNickname];
@@ -88,29 +89,29 @@
     [[self navigationController] pushViewController:ivc animated:YES];
 }
 
-#pragma mark - RKNavigationControllerDelegate
-
-- (void)initNavigationBar
-{    
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    
-    [[navigationController titleLabel] setText:@""];
-    [[navigationController titleImageView] setImage:nil];
-    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
-}
-
-- (void)navigationBarLeftButtonDown
-{
-    
-}
-
-- (void)navigationBarRightButtonDown
-{
-    [self nextStep];
-}
+//#pragma mark - RKNavigationControllerDelegate
+//
+//- (void)initNavigationBar
+//{    
+//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+//    
+//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+//    
+//    [[navigationController titleLabel] setText:@""];
+//    [[navigationController titleImageView] setImage:nil];
+//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
+//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
+//}
+//
+//- (void)navigationBarLeftButtonDown
+//{
+//    
+//}
+//
+//- (void)navigationBarRightButtonDown
+//{
+//    [self nextStep];
+//}
 
 #pragma - UINavigationControllerDelegate
 
@@ -121,7 +122,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self initNavigationBar];
+//    [self initNavigationBar];
 }
 
 #pragma mark - UITextFieldDelegate

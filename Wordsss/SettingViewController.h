@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RKNavigationController.h"
-#import "RKNavigationControllerDelegate.h"
+//#import "RKNavigationController.h"
+//#import "RKNavigationControllerDelegate.h"
 
 #import "SettingVirtualActor.h"
 
@@ -20,7 +20,7 @@
 #define kInitPickerAccessoryViewFrameHide CGRectMake(0, 416, 320, 44)
 #define kInitPickerAccessoryViewFrameShow CGRectMake(0, 155, 320, 44)
 
-@interface SettingViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
+@interface SettingViewController : UIViewController <UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 {
     SettingVirtualActor* _settingVirtualActor;
 

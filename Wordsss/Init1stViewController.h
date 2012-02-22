@@ -8,19 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RKNavigationController.h"
-#import "RKNavigationControllerDelegate.h"
+//#import "RKNavigationController.h"
+//#import "RKNavigationControllerDelegate.h"
 
 #import "Init2ndViewController.h"
 
 #import "InitVirtualActor.h"
 
-@interface Init1stViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
+@interface Init1stViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 {
     //
     InitVirtualActor* _initVirtualActor;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField* nameTextField;
+
+- (IBAction)nextStep;
 
 @end

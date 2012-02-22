@@ -27,8 +27,6 @@
 		2043608C14C2853900170BD1 /* thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2043608814C2853900170BD1 /* thumb@2x.png */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
-		FE060C63143CD78A0026228C /* RkNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C60143CD78A0026228C /* RkNavigationController.m */; };
-		FE060C64143CD78A0026228C /* RKNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C61143CD78A0026228C /* RKNavigationController.xib */; };
 		FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */; };
 		FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */; };
 		FE10A07D14A0F002005F1EC9 /* Association.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07C14A0F001005F1EC9 /* Association.m */; };
@@ -315,9 +313,6 @@
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
 		FE060C5C143CD7040026228C /* RKTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKTabBarController.xib; sourceTree = "<group>"; };
 		FE060C5D143CD7040026228C /* RKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTabBarController.h; sourceTree = "<group>"; };
-		FE060C60143CD78A0026228C /* RkNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RkNavigationController.m; sourceTree = "<group>"; };
-		FE060C61143CD78A0026228C /* RKNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKNavigationController.xib; sourceTree = "<group>"; };
-		FE060C62143CD78A0026228C /* RKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNavigationController.h; sourceTree = "<group>"; };
 		FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FE10A07514A0F001005F1EC9 /* McecDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McecDictMeaning.h; sourceTree = "<group>"; };
 		FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = McecDictMeaning.m; sourceTree = "<group>"; };
@@ -1157,9 +1152,6 @@
 				FE060C5D143CD7040026228C /* RKTabBarController.h */,
 				FE060C5B143CD7040026228C /* RKTabBarController.m */,
 				FE060C5C143CD7040026228C /* RKTabBarController.xib */,
-				FE060C62143CD78A0026228C /* RKNavigationController.h */,
-				FE060C60143CD78A0026228C /* RkNavigationController.m */,
-				FE060C61143CD78A0026228C /* RKNavigationController.xib */,
 				FE5C963D143DD18E00E38250 /* RKNavigationControllerDelegate.h */,
 				FEBF173614A648B10045B8A5 /* RKChartView.h */,
 				FEBF173714A648B10045B8A5 /* RKChartView.m */,
@@ -1390,7 +1382,6 @@
 				FEB8ED2E143B47C30097E267 /* bg_deeper.png in Resources */,
 				FEB8ED2F143B47C30097E267 /* bg_deeper@2x.png in Resources */,
 				FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */,
-				FE060C64143CD78A0026228C /* RKNavigationController.xib in Resources */,
 				FE772DBC143D9CC9004DDA0D /* RKDashBoard.xib in Resources */,
 				FE8736B3143DDC3E002FDDE8 /* button_info.png in Resources */,
 				FE8736B4143DDC3E002FDDE8 /* button_info@2x.png in Resources */,
@@ -1594,7 +1585,6 @@
 				FEABC552143C8A53005AB8C1 /* WordListsViewController.m in Sources */,
 				FEABC555143C8A62005AB8C1 /* WordStatisticsViewController.m in Sources */,
 				FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */,
-				FE060C63143CD78A0026228C /* RkNavigationController.m in Sources */,
 				FE873713143DECD0002FDDE8 /* WordRelationsViewController.m in Sources */,
 				FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */,
 				FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */,

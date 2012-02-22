@@ -13,7 +13,7 @@
 #import "WordMemsViewController.h"
 #import "WordStatisticsViewController.h"
 
-#import "RKNavigationControllerDelegate.h"
+//#import "RKNavigationControllerDelegate.h"
 
 #import "Word.h"
 
@@ -22,7 +22,7 @@
 #define kWordViewSectionFrame CGRectMake(0, 49, 320, 318)
 #define kWordViewSectionFrameShort CGRectMake(0, 49 + 31 + 10, 320, 318 - 31 - 10)
 
-@interface WordViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+@interface WordViewController : UIViewController <UINavigationControllerDelegate>
 {
     //
     Word* _word;
@@ -30,6 +30,10 @@
 }
 
 @property (nonatomic, retain) Word* word;
+
+@property (nonatomic, retain) IBOutlet UILabel* wordTitleLabel;
+
+@property (nonatomic, retain) IBOutlet UIButton* transToListButton;
 
 @property (nonatomic, retain) IBOutlet UIButton* wordBooksSectionButton;
 @property (nonatomic, retain) IBOutlet UIButton* wordRelationsSectionButton;
@@ -49,6 +53,8 @@
 - (void)initSectionViewControllers;
 
 - (IBAction)selectSectionButtonDown:(UIButton*)button;
+- (IBAction)navigationBackButtonClicked:(id)sender;
+
 - (void)selectSectionWithIndex:(NSInteger)index;
 
 @end

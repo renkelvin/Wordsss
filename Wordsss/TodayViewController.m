@@ -264,9 +264,9 @@
     if (!hasInit) {
         Init1stViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init1stViewController"];
         
-        RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
+//        RKNavigationController* nc = [[RKNavigationController alloc] initWithRootViewController:ivc];
         
-        [self presentModalViewController:nc animated:YES];
+        [self presentModalViewController:[ivc navigationController] animated:YES];
         
         return NO;
     }
@@ -336,29 +336,29 @@
     [self incOperation];
 }
 
-#pragma mark - RKNavigationControllerDelegate
-
-- (void)initNavigationBar
-{    
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-   
-    [[navigationController titleLabel] setText:@""];
-    [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
-    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
-}
-
-- (void)navigationBarLeftButtonDown
-{
-    
-}
-
-- (void)navigationBarRightButtonDown
-{
-    [self nextDay];
-}
+//#pragma mark - RKNavigationControllerDelegate
+//
+//- (void)initNavigationBar
+//{    
+//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+//    
+//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+//   
+//    [[navigationController titleLabel] setText:@""];
+//    [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
+//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
+//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
+//}
+//
+//- (void)navigationBarLeftButtonDown
+//{
+//    
+//}
+//
+//- (void)navigationBarRightButtonDown
+//{
+//    [self nextDay];
+//}
 
 #pragma mark - UINavigationControllerDelegate
 
@@ -369,7 +369,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self initNavigationBar];
+//    [self initNavigationBar];
 }
 
 @end

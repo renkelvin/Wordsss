@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "RKNavigationController.h"
-#import "RKNavigationControllerDelegate.h"
+//#import "RKNavigationController.h"
+//#import "RKNavigationControllerDelegate.h"
 
 #import "WordsssAppDelegate.h"
 #import "Init1stViewController.h"
@@ -23,7 +23,7 @@
 
 #import "WordCellLabel.h"
 
-@interface TodayViewControllerV2 : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+@interface TodayViewControllerV2 : UIViewController <UINavigationControllerDelegate>
 {
     //
     TodayVirtualActor* _todayVirtualActor;

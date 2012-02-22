@@ -39,7 +39,8 @@
     [super viewDidLoad];
     
     //
-    [self initNavigationBar];
+//    [self initNavigationBar];
+//    [[self navigationController] ]
     
     //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
@@ -73,7 +74,7 @@
     
     // Init todayViewController again
     NSArray* vcArray = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).viewControllers;
-    [[(RKNavigationController*)[vcArray objectAtIndex:2] topViewController] viewDidLoad];
+    [[(UINavigationController*)[vcArray objectAtIndex:2] topViewController] viewDidLoad];
     
     // Dissmiss View
     [self dismissModalViewControllerAnimated:YES];
@@ -130,29 +131,29 @@
     [self runMain];
 }
 
-#pragma mark - RKNavigationControllerDelegate
-
-- (void)initNavigationBar
-{    
-    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-    
-    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    
-    [[navigationController titleLabel] setText:@""];
-    [[navigationController titleImageView] setImage:nil];
-    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
-    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-}
-
-- (void)navigationBarLeftButtonDown
-{
-    [[self navigationController] popViewControllerAnimated:YES];
-}
-
-- (void)navigationBarRightButtonDown
-{
-    
-}
+//#pragma mark - RKNavigationControllerDelegate
+//
+//- (void)initNavigationBar
+//{    
+//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
+//    
+//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
+//    
+//    [[navigationController titleLabel] setText:@""];
+//    [[navigationController titleImageView] setImage:nil];
+//    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
+//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
+//}
+//
+//- (void)navigationBarLeftButtonDown
+//{
+//    [[self navigationController] popViewControllerAnimated:YES];
+//}
+//
+//- (void)navigationBarRightButtonDown
+//{
+//    
+//}
 
 #pragma - UINavigationControllerDelegate
 
@@ -163,7 +164,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self initNavigationBar];
+//    [self initNavigationBar];
 }
 
 @end

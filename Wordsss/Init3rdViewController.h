@@ -10,14 +10,14 @@
 
 #import "WordsssAppDelegate.h"
 
-#import "RKNavigationController.h"
-#import "RKNavigationControllerDelegate.h"
+//#import "RKNavigationController.h"
+//#import "RKNavigationControllerDelegate.h"
 
 #import "TodayViewController.h"
 
 #import "InitVirtualActor.h"
 
-@interface Init3rdViewController : UIViewController <RKNavigationControllerDelegate, UINavigationControllerDelegate>
+@interface Init3rdViewController : UIViewController <UINavigationControllerDelegate>
 {
     //
     InitVirtualActor* _initVirtualActor;

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RKNavigationController.h"
-#import "RKNavigationControllerDelegate.h"
+//#import "RKNavigationController.h"
+//#import "RKNavigationControllerDelegate.h"
 
 #import "ExploreVirtualActor.h"
 
@@ -20,7 +20,7 @@
 #import "WordCellMem.h"
 #import "RKTableHeader.h"
 
-@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, RKNavigationControllerDelegate> {
+@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource> {
     //
     ExploreVirtualActor* _exploreVirtualActor;
     

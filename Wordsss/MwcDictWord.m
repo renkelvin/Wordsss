@@ -23,8 +23,7 @@
 
 - (NSString*)getFullMeaningEN
 {
-    // NSString* string = [NSString stringWithFormat:@"%@\n", [self getTypeString]];
-    NSString* string = [NSString stringWithFormat:@"T\n"];
+    NSString* string = [NSString stringWithFormat:@"%@\n", self.function];
     
     int i = 1;
     for (MwcDictMeaning* mwcDictMeaning in self.meaning) {

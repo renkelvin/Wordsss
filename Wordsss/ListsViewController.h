@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RKNavigationController.h"
-#import "RKNavigationControllerDelegate.h"
+//#import "RKNavigationController.h"
+//#import "RKNavigationControllerDelegate.h"
 
 #import "RKTableHeader.h"
 
@@ -17,7 +17,7 @@
 
 #import "ListsVirtualActor.h"
 
-@interface ListsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, RKNavigationControllerDelegate>
+@interface ListsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //
     ListsVirtualActor* _listsVirtualActor;
