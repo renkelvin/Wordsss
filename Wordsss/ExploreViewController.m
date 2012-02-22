@@ -36,10 +36,10 @@
 //
 - (void)initSearchBar
 {
-    _searchBar.hidden = NO;  
-    _searchBar.placeholder=[NSString stringWithCString:"请输入需要查找的文本内容" encoding: NSUTF8StringEncoding];  
+    self.searchBar.hidden = NO; 
+    self.searchBar.placeholder=[NSString stringWithCString:"请输入需要查找的文本内容" encoding: NSUTF8StringEncoding];
     
-    _tableView.tableHeaderView = self.searchBar;  
+    self.searchBar.translucent = YES;
 }
 
 //
@@ -49,9 +49,6 @@
     
     //
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
-    
-    //
-//    [self initNavigationBar];
     
     //
     [self initSearchBar];

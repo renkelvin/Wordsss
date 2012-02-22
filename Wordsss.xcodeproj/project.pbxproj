@@ -57,6 +57,7 @@
 		FE2E835E143B289A004A2C56 /* wordlist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E834E143B289A004A2C56 /* wordlist@2x.png */; };
 		FE2E8361143B2FAC004A2C56 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E8360143B2FAC004A2C56 /* WordViewController.m */; };
 		FE3427E814A9948E009EF9C2 /* AhdDictWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3427E714A9948E009EF9C2 /* AhdDictWord.m */; };
+		FE34436514F512D0002E03F1 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE34436414F512D0002E03F1 /* ListViewController.m */; };
 		FE398C1114963A6C00D9408C /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1014963A6C00D9408C /* Profile.m */; };
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE3B9BC314F280CC00B4CE2C /* MwcDictWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */; };
@@ -353,6 +354,8 @@
 		FE2E8360143B2FAC004A2C56 /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
 		FE3427E614A9948E009EF9C2 /* AhdDictWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictWord.h; sourceTree = "<group>"; };
 		FE3427E714A9948E009EF9C2 /* AhdDictWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AhdDictWord.m; sourceTree = "<group>"; };
+		FE34436314F512D0002E03F1 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		FE34436414F512D0002E03F1 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		FE398C0F14963A6C00D9408C /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		FE398C1014963A6C00D9408C /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		FE398C1214963A6C00D9408C /* MemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemData.h; sourceTree = "<group>"; };
@@ -724,12 +727,12 @@
 				FE6C8DB714385AAD00DC9784 /* TodayViewController.m */,
 				FE2040CE14F26244002E9EDC /* TodayViewControllerV2.h */,
 				FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */,
-				FEF3307314AC816200E5E3B5 /* WordCellLabel.h */,
-				FEF3307414AC816200E5E3B5 /* WordCellLabel.m */,
 				FE6C8DBC14385ACE00DC9784 /* ListsViewController.h */,
 				FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */,
 				FEEE31171439CB1B001F7E90 /* SettingViewController.h */,
 				FEEE31181439CB1B001F7E90 /* SettingViewController.m */,
+				FE34436314F512D0002E03F1 /* ListViewController.h */,
+				FE34436414F512D0002E03F1 /* ListViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -889,6 +892,8 @@
 		FEBB3B3214A7A46F0047D21C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				FEF3307314AC816200E5E3B5 /* WordCellLabel.h */,
+				FEF3307414AC816200E5E3B5 /* WordCellLabel.m */,
 				FEF3307614AC816E00E5E3B5 /* WordCell.h */,
 				FEF3307714AC816E00E5E3B5 /* WordCell.m */,
 				FE7D397F14ADCF290002015A /* WordCellMem.h */,
@@ -1643,6 +1648,7 @@
 				FE2040D014F26244002E9EDC /* TodayViewControllerV2.m in Sources */,
 				FE3B9BC314F280CC00B4CE2C /* MwcDictWord.m in Sources */,
 				FE3B9BC614F280CD00B4CE2C /* MwcDictMeaning.m in Sources */,
+				FE34436514F512D0002E03F1 /* ListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
