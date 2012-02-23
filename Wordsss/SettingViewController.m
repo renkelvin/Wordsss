@@ -86,9 +86,6 @@ static char* vocaArray[11] = {
     [[self navigationController] setDelegate:self];
     
     //
-    //    [self initNavigationBar];
-    
-    //
     [self update];
 }
 
@@ -158,45 +155,27 @@ static char* vocaArray[11] = {
     int curRow = [self.pickerView selectedRowInComponent:0];
     int tarRow = [self.pickerView selectedRowInComponent:1];
     
-    _settingVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
-    _settingVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
-    
-    // Update label
-    [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];
-    [self.tarLabel setText:[NSString stringWithCString:nameArray[tarRow+1] encoding:4]];
-    
-    // Hide pickerView
-    [UIView animateWithDuration:0.3 animations:^(void)
-     {
-         [self.pickerView setFrame:kInitPickerViewFrameHide];
-         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
-     }
-     ];
+    // ERROR
+    if (curRow >= tarRow) {
+        [[[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cacel" otherButtonTitles:nil] show];
+    }
+    else {
+        _settingVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
+        _settingVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
+        
+        // Update label
+        [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];
+        [self.tarLabel setText:[NSString stringWithCString:nameArray[tarRow+1] encoding:4]];
+        
+        // Hide pickerView
+        [UIView animateWithDuration:0.3 animations:^(void)
+         {
+             [self.pickerView setFrame:kInitPickerViewFrameHide];
+             [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
+         }
+         ];
+    }
 }
-
-//#pragma mark - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//    
-//    [[navigationController titleLabel] setText:@"设置"];
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    
-//}
 
 #pragma mark - UIPickerViewDelegate
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component

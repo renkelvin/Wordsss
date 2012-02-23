@@ -81,22 +81,13 @@
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 1;
 }
 
 // Cell number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            return [[_exploreVirtualActor getAssociation]count];
-        case 1:
-            return [[_exploreVirtualActor getRootaffix]count] - 1;
-        case 2:
-            return [[_exploreVirtualActor getSense]count] - 1;
-        default:
-            return 0;
-    }
+    return 3;
 }
 
 // Header View
@@ -106,27 +97,7 @@
     
     [headerView setBackgroundColor:[UIColor clearColor]];
     
-    switch (section) {
-        case 0:
-            headerView.titleLabel.text = @"联想";
-            break;
-        case 1:
-        {
-            NSString* string = [NSString stringWithFormat:@"词根 - %@ %@", ((Rootaffix*)[[_exploreVirtualActor getRootaffix] objectAtIndex:0]).phrase, ((Rootaffix*)[[_exploreVirtualActor getRootaffix] objectAtIndex:0]).meaning_cn];
-            [headerView.titleLabel setText:string];
-            break;
-        }
-        case 2:
-        {
-            NSString* string = [NSString stringWithFormat:@"意群 - %@", ((Sense*)[[_exploreVirtualActor getSense] objectAtIndex:0]).meaning_cn];
-            
-            [headerView.titleLabel setText:string];
-            break;
-        }
-        default:
-            headerView.titleLabel.text = @"-----";
-            break;
-    }
+    headerView.titleLabel.text = @"搜索历史";
     
     return headerView;
 }
@@ -134,31 +105,7 @@
 // Header height
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            if ([[_exploreVirtualActor getAssociation] count]) {
-                return 28;
-            }
-            else {
-                return 0;
-            }
-        case 1:
-            if ([[_exploreVirtualActor getRootaffix] count]) {
-                return 28;
-            }
-            else {
-                return 0;
-            }
-        case 2:
-            if ([[_exploreVirtualActor getSense] count]) {
-                return 28;
-            }
-            else {
-                return 0;
-            }
-        default:
-            return 0;
-    }
+    return 28;
 }
 
 // Cell
@@ -172,83 +119,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    switch (indexPath.section) {
-        case 0:
-        {
-            Word_Association* word_association = [[_exploreVirtualActor getAssociation] objectAtIndex:indexPath.row];
-            [(WordCellMem*)cell clear];
-            [(WordCellMem*)cell setWord_association:word_association];
-            [(WordCellMem*)cell configCell];
-            
-            break;
-        }   
-        case 1:
-        {
-            //            if (indexPath.row == 0) {
-            if (NO) {
-                Rootaffix* rootaffix = [[_exploreVirtualActor getRootaffix] objectAtIndex:indexPath.row];
-                [(WordCellMem*)cell clear];
-                [(WordCellMem*)cell setRootaffix:rootaffix];
-                [(WordCellMem*)cell configCell];
-            }
-            else {
-                Word_Rootaffix* word_rootaffix = [[_exploreVirtualActor getRootaffix] objectAtIndex:(indexPath.row + 1)];
-                [(WordCellMem*)cell clear];
-                [(WordCellMem*)cell setWord_rootaffix:word_rootaffix];
-                [(WordCellMem*)cell configCell];
-            }
-            
-            break;
-        }   
-        case 2:
-        {
-            // if (indexPath.row == 0) {
-            if (NO) {
-                Sense* sense = [[_exploreVirtualActor getSense] objectAtIndex:indexPath.row];
-                [(WordCellMem*)cell clear];
-                [(WordCellMem*)cell setSense:sense];
-                [(WordCellMem*)cell configCell];
-            }
-            else {
-                Word_Sense* word_sense = [[_exploreVirtualActor getSense] objectAtIndex:(indexPath.row + 1)];
-                [(WordCellMem*)cell clear];
-                [(WordCellMem*)cell setWord_sense:word_sense];
-                [(WordCellMem*)cell configCell];
-            }
-            
-            break;
-        }   
-        default:
-        {
-            break;
-        }
-    }
-    
     return cell;
 }
-
-//#pragma - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{        
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//
-//    [[navigationController titleLabel] setText:@"Explore"];
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    
-//}
 
 @end

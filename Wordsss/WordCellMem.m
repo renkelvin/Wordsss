@@ -93,6 +93,7 @@
     else if (self.sense) {
         [self.nameLabel setText:self.sense.meaning_cn];
         [self.meaningLabel setText:[self.sense getTrack]];
+        [self.memLabel setText:@""];
     }
     
     // Word_Association
@@ -113,6 +114,7 @@
     else if (self.word_sense) {
         [self.nameLabel setText:self.word_sense.word.name];
         [self.meaningLabel setText:self.word_sense.meaning_cn];
+        [self.memLabel setText:@""];
     }
 }
 
