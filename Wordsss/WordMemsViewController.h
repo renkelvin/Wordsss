@@ -27,7 +27,7 @@
 
 @property (nonatomic, retain) UIViewController* wordViewController;
 
-@property (nonatomic, retain) IBOutlet UITableView* tableView;
+@property (nonatomic, retain) IBOutlet UITableView* mainTableView;
 @property (nonatomic, retain) IBOutlet UIImageView* placeHolderImageView;
 
 - (WordMemsViewController*)init:(WordVirtualActor*)wordVirtualActor;

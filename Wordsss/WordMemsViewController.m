@@ -11,7 +11,7 @@
 @implementation WordMemsViewController
 
 @synthesize placeHolderImageView;
-@synthesize tableView, wordViewController;
+@synthesize mainTableView, wordViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +39,7 @@
     int count = [[_wordVirtualActor getWordMems]count];
     
     if (!count) {
-        [self.tableView setHidden:YES];
+        [self.mainTableView setHidden:YES];
         [self.placeHolderImageView setHidden:NO];
     }
 }

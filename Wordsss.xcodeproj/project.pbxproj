@@ -127,7 +127,6 @@
 		FE6332D214ADEE5B005CBECF /* tableview_section_head_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A014ADEE5A005CBECF /* tableview_section_head_bg@2x.png */; };
 		FE6332D314ADEE5B005CBECF /* tofel.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A114ADEE5A005CBECF /* tofel.png */; };
 		FE6332D414ADEE5B005CBECF /* tofel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A214ADEE5A005CBECF /* tofel@2x.png */; };
-		FE6ADA6514F508F6005B3C5E /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE6ADA6414F508F6005B3C5E /* WordsssDB.sqlite */; };
 		FE6B999314AB4F4200AA3DEF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B999214AB4F4200AA3DEF /* Word.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
@@ -1317,9 +1316,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEBFBEF91436DAF20028630E /* Wordsss */ = {
+		FEBFBEF91436DAF20028630E /* 迅辞 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "Wordsss" */;
+			buildConfigurationList = FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "迅辞" */;
 			buildPhases = (
 				FEBFBEF61436DAF20028630E /* Sources */,
 				FEBFBEF71436DAF20028630E /* Frameworks */,
@@ -1329,7 +1328,7 @@
 			);
 			dependencies = (
 			);
-			name = Wordsss;
+			name = "迅辞";
 			productName = Wordsss;
 			productReference = FEBFBEFA1436DAF20028630E /* Wordsss.app */;
 			productType = "com.apple.product-type.application";
@@ -1374,7 +1373,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEBFBEF91436DAF20028630E /* Wordsss */,
+				FEBFBEF91436DAF20028630E /* 迅辞 */,
 				FEBFBF191436DAF20028630E /* WordsssTests */,
 			);
 		};
@@ -1569,7 +1568,6 @@
 				FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */,
 				FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */,
 				FE3B9BD114F2A27200B4CE2C /* WordsssDB.xml in Resources */,
-				FEBB8EC714F36E7400F08517 /* WordsssDB.sqlite in Resources */,
 				20663ECF14F6209B009FB251 /* ph_mem.png in Resources */,
 				20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */,
 				20663ED114F6209B009FB251 /* ph_related.png in Resources */,
@@ -1705,7 +1703,7 @@
 /* Begin PBXTargetDependency section */
 		FEBFBF221436DAF20028630E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FEBFBEF91436DAF20028630E /* Wordsss */;
+			target = FEBFBEF91436DAF20028630E /* 迅辞 */;
 			targetProxy = FEBFBF211436DAF20028630E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1867,7 +1865,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "Wordsss" */ = {
+		FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "迅辞" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEBFBF301436DAF20028630E /* Debug */,

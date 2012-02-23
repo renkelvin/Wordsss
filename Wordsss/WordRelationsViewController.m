@@ -11,7 +11,7 @@
 @implementation WordRelationsViewController
 
 @synthesize wordViewController;
-@synthesize tableView, placeHolderImageView;
+@synthesize mainTableView, placeHolderImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +38,7 @@
     
     int count = [[_wordVirtualActor getDerivative]count] + [[_wordVirtualActor getSynonym]count] + [[_wordVirtualActor getAntonym]count];
     if (!count) {
-        [self.tableView setHidden:YES];
+        [self.mainTableView setHidden:YES];
         [self.placeHolderImageView setHidden:NO];
     }
 }
