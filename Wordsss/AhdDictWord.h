@@ -31,6 +31,7 @@
 - (void)removeMeaning:(NSSet *)values;
 
 - (NSString*)getTypeString;
+- (NSString*)getFullTypeString;
 - (NSString*)getTypeStringWithBlank;
 - (NSString*)getBriefMeaning;
 - (NSString*)getSummaryMeaning;

@@ -60,6 +60,49 @@
     }
 }
 
+- (NSString*)getFullTypeString
+{
+    switch ([self.type intValue]) {
+        case 0:
+            return @"others";
+            break;
+        case 1:
+            return @"noun";
+            break;
+        case 2:
+            return @"verb";
+            break;
+        case 3:
+            return @"adjective";
+            break;
+        case 4:
+            return @"adverb";
+            break;
+        case 5:
+            return @"preposition";
+            break;
+        case 6:
+            return @"conjunction";
+            break;
+        case 7:
+            return @"transitive verb";
+            break;
+        case 8:
+            return @"intransitive verb";
+            break;
+        case 9:
+            return @"others";
+            break;
+        default:
+        {
+            // 组合词性
+            return @".";
+            
+            break;
+        }
+    }
+}
+
 - (NSString*)getTypeStringWithBlank
 {
     switch ([self.type intValue]) {
@@ -159,7 +202,7 @@
 
 - (NSString*)getFullMeaningCN
 {
-    NSString* string = [NSString stringWithFormat:@"%@\n", [self getTypeString]];
+    NSString* string = [NSString stringWithFormat:@"%@\n", [self getFullTypeString]];
     
     int i = 1;
     for (AhdDictMeaning* ahdDictMeaning in self.meaning) {
@@ -182,17 +225,5 @@
     
     return array;
 }
-
-//
-//#pragma mark - override getter
-//
-//- (NSMutableSet*)meaning
-//{
-//    NSArray* array = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES]];
-//    
-//    [self.meaning sortedArrayUsingDescriptors:array];
-//    
-//    return nil;
-//}
 
 @end

@@ -31,6 +31,8 @@
 @property (nonatomic, retain) Rootaffix* rootaffix;
 @property (nonatomic, retain) Sense* sense;
 
+@property (nonatomic, retain) IBOutlet UIButton* addButton;
+
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;
 @property (nonatomic, retain) IBOutlet UILabel* memLabel;

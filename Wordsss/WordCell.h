@@ -22,6 +22,8 @@
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;
 
+@property (nonatomic, retain) IBOutlet UIButton* addButton;
+
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;

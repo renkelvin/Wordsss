@@ -29,8 +29,6 @@
     UITableView* _tableView;
 }
 
-@property (nonatomic, retain) IBOutlet UISearchBar* searchBar;
-
 @property (nonatomic, retain) IBOutlet UITableView* tableView;
 
 @end

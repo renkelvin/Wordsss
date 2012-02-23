@@ -30,6 +30,7 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
     NSArray* wordRecordArray = [udm.managedObjectContext executeFetchRequest:request error:nil];
     
+    _wordRecordDict = [NSMutableDictionary dictionary];
     for (WordRecord* wr in wordRecordArray) {
         [_wordRecordDict setObject:wr forKey:wr.word_id];
     }
@@ -40,6 +41,16 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     WordRecord* wr = nil;
     
     wr = [_wordRecordDict objectForKey:word.id];
+    
+    return wr;
+}
+
+- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user
+{
+    UserDataManager* udm = [UserDataManager userdataManager];
+    WordRecord* wr = [udm createWordRecord:word forUser:user];
+    
+    [_wordRecordDict setObject:wr forKey:wr.word_id];
     
     return wr;
 }

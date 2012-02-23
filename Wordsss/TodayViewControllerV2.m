@@ -58,6 +58,9 @@
         // Update view
         [self update];
     }
+    
+    //
+    [UserVirtualActor userVirtualActor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -372,39 +375,6 @@
     //
     //    [self incOperation];
 }
-
-//#pragma mark - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//    
-//    [[navigationController titleLabel] setText:@""];
-//    [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
-//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
-//    
-//    [UIView animateWithDuration:0.3 animations:^(void){
-//        [[navigationController todayBackgroundImageView] setAlpha:1.0];
-//        
-//        [[navigationController titleLabel] setAlpha:1.0];
-//        [[navigationController titleImageView] setAlpha:1.0];
-//        [[navigationController leftButton] setAlpha:1.0];
-//        [[navigationController rightButton] setAlpha:1.0];
-//    }];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    [self nextDay];
-//}
 
 #pragma mark - UINavigationControllerDelegate
 

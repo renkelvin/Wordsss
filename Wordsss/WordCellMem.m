@@ -12,6 +12,7 @@
 
 @synthesize word_association, word_rootaffix, word_sense;
 @synthesize association, rootaffix, sense;
+@synthesize addButton;
 @synthesize nameLabel, meaningLabel, memLabel;
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
 
@@ -34,44 +35,67 @@
 - (IBAction)addButtonClicked:(id)sender
 {
     //
-    UserDataManager* udm = [UserDataManager userdataManager];
     TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
-    
     Word* word = nil;
     
-    //
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    WordRecord* wr = nil;
+    
+    // Word
     if (self.association) {
         ;
     }
-    
-    //
     else if (self.rootaffix) {
         ;
     }
-    
-    //
     else if (self.sense) {
-        
+        ;
     }
-    
-    //
     else if (self.word_association) {
         word = [self.word_association.word getTargetWord];
     }
-    
-    //
     else if (self.word_rootaffix) {
         word = [self.word_rootaffix.word getTargetWord];
     }
-    
-    //
     else if (self.word_sense) {
         word = [self.word_sense.word getTargetWord];
     }
     
     //
     if (word) {
-        [udm createWordRecord:word forUser:tva.user];
+        //
+        [uva createWordRecord:word forUser:tva.user];
+        
+        //
+        wr = [uva getWordRecord:word];
+        
+        // WordPos Level Bar
+        if (wr) {
+            [self.addButton setHidden:YES];
+            
+            [self.wordPosLevelLeftImageView setHidden:NO];
+            [self.wordPosLevelBodyImageView setHidden:NO];
+            [self.wordPosLevelRightImageView setHidden:NO];
+            
+            int bodyWidth = 0;
+            
+            if ([wr.level intValue] == -1) {
+                bodyWidth = 281;
+            }
+            else {
+                bodyWidth = 281 / 11.0 * [wr.level intValue];
+            }
+            
+            CGRect frame;
+            
+            frame = self.wordPosLevelBodyImageView.frame;
+            frame.size.width = bodyWidth;
+            self.wordPosLevelBodyImageView.frame = frame;
+            
+            frame = self.wordPosLevelRightImageView.frame;
+            frame.origin.x = 20 + bodyWidth;
+            self.wordPosLevelRightImageView.frame = frame;
+        }
     }
 }
 
@@ -115,6 +139,50 @@
         [self.nameLabel setText:self.word_sense.word.name];
         [self.meaningLabel setText:self.word_sense.meaning_cn];
         [self.memLabel setText:@""];
+    }
+    
+    // WordPos Level Bar
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    WordRecord* wr = nil;
+    
+    if (self.association)
+        ;
+    else if (self.rootaffix)
+        ;
+    else if (self.sense) 
+        ;
+    else if (self.word_association) 
+        wr = [uva getWordRecord:self.word_association.word];
+    else if (self.word_rootaffix) 
+        wr = [uva getWordRecord:self.word_rootaffix.word];
+    else if (self.word_sense)
+        wr = [uva getWordRecord:self.word_sense.word];
+    
+    if (wr) {
+        [self.addButton setHidden:YES];
+        
+        [self.wordPosLevelLeftImageView setHidden:NO];
+        [self.wordPosLevelBodyImageView setHidden:NO];
+        [self.wordPosLevelRightImageView setHidden:NO];
+        
+        int bodyWidth = 0;
+        
+        if ([wr.level intValue] == -1) {
+            bodyWidth = 281;
+        }
+        else {
+            bodyWidth = 281 / 11.0 * [wr.level intValue];
+        }
+        
+        CGRect frame;
+        
+        frame = self.wordPosLevelBodyImageView.frame;
+        frame.size.width = bodyWidth;
+        self.wordPosLevelBodyImageView.frame = frame;
+        
+        frame = self.wordPosLevelRightImageView.frame;
+        frame.origin.x = 20 + bodyWidth;
+        self.wordPosLevelRightImageView.frame = frame;
     }
 }
 

@@ -24,5 +24,6 @@
 - (void)prepare;
 
 - (WordRecord*)getWordRecord:(Word*)word;
+- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
 
 @end

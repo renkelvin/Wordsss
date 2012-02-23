@@ -11,6 +11,7 @@
 @implementation WordCell
 
 @synthesize word;
+@synthesize addButton;
 @synthesize nameLabel, meaningLabel;
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
 
@@ -63,6 +64,8 @@
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     WordRecord* wr = [uva getWordRecord:self.word];
     if (wr) {
+        [self.addButton setHidden:YES];
+        
         [self.wordPosLevelLeftImageView setHidden:NO];
         [self.wordPosLevelBodyImageView setHidden:NO];
         [self.wordPosLevelRightImageView setHidden:NO];
@@ -91,11 +94,51 @@
 - (IBAction)addButtonClicked:(id)sender
 {
     //
-    UserDataManager* udm = [UserDataManager userdataManager];
     TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
+    Word* w = nil;
+    
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    WordRecord* wr = nil;
+    
+    // Word
+        w = self.word;
     
     //
-    [udm createWordRecord:self.word forUser:tva.user];
+    if (w) {
+        //
+        [uva createWordRecord:w forUser:tva.user];
+        
+        //
+        wr = [uva getWordRecord:w];
+        
+        // WordPos Level Bar
+        if (wr) {
+            [self.addButton setHidden:YES];
+            
+            [self.wordPosLevelLeftImageView setHidden:NO];
+            [self.wordPosLevelBodyImageView setHidden:NO];
+            [self.wordPosLevelRightImageView setHidden:NO];
+            
+            int bodyWidth = 0;
+            
+            if ([wr.level intValue] == -1) {
+                bodyWidth = 281;
+            }
+            else {
+                bodyWidth = 281 / 11.0 * [wr.level intValue];
+            }
+            
+            CGRect frame;
+            
+            frame = self.wordPosLevelBodyImageView.frame;
+            frame.size.width = bodyWidth;
+            self.wordPosLevelBodyImageView.frame = frame;
+            
+            frame = self.wordPosLevelRightImageView.frame;
+            frame.origin.x = 20 + bodyWidth;
+            self.wordPosLevelRightImageView.frame = frame;
+        }
+    }
 }
 
 @end

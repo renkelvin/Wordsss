@@ -10,8 +10,6 @@
 
 @implementation ExploreViewController
 
-@synthesize searchBar = _searchBar;
-
 @synthesize tableView = _tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,24 +32,16 @@
 #pragma mark - View lifecycle
 
 //
-- (void)initSearchBar
-{
-    self.searchBar.hidden = NO; 
-    self.searchBar.placeholder=[NSString stringWithCString:"请输入需要查找的文本内容" encoding: NSUTF8StringEncoding];
-    
-    self.searchBar.translucent = YES;
-}
-
-//
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     //
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
-    
+
     //
-    [self initSearchBar];
+    [[[self navigationController] navigationBar] addSubview:self.searchDisplayController.searchBar];
+    [self.searchDisplayController.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
