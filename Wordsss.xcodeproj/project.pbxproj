@@ -25,6 +25,10 @@
 		2043608A14C2853900170BD1 /* mainbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2043608614C2853900170BD1 /* mainbar_bg@2x.png */; };
 		2043608B14C2853900170BD1 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 2043608714C2853900170BD1 /* thumb.png */; };
 		2043608C14C2853900170BD1 /* thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2043608814C2853900170BD1 /* thumb@2x.png */; };
+		20663ECF14F6209B009FB251 /* ph_mem.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ECB14F6209B009FB251 /* ph_mem.png */; };
+		20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ECC14F6209B009FB251 /* ph_mem@2x.png */; };
+		20663ED114F6209B009FB251 /* ph_related.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ECD14F6209B009FB251 /* ph_related.png */; };
+		20663ED214F6209B009FB251 /* ph_related@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ECE14F6209B009FB251 /* ph_related@2x.png */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
 		FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */; };
@@ -313,6 +317,10 @@
 		2043608614C2853900170BD1 /* mainbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainbar_bg@2x.png"; sourceTree = "<group>"; };
 		2043608714C2853900170BD1 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb.png; sourceTree = "<group>"; };
 		2043608814C2853900170BD1 /* thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@2x.png"; sourceTree = "<group>"; };
+		20663ECB14F6209B009FB251 /* ph_mem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ph_mem.png; sourceTree = "<group>"; };
+		20663ECC14F6209B009FB251 /* ph_mem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ph_mem@2x.png"; sourceTree = "<group>"; };
+		20663ECD14F6209B009FB251 /* ph_related.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ph_related.png; sourceTree = "<group>"; };
+		20663ECE14F6209B009FB251 /* ph_related@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ph_related@2x.png"; sourceTree = "<group>"; };
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
 		FE060C5C143CD7040026228C /* RKTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKTabBarController.xib; sourceTree = "<group>"; };
 		FE060C5D143CD7040026228C /* RKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTabBarController.h; sourceTree = "<group>"; };
@@ -753,6 +761,10 @@
 		FE8736BF143DDC53002FDDE8 /* WordView */ = {
 			isa = PBXGroup;
 			children = (
+				20663ECB14F6209B009FB251 /* ph_mem.png */,
+				20663ECC14F6209B009FB251 /* ph_mem@2x.png */,
+				20663ECD14F6209B009FB251 /* ph_related.png */,
+				20663ECE14F6209B009FB251 /* ph_related@2x.png */,
 				FEE0175E14B3689E00DCC353 /* level_body.png */,
 				FEE0175F14B3689E00DCC353 /* level_body@2x.png */,
 				FEE0176014B3689E00DCC353 /* level_left.png */,
