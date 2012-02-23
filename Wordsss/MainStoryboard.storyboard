@@ -802,7 +802,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="199">
-                                <rect key="frame" x="105" y="12" width="29" height="29"/>
+                                <rect key="frame" x="105" y="13" width="29" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="segments_related.png">
@@ -818,7 +818,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="200">
-                                <rect key="frame" x="185" y="12" width="29" height="29"/>
+                                <rect key="frame" x="185" y="14" width="29" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" image="segments_methods.png">
@@ -2101,7 +2101,7 @@
         <image name="button_back.png" width="50" height="30"/>
         <image name="button_blue_bg.png" width="294" height="43"/>
         <image name="button_grey_done.png" width="46" height="30"/>
-        <image name="button_info.png" width="16" height="16"/>
+        <image name="button_info.png" width="20" height="20"/>
         <image name="button_next.png" width="60" height="30"/>
         <image name="button_red_bg.png" width="294" height="43"/>
         <image name="button_select_to_bg.png" width="146" height="40"/>
