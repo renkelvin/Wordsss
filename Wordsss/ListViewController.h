@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "List.h"
+
 @interface ListViewController : UIViewController
+{
+    List* _list;
+}
 
 @end

@@ -29,20 +29,9 @@
 
 #pragma mark - View lifecycle
 
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //
-//    [self initNavigationBar];
     
     //
     _listsVirtualActor = [ListsVirtualActor listsVirtualActor];
@@ -118,29 +107,5 @@
     
     return cell;
 }
-
-//#pragma - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//    
-//    [[navigationController titleLabel] setText:@"精选词表"];
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    
-//}
 
 @end

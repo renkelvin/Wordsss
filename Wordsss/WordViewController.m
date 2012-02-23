@@ -207,50 +207,6 @@
     [self setSectionViewControllers:tempViewControllersArray];
 }
 
-//#pragma mark - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//    
-//    if (_word)
-//        [[navigationController titleLabel] setText:_word.name];
-//    
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"info_gre.png"] forState:UIControlStateNormal];
-//    
-//    [UIView animateWithDuration:0.3 animations:^(void){
-//        [[navigationController titleLabel] setAlpha:1.0];
-//        [[navigationController titleImageView] setAlpha:1.0];
-//        [[navigationController leftButton] setAlpha:1.0];
-//        [[navigationController rightButton] setAlpha:1.0];
-//    }];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [UIView animateWithDuration:0.3 animations:^(void){
-//        [[navigationController todayBackgroundImageView] setAlpha:0.0];
-//        
-//        [[navigationController titleLabel] setAlpha:0.0];
-//        [[navigationController titleImageView] setAlpha:0.0];
-//        [[navigationController leftButton] setAlpha:0.0];
-//        [[navigationController rightButton] setAlpha:0.0];
-//    }];
-//    
-//    [[self navigationController] popViewControllerAnimated:YES];       
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    
-//}
-
 #pragma mark - UINavigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated

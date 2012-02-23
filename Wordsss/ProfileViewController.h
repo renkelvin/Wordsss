@@ -27,6 +27,9 @@
     RKChartView* _chartView;
 }
 
+@property (nonatomic, retain) IBOutlet UIView* chartContainer;
+@property (nonatomic, retain) IBOutlet UIView* phContainer;
+
 @property (nonatomic, retain) IBOutlet UILabel* nameTitleLabel;
 
 @property (nonatomic, retain) IBOutlet UILabel* infoLeftLabel;

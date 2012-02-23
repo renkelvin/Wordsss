@@ -71,7 +71,6 @@
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE3B9BC314F280CC00B4CE2C /* MwcDictWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */; };
 		FE3B9BC614F280CD00B4CE2C /* MwcDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */; };
-		FE3B9BD114F2A27200B4CE2C /* WordsssDB.xml in Resources */ = {isa = PBXBuildFile; fileRef = FE3B9BD014F2A27200B4CE2C /* WordsssDB.xml */; };
 		FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680014F28FDC00963B95 /* button_grey_done.png */; };
 		FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680114F28FDC00963B95 /* button_grey_done@2x.png */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
@@ -134,6 +133,7 @@
 		FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */; };
 		FE772DBC143D9CC9004DDA0D /* RKDashBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE772DBB143D9CC9004DDA0D /* RKDashBoard.xib */; };
 		FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */; };
+		FE7CAA7014F66D3900ABCC21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF261436DAF20028630E /* InfoPlist.strings */; };
 		FE7D398114ADCF290002015A /* WordCellMem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7D398014ADCF290002015A /* WordCellMem.m */; };
 		FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D614949E0400211A97 /* WordsssDBDataManager.m */; };
 		FE8108DB14949E5C00211A97 /* WordsssDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D914949E5C00211A97 /* WordsssDB.xcdatamodeld */; };
@@ -222,7 +222,6 @@
 		FEBFBF011436DAF20028630E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBFBF001436DAF20028630E /* Foundation.framework */; };
 		FEBFBF031436DAF20028630E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBFBF021436DAF20028630E /* CoreGraphics.framework */; };
 		FEBFBF051436DAF20028630E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBFBF041436DAF20028630E /* CoreData.framework */; };
-		FEBFBF0B1436DAF20028630E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF091436DAF20028630E /* InfoPlist.strings */; };
 		FEBFBF0D1436DAF20028630E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBF0C1436DAF20028630E /* main.m */; };
 		FEBFBF111436DAF20028630E /* WordsssAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBF101436DAF20028630E /* WordsssAppDelegate.m */; };
 		FEBFBF1C1436DAF20028630E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBFBF1B1436DAF20028630E /* SenTestingKit.framework */; };
@@ -237,6 +236,7 @@
 		FED7747314ABA681007BB8D4 /* AhdDictSentence.m in Sources */ = {isa = PBXBuildFile; fileRef = FED7747214ABA681007BB8D4 /* AhdDictSentence.m */; };
 		FEDE225C14A73C0D008908B0 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225B14A73C0D008908B0 /* Status.m */; };
 		FEDE225F14A74EDB008908B0 /* StaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225E14A74EDB008908B0 /* StaRecord.m */; };
+		FEDEB90B14F6377600E49C44 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE6ADA6414F508F6005B3C5E /* WordsssDB.sqlite */; };
 		FEE0174014B366F100DCC353 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE0173F14B366F100DCC353 /* InfoCell.m */; };
 		FEE0175014B3687A00DCC353 /* button_next.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE0174214B3687A00DCC353 /* button_next.png */; };
 		FEE0175114B3687A00DCC353 /* button_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE0174314B3687A00DCC353 /* button_next@2x.png */; };
@@ -384,6 +384,8 @@
 		FE3B9BC414F280CD00B4CE2C /* MwcDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MwcDictMeaning.h; sourceTree = "<group>"; };
 		FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MwcDictMeaning.m; sourceTree = "<group>"; };
 		FE3B9BD014F2A27200B4CE2C /* WordsssDB.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WordsssDB.xml; path = ../../../../Downloads/WordsssDB.xml; sourceTree = "<group>"; };
+		FE4D51D214F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/Wordsss/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		FE4D51D314F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/WordsssTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE5C958514AF0C6600DE10F2 /* Word_Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word_Relation.h; sourceTree = "<group>"; };
 		FE5C958614AF0C6600DE10F2 /* Word_Relation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_Relation.m; sourceTree = "<group>"; };
 		FE5C958814AF11AD00DE10F2 /* AhdDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictMeaning.h; sourceTree = "<group>"; };
@@ -566,13 +568,12 @@
 		FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVirtualActor.m; sourceTree = "<group>"; };
 		FEBF173614A648B10045B8A5 /* RKChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKChartView.h; sourceTree = "<group>"; };
 		FEBF173714A648B10045B8A5 /* RKChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKChartView.m; sourceTree = "<group>"; };
-		FEBFBEFA1436DAF20028630E /* Wordsss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsss.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBFBEFA1436DAF20028630E /* 迅辞.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "迅辞.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBFBEFE1436DAF20028630E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FEBFBF001436DAF20028630E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEBFBF021436DAF20028630E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FEBFBF041436DAF20028630E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FEBFBF081436DAF20028630E /* Wordsss-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wordsss-Info.plist"; sourceTree = "<group>"; };
-		FEBFBF0A1436DAF20028630E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FEBFBF0C1436DAF20028630E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEBFBF0E1436DAF20028630E /* Wordsss-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wordsss-Prefix.pch"; sourceTree = "<group>"; };
 		FEBFBF0F1436DAF20028630E /* WordsssAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsssAppDelegate.h; sourceTree = "<group>"; };
@@ -580,7 +581,6 @@
 		FEBFBF1A1436DAF20028630E /* WordsssTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsssTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBFBF1B1436DAF20028630E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		FEBFBF251436DAF20028630E /* WordsssTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsssTests-Info.plist"; sourceTree = "<group>"; };
-		FEBFBF271436DAF20028630E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FEBFBF291436DAF20028630E /* WordsssTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsssTests.h; sourceTree = "<group>"; };
 		FEBFBF2B1436DAF20028630E /* WordsssTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsssTests.m; sourceTree = "<group>"; };
 		FED1E21714C813A800013D07 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
@@ -946,7 +946,7 @@
 		FEBFBEFB1436DAF20028630E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEBFBEFA1436DAF20028630E /* Wordsss.app */,
+				FEBFBEFA1436DAF20028630E /* 迅辞.app */,
 				FEBFBF1A1436DAF20028630E /* WordsssTests.octest */,
 			);
 			name = Products;
@@ -1330,7 +1330,7 @@
 			);
 			name = "迅辞";
 			productName = Wordsss;
-			productReference = FEBFBEFA1436DAF20028630E /* Wordsss.app */;
+			productReference = FEBFBEFA1436DAF20028630E /* 迅辞.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FEBFBF191436DAF20028630E /* WordsssTests */ = {
@@ -1384,10 +1384,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE7CAA7014F66D3900ABCC21 /* InfoPlist.strings in Resources */,
+				FEDEB90B14F6377600E49C44 /* WordsssDB.sqlite in Resources */,
 				FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */,
 				FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */,
 				FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */,
-				FEBFBF0B1436DAF20028630E /* InfoPlist.strings in Resources */,
 				FEE053DF14379ADC0068CDEC /* Default@2x.png in Resources */,
 				FEEE31AA1439DFC2001F7E90 /* Default.png in Resources */,
 				FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */,
@@ -1567,7 +1568,6 @@
 				FEFA360D14C8496500A2FFBA /* cs_list_thumb.png in Resources */,
 				FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */,
 				FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */,
-				FE3B9BD114F2A27200B4CE2C /* WordsssDB.xml in Resources */,
 				20663ECF14F6209B009FB251 /* ph_mem.png in Resources */,
 				20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */,
 				20663ED114F6209B009FB251 /* ph_related.png in Resources */,
@@ -1712,7 +1712,7 @@
 		FEBFBF091436DAF20028630E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FEBFBF0A1436DAF20028630E /* en */,
+				FE4D51D214F63486008168E9 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1720,7 +1720,7 @@
 		FEBFBF261436DAF20028630E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FEBFBF271436DAF20028630E /* en */,
+				FE4D51D314F63486008168E9 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

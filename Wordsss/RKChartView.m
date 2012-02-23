@@ -112,10 +112,10 @@
 - (void)drawRect:(CGRect)rect
 {
     // TOO few points 0 or 1 or 2
-    if ([points count] == 0 || [points count] == 1) {
+    if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
         return;
     }
-
+    
     // Context
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -132,7 +132,7 @@
     CGFloat components[] = {47 / 255.0, 93 / 255.0, 128 / 255.0, 1.0};
     CGColorRef color = CGColorCreate(colorspace, components);
     CGContextSetStrokeColorWithColor(context, color);
-
+    
     // Shadow Color
     CGFloat componentsShadow[] = {0.0, 0.0, 0.0, 1.0};
     CGColorRef colorShadow = CGColorCreate(colorspace, componentsShadow);
@@ -244,7 +244,7 @@
             //
             UIBezierPath* aPath = [UIBezierPath bezierPath];
             [aPath setLineWidth:4.0];
-
+            
             [points enumerateObjectsUsingBlock:^(id obj, NSUInteger inx, BOOL *stop)
              {
                  // Move to first point

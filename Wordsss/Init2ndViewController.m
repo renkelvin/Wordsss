@@ -15,8 +15,8 @@ static char* nameArray[11] = {
     "高中",              // 3  - 3000  - High
     "CET4",             // 4  - 4000  - CET4
     "CET6",             // 5  - 6000  - CET6
-    "IELTS",            // 6  - 8000  - IELTS
-    "TOFEL",            // 7  - 9000  - TOFEL
+    "雅思",            // 6  - 8000  - IELTS
+    "托福",            // 7  - 9000  - TOFEL
     "SAT",              // 8  - 10000 - SAT
     "GRE",              // 9  - 12448 - GRE
     "GODLIKE"           // 10 - 42814 - HolyShit
@@ -151,23 +151,8 @@ static char* vocaArray[11] = {
 
 #pragma mark - Instance method
 
-- (void)setCurrentLevel
-{
-    //
-    [_initVirtualActor.user.defult setCurrentLevel:[NSNumber numberWithInt:VLCET4]];
-}
-
-- (void)setTargetLevel
-{
-    //
-    [_initVirtualActor.user.defult setTargetLevel:[NSNumber numberWithInt:VLGRE]];    
-}
-
 - (IBAction)nextStep
 {
-    [self setCurrentLevel];
-    [self setTargetLevel];
-    
     Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
     
     [[self navigationController] pushViewController:ivc animated:YES];
@@ -177,30 +162,6 @@ static char* vocaArray[11] = {
 {
     [[self navigationController] popViewControllerAnimated:YES];
 }
-
-//#pragma mark - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//   
-//    [[navigationController titleLabel] setText:@""];
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    [[self navigationController] popViewControllerAnimated:YES];
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    [self nextStep];    
-//}
 
 #pragma mark - UINavigationControllerDelegate
 

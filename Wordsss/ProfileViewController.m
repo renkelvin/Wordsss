@@ -9,22 +9,23 @@
 #import "ProfileViewController.h"
 
 static char* nameArray[11] = {
-    "NONE",             // 0  - 1     - Zero
-    "Basic",            // 1  - 800   - Basic
-    "Middle",           // 2  - 1500  - Middle
-    "High",             // 3  - 3000  - High
-    "CET4",             // 4  - 4000  - CET4
-    "CET6",             // 5  - 6000  - CET6
-    "IELTS",            // 6  - 8000  - IELTS
-    "TOFEL",            // 7  - 9000  - TOFEL
-    "SAT",              // 8  - 10000 - SAT
-    "GRE",              // 9  - 12448 - GRE
-    "GODLIKE"           // 10 - 42814 - HolyShit
+    "NONE",         // 0  - 1     - Zero
+    "基础",          // 1  - 800   - Basic
+    "初中",          // 2  - 1500  - Middle
+    "高中",          // 3  - 3000  - High
+    "CET4",         // 4  - 4000  - CET4
+    "CET6",         // 5  - 6000  - CET6
+    "雅思",          // 6  - 8000  - IELTS
+    "托福",          // 7  - 9000  - TOFEL
+    "SAT",          // 8  - 10000 - SAT
+    "GRE",          // 9  - 12448 - GRE
+    "GODLIKE"       // 10 - 42814 - HolyShit
 };
 
 @implementation ProfileViewController
 
 @synthesize nameTitleLabel;
+@synthesize chartContainer, phContainer;
 @synthesize infoLeftLabel, infoRightLabel;
 @synthesize progressImageView, tagetLabel;
 @synthesize chartView = _chartView;
@@ -48,16 +49,12 @@ static char* nameArray[11] = {
 
 #pragma mark - View lifecycle
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     //
     _profileVirtualActor = [ProfileVirtualActor profileVirtualActor];
-    
-    //
-    //    [self initNavigationBar];
     
     //
     [self update];
@@ -193,8 +190,14 @@ static char* nameArray[11] = {
     [self updateTitle];
     
     //
+    NSMutableArray* array = [_profileVirtualActor getStaRecords];
     [_chartView setType:USER];
-    [_chartView setPoints:[_profileVirtualActor getStaRecords]];
+    [_chartView setPoints:array];
+    
+    if ([array count] <= 2) {
+        [self.phContainer setHidden:NO];
+        [self.chartContainer setHidden:YES];
+    }
 }
 
 #pragma mark - UITableViewDelegate
@@ -323,29 +326,5 @@ static char* nameArray[11] = {
     
     return cell;
 }
-
-//#pragma - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//    
-//    [[navigationController titleLabel] setText:_profileVirtualActor.user.profile.nickname];
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    
-//}
 
 @end

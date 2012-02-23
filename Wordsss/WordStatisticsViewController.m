@@ -11,6 +11,7 @@
 @implementation WordStatisticsViewController
 
 @synthesize chartView = _chartView;
+@synthesize chartContainer, phContainer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,13 +31,6 @@
 }
 
 #pragma mark - View lifecycle
-
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
 
 - (void)viewDidLoad
 {
@@ -72,11 +66,14 @@
 - (void)update
 {
     //
-    
-    
-    //
+    NSMutableArray* array = [_wordVirtualActor getHisRecords];
     [_chartView setType:WORD];
-    [_chartView setPoints:[_wordVirtualActor getHisRecords]];
+    [_chartView setPoints:array];
+    
+    if ([array count] <= 1) {
+        [self.phContainer setHidden:NO];
+        [self.chartContainer setHidden:YES];
+    }
 }
 
 #pragma - UITableViewDelegate
@@ -96,7 +93,7 @@
     RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
     
     [headerView setBackgroundColor:[UIColor clearColor]];
-
+    
     headerView.titleLabel.text = @"迅辞智能词汇分析";
     
     return headerView;
@@ -150,7 +147,7 @@
                 case 1:
                 {
                     [((InfoCell*)cell).infoLabel setText:@"难度评估"];
-
+                    
                     [((InfoCell*)cell).valuLabel setText:@"简单"];
                     
                     break;

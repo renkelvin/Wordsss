@@ -194,7 +194,7 @@
     if (recognizer.state == UIGestureRecognizerStateChanged)
     {
         rect.origin.x += translation.x;
-        if (rect.origin.x > 102 && rect.origin.x < 166) {
+        if (rect.origin.x >= 102 && rect.origin.x <= 166) {
             [self.wordSliderImageView setFrame:rect];
             
             if (rect.origin.x < 134) {

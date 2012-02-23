@@ -28,6 +28,9 @@
 
 @property (nonatomic, retain) IBOutlet RKChartView* chartView;
 
+@property (nonatomic, retain) IBOutlet UIView* chartContainer;
+@property (nonatomic, retain) IBOutlet UIView* phContainer;
+
 - (WordStatisticsViewController*)init:(WordVirtualActor*)wordVirtualActor;
 
 - (void)update;
