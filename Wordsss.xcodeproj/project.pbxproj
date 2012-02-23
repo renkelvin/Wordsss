@@ -29,6 +29,11 @@
 		20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ECC14F6209B009FB251 /* ph_mem@2x.png */; };
 		20663ED114F6209B009FB251 /* ph_related.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ECD14F6209B009FB251 /* ph_related.png */; };
 		20663ED214F6209B009FB251 /* ph_related@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ECE14F6209B009FB251 /* ph_related@2x.png */; };
+		20663ED914F62BFD009FB251 /* wl_large_gre.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ED414F62BFD009FB251 /* wl_large_gre.png */; };
+		20663EDA14F62BFD009FB251 /* wl_large_gre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ED514F62BFD009FB251 /* wl_large_gre@2x.png */; };
+		20663EDB14F62BFD009FB251 /* wl_large_physics.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ED614F62BFD009FB251 /* wl_large_physics.png */; };
+		20663EDC14F62BFD009FB251 /* wl_large_physics@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ED714F62BFD009FB251 /* wl_large_physics@2x.png */; };
+		20663EDD14F62BFD009FB251 /* wl_small_edge.png in Resources */ = {isa = PBXBuildFile; fileRef = 20663ED814F62BFD009FB251 /* wl_small_edge.png */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
 		FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */; };
@@ -321,6 +326,11 @@
 		20663ECC14F6209B009FB251 /* ph_mem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ph_mem@2x.png"; sourceTree = "<group>"; };
 		20663ECD14F6209B009FB251 /* ph_related.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ph_related.png; sourceTree = "<group>"; };
 		20663ECE14F6209B009FB251 /* ph_related@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ph_related@2x.png"; sourceTree = "<group>"; };
+		20663ED414F62BFD009FB251 /* wl_large_gre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_large_gre.png; sourceTree = "<group>"; };
+		20663ED514F62BFD009FB251 /* wl_large_gre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_large_gre@2x.png"; sourceTree = "<group>"; };
+		20663ED614F62BFD009FB251 /* wl_large_physics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_large_physics.png; sourceTree = "<group>"; };
+		20663ED714F62BFD009FB251 /* wl_large_physics@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_large_physics@2x.png"; sourceTree = "<group>"; };
+		20663ED814F62BFD009FB251 /* wl_small_edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_small_edge.png; sourceTree = "<group>"; };
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
 		FE060C5C143CD7040026228C /* RKTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKTabBarController.xib; sourceTree = "<group>"; };
 		FE060C5D143CD7040026228C /* RKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTabBarController.h; sourceTree = "<group>"; };
@@ -1206,6 +1216,11 @@
 			isa = PBXGroup;
 			children = (
 				FEFA360A14C8496500A2FFBA /* cs_list_thumb.png */,
+				20663ED414F62BFD009FB251 /* wl_large_gre.png */,
+				20663ED514F62BFD009FB251 /* wl_large_gre@2x.png */,
+				20663ED614F62BFD009FB251 /* wl_large_physics.png */,
+				20663ED714F62BFD009FB251 /* wl_large_physics@2x.png */,
+				20663ED814F62BFD009FB251 /* wl_small_edge.png */,
 				FEFA360B14C8496500A2FFBA /* ma_list_thumb.png */,
 				FEFA360C14C8496500A2FFBA /* ph_list_thumb.png */,
 			);
@@ -1559,6 +1574,11 @@
 				20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */,
 				20663ED114F6209B009FB251 /* ph_related.png in Resources */,
 				20663ED214F6209B009FB251 /* ph_related@2x.png in Resources */,
+				20663ED914F62BFD009FB251 /* wl_large_gre.png in Resources */,
+				20663EDA14F62BFD009FB251 /* wl_large_gre@2x.png in Resources */,
+				20663EDB14F62BFD009FB251 /* wl_large_physics.png in Resources */,
+				20663EDC14F62BFD009FB251 /* wl_large_physics@2x.png in Resources */,
+				20663EDD14F62BFD009FB251 /* wl_small_edge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

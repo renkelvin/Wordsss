@@ -1828,16 +1828,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="314">
-                                <rect key="frame" x="0.0" y="97" width="320" height="270"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="22" id="314">
+                                <rect key="frame" x="0.0" y="100" width="320" height="267"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListsTableViewCell" rowHeight="88" id="315" customClass="ListCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="88"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListsTableViewCell" rowHeight="72" id="315" customClass="ListCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_divider.png" id="318">
@@ -1845,11 +1845,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_arrow_dark.png" id="IfB-QR-vFm">
-                                                    <rect key="frame" x="290" y="36" width="10" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" image="info_gre.png" id="LCj-E9-4gz">
-                                                    <rect key="frame" x="242" y="32" width="40" height="24"/>
+                                                    <rect key="frame" x="298" y="28" width="10" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cs_list_thumb.png" id="tsF-LG-BIP">
@@ -1877,6 +1873,14 @@
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="uWa-zu-M7r">
+                                                    <rect key="frame" x="12" y="10" width="52" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wl_small_edge.png" id="IKc-Hs-0hO">
+                                                    <rect key="frame" x="12" y="10" width="52" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1893,11 +1897,11 @@
                                     <outlet property="delegate" destination="307" id="317"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vI8-6O-mAD">
-                                <rect key="frame" x="16" y="16" width="134" height="66"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vI8-6O-mAD">
+                                <rect key="frame" x="166" y="8" width="144" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" image="wl_large_gre.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1905,11 +1909,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xbQ-tr-kds">
-                                <rect key="frame" x="171" y="16" width="134" height="66"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rMk-LI-qrj">
+                                <rect key="frame" x="12" y="8" width="144" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" image="wl_large_physics.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2308,7 +2312,6 @@
         <image name="chart_bg.png" width="320" height="131"/>
         <image name="chart_popover_bg.png" width="300" height="169"/>
         <image name="confirm_hl.png" width="15" height="14"/>
-        <image name="cs_list_thumb.png" width="256" height="256"/>
         <image name="forget_hl.png" width="12" height="16"/>
         <image name="guide_done.png" width="126" height="126"/>
         <image name="guide_processing.png" width="116" height="116"/>
@@ -2345,6 +2348,9 @@
         <image name="title.png" width="88" height="37"/>
         <image name="title_small.png" width="48" height="22"/>
         <image name="translation_to_wordlist.png" width="309" height="31"/>
+        <image name="wl_large_gre.png" width="144" height="84"/>
+        <image name="wl_large_physics.png" width="144" height="84"/>
+        <image name="wl_small_edge.png" width="52" height="53"/>
         <image name="word_bg.png" width="320" height="142"/>
         <image name="word_slider.png" width="236" height="34"/>
     </resources>
