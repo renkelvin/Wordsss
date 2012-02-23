@@ -11,6 +11,7 @@
 @implementation WordRelationsViewController
 
 @synthesize wordViewController;
+@synthesize tableView, placeHolderImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,13 +32,16 @@
 
 #pragma mark - View lifecycle
 
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad
- {
- [super viewDidLoad];
- }
- */
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    int count = [[_wordVirtualActor getDerivative]count] + [[_wordVirtualActor getSynonym]count] + [[_wordVirtualActor getAntonym]count];
+    if (!count) {
+        [self.tableView setHidden:YES];
+        [self.placeHolderImageView setHidden:NO];
+    }
+}
 
 - (void)viewDidUnload
 {

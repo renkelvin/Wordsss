@@ -1554,7 +1554,11 @@
 				FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */,
 				FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */,
 				FE3B9BD114F2A27200B4CE2C /* WordsssDB.xml in Resources */,
-				FE6ADA6514F508F6005B3C5E /* WordsssDB.sqlite in Resources */,
+				FEBB8EC714F36E7400F08517 /* WordsssDB.sqlite in Resources */,
+				20663ECF14F6209B009FB251 /* ph_mem.png in Resources */,
+				20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */,
+				20663ED114F6209B009FB251 /* ph_related.png in Resources */,
+				20663ED214F6209B009FB251 /* ph_related@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

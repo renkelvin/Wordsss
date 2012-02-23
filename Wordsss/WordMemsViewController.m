@@ -10,7 +10,8 @@
 
 @implementation WordMemsViewController
 
-@synthesize wordViewController;
+@synthesize placeHolderImageView;
+@synthesize tableView, wordViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,20 +32,17 @@
 
 #pragma mark - View lifecycle
 
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
-
-/*
- // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad
- {
- [super viewDidLoad];
- }
- */
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    int count = [[_wordVirtualActor getWordMems]count];
+    
+    if (!count) {
+        [self.tableView setHidden:YES];
+        [self.placeHolderImageView setHidden:NO];
+    }
+}
 
 - (void)viewDidUnload
 {
