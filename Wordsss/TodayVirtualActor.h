@@ -18,6 +18,8 @@
 #import "HisRecord.h"
 #import "WordRecord.h"
 
+#import "UserVirtualActor.h"
+
 #define kTodayWordLimit       100
 #define kTotalViewFactorMin   1.5
 #define kTotalViewFactorMax   4.5

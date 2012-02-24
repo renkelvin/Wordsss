@@ -13,6 +13,11 @@
 #import "PHListWord.h"
 #import "CSListWord.h"
 
+#import "UserVirtualActor.h"
+#import "TodayVirtualActor.h"
+
+#import "WordRecord.h"
+
 @interface ListWordCell : UITableViewCell
 
 @property (nonatomic, retain) MAListWord* maListWord;
@@ -30,5 +35,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
 
 - (void)configCell;
+
+- (IBAction)addButtonClicked:(id)sender;
 
 @end

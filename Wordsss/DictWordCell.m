@@ -38,29 +38,29 @@
         self.meaningENLabel = [[UILabel alloc] init];
     }
     
-    [self.meaningCNLabel setText:@"1"];
-    [self.meaningENLabel setText:@"2"];
+//    [self.meaningCNLabel setText:@"1"];
+//    [self.meaningENLabel setText:@"2"];
     
-//    // AhdDictWord
-//    if (self.ahdDictWord) {
-//        //
-//        [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
-//        [self.meaningENLabel setText:@""];
-//    }
-//    
-//    // MwcDictWord
-//    else if (self.mwcDictWord) {
-//        //
-//        [self.meaningCNLabel setText:[self.mwcDictWord getFullMeaningEN]];
-//        [self.meaningENLabel setText:@""];
-//    }
-//    
-//    // AhdDictSentence
-//    else if (self.ahdDictSentence) {
-//        //
-//        [self.meaningCNLabel setText:self.ahdDictSentence.meaning_cn];
-//        [self.meaningENLabel setText:self.ahdDictSentence.meaning_en];
-//    }
+    // AhdDictWord
+    if (self.ahdDictWord) {
+        //
+        [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
+        [self.meaningENLabel setText:@""];
+    }
+    
+    // MwcDictWord
+    else if (self.mwcDictWord) {
+        //
+        [self.meaningCNLabel setText:[self.mwcDictWord getFullMeaningEN]];
+        [self.meaningENLabel setText:@""];
+    }
+    
+    // AhdDictSentence
+    else if (self.ahdDictSentence) {
+        //
+        [self.meaningCNLabel setText:self.ahdDictSentence.meaning_cn];
+        [self.meaningENLabel setText:self.ahdDictSentence.meaning_en];
+    }
     
     //
     NSString* stringCN = self.meaningCNLabel.text;

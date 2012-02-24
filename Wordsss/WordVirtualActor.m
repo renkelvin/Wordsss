@@ -25,6 +25,9 @@
 {
     self.word = word;
     
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    self.wordRecord = [uva getWordRecord:word];
+    
     return self;
 }
 

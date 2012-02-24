@@ -10,6 +10,8 @@
 
 @implementation ListViewController
 
+@synthesize listTitleLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,6 +41,11 @@
     [super viewDidUnload];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.listTitleLabel setText:_list.name];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -57,10 +64,10 @@
 - (ListViewController*)initWithList:(List*)list
 {
     _list = list;
-
+    
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     _listWordArray = [wdm getListWordArray:_list];
-
+    
     return self;
 }
 
@@ -68,9 +75,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Word* word = nil;
+    ListWordCell* cell = (ListWordCell*)[tableView cellForRowAtIndexPath:indexPath];
     
-    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord] and:nil];
+    Word* word = nil;
+    if (cell.maListWord) {
+        word = cell.maListWord.word_list.word;
+    }
+    else if (cell.phListWord) {
+        word = cell.phListWord.word_list.word;
+    }
+    else if (cell.csListWord) {
+        word = cell.csListWord.word_list.word;
+    }
+    
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
     
     [[self navigationController] pushViewController:wvc animated:YES];
 }

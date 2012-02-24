@@ -40,7 +40,7 @@
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
     
     //
-    [[[self navigationController] navigationBar] addSubview:self.searchDisplayController.searchBar];
+//    [[[self navigationController] navigationBar] addSubview:self.searchDisplayController.searchBar];
     [self.searchDisplayController.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
 }
 
