@@ -138,6 +138,13 @@
             frame.origin.x = 20 + bodyWidth;
             self.wordPosLevelRightImageView.frame = frame;
         }
+        else {
+            [self.addButton setHidden:NO];
+            
+            [self.wordPosLevelLeftImageView setHidden:YES];
+            [self.wordPosLevelBodyImageView setHidden:YES];
+            [self.wordPosLevelRightImageView setHidden:YES];
+        }
     }
 }
 

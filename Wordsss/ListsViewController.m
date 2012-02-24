@@ -60,6 +60,28 @@
 
 #pragma - UITableViewDelegate
 
+- (IBAction)featureList1ButtonClicked:(id)sender
+{
+    // 物理
+    NSDictionary* dict = [_listsVirtualActor getListDictionary];
+    List* list = [dict objectForKey:@"物理词表"];
+    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    lvc = [lvc initWithList:list];
+    [[self navigationController] pushViewController:lvc animated:YES];    
+}
+
+- (IBAction)featureList2ButtonClicked:(id)sender
+{
+    // GRE红宝书
+    NSDictionary* dict = [_listsVirtualActor getListDictionary];
+    List* list = [dict objectForKey:@"GRE红宝书词表"];
+    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    lvc = [lvc initWithList:list];
+    [[self navigationController] pushViewController:lvc animated:YES];    
+}
+
+#pragma - UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
@@ -90,7 +112,7 @@
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[_listsVirtualActor getListDictionary] count];
+    return [[_listsVirtualActor getListDictionary] count] - 1;
 }
 
 // Cell
@@ -98,12 +120,31 @@
 {
     static NSString* WordBooksTableViewCellIndentifier = @"ListsTableViewCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:WordBooksTableViewCellIndentifier];
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
     NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    [(ListCell*)cell setList:[[dict allValues] objectAtIndex:indexPath.row]];
+    List* list = nil;
+    switch (indexPath.row) {
+        case 0:     // 数学
+        {
+            list = [dict objectForKey:@"数学词表"];
+            break;
+        }
+        case 1:     // 计算机
+        {
+            list = [dict objectForKey:@"计算机词表"];
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
+    
+    [(ListCell*)cell setList:list];
     [(ListCell*)cell configCell];
     
     return cell;

@@ -104,9 +104,23 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 
 - (NSArray*)getListWordArray:(List*)list
 {
-    NSString* listWord = @"MAListWord";
+    NSString* listWord = nil;
     
+    if ([list.name compare:@"数学词表"] == NSOrderedSame) {
+        listWord = @"MAListWord";
+    }
+    else if ([list.name compare:@"物理词表"] == NSOrderedSame) {
+        listWord = @"PHListWord";
+    }
+    if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
+        listWord = @"CSListWord";
+    }
+
     // 
+    if (!listWord) {
+        return nil;
+    }
+    
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:listWord];    
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];
     

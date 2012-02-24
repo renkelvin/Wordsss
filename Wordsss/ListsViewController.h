@@ -25,4 +25,7 @@
     ListsVirtualActor* _listsVirtualActor;
 }
 
+- (IBAction)featureList1ButtonClicked:(id)sender;
+- (IBAction)featureList2ButtonClicked:(id)sender;
+
 @end

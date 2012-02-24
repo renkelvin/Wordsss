@@ -10,10 +10,14 @@
 
 #import "Word.h"
 #import "MAListWord.h"
+#import "PHListWord.h"
+#import "CSListWord.h"
 
 @interface ListWordCell : UITableViewCell
 
 @property (nonatomic, retain) MAListWord* maListWord;
+@property (nonatomic, retain) PHListWord* phListWord;
+@property (nonatomic, retain) CSListWord* csListWord;
 
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;

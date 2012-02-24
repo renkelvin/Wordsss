@@ -118,9 +118,21 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ListTableViewCellIndentifier];
     }
     
-    MAListWord* maListWord = [_listWordArray objectAtIndex:indexPath.row];
-    [(ListWordCell*)cell setMaListWord:maListWord];
-    [(ListWordCell*)cell configCell];
+    if ([_list.name compare:@"数学词表"] == NSOrderedSame) {
+        MAListWord* maListWord = [_listWordArray objectAtIndex:indexPath.row];
+        [(ListWordCell*)cell setMaListWord:maListWord];
+        [(ListWordCell*)cell configCell];
+    }
+    else if ([_list.name compare:@"物理词表"] == NSOrderedSame) {
+        PHListWord* phListWord = [_listWordArray objectAtIndex:indexPath.row];
+        [(ListWordCell*)cell setPhListWord:phListWord];
+        [(ListWordCell*)cell configCell];
+    }
+    else if ([_list.name compare:@"计算机词表"] == NSOrderedSame) {
+        CSListWord* csListWord = [_listWordArray objectAtIndex:indexPath.row];
+        [(ListWordCell*)cell setCsListWord:csListWord];
+        [(ListWordCell*)cell configCell];
+    }
     
     return cell;
 }
