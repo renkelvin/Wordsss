@@ -17,7 +17,9 @@
 
 #import "ListsVirtualActor.h"
 
-@interface ListsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+#import "ListViewController.h"
+
+@interface ListsViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     //
     ListsVirtualActor* _listsVirtualActor;

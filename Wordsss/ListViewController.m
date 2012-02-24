@@ -29,32 +29,112 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
-*/
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - IBAction
+
+- (IBAction)navigationBackButtonClicked:(id)sender
+{
+    [[self navigationController] popViewControllerAnimated:YES];       
+}
+
+#pragma mark -
+
+- (ListViewController*)initWithList:(List*)list
+{
+    _list = list;
+
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    _listWordArray = [wdm getListWordArray:_list];
+
+    return self;
+}
+
+#pragma - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Word* word = nil;
+    
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord] and:nil];
+    
+    [[self navigationController] pushViewController:wvc animated:YES];
+}
+
+#pragma - UITableViewDataSource
+
+// Section number
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+// Cell number
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_list.num intValue];
+}
+
+// Header View
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
+    
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    
+    headerView.titleLabel.text = @"---";
+    
+    return headerView;
+}
+
+// Header height
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 28;
+}
+
+// Cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString* ListTableViewCellIndentifier = @"ListTableViewCell";
+    
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:ListTableViewCellIndentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ListTableViewCellIndentifier];
+    }
+    
+    MAListWord* maListWord = [_listWordArray objectAtIndex:indexPath.row];
+    [(ListWordCell*)cell setMaListWord:maListWord];
+    [(ListWordCell*)cell configCell];
+    
+    return cell;
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    //    [self initNavigationBar];
 }
 
 @end

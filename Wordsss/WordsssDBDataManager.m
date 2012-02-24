@@ -88,7 +88,6 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     
     // Get 
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Sense"];
-    //    [request setPredicate:[NSPredicate predicateWithFormat:@""]];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     // Rand
@@ -101,6 +100,17 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     array = [fetchResult objectsAtIndexes:indexSet];
     
     return array;
+}
+
+- (NSArray*)getListWordArray:(List*)list
+{
+    NSString* listWord = @"MAListWord";
+    
+    // 
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:listWord];    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];
+    
+    return result;
 }
 
 #pragma mark - Core Data

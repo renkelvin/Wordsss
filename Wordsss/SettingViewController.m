@@ -82,9 +82,6 @@ static char* vocaArray[11] = {
     // Get todayVirtualActor
     _settingVirtualActor = [SettingVirtualActor settingVirtualActor];
     
-    // Init rknc delegate
-    [[self navigationController] setDelegate:self];
-    
     //
     [self update];
 }

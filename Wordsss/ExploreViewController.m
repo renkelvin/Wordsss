@@ -38,7 +38,7 @@
     
     //
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
-
+    
     //
     [[[self navigationController] navigationBar] addSubview:self.searchDisplayController.searchBar];
     [self.searchDisplayController.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
@@ -64,7 +64,10 @@
 
 #pragma - UITableViewDelegate
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 #pragma - UITableViewDataSource
 

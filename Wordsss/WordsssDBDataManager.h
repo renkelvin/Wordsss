@@ -12,6 +12,7 @@
 #import "Association.h"
 #import "Rootaffix.h"
 #import "Sense.h"
+#import "List.h"
 
 @interface WordsssDBDataManager : NSObject
 
@@ -32,5 +33,6 @@
 - (NSArray*)getRandomAssociations:(int)count;
 - (NSArray*)getRandomRootaffixs:(int)count;
 - (NSArray*)getRandomSenses:(int)count;
+- (NSArray*)getListWordArray:(List*)list;
 
 @end

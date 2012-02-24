@@ -55,15 +55,18 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-/**
- Handle deletion of an event.
- */
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma - UITableViewDelegate
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
+    lvc = [lvc initWithList:cell.list];
+    [[self navigationController] pushViewController:lvc animated:YES];    
+}
 
 #pragma - UITableViewDataSource
 
@@ -87,9 +90,7 @@
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray* array = [_listsVirtualActor getListArray];
-    
-    return [array count];
+    return [[_listsVirtualActor getListDictionary] count];
 }
 
 // Cell
@@ -101,8 +102,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    NSArray* array = [_listsVirtualActor getListArray];
-    [(ListCell*)cell setList:[array objectAtIndex:indexPath.row]];
+    NSDictionary* dict = [_listsVirtualActor getListDictionary];
+    [(ListCell*)cell setList:[[dict allValues] objectAtIndex:indexPath.row]];
     [(ListCell*)cell configCell];
     
     return cell;

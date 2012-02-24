@@ -30,16 +30,21 @@ static ListsVirtualActor* sharedListsVirtualActor = nil;
     
     // Get
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"List"];
-    _listArray = [wdm.managedObjectContext executeFetchRequest:request error:nil];
+    NSArray* array = [wdm.managedObjectContext executeFetchRequest:request error:nil];
+    
+    _listDictionary = [NSMutableDictionary dictionary];
+    for (List* list in array) {
+        [_listDictionary setValue:list forKey:[list.id stringValue]];
+    }
 }
 
-- (NSArray*)getListArray
+- (NSDictionary*)getListDictionary;
 {
-    if (!_listArray) {
+    if (!_listDictionary) {
         [self prepare];
     }
     
-    return _listArray;
+    return _listDictionary;
 }
 
 @end

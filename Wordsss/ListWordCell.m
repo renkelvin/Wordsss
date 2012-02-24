@@ -10,4 +10,18 @@
 
 @implementation ListWordCell
 
+@synthesize maListWord;
+
+@synthesize nameLabel, meaningLabel;
+@synthesize addButton;
+@synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
+
+- (void)configCell
+{
+    if (self.maListWord) {
+        [self.nameLabel setText:self.maListWord.word_list.word.name];
+        [self.meaningLabel setText:self.maListWord.meaning];
+    }
+}
+
 @end

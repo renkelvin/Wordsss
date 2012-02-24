@@ -8,11 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Word.h"
 #import "List.h"
+#import "MAListWord.h"
 
-@interface ListViewController : UIViewController
+#import "WordViewController.h"
+
+#import "ListWordCell.h"
+
+@interface ListViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     List* _list;
+    NSArray* _listWordArray;
 }
+
+- (ListViewController*)initWithList:(List*)list;
+
+- (IBAction)navigationBackButtonClicked:(id)sender;
 
 @end

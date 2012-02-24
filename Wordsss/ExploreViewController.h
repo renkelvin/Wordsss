@@ -20,6 +20,8 @@
 #import "WordCellMem.h"
 #import "RKTableHeader.h"
 
+#import "WordViewController.h"
+
 @interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource> {
     //
     ExploreVirtualActor* _exploreVirtualActor;

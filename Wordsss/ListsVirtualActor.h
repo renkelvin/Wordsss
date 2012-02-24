@@ -12,16 +12,17 @@
 #import "WordsssDBDataManager.h"
 
 #import "CSListWord.h"
+#import "List.h"
 
 @interface ListsVirtualActor : NSObject
 {
-    NSArray* _listArray;
+    NSMutableDictionary* _listDictionary;
 }
 
 + (ListsVirtualActor*)listsVirtualActor;
 
 - (void)prepare;
 
-- (NSArray*)getListArray;
+- (NSDictionary*)getListDictionary;
 
 @end

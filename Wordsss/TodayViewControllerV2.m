@@ -47,9 +47,6 @@
 {
     [super viewDidLoad];
     
-    // Init rknc delegate
-    [[self navigationController] setDelegate:self];
-    
     // Check has init user
     if ([self checkHasInitUser]) {
         // Get todayVirtualActor
@@ -374,18 +371,6 @@
     
     //
     //    [self incOperation];
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    //    [self initNavigationBar];
 }
 
 @end
