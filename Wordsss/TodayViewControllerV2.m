@@ -14,6 +14,8 @@
 @synthesize wordSliderImageView;
 @synthesize wordSliderTouchArea;
 
+@synthesize preTransView, posTransView;
+
 @synthesize forgetImageView, confirmImageView;
 
 @synthesize wordPreLabel, wordCurLabel, wordPosLabel;
@@ -139,6 +141,34 @@
     [_todayVirtualActor nextDay];
 }
 
+- (void)animate
+{
+    //
+    CGRect preFrame = kPreTransPositionBeg;
+    [self.preTransView setFrame:preFrame];
+    
+    CGRect posFrame = kPosTransPositionBeg;
+    [self.posTransView setFrame:posFrame];
+    
+    CGRect curFrame = kCurTransPositionBeg;
+    [self.wordCurLabel setFrame:curFrame];
+    [self.wordCurLabel setAlpha:1.0];
+
+    //
+    [UIView animateWithDuration:0.5 animations:^(void)
+     {
+         CGRect preFrame = kPreTransPositionEnd;
+         [self.preTransView setFrame:preFrame];
+         
+         CGRect posFrame = kPosTransPositionEnd;
+         [self.posTransView setFrame:posFrame];
+         
+         CGRect curFrame = kCurTransPositionEnd;
+         [self.wordCurLabel setFrame:curFrame];
+         [self.wordCurLabel setAlpha:0.0];
+     }];
+}
+
 // 
 - (void)incOperation
 {
@@ -154,6 +184,8 @@
     
     // Update Word
     [_todayVirtualActor updateWord];
+    
+    [self animate];
     
     // Update view
     [self update];
