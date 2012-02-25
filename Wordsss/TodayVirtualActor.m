@@ -171,8 +171,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     if ([_wordRecordSet count] >= kTodayWordLimit)
         return;
     
-    UserDataManager* udm = [UserDataManager userdataManager];
-    
     // NOT Enough
     // Get existing wordRecord
     NSMutableSet* word_id_set = [NSMutableArray array];
@@ -224,8 +222,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"name == \"pregnant\""]];
     
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
-    
-    UserDataManager* udm = [UserDataManager userdataManager];
     
     _wordRecordSet = [NSMutableSet set];  
     

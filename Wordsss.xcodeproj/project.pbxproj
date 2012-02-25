@@ -268,6 +268,7 @@
 		FEE351CB14AE2F8700BF6645 /* RKTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE351CA14AE2F8700BF6645 /* RKTableHeader.m */; };
 		FEE37B7714370C0700A0E6AC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE37B7614370C0700A0E6AC /* ProfileViewController.m */; };
 		FEE37BB714370F7600A0E6AC /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE37BB614370F7600A0E6AC /* TestViewController.m */; };
+		FEE5BB7E14F90DE500877DA2 /* GRERBListViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE5BB7D14F90DE500877DA2 /* GRERBListViewControllerViewController.m */; };
 		FEE99F4714C47D61003F70F9 /* MAListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4614C47D61003F70F9 /* MAListWord.m */; };
 		FEE99F4D14C480F4003F70F9 /* PHListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4C14C480F3003F70F9 /* PHListWord.m */; };
 		FEE99F5014C483A1003F70F9 /* UserVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4F14C483A1003F70F9 /* UserVirtualActor.m */; };
@@ -630,6 +631,8 @@
 		FEE37B7614370C0700A0E6AC /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		FEE37BB514370F7600A0E6AC /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		FEE37BB614370F7600A0E6AC /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		FEE5BB7C14F90DE500877DA2 /* GRERBListViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRERBListViewControllerViewController.h; sourceTree = "<group>"; };
+		FEE5BB7D14F90DE500877DA2 /* GRERBListViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRERBListViewControllerViewController.m; sourceTree = "<group>"; };
 		FEE99F4514C47D61003F70F9 /* MAListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAListWord.h; sourceTree = "<group>"; };
 		FEE99F4614C47D61003F70F9 /* MAListWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAListWord.m; sourceTree = "<group>"; };
 		FEE99F4B14C480F3003F70F9 /* PHListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHListWord.h; sourceTree = "<group>"; };
@@ -762,6 +765,8 @@
 				FEEE31181439CB1B001F7E90 /* SettingViewController.m */,
 				FE34436314F512D0002E03F1 /* ListViewController.h */,
 				FE34436414F512D0002E03F1 /* ListViewController.m */,
+				FEE5BB7C14F90DE500877DA2 /* GRERBListViewControllerViewController.h */,
+				FEE5BB7D14F90DE500877DA2 /* GRERBListViewControllerViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1707,6 +1712,7 @@
 				FEFB986114F8B05600DB8B85 /* GRERBListWord.m in Sources */,
 				FEFB986414F8B05600DB8B85 /* GRERBListMem.m in Sources */,
 				FEFB986714F8B80300DB8B85 /* Word_List.m in Sources */,
+				FEE5BB7E14F90DE500877DA2 /* GRERBListViewControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
