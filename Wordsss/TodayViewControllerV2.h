@@ -60,6 +60,20 @@
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelT;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelM;
 
+@property (nonatomic, retain) IBOutlet UILabel* wordPreTransLabel;
+@property (nonatomic, retain) IBOutlet UILabel* wordCurTransLabel;
+@property (nonatomic, retain) IBOutlet UILabel* wordPosTransLabel;
+
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelTransImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftTransImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyTransImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightTransImageView;
+
+@property (nonatomic, retain) IBOutlet UIButton* briefMeaningTransButton;
+@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelT;
+@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelM;
+
+
 #pragma mark - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender;

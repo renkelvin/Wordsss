@@ -17,12 +17,13 @@
 @synthesize preTransView, posTransView;
 
 @synthesize forgetImageView, confirmImageView;
-
 @synthesize wordPreLabel, wordCurLabel, wordPosLabel;
-
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
-
 @synthesize briefMeaningButton, briefMeaningLabelT, briefMeaningLabelM;
+
+@synthesize wordPreTransLabel, wordCurTransLabel, wordPosTransLabel;
+@synthesize wordPosLevelTransImageView, wordPosLevelLeftTransImageView, wordPosLevelBodyTransImageView, wordPosLevelRightTransImageView;
+@synthesize briefMeaningTransButton, briefMeaningTransLabelT, briefMeaningTransLabelM;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -90,7 +91,7 @@
         self.wordPreLabel.text = [_todayVirtualActor wordPre].name;
     }
     if ([_todayVirtualActor wordCur]) {
-        self.wordCurLabel.text = [NSString stringWithFormat:@"%@", [_todayVirtualActor wordCur].name, [[_todayVirtualActor wordRecordCur].level stringValue], [[_todayVirtualActor wordRecordCur].day stringValue]];
+        self.wordCurLabel.text = [_todayVirtualActor wordCur].name;
     }
     if ([_todayVirtualActor wordPos]) {
         self.wordPosLabel.text = [_todayVirtualActor wordPos].name;
@@ -136,6 +137,63 @@
     }
 }
 
+// update trans
+- (void)updateTrans
+{
+    // 3 Word Label
+    if ([_todayVirtualActor wordPre]) {
+        self.wordPreLabel.text = [_todayVirtualActor wordPre].name;
+    }
+    if ([_todayVirtualActor wordCur]) {
+        self.wordPreTransLabel.text = [_todayVirtualActor wordCur].name;
+    }
+    if ([_todayVirtualActor wordPos]) {
+        self.wordCurTransLabel.text = [_todayVirtualActor wordPos].name;
+    }
+    if ([_todayVirtualActor wordPos]) {
+        self.wordPosTransLabel.text = [_todayVirtualActor wordPos].name;
+    }
+    
+    // WordPos Level Bar
+    if ([_todayVirtualActor wordPos]) {
+        [self.wordPosLevelLeftTransImageView setHidden:NO];
+        [self.wordPosLevelBodyTransImageView setHidden:NO];
+        [self.wordPosLevelRightTransImageView setHidden:NO];
+        
+        int bodyWidth = 0;
+        
+        if ([[_todayVirtualActor wordRecordPos].level intValue] == -1) {
+            bodyWidth = 281;
+        }
+        else {
+            bodyWidth = 281 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
+        }
+        
+        CGRect frame;
+        
+        frame = self.wordPosLevelBodyTransImageView.frame;
+        frame.size.width = bodyWidth;
+        self.wordPosLevelBodyTransImageView.frame = frame;
+        
+        frame = self.wordPosLevelRightTransImageView.frame;
+        frame.origin.x = 20 + bodyWidth - 1;
+        self.wordPosLevelRightTransImageView.frame = frame;
+    }
+    
+    // WordPos Brief Meaning
+    if ([_todayVirtualActor wordPos]) {
+        [[_todayVirtualActor wordPos] configLabel:self.briefMeaningTransLabelT label:self.briefMeaningTransLabelM];
+    }
+    
+    //
+    if (ifDec) {
+        [self.briefMeaningTransButton setSelected:YES];
+    }
+    else {
+        [self.briefMeaningTransButton setSelected:NO];
+    }
+}
+
 - (void)nextDay
 {
     [_todayVirtualActor nextDay];
@@ -151,9 +209,9 @@
     [self.posTransView setFrame:posFrame];
     
     CGRect curFrame = kCurTransPositionBeg;
-    [self.wordCurLabel setFrame:curFrame];
-    [self.wordCurLabel setAlpha:1.0];
-
+    [self.wordCurTransLabel setFrame:curFrame];
+    [self.wordCurTransLabel setAlpha:1.0];
+    
     //
     [UIView animateWithDuration:0.5 animations:^(void)
      {
@@ -164,8 +222,11 @@
          [self.posTransView setFrame:posFrame];
          
          CGRect curFrame = kCurTransPositionEnd;
-         [self.wordCurLabel setFrame:curFrame];
-         [self.wordCurLabel setAlpha:0.0];
+         [self.wordCurTransLabel setFrame:curFrame];
+         [self.wordCurTransLabel setAlpha:0.0];
+     } completion:^(BOOL finished){
+         // Update view
+         [self update];
      }];
 }
 
@@ -185,10 +246,14 @@
     // Update Word
     [_todayVirtualActor updateWord];
     
+    // Update trans view
+    [self updateTrans];
+    
+    //
     [self animate];
     
     // Update view
-    [self update];
+    //    [self update];
     
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
