@@ -1622,6 +1622,14 @@
 				20663EDB14F62BFD009FB251 /* wl_large_physics.png in Resources */,
 				20663EDC14F62BFD009FB251 /* wl_large_physics@2x.png in Resources */,
 				20663EDD14F62BFD009FB251 /* wl_small_edge.png in Resources */,
+				206A401A14F8B223009B6D2F /* wl_fee.png in Resources */,
+				206A401B14F8B223009B6D2F /* wl_fee@2x.png in Resources */,
+				206A401C14F8B223009B6D2F /* wl_free.png in Resources */,
+				206A401D14F8B223009B6D2F /* wl_free@2x.png in Resources */,
+				206A401E14F8B223009B6D2F /* wl_paid.png in Resources */,
+				206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */,
+				206A402314F8B236009B6D2F /* button_join.png in Resources */,
+				206A402414F8B236009B6D2F /* button_join@2x.png in Resources */,
 				FE7FF32814F8D13100250287 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
