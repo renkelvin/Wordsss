@@ -154,7 +154,7 @@ static char* vocaArray[11] = {
     
     // ERROR
     if (curRow >= tarRow) {
-        [[[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cacel" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"范围无效" message:@"您必须从较低水平选择至较高水平。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil] show];
     }
     else {
         _settingVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];

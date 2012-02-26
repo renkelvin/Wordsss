@@ -222,7 +222,7 @@
     [self.wordPreCoverView setAlpha:1.0];
     [self.wordPosCoverView setAlpha:0.0];
     
-//    [self.wordPreCoverView setHidden:NO];
+    //    [self.wordPreCoverView setHidden:NO];
     [self.wordPosCoverView setHidden:NO];
     //
     [UIView animateWithDuration:0.5 animations:^(void)
@@ -233,9 +233,9 @@
          CGRect posFrame = kPosTransPositionEnd;
          [self.posTransView setFrame:posFrame];
          
-         CGRect curFrame = kCurTransPositionEnd;
-         [self.wordCurTransLabel setFrame:curFrame];
-         [self.wordCurTransLabel setAlpha:0.0];
+//         CGRect curFrame = kCurTransPositionEnd;
+//         [self.wordCurTransLabel setFrame:curFrame];
+//         [self.wordCurTransLabel setAlpha:0.0];
          
          [self.wordCurLabel setAlpha:1.0];
          
@@ -244,6 +244,14 @@
      } completion:^(BOOL finished){
          // Update view
          [self update];
+     }];
+    
+    //
+    [UIView animateWithDuration:0.3 animations:^(void)
+     {
+         CGRect curFrame = kCurTransPositionEnd;
+         [self.wordCurTransLabel setFrame:curFrame];
+         [self.wordCurTransLabel setAlpha:0.0];
      }];
 }
 
@@ -291,8 +299,15 @@
     // Update Word
     [_todayVirtualActor updateWord];
     
-    // Update view
-    [self update];
+    
+    // Update trans view
+    [self updateTrans];
+    
+    //
+    [self animate];
+    
+// Update view
+//    [self update];
     
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }

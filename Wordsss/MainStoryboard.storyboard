@@ -1244,7 +1244,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" id="dnV-zs-gSX">
                                                     <rect key="frame" x="20" y="10" width="280" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" red="0.61960784313725492" green="0.76470588235294112" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1254,7 +1254,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" id="Bat-mk-AlS">
                                                     <rect key="frame" x="20" y="27" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2098,7 +2098,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="1yK-vf-4Np" appends="YES" id="1da-o8-cEa"/>
+                                    <outletCollection property="gestureRecognizers" destination="1yK-vf-4Np" appends="YES" id="Jo1-wS-f7M"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -2156,15 +2156,15 @@
                         <outlet property="wordSliderTouchArea" destination="oeQ-aZ-s5J" id="awA-PT-Gbt"/>
                     </connections>
                 </viewController>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="title_small.png" id="GnQ-8B-RRj">
+                    <rect key="frame" x="0.0" y="106" width="48" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="1yK-vf-4Np">
                     <connections>
                         <action selector="wordSliderPanning:" destination="3fU-Ou-sjv" id="Odm-Eb-sEA"/>
                     </connections>
                 </panGestureRecognizer>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="title_small.png" id="GnQ-8B-RRj">
-                    <rect key="frame" x="0.0" y="106" width="48" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
             </objects>
             <point key="canvasLocation" x="492" y="251"/>
         </scene>

@@ -25,7 +25,7 @@
 #define kPosTransPositionBeg CGRectMake(0, 122, 320, 122);
 #define kPosTransPositionEnd CGRectMake(0, 0, 320, 122);
 #define kCurTransPositionBeg CGRectMake(20, 135, 280, 37);
-#define kCurTransPositionEnd CGRectMake(20, 20, 280, 37);
+#define kCurTransPositionEnd CGRectMake(20, 80, 280, 37);
 
 @interface TodayViewControllerV2 : UIViewController <UINavigationControllerDelegate>
 {
