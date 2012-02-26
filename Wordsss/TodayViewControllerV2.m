@@ -16,6 +16,8 @@
 
 @synthesize preTransView, posTransView;
 
+@synthesize wordPreCoverView, wordPosCoverView;
+
 @synthesize forgetImageView, confirmImageView;
 @synthesize wordPreLabel, wordCurLabel, wordPosLabel;
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
@@ -147,6 +149,9 @@
     if ([_todayVirtualActor wordCur]) {
         self.wordPreTransLabel.text = [_todayVirtualActor wordCur].name;
     }
+    if ([_todayVirtualActor wordCur]) {
+        self.wordCurLabel.text = [_todayVirtualActor wordCur].name;
+    }
     if ([_todayVirtualActor wordPos]) {
         self.wordCurTransLabel.text = [_todayVirtualActor wordPos].name;
     }
@@ -212,6 +217,13 @@
     [self.wordCurTransLabel setFrame:curFrame];
     [self.wordCurTransLabel setAlpha:1.0];
     
+    [self.wordCurLabel setAlpha:0.0];
+    
+    [self.wordPreCoverView setAlpha:1.0];
+    [self.wordPosCoverView setAlpha:0.0];
+    
+//    [self.wordPreCoverView setHidden:NO];
+    [self.wordPosCoverView setHidden:NO];
     //
     [UIView animateWithDuration:0.5 animations:^(void)
      {
@@ -224,6 +236,11 @@
          CGRect curFrame = kCurTransPositionEnd;
          [self.wordCurTransLabel setFrame:curFrame];
          [self.wordCurTransLabel setAlpha:0.0];
+         
+         [self.wordCurLabel setAlpha:1.0];
+         
+         [self.wordPreCoverView setAlpha:0.0];
+         [self.wordPosCoverView setAlpha:1.0];
      } completion:^(BOOL finished){
          // Update view
          [self update];

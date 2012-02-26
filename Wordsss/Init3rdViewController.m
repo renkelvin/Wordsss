@@ -39,10 +39,6 @@
     [super viewDidLoad];
     
     //
-//    [self initNavigationBar];
-//    [[self navigationController] ]
-    
-    //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
     
     //
@@ -164,7 +160,7 @@
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-//    [self initNavigationBar];
+    //    [self initNavigationBar];
 }
 
 @end

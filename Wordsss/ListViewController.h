@@ -15,14 +15,28 @@
 #import "WordViewController.h"
 
 #import "ListWordCell.h"
+#import "GRERBListListCell.h"
+#import "GRERBListWordCell.h"
+
+enum ListTableEnum {
+    MALISTTABLE,
+    PHLISTTABLE,
+    CSLISTTABLE,
+    GRERBLISTLISTTABLE, GRERBLISTWORDTABLE
+};
 
 @interface ListViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     List* _list;
     NSArray* _listWordArray;
+    
+    enum ListTableEnum _listTableEnum;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel* listTitleLabel;
+
+// GRERBList
+@property (nonatomic, retain) NSNumber* grerbListNum;
 
 - (ListViewController*)initWithList:(List*)list;
 

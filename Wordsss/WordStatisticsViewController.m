@@ -70,7 +70,7 @@
     [_chartView setType:WORD];
     [_chartView setPoints:array];
     
-    if ([array count] <= 1) {
+    if ([array count] <= 2) {
         [self.phContainer setHidden:NO];
         [self.chartContainer setHidden:YES];
     }
