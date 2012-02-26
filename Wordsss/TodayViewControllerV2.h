@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-//#import "RKNavigationController.h"
-//#import "RKNavigationControllerDelegate.h"
-
 #import "WordsssAppDelegate.h"
 #import "Init1stViewController.h"
 
@@ -23,6 +20,13 @@
 
 #import "WordCellLabel.h"
 
+#define kPreTransPositionBeg CGRectMake(0, 223, 320, 129);
+#define kPreTransPositionEnd CGRectMake(0, 133, 320, 129);
+#define kPosTransPositionBeg CGRectMake(0, 122, 320, 122);
+#define kPosTransPositionEnd CGRectMake(0, 0, 320, 122);
+#define kCurTransPositionBeg CGRectMake(20, 135, 280, 37);
+#define kCurTransPositionEnd CGRectMake(20, 20, 280, 37);
+
 @interface TodayViewControllerV2 : UIViewController <UINavigationControllerDelegate>
 {
     //
@@ -33,6 +37,9 @@
 }
 
 #pragma mark - property
+
+@property (nonatomic, retain) IBOutlet UIView* preTransView;
+@property (nonatomic, retain) IBOutlet UIView* posTransView;
 
 @property (nonatomic, retain) IBOutlet UIImageView* wordSliderImageView;
 @property (nonatomic, retain) IBOutlet UIView* wordSliderTouchArea;
@@ -52,6 +59,20 @@
 @property (nonatomic, retain) IBOutlet UIButton* briefMeaningButton;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelT;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelM;
+
+@property (nonatomic, retain) IBOutlet UILabel* wordPreTransLabel;
+@property (nonatomic, retain) IBOutlet UILabel* wordCurTransLabel;
+@property (nonatomic, retain) IBOutlet UILabel* wordPosTransLabel;
+
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelTransImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftTransImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyTransImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightTransImageView;
+
+@property (nonatomic, retain) IBOutlet UIButton* briefMeaningTransButton;
+@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelT;
+@property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelM;
+
 
 #pragma mark - IBAction
 

@@ -22,6 +22,8 @@
     NSArray* _listWordArray;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel* listTitleLabel;
+
 - (ListViewController*)initWithList:(List*)list;
 
 - (IBAction)navigationBackButtonClicked:(id)sender;

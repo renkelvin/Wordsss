@@ -171,8 +171,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     if ([_wordRecordSet count] >= kTodayWordLimit)
         return;
     
-    UserDataManager* udm = [UserDataManager userdataManager];
-    
     // NOT Enough
     // Get existing wordRecord
     NSMutableSet* word_id_set = [NSMutableArray array];
@@ -193,10 +191,11 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"(NOT (word_dict == nil)) AND (NOT (id in %@)) AND (%d > frequency.freq AND frequency.freq >= %d)", word_id_set, freqCur, freqTar]];
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     // Set new wordRecord
     for (Word* w in new_word_set) {
         // Get
-        WordRecord* wr = [udm createWordRecord:w forUser:_user];
+        WordRecord* wr = [uva createWordRecord:w forUser:_user];
         
         // Set
         [wr prepare:_user];
@@ -224,14 +223,13 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
-    UserDataManager* udm = [UserDataManager userdataManager];
-    
     _wordRecordSet = [NSMutableSet set];  
     
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     // Set new wordRecord
     for (Word* w in new_word_set) {
         // Get
-        WordRecord* wr = [udm createWordRecord:w forUser:_user];
+        WordRecord* wr = [uva createWordRecord:w forUser:_user];
         
         // Set
         [wr prepare:_user];

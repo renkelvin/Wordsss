@@ -22,6 +22,8 @@
 
 #import "UserDataManager.h"
 
+#import "UserVirtualActor.h"
+
 @interface WordVirtualActor : NSObject {
     //
     Word* _word;

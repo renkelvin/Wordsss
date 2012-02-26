@@ -2,13 +2,14 @@
 //  Word_List.m
 //  Wordsss
 //
-//  Created by Ren Chuan on 1/16/12.
+//  Created by Ren Chuan on 2/25/12.
 //  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
 #import "Word_List.h"
 #import "CSListWord.h"
 #import "DotaListWord.h"
+#import "GRERBListWord.h"
 #import "MAListWord.h"
 #import "PHListWord.h"
 #import "Word.h"
@@ -19,8 +20,9 @@
 @dynamic id;
 @dynamic csListWord;
 @dynamic dotaListWord;
-@dynamic word;
 @dynamic maListWord;
 @dynamic phListWord;
+@dynamic word;
+@dynamic grerbListWord;
 
 @end

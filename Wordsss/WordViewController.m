@@ -152,12 +152,11 @@
     [self.view addSubview:sectionView];
 }
 
-- (WordViewController*)init:(Word*)word and:(WordRecord*)wordRecord
+- (WordViewController*)init:(Word*)word
 {
     // Init word & wordVirtualActor
     _word = word;
     _wordVirtualActor = [WordVirtualActor wordVirtualActor:_word];
-    _wordVirtualActor.wordRecord = wordRecord;
     
     //
     [self initSectionViewControllers];

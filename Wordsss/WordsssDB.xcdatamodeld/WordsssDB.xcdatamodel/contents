@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1170" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="AhdDictMeaning" representedClassName="AhdDictMeaning" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
@@ -41,6 +41,19 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="ra" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="frequency" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="GRERBListMem" representedClassName="GRERBListMem" syncable="YES">
+        <attribute name="description_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="grerbListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GRERBListWord" inverseName="grerbListMem" inverseEntity="GRERBListWord" syncable="YES"/>
+    </entity>
+    <entity name="GRERBListWord" representedClassName="GRERBListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="grerbListMem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GRERBListMem" inverseName="grerbListWord" inverseEntity="GRERBListMem" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="grerbListWord" inverseEntity="Word_List" syncable="YES"/>
     </entity>
     <entity name="List" representedClassName="List" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -131,6 +144,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="csListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CSListWord" inverseName="word_list" inverseEntity="CSListWord" syncable="YES"/>
         <relationship name="dotaListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DotaListWord" inverseName="word_list" inverseEntity="DotaListWord" syncable="YES"/>
+        <relationship name="grerbListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GRERBListWord" inverseName="word_list" inverseEntity="GRERBListWord" syncable="YES"/>
         <relationship name="maListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MAListWord" inverseName="word_list" inverseEntity="MAListWord" syncable="YES"/>
         <relationship name="phListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PHListWord" inverseName="word_list" inverseEntity="PHListWord" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_list" inverseEntity="Word" syncable="YES"/>
@@ -179,9 +193,11 @@
         <element name="Word" positionX="-783" positionY="-531" width="128" height="180"/>
         <element name="Word_Association" positionX="-1019" positionY="-648" width="128" height="90"/>
         <element name="Word_Dict" positionX="-533" positionY="-627" width="128" height="105"/>
-        <element name="Word_List" positionX="-524" positionY="-441" width="128" height="90"/>
+        <element name="Word_List" positionX="-524" positionY="-441" width="128" height="150"/>
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
+        <element name="GRERBListWord" positionX="-711" positionY="-612" width="128" height="120"/>
+        <element name="GRERBListMem" positionX="-702" positionY="-603" width="128" height="105"/>
     </elements>
 </model>

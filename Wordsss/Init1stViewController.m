@@ -31,13 +31,6 @@
 
 #pragma mark - View lifecycle
 
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView
- {
- }
- */
-
 - (void)viewDidLoad
 {
     //
@@ -46,9 +39,6 @@
     // Init rknc delegate
     [[self navigationController] setDelegate:self];
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
-    
-    //
-//    [self initNavigationBar];
     
     //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
@@ -85,44 +75,11 @@
     [self setNickname];
     
     //
+    [self.nameTextField resignFirstResponder];
+
+    //
     Init2ndViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init2ndViewController"];
     [[self navigationController] pushViewController:ivc animated:YES];
-}
-
-//#pragma mark - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//    
-//    [[navigationController titleLabel] setText:@""];
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_next.png"] forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    [self nextStep];
-//}
-
-#pragma - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-//    [self initNavigationBar];
 }
 
 #pragma mark - UITextFieldDelegate

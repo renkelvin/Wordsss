@@ -7,13 +7,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Wordsss/ListViewController.m"
-         timestampString = "351788520.978498"
+         filePath = "Wordsss/XMLParser.m"
+         timestampString = "351846883.895294"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
-         landmarkName = "-initWithList:"
+         startingLineNumber = "2145"
+         endingLineNumber = "2145"
+         landmarkName = "-parser:parseErrorOccurred:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

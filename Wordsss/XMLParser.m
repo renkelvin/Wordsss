@@ -47,6 +47,8 @@ NSMutableDictionary* wordListDICT = nil;            //TTABLEDATA_WORDLIST
 NSMutableDictionary* csListWordDICT = nil;          //TTABLEDATA_CSLISTWORD
 NSMutableDictionary* maListWordDICT = nil;          //TTABLEDATA_MALISTWORD
 NSMutableDictionary* phListWordDICT = nil;          //TTABLEDATA_PHLISTWORD
+NSMutableDictionary* grerbListWordDICT = nil;       //TTABLEDATA_GRERBLISTWORD
+NSMutableDictionary* grerbListMemDICT = nil;       //TTABLEDATA_GRERBLISTMEM
 NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
 
 NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
@@ -114,6 +116,8 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
     csListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_CSLISTWORD
     maListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_MALISTWORD
     phListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_PHLISTWORD
+    grerbListWordDICT = [NSMutableDictionary dictionary];       //TTABLEDATA_GRERBLISTWORD
+    grerbListMemDICT = [NSMutableDictionary dictionary];       //TTABLEDATA_GRERBLISTMEM
     dotaListWordDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_DOTALISTWORD
     listDICT = [NSMutableDictionary dictionary];                //TTABLEDATA_LIST
 }
@@ -312,6 +316,18 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                     case TTABLEDATA_PHLISTWORD:   // PHListWord
                                     {
                                         object = (PHListWord*)[NSEntityDescription insertNewObjectForEntityForName:@"PHListWord" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_GRERBLISTWORD:   // GRERBListWord
+                                    {
+                                        object = (GRERBListWord*)[NSEntityDescription insertNewObjectForEntityForName:@"GRERBListWord" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_GRERBLISTMEM:   // GRERBListMem
+                                    {
+                                        object = (GRERBListMem*)[NSEntityDescription insertNewObjectForEntityForName:@"GRERBListMem" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
                                     }
@@ -956,6 +972,94 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             else {
                                                 ((PHListWord*)object).meaning = [((PHListWord*)object).meaning stringByAppendingFormat:@"%@", string];
                                             }
+                                        }
+                                        
+                                        // attrString = nil;
+                                        // attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_GRERBLISTWORD:   // GRERBListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"gre_list_word_id"] == NSOrderedSame) {
+                                            ((GRERBListWord*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [grerbListWordDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"GRERBListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
+                                            if (!((GRERBListWord*)object).meaning_cn) {
+                                                ((GRERBListWord*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((GRERBListWord*)object).meaning_cn = [((GRERBListWord*)object).meaning_cn stringByAppendingFormat:@"%@", string];
+                                            }
+                                        }
+                                        
+                                        // attrString = nil;
+                                        // attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_GRERBLISTMEM:   // GRERBListMem
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"gre_list_memory_id"] == NSOrderedSame) {
+                                            ((GRERBListMem*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [grerbListMemDICT setValue:object forKey:string];
+                                            
+                                            NSLog(@"GRERBListMem - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"memory_description"] == NSOrderedSame) {
+                                            if (!((GRERBListMem*)object).description_cn) {
+                                                ((GRERBListMem*)object).description_cn = string;
+                                            }
+                                            else {
+                                                ((GRERBListMem*)object).description_cn = [((GRERBListMem*)object).description_cn stringByAppendingFormat:@"%@", string];
+                                            }
+                                        }
+                                        else if ([attrString compare:@"memory_type"] == NSOrderedSame) {
+                                            int t = 0;
+                                            if ([string compare:@"记"] == NSOrderedSame) {
+                                                t = 1;
+                                            }
+                                            else if ([string compare:@"同"] == NSOrderedSame) {
+                                                t = 2;
+                                            }
+                                            else if ([string compare:@"反"] == NSOrderedSame) {
+                                                t = 3;
+                                            }
+                                            else if ([string compare:@"派"] == NSOrderedSame) {
+                                                t = 4;
+                                            }
+                                            else if ([string compare:@"参"] == NSOrderedSame) {
+                                                t = 5;
+                                            }
+                                            else if ([string compare:@"类"] == NSOrderedSame) {
+                                                t = 6;
+                                            }
+                                            else if ([string compare:@"例"] == NSOrderedSame) {
+                                                t = 7;
+                                            }
+                                            
+                                            ((GRERBListMem*)object).type = [NSNumber numberWithInt:t];
                                         }
                                         
                                         // attrString = nil;
@@ -1620,6 +1724,64 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_GRERBLISTWORD:   // GRERBListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"gre_list_word_id"] == NSOrderedSame) {
+                                            object = (GRERBListWord *)[grerbListWordDICT objectForKey:string];
+                                            
+                                            // NSLog(@"GRERBListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
+                                            Word_List* word_list = [wordListDICT objectForKey:string];
+                                            
+                                            if (word_list) {
+                                                ((GRERBListWord*)object).word_list = word_list;
+                                                word_list.grerbListWord = ((GRERBListWord*)object);
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_GRERBLISTMEM:   // GRERBListMem
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"gre_list_memory_id"] == NSOrderedSame) {
+                                            object = (GRERBListMem *)[grerbListMemDICT objectForKey:string];
+                                            
+                                            // NSLog(@"GRERBListMem - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"gre_list_word_id"] == NSOrderedSame) {
+                                            GRERBListWord* word = [grerbListWordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                ((GRERBListMem*)object).grerbListWord = word;
+                                                [word.grerbListMem addObject:((GRERBListMem*)object)];
+                                            }
+                                        }
+                                        
+                                        attrString = nil;
+                                        attrDict = nil;
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_DOTALISTWORD:   // DotaListWord
                                     {
                                         if (!attrDict)
@@ -1895,6 +2057,14 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
         else if ([name compare:@"ph_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_PHLISTWORD;
             NSLog(@"ph_list_word");
+        }
+        else if ([name compare:@"gre_list_word"] == NSOrderedSame) {
+            ist = TTABLEDATA_GRERBLISTWORD;
+            NSLog(@"gre_list_word");
+        }
+        else if ([name compare:@"gre_list_memory"] == NSOrderedSame) {
+            ist = TTABLEDATA_GRERBLISTMEM;
+            NSLog(@"gre_list_mem");
         }
         else if ([name compare:@"dota_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALISTWORD;

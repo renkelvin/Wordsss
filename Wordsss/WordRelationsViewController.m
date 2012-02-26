@@ -91,7 +91,7 @@
         }
     }
     
-    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord] and:nil];
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
     
     [[self.wordViewController navigationController] pushViewController:wvc animated:YES];
 }

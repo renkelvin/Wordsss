@@ -19,7 +19,7 @@ static char* nameArray[11] = {
     "托福",            // 7  - 9000  - TOFEL
     "SAT",              // 8  - 10000 - SAT
     "GRE",              // 9  - 12448 - GRE
-    "GODLIKE"           // 10 - 42814 - HolyShit
+    "超神"           // 10 - 42814 - HolyShit
 };
 
 static char* vocaArray[11] = {
@@ -153,6 +153,9 @@ static char* vocaArray[11] = {
 
 - (IBAction)nextStep
 {
+    //
+    [self doneButtonClicked:nil];
+    
     Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
     
     [[self navigationController] pushViewController:ivc animated:YES];
