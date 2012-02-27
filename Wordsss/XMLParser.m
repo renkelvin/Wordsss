@@ -994,7 +994,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             [grerbListWordDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"GRERBListWord - id: %@", string);
+                                            // NSLog(@"GRERBListWord - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_meaning"] == NSOrderedSame) {
                                             if (!((GRERBListWord*)object).meaning_cn) {
@@ -1025,7 +1025,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             [grerbListMemDICT setValue:object forKey:string];
                                             
-                                            NSLog(@"GRERBListMem - id: %@", string);
+                                            // NSLog(@"GRERBListMem - id: %@", string);
                                         }
                                         else if ([attrString compare:@"memory_description"] == NSOrderedSame) {
                                             if (!((GRERBListMem*)object).description_cn) {

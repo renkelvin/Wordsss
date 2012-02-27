@@ -148,7 +148,6 @@
 		FE7C1F0214FBB6A000749FEC /* help_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EFC14FBB6A000749FEC /* help_3.jpg */; };
 		FE7C1F0314FBB6A000749FEC /* help_3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EFD14FBB6A000749FEC /* help_3@2x.jpg */; };
 		FE7D398114ADCF290002015A /* WordCellMem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7D398014ADCF290002015A /* WordCellMem.m */; };
-		FE7FF32814F8D13100250287 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE7FF32714F8D13100250287 /* WordsssDB.sqlite */; };
 		FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D614949E0400211A97 /* WordsssDBDataManager.m */; };
 		FE8108DB14949E5C00211A97 /* WordsssDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D914949E5C00211A97 /* WordsssDB.xcdatamodeld */; };
 		FE837ED814ABF32A00FEB867 /* InitVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE837ED714ABF32A00FEB867 /* InitVirtualActor.m */; };
@@ -298,11 +297,13 @@
 		FEEE31AA1439DFC2001F7E90 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE31A91439DFC2001F7E90 /* Default.png */; };
 		FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */; };
 		FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */; };
+		FEEFC63714FC0B5B0020B237 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEEFC63614FC0B5B0020B237 /* WordsssDB.sqlite */; };
 		FEF3307214AC80E500E5E3B5 /* DictWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307114AC80E500E5E3B5 /* DictWordCell.m */; };
 		FEF3307514AC816200E5E3B5 /* WordCellLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307414AC816200E5E3B5 /* WordCellLabel.m */; };
 		FEF3307814AC816E00E5E3B5 /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307714AC816E00E5E3B5 /* WordCell.m */; };
 		FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4DE9C148E2B7A00E88653 /* XMLParser.m */; };
 		FEF732E81495955100919A7C /* TodayVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF732E71495955100919A7C /* TodayVirtualActor.m */; };
+		FEF79D3014FC04D000CC3C00 /* Field.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF79D2F14FC04D000CC3C00 /* Field.m */; };
 		FEFA360D14C8496500A2FFBA /* cs_list_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFA360A14C8496500A2FFBA /* cs_list_thumb.png */; };
 		FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFA360B14C8496500A2FFBA /* ma_list_thumb.png */; };
 		FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFA360C14C8496500A2FFBA /* ph_list_thumb.png */; };
@@ -496,7 +497,6 @@
 		FE7C1EFD14FBB6A000749FEC /* help_3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "help_3@2x.jpg"; sourceTree = "<group>"; };
 		FE7D397F14ADCF290002015A /* WordCellMem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellMem.h; sourceTree = "<group>"; };
 		FE7D398014ADCF290002015A /* WordCellMem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCellMem.m; sourceTree = "<group>"; };
-		FE7FF32714F8D13100250287 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/6E9662CB-DCB0-4B2C-817C-AB308C9F04BB/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE8108D514949E0400211A97 /* WordsssDBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBDataManager.h; sourceTree = "<group>"; };
 		FE8108D614949E0400211A97 /* WordsssDBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBDataManager.m; sourceTree = "<group>"; };
 		FE8108DA14949E5C00211A97 /* WordsssDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordsssDB.xcdatamodel; sourceTree = "<group>"; };
@@ -688,6 +688,7 @@
 		FEEE31A91439DFC2001F7E90 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_bg.png; sourceTree = "<group>"; };
 		FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bg@2x.png"; sourceTree = "<group>"; };
+		FEEFC63614FC0B5B0020B237 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/6E9662CB-DCB0-4B2C-817C-AB308C9F04BB/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FEF3307014AC80E500E5E3B5 /* DictWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictWordCell.h; sourceTree = "<group>"; };
 		FEF3307114AC80E500E5E3B5 /* DictWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictWordCell.m; sourceTree = "<group>"; };
 		FEF3307314AC816200E5E3B5 /* WordCellLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellLabel.h; sourceTree = "<group>"; };
@@ -698,6 +699,8 @@
 		FEF4DE9C148E2B7A00E88653 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		FEF732E61495955100919A7C /* TodayVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayVirtualActor.h; sourceTree = "<group>"; };
 		FEF732E71495955100919A7C /* TodayVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayVirtualActor.m; sourceTree = "<group>"; };
+		FEF79D2E14FC04D000CC3C00 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		FEF79D2F14FC04D000CC3C00 /* Field.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Field.m; sourceTree = "<group>"; };
 		FEFA360A14C8496500A2FFBA /* cs_list_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cs_list_thumb.png; sourceTree = "<group>"; };
 		FEFA360B14C8496500A2FFBA /* ma_list_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ma_list_thumb.png; sourceTree = "<group>"; };
 		FEFA360C14C8496500A2FFBA /* ph_list_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ph_list_thumb.png; sourceTree = "<group>"; };
@@ -818,6 +821,8 @@
 				FEF732EC1495998000919A7C /* WordsssDB */,
 				FEA569B61494A0C80071C0DB /* Wordsss.xcdatamodeld */,
 				FE8108D914949E5C00211A97 /* WordsssDB.xcdatamodeld */,
+				FEF79D2E14FC04D000CC3C00 /* Field.h */,
+				FEF79D2F14FC04D000CC3C00 /* Field.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -908,7 +913,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FE7FF32714F8D13100250287 /* WordsssDB.sqlite */,
+				FEEFC63614FC0B5B0020B237 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1678,7 +1683,6 @@
 				206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */,
 				206A402314F8B236009B6D2F /* button_join.png in Resources */,
 				206A402414F8B236009B6D2F /* button_join@2x.png in Resources */,
-				FE7FF32814F8D13100250287 /* WordsssDB.sqlite in Resources */,
 				FEDD3AC514FA545800F73D11 /* shadow_down.png in Resources */,
 				FEDD3AC614FA545800F73D11 /* shadow_down@2x.png in Resources */,
 				FEDD3AC714FA545800F73D11 /* shadow_up.png in Resources */,
@@ -1689,6 +1693,7 @@
 				FE7C1F0114FBB6A000749FEC /* help_2@2x.jpg in Resources */,
 				FE7C1F0214FBB6A000749FEC /* help_3.jpg in Resources */,
 				FE7C1F0314FBB6A000749FEC /* help_3@2x.jpg in Resources */,
+				FEEFC63714FC0B5B0020B237 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1805,6 +1810,7 @@
 				FEDD3ABD14FA522C00F73D11 /* GRERBListListCell.m in Sources */,
 				FEDD3AC014FA523C00F73D11 /* GRERBListWordCell.m in Sources */,
 				FEDD3ACB14FA5C9B00F73D11 /* HelpViewController.m in Sources */,
+				FEF79D3014FC04D000CC3C00 /* Field.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

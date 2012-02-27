@@ -174,11 +174,11 @@ static char* vocaArray[11] = {
     }
 }
 
-
 - (IBAction)resetButtonClicked:(id)sender
 {
-    UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好", nil];
-    [view show];
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"title" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"destructive" otherButtonTitles:nil];
+    UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
+    [actionSheet showFromTabBar:tabBar];
 }
 
 #pragma mark - UIPickerViewDelegate
@@ -219,28 +219,25 @@ static char* vocaArray[11] = {
     [_settingVirtualActor.user.profile setNickname:textField.text];
 }
 
-#pragma mark - UIAlertViewDelegate
+#pragma mark - UIActionSheetDelegate
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     switch (buttonIndex) {
         case 0:
         {
             UserDataManager* udm = [UserDataManager userdataManager];
             [udm resetAll];
-            
-            break;
-        }   
-        default:
-        {
             break;
         }
+        case 1:
+        {
+            ;
+            break;
+        }
+        default:
+            break;
     }
-}
-
-- (void)alertViewCancel:(UIAlertView *)alertView
-{
-
 }
 
 @end

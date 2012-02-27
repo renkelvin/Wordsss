@@ -35,6 +35,20 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="dotaListWord" inverseEntity="Word_List" syncable="YES"/>
     </entity>
+    <entity name="Field" representedClassName="Field" syncable="YES">
+        <attribute name="basic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="cet4" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="cet6" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gre" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="high" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="holyshit" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ielts" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="middle" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sat" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tofel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="field" inverseEntity="Word" syncable="YES"/>
+    </entity>
     <entity name="Frequency" representedClassName="Frequency" syncable="YES">
         <attribute name="disp" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="freq" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -119,6 +133,7 @@
     <entity name="Word" representedClassName="Word" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="field" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Field" inverseName="word" inverseEntity="Field" syncable="YES"/>
         <relationship name="frequency" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Frequency" inverseName="word" inverseEntity="Frequency" syncable="YES"/>
         <relationship name="word_association" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Association" inverseName="word" inverseEntity="Word_Association" syncable="YES"/>
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="word" inverseEntity="Word_Dict" syncable="YES"/>
@@ -181,6 +196,8 @@
         <element name="CSListWord" positionX="-308" positionY="-288" width="128" height="105"/>
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
         <element name="Frequency" positionX="-963" positionY="-165" width="128" height="120"/>
+        <element name="GRERBListMem" positionX="-702" positionY="-603" width="128" height="105"/>
+        <element name="GRERBListWord" positionX="-711" positionY="-612" width="128" height="120"/>
         <element name="List" positionX="160" positionY="192" width="128" height="105"/>
         <element name="MAListWord" positionX="-414" positionY="-216" width="128" height="90"/>
         <element name="McecDictMeaning" positionX="-776" positionY="-882" width="128" height="105"/>
@@ -190,14 +207,13 @@
         <element name="PHListWord" positionX="-263" positionY="-216" width="128" height="90"/>
         <element name="Rootaffix" positionX="-999" positionY="-555" width="128" height="195"/>
         <element name="Sense" positionX="-999" positionY="-339" width="128" height="135"/>
-        <element name="Word" positionX="-783" positionY="-531" width="128" height="180"/>
+        <element name="Word" positionX="-783" positionY="-531" width="128" height="195"/>
         <element name="Word_Association" positionX="-1019" positionY="-648" width="128" height="90"/>
         <element name="Word_Dict" positionX="-533" positionY="-627" width="128" height="105"/>
         <element name="Word_List" positionX="-524" positionY="-441" width="128" height="150"/>
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
-        <element name="GRERBListWord" positionX="-711" positionY="-612" width="128" height="120"/>
-        <element name="GRERBListMem" positionX="-702" positionY="-603" width="128" height="105"/>
+        <element name="Field" positionX="160" positionY="192" width="128" height="225"/>
     </elements>
 </model>
