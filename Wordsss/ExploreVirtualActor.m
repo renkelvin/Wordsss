@@ -84,6 +84,24 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
     _senseArray = array;
 }
 
+- (void)updateSearchHis
+{
+    NSMutableArray* array = [NSMutableArray array];
+    
+    // Get wdm
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    NSArray* fetchResult = [udm getSearchHis];
+    
+    // Add His
+    if ([fetchResult count] > 0) {
+        [array addObject:[fetchResult lastObject]];
+    }
+    
+    // Set
+    _searchHisArray = array;
+}
+
 // 返回 若干WordAssociation
 - (NSArray*)getAssociation
 {
@@ -112,6 +130,27 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
     }
     
     return _senseArray;
+}
+
+- (NSArray*)getSearchHis
+{
+    if (!_searchHisArray) {
+        [self updateSearchHis];
+    }
+    
+    return _searchHisArray;
+}
+
+- (NSArray*)getSearchHisWordID
+{
+    NSMutableArray* array = [NSMutableArray array];
+    
+    for (SearchHis* his in _searchHisArray) {
+        NSNumber* word_id = his.word_id;
+        [array addObject:word_id];
+    }
+    
+    return array;
 }
 
 @end

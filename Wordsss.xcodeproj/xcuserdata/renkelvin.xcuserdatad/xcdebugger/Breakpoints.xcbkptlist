@@ -4,29 +4,16 @@
    version = "1.0">
    <FileBreakpoints>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Wordsss/XMLParser.m"
-         timestampString = "351846883.895294"
+         filePath = "Wordsss/WordsssDBDataManager.m"
+         timestampString = "352058426.526641"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "2145"
-         endingLineNumber = "2145"
-         landmarkName = "-parser:parseErrorOccurred:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wordsss/DictWordCell.m"
-         timestampString = "351893061.861524"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "99"
-         endingLineNumber = "99"
-         landmarkName = "-getHeight"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-getWordWithPrefix:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -141,6 +141,12 @@
 		FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */; };
 		FE772DBC143D9CC9004DDA0D /* RKDashBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE772DBB143D9CC9004DDA0D /* RKDashBoard.xib */; };
 		FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */; };
+		FE7C1EFE14FBB6A000749FEC /* help_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EF814FBB6A000749FEC /* help_1.jpg */; };
+		FE7C1EFF14FBB6A000749FEC /* help_1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EF914FBB6A000749FEC /* help_1@2x.jpg */; };
+		FE7C1F0014FBB6A000749FEC /* help_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EFA14FBB6A000749FEC /* help_2.jpg */; };
+		FE7C1F0114FBB6A000749FEC /* help_2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EFB14FBB6A000749FEC /* help_2@2x.jpg */; };
+		FE7C1F0214FBB6A000749FEC /* help_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EFC14FBB6A000749FEC /* help_3.jpg */; };
+		FE7C1F0314FBB6A000749FEC /* help_3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE7C1EFD14FBB6A000749FEC /* help_3@2x.jpg */; };
 		FE7D398114ADCF290002015A /* WordCellMem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7D398014ADCF290002015A /* WordCellMem.m */; };
 		FE7FF32814F8D13100250287 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE7FF32714F8D13100250287 /* WordsssDB.sqlite */; };
 		FE8108D714949E0400211A97 /* WordsssDBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8108D614949E0400211A97 /* WordsssDBDataManager.m */; };
@@ -482,6 +488,12 @@
 		FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
 		FE772DBB143D9CC9004DDA0D /* RKDashBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKDashBoard.xib; sourceTree = "<group>"; };
 		FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FE7C1EF814FBB6A000749FEC /* help_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = help_1.jpg; sourceTree = "<group>"; };
+		FE7C1EF914FBB6A000749FEC /* help_1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "help_1@2x.jpg"; sourceTree = "<group>"; };
+		FE7C1EFA14FBB6A000749FEC /* help_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = help_2.jpg; sourceTree = "<group>"; };
+		FE7C1EFB14FBB6A000749FEC /* help_2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "help_2@2x.jpg"; sourceTree = "<group>"; };
+		FE7C1EFC14FBB6A000749FEC /* help_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = help_3.jpg; sourceTree = "<group>"; };
+		FE7C1EFD14FBB6A000749FEC /* help_3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "help_3@2x.jpg"; sourceTree = "<group>"; };
 		FE7D397F14ADCF290002015A /* WordCellMem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellMem.h; sourceTree = "<group>"; };
 		FE7D398014ADCF290002015A /* WordCellMem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCellMem.m; sourceTree = "<group>"; };
 		FE7FF32714F8D13100250287 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/6E9662CB-DCB0-4B2C-817C-AB308C9F04BB/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
@@ -810,6 +822,19 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		FE7C1EF614FBB68500749FEC /* HelpView */ = {
+			isa = PBXGroup;
+			children = (
+				FE7C1EF814FBB6A000749FEC /* help_1.jpg */,
+				FE7C1EF914FBB6A000749FEC /* help_1@2x.jpg */,
+				FE7C1EFA14FBB6A000749FEC /* help_2.jpg */,
+				FE7C1EFB14FBB6A000749FEC /* help_2@2x.jpg */,
+				FE7C1EFC14FBB6A000749FEC /* help_3.jpg */,
+				FE7C1EFD14FBB6A000749FEC /* help_3@2x.jpg */,
+			);
+			name = HelpView;
+			sourceTree = "<group>";
+		};
 		FE8736BF143DDC53002FDDE8 /* WordView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1099,6 +1124,7 @@
 				FEEE31A41439DF61001F7E90 /* TodayView */,
 				FEF4DE9A148E2B2E00E88653 /* ListsView */,
 				FEF4DE99148E2B0F00E88653 /* SettingView */,
+				FE7C1EF614FBB68500749FEC /* HelpView */,
 				FE8736BF143DDC53002FDDE8 /* WordView */,
 			);
 			name = Resources;
@@ -1657,6 +1683,12 @@
 				FEDD3AC614FA545800F73D11 /* shadow_down@2x.png in Resources */,
 				FEDD3AC714FA545800F73D11 /* shadow_up.png in Resources */,
 				FEDD3AC814FA545800F73D11 /* shadow_up@2x.png in Resources */,
+				FE7C1EFE14FBB6A000749FEC /* help_1.jpg in Resources */,
+				FE7C1EFF14FBB6A000749FEC /* help_1@2x.jpg in Resources */,
+				FE7C1F0014FBB6A000749FEC /* help_2.jpg in Resources */,
+				FE7C1F0114FBB6A000749FEC /* help_2@2x.jpg in Resources */,
+				FE7C1F0214FBB6A000749FEC /* help_3.jpg in Resources */,
+				FE7C1F0314FBB6A000749FEC /* help_3@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

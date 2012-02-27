@@ -174,6 +174,13 @@ static char* vocaArray[11] = {
     }
 }
 
+
+- (IBAction)resetButtonClicked:(id)sender
+{
+    UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"好", nil];
+    [view show];
+}
+
 #pragma mark - UIPickerViewDelegate
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
@@ -210,6 +217,30 @@ static char* vocaArray[11] = {
 {
     //
     [_settingVirtualActor.user.profile setNickname:textField.text];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            UserDataManager* udm = [UserDataManager userdataManager];
+            [udm resetAll];
+            
+            break;
+        }   
+        default:
+        {
+            break;
+        }
+    }
+}
+
+- (void)alertViewCancel:(UIAlertView *)alertView
+{
+
 }
 
 @end

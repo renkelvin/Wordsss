@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HelpViewController : UIViewController
+@interface HelpViewController : UIViewController <UIScrollViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
+@property (nonatomic, retain) IBOutlet UIPageControl* pageControl;
+
+- (IBAction)dismiss:(id)sender;
 
 @end

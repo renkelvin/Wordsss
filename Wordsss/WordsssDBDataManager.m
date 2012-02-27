@@ -42,6 +42,30 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return [Word wordWithId:wordId inManagedObjectContext:self.managedObjectContext];
 }
 
+- (NSArray*)getWordWithIds:(NSArray*)idArray
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(id in %@)", idArray]];
+    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    return result;
+}
+
+- (NSArray*)getWordWithPrefix:(NSString*)prefix
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"name like %@", [prefix stringByAppendingString:@"*"]]];
+    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    if ([result count] != 0) {
+        result = [result subarrayWithRange:NSMakeRange(0, 10)];
+    }
+    
+    return result;
+}
+
 - (NSArray*)getRandomAssociations:(int)count
 {
     NSArray* array = [NSArray array];
@@ -115,7 +139,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
         listWord = @"CSListWord";
     }
-
+    
     // 
     if (!listWord) {
         return nil;

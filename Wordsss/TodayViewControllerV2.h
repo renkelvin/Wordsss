@@ -11,6 +11,8 @@
 
 #import "WordsssAppDelegate.h"
 #import "Init1stViewController.h"
+#import "HelpViewController.h"
+#import "RKTabBarController.h"
 
 #import "TodayVirtualActor.h"
 
@@ -85,6 +87,8 @@
 - (IBAction)wordSliderRightTouchDown:(id)sender;
 - (IBAction)wordSliderRightTouchUpInside:(id)sender;
 - (IBAction)wordSliderRightTouchUpOutside:(id)sender;
+
+- (IBAction)helpButtonClicked:(id)sender;
 
 #pragma mark - Instance method
 

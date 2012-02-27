@@ -233,9 +233,9 @@
          CGRect posFrame = kPosTransPositionEnd;
          [self.posTransView setFrame:posFrame];
          
-//         CGRect curFrame = kCurTransPositionEnd;
-//         [self.wordCurTransLabel setFrame:curFrame];
-//         [self.wordCurTransLabel setAlpha:0.0];
+         //         CGRect curFrame = kCurTransPositionEnd;
+         //         [self.wordCurTransLabel setFrame:curFrame];
+         //         [self.wordCurTransLabel setAlpha:0.0];
          
          [self.wordCurLabel setAlpha:1.0];
          
@@ -306,8 +306,8 @@
     //
     [self animate];
     
-// Update view
-//    [self update];
+    // Update view
+    //    [self update];
     
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
@@ -500,6 +500,13 @@
     
     //
     //    [self incOperation];
+}
+
+- (IBAction)helpButtonClicked:(id)sender
+{
+    HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    
+    [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:hvc animated:NO];
 }
 
 @end

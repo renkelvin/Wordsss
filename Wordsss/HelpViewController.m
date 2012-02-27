@@ -14,6 +14,8 @@
 
 @implementation HelpViewController
 
+@synthesize scrollView, pageControl;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,16 +25,12 @@
     return self;
 }
 
-- (void)loadView
-{
-    // If you create your views manually, you MUST override this method and use it to create your views.
-    // If you use Interface Builder to create your views, then you must NOT override this method.
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self.scrollView setContentSize:CGSizeMake(960, 460)];
 }
 
 - (void)viewDidUnload
@@ -44,6 +42,28 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)dismiss:(id)sender
+{
+    [self dismissModalViewControllerAnimated:NO];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int x = self.scrollView.contentOffset.x;
+    
+    if (x < 160) {
+        [self.pageControl setCurrentPage:0];
+    }
+    else if (160 < x && x < 160 + 320) {
+        [self.pageControl setCurrentPage:1];
+    }
+    else if (160 + 320 < x && x < 160 + 640) {
+        [self.pageControl setCurrentPage:2];
+    }
 }
 
 @end

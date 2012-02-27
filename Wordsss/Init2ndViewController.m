@@ -66,7 +66,7 @@ static char* vocaArray[11] = {
     [super viewDidLoad];
     
     //
-//    [self initNavigationBar];
+    //    [self initNavigationBar];
     
     //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
@@ -90,10 +90,10 @@ static char* vocaArray[11] = {
 - (IBAction)curLevelButtonClicked:(id)sender
 {
     //
-//    int curRow = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
-//    [self.pickerView selectRow:curRow inComponent:0 animated:YES];
-//    int tarRow = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
-//    [self.pickerView selectRow:tarRow inComponent:1 animated:YES];
+    //    int curRow = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
+    //    [self.pickerView selectRow:curRow inComponent:0 animated:YES];
+    //    int tarRow = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
+    //    [self.pickerView selectRow:tarRow inComponent:1 animated:YES];
     
     //
     curORtar = 0;
@@ -110,10 +110,10 @@ static char* vocaArray[11] = {
 - (IBAction)tarLevelButtonClicked:(id)sender
 {
     //
-//    int curRow = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
-//    [self.pickerView selectRow:curRow inComponent:0 animated:YES];
-//    int tarRow = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
-//    [self.pickerView selectRow:tarRow inComponent:1 animated:YES];
+    //    int curRow = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
+    //    [self.pickerView selectRow:curRow inComponent:0 animated:YES];
+    //    int tarRow = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
+    //    [self.pickerView selectRow:tarRow inComponent:1 animated:YES];
     
     //
     curORtar = 1;
@@ -133,12 +133,26 @@ static char* vocaArray[11] = {
     int curRow = [self.pickerView selectedRowInComponent:0];
     int tarRow = [self.pickerView selectedRowInComponent:1];
     
-    _initVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
-    _initVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
-    
-    // Update label
-    [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];
-    [self.tarLabel setText:[NSString stringWithCString:nameArray[tarRow+1] encoding:4]];
+    // ERROR
+    if (curRow >= tarRow) {
+        [[[UIAlertView alloc] initWithTitle:@"范围无效" message:@"您必须从较低水平选择至较高水平。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil] show];
+    }
+    else {
+        _initVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
+        _initVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
+        
+        // Update label
+        [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];
+        [self.tarLabel setText:[NSString stringWithCString:nameArray[tarRow+1] encoding:4]];
+        
+        // Hide pickerView
+        [UIView animateWithDuration:0.3 animations:^(void)
+         {
+             [self.pickerView setFrame:kInitPickerViewFrameHide];
+             [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
+         }
+         ];
+    }
     
     // Hide pickerView
     [UIView animateWithDuration:0.3 animations:^(void)
@@ -175,7 +189,7 @@ static char* vocaArray[11] = {
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-//    [self initNavigationBar];
+    //    [self initNavigationBar];
 }
 
 #pragma mark - UIPickerViewDelegate

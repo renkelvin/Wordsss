@@ -51,7 +51,7 @@ static UserDataManager* sharedUserDataManager;
     
     user.memdata = [MemData insertEntity:nil inManagedObjectContext:__managedObjectContext];
     user.hisdata = [HisData insertEntity:nil inManagedObjectContext:__managedObjectContext];    
-        
+    
     return user;
 }
 
@@ -89,6 +89,50 @@ static UserDataManager* sharedUserDataManager;
     staRecord = [StaRecord insertStaRecord:user inManagedObjectContext:__managedObjectContext];
     
     return staRecord;
+}
+
+- (NSArray*)getSearchHis
+{
+    NSArray* array = [NSArray array];
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"SearchHis"];
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    int count = [result count];
+    if (count > 10) {
+        count = 10;
+    }
+    if ([array count] > 0) {
+        array = [result subarrayWithRange:NSMakeRange(0, count)];
+    }
+    
+    return array;
+}
+
+- (void)resetAll
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    NSArray* array = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    User* user = [array lastObject];
+    
+    if (user.memdata) {
+        [self.managedObjectContext deleteObject:user.memdata];
+    }
+    if (user.hisdata) {
+        [self.managedObjectContext deleteObject:user.hisdata];
+    }
+    if (user.status) {
+        [self.managedObjectContext deleteObject:user.status];
+    }
+    
+    HisData* hisData = [NSEntityDescription insertNewObjectForEntityForName:@"HisData" inManagedObjectContext:self.managedObjectContext];
+    MemData* memData = [NSEntityDescription insertNewObjectForEntityForName:@"MemData" inManagedObjectContext:self.managedObjectContext];
+    Status* status = [NSEntityDescription insertNewObjectForEntityForName:@"Status" inManagedObjectContext:self.managedObjectContext];
+    
+    user.hisdata = hisData;
+    user.memdata = memData;
+    user.status = status;
 }
 
 #pragma mark - Core Data
