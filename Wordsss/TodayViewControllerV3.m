@@ -42,6 +42,13 @@
 
 #pragma mark - View lifecycle
 
+- (void)getVA
+{
+    //
+    [UserVirtualActor userVirtualActor];
+    [WordsssDBVirtualActor wordsssDBVirtualActor];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,10 +61,6 @@
         // Update view
         [self update];
     }
-    
-    //
-    [UserVirtualActor userVirtualActor];
-    [WordsssDBVirtualActor wordsssDBVirtualActor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
