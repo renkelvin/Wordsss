@@ -51,8 +51,8 @@
     // MwcDictWord
     else if (self.mwcDictWord) {
         //
-        [self.meaningCNLabel setText:[self.mwcDictWord getFullMeaningEN]];
-        [self.meaningENLabel setText:@""];
+        [self.meaningCNLabel setText:[self.mwcDictWord getFunction]];
+        [self.meaningENLabel setText:[self.mwcDictWord getMeaningEN]];
     }
     
     // AhdDictSentence
@@ -93,8 +93,8 @@
     CGFloat height = 0;
     
     if (self.meaningENLabel.frame.size.height == 0) {
-//        int y = self.meaningCNLabel.frame.origin.y;
-//        int h = self.meaningCNLabel.frame.size.height;
+        //        int y = self.meaningCNLabel.frame.origin.y;
+        //        int h = self.meaningCNLabel.frame.size.height;
         height = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height + 10;
     }
     else {

@@ -17,6 +17,7 @@
 #import "HisRecord.h"
 #import "StaRecord.h"
 #import "WordRecord.h"
+#import "SearchHis.h"
 
 @interface UserDataManager : NSObject 
 
@@ -35,6 +36,7 @@
 - (StaRecord*)createStaRecord:(User*)user;
 - (HisRecord*)createHisRecord:(WordRecord*)wordRecord forUser:(User*)user;
 - (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
+- (SearchHis*)createSearchHis:(Word*)word forUser:(User*)user;
 
 - (NSArray*)getSearchHis;
 

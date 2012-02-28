@@ -1,9 +1,9 @@
 //
-//  TodayViewControllerV2.h
+//  TodayViewControllerV3.h
 //  Wordsss
 //
-//  Created by RenKelvin on 11-10-2.
-//  Copyright 2011年 Ren Inc. All rights reserved.
+//  Created by Ren Chuan on 2/28/12.
+//  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -31,7 +31,7 @@
 #define kCurTransPositionBeg CGRectMake(20, 135, 280, 37);
 #define kCurTransPositionEnd CGRectMake(20, 80, 280, 37);
 
-@interface TodayViewControllerV2 : UIViewController <UINavigationControllerDelegate>
+@interface TodayViewControllerV3 : UIViewController <UINavigationControllerDelegate>
 {
     //
     TodayVirtualActor* _todayVirtualActor;

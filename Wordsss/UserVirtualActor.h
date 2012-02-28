@@ -17,7 +17,12 @@
 {
     //
     NSMutableDictionary* _wordRecordDict;
+    
+    //
+    User* _user;
 }
+
+@property (nonatomic, retain) User* user;
 
 + (UserVirtualActor*)userVirtualActor;
 
@@ -25,5 +30,6 @@
 
 - (WordRecord*)getWordRecord:(Word*)word;
 - (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
+- (SearchHis*)createSearchHis:(Word*)word;
 
 @end

@@ -12,6 +12,7 @@
 
 @synthesize searchBar = _searchBar;
 @synthesize tableView = _tableView;
+@synthesize coverButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,13 +42,20 @@
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
     
     //
-    [[[self navigationController] navigationBar] addSubview:self.searchBar];
-    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    //
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
+    //    [self.searchBar becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    //
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)viewDidUnload
@@ -63,11 +71,33 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)coverButtonClicked:(id)sender
+{
+    [self.coverButton setHidden:YES];
+    
+    [self.searchBar resignFirstResponder];
+}
+
 #pragma - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //
+    [self.searchBar resignFirstResponder];
     
+    //
+    Word* word = [_rowArray objectAtIndex:indexPath.row];
+    
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
+    
+    [[self navigationController] pushViewController:wvc animated:YES];
+    
+    //
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    [uva createSearchHis:word];
+    
+    //
+    [_exploreVirtualActor performSelectorInBackground:@selector(updateSearchHis) withObject:nil];
 }
 
 #pragma - UITableViewDataSource
@@ -129,12 +159,48 @@
         _rowArray = [wdm getWordWithIds:idArray];
     }
     else {
-        // WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-        // _rowArray = [wdm getWordWithPrefix:searchText];
+        //        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
+        //        _rowArray = [wva getWordsWithPrefix:searchText];
     }
     
     //
     [self.tableView reloadData];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [self.coverButton setHidden:NO];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self.coverButton setHidden:YES];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchbar
+{
+    NSString* searchText = searchbar.text;
+    
+    if ([searchText compare:@""] == NSOrderedSame) {
+        NSArray* idArray = [_exploreVirtualActor getSearchHisWordID];
+        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        _rowArray = [wdm getWordWithIds:idArray];
+    }
+    else {
+        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
+        _rowArray = [wva getWordsWithPrefix:searchText];
+    }
+    
+    //
+    [searchbar resignFirstResponder];
+    //
+    [self.tableView reloadData];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //
+    [self.searchBar resignFirstResponder];
 }
 
 @end

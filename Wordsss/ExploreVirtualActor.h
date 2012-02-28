@@ -33,4 +33,6 @@
 - (NSArray*)getSearchHis;
 - (NSArray*)getSearchHisWordID;
 
+- (void)updateSearchHis;
+
 @end

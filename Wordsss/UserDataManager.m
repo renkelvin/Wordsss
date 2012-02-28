@@ -69,6 +69,15 @@ static UserDataManager* sharedUserDataManager;
     return wordRecord;
 }
 
+- (SearchHis*)createSearchHis:(Word*)word forUser:(User*)user
+{
+    SearchHis* searchHis = nil;
+    
+    searchHis = [SearchHis insertSearchHis:word user:user inManagedObjectContext:__managedObjectContext];
+    
+    return searchHis;
+}
+
 - (HisRecord*)createHisRecord:(WordRecord*)wordRecord forUser:(User*)user
 {
     if ([wordRecord.dlc intValue] == 0) {

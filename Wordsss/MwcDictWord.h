@@ -29,6 +29,8 @@
 - (void)addMeaning:(NSSet *)values;
 - (void)removeMeaning:(NSSet *)values;
 
+- (NSString*)getFunction;
+- (NSString*)getMeaningEN;
 - (NSString*)getFullMeaningEN;
 
 @end

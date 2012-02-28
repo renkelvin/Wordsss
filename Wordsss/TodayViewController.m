@@ -336,40 +336,4 @@
     [self incOperation];
 }
 
-//#pragma mark - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//   
-//    [[navigationController titleLabel] setText:@""];
-//    [[navigationController titleImageView] setImage:[UIImage imageNamed:@"title_small.png"]];
-//    [[navigationController leftButton] setImage:nil forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:[UIImage imageNamed:@"button_info.png"] forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    [self nextDay];
-//}
-
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-//    [self initNavigationBar];
-}
-
 @end

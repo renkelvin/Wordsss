@@ -12,6 +12,8 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
 
 @implementation UserVirtualActor
 
+@synthesize user = _user;
+
 + (UserVirtualActor*)userVirtualActor
 {
     if (!sharedUserVirtualActor) {
@@ -23,8 +25,26 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     return sharedUserVirtualActor;
 }
 
+- (void)updateUser
+{
+    // Get UserDataManager
+    UserDataManager* udm = [UserDataManager userdataManager];
+    
+    // Get user
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    _user = [[udm.managedObjectContext executeFetchRequest:request error:nil] lastObject];
+    
+    if (!_user) {
+        _user = [udm createUser];
+    }
+}
+
 - (void)prepare
 {
+    // Get user
+    [self updateUser];
+
+    //
     UserDataManager* udm = [UserDataManager userdataManager];
     
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
@@ -53,6 +73,14 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     [_wordRecordDict setObject:wr forKey:wr.word_id];
     
     return wr;
+}
+
+- (SearchHis*)createSearchHis:(Word*)word
+{
+    UserDataManager* udm = [UserDataManager userdataManager];
+    SearchHis* sh = [udm createSearchHis:word forUser:_user];
+    
+    return sh;
 }
 
 @end

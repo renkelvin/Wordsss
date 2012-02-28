@@ -1,15 +1,15 @@
 //
-//  TodayViewControllerV2.m
+//  TodayViewControllerV3.m
 //  Wordsss
 //
-//  Created by RenKelvin on 11-10-2.
-//  Copyright 2011年 Ren Inc. All rights reserved.
+//  Created by Ren Chuan on 2/28/12.
+//  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
-#import "TodayViewControllerV2.h"
+#import "TodayViewControllerV3.h"
 #import "WordViewController.h"
 
-@implementation TodayViewControllerV2
+@implementation TodayViewControllerV3
 
 @synthesize wordSliderImageView;
 @synthesize wordSliderTouchArea;
@@ -31,9 +31,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // WordSlider gesture recognizer
-        //        UIPanGestureRecognizer* recognizerCenter = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(wordSliderPanning:)];
-        //        [[self wordSliderTouchArea] addGestureRecognizer:recognizerCenter];
+        
     }
     return self;
 }

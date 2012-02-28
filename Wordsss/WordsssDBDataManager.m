@@ -52,6 +52,15 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return result;
 }
 
+- (NSArray*)getAllWord
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
+    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    return result;
+}
+
 - (NSArray*)getWordWithPrefix:(NSString*)prefix
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
@@ -60,7 +69,11 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     if ([result count] != 0) {
-        result = [result subarrayWithRange:NSMakeRange(0, 10)];
+        int count = [result count];
+        if (count > 10) {
+            count = 10;
+        }
+        result = [result subarrayWithRange:NSMakeRange(0, count)];
     }
     
     return result;

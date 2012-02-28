@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "RKNavigationController.h"
-//#import "RKNavigationControllerDelegate.h"
-
 #import "ExploreVirtualActor.h"
+
+#import "WordsssDBVirtualActor.h"
 
 #import "Word_Association.h"
 #import "Word_Rootaffix.h"
@@ -22,7 +21,7 @@
 
 #import "WordViewController.h"
 
-@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource> {
+@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, UITextFieldDelegate, UISearchBarDelegate, UIScrollViewDelegate> {
     //
     ExploreVirtualActor* _exploreVirtualActor;
     
@@ -36,5 +35,9 @@
 
 @property (nonatomic, retain) IBOutlet UISearchBar* searchBar;
 @property (nonatomic, retain) IBOutlet UITableView* tableView;
+
+@property (nonatomic, retain) IBOutlet UIButton* coverButton;
+
+- (IBAction)coverButtonClicked:(id)sender;
 
 @end

@@ -28,6 +28,7 @@
 
 #pragma mark -
 
+- (NSArray*)getAllWord;
 - (Word*)getWordWithId:(NSNumber*)wordId;
 - (NSArray*)getWordWithIds:(NSArray*)idArray;
 

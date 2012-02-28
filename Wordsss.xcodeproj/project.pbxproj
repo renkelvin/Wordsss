@@ -45,6 +45,7 @@
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
 		FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */; };
+		FE0DD79214FCE65D00C04EC3 /* TodayViewControllerV3.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0DD79114FCE65D00C04EC3 /* TodayViewControllerV3.m */; };
 		FE10A07714A0F001005F1EC9 /* McecDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */; };
 		FE10A07D14A0F002005F1EC9 /* Association.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A07C14A0F001005F1EC9 /* Association.m */; };
 		FE10A08914A0F002005F1EC9 /* Rootaffix.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A08814A0F002005F1EC9 /* Rootaffix.m */; };
@@ -56,6 +57,7 @@
 		FE17D58C143B02110067E780 /* tab_wordtoday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE17D58A143B02110067E780 /* tab_wordtoday@2x.png */; };
 		FE2040D014F26244002E9EDC /* TodayViewControllerV2.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */; };
 		FE2B069D14401C3900E1D159 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2B069C14401C3900E1D159 /* icon.png */; };
+		FE2E518914FCB7320011DCA4 /* WordsssDBVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E518814FCB7320011DCA4 /* WordsssDBVirtualActor.m */; };
 		FE2E834F143B289A004A2C56 /* profile_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E833F143B2899004A2C56 /* profile_active.png */; };
 		FE2E8350143B289A004A2C56 /* profile_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E8340143B2899004A2C56 /* profile_active@2x.png */; };
 		FE2E8351143B289A004A2C56 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E8341143B2899004A2C56 /* profile.png */; };
@@ -368,6 +370,8 @@
 		FE060C5C143CD7040026228C /* RKTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKTabBarController.xib; sourceTree = "<group>"; };
 		FE060C5D143CD7040026228C /* RKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTabBarController.h; sourceTree = "<group>"; };
 		FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FE0DD79014FCE65D00C04EC3 /* TodayViewControllerV3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewControllerV3.h; sourceTree = "<group>"; };
+		FE0DD79114FCE65D00C04EC3 /* TodayViewControllerV3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewControllerV3.m; sourceTree = "<group>"; };
 		FE10A07514A0F001005F1EC9 /* McecDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McecDictMeaning.h; sourceTree = "<group>"; };
 		FE10A07614A0F001005F1EC9 /* McecDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = McecDictMeaning.m; sourceTree = "<group>"; };
 		FE10A07B14A0F001005F1EC9 /* Association.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Association.h; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 		FE2040CE14F26244002E9EDC /* TodayViewControllerV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewControllerV2.h; sourceTree = "<group>"; };
 		FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewControllerV2.m; sourceTree = "<group>"; };
 		FE2B069C14401C3900E1D159 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		FE2E518714FCB7320011DCA4 /* WordsssDBVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBVirtualActor.h; sourceTree = "<group>"; };
+		FE2E518814FCB7320011DCA4 /* WordsssDBVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBVirtualActor.m; sourceTree = "<group>"; };
 		FE2E833F143B2899004A2C56 /* profile_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_active.png; sourceTree = "<group>"; };
 		FE2E8340143B2899004A2C56 /* profile_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_active@2x.png"; sourceTree = "<group>"; };
 		FE2E8341143B2899004A2C56 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
@@ -804,6 +810,8 @@
 				FE6C8DB714385AAD00DC9784 /* TodayViewController.m */,
 				FE2040CE14F26244002E9EDC /* TodayViewControllerV2.h */,
 				FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */,
+				FE0DD79014FCE65D00C04EC3 /* TodayViewControllerV3.h */,
+				FE0DD79114FCE65D00C04EC3 /* TodayViewControllerV3.m */,
 				FE6C8DBC14385ACE00DC9784 /* ListsViewController.h */,
 				FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */,
 				FEEE31171439CB1B001F7E90 /* SettingViewController.h */,
@@ -952,6 +960,8 @@
 				FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */,
 				FE837ED614ABF32A00FEB867 /* InitVirtualActor.h */,
 				FE837ED714ABF32A00FEB867 /* InitVirtualActor.m */,
+				FE2E518714FCB7320011DCA4 /* WordsssDBVirtualActor.h */,
+				FE2E518814FCB7320011DCA4 /* WordsssDBVirtualActor.m */,
 			);
 			name = VirtualActor;
 			sourceTree = "<group>";
@@ -1811,6 +1821,8 @@
 				FEDD3AC014FA523C00F73D11 /* GRERBListWordCell.m in Sources */,
 				FEDD3ACB14FA5C9B00F73D11 /* HelpViewController.m in Sources */,
 				FEF79D3014FC04D000CC3C00 /* Field.m in Sources */,
+				FE2E518914FCB7320011DCA4 /* WordsssDBVirtualActor.m in Sources */,
+				FE0DD79214FCE65D00C04EC3 /* TodayViewControllerV3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
