@@ -61,6 +61,9 @@
         // Update view
         [self update];
     }
+    
+    //
+    [self performSelectorInBackground:@selector(getVA) withObject:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -103,10 +106,10 @@
         int bodyWidth = 0;
         
         if ([[_todayVirtualActor wordRecordPos].level intValue] == -1) {
-            bodyWidth = 281;
+            bodyWidth = 311;
         }
         else {
-            bodyWidth = 281 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
+            bodyWidth = 311 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
         }
         
         CGRect frame;
@@ -116,7 +119,7 @@
         self.wordPosLevelBodyImageView.frame = frame;
         
         frame = self.wordPosLevelRightImageView.frame;
-        frame.origin.x = 20 + bodyWidth - 1;
+        frame.origin.x = 2 + bodyWidth + 1;
         self.wordPosLevelRightImageView.frame = frame;
     }
     
@@ -157,10 +160,10 @@
         int bodyWidth = 0;
         
         if ([[_todayVirtualActor wordRecordPos].level intValue] == -1) {
-            bodyWidth = 281;
+            bodyWidth = 311;
         }
         else {
-            bodyWidth = 281 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
+            bodyWidth = 311 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
         }
         
         CGRect frame;
@@ -170,7 +173,7 @@
         self.wordPosLevelBodyTransImageView.frame = frame;
         
         frame = self.wordPosLevelRightTransImageView.frame;
-        frame.origin.x = 20 + bodyWidth - 1;
+        frame.origin.x = 2 + bodyWidth + 1;
         self.wordPosLevelRightTransImageView.frame = frame;
     }
     
@@ -207,17 +210,12 @@
     
     [self.wordPosCoverView setAlpha:0.0];
     
-    //    [self.wordPreCoverView setHidden:NO];
     [self.wordPosCoverView setHidden:NO];
     //
     [UIView animateWithDuration:0.5 animations:^(void)
      {
          CGRect posFrame = kPosTransPositionEnd;
          [self.posTransView setFrame:posFrame];
-         
-         //         CGRect curFrame = kCurTransPositionEnd;
-         //         [self.wordCurTransLabel setFrame:curFrame];
-         //         [self.wordCurTransLabel setAlpha:0.0];
          
          [self.wordCurLabel setAlpha:1.0];
          
