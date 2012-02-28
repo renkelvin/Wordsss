@@ -38,8 +38,8 @@
         self.meaningENLabel = [[UILabel alloc] init];
     }
     
-//    [self.meaningCNLabel setText:@"1"];
-//    [self.meaningENLabel setText:@"2"];
+    //    [self.meaningCNLabel setText:@"1"];
+    //    [self.meaningENLabel setText:@"2"];
     
     // AhdDictWord
     if (self.ahdDictWord) {
@@ -77,7 +77,7 @@
     
     //
     CGRect frame = self.meaningENLabel.frame;
-    frame.origin.y = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height - 3;
+    frame.origin.y = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height - 0;
     self.meaningENLabel.frame = frame;
 }
 
@@ -90,7 +90,16 @@
 
 - (CGFloat)getHeight
 {
-    CGFloat height = self.meaningENLabel.frame.origin.y + self.meaningENLabel.frame.size.height + 10;
+    CGFloat height = 0;
+    
+    if (self.meaningENLabel.frame.size.height == 0) {
+//        int y = self.meaningCNLabel.frame.origin.y;
+//        int h = self.meaningCNLabel.frame.size.height;
+        height = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height + 10;
+    }
+    else {
+        height = self.meaningENLabel.frame.origin.y + self.meaningENLabel.frame.size.height + 10;
+    }
     
     return height;
 }

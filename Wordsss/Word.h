@@ -19,6 +19,7 @@
 #import "Word_Relation.h"
 #import "Word_Rootaffix.h"
 #import "Word_Sense.h"
+#import "Field.h"
 
 #import "AhdDictWord.h"
 #import "AhdDictMeaning.h"
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) Word_Dict *word_dict;
 @property (nonatomic, retain) Word_List *word_list;
 @property (nonatomic, retain) Word_Relation *word_relation;
+@property (nonatomic, retain) Field *field;
 @property (nonatomic, retain) NSMutableSet *word_rootaffix;
 @property (nonatomic, retain) NSMutableSet *word_sense;
 @end

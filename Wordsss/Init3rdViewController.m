@@ -39,10 +39,6 @@
     [super viewDidLoad];
     
     //
-//    [self initNavigationBar];
-//    [[self navigationController] ]
-    
-    //
     _initVirtualActor = [InitVirtualActor initVirtualActor];
     
     //
@@ -71,6 +67,17 @@
 {
     // Set hasInitUser Key
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultKeyHasInitUser];
+    
+    //
+    UserDataManager* udm = [UserDataManager userdataManager];
+    [udm saveContext];
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    [wdm saveContext];
+    
+    // Present help
+    HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:hvc animated:NO];
+
     
     // Init todayViewController again
     NSArray* vcArray = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).viewControllers;
@@ -129,42 +136,6 @@
 - (IBAction)runWordsssButtonClicked:(id)sender
 {    
     [self runMain];
-}
-
-//#pragma mark - RKNavigationControllerDelegate
-//
-//- (void)initNavigationBar
-//{    
-//    RKNavigationController* navigationController = (RKNavigationController*)[self navigationController];
-//    
-//    [[navigationController backgroundImageView] setImage:[UIImage imageNamed:@"topbar_bg.png"]];
-//    
-//    [[navigationController titleLabel] setText:@""];
-//    [[navigationController titleImageView] setImage:nil];
-//    [[navigationController leftButton] setImage:[UIImage imageNamed:@"button_back.png"] forState:UIControlStateNormal];
-//    [[navigationController rightButton] setImage:nil forState:UIControlStateNormal];
-//}
-//
-//- (void)navigationBarLeftButtonDown
-//{
-//    [[self navigationController] popViewControllerAnimated:YES];
-//}
-//
-//- (void)navigationBarRightButtonDown
-//{
-//    
-//}
-
-#pragma - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-//    [self initNavigationBar];
 }
 
 @end

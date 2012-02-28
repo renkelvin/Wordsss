@@ -29,8 +29,12 @@
     //
     UISearchBar* _searchBar;    
     UITableView* _tableView;
+    
+    //
+    NSArray* _rowArray;
 }
 
+@property (nonatomic, retain) IBOutlet UISearchBar* searchBar;
 @property (nonatomic, retain) IBOutlet UITableView* tableView;
 
 @end

@@ -11,6 +11,8 @@
 
 #import "WordsssAppDelegate.h"
 #import "Init1stViewController.h"
+#import "HelpViewController.h"
+#import "RKTabBarController.h"
 
 #import "TodayVirtualActor.h"
 
@@ -21,11 +23,11 @@
 #import "WordCellLabel.h"
 
 #define kPreTransPositionBeg CGRectMake(0, 223, 320, 129);
-#define kPreTransPositionEnd CGRectMake(0, 133, 320, 129);
+#define kPreTransPositionEnd CGRectMake(0, 113, 320, 129);
 #define kPosTransPositionBeg CGRectMake(0, 122, 320, 122);
 #define kPosTransPositionEnd CGRectMake(0, 0, 320, 122);
 #define kCurTransPositionBeg CGRectMake(20, 135, 280, 37);
-#define kCurTransPositionEnd CGRectMake(20, 20, 280, 37);
+#define kCurTransPositionEnd CGRectMake(20, 80, 280, 37);
 
 @interface TodayViewControllerV2 : UIViewController <UINavigationControllerDelegate>
 {
@@ -73,6 +75,8 @@
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelT;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelM;
 
+@property (nonatomic, retain) IBOutlet UIView* wordPreCoverView;
+@property (nonatomic, retain) IBOutlet UIView* wordPosCoverView;
 
 #pragma mark - IBAction
 
@@ -83,6 +87,8 @@
 - (IBAction)wordSliderRightTouchDown:(id)sender;
 - (IBAction)wordSliderRightTouchUpInside:(id)sender;
 - (IBAction)wordSliderRightTouchUpOutside:(id)sender;
+
+- (IBAction)helpButtonClicked:(id)sender;
 
 #pragma mark - Instance method
 

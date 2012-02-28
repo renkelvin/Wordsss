@@ -10,10 +10,8 @@
 
 #import "WordsssAppDelegate.h"
 
-//#import "RKNavigationController.h"
-//#import "RKNavigationControllerDelegate.h"
-
 #import "TodayViewController.h"
+#import "HelpViewController.h"
 
 #import "InitVirtualActor.h"
 

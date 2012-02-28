@@ -10,6 +10,7 @@
 
 @implementation ExploreViewController
 
+@synthesize searchBar = _searchBar;
 @synthesize tableView = _tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,8 +41,8 @@
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
     
     //
-    [[[self navigationController] navigationBar] addSubview:self.searchDisplayController.searchBar];
-    [self.searchDisplayController.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
+    [[[self navigationController] navigationBar] addSubview:self.searchBar];
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -80,7 +81,7 @@
 // Cell number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [_rowArray count];
 }
 
 // Header View
@@ -112,7 +113,28 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
+    [(WordCell*)cell setWord:[_rowArray objectAtIndex:indexPath.row]];
+    [(WordCell*)cell configCell];
+    
     return cell;
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if ([searchText compare:@""] == NSOrderedSame) {
+        NSArray* idArray = [_exploreVirtualActor getSearchHisWordID];
+        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        _rowArray = [wdm getWordWithIds:idArray];
+    }
+    else {
+        // WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        // _rowArray = [wdm getWordWithPrefix:searchText];
+    }
+    
+    //
+    [self.tableView reloadData];
 }
 
 @end

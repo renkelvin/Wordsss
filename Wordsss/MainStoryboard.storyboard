@@ -379,6 +379,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetButtonClicked:" destination="10" eventType="touchUpInside" id="Rmv-xV-oLW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JWt-Ik-ZkE">
                                 <rect key="frame" x="13" y="279" width="294" height="43"/>
@@ -458,6 +461,71 @@
             </objects>
             <point key="canvasLocation" x="492" y="1454"/>
         </scene>
+        <!--Help View Controller-->
+        <scene sceneID="sM9-Eh-yr1">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYp-DP-qqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="HelpViewController" id="1yK-0X-bni" customClass="HelpViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mm0-em-b6Y">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="1e0-f5-Ad1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="bottom" image="help_1.jpg" id="buY-oe-THk">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="bottom" image="help_2.jpg" id="Kd3-lm-5lj">
+                                        <rect key="frame" x="320" y="0.0" width="320" height="460"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="bottom" image="help_3.jpg" id="TXV-Rr-ep9">
+                                        <rect key="frame" x="640" y="0.0" width="320" height="460"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hvL-6X-kF3">
+                                        <rect key="frame" x="653" y="329" width="294" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="取消" backgroundImage="button_blue_bg.png">
+                                            <color key="titleColor" red="0.098039215690000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="1" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismiss:" destination="1yK-0X-bni" eventType="touchUpInside" id="nji-px-rmd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="1yK-0X-bni" id="8TI-by-hSY"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="hUi-oF-Dm5">
+                                <rect key="frame" x="141" y="410" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u92-I1-nMW"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pageControl" destination="hUi-oF-Dm5" id="0QK-HY-wsg"/>
+                        <outlet property="scrollView" destination="1e0-f5-Ad1" id="ycQ-jc-UsK"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="890" y="1454"/>
+        </scene>
         <!--Explore View Controller-->
         <scene sceneID="44">
             <objects>
@@ -476,7 +544,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExploreTableViewCell" rowHeight="98" id="283" customClass="WordCellMem">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExploreTableViewCell" rowHeight="98" id="283" customClass="WordCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -499,16 +567,6 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="7H2-RJ-VpJ">
                                                     <rect key="frame" x="21" y="35" width="192" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="shadowOffset" width="0.0" height="1"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="Bui-zB-5Tc">
-                                                    <rect key="frame" x="21" y="53" width="192" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -559,7 +617,6 @@
                                         <connections>
                                             <outlet property="addButton" destination="aSX-Nd-tvc" id="e4P-jU-fq7"/>
                                             <outlet property="meaningLabel" destination="7H2-RJ-VpJ" id="e5h-OR-Zhj"/>
-                                            <outlet property="memLabel" destination="Bui-zB-5Tc" id="9iH-lf-6iT"/>
                                             <outlet property="nameLabel" destination="mRB-FG-QTb" id="YG7-VM-OKD"/>
                                             <outlet property="wordPosLevelBodyImageView" destination="zKH-gQ-wcJ" id="0oU-sY-U4j"/>
                                             <outlet property="wordPosLevelImageView" destination="mRS-Qf-miI" id="wu4-oD-LJL"/>
@@ -579,25 +636,16 @@
                     <navigationItem key="navigationItem" id="B6s-1N-OQR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="W2P-XA-scz" id="92F-Li-1hI"/>
+                        <outlet property="searchBar" destination="ydN-cm-boc" id="YN2-jj-clB"/>
                         <outlet property="tableView" destination="282" id="QVe-Wo-eX3"/>
                     </connections>
                 </viewController>
-                <searchDisplayController searchResultsTitle="111" id="W2P-XA-scz">
-                    <connections>
-                        <outlet property="delegate" destination="11" id="ND5-AM-bqS"/>
-                        <outlet property="searchBar" destination="vIj-J5-r6M" id="MZU-3O-QLW"/>
-                        <outlet property="searchContentsController" destination="11" id="n3f-dY-8sJ"/>
-                        <outlet property="searchResultsDataSource" destination="11" id="oQv-lo-eN9"/>
-                        <outlet property="searchResultsDelegate" destination="11" id="DCh-r0-IBv"/>
-                    </connections>
-                </searchDisplayController>
-                <searchBar contentMode="redraw" placeholder="搜索" id="vIj-J5-r6M">
+                <searchBar contentMode="redraw" id="ydN-cm-boc">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
+                    <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <outlet property="delegate" destination="11" id="dDh-1H-Xw5"/>
+                        <outlet property="delegate" destination="11" id="rx5-Pv-MyU"/>
                     </connections>
                 </searchBar>
             </objects>
@@ -636,7 +684,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3fU-Ou-sjv" kind="relationship" relationship="rootViewController" id="fbw-aJ-Jys"/>
+                        <segue destination="3fU-Ou-sjv" kind="relationship" relationship="rootViewController" id="tDZ-HA-bfe"/>
                     </connections>
                 </navigationController>
             </objects>
@@ -1445,7 +1493,7 @@
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="1D9-cg-CBy">
-                                                    <rect key="frame" x="20" y="37" width="192" height="21"/>
+                                                    <rect key="frame" x="20" y="40" width="192" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1607,7 +1655,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="此时无法绘制记忆曲线" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="BcO-uy-vE2">
-                                                <rect key="frame" x="75" y="61" width="151" height="20"/>
+                                                <rect key="frame" x="75" y="68" width="151" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1617,7 +1665,7 @@
                                                 <size key="shadowOffset" width="0.0" height="1"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="迅辞会在获取足够数据后绘制您的单词记忆走势图" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="XNi-rs-LNN">
-                                                <rect key="frame" x="18" y="86" width="264" height="16"/>
+                                                <rect key="frame" x="18" y="93" width="264" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1820,27 +1868,6 @@
                                 <rect key="frame" x="0.0" y="47" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="EII-kZ-GRm" userLabel="preView">
-                                <rect key="frame" x="0.0" y="223" width="320" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" image="main_word_next_bg.png" id="QTh-7a-rFS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="retrieve" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Sw6-nQ-nuQ">
-                                        <rect key="frame" x="20" y="58" width="280" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.10588235294117647" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="1" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="0.0" height="1"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" id="dGE-PC-F0z" userLabel="posView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1908,36 +1935,24 @@
                                         <rect key="frame" x="300" y="42" width="2" height="3"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="JHe-jz-jbH" userLabel="preTransView">
-                                <rect key="frame" x="0.0" y="133" width="320" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" image="main_word_next_bg.png" id="lKJ-Nn-xXB">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                                    <view hidden="YES" alpha="0.5" contentMode="scaleToFill" id="nFq-Ac-ybd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="retrieve" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="VSn-Kl-4g1">
-                                        <rect key="frame" x="20" y="58" width="280" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.1058823529" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="1" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="0.0" height="1"/>
-                                    </label>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="YUH-QQ-H59" userLabel="posTransView">
-                                <rect key="frame" x="0.0" y="122" width="320" height="122"/>
+                                <rect key="frame" x="0.0" y="136" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" image="main_word_pre_bg.png" id="Y2c-yh-uPp">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="shadow_up.png" id="wkp-eU-W5h">
+                                        <rect key="frame" x="0.0" y="-13" width="320" height="13"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="reinvent" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" id="gXe-6r-bfJ">
@@ -2006,7 +2021,7 @@
                                 <rect key="frame" x="0.0" y="122" width="320" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="reflection" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" id="SY6-mP-SZ8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="reflection" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" id="SY6-mP-SZ8" userLabel="wordCurLabel">
                                 <rect key="frame" x="20" y="135" width="280" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2016,7 +2031,7 @@
                                 <color key="shadowColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="reflection" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" id="vDK-aS-rWa">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" text="reflection" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="14" id="vDK-aS-rWa" userLabel="wordCurTransLabel">
                                 <rect key="frame" x="20" y="135" width="280" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2080,7 +2095,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="1yK-vf-4Np" appends="YES" id="1da-o8-cEa"/>
+                                    <outletCollection property="gestureRecognizers" destination="1yK-vf-4Np" appends="YES" id="Jo1-wS-f7M"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -2099,6 +2114,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="helpButtonClicked:" destination="3fU-Ou-sjv" eventType="touchUpInside" id="UTH-0u-b9t"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <connections>
@@ -2117,9 +2135,9 @@
                         <outlet property="confirmImageView" destination="HaB-X9-62i" id="Ye8-w8-Nc9"/>
                         <outlet property="forgetImageView" destination="FOx-tQ-8kv" id="x47-8Z-bPj"/>
                         <outlet property="posTransView" destination="YUH-QQ-H59" id="SG2-Ky-9ja"/>
-                        <outlet property="preTransView" destination="JHe-jz-jbH" id="J36-Da-9Qg"/>
                         <outlet property="wordCurLabel" destination="SY6-mP-SZ8" id="nbn-b4-ME6"/>
                         <outlet property="wordCurTransLabel" destination="vDK-aS-rWa" id="aTq-gc-csq"/>
+                        <outlet property="wordPosCoverView" destination="nFq-Ac-ybd" id="M5g-cR-wfa"/>
                         <outlet property="wordPosLabel" destination="0mi-Rk-n2J" id="KWP-RV-1bl"/>
                         <outlet property="wordPosLevelBodyImageView" destination="wpM-Iq-mUU" id="jcw-2e-7J7"/>
                         <outlet property="wordPosLevelBodyTransImageView" destination="fzu-98-RDG" id="Be2-C6-v7D"/>
@@ -2130,21 +2148,19 @@
                         <outlet property="wordPosLevelRightTransImageView" destination="MMr-ZS-b12" id="0le-71-zHq"/>
                         <outlet property="wordPosLevelTransImageView" destination="nxV-qp-js7" id="vGh-8l-rAr"/>
                         <outlet property="wordPosTransLabel" destination="gXe-6r-bfJ" id="TjX-oV-fHt"/>
-                        <outlet property="wordPreLabel" destination="Sw6-nQ-nuQ" id="6QV-sp-DnO"/>
-                        <outlet property="wordPreTransLabel" destination="VSn-Kl-4g1" id="vaI-d9-JH6"/>
                         <outlet property="wordSliderImageView" destination="UiU-vj-yhi" id="2cA-rA-aDG"/>
                         <outlet property="wordSliderTouchArea" destination="oeQ-aZ-s5J" id="awA-PT-Gbt"/>
                     </connections>
                 </viewController>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="title_small.png" id="GnQ-8B-RRj">
+                    <rect key="frame" x="0.0" y="106" width="48" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="1yK-vf-4Np">
                     <connections>
                         <action selector="wordSliderPanning:" destination="3fU-Ou-sjv" id="Odm-Eb-sEA"/>
                     </connections>
                 </panGestureRecognizer>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="title_small.png" id="GnQ-8B-RRj">
-                    <rect key="frame" x="0.0" y="106" width="48" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
             </objects>
             <point key="canvasLocation" x="492" y="251"/>
         </scene>
@@ -2207,8 +2223,8 @@
                                                     <rect key="frame" x="295" y="31" width="10" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="gLb-pc-3c1">
-                                                    <rect key="frame" x="21" y="18" width="256" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Word" lineBreakMode="tailTruncation" minimumFontSize="10" id="gLb-pc-3c1">
+                                                    <rect key="frame" x="21" y="18" width="256" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -2217,8 +2233,8 @@
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="izq-vT-M5h">
-                                                    <rect key="frame" x="21" y="40" width="192" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Meaning" lineBreakMode="tailTruncation" minimumFontSize="10" id="izq-vT-M5h">
+                                                    <rect key="frame" x="21" y="40" width="50" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -2254,6 +2270,166 @@
                                             <outlet property="wordPosLevelImageView" destination="rHX-LH-NAL" id="4sp-Bf-dFh"/>
                                             <outlet property="wordPosLevelLeftImageView" destination="Aij-fY-XBv" id="ygl-tn-sW4"/>
                                             <outlet property="wordPosLevelRightImageView" destination="oiY-Aq-7KX" id="i8o-7v-i00"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GRERBListLLTableViewCell" rowHeight="88" id="5TJ-m9-rm1" customClass="ListWordCell">
+                                        <rect key="frame" x="0.0" y="116" width="320" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_divider.png" id="HYd-7L-pRr">
+                                                    <rect key="frame" x="0.0" y="87" width="320" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="7vk-hH-Zrq">
+                                                    <rect key="frame" x="18" y="71" width="285" height="6"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="level_body.png" id="TlH-ce-xmo">
+                                                    <rect key="frame" x="20" y="73" width="281" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_left.png" id="8U0-D9-TMa">
+                                                    <rect key="frame" x="19" y="73" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_right.png" id="sx5-m7-6r4">
+                                                    <rect key="frame" x="301" y="73" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_arrow_dark.png" id="0zy-ou-ZGk">
+                                                    <rect key="frame" x="295" y="31" width="10" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GRERBListLLTableViewCell" lineBreakMode="tailTruncation" minimumFontSize="10" id="aCO-ol-pOX">
+                                                    <rect key="frame" x="21" y="18" width="227" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.61960784310000006" green="0.76470588240000004" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="0.0" height="1"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Meaning" lineBreakMode="tailTruncation" minimumFontSize="10" id="vFh-c3-dYM">
+                                                    <rect key="frame" x="21" y="40" width="50" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="0.0" height="1"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DyK-gn-e8M">
+                                                    <rect key="frame" x="220" y="20" width="73" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <state key="normal" image="button_join.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="addButtonClicked:" destination="5TJ-m9-rm1" eventType="touchUpInside" id="wzJ-B1-vJI"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="addButton" destination="DyK-gn-e8M" id="uDp-Av-QDs"/>
+                                            <outlet property="meaningLabel" destination="vFh-c3-dYM" id="6Mx-sm-9aq"/>
+                                            <outlet property="nameLabel" destination="aCO-ol-pOX" id="C6f-x8-CXD"/>
+                                            <outlet property="wordPosLevelBodyImageView" destination="TlH-ce-xmo" id="nWC-j3-dry"/>
+                                            <outlet property="wordPosLevelImageView" destination="7vk-hH-Zrq" id="6Ct-ZY-aBt"/>
+                                            <outlet property="wordPosLevelLeftImageView" destination="8U0-D9-TMa" id="6xx-W0-IHT"/>
+                                            <outlet property="wordPosLevelRightImageView" destination="sx5-m7-6r4" id="cO2-at-VK3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GRERBListWLTableViewCell" rowHeight="88" id="ssC-K5-xhm" customClass="ListWordCell">
+                                        <rect key="frame" x="0.0" y="204" width="320" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_divider.png" id="5Qr-b9-xWK">
+                                                    <rect key="frame" x="0.0" y="87" width="320" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="vTY-zW-27O">
+                                                    <rect key="frame" x="18" y="71" width="285" height="6"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="level_body.png" id="qmJ-uH-nbo">
+                                                    <rect key="frame" x="20" y="73" width="281" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_left.png" id="C4f-De-Yj7">
+                                                    <rect key="frame" x="19" y="73" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_right.png" id="2eU-GB-XuP">
+                                                    <rect key="frame" x="301" y="73" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_arrow_dark.png" id="PZc-tR-JkY">
+                                                    <rect key="frame" x="295" y="31" width="10" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GRERBListWLTableViewCell" lineBreakMode="tailTruncation" minimumFontSize="10" id="20I-14-ch6">
+                                                    <rect key="frame" x="21" y="18" width="233" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.61960784310000006" green="0.76470588240000004" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="0.0" height="1"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Meaning" lineBreakMode="tailTruncation" minimumFontSize="10" id="8pO-Ld-fD5">
+                                                    <rect key="frame" x="21" y="40" width="50" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="0.0" height="1"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bmc-0P-173">
+                                                    <rect key="frame" x="220" y="20" width="73" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <state key="normal" image="button_join.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="addButtonClicked:" destination="ssC-K5-xhm" eventType="touchUpInside" id="pDg-yV-CPI"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="addButton" destination="Bmc-0P-173" id="klN-bD-asg"/>
+                                            <outlet property="meaningLabel" destination="8pO-Ld-fD5" id="2Ed-uY-aH5"/>
+                                            <outlet property="nameLabel" destination="20I-14-ch6" id="EDt-tu-nfX"/>
+                                            <outlet property="wordPosLevelBodyImageView" destination="qmJ-uH-nbo" id="4oy-c4-Hsf"/>
+                                            <outlet property="wordPosLevelImageView" destination="vTY-zW-27O" id="9Uw-eY-nSN"/>
+                                            <outlet property="wordPosLevelLeftImageView" destination="C4f-De-Yj7" id="QWb-io-cXh"/>
+                                            <outlet property="wordPosLevelRightImageView" destination="2eU-GB-XuP" id="NWb-xm-FjD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2332,6 +2508,9 @@
         <image name="guide_processing.png" width="116" height="116"/>
         <image name="guide_title_scope.png" width="210" height="37"/>
         <image name="guide_title_start.png" width="139" height="37"/>
+        <image name="help_1.jpg" width="320" height="480"/>
+        <image name="help_2.jpg" width="320" height="480"/>
+        <image name="help_3.jpg" width="320" height="480"/>
         <image name="info_blue.png" width="16" height="16"/>
         <image name="info_gre.png" width="41" height="20"/>
         <image name="level_0.png" width="285" height="6"/>
@@ -2341,7 +2520,6 @@
         <image name="main_word_bg.png" width="320" height="160"/>
         <image name="main_word_chn_bg.png" width="288" height="67"/>
         <image name="main_word_chn_hlbg.png" width="305" height="83"/>
-        <image name="main_word_next_bg.png" width="320" height="129"/>
         <image name="main_word_pre_bg.png" width="320" height="122"/>
         <image name="ph_mem.png" width="187" height="138"/>
         <image name="ph_related.png" width="152" height="121"/>
@@ -2354,6 +2532,7 @@
         <image name="segments_related_active.png" width="29" height="29"/>
         <image name="segments_translations.png" width="29" height="29"/>
         <image name="segments_translations_active.png" width="29" height="29"/>
+        <image name="shadow_up.png" width="320" height="13"/>
         <image name="tableview_cell_arrow_dark.png" width="10" height="15"/>
         <image name="tableview_cell_divider.png" width="320" height="3"/>
         <image name="textfield_bg.png" width="300" height="49"/>
@@ -2377,7 +2556,16 @@
         <class className="ExploreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ExploreViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="HelpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismiss:"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="InfoCell" superclassName="UITableViewCell">
@@ -2475,6 +2663,10 @@
         <class className="SettingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingViewController.h"/>
             <relationships>
+                <relationship kind="action" name="curLevelButtonClicked:"/>
+                <relationship kind="action" name="doneButtonClicked:"/>
+                <relationship kind="action" name="resetButtonClicked:"/>
+                <relationship kind="action" name="tarLevelButtonClicked:"/>
                 <relationship kind="outlet" name="curLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="pickerAccessoryView" candidateClass="UIView"/>
@@ -2485,6 +2677,7 @@
         <class className="TodayViewControllerV2" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TodayViewControllerV2.h"/>
             <relationships>
+                <relationship kind="action" name="helpButtonClicked:"/>
                 <relationship kind="action" name="wordDetailSelected:"/>
                 <relationship kind="action" name="wordSliderLeftTouchDown:"/>
                 <relationship kind="action" name="wordSliderLeftTouchUpInside:"/>
@@ -2505,6 +2698,7 @@
                 <relationship kind="outlet" name="preTransView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="wordCurLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wordCurTransLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPosCoverView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="wordPosLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wordPosLevelBodyImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="wordPosLevelBodyTransImageView" candidateClass="UIImageView"/>
@@ -2515,6 +2709,7 @@
                 <relationship kind="outlet" name="wordPosLevelRightTransImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="wordPosLevelTransImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="wordPosTransLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wordPreCoverView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="wordPreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wordPreTransLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wordSliderImageView" candidateClass="UIImageView"/>

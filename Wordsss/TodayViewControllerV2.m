@@ -16,6 +16,8 @@
 
 @synthesize preTransView, posTransView;
 
+@synthesize wordPreCoverView, wordPosCoverView;
+
 @synthesize forgetImageView, confirmImageView;
 @synthesize wordPreLabel, wordCurLabel, wordPosLabel;
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
@@ -147,6 +149,9 @@
     if ([_todayVirtualActor wordCur]) {
         self.wordPreTransLabel.text = [_todayVirtualActor wordCur].name;
     }
+    if ([_todayVirtualActor wordCur]) {
+        self.wordCurLabel.text = [_todayVirtualActor wordCur].name;
+    }
     if ([_todayVirtualActor wordPos]) {
         self.wordCurTransLabel.text = [_todayVirtualActor wordPos].name;
     }
@@ -212,6 +217,13 @@
     [self.wordCurTransLabel setFrame:curFrame];
     [self.wordCurTransLabel setAlpha:1.0];
     
+    [self.wordCurLabel setAlpha:0.0];
+    
+    [self.wordPreCoverView setAlpha:1.0];
+    [self.wordPosCoverView setAlpha:0.0];
+    
+    //    [self.wordPreCoverView setHidden:NO];
+    [self.wordPosCoverView setHidden:NO];
     //
     [UIView animateWithDuration:0.5 animations:^(void)
      {
@@ -221,12 +233,25 @@
          CGRect posFrame = kPosTransPositionEnd;
          [self.posTransView setFrame:posFrame];
          
-         CGRect curFrame = kCurTransPositionEnd;
-         [self.wordCurTransLabel setFrame:curFrame];
-         [self.wordCurTransLabel setAlpha:0.0];
+         //         CGRect curFrame = kCurTransPositionEnd;
+         //         [self.wordCurTransLabel setFrame:curFrame];
+         //         [self.wordCurTransLabel setAlpha:0.0];
+         
+         [self.wordCurLabel setAlpha:1.0];
+         
+         [self.wordPreCoverView setAlpha:0.0];
+         [self.wordPosCoverView setAlpha:1.0];
      } completion:^(BOOL finished){
          // Update view
          [self update];
+     }];
+    
+    //
+    [UIView animateWithDuration:0.3 animations:^(void)
+     {
+         CGRect curFrame = kCurTransPositionEnd;
+         [self.wordCurTransLabel setFrame:curFrame];
+         [self.wordCurTransLabel setAlpha:0.0];
      }];
 }
 
@@ -274,8 +299,15 @@
     // Update Word
     [_todayVirtualActor updateWord];
     
+    
+    // Update trans view
+    [self updateTrans];
+    
+    //
+    [self animate];
+    
     // Update view
-    [self update];
+    //    [self update];
     
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
@@ -468,6 +500,13 @@
     
     //
     //    [self incOperation];
+}
+
+- (IBAction)helpButtonClicked:(id)sender
+{
+    HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    
+    [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:hvc animated:NO];
 }
 
 @end

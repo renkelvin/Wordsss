@@ -12,6 +12,8 @@
 
 @synthesize listTitleLabel;
 
+@synthesize grerbListNum;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -65,8 +67,38 @@
 {
     _list = list;
     
-    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    _listWordArray = [wdm getListWordArray:_list];
+    // 数学
+    if ([_list.name compare:@"数学词表"] == NSOrderedSame) {
+        _listTableEnum = MALISTTABLE;
+        
+        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        _listWordArray = [wdm getListWordArray:_list];
+    }
+    // 物理
+    else if ([_list.name compare:@"物理词表"] == NSOrderedSame) {
+        _listTableEnum = PHLISTTABLE;
+        
+        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        _listWordArray = [wdm getListWordArray:_list];
+    }
+    // 计算机
+    else if ([_list.name compare:@"计算机词表"] == NSOrderedSame) {
+        _listTableEnum = CSLISTTABLE;
+        
+        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        _listWordArray = [wdm getListWordArray:_list];
+    }
+    // GRE红宝书
+    else if ([_list.name compare:@"GRE词表"] == NSOrderedSame) {
+        // List
+        if ([self.grerbListNum intValue] == 0) {
+            _listTableEnum = GRERBLISTLISTTABLE;
+        }
+        // Word
+        else {
+            _listTableEnum = GRERBLISTWORDTABLE;
+        }
+    }
     
     return self;
 }
@@ -75,22 +107,73 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ListWordCell* cell = (ListWordCell*)[tableView cellForRowAtIndexPath:indexPath];
     
-    Word* word = nil;
-    if (cell.maListWord) {
-        word = cell.maListWord.word_list.word;
+    switch (_listTableEnum) {
+        case MALISTTABLE:
+        {
+            // 数学
+            ListWordCell* cell = (ListWordCell*)[tableView cellForRowAtIndexPath:indexPath];
+            
+            Word* word = nil;
+            if (cell.maListWord) {
+                word = cell.maListWord.word_list.word;
+            }
+            
+            WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];        
+            [[self navigationController] pushViewController:wvc animated:YES];
+            
+            break;
+        }
+        case PHLISTTABLE:
+        {
+            // 物理
+            ListWordCell* cell = (ListWordCell*)[tableView cellForRowAtIndexPath:indexPath];
+            
+            Word* word = nil;
+            if (cell.phListWord) {
+                word = cell.phListWord.word_list.word;
+            }
+            
+            WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];        
+            [[self navigationController] pushViewController:wvc animated:YES];
+            
+            break;
+        }
+        case CSLISTTABLE:
+        {
+            // 计算机
+            ListWordCell* cell = (ListWordCell*)[tableView cellForRowAtIndexPath:indexPath];
+            
+            Word* word = nil;
+            if (cell.csListWord) {
+                word = cell.csListWord.word_list.word;
+            }
+            
+            WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];        
+            [[self navigationController] pushViewController:wvc animated:YES];
+            
+            break;
+        }
+        case GRERBLISTLISTTABLE:
+        {
+            // 计算机
+            ListWordCell* cell = (ListWordCell*)[tableView cellForRowAtIndexPath:indexPath];
+            
+            Word* word = nil;
+            if (cell.csListWord) {
+                word = cell.csListWord.word_list.word;
+            }
+            
+            WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];        
+            [[self navigationController] pushViewController:wvc animated:YES];
+            
+            break;
+        }
+        default:
+        {
+            break;
+        }
     }
-    else if (cell.phListWord) {
-        word = cell.phListWord.word_list.word;
-    }
-    else if (cell.csListWord) {
-        word = cell.csListWord.word_list.word;
-    }
-    
-    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
-    
-    [[self navigationController] pushViewController:wvc animated:YES];
 }
 
 #pragma - UITableViewDataSource
@@ -136,35 +219,53 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ListTableViewCellIndentifier];
     }
     
-    if ([_list.name compare:@"数学词表"] == NSOrderedSame) {
-        MAListWord* maListWord = [_listWordArray objectAtIndex:indexPath.row];
-        [(ListWordCell*)cell setMaListWord:maListWord];
-        [(ListWordCell*)cell configCell];
-    }
-    else if ([_list.name compare:@"物理词表"] == NSOrderedSame) {
-        PHListWord* phListWord = [_listWordArray objectAtIndex:indexPath.row];
-        [(ListWordCell*)cell setPhListWord:phListWord];
-        [(ListWordCell*)cell configCell];
-    }
-    else if ([_list.name compare:@"计算机词表"] == NSOrderedSame) {
-        CSListWord* csListWord = [_listWordArray objectAtIndex:indexPath.row];
-        [(ListWordCell*)cell setCsListWord:csListWord];
-        [(ListWordCell*)cell configCell];
+    switch (_listTableEnum) {
+        case MALISTTABLE:
+        {
+            // 数学
+            MAListWord* maListWord = [_listWordArray objectAtIndex:indexPath.row];
+            [(ListWordCell*)cell setMaListWord:maListWord];
+            [(ListWordCell*)cell configCell];
+            
+            break;
+        }   
+        case PHLISTTABLE:
+        {
+            // 物理
+            PHListWord* phListWord = [_listWordArray objectAtIndex:indexPath.row];
+            [(ListWordCell*)cell setPhListWord:phListWord];
+            [(ListWordCell*)cell configCell];
+            
+            break;
+        }   
+        case CSLISTTABLE:
+        {
+            // 计算机
+            MAListWord* maListWord = [_listWordArray objectAtIndex:indexPath.row];
+            [(ListWordCell*)cell setMaListWord:maListWord];
+            [(ListWordCell*)cell configCell];
+            
+            break;
+        }   
+        case GRERBLISTLISTTABLE:
+        {
+            // GRE红宝书 List
+            
+            break;
+        }   
+        case GRERBLISTWORDTABLE:
+        {
+            // GRE红宝书 Word
+            
+            break;
+        }   
+        default:
+        {
+            break;
+        }
     }
     
     return cell;
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    //    [self initNavigationBar];
 }
 
 @end

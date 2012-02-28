@@ -154,7 +154,7 @@ static char* vocaArray[11] = {
     
     // ERROR
     if (curRow >= tarRow) {
-        [[[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cacel" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"范围无效" message:@"您必须从较低水平选择至较高水平。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil] show];
     }
     else {
         _settingVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
@@ -172,6 +172,13 @@ static char* vocaArray[11] = {
          }
          ];
     }
+}
+
+- (IBAction)resetButtonClicked:(id)sender
+{
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"title" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"destructive" otherButtonTitles:nil];
+    UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
+    [actionSheet showFromTabBar:tabBar];
 }
 
 #pragma mark - UIPickerViewDelegate
@@ -210,6 +217,27 @@ static char* vocaArray[11] = {
 {
     //
     [_settingVirtualActor.user.profile setNickname:textField.text];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            UserDataManager* udm = [UserDataManager userdataManager];
+            [udm resetAll];
+            break;
+        }
+        case 1:
+        {
+            ;
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

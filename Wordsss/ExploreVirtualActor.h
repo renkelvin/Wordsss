@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "UserDataManager.h"
 #import "WordsssDBDataManager.h"
+
+#import "SearchHis.h"
 
 @interface ExploreVirtualActor : NSObject
 {
@@ -16,6 +19,9 @@
     NSArray* _associationArray;
     NSArray* _rootaffixArray;
     NSArray* _senseArray;
+    
+    //
+    NSArray* _searchHisArray;
 }
 
 + (ExploreVirtualActor*)exploreVirtualActor;
@@ -23,5 +29,8 @@
 - (NSArray*)getAssociation;
 - (NSArray*)getRootaffix;
 - (NSArray*)getSense;
+
+- (NSArray*)getSearchHis;
+- (NSArray*)getSearchHisWordID;
 
 @end

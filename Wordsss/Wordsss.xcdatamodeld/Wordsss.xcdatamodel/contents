@@ -9,9 +9,9 @@
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="defult" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="HisData" representedClassName="HisData" syncable="YES">
-        <relationship name="hisRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HisRecord" inverseName="hisData" inverseEntity="HisRecord" syncable="YES"/>
-        <relationship name="searchHis" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SearchHis" inverseName="hisData" inverseEntity="SearchHis" syncable="YES"/>
-        <relationship name="staRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StaRecord" inverseName="hisData" inverseEntity="StaRecord" syncable="YES"/>
+        <relationship name="hisRecord" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HisRecord" inverseName="hisData" inverseEntity="HisRecord" syncable="YES"/>
+        <relationship name="searchHis" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SearchHis" inverseName="hisData" inverseEntity="SearchHis" syncable="YES"/>
+        <relationship name="staRecord" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StaRecord" inverseName="hisData" inverseEntity="StaRecord" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hisdata" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="HisRecord" representedClassName="HisRecord" syncable="YES">
@@ -24,7 +24,7 @@
     </entity>
     <entity name="MemData" representedClassName="MemData" syncable="YES">
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="memdata" inverseEntity="User" syncable="YES"/>
-        <relationship name="wordRecord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WordRecord" inverseName="memdata" inverseEntity="WordRecord" syncable="YES"/>
+        <relationship name="wordRecord" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WordRecord" inverseName="memdata" inverseEntity="WordRecord" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
@@ -92,14 +92,14 @@
     </entity>
     <elements>
         <element name="Defult" positionX="-4536" positionY="-1488" width="128" height="135"/>
-        <element name="HisData" positionX="-4142" positionY="-1521" width="128" height="60"/>
+        <element name="HisData" positionX="-4142" positionY="-1521" width="128" height="105"/>
         <element name="HisRecord" positionX="-3915" positionY="-1521" width="128" height="90"/>
         <element name="MemData" positionX="-4142" positionY="-1656" width="128" height="75"/>
         <element name="Profile" positionX="-4536" positionY="-1794" width="128" height="75"/>
+        <element name="SearchHis" positionX="-3917" positionY="-1440" width="128" height="75"/>
         <element name="StaRecord" positionX="-3917" positionY="-1401" width="128" height="105"/>
         <element name="Status" positionX="-4536" positionY="-1650" width="128" height="75"/>
         <element name="User" positionX="-4331" positionY="-1692" width="128" height="135"/>
         <element name="WordRecord" positionX="-3917" positionY="-1674" width="128" height="135"/>
-        <element name="SearchHis" positionX="-3917" positionY="-1440" width="128" height="90"/>
     </elements>
 </model>

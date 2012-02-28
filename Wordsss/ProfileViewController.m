@@ -55,9 +55,6 @@ static char* nameArray[11] = {
     
     //
     _profileVirtualActor = [ProfileVirtualActor profileVirtualActor];
-    
-    //
-    [self update];
 }
 
 - (void)viewDidUnload

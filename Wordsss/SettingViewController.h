@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "RKNavigationController.h"
-//#import "RKNavigationControllerDelegate.h"
+#import "RKTabBarController.h"
 
 #import "SettingVirtualActor.h"
 
@@ -20,10 +19,10 @@
 #define kInitPickerAccessoryViewFrameHide CGRectMake(0, 416, 320, 44)
 #define kInitPickerAccessoryViewFrameShow CGRectMake(0, 155, 320, 44)
 
-@interface SettingViewController : UIViewController <UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
+@interface SettingViewController : UIViewController <UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIActionSheetDelegate>
 {
     SettingVirtualActor* _settingVirtualActor;
-
+    
     //
     int curORtar;   // 0 or 1
 }
@@ -34,5 +33,10 @@
 @property (nonatomic, retain) IBOutlet UITextField* nameTextField;
 @property (nonatomic, retain) IBOutlet UIPickerView* pickerView;
 @property (nonatomic, retain) IBOutlet UIView* pickerAccessoryView;
+
+- (IBAction)curLevelButtonClicked:(id)sender;
+- (IBAction)tarLevelButtonClicked:(id)sender;
+- (IBAction)doneButtonClicked:(id)sender;
+- (IBAction)resetButtonClicked:(id)sender;
 
 @end

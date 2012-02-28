@@ -36,4 +36,8 @@
 - (HisRecord*)createHisRecord:(WordRecord*)wordRecord forUser:(User*)user;
 - (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
 
+- (NSArray*)getSearchHis;
+
+- (void)resetAll;
+
 @end
