@@ -42,18 +42,10 @@
 
 #pragma mark - property
 
-@property (nonatomic, retain) IBOutlet UIView* preTransView;
 @property (nonatomic, retain) IBOutlet UIView* posTransView;
 
-@property (nonatomic, retain) IBOutlet UIImageView* wordSliderImageView;
-@property (nonatomic, retain) IBOutlet UIView* wordSliderTouchArea;
-
-@property (nonatomic, retain) IBOutlet UILabel* wordPreLabel;
 @property (nonatomic, retain) IBOutlet UILabel* wordCurLabel;
 @property (nonatomic, retain) IBOutlet UILabel* wordPosLabel;
-
-@property (nonatomic, retain) IBOutlet UIImageView* forgetImageView;
-@property (nonatomic, retain) IBOutlet UIImageView* confirmImageView;
 
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelLeftImageView;
@@ -64,7 +56,6 @@
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelT;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningLabelM;
 
-@property (nonatomic, retain) IBOutlet UILabel* wordPreTransLabel;
 @property (nonatomic, retain) IBOutlet UILabel* wordCurTransLabel;
 @property (nonatomic, retain) IBOutlet UILabel* wordPosTransLabel;
 
@@ -77,24 +68,17 @@
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelT;
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelM;
 
-@property (nonatomic, retain) IBOutlet UIView* wordPreCoverView;
 @property (nonatomic, retain) IBOutlet UIView* wordPosCoverView;
 
 #pragma mark - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender;
-- (IBAction)wordSliderLeftTouchDown:(id)sender;
 - (IBAction)wordSliderLeftTouchUpInside:(id)sender;
-- (IBAction)wordSliderLeftTouchUpOutside:(id)sender;
-- (IBAction)wordSliderRightTouchDown:(id)sender;
 - (IBAction)wordSliderRightTouchUpInside:(id)sender;
-- (IBAction)wordSliderRightTouchUpOutside:(id)sender;
 
 - (IBAction)helpButtonClicked:(id)sender;
 
 #pragma mark - Instance method
-
-- (IBAction)wordSliderPanning:(UIPanGestureRecognizer*)recognizer;
 
 - (BOOL)checkHasInitUser;
 

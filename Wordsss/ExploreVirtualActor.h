@@ -26,6 +26,8 @@
 
 + (ExploreVirtualActor*)exploreVirtualActor;
 
+- (void)prepare;
+
 - (NSArray*)getAssociation;
 - (NSArray*)getRootaffix;
 - (NSArray*)getSense;

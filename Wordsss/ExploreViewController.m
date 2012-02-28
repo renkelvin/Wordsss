@@ -42,6 +42,11 @@
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
     
     //
+    NSArray* idArray = [_exploreVirtualActor getSearchHisWordID];
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    _rowArray = [wdm getWordWithIds:idArray];
+    
+    //
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
@@ -121,7 +126,14 @@
     
     [headerView setBackgroundColor:[UIColor clearColor]];
     
-    headerView.titleLabel.text = @"搜索历史";
+    NSString* searchText = self.searchBar.text;
+    if ([searchText compare:@""] == NSOrderedSame) {
+        headerView.titleLabel.text = @"搜索历史";
+    }
+    else {
+        headerView.titleLabel.text = @"搜索结果";
+    }
+    
     
     return headerView;
 }

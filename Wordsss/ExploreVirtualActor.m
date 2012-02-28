@@ -16,6 +16,8 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
 {
     if (!sharedExploreVirtualActor) {
         sharedExploreVirtualActor = [[ExploreVirtualActor alloc] init];
+        
+        [sharedExploreVirtualActor prepare];
     }
     
     return sharedExploreVirtualActor;
@@ -86,20 +88,12 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
 
 - (void)updateSearchHis
 {
-    NSMutableArray* array = [NSMutableArray array];
-    
     // Get wdm
     UserDataManager* udm = [UserDataManager userdataManager];
-    
     NSArray* fetchResult = [udm getSearchHis];
-    
-    // Add His
-    if ([fetchResult count] > 0) {
-        [array addObject:[fetchResult lastObject]];
-    }
-    
+        
     // Set
-    _searchHisArray = array;
+    _searchHisArray = fetchResult;
 }
 
 // 返回 若干WordAssociation
@@ -151,6 +145,11 @@ static ExploreVirtualActor* sharedExploreVirtualActor;
     }
     
     return array;
+}
+
+- (void)prepare
+{
+    [self updateSearchHis];
 }
 
 @end
