@@ -107,7 +107,7 @@ static BOOL FIRSTTIME = YES;
             }
             case 2:
             {
-                btn.frame = CGRectMake(160 - 25, 31 - 23, 50, 50);
+                btn.frame = CGRectMake(160 - 25, 31 - 22, 50, 50);
                 [btn setImage:[UIImage imageNamed:@"tab_wordtoday.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"nothing.png"] forState:UIControlStateHighlighted];
                 break;

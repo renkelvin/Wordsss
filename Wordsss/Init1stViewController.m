@@ -70,16 +70,24 @@
 }
 
 - (IBAction)nextStep
-{
+{    
     //
-    [self setNickname];
-    
-    //
-    [self.nameTextField resignFirstResponder];
-
-    //
-    Init2ndViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init2ndViewController"];
-    [[self navigationController] pushViewController:ivc animated:YES];
+    NSString* nameString = [self.nameTextField text];
+    if ([nameString compare:@""] == NSOrderedSame) {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }   
+    else {
+        //
+        [self.nameTextField resignFirstResponder];
+        
+        //
+        [self setNickname];
+        
+        //
+        Init2ndViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init2ndViewController"];
+        [[self navigationController] pushViewController:ivc animated:YES];
+    }
 }
 
 #pragma mark - UITextFieldDelegate

@@ -142,6 +142,11 @@
     switch (self.type) {
         case USER:
         {        
+            // TOO few points 0 or 1 or 2
+            if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
+                return;
+            }
+            
             //
             self.minDay = [((StaRecord*)[points objectAtIndex:0]).day intValue];
             self.maxDay = [((StaRecord*)[points lastObject]).day intValue];
@@ -163,11 +168,6 @@
                 else {
                     break;
                 }
-            }
-            
-            // TOO few points 0 or 1 or 2
-            if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
-                return;
             }
             
             //
@@ -222,24 +222,30 @@
             // Date label
             NSDate* date = ((StaRecord*)[self.points lastObject]).date;
             NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"YYYY 年 M 月 D 日"];
+            [dateFormatter setDateFormat:@"YYYY - MM - DD"];
             [self.dateLabel setText:[dateFormatter stringFromDate:date]];
+            
+            NSDate *dated = [NSDate dateWithTimeIntervalSinceReferenceDate:118800];
+            NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            [dateFormatter setLocale:usLocale];
+            NSLog(@"Date for locale %@: %@",
+                  [[dateFormatter locale] localeIdentifier], [dateFormatter stringFromDate:dated]);
             
             break;
         }   
         case WORD:
         {
+            // TOO few points 0 or 1 or 2
+            if ([points count] == 0 || [points count] == 1) {
+                return;
+            }
+            
             //
             self.maxDay = [((HisRecord*)[points lastObject]).day intValue];
             self.minDay = self.maxDay - 14;
             
             self.maxValue = 100.0;
             self.minValue = 0.0;
-            
-            // TOO few points 0 or 1 or 2
-            if ([points count] == 0 || [points count] == 1) {
-                return;
-            }
             
             //
             UIBezierPath* aPath = [UIBezierPath bezierPath];

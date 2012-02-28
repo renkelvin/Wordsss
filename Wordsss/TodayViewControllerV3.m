@@ -42,13 +42,6 @@
 
 #pragma mark - View lifecycle
 
-- (void)getVA
-{
-    //
-    [UserVirtualActor userVirtualActor];
-    [WordsssDBVirtualActor wordsssDBVirtualActor];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -61,9 +54,6 @@
         // Update view
         [self update];
     }
-    
-    //
-    [self performSelectorInBackground:@selector(getVA) withObject:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -119,7 +109,7 @@
         self.wordPosLevelBodyImageView.frame = frame;
         
         frame = self.wordPosLevelRightImageView.frame;
-        frame.origin.x = 2 + bodyWidth + 1;
+        frame.origin.x = 2 + bodyWidth + 2;
         self.wordPosLevelRightImageView.frame = frame;
     }
     
@@ -173,7 +163,7 @@
         self.wordPosLevelBodyTransImageView.frame = frame;
         
         frame = self.wordPosLevelRightTransImageView.frame;
-        frame.origin.x = 2 + bodyWidth + 1;
+        frame.origin.x = 2 + bodyWidth + 2;
         self.wordPosLevelRightTransImageView.frame = frame;
     }
     

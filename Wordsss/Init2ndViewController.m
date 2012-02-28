@@ -152,15 +152,15 @@ static char* vocaArray[11] = {
              [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
          }
          ];
+        
+        // Hide pickerView
+        [UIView animateWithDuration:0.3 animations:^(void)
+         {
+             [self.pickerView setFrame:kInitPickerViewFrameHide];
+             [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
+         }
+         ];
     }
-    
-    // Hide pickerView
-    [UIView animateWithDuration:0.3 animations:^(void)
-     {
-         [self.pickerView setFrame:kInitPickerViewFrameHide];
-         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
-     }
-     ];
 }
 
 #pragma mark - Instance method
@@ -170,9 +170,17 @@ static char* vocaArray[11] = {
     //
     [self doneButtonClicked:nil];
     
-    Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
-    
-    [[self navigationController] pushViewController:ivc animated:YES];
+    //
+    NSString* string = self.curLabel.text;
+    if ([string compare:@"未指定"] == NSOrderedSame) {
+        //        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        //        [alert show];
+    }
+    else {
+        //
+        Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
+        [[self navigationController] pushViewController:ivc animated:YES];
+    }
 }
 
 - (IBAction)lastStep
