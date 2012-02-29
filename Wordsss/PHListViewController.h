@@ -10,6 +10,10 @@
 
 #import "List.h"
 
+#import "PHListWordCell.h"
+
+#import "WordViewController.h"
+
 #import "WordsssDBDataManager.h"
 
 @interface PHListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -18,6 +22,8 @@
     NSArray* _listWordArray;    
 
 }
+
+@property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 
 - (PHListViewController*)initWithList:(List*)list;
 

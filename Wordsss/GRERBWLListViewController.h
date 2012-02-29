@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+#import "List.h"
+
+#import "GRERBListWordCell.h"
+
+#import "WordViewController.h"
+
+#import "WordsssDBDataManager.h"
+
 @interface GRERBWLListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    List* _list;
+    NSNumber* _listNum;
+    
+    NSArray* _listWordArray;    
+}
+
+@property (nonatomic, retain) IBOutlet UILabel* titleLabel;
+
+- (GRERBWLListViewController*)initWithList:(List*)list listNum:(NSNumber*)listNum;
+
+- (IBAction)navigationBackButtonClicked:(id)sender;
 
 @end

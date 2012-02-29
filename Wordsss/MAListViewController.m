@@ -10,6 +10,8 @@
 
 @implementation MAListViewController
 
+@synthesize titleLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -19,16 +21,13 @@
     return self;
 }
 
-- (void)loadView
-{
-    // If you create your views manually, you MUST override this method and use it to create your views.
-    // If you use Interface Builder to create your views, then you must NOT override this method.
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //
+    [self.titleLabel setText:@"计算机词表"];
 }
 
 - (void)viewDidUnload
@@ -116,7 +115,7 @@
 // Cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString* ListTableViewCellIndentifier = @"MAListWordCell";
+    static NSString* ListTableViewCellIndentifier = @"MAListTableViewCell";
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:ListTableViewCellIndentifier];
     

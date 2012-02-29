@@ -10,6 +10,10 @@
 
 #import "List.h"
 
+#import "CSListWordCell.h"
+
+#import "WordViewController.h"
+
 #import "WordsssDBDataManager.h"
 
 @interface CSListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -18,6 +22,8 @@
     NSArray* _listWordArray;    
     
 }
+
+@property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 
 - (CSListViewController*)initWithList:(List*)list;
 

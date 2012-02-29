@@ -14,6 +14,8 @@
 
 @implementation GRERBWLListViewController
 
+@synthesize titleLabel;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,16 +25,13 @@
     return self;
 }
 
-- (void)loadView
-{
-    // If you create your views manually, you MUST override this method and use it to create your views.
-    // If you use Interface Builder to create your views, then you must NOT override this method.
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    //
+    [self.titleLabel setText:[NSString stringWithFormat:@"List %d", [_listNum intValue]]];
 }
 
 - (void)viewDidUnload
@@ -44,6 +43,97 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Instance method
+
+- (GRERBWLListViewController*)initWithList:(List*)list listNum:(NSNumber*)listNum
+{
+    _list = list;
+    _listNum = listNum;
+    
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    NSArray* array = [wdm getListWordArray:_list];
+    
+    _listWordArray = array;
+    
+    return self;
+}
+
+#pragma mark - IBAction
+
+- (IBAction)navigationBackButtonClicked:(id)sender
+{
+    [[self navigationController] popViewControllerAnimated:YES];       
+}
+
+#pragma - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GRERBListWordCell* cell = (GRERBListWordCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    Word* word = nil;
+    if (cell.grerbListWord) {
+        word = cell.grerbListWord.word_list.word;
+    }
+    
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];        
+    [[self navigationController] pushViewController:wvc animated:YES];
+}
+
+#pragma - UITableViewDataSource
+
+// Section number
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+// Cell number
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    int num = 0;
+    
+    num = [_listWordArray count];
+    
+    return num;
+}
+
+// Header View
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    RKTableHeader *headerView = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:0];
+    
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    
+    headerView.titleLabel.text = @"---";
+    
+    return headerView;
+}
+
+// Header height
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 28;
+}
+
+// Cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString* ListTableViewCellIndentifier = @"GRERBListWLTableViewCell";
+    
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:ListTableViewCellIndentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ListTableViewCellIndentifier];
+    }
+    
+    GRERBListWord* grerbListWord = [_listWordArray objectAtIndex:indexPath.row];
+    [(GRERBListWordCell*)cell setGrerbListWord:grerbListWord];
+    [(GRERBListWordCell*)cell configCell];
+    
+    return cell;
 }
 
 @end

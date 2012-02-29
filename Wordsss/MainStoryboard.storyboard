@@ -2266,7 +2266,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MAListWordCell" rowHeight="88" id="ZGa-XG-grp" customClass="MAListWordCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MAListTableViewCell" rowHeight="88" id="ZGa-XG-grp" customClass="MAListWordCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2387,9 +2387,15 @@
                                 </state>
                             </button>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="titleView" destination="y9S-6u-Nnp" id="hwm-21-ITK"/>
+                        </connections>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="y9S-6u-Nnp" id="eZR-lR-axI"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="890" y="841"/>
@@ -2543,9 +2549,15 @@
                                 </state>
                             </button>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="titleView" destination="hql-7p-oy8" id="al1-OM-155"/>
+                        </connections>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="hql-7p-oy8" id="SAQ-23-6TK"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1287" y="841"/>
@@ -2699,9 +2711,15 @@
                                 </state>
                             </button>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="titleView" destination="RHP-mF-jsw" id="rkE-yA-DGY"/>
+                        </connections>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="RHP-mF-jsw" id="2Ao-Vn-Fw3"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1659" y="841"/>
@@ -2734,7 +2752,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GRERBListLLTableViewCell" rowHeight="88" id="mOr-YO-WvS" customClass="GRERBListLLTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GRERBListLLTableViewCell" rowHeight="88" id="mOr-YO-WvS" customClass="GRERBListListCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -2855,9 +2873,15 @@
                                 </state>
                             </button>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="titleView" destination="3Pl-RN-rfp" id="kUS-Bx-EED"/>
+                        </connections>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="3Pl-RN-rfp" id="EUY-KC-Oy5"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2038" y="841"/>
@@ -2876,7 +2900,7 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDa-7I-yKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="GRERBWLListViewController" id="x3Q-Bt-iZr" customClass="ListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GRERBWLListViewController" id="x3Q-Bt-iZr" customClass="GRERBWLListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xaC-qW-gPU">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2890,7 +2914,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GRERBListWLTableViewCell" rowHeight="88" id="GPV-iA-LSY" customClass="ListWoGRERBListWLTableViewCellrdCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GRERBListWLTableViewCell" rowHeight="88" id="GPV-iA-LSY" customClass="GRERBListWordCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3011,9 +3035,15 @@
                                 </state>
                             </button>
                         </barButtonItem>
+                        <connections>
+                            <outlet property="titleView" destination="zx8-ra-CTf" id="h5h-jO-Ihl"/>
+                        </connections>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="zx8-ra-CTf" id="QIw-oA-Qtm"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2414" y="841"/>

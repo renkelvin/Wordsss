@@ -76,11 +76,11 @@
 - (IBAction)featureList2ButtonClicked:(id)sender
 {
     // GRE红宝书
-//    NSDictionary* dict = [_listsVirtualActor getListDictionary];
-//    List* list = [dict objectForKey:@"GRE红宝书"];
-//    GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
-//    lvc = [lvc initWithList:list];
-//    [[self navigationController] pushViewController:lvc animated:YES];    
+    NSDictionary* dict = [_listsVirtualActor getListDictionary];
+    List* list = [dict objectForKey:@"GRE红宝书"];
+    GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
+    lvc = [lvc initWithList:list];
+    [[self navigationController] pushViewController:lvc animated:YES];    
 }
 
 #pragma - UITableViewDelegate

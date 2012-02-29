@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 #import "Word.h"
+#import "WordRecord.h"
 #import "MAListWord.h"
+
+#import "UserVirtualActor.h"
 
 @interface MAListWordCell : UITableViewCell
 
