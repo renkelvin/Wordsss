@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PHListViewController : UIViewController
+#import "List.h"
+
+#import "WordsssDBDataManager.h"
+
+@interface PHListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    List* _list;
+    NSArray* _listWordArray;    
+
+}
+
+- (PHListViewController*)initWithList:(List*)list;
+
+- (IBAction)navigationBackButtonClicked:(id)sender;
 
 @end

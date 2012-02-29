@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSListViewController : UIViewController
+#import "List.h"
+
+#import "WordsssDBDataManager.h"
+
+@interface CSListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    List* _list;
+    NSArray* _listWordArray;    
+    
+}
+
+- (CSListViewController*)initWithList:(List*)list;
+
+- (IBAction)navigationBackButtonClicked:(id)sender;
 
 @end

@@ -8,6 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MAListViewController : UIViewController
+#import "List.h"
+
+#import "RKTableHeader.h"
+
+#import "WordViewController.h"
+
+#import "MAListWordCell.h"
+
+#import "WordsssDBDataManager.h"
+
+@interface MAListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    List* _list;
+    NSArray* _listWordArray;    
+}
+
+- (MAListViewController*)initWithList:(List*)list;
+
+- (IBAction)navigationBackButtonClicked:(id)sender;
 
 @end

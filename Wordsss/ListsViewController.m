@@ -35,6 +35,9 @@
     
     //
     _listsVirtualActor = [ListsVirtualActor listsVirtualActor];
+    
+    //
+    _listNameArray = [NSArray arrayWithObjects:@"数学词表", @"计算机词表", nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -65,7 +68,7 @@
     // 物理
     NSDictionary* dict = [_listsVirtualActor getListDictionary];
     List* list = [dict objectForKey:@"物理词表"];
-    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    PHListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PHListViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];    
 }
@@ -73,21 +76,34 @@
 - (IBAction)featureList2ButtonClicked:(id)sender
 {
     // GRE红宝书
-    NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = [dict objectForKey:@"GRE红宝书"];
-    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
-    lvc = [lvc initWithList:list];
-    [[self navigationController] pushViewController:lvc animated:YES];    
+//    NSDictionary* dict = [_listsVirtualActor getListDictionary];
+//    List* list = [dict objectForKey:@"GRE红宝书"];
+//    GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
+//    lvc = [lvc initWithList:list];
+//    [[self navigationController] pushViewController:lvc animated:YES];    
 }
 
 #pragma - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
-    ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
-    lvc = [lvc initWithList:cell.list];
-    [[self navigationController] pushViewController:lvc animated:YES];    
+    NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
+    
+    // 数学词表
+    if ([listName compare:@"数学词表"] == NSOrderedSame) {
+        MAListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAListViewController"];
+        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
+        lvc = [lvc initWithList:cell.list];
+        [[self navigationController] pushViewController:lvc animated:YES];    
+    }
+    
+    // 计算机词表
+    else if ([listName compare:@"计算机词表"] == NSOrderedSame) {
+        CSListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CSListViewController"];
+        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
+        lvc = [lvc initWithList:cell.list];
+        [[self navigationController] pushViewController:lvc animated:YES];    
+    }
 }
 
 #pragma - UITableViewDataSource
@@ -127,22 +143,8 @@
     
     NSDictionary* dict = [_listsVirtualActor getListDictionary];
     List* list = nil;
-    switch (indexPath.row) {
-        case 0:     // 数学
-        {
-            list = [dict objectForKey:@"数学词表"];
-            break;
-        }
-        case 1:     // 计算机
-        {
-            list = [dict objectForKey:@"计算机词表"];
-            break;
-        }
-        default:
-        {
-            break;
-        }
-    }
+    NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
+    list = [dict objectForKey:listName];
     
     [(ListCell*)cell setList:list];
     [(ListCell*)cell configCell];

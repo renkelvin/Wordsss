@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GRERBWLListViewController : UIViewController
+@interface GRERBWLListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

@@ -1,5 +1,5 @@
 //
-//  GRERBLLListViewController.h
+//  CSListWordCell.h
 //  Wordsss
 //
 //  Created by Ren Chuan on 2/29/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GRERBLLListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CSListWordCell : UITableViewCell
 
 @end

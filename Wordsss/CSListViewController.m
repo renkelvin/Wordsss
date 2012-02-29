@@ -46,4 +46,23 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Instance method
+
+- (CSListViewController*)initWithList:(List*)list
+{
+    _list = list;
+    
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    _listWordArray = [wdm getListWordArray:_list];
+    
+    return self;
+}
+
+#pragma mark - IBAction
+
+- (IBAction)navigationBackButtonClicked:(id)sender
+{
+    [[self navigationController] popViewControllerAnimated:YES];       
+}
+
 @end

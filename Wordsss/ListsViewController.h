@@ -8,21 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "RKNavigationController.h"
-//#import "RKNavigationControllerDelegate.h"
-
 #import "RKTableHeader.h"
 
 #import "ListCell.h"
 
 #import "ListsVirtualActor.h"
 
-#import "ListViewController.h"
+#import "MAListViewController.h"
+#import "PHListViewController.h"
+#import "CSListViewController.h"
+#import "GRERBLLListViewController.h"
 
 @interface ListsViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     //
     ListsVirtualActor* _listsVirtualActor;
+    
+    //
+    NSArray* _listNameArray;
 }
 
 - (IBAction)featureList1ButtonClicked:(id)sender;
