@@ -10,6 +10,12 @@
 
 @implementation GRERBListListCell
 
+@synthesize nameLabel, meaningLabel;
+@synthesize addButton;
+@synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
+
+@synthesize listNum;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -24,6 +30,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)configCell
+{
+    [self.nameLabel setText:[NSString stringWithFormat:@"List %d", [self.listNum intValue]]];
 }
 
 @end

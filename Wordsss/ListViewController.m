@@ -67,6 +67,19 @@
 {
     _list = list;
     
+    if (!_list) {
+        // List
+        if ([self.grerbListNum intValue] == 0) {
+            _listTableEnum = GRERBLISTLISTTABLE;
+        }
+        // Word
+        else {
+            _listTableEnum = GRERBLISTWORDTABLE;
+        }
+        
+        return self;
+    }
+    
     // 数学
     if ([_list.name compare:@"数学词表"] == NSOrderedSame) {
         _listTableEnum = MALISTTABLE;
@@ -89,7 +102,8 @@
         _listWordArray = [wdm getListWordArray:_list];
     }
     // GRE红宝书
-    else if ([_list.name compare:@"GRE词表"] == NSOrderedSame) {
+    //    else if ([_list.name compare:@"GRE红宝书"] == NSOrderedSame) {
+    else {
         // List
         if ([self.grerbListNum intValue] == 0) {
             _listTableEnum = GRERBLISTLISTTABLE;
@@ -187,7 +201,46 @@
 // Cell number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_list.num intValue];
+    int num = 0;
+    
+    switch (_listTableEnum) {
+        case MALISTTABLE:
+        {
+            // 数学
+            num = [_list.num intValue];
+            
+            break;
+        }   
+        case PHLISTTABLE:
+        {
+            // 物理
+            num = [_list.num intValue];
+            
+            break;
+        }   
+        case CSLISTTABLE:
+        {
+            // 计算机
+            num = [_list.num intValue];
+            
+            break;
+        }   
+        case GRERBLISTLISTTABLE:
+        {
+            // GRE红宝书 List
+            num = 50;
+            
+            break;
+        }   
+        case GRERBLISTWORDTABLE:
+        {
+            // GRE红宝书 Word
+            
+            break;
+        }   
+    }
+    
+    return num;
 }
 
 // Header View
@@ -250,6 +303,8 @@
         case GRERBLISTLISTTABLE:
         {
             // GRE红宝书 List
+            [(GRERBListListCell*)cell setListNum:[NSNumber numberWithInt:(indexPath.row+1)]];
+            [(GRERBListListCell*)cell configCell];
             
             break;
         }   

@@ -249,6 +249,11 @@
 		FEB8ED2E143B47C30097E267 /* bg_deeper.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED2A143B47C30097E267 /* bg_deeper.png */; };
 		FEB8ED2F143B47C30097E267 /* bg_deeper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */; };
 		FEBB3B3014A793DE0047D21C /* WordVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */; };
+		FEBBA7F814FDF8AA00943F52 /* MAListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBBA7F714FDF8AA00943F52 /* MAListViewController.m */; };
+		FEBBA7FB14FDF96D00943F52 /* PHListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBBA7FA14FDF96D00943F52 /* PHListViewController.m */; };
+		FEBBA7FE14FDF9C300943F52 /* CSListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBBA7FD14FDF9C300943F52 /* CSListViewController.m */; };
+		FEBBA80114FDF9D500943F52 /* GRERBLLListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBBA80014FDF9D500943F52 /* GRERBLLListViewController.m */; };
+		FEBBA80414FDF9E300943F52 /* GRERBWLListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBBA80314FDF9E300943F52 /* GRERBWLListViewController.m */; };
 		FEBF172014A5E2F30045B8A5 /* SettingVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */; };
 		FEBF172414A5E4400045B8A5 /* ProfileVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */; };
 		FEBF173814A648B10045B8A5 /* RKChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF173714A648B10045B8A5 /* RKChartView.m */; };
@@ -641,6 +646,16 @@
 		FEB8ED2B143B47C30097E267 /* bg_deeper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_deeper@2x.png"; sourceTree = "<group>"; };
 		FEBB3B2E14A793DE0047D21C /* WordVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordVirtualActor.h; sourceTree = "<group>"; };
 		FEBB3B2F14A793DE0047D21C /* WordVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordVirtualActor.m; sourceTree = "<group>"; };
+		FEBBA7F614FDF8AA00943F52 /* MAListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAListViewController.h; sourceTree = "<group>"; };
+		FEBBA7F714FDF8AA00943F52 /* MAListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAListViewController.m; sourceTree = "<group>"; };
+		FEBBA7F914FDF96D00943F52 /* PHListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHListViewController.h; sourceTree = "<group>"; };
+		FEBBA7FA14FDF96D00943F52 /* PHListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHListViewController.m; sourceTree = "<group>"; };
+		FEBBA7FC14FDF9C300943F52 /* CSListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSListViewController.h; sourceTree = "<group>"; };
+		FEBBA7FD14FDF9C300943F52 /* CSListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListViewController.m; sourceTree = "<group>"; };
+		FEBBA7FF14FDF9D500943F52 /* GRERBLLListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRERBLLListViewController.h; sourceTree = "<group>"; };
+		FEBBA80014FDF9D500943F52 /* GRERBLLListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRERBLLListViewController.m; sourceTree = "<group>"; };
+		FEBBA80214FDF9E300943F52 /* GRERBWLListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRERBWLListViewController.h; sourceTree = "<group>"; };
+		FEBBA80314FDF9E300943F52 /* GRERBWLListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRERBWLListViewController.m; sourceTree = "<group>"; };
 		FEBF171E14A5E2F30045B8A5 /* SettingVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVirtualActor.h; sourceTree = "<group>"; };
 		FEBF171F14A5E2F30045B8A5 /* SettingVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVirtualActor.m; sourceTree = "<group>"; };
 		FEBF172214A5E4400045B8A5 /* ProfileVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVirtualActor.h; sourceTree = "<group>"; };
@@ -851,8 +866,6 @@
 				FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */,
 				FEEE31171439CB1B001F7E90 /* SettingViewController.h */,
 				FEEE31181439CB1B001F7E90 /* SettingViewController.m */,
-				FE34436314F512D0002E03F1 /* ListViewController.h */,
-				FE34436414F512D0002E03F1 /* ListViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1059,6 +1072,25 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		FEBBA7F414FDF72600943F52 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FE34436314F512D0002E03F1 /* ListViewController.h */,
+				FE34436414F512D0002E03F1 /* ListViewController.m */,
+				FEBBA7F614FDF8AA00943F52 /* MAListViewController.h */,
+				FEBBA7F714FDF8AA00943F52 /* MAListViewController.m */,
+				FEBBA7F914FDF96D00943F52 /* PHListViewController.h */,
+				FEBBA7FA14FDF96D00943F52 /* PHListViewController.m */,
+				FEBBA7FC14FDF9C300943F52 /* CSListViewController.h */,
+				FEBBA7FD14FDF9C300943F52 /* CSListViewController.m */,
+				FEBBA7FF14FDF9D500943F52 /* GRERBLLListViewController.h */,
+				FEBBA80014FDF9D500943F52 /* GRERBLLListViewController.m */,
+				FEBBA80214FDF9E300943F52 /* GRERBWLListViewController.h */,
+				FEBBA80314FDF9E300943F52 /* GRERBWLListViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
 		FEBFBEEF1436DAF20028630E = {
 			isa = PBXGroup;
 			children = (
@@ -1186,6 +1218,7 @@
 				FE7743A51439F9E900BCAA7E /* MainStoryboard.storyboard */,
 				FE6C8DBF14385AD900DC9784 /* Main */,
 				FEABC549143C88D6005AB8C1 /* Word */,
+				FEBBA7F414FDF72600943F52 /* List */,
 				FEBB3B3214A7A46F0047D21C /* Cell */,
 				FE94A08414A9B2E800BDCE18 /* Others */,
 				FEF4DE96148E2A6D00E88653 /* RKUIKit */,
@@ -1893,6 +1926,11 @@
 				FEF79D3014FC04D000CC3C00 /* Field.m in Sources */,
 				FE2E518914FCB7320011DCA4 /* WordsssDBVirtualActor.m in Sources */,
 				FE0DD79214FCE65D00C04EC3 /* TodayViewControllerV3.m in Sources */,
+				FEBBA7F814FDF8AA00943F52 /* MAListViewController.m in Sources */,
+				FEBBA7FB14FDF96D00943F52 /* PHListViewController.m in Sources */,
+				FEBBA7FE14FDF9C300943F52 /* CSListViewController.m in Sources */,
+				FEBBA80114FDF9D500943F52 /* GRERBLLListViewController.m in Sources */,
+				FEBBA80414FDF9E300943F52 /* GRERBWLListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -74,7 +74,7 @@
 {
     // GRE红宝书
     NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = [dict objectForKey:@"GRE红宝书词表"];
+    List* list = [dict objectForKey:@"GRE红宝书"];
     ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];    

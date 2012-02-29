@@ -30,6 +30,7 @@ enum ListTableEnum {
     List* _list;
     NSArray* _listWordArray;
     
+    //
     enum ListTableEnum _listTableEnum;
 }
 
