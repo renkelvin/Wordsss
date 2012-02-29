@@ -10,7 +10,7 @@
 
 @implementation Init1stViewController
 
-@synthesize nameTextField;
+@synthesize nameTextField, nextStepButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -96,6 +96,15 @@
 {
     //
     [textField resignFirstResponder];
+    
+    //
+    NSString* string = textField.text;
+    if ([string compare:@""] == NSOrderedSame) {
+        [self.nextStepButton setEnabled:NO];
+    }
+    else {
+        [self.nextStepButton setEnabled:YES];
+    }
     
     return YES;
 }

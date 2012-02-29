@@ -23,6 +23,8 @@
 
 @property (nonatomic, retain) IBOutlet UITextField* nameTextField;
 
+@property (nonatomic, retain) IBOutlet UIButton* nextStepButton;
+
 - (IBAction)nextStep;
 
 @end

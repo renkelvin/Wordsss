@@ -121,7 +121,7 @@
 - (void)configLabel:(WordCellLabel*)labelT label:(WordCellLabel*)labelM
 {
     //
-    [labelT setText:@"TOFEL"];
+    [labelT setText:@"TOEFL"];
     
     // ahdDictWord Existing
     if (self.word_dict.ahdDictWord) {

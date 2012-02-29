@@ -27,7 +27,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     //
-    [self.titleLabel setText:@"计算机词表"];
+    [self.titleLabel setText:@"物理词表"];
 }
 
 - (void)viewDidUnload

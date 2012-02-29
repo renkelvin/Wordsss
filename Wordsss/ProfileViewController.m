@@ -15,8 +15,8 @@ static char* nameArray[11] = {
     "高中",          // 3  - 3000  - High
     "CET4",         // 4  - 4000  - CET4
     "CET6",         // 5  - 6000  - CET6
-    "雅思",          // 6  - 8000  - IELTS
-    "托福",          // 7  - 9000  - TOFEL
+    "IELTS",          // 6  - 8000  - IELTS
+    "TOEFL",          // 7  - 9000  - TOEFL
     "SAT",          // 8  - 10000 - SAT
     "GRE",          // 9  - 12448 - GRE
     "超神"       // 10 - 42814 - HolyShit

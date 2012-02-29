@@ -29,6 +29,8 @@
     int curORtar;   // 0 or 1
 }
 
+@property (nonatomic, retain) IBOutlet UIButton* nextStepButton;
+
 @property (nonatomic, retain) IBOutlet UILabel* curLabel;
 @property (nonatomic, retain) IBOutlet UILabel* tarLabel;
 
