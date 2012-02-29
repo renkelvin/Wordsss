@@ -22,6 +22,8 @@
 #import "McecDictWord.h"
 #import "McecDictMeaning.h"
 
+#import "RKGraphView.h"
+
 #import "WordCellLabel.h"
 
 #define kPreTransPositionBeg CGRectMake(0, 223, 320, 129);
@@ -69,6 +71,14 @@
 @property (nonatomic, retain) IBOutlet WordCellLabel* briefMeaningTransLabelM;
 
 @property (nonatomic, retain) IBOutlet UIView* wordPosCoverView;
+
+@property (nonatomic, retain) IBOutlet RKGraphView* infoLeftGraphView;
+@property (nonatomic, retain) IBOutlet RKGraphView* infoRightGraphView;
+
+@property (nonatomic, retain) IBOutlet UILabel* infoLeftNowLabel;
+@property (nonatomic, retain) IBOutlet UILabel* infoLeftSumLabel;
+@property (nonatomic, retain) IBOutlet UILabel* infoRightNowLabel;
+@property (nonatomic, retain) IBOutlet UILabel* infoRightSumLabel;
 
 #pragma mark - IBAction
 
