@@ -149,8 +149,11 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     else if ([list.name compare:@"物理词表"] == NSOrderedSame) {
         listWord = @"PHListWord";
     }
-    if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
+    else if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
         listWord = @"CSListWord";
+    }
+    else if ([list.name compare:@"词表"] == NSOrderedSame) {
+        listWord = @"GRERBListWord";
     }
     
     // 

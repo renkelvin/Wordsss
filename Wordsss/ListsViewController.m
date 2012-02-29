@@ -77,7 +77,7 @@
 {
     // GRE红宝书
     NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = [dict objectForKey:@"GRE红宝书"];
+    List* list = [dict objectForKey:@"词表"];
     GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];    
@@ -128,7 +128,7 @@
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[_listsVirtualActor getListDictionary] count] - 1;
+    return [[_listsVirtualActor getListDictionary] count] - 2;
 }
 
 // Cell
