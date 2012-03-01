@@ -42,6 +42,9 @@
     NSArray* _wordSenseArray;
     
     NSArray* _wordMemsArray;
+    
+    //
+    NSArray* _hisRecords;
 }
 
 @property (nonatomic, retain) Word* word;
@@ -67,5 +70,7 @@
 - (NSArray*)getWordMems;
 
 - (NSMutableArray*)getHisRecords;
+
+- (NSString*)getMemDiffString;
 
 @end

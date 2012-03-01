@@ -93,7 +93,7 @@
 {
     int num = 0;
     
-    num = [_list.num intValue];
+    num = [_listWordArray count];
     
     return num;
 }
@@ -113,7 +113,7 @@
 // Header height
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 28;
+    return 0;
 }
 
 // Cell

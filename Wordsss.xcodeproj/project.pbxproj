@@ -42,7 +42,6 @@
 		206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401914F8B223009B6D2F /* wl_paid@2x.png */; };
 		206A402314F8B236009B6D2F /* button_join.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A402114F8B236009B6D2F /* button_join.png */; };
 		206A402414F8B236009B6D2F /* button_join@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A402214F8B236009B6D2F /* button_join@2x.png */; };
-		FE004A0C14FE902700B076A6 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE004A0B14FE902700B076A6 /* WordsssDB.sqlite */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
 		FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */; };
@@ -398,7 +397,6 @@
 		206A401914F8B223009B6D2F /* wl_paid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_paid@2x.png"; sourceTree = "<group>"; };
 		206A402114F8B236009B6D2F /* button_join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_join.png; sourceTree = "<group>"; };
 		206A402214F8B236009B6D2F /* button_join@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_join@2x.png"; sourceTree = "<group>"; };
-		FE004A0B14FE902700B076A6 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/094AE45F-3E31-4B78-848F-AD6639BAACDA/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
 		FE060C5C143CD7040026228C /* RKTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKTabBarController.xib; sourceTree = "<group>"; };
 		FE060C5D143CD7040026228C /* RKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTabBarController.h; sourceTree = "<group>"; };
@@ -993,7 +991,6 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FE004A0B14FE902700B076A6 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1840,7 +1837,6 @@
 				FE620B0A14FD03AD007F1F82 /* arrow_light.png in Resources */,
 				FE620B0B14FD03AD007F1F82 /* arrow_light@2x.png in Resources */,
 				FEA17F4E14FD127200E9F079 /* WordsssDB.xml in Resources */,
-				FE004A0C14FE902700B076A6 /* WordsssDB.sqlite in Resources */,
 				FE5FF2DC14FF47CC0067D950 /* dk_hl.png in Resources */,
 				FE5FF2DD14FF47CC0067D950 /* dk_hl@2x.png in Resources */,
 				FE5FF2DE14FF47CC0067D950 /* know_hl.png in Resources */,

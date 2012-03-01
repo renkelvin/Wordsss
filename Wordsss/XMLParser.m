@@ -1621,19 +1621,36 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             object = (Word_List *)[wordListDICT objectForKey:string];
                                             
+                                            if ([string compare:@"127"] == NSOrderedSame) {
+                                                
+                                                int i = 0;
+                                                
+                                            }
+
                                             // NSLog(@"WordList - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
                                             
+                                            if ([string compare:@"119046"] == NSOrderedSame) {
+
+                                                int i = 0;
+                                            
+                                            }
+                                            
                                             if (word) {
                                                 ((Word_List*)object).word = word;
                                                 word.word_list = ((Word_List*)object);
                                             }
+                                            else {
+                                            
+                                                int i = 0;
+
+                                            }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
+                                        // attrString = nil;
+                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -1655,11 +1672,18 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             Word_List* word_list = [wordListDICT objectForKey:string];
                                             
+                                            if ([string compare:@"1563"] == NSOrderedSame) {
+                                                
+                                                int i = 0;
+                                                
+                                            }
+                                            
                                             if (word_list) {
                                                 ((CSListWord*)object).word_list = word_list;
                                                 word_list.csListWord = ((CSListWord*)object);
                                             }
                                         }
+                                        
                                         
                                         attrString = nil;
                                         attrDict = nil;

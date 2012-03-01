@@ -381,7 +381,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [wordRecord cleardl];
     
     //
-    [_wordRecordSet removeObject:wordRecord];
+    if (wordRecord) {
+        [_wordRecordSet removeObject:wordRecord];
+    }
 }
 
 - (void)setWordRecordCurLevelInc

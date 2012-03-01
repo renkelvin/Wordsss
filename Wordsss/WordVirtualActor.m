@@ -205,8 +205,28 @@
     [request setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"day" ascending:YES]]];
     NSMutableArray* srArray = [NSMutableArray arrayWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
     
+    _hisRecords = srArray;
+    
     return srArray;
     
+}
+
+- (NSString*)getMemDiffString
+{
+    int lvl = [_wordRecord.level intValue];
+    
+    if ([_hisRecords count] > 3*lvl) {
+        return @"困难";
+    }
+    else if ([_hisRecords count] > 2*lvl) {
+        return @"一般";
+    }
+    else if ([_hisRecords count] > 1*lvl) {
+        return @"简单";
+    }
+    else {
+        return @"一般";
+    }
 }
 
 @end

@@ -133,8 +133,7 @@
                 {
                     [((InfoCell*)cell).infoLabel setText:@"难度评估"];
                     
-                    WordRecord* wr = _wordVirtualActor.wordRecord;
-                    [((InfoCell*)cell).valuLabel setText:[wr getMemDiffString]];
+                    [((InfoCell*)cell).valuLabel setText:[_wordVirtualActor getMemDiffString]];
                     
                     break;
                 }   
