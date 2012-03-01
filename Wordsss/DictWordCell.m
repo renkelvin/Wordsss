@@ -10,7 +10,6 @@
 
 @implementation DictWordCell
 
-@synthesize meaningBlueLabel, meaningGreyLabel;
 @synthesize ahdDictWord, mwcDictWord, ahdDictSentence;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -29,57 +28,92 @@
     // Configure the view for the selected state
 }
 
+- (void)addString:(NSString*)string blue:(BOOL)isBlue
+{
+    // Blue
+    if (isBlue) {
+        //
+        UILabel* label = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:2];
+        [label setText:string];
+        //
+        UIFont *fontBlue = label.font;
+        CGSize sizeBlue = CGSizeMake(280,2000);
+        CGSize labelsizeBlue = [string sizeWithFont:fontBlue constrainedToSize:sizeBlue lineBreakMode:UILineBreakModeWordWrap];
+        label.frame = CGRectMake(_criticalPoiont.x, _criticalPoiont.y, labelsizeBlue.width, labelsizeBlue.height);
+        //
+        [self addSubview:label];
+        [_labelArray addObject:label];
+        //
+        _criticalPoiont.y += label.frame.size.height;
+    }
+    // Grey
+    else {
+        UILabel* label = [[[NSBundle mainBundle] loadNibNamed:@"RKDashBoard" owner:self options:nil] objectAtIndex:3];
+        [label setText:string];
+        //
+        UIFont *fontGrey = label.font;
+        CGSize sizeGrey = CGSizeMake(280,2000);
+        CGSize labelsizeGrey = [string sizeWithFont:fontGrey constrainedToSize:sizeGrey lineBreakMode:UILineBreakModeWordWrap];
+        label.frame = CGRectMake(_criticalPoiont.x, _criticalPoiont.y, labelsizeGrey.width, labelsizeGrey.height);
+        //
+        [self addSubview:label];
+        [_labelArray addObject:label];
+        //
+        _criticalPoiont.y += label.frame.size.height;
+    }
+}
+
 - (void)configCell
 {
-    if (!self.meaningBlueLabel) {
-        self.meaningBlueLabel = [[UILabel alloc] init];
-    }
-    if (!self.meaningGreyLabel) {
-        self.meaningGreyLabel = [[UILabel alloc] init];
-    }
-    
     // AhdDictWord
     if (self.ahdDictWord) {
         //
-        [self.meaningBlueLabel setText:[self.ahdDictWord getFullMeaningCN]];
-        [self.meaningGreyLabel setText:@""];
+        [self addString:[self.ahdDictWord getFullTypeString] blue:NO];
+        int i = 1;
+        for (AhdDictMeaning* meaning in self.ahdDictWord.meaning) {
+            NSString* shortMeaning = [meaning getShortMeaning];
+            if (shortMeaning)
+            {          
+                [self addString:[NSString stringWithFormat:@"%d. %@", i, shortMeaning] blue:YES];
+                i++;
+            }
+            NSString* longMeaning = [meaning getLongMeaning];
+            if (longMeaning) {
+                [self addString:longMeaning blue:NO];
+            }
+        }
     }
     
     // MwcDictWord
     else if (self.mwcDictWord) {
         //
-        [self.meaningBlueLabel setText:[self.mwcDictWord getFunction]];
-        [self.meaningGreyLabel setText:[self.mwcDictWord getMeaningEN]];
+        [self addString:[self.mwcDictWord getFunction] blue:NO];
+        [self addString:[self.mwcDictWord getMeaningEN] blue:YES];
     }
     
     // AhdDictSentence
     else if (self.ahdDictSentence) {
         //
-        [self.meaningBlueLabel setText:self.ahdDictSentence.meaning_cn];
-        [self.meaningGreyLabel setText:self.ahdDictSentence.meaning_en];
+        [self addString:self.ahdDictSentence.meaning_en blue:YES];
+        [self addString:self.ahdDictSentence.meaning_cn blue:NO];
     }
-    
-    //
-    NSString* stringCN = self.meaningBlueLabel.text;
-    UIFont *fontCN = self.meaningBlueLabel.font;
-    CGSize sizeCN = CGSizeMake(280,2000);
-    CGSize labelsizeCN = [stringCN sizeWithFont:fontCN constrainedToSize:sizeCN lineBreakMode:UILineBreakModeWordWrap];
-    self.meaningBlueLabel.frame = CGRectMake(20,10, labelsizeCN.width, labelsizeCN.height);
-    
-    NSString* stringEN = self.meaningGreyLabel.text;
-    UIFont *fontEN = self.meaningGreyLabel.font;
-    CGSize sizeEN = CGSizeMake(280,2000);
-    CGSize labelsizeEN = [stringEN sizeWithFont:fontEN constrainedToSize:sizeEN lineBreakMode:UILineBreakModeWordWrap];
-    self.meaningGreyLabel.frame = CGRectMake(20,10, labelsizeEN.width, labelsizeEN.height);
-    
-    //
-    CGRect frame = self.meaningGreyLabel.frame;
-    frame.origin.y = self.meaningBlueLabel.frame.origin.y + self.meaningBlueLabel.frame.size.height - 0;
-    self.meaningGreyLabel.frame = frame;
 }
 
 - (void)clear
 {
+    //
+    _criticalPoiont = CGPointMake(20, 10);
+    
+    //
+    if (!_labelArray) {
+        _labelArray = [NSMutableArray array];
+    }
+    
+    for (UILabel* label in _labelArray) {
+        [label removeFromSuperview];
+    }
+    
+    //
     self.ahdDictWord = nil;
     self.mwcDictWord = nil;
     self.ahdDictSentence = nil;
@@ -87,16 +121,7 @@
 
 - (CGFloat)getHeight
 {
-    CGFloat height = 0;
-    
-    if (self.meaningGreyLabel.frame.size.height == 0) {
-        height = self.meaningBlueLabel.frame.origin.y + self.meaningBlueLabel.frame.size.height + 10;
-    }
-    else {
-        height = self.meaningGreyLabel.frame.origin.y + self.meaningGreyLabel.frame.size.height + 10;
-    }
-    
-    return height;
+    return _criticalPoiont.y + 10;
 }
 
 @end

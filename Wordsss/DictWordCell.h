@@ -13,9 +13,10 @@
 #import "AhdDictSentence.h"
 
 @interface DictWordCell : UITableViewCell
-
-@property (nonatomic, retain) IBOutlet UILabel* meaningBlueLabel;
-@property (nonatomic, retain) IBOutlet UILabel* meaningGreyLabel;
+{
+    CGPoint _criticalPoiont;
+    NSMutableArray* _labelArray;
+}
 
 @property (nonatomic, retain) AhdDictWord* ahdDictWord;
 @property (nonatomic, retain) MwcDictWord* mwcDictWord;
