@@ -56,7 +56,7 @@
     [self.nameLabel setText:list.name];
     
     //
-    [self.countLabel setText:[list.num stringValue]];
+    [self.countLabel setText:[NSString stringWithFormat:@"%d 个词", [list.num intValue]]];
     
     //
     [self.thumbImageView setImage:[UIImage imageNamed:[self getImgString]]];

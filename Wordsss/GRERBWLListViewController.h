@@ -12,6 +12,8 @@
 
 #import "GRERBListWordCell.h"
 
+#import "GRERBLLListViewController.h"
+
 #import "WordViewController.h"
 
 #import "WordsssDBDataManager.h"
@@ -26,7 +28,7 @@
 
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 
-- (GRERBWLListViewController*)initWithList:(List*)list listNum:(NSNumber*)listNum;
+- (GRERBWLListViewController*)initWithListWordArray:(NSArray*)listWordArray listNum:(NSNumber*)listNum;
 
 - (IBAction)navigationBackButtonClicked:(id)sender;
 

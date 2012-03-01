@@ -48,7 +48,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"(id in %@)", idArray]];
     NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [request setSortDescriptors:[NSArray arrayWithObject:descri]];
-
+    
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     return result;
@@ -71,7 +71,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"name like %@", [prefix stringByAppendingString:@"*"]]];
     NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [request setSortDescriptors:[NSArray arrayWithObject:descri]];
-  
+    
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     if ([result count] != 0) {
@@ -168,6 +168,8 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     }
     
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:listWord];    
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"word_list.word.name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];
     
     return result;

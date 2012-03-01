@@ -176,7 +176,7 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 {
     self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
     // self.dls = [NSNumber numberWithInt:([self.dls intValue] - 1)];
-     self.dls = [NSNumber numberWithInt:-1];
+    self.dls = [NSNumber numberWithInt:-1];
 }
 
 - (void)cleardl
@@ -192,8 +192,32 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     
     //
     [self dayUpdate];
+}
+
+- (NSString*)getMemLevelString
+{
+    int lvl = [self.level intValue];
+    int rnd = rand() % 100;
+    int deg;
+    if (lvl == -1) {
+        deg = 1000;
+    }
+    else if (lvl == 0) {
+        deg = 0;
+    }
+    else {
+        deg = (lvl - 1) * 100 + rnd;
+    }
+    float fdeg = (float)deg / 10;
     
+    NSString* result = [NSString stringWithFormat:@"%.1f%%", fdeg];
     
+    return result;
+}
+
+- (NSString*)getMemDiffString
+{
+    return @"";
 }
 
 @end

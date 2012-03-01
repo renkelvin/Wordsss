@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    
     //
     [self.titleLabel setText:[NSString stringWithFormat:@"List %d", [_listNum intValue]]];
 }
@@ -47,15 +47,16 @@
 
 #pragma mark - Instance method
 
-- (GRERBWLListViewController*)initWithList:(List*)list listNum:(NSNumber*)listNum
+- (GRERBWLListViewController*)initWithListWordArray:(NSArray*)listWordArray listNum:(NSNumber*)listNum
 {
-    _list = list;
     _listNum = listNum;
     
-    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    NSArray* array = [wdm getListWordArray:_list];
+    int a = [listNum intValue] - 1;
+    int b = [listNum intValue];
+    a = countArray[a];
+    b = countArray[b];
     
-    _listWordArray = array;
+    _listWordArray = [listWordArray subarrayWithRange:NSMakeRange(a, b - a)];
     
     return self;
 }

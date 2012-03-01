@@ -28,13 +28,19 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 - (void)configCell
 {
     [self.nameLabel setText:[NSString stringWithFormat:@"List %d", [self.listNum intValue]]];
+    
+    int a = [listNum intValue] - 1;
+    int b = [listNum intValue];
+    a = countArray[a];
+    b = countArray[b];
+    [self.meaningLabel setText:[NSString stringWithFormat:@"%d 个词", b-a]];
 }
 
 @end

@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    
     //
     [self.titleLabel setText:@"GRE红宝书"];
 }
@@ -49,7 +49,12 @@
 
 - (GRERBLLListViewController*)initWithList:(List*)list
 {
-   _list = list;
+    _list = list;
+    
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    NSArray* array = [wdm getListWordArray:_list];
+    
+    _listWordArray = array;
     
     return self;
 }
@@ -67,7 +72,7 @@
 {
     // 
     GRERBWLListViewController* gwvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBWLListViewController"];        
-    gwvc = [gwvc initWithList:_list listNum:[NSNumber numberWithInt:indexPath.row + 1]];
+    gwvc = [gwvc initWithListWordArray:_listWordArray listNum:[NSNumber numberWithInt:indexPath.row + 1]];
     [[self navigationController] pushViewController:gwvc animated:YES];
 }
 

@@ -124,23 +124,8 @@
                 {
                     [((InfoCell*)cell).infoLabel setText:@"记忆程度"];
                     
-                    //
                     WordRecord* wr = _wordVirtualActor.wordRecord;
-                    int lvl = [wr.level intValue];
-                    int rnd = rand() % 100;
-                    int deg;
-                    if (lvl == -1) {
-                        deg = 1000;
-                    }
-                    else if (lvl == 0) {
-                        deg = 0;
-                    }
-                    else {
-                        deg = (lvl - 1) * 100 + rnd;
-                    }
-                    float fdeg = (float)deg / 10;
-                    
-                    [((InfoCell*)cell).valuLabel setText:[NSString stringWithFormat:@"%.1f%%", fdeg]];
+                    [((InfoCell*)cell).valuLabel setText:[wr getMemLevelString]];
                     
                     break;
                 }   
@@ -148,7 +133,8 @@
                 {
                     [((InfoCell*)cell).infoLabel setText:@"难度评估"];
                     
-                    [((InfoCell*)cell).valuLabel setText:@"简单"];
+                    WordRecord* wr = _wordVirtualActor.wordRecord;
+                    [((InfoCell*)cell).valuLabel setText:[wr getMemDiffString]];
                     
                     break;
                 }   
