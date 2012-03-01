@@ -69,14 +69,21 @@
     if (self.ahdDictWord) {
         //
         [self addString:[self.ahdDictWord getFullTypeString] blue:NO];
+        //
+        _criticalPoiont.y += 3;
+        //
         int i = 1;
         for (AhdDictMeaning* meaning in self.ahdDictWord.meaning) {
+            //
+            _criticalPoiont.y += 3;
+            //
             NSString* shortMeaning = [meaning getShortMeaning];
             if (shortMeaning)
             {          
                 [self addString:[NSString stringWithFormat:@"%d. %@", i, shortMeaning] blue:YES];
                 i++;
             }
+            //
             NSString* longMeaning = [meaning getLongMeaning];
             if (longMeaning) {
                 [self addString:longMeaning blue:NO];
@@ -88,6 +95,9 @@
     else if (self.mwcDictWord) {
         //
         [self addString:[self.mwcDictWord getFunction] blue:NO];
+        //
+        _criticalPoiont.y += 3;
+        //
         [self addString:[self.mwcDictWord getMeaningEN] blue:YES];
     }
     

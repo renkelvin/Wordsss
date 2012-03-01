@@ -110,7 +110,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 // Header
@@ -120,7 +120,24 @@
     
     [headerView setBackgroundColor:[UIColor clearColor]];
     
-    headerView.titleLabel.text = @"其他词表";
+    switch (section) {
+        case 0:
+        {
+            headerView.titleLabel.text = @"其他词表";
+            
+            break;
+        }   
+        case 1:
+        {
+            headerView.titleLabel.text = @"即将推出";
+            
+            break;
+        }   
+        default:
+        {
+            break;
+        }
+    }
     
     return headerView;
 }
@@ -128,7 +145,26 @@
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[_listsVirtualActor getListDictionary] count] - 2;
+    switch (section) {
+        case 0:
+        {
+            return [[_listsVirtualActor getListDictionary] count] - 2;
+            
+            break;
+        }   
+        case 1:
+        {
+            return 4;
+            
+            break;
+        }   
+        default:
+        {
+            return 0;
+            
+            break;
+        }
+    }
 }
 
 // Cell
@@ -141,13 +177,29 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = nil;
-    NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
-    list = [dict objectForKey:listName];
-    
-    [(ListCell*)cell setList:list];
-    [(ListCell*)cell configCell];
+    switch (indexPath.section) {
+        case 0:
+        {
+            NSDictionary* dict = [_listsVirtualActor getListDictionary];
+            List* list = nil;
+            NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
+            list = [dict objectForKey:listName];
+            
+            [(ListCell*)cell setList:list];
+            [(ListCell*)cell configCell];
+            
+            break;
+        }   
+        case 1:
+        {
+            
+            break;
+        }   
+        default:
+        {
+            break;
+        }
+    }
     
     return cell;
 }

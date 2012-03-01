@@ -32,6 +32,7 @@
 
 - (NSString*)getTypeString;
 - (NSString*)getFullTypeString;
+- (NSString*)getShortTypeString;
 - (NSString*)getTypeStringWithBlank;
 - (NSString*)getBriefMeaning;
 - (NSString*)getSummaryMeaning;

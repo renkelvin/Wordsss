@@ -125,7 +125,12 @@
                     [((InfoCell*)cell).infoLabel setText:@"记忆程度"];
                     
                     WordRecord* wr = _wordVirtualActor.wordRecord;
-                    [((InfoCell*)cell).valuLabel setText:[wr getMemLevelString]];
+                    if (!wr) {
+                        [((InfoCell*)cell).valuLabel setText:@"尚未开始"];
+                    }
+                    else {
+                        [((InfoCell*)cell).valuLabel setText:[wr getMemLevelString]];
+                    }
                     
                     break;
                 }   

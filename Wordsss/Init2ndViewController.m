@@ -169,7 +169,7 @@ static char* vocaArray[11] = {
     if (self.pickerAccessoryView.frame.origin.y == 416) {
         NSString* string = self.curLabel.text;
         if ([string compare:@"未指定"] == NSOrderedSame) {
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"选择学习范围" message:@"请您选择您的学习范围：当前词汇水平以及目标水平。" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
         else {

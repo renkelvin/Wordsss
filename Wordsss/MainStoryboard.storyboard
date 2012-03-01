@@ -192,8 +192,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="h9n-Ka-Z6T">
-                                <rect key="frame" x="267" y="28" width="24" height="24"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="h9n-Ka-Z6T">
+                                <rect key="frame" x="266" y="27" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="info_blue.png">
@@ -203,6 +203,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="evalQuesButtonClicked:" destination="6" eventType="touchUpInside" id="ocT-l7-TpJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1730,8 +1733,8 @@
                                                     <rect key="frame" x="298" y="28" width="10" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="计算机词表" lineBreakMode="tailTruncation" minimumFontSize="10" id="DPu-M7-nfD">
-                                                    <rect key="frame" x="73" y="12" width="212" height="24"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XXX词表" lineBreakMode="tailTruncation" minimumFontSize="10" id="DPu-M7-nfD">
+                                                    <rect key="frame" x="73" y="12" width="155" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1740,8 +1743,8 @@
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="124个词" lineBreakMode="tailTruncation" minimumFontSize="10" id="smG-u9-qzE">
-                                                    <rect key="frame" x="73" y="34" width="163" height="20"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="124 个词" lineBreakMode="tailTruncation" minimumFontSize="10" id="smG-u9-qzE">
+                                                    <rect key="frame" x="73" y="34" width="155" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1755,7 +1758,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wl_small_edge.png" id="IKc-Hs-0hO">
-                                                    <rect key="frame" x="12" y="10" width="52" height="53"/>
+                                                    <rect key="frame" x="12" y="10" width="52" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="wl_paid.png" id="zjK-aA-bEh">
@@ -2110,11 +2113,11 @@
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="dk_hl.png" id="yk3-Od-Xd4">
-                                        <rect key="frame" x="0.0" y="87" width="160" height="66"/>
+                                        <rect key="frame" x="0.0" y="87" width="160" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="know_hl.png" id="RxY-Xv-Zvq">
-                                        <rect key="frame" x="160" y="87" width="160" height="66"/>
+                                        <rect key="frame" x="160" y="87" width="160" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="center" image="know.png" id="cHb-68-Dkg">
@@ -3241,6 +3244,7 @@
         <class className="ProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
             <relationships>
+                <relationship kind="action" name="evalQuesButtonClicked:"/>
                 <relationship kind="outlet" name="chartContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="chartView" candidateClass="RKChartView"/>
                 <relationship kind="outlet" name="infoLeftLabel" candidateClass="UILabel"/>

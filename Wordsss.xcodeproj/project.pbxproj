@@ -96,6 +96,7 @@
 		FE398C1414963A6C00D9408C /* MemData.m in Sources */ = {isa = PBXBuildFile; fileRef = FE398C1314963A6C00D9408C /* MemData.m */; };
 		FE3B9BC314F280CC00B4CE2C /* MwcDictWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */; };
 		FE3B9BC614F280CD00B4CE2C /* MwcDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */; };
+		FE464F6814FFC447002601D1 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE464F6714FFC447002601D1 /* WordsssDB.sqlite */; };
 		FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680014F28FDC00963B95 /* button_grey_done.png */; };
 		FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680114F28FDC00963B95 /* button_grey_done@2x.png */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
@@ -468,6 +469,7 @@
 		FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MwcDictWord.m; sourceTree = "<group>"; };
 		FE3B9BC414F280CD00B4CE2C /* MwcDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MwcDictMeaning.h; sourceTree = "<group>"; };
 		FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MwcDictMeaning.m; sourceTree = "<group>"; };
+		FE464F6714FFC447002601D1 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/094AE45F-3E31-4B78-848F-AD6639BAACDA/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE4D51D214F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/Wordsss/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE4D51D314F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/WordsssTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE5C958514AF0C6600DE10F2 /* Word_Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word_Relation.h; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				FE464F6714FFC447002601D1 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1845,6 +1848,7 @@
 				FE5FF2E314FF538D0067D950 /* button_actions@2x.png in Resources */,
 				FE5FF2E614FF53A50067D950 /* chart_cover.png in Resources */,
 				FE5FF2E714FF53A50067D950 /* chart_cover@2x.png in Resources */,
+				FE464F6814FFC447002601D1 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

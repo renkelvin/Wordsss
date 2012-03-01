@@ -74,7 +74,7 @@
     //
     NSString* nameString = [self.nameTextField text];
     if ([nameString compare:@""] == NSOrderedSame) {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"姓名不能为空" message:@"请您输入正确的名字，然后点击进入下一步。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
         [alert show];
     }   
     else {

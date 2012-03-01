@@ -445,9 +445,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             ((Word*)object).name = string;
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_ASSOCIATION:   // Association
@@ -480,9 +477,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             // NSLog(@"%@", ((Association*)object).description_cn);
                                         }
-                                        
-                                        // attrString = nil;
-                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -543,9 +537,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             ((Rootaffix*)object).description_cn = string;
                                         }
                                         
-                                        //                                        attrString = nil;
-                                        //                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_SENSE:   // Sense
@@ -571,9 +562,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
                                             ((Sense*)object).meaning_cn = string;
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -604,9 +592,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             ((Frequency*)object).disp = [NSNumber numberWithFloat:[string floatValue]];
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_WORDDICT:   // Word_Dict
@@ -627,9 +612,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"WordDict - id: %@", string);
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_MCECDICTWORD:   // MCECDictWord
@@ -649,9 +631,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             // NSLog(@"McecDictWord - id: %@", string);
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -679,9 +658,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             ((McecDictMeaning*)object).type = [NSNumber numberWithInt:[string intValue]];
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_AHDDICTWORD:   // AhdDictWord
@@ -704,9 +680,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         else if ([attrString compare:@"type"] == NSOrderedSame) {
                                             ((AhdDictWord*)object).type = [NSNumber numberWithInt:[string intValue]];
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -733,9 +706,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
                                             ((AhdDictMeaning*)object).meaning_en = string;
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -789,9 +759,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        // attrString = nil;
-                                        // attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_MWCDICTMEANING:   // MwcDictMeaning
@@ -820,9 +787,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        // attrString = nil;
-                                        // attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_AHDDICTSENTENCE:   // AhdDictSentence
@@ -849,9 +813,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             ((AhdDictSentence*)object).meaning_en = string;
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_WORDLIST:   // Word_List
@@ -871,9 +832,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             // NSLog(@"WordList - id: %@", string);
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -911,9 +869,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        //                                        attrString = nil;
-                                        //                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_MALISTWORD:   // MAListWord
@@ -943,9 +898,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                         }
                                         
-                                        // attrString = nil;
-                                        // attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_PHLISTWORD:   // PHListWord
@@ -974,9 +926,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        // attrString = nil;
-                                        // attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_GRERBLISTWORD:   // GRERBListWord
@@ -1004,9 +953,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 ((GRERBListWord*)object).meaning_cn = [((GRERBListWord*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
-                                        
-                                        // attrString = nil;
-                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -1062,9 +1008,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             ((GRERBListMem*)object).type = [NSNumber numberWithInt:t];
                                         }
                                         
-                                        // attrString = nil;
-                                        // attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_DOTALISTWORD:   // DOTAListWord
@@ -1084,9 +1027,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             // NSLog(@"DOTAListWord - id: %@", string);
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1115,9 +1055,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 ((Word_Association*)object).meaning_cn = [((Word_Association*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1155,9 +1092,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        // attrString = nil;
-                                        // attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_WORDSENSE:   // Word_Sense
@@ -1185,9 +1119,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 ((Word_Sense*)object).meaning_cn = [((Word_Sense*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
-                                        
-                                        // attrString = nil;
-                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -1217,9 +1148,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         else if ([attrString compare:@"type"] == NSOrderedSame) {
                                             ((List*)object).type = [NSNumber numberWithInt:[string intValue]];
                                         }
-                                        
-                                        // attrString = nil;
-                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -1257,9 +1185,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_WORDASSOCIATION:   // Word_Association
@@ -1293,9 +1218,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 [association.word_association addObject:((Word_Association*)object)];
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1331,9 +1253,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_WORDSENSE:   // Word_Sense
@@ -1368,9 +1287,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_SENSEFAMILY:   // Sense_Family
@@ -1398,9 +1314,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_WORDDICT:   // Word_Dict
@@ -1426,9 +1339,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 word.word_dict = ((Word_Dict*)object);
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1458,9 +1368,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_AHDDICTWORD:   // AhdDictWord
@@ -1486,9 +1393,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 [word_dict.ahdDictWord addObject:((AhdDictWord*)object)];
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1516,9 +1420,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_MWCDICTWORD:   // MwcDictWord
@@ -1544,9 +1445,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 [word_dict.mwcDictWord addObject:((MwcDictWord*)object)];
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1574,9 +1472,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_AHDDICTSENTENCE:   // AhdDictSentence
@@ -1603,9 +1498,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_WORDLIST:   // Word_List
@@ -1620,37 +1512,17 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         
                                         if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             object = (Word_List *)[wordListDICT objectForKey:string];
-                                            
-                                            if ([string compare:@"127"] == NSOrderedSame) {
-                                                
-                                                int i = 0;
-                                                
-                                            }
 
                                             // NSLog(@"WordList - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
-                                            
-                                            if ([string compare:@"119046"] == NSOrderedSame) {
-
-                                                int i = 0;
-                                            
-                                            }
-                                            
+                                                                                        
                                             if (word) {
                                                 ((Word_List*)object).word = word;
                                                 word.word_list = ((Word_List*)object);
                                             }
-                                            else {
-                                            
-                                                int i = 0;
-
-                                            }
                                         }
-                                        
-                                        // attrString = nil;
-                                        // attrDict = nil;
                                         
                                         break;
                                     }
@@ -1672,21 +1544,12 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             Word_List* word_list = [wordListDICT objectForKey:string];
                                             
-                                            if ([string compare:@"1563"] == NSOrderedSame) {
-                                                
-                                                int i = 0;
-                                                
-                                            }
-                                            
                                             if (word_list) {
                                                 ((CSListWord*)object).word_list = word_list;
                                                 word_list.csListWord = ((CSListWord*)object);
                                             }
                                         }
                                         
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1714,9 +1577,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_PHLISTWORD:   // PHListWord
@@ -1742,9 +1602,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 word_list.phListWord = ((PHListWord*)object);
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1772,9 +1629,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_GRERBLISTMEM:   // GRERBListMem
@@ -1800,9 +1654,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 [word.grerbListMem addObject:((GRERBListMem*)object)];
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1830,8 +1681,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1860,9 +1709,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_DERIVATION:   // Derivation
@@ -1889,9 +1735,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 word.word_relation.deriOrig = (Word*)object;
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }
@@ -1920,9 +1763,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         
-                                        attrString = nil;
-                                        attrDict = nil;
-                                        
                                         break;
                                     }
                                     case TTABLEDATA_ANTONYM:   // Antonym
@@ -1949,9 +1789,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 [word.word_relation.antonym addObject:(Word*)object];
                                             }
                                         }
-                                        
-                                        attrString = nil;
-                                        attrDict = nil;
                                         
                                         break;
                                     }

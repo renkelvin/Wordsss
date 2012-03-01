@@ -65,8 +65,10 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     
     //
-    NSNumber* word_id = _wordRecordPre.word_id;
-    _wordPre = [wdm getWordWithId:word_id];
+    if (_wordRecordPre) {
+        NSNumber* word_id = _wordRecordPre.word_id;
+        _wordPre = [wdm getWordWithId:word_id];
+    }
 }
 
 - (void)updateWordRecord
@@ -76,13 +78,14 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     _wordRecordCur = _wordRecordPre;
     
     //
-    if ([_wordRecordSet count]) {
+    _wordRecordPre = nil;
+    while ([_wordRecordSet count]) {
         int index = rand() % [_wordRecordSet count];
         _wordRecordPre = (WordRecord*)[[_wordRecordSet allObjects] objectAtIndex:index];
-    }
-    else
-    {
-        _wordPre = nil;
+        
+        if ([_wordRecordPre.word_id intValue] != [_wordRecordCur.word_id intValue]) {
+            break;
+        }
     }
 }
 

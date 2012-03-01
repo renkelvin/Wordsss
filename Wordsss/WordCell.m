@@ -56,7 +56,7 @@
     //
     else {
         [self.nameLabel setText:self.word.name];
-        NSString* string = [NSString stringWithFormat:@"啊！这个词怎么会出现在这里的！"];
+        NSString* string = [NSString stringWithFormat:@""];
         [self.meaningLabel setText:string];
     }
 }

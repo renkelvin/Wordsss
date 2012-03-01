@@ -40,6 +40,8 @@
 
 @property (nonatomic, retain) IBOutlet RKChartView* chartView;
 
+- (IBAction)evalQuesButtonClicked:(id)sender;
+
 - (void)update;
 
 @end
