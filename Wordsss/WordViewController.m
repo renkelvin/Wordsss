@@ -16,6 +16,8 @@
 
 @synthesize transToListButton;
 
+@synthesize navigationLeftButton;
+
 @synthesize sectionViewControllers;
 @synthesize currentSectionView;
 
@@ -73,6 +75,11 @@
         frame.origin.x = 20 + bodyWidth;
         self.wordPosLevelRightImageView.frame = frame;
     }
+    
+    //
+    CGRect frame = self.navigationLeftButton.frame;
+    frame.origin.x = 0;
+    [self.navigationLeftButton setFrame:frame];
 }
 
 - (void)viewDidLoad
@@ -114,6 +121,13 @@
 - (IBAction)navigationBackButtonClicked:(id)sender
 {
     [[self navigationController] popViewControllerAnimated:YES];       
+}
+
+- (IBAction)navigationBookmarksButtonClicked:(id)sender
+{
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"title" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"123" otherButtonTitles:@"1", @"2", nil];
+    UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
+    [actionSheet showFromTabBar:tabBar];
 }
 
 #pragma mark -
@@ -169,16 +183,16 @@
 {
     // Get frame
     CGRect frame = kWordViewSectionFrame;
-//    if (_word.word_list) {
-//        Word_List* list = _word.word_list;
-//        NSLog(@"%@", list.csListWord.meaning);
-//        NSLog(@"%@", list.maListWord.meaning);
-//        NSLog(@"%@", list.phListWord.meaning);
-//        frame = kWordViewSectionFrameShort;
-//        
-//        // Show translate to list bar
-//        [self.transToListButton setHidden:NO];
-//    }
+    //    if (_word.word_list) {
+    //        Word_List* list = _word.word_list;
+    //        NSLog(@"%@", list.csListWord.meaning);
+    //        NSLog(@"%@", list.maListWord.meaning);
+    //        NSLog(@"%@", list.phListWord.meaning);
+    //        frame = kWordViewSectionFrameShort;
+    //        
+    //        // Show translate to list bar
+    //        [self.transToListButton setHidden:NO];
+    //    }
     
     // Set sections
     WordBooksViewController* wordBooksViewController = [((WordBooksViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordBooksViewController"]) init:_wordVirtualActor];
@@ -206,16 +220,24 @@
     [self setSectionViewControllers:tempViewControllersArray];
 }
 
-#pragma mark - UINavigationControllerDelegate
+#pragma mark - UIActionSheetDelegate
 
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    //    [self initNavigationBar];
+    switch (buttonIndex) {
+        case 0:
+        {
+            ;
+            break;
+        }
+        case 1:
+        {
+            ;
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

@@ -176,6 +176,7 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
 {
     self.dlc = [NSNumber numberWithInt:([self.dlc intValue] + 1)];
     // self.dls = [NSNumber numberWithInt:([self.dls intValue] - 1)];
+     self.dls = [NSNumber numberWithInt:-1];
 }
 
 - (void)cleardl

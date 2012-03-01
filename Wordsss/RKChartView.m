@@ -270,7 +270,9 @@
                      
                      [aPath addQuadCurveToPoint:p2 controlPoint:p3];
                      
-                     [aPath addLineToPoint:p4];
+                     if (inx != [points count]-1) {
+                         [aPath addLineToPoint:p4];
+                     }
                      
                      self.preRecord = obj;
                  }

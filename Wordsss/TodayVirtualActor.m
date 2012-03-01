@@ -357,7 +357,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 
 - (BOOL)checkWordRecord:(WordRecord*)wordRecord
 {
-    if ([wordRecord.dls intValue] >= 1) {
+    if ([wordRecord.dls intValue] >= 0) {
         return YES;
     }
     if ([wordRecord.dlc intValue] >= 5) {

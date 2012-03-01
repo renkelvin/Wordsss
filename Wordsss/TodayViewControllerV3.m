@@ -26,6 +26,8 @@
 @synthesize infoLeftGraphView, infoRightGraphView;
 @synthesize infoLeftNowLabel, infoLeftSumLabel, infoRightNowLabel, infoRightSumLabel;
 
+@synthesize dkhlImageView, knowhlImageView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -304,6 +306,7 @@
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
+//
 - (BOOL)checkHasInitUser
 {
     BOOL hasInit = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKeyHasInitUser];
@@ -329,14 +332,84 @@
     [[self navigationController] pushViewController:wordViewController animated:YES];
 }
 
+- (IBAction)wordSliderLeftTouchDown:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:1.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchDown:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:1.0];
+    }];
+}
+
 - (IBAction)wordSliderLeftTouchUpInside:(id)sender {
     //
     [self decOperation];
+    
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:0.0];
+    }];
 }
 
 - (IBAction)wordSliderRightTouchUpInside:(id)sender {
     //
     [self incOperation];
+    
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderLeftTouchUpOutside:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchUpOutside:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderLeftTouchDragEnter:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:1.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchDragEnter:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:1.0];
+    }];
+}
+
+- (IBAction)wordSliderLeftTouchDragExit:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchDragExit:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:0.0];
+    }];
 }
 
 - (IBAction)helpButtonClicked:(id)sender

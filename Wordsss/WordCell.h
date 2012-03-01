@@ -29,8 +29,6 @@
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelBodyImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* wordPosLevelRightImageView;
 
-- (IBAction)addButtonClicked:(id)sender;
-
 - (void)configCell;
 
 @end
