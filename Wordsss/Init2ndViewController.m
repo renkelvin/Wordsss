@@ -127,6 +127,15 @@ static char* vocaArray[11] = {
      ];
 }
 
+- (void)next
+{
+    //
+    Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
+    [[self navigationController] pushViewController:ivc animated:YES];
+}
+
+#pragma mark - Instance method
+
 - (IBAction)doneButtonClicked:(id)sender
 {
     //
@@ -150,58 +159,57 @@ static char* vocaArray[11] = {
          {
              [self.pickerView setFrame:kInitPickerViewFrameHide];
              [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
-         }
-         ];
-        
-        // Hide pickerView
-        [UIView animateWithDuration:0.3 animations:^(void)
-         {
-             [self.pickerView setFrame:kInitPickerViewFrameHide];
-             [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
-         }
-         ];
-        
-        //
-        [self.nextStepButton setEnabled:YES];
-        
+         }];
     }
 }
 
-#pragma mark - Instance method
-
 - (IBAction)nextStep
 {
-    //
-    [self doneButtonClicked:nil];
-    
-    //
-    NSString* string = self.curLabel.text;
-    if ([string compare:@"未指定"] == NSOrderedSame) {
-        //        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        //        [alert show];
+    // Hide
+    if (self.pickerAccessoryView.frame.origin.y == 416) {
+        NSString* string = self.curLabel.text;
+        if ([string compare:@"未指定"] == NSOrderedSame) {
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else {
+            [self next];
+        }
     }
+    // Show
     else {
         //
-        Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
-        [[self navigationController] pushViewController:ivc animated:YES];
+        int curRow = [self.pickerView selectedRowInComponent:0];
+        int tarRow = [self.pickerView selectedRowInComponent:1];
+        
+        // ERROR
+        if (curRow >= tarRow) {
+            [[[UIAlertView alloc] initWithTitle:@"范围无效" message:@"您必须从较低水平选择至较高水平。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil] show];
+        }
+        else {
+            _initVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
+            _initVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
+            
+            // Update label
+            [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];
+            [self.tarLabel setText:[NSString stringWithCString:nameArray[tarRow+1] encoding:4]];
+            
+            // Hide pickerView
+            [UIView animateWithDuration:0.3 animations:^(void)
+             {
+                 [self.pickerView setFrame:kInitPickerViewFrameHide];
+                 [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
+             }];
+            
+            //
+            [self next];
+        }
     }
 }
 
 - (IBAction)lastStep
 {
     [[self navigationController] popViewControllerAnimated:YES];
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    //    [self initNavigationBar];
 }
 
 #pragma mark - UIPickerViewDelegate

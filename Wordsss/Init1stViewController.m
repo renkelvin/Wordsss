@@ -74,7 +74,7 @@
     //
     NSString* nameString = [self.nameTextField text];
     if ([nameString compare:@""] == NSOrderedSame) {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
         [alert show];
     }   
     else {
@@ -95,16 +95,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     //
-    [textField resignFirstResponder];
-    
-    //
-    NSString* string = textField.text;
-    if ([string compare:@""] == NSOrderedSame) {
-        [self.nextStepButton setEnabled:NO];
-    }
-    else {
-        [self.nextStepButton setEnabled:YES];
-    }
+    [self nextStep];
     
     return YES;
 }
