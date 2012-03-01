@@ -58,9 +58,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-}
-
 #pragma - UITableViewDelegate
 
 - (IBAction)featureList1ButtonClicked:(id)sender

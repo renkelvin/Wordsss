@@ -165,45 +165,77 @@ static int freqArray[11] = {
 
 - (NSString*)getWordLevel
 {
-    int fre = [self.frequency.freq intValue];
-    
-    NSString* level = @"";
-    
-    if (fre >= freqArray[0]) {
-        level = @"Zero";
+    //
+    if ([self.field.holyshit boolValue]) {
+        return @"超神";
     }
-    else if (fre >= freqArray[1]) {
-        level = @"基础";
+    else if ([self.field.gre boolValue]) {
+        return @"GRE";
     }
-    else if (fre >= freqArray[2]) {
-        level = @"初中";
+    else if ([self.field.sat boolValue]) {
+        return @"SAT";
     }
-    else if (fre >= freqArray[3]) {
-        level = @"高中";
+    else if ([self.field.tofel boolValue]) {
+        return @"TOEFL";
     }
-    else if (fre >= freqArray[4]) {
-        level = @"CET4";
+    else if ([self.field.ielts boolValue]) {
+        return @"IELTS";
     }
-    else if (fre >= freqArray[5]) {
-        level = @"CET6";
+    else if ([self.field.cet6 boolValue]) {
+        return @"CET6";
     }
-    else if (fre >= freqArray[6]) {
-        level = @"IELTS";
+    else if ([self.field.cet4 boolValue]) {
+        return @"CET4";
     }
-    else if (fre >= freqArray[7]) {
-        level = @"TOEFL";
+    else if ([self.field.high boolValue]) {
+        return @"HIGH";
     }
-    else if (fre >= freqArray[8]) {
-        level = @"SAT";
+    else if ([self.field.middle boolValue]) {
+        return @"MIDDLE";
     }
-    else if (fre >= freqArray[9]) {
-        level = @"GRE";
+    else if ([self.field.basic boolValue]) {
+        return @"BASIC";
     }
     else {
-        level = @"超神";
+        return @"ZERO";
     }
     
-    return level;
+    //
+    int fre = [self.frequency.freq intValue];
+    
+    if (fre >= freqArray[0]) {
+        return @"ZERO";
+    }
+    else if (fre >= freqArray[1]) {
+        return @"基础";
+    }
+    else if (fre >= freqArray[2]) {
+        return @"初中";
+    }
+    else if (fre >= freqArray[3]) {
+        return @"高中";
+    }
+    else if (fre >= freqArray[4]) {
+        return @"CET4";
+    }
+    else if (fre >= freqArray[5]) {
+        return @"CET6";
+    }
+    else if (fre >= freqArray[6]) {
+        return @"IELTS";
+    }
+    else if (fre >= freqArray[7]) {
+        return @"TOEFL";
+    }
+    else if (fre >= freqArray[8]) {
+        return @"SAT";
+    }
+    else if (fre >= freqArray[9]) {
+        return @"GRE";
+    }
+    else {
+        return @"超神";
+    }
 }
 
 - (NSString*)getShortTypeString

@@ -125,7 +125,7 @@
 
 - (IBAction)navigationBookmarksButtonClicked:(id)sender
 {
-    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"123" otherButtonTitles:@"1", @"2", nil];
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"1", @"2", nil];
     UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
     [actionSheet showFromTabBar:tabBar];
 }
