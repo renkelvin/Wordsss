@@ -10,7 +10,7 @@
 
 @implementation DictWordCell
 
-@synthesize meaningCNLabel, meaningENLabel;
+@synthesize meaningBlueLabel, meaningGreyLabel;
 @synthesize ahdDictWord, mwcDictWord, ahdDictSentence;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,54 +31,51 @@
 
 - (void)configCell
 {
-    if (!self.meaningCNLabel) {
-        self.meaningCNLabel = [[UILabel alloc] init];
+    if (!self.meaningBlueLabel) {
+        self.meaningBlueLabel = [[UILabel alloc] init];
     }
-    if (!self.meaningENLabel) {
-        self.meaningENLabel = [[UILabel alloc] init];
+    if (!self.meaningGreyLabel) {
+        self.meaningGreyLabel = [[UILabel alloc] init];
     }
-    
-    //    [self.meaningCNLabel setText:@"1"];
-    //    [self.meaningENLabel setText:@"2"];
     
     // AhdDictWord
     if (self.ahdDictWord) {
         //
-        [self.meaningCNLabel setText:[self.ahdDictWord getFullMeaningCN]];
-        [self.meaningENLabel setText:@""];
+        [self.meaningBlueLabel setText:[self.ahdDictWord getFullMeaningCN]];
+        [self.meaningGreyLabel setText:@""];
     }
     
     // MwcDictWord
     else if (self.mwcDictWord) {
         //
-        [self.meaningCNLabel setText:[self.mwcDictWord getFunction]];
-        [self.meaningENLabel setText:[self.mwcDictWord getMeaningEN]];
+        [self.meaningBlueLabel setText:[self.mwcDictWord getFunction]];
+        [self.meaningGreyLabel setText:[self.mwcDictWord getMeaningEN]];
     }
     
     // AhdDictSentence
     else if (self.ahdDictSentence) {
         //
-        [self.meaningCNLabel setText:self.ahdDictSentence.meaning_cn];
-        [self.meaningENLabel setText:self.ahdDictSentence.meaning_en];
+        [self.meaningBlueLabel setText:self.ahdDictSentence.meaning_cn];
+        [self.meaningGreyLabel setText:self.ahdDictSentence.meaning_en];
     }
     
     //
-    NSString* stringCN = self.meaningCNLabel.text;
-    UIFont *fontCN = self.meaningCNLabel.font;
+    NSString* stringCN = self.meaningBlueLabel.text;
+    UIFont *fontCN = self.meaningBlueLabel.font;
     CGSize sizeCN = CGSizeMake(280,2000);
     CGSize labelsizeCN = [stringCN sizeWithFont:fontCN constrainedToSize:sizeCN lineBreakMode:UILineBreakModeWordWrap];
-    self.meaningCNLabel.frame = CGRectMake(20,10, labelsizeCN.width, labelsizeCN.height);
+    self.meaningBlueLabel.frame = CGRectMake(20,10, labelsizeCN.width, labelsizeCN.height);
     
-    NSString* stringEN = self.meaningENLabel.text;
-    UIFont *fontEN = self.meaningENLabel.font;
+    NSString* stringEN = self.meaningGreyLabel.text;
+    UIFont *fontEN = self.meaningGreyLabel.font;
     CGSize sizeEN = CGSizeMake(280,2000);
     CGSize labelsizeEN = [stringEN sizeWithFont:fontEN constrainedToSize:sizeEN lineBreakMode:UILineBreakModeWordWrap];
-    self.meaningENLabel.frame = CGRectMake(20,10, labelsizeEN.width, labelsizeEN.height);
+    self.meaningGreyLabel.frame = CGRectMake(20,10, labelsizeEN.width, labelsizeEN.height);
     
     //
-    CGRect frame = self.meaningENLabel.frame;
-    frame.origin.y = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height - 0;
-    self.meaningENLabel.frame = frame;
+    CGRect frame = self.meaningGreyLabel.frame;
+    frame.origin.y = self.meaningBlueLabel.frame.origin.y + self.meaningBlueLabel.frame.size.height - 0;
+    self.meaningGreyLabel.frame = frame;
 }
 
 - (void)clear
@@ -92,13 +89,11 @@
 {
     CGFloat height = 0;
     
-    if (self.meaningENLabel.frame.size.height == 0) {
-        //        int y = self.meaningCNLabel.frame.origin.y;
-        //        int h = self.meaningCNLabel.frame.size.height;
-        height = self.meaningCNLabel.frame.origin.y + self.meaningCNLabel.frame.size.height + 10;
+    if (self.meaningGreyLabel.frame.size.height == 0) {
+        height = self.meaningBlueLabel.frame.origin.y + self.meaningBlueLabel.frame.size.height + 10;
     }
     else {
-        height = self.meaningENLabel.frame.origin.y + self.meaningENLabel.frame.size.height + 10;
+        height = self.meaningGreyLabel.frame.origin.y + self.meaningGreyLabel.frame.size.height + 10;
     }
     
     return height;

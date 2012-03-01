@@ -35,10 +35,10 @@
     // Line Color
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     
-    CGFloat components1[] = {47 / 255.0, 93 / 255.0, 128 / 255.0, 1.0};
+    CGFloat components1[] = {153 / 255.0, 153 / 255.0, 153 / 255.0, 1.0};
     CGColorRef color1 = CGColorCreate(colorspace, components1);
 
-    CGFloat components2[] = {47 / 255.0, 93 / 255.0, 128 / 255.0, 1.0};
+    CGFloat components2[] = {61 / 255.0, 131 / 255.0, 170 / 255.0, 1.0};
     CGColorRef color2 = CGColorCreate(colorspace, components2);
     
     switch (self.type) {

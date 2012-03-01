@@ -168,7 +168,6 @@
             [(DictWordCell*)cell setAhdDictSentence:sentence];
             [(DictWordCell*)cell configCell];
             
-            
             break;
         }   
         default:
