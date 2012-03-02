@@ -287,7 +287,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     float deltaTime = [[NSDate date] timeIntervalSinceDate:_user.status.date];
     
-    if ([_wordRecordSet count] >= 120) {
+    if ([_wordRecordSet count] >= 80) {
         return NO;  
     }
     
