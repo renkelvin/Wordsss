@@ -61,4 +61,50 @@
     }
 }
 
+- (IBAction)addButtonClicked:(id)sender
+{
+    //
+    TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
+    
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    WordRecord* wr = nil;
+    
+    //
+    if (self.word) {
+        //
+        [uva createWordRecord:self.word forUser:tva.user];
+        
+        //
+        wr = [uva getWordRecord:self.word];
+        
+        // WordPos Level Bar
+        if (wr) {
+            [self.addButton setHidden:YES];
+            
+            [self.wordPosLevelLeftImageView setHidden:NO];
+            [self.wordPosLevelBodyImageView setHidden:NO];
+            [self.wordPosLevelRightImageView setHidden:NO];
+            
+            int bodyWidth = 0;
+            
+            if ([wr.level intValue] == -1) {
+                bodyWidth = 281;
+            }
+            else {
+                bodyWidth = 281 / 11.0 * [wr.level intValue];
+            }
+            
+            CGRect frame;
+            
+            frame = self.wordPosLevelBodyImageView.frame;
+            frame.size.width = bodyWidth;
+            self.wordPosLevelBodyImageView.frame = frame;
+            
+            frame = self.wordPosLevelRightImageView.frame;
+            frame.origin.x = 20 + bodyWidth;
+            self.wordPosLevelRightImageView.frame = frame;
+        }
+    }
+}
+
 @end

@@ -31,4 +31,6 @@
 
 - (void)configCell;
 
+- (IBAction)addButtonClicked:(id)sender;
+
 @end

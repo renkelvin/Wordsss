@@ -25,8 +25,7 @@
 {
     self.word = word;
     
-    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
-    self.wordRecord = [uva getWordRecord:word];
+    [self prepare];
     
     return self;
 }
@@ -191,7 +190,8 @@
 
 - (void)prepare
 {
-    
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    self.wordRecord = [uva getWordRecord:self.word];
 }
 
 - (NSMutableArray*)getHisRecords

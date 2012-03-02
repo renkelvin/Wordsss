@@ -282,7 +282,7 @@
             [aPath stroke];
             
             // Info label
-            [self.infoLabel setText:[NSString stringWithFormat:@"记忆程度"]];
+            [self.infoLabel setText:[NSString stringWithFormat:@"记忆曲线"]];
             
             // Date label
             NSDate* date = ((HisRecord*)[self.points lastObject]).date;

@@ -281,10 +281,18 @@ static char* nameArray[11] = {
                         int month = (int)inter / (60*60*24*30);
                         inter = (int)inter % (60*60*24*30);
                         int day = (int)inter / (60*60*24);
+                        inter = (int)inter % (60*60*24);
+                        int hour = (int)inter / (60*60);
+                        inter = (int)inter % (60*60);
                         
-                        string = [NSString stringWithFormat:@"%d 天", day];
-                        if (month) {
-                            string = [[NSString stringWithFormat:@"%d 月 ", month] stringByAppendingString:string];
+                        if (month == 0 && day == 0) {
+                            string = [NSString stringWithFormat:@"%d 小时", hour];
+                        }
+                        else {
+                            string = [NSString stringWithFormat:@"%d 天", day];
+                            if (month) {
+                                string = [[NSString stringWithFormat:@"%d 月 ", month] stringByAppendingString:string];
+                            }
                         }
                     }
                     
