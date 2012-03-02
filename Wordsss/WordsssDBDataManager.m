@@ -42,10 +42,34 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return [Word wordWithId:wordId inManagedObjectContext:self.managedObjectContext];
 }
 
-- (NSArray*)getWordWithIds:(NSArray*)idArray
+- (NSArray*)getWordsWithIds:(NSArray*)idArray
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"(id in %@)", idArray]];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
+    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    return result;
+}
+
+- (NSArray*)getPureWordsWithNames:(NSArray*)nameArray
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"PureWord"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(name in %@)", nameArray]];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
+    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    return result;
+}
+
+- (NSArray*)getPureWordsWithPrefix:(NSString*)prefix
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"PureWord"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"name like %@", [prefix stringByAppendingString:@"*"]]];
     NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     
@@ -65,7 +89,18 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return result;
 }
 
-- (NSArray*)getWordWithPrefix:(NSString*)prefix
+- (NSArray*)getAllPureWord
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"PureWord"];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
+    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    return result;
+}
+
+- (NSArray*)getWordsWithPrefix:(NSString*)prefix
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"name like %@", [prefix stringByAppendingString:@"*"]]];

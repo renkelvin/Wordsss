@@ -30,9 +30,9 @@
 
 - (NSArray*)getAllWord;
 - (Word*)getWordWithId:(NSNumber*)wordId;
-- (NSArray*)getWordWithIds:(NSArray*)idArray;
 
-- (NSArray*)getWordWithPrefix:(NSString*)prefix;
+- (NSArray*)getWordsWithIds:(NSArray*)idArray;
+- (NSArray*)getWordsWithPrefix:(NSString*)prefix;
 
 - (NSArray*)getRandomAssociations:(int)count;
 - (NSArray*)getRandomRootaffixs:(int)count;

@@ -42,9 +42,7 @@
     _exploreVirtualActor = [ExploreVirtualActor exploreVirtualActor];
     
     //
-    NSArray* idArray = [_exploreVirtualActor getSearchHisWordID];
-    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    _rowArray = [wdm getWordWithIds:idArray];
+    [self refreshData];
     
     //
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
@@ -172,19 +170,16 @@
     if ([searchText compare:@""] == NSOrderedSame) {
         NSArray* idArray = [_exploreVirtualActor getSearchHisWordID];
         WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-        _rowArray = [wdm getWordWithIds:idArray];
+        _rowArray = [wdm getWordsWithIds:idArray];
     }
     else {
-        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
-        _rowArray = [wva getWordsWithPrefix:searchText];
+        //        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        //        _rowArray = [wdm getPureWordsWithPrefix:searchText];
     }
 }
 
-- (void)renew
+- (void)reloadData
 {
-    //
-    [self refreshData];
-    //
     [self.tableView reloadData];
 }
 
@@ -195,9 +190,7 @@
     //
     [self refreshData];
     //
-    [self.tableView reloadData];
-    
-    //    [self performSelectorInBackground:@selector(renew) withObject:nil];
+    [self reloadData];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
@@ -215,7 +208,7 @@
     //
     [self refreshData];
     //
-    [self.tableView reloadData];
+    [self reloadData];
     
     //
     [searchbar resignFirstResponder];    

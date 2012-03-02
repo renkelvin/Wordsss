@@ -8,25 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wordsss/XMLParser.m"
-         timestampString = "352365507.436823"
+         timestampString = "352383094.179692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "2006"
-         endingLineNumber = "2006"
+         startingLineNumber = "2010"
+         endingLineNumber = "2010"
          landmarkName = "-parser:parseErrorOccurred:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wordsss/CSListWordCell.m"
-         timestampString = "352367406.169861"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
-         landmarkName = "-configCell"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -9,7 +9,7 @@
 #import "Init2ndViewController.h"
 
 static char* nameArray[11] = {
-    "NONE",             // 0  - 1     - Zero
+    "未制定",             // 0  - 1     - Zero
     "基础",              // 1  - 800   - Basic
     "初中",              // 2  - 1500  - Middle
     "高中",              // 3  - 3000  - High

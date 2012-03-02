@@ -10,7 +10,7 @@
 
 @implementation WordCell
 
-@synthesize word;
+@synthesize word, pureWord;
 @synthesize addButton;
 @synthesize nameLabel, meaningLabel;
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;

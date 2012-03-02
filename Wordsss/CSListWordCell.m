@@ -35,9 +35,6 @@
 - (void)configCell
 {
     //
-    CSListWord* cslw = self.csListWord;
-    Word_List* wl = self.csListWord.word_list;
-    
     [self.nameLabel setText:self.csListWord.word_list.word.name];
     [self.meaningLabel setText:self.csListWord.meaning];
     

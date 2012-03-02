@@ -110,6 +110,9 @@
         <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="phListWord" inverseEntity="Word_List" syncable="YES"/>
     </entity>
+    <entity name="PureWord" representedClassName="PureWord" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Rootaffix" representedClassName="Rootaffix" syncable="YES">
         <attribute name="deformation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="description_cn" optional="YES" attributeType="String" syncable="YES"/>
@@ -195,6 +198,7 @@
         <element name="Association" positionX="-1001" positionY="-684" width="128" height="105"/>
         <element name="CSListWord" positionX="-308" positionY="-288" width="128" height="105"/>
         <element name="DotaListWord" positionX="-497" positionY="-279" width="128" height="60"/>
+        <element name="Field" positionX="160" positionY="192" width="128" height="225"/>
         <element name="Frequency" positionX="-963" positionY="-165" width="128" height="120"/>
         <element name="GRERBListMem" positionX="-702" positionY="-603" width="128" height="105"/>
         <element name="GRERBListWord" positionX="-711" positionY="-612" width="128" height="120"/>
@@ -214,6 +218,6 @@
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
-        <element name="Field" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="PureWord" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>

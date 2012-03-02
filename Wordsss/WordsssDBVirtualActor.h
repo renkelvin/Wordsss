@@ -15,6 +15,9 @@
     //
     NSMutableDictionary* _wordDict;
     NSArray* _allKeys;
+    
+    //
+    NSArray* _allPureWords;
 }
 
 + (WordsssDBVirtualActor*)wordsssDBVirtualActor;

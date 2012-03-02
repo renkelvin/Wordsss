@@ -18,7 +18,7 @@ static WordsssDBVirtualActor* sharedWordsssDBVirtualActor = nil;
     {
         sharedWordsssDBVirtualActor = [[WordsssDBVirtualActor alloc] init];
         
-//        [sharedWordsssDBVirtualActor prepare];
+        [sharedWordsssDBVirtualActor prepare];
     }
     
     return sharedWordsssDBVirtualActor;
@@ -27,39 +27,39 @@ static WordsssDBVirtualActor* sharedWordsssDBVirtualActor = nil;
 - (void)prepare
 {
     //
-    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    
-    if (!_wordDict) {
-        NSArray* array = [wdm getAllWord];
-        _wordDict = [NSMutableDictionary dictionaryWithCapacity:[array count]];
-        
-        for (Word* word in array) {
-            [_wordDict setValue:word forKey:word.name];
-        }
-        
-        _allKeys = [_wordDict allKeys];
-    }
+    //    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    //    
+    //    if (!_wordDict) {
+    //        NSArray* array = [wdm getAllWord];
+    //        _wordDict = [NSMutableDictionary dictionaryWithCapacity:[array count]];
+    //        
+    //        for (Word* word in array) {
+    //            [_wordDict setValue:word forKey:word.name];
+    //        }
+    //        
+    //        _allKeys = [_wordDict allKeys];
+    //    }
 }
 
 - (NSArray*)getWordsWithPrefix:(NSString*)prefix
 {
     //
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    NSArray* array = [wdm getWordWithPrefix:prefix];
+    NSArray* array = [wdm getWordsWithPrefix:prefix];
     
-//    //
-//    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF like %@", [prefix stringByAppendingString:@"*"]];
-//    NSArray* keyArray = [_allKeys filteredArrayUsingPredicate:predicate];
-//
-//    //
-//    NSArray* notFoundMarker = [NSArray array];
-//    NSArray* array = [_wordDict objectsForKeys:keyArray notFoundMarker:notFoundMarker];
-//
-//    int count = [array count];
-//    if (count > 10) {
-//        count = 10;
-//        array = [array subarrayWithRange:NSMakeRange(0, count)];
-//    }
+    //    //
+    //    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF like %@", [prefix stringByAppendingString:@"*"]];
+    //    NSArray* keyArray = [_allKeys filteredArrayUsingPredicate:predicate];
+    //
+    //    //
+    //    NSArray* notFoundMarker = [NSArray array];
+    //    NSArray* array = [_wordDict objectsForKeys:keyArray notFoundMarker:notFoundMarker];
+    //
+    //    int count = [array count];
+    //    if (count > 10) {
+    //        count = 10;
+    //        array = [array subarrayWithRange:NSMakeRange(0, count)];
+    //    }
     
     return array;
 }
