@@ -43,16 +43,14 @@
     
     //
     [self refreshData];
-    
-    //
-    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     //
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    //    [self.searchBar becomeFirstResponder];
+    // [self.searchBar becomeFirstResponder];
     
     //
     [WordsssDBVirtualActor wordsssDBVirtualActor];
@@ -173,8 +171,8 @@
         _rowArray = [wdm getWordsWithIds:idArray];
     }
     else {
-        //        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-        //        _rowArray = [wdm getPureWordsWithPrefix:searchText];
+        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        _rowArray = [wdm getWordsWithPrefix:searchText];
     }
 }
 
@@ -187,10 +185,10 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    //
-    [self refreshData];
-    //
-    [self reloadData];
+    //    //
+    //    [self refreshData];
+    //    //
+    //    [self reloadData];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar

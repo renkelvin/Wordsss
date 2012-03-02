@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "Word.h"
-#import "PureWord.h"
 
 #import "UserDataManager.h"
 
@@ -19,7 +18,6 @@
 @interface WordCell : UITableViewCell
 
 @property (nonatomic, retain) Word* word;
-@property (nonatomic, retain) PureWord* pureWord;
 
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;

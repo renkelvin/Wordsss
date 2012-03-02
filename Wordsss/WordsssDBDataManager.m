@@ -282,11 +282,11 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"WordsssDB.sqlite"];
     
     // If no WordsssDB.sqlite
-    NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];	
-    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
-        [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
-    }
+//    NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];	
+//    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+//        NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
+//        [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
+//    }
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

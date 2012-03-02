@@ -34,7 +34,6 @@
 #import "GRERBListMem.h"
 #import "DotaListWord.h"
 #import "List.h"
-#import "PureWord.h"
 
 @interface XMLParser : NSObject <NSXMLParserDelegate> {
     NSXMLParser* _parser;

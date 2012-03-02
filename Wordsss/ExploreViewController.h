@@ -31,9 +31,6 @@
     
     //
     NSArray* _rowArray;
-    
-    //
-    NSString* _searchText;
 }
 
 @property (nonatomic, retain) IBOutlet UISearchBar* searchBar;
