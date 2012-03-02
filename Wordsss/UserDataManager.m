@@ -111,7 +111,7 @@ static UserDataManager* sharedUserDataManager;
     if (count > 10) {
         count = 10;
     }
-    if ([result count] > 0) {
+    if (count > 0) {
         array = [result subarrayWithRange:NSMakeRange(0, count)];
     }
     

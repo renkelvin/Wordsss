@@ -1512,12 +1512,12 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         
                                         if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
                                             object = (Word_List *)[wordListDICT objectForKey:string];
-
+                                            
                                             // NSLog(@"WordList - id: %@", string);
                                         }
                                         else if ([attrString compare:@"word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
-                                                                                        
+                                            
                                             if (word) {
                                                 ((Word_List*)object).word = word;
                                                 word.word_list = ((Word_List*)object);
