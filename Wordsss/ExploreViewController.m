@@ -55,6 +55,9 @@
     //
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
     //    [self.searchBar becomeFirstResponder];
+    
+    //
+    [WordsssDBVirtualActor wordsssDBVirtualActor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -134,7 +137,6 @@
         headerView.titleLabel.text = @"搜索结果";
     }
     
-    
     return headerView;
 }
 
@@ -161,22 +163,41 @@
     return cell;
 }
 
-#pragma mark - UISearchBarDelegate
+#pragma mark - 
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+- (void)refreshData
 {
+    NSString* searchText = self.searchBar.text;
+    
     if ([searchText compare:@""] == NSOrderedSame) {
         NSArray* idArray = [_exploreVirtualActor getSearchHisWordID];
         WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
         _rowArray = [wdm getWordWithIds:idArray];
     }
     else {
-        //        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
-        //        _rowArray = [wva getWordsWithPrefix:searchText];
+        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
+        _rowArray = [wva getWordsWithPrefix:searchText];
     }
-    
+}
+
+- (void)renew
+{
+    //
+    [self refreshData];
     //
     [self.tableView reloadData];
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    //
+    [self refreshData];
+    //
+    [self.tableView reloadData];
+    
+    //    [self performSelectorInBackground:@selector(renew) withObject:nil];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
@@ -191,22 +212,13 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchbar
 {
-    NSString* searchText = searchbar.text;
-    
-    if ([searchText compare:@""] == NSOrderedSame) {
-        NSArray* idArray = [_exploreVirtualActor getSearchHisWordID];
-        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-        _rowArray = [wdm getWordWithIds:idArray];
-    }
-    else {
-        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
-        _rowArray = [wva getWordsWithPrefix:searchText];
-    }
-    
     //
-    [searchbar resignFirstResponder];
+    [self refreshData];
     //
     [self.tableView reloadData];
+    
+    //
+    [searchbar resignFirstResponder];    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

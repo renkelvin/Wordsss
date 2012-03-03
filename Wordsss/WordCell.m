@@ -56,45 +56,8 @@
     //
     else {
         [self.nameLabel setText:self.word.name];
-        NSString* string = [NSString stringWithFormat:@"啊！这个词怎么会出现在这里的！"];
+        NSString* string = [NSString stringWithFormat:@""];
         [self.meaningLabel setText:string];
-    }
-    
-    // WordPos Level Bar
-    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
-    WordRecord* wr = [uva getWordRecord:self.word];
-    if (wr) {
-        [self.addButton setHidden:YES];
-        
-        [self.wordPosLevelLeftImageView setHidden:NO];
-        [self.wordPosLevelBodyImageView setHidden:NO];
-        [self.wordPosLevelRightImageView setHidden:NO];
-        
-        int bodyWidth = 0;
-        
-        if ([wr.level intValue] == -1) {
-            bodyWidth = 281;
-        }
-        else {
-            bodyWidth = 281 / 11.0 * [wr.level intValue];
-        }
-        
-        CGRect frame;
-        
-        frame = self.wordPosLevelBodyImageView.frame;
-        frame.size.width = bodyWidth;
-        self.wordPosLevelBodyImageView.frame = frame;
-        
-        frame = self.wordPosLevelRightImageView.frame;
-        frame.origin.x = 20 + bodyWidth;
-        self.wordPosLevelRightImageView.frame = frame;
-    }
-    else {
-        [self.addButton setHidden:NO];
-        
-        [self.wordPosLevelLeftImageView setHidden:YES];
-        [self.wordPosLevelBodyImageView setHidden:YES];
-        [self.wordPosLevelRightImageView setHidden:YES];
     }
 }
 
@@ -102,21 +65,17 @@
 {
     //
     TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
-    Word* w = nil;
     
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     WordRecord* wr = nil;
     
-    // Word
-        w = self.word;
-    
     //
-    if (w) {
+    if (self.word) {
         //
-        [uva createWordRecord:w forUser:tva.user];
+        [uva createWordRecord:self.word forUser:tva.user];
         
         //
-        wr = [uva getWordRecord:w];
+        wr = [uva getWordRecord:self.word];
         
         // WordPos Level Bar
         if (wr) {
@@ -144,13 +103,6 @@
             frame = self.wordPosLevelRightImageView.frame;
             frame.origin.x = 20 + bodyWidth;
             self.wordPosLevelRightImageView.frame = frame;
-        }
-        else {
-            [self.addButton setHidden:NO];
-            
-            [self.wordPosLevelLeftImageView setHidden:YES];
-            [self.wordPosLevelBodyImageView setHidden:YES];
-            [self.wordPosLevelRightImageView setHidden:YES];
         }
     }
 }

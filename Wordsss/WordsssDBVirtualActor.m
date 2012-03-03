@@ -18,7 +18,7 @@ static WordsssDBVirtualActor* sharedWordsssDBVirtualActor = nil;
     {
         sharedWordsssDBVirtualActor = [[WordsssDBVirtualActor alloc] init];
         
-        [sharedWordsssDBVirtualActor prepare];
+//        [sharedWordsssDBVirtualActor prepare];
     }
     
     return sharedWordsssDBVirtualActor;
@@ -36,20 +36,31 @@ static WordsssDBVirtualActor* sharedWordsssDBVirtualActor = nil;
         for (Word* word in array) {
             [_wordDict setValue:word forKey:word.name];
         }
+        
+        _allKeys = [_wordDict allKeys];
     }
 }
 
 - (NSArray*)getWordsWithPrefix:(NSString*)prefix
 {
     //
-    NSArray* keyArray = [_wordDict allKeys];
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF like %@", [prefix stringByAppendingString:@"*"]];
-    keyArray = [keyArray filteredArrayUsingPredicate:predicate];
-
-    //
-    NSArray* notFoundMarker = [NSArray array];
-    NSArray* array = [_wordDict objectsForKeys:keyArray notFoundMarker:notFoundMarker];
-
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    NSArray* array = [wdm getWordWithPrefix:prefix];
+    
+//    //
+//    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF like %@", [prefix stringByAppendingString:@"*"]];
+//    NSArray* keyArray = [_allKeys filteredArrayUsingPredicate:predicate];
+//
+//    //
+//    NSArray* notFoundMarker = [NSArray array];
+//    NSArray* array = [_wordDict objectsForKeys:keyArray notFoundMarker:notFoundMarker];
+//
+//    int count = [array count];
+//    if (count > 10) {
+//        count = 10;
+//        array = [array subarrayWithRange:NSMakeRange(0, count)];
+//    }
+    
     return array;
 }
 

@@ -16,6 +16,8 @@
 
 @synthesize transToListButton;
 
+@synthesize navigationLeftButton;
+
 @synthesize sectionViewControllers;
 @synthesize currentSectionView;
 
@@ -73,6 +75,11 @@
         frame.origin.x = 20 + bodyWidth;
         self.wordPosLevelRightImageView.frame = frame;
     }
+    
+    //
+    CGRect frame = self.navigationLeftButton.frame;
+    frame.origin.x = 0;
+    [self.navigationLeftButton setFrame:frame];
 }
 
 - (void)viewDidLoad
@@ -114,6 +121,21 @@
 - (IBAction)navigationBackButtonClicked:(id)sender
 {
     [[self navigationController] popViewControllerAnimated:YES];       
+}
+
+- (IBAction)navigationBookmarksButtonClicked:(id)sender
+{
+    WordRecord* wr = _wordVirtualActor.wordRecord;
+    if (wr) {
+        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"1", @"2", nil];
+        UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
+        [actionSheet showFromTabBar:tabBar];
+    }
+    else {
+        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"加入计划" otherButtonTitles:@"1", @"2", nil];
+        UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
+        [actionSheet showFromTabBar:tabBar];
+    }
 }
 
 #pragma mark -
@@ -169,16 +191,16 @@
 {
     // Get frame
     CGRect frame = kWordViewSectionFrame;
-//    if (_word.word_list) {
-//        Word_List* list = _word.word_list;
-//        NSLog(@"%@", list.csListWord.meaning);
-//        NSLog(@"%@", list.maListWord.meaning);
-//        NSLog(@"%@", list.phListWord.meaning);
-//        frame = kWordViewSectionFrameShort;
-//        
-//        // Show translate to list bar
-//        [self.transToListButton setHidden:NO];
-//    }
+    //    if (_word.word_list) {
+    //        Word_List* list = _word.word_list;
+    //        NSLog(@"%@", list.csListWord.meaning);
+    //        NSLog(@"%@", list.maListWord.meaning);
+    //        NSLog(@"%@", list.phListWord.meaning);
+    //        frame = kWordViewSectionFrameShort;
+    //        
+    //        // Show translate to list bar
+    //        [self.transToListButton setHidden:NO];
+    //    }
     
     // Set sections
     WordBooksViewController* wordBooksViewController = [((WordBooksViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"WordBooksViewController"]) init:_wordVirtualActor];
@@ -206,16 +228,78 @@
     [self setSectionViewControllers:tempViewControllersArray];
 }
 
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+- (void)addWordToPlan
 {
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
+    //
+    TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    WordRecord* wr = nil;
+    
+    //
+    if (self.word) {
+        //
+        [uva createWordRecord:self.word forUser:tva.user];
+        [_wordVirtualActor prepare];
+        
+        //
+        wr = _wordVirtualActor.wordRecord;
+        
+        // WordPos Level Bar
+        if (wr) {
+            [self.wordPosLevelLeftImageView setHidden:NO];
+            [self.wordPosLevelBodyImageView setHidden:NO];
+            [self.wordPosLevelRightImageView setHidden:NO];
+            
+            int bodyWidth = 0;
+            
+            if ([wr.level intValue] == -1) {
+                bodyWidth = 281;
+            }
+            else {
+                bodyWidth = 281 / 11.0 * [wr.level intValue];
+            }
+            
+            CGRect frame;
+            
+            frame = self.wordPosLevelBodyImageView.frame;
+            frame.size.width = bodyWidth;
+            self.wordPosLevelBodyImageView.frame = frame;
+            
+            frame = self.wordPosLevelRightImageView.frame;
+            frame.origin.x = 20 + bodyWidth;
+            self.wordPosLevelRightImageView.frame = frame;
+        }
+    }
 }
 
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //    [self initNavigationBar];
+    WordRecord* wr = _wordVirtualActor.wordRecord;
+    if (wr) {
+        buttonIndex++;
+    }
+    
+    switch (buttonIndex) {
+        case 0:
+        {
+            [self addWordToPlan];
+            break;
+        }
+        case 1:
+        {
+            NSLog(@"111");
+            break;
+        }
+        case 2:
+        {
+            NSLog(@"222");
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

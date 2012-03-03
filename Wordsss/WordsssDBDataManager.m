@@ -46,6 +46,8 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"(id in %@)", idArray]];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
     
@@ -55,6 +57,8 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 - (NSArray*)getAllWord
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
     
@@ -65,6 +69,8 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"name like %@", [prefix stringByAppendingString:@"*"]]];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
     
@@ -149,8 +155,11 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     else if ([list.name compare:@"物理词表"] == NSOrderedSame) {
         listWord = @"PHListWord";
     }
-    if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
+    else if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
         listWord = @"CSListWord";
+    }
+    else if ([list.name compare:@"词表"] == NSOrderedSame) {
+        listWord = @"GRERBListWord";
     }
     
     // 
@@ -159,6 +168,8 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     }
     
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:listWord];    
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"word_list.word.name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];
     
     return result;

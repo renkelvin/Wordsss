@@ -20,5 +20,6 @@
 @property (nonatomic, retain) AhdDictWord *ahdDictWord;
 
 - (NSString*)getShortMeaning;
+- (NSString*)getLongMeaning;
 
 @end

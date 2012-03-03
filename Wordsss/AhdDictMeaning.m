@@ -30,4 +30,20 @@
     return [array objectAtIndex:0];
 }
 
+- (NSString*)getLongMeaning
+{
+    NSArray* array = [self.meaning_cn componentsSeparatedByString:@"："];
+    
+    if ([array count] == 1) {
+        array = [self.meaning_cn componentsSeparatedByString:@"；"];
+    }
+    
+    if ([array count] == 1) {
+        return nil;
+    }
+    else {
+        return [array objectAtIndex:1];
+    }
+}
+
 @end

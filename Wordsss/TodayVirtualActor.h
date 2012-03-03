@@ -20,7 +20,7 @@
 
 #import "UserVirtualActor.h"
 
-#define kTodayWordLimit       100
+#define kTodayWordLimit       120
 #define kTotalViewFactorMin   1.5
 #define kTotalViewFactorMax   4.5
 #define kWordRemainFactorMin  0.1
@@ -37,7 +37,6 @@
     Word* _wordPos;
 
     //
-    NSMutableSet* _wordRecordSet;
     
     //
     WordRecord* _wordRecordPre;
@@ -54,6 +53,10 @@
 @property (nonatomic, retain) WordRecord* wordRecordPre;
 @property (nonatomic, retain) WordRecord* wordRecordCur;
 @property (nonatomic, retain) WordRecord* wordRecordPos;
+
+@property (nonatomic, retain) NSNumber* todayWordSum;
+
+@property (nonatomic, retain) NSMutableSet* wordRecordSet;
 
 #pragma mark - Class method
 

@@ -23,6 +23,11 @@
 @synthesize wordPosLevelTransImageView, wordPosLevelLeftTransImageView, wordPosLevelBodyTransImageView, wordPosLevelRightTransImageView;
 @synthesize briefMeaningTransButton, briefMeaningTransLabelT, briefMeaningTransLabelM;
 
+@synthesize infoLeftGraphView, infoRightGraphView;
+@synthesize infoLeftNowLabel, infoLeftSumLabel, infoRightNowLabel, infoRightSumLabel;
+
+@synthesize dkhlImageView, knowhlImageView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,13 +46,6 @@
 }
 
 #pragma mark - View lifecycle
-
-- (void)getVA
-{
-    //
-    [UserVirtualActor userVirtualActor];
-    [WordsssDBVirtualActor wordsssDBVirtualActor];
-}
 
 - (void)viewDidLoad
 {
@@ -103,10 +101,10 @@
         int bodyWidth = 0;
         
         if ([[_todayVirtualActor wordRecordPos].level intValue] == -1) {
-            bodyWidth = 281;
+            bodyWidth = 313;
         }
         else {
-            bodyWidth = 281 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
+            bodyWidth = 313 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
         }
         
         CGRect frame;
@@ -116,7 +114,7 @@
         self.wordPosLevelBodyImageView.frame = frame;
         
         frame = self.wordPosLevelRightImageView.frame;
-        frame.origin.x = 20 + bodyWidth - 1;
+        frame.origin.x = 1 + bodyWidth + 2;
         self.wordPosLevelRightImageView.frame = frame;
     }
     
@@ -132,6 +130,27 @@
     else {
         [self.briefMeaningButton setSelected:NO];
     }
+    
+    // info
+    // View
+    int viewSum = 300;
+    [self.infoLeftSumLabel setText:[NSString stringWithFormat:@"%d", viewSum]];
+    int viewNow = [_todayVirtualActor.user.status.dlc intValue];
+    [self.infoLeftNowLabel setText:[NSString stringWithFormat:@"%d", viewNow]];
+    
+    [self.infoLeftGraphView setType:LEFT];
+    [self.infoLeftGraphView setPercent:[NSNumber numberWithFloat:((float)viewNow/(float)viewSum)]];
+    [self.infoLeftGraphView setNeedsDisplay];
+    
+    //
+    int wordSum = [_todayVirtualActor.todayWordSum intValue];
+    [self.infoRightSumLabel setText:[NSString stringWithFormat:@"%d", wordSum - 20]];
+    int wordNow = [_todayVirtualActor.wordRecordSet count];
+    [self.infoRightNowLabel setText:[NSString stringWithFormat:@"%d", wordSum - wordNow]];
+    
+    [self.infoRightGraphView setType:RIGHT];
+    [self.infoRightGraphView setPercent:[NSNumber numberWithFloat:((float)(wordSum - wordNow)/(float)(wordSum - 20))]];
+    [self.infoRightGraphView setNeedsDisplay];
 }
 
 // update trans
@@ -157,10 +176,10 @@
         int bodyWidth = 0;
         
         if ([[_todayVirtualActor wordRecordPos].level intValue] == -1) {
-            bodyWidth = 281;
+            bodyWidth = 313;
         }
         else {
-            bodyWidth = 281 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
+            bodyWidth = 313 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
         }
         
         CGRect frame;
@@ -170,7 +189,7 @@
         self.wordPosLevelBodyTransImageView.frame = frame;
         
         frame = self.wordPosLevelRightTransImageView.frame;
-        frame.origin.x = 20 + bodyWidth - 1;
+        frame.origin.x = 1 + bodyWidth + 2;
         self.wordPosLevelRightTransImageView.frame = frame;
     }
     
@@ -207,17 +226,12 @@
     
     [self.wordPosCoverView setAlpha:0.0];
     
-    //    [self.wordPreCoverView setHidden:NO];
     [self.wordPosCoverView setHidden:NO];
     //
     [UIView animateWithDuration:0.5 animations:^(void)
      {
          CGRect posFrame = kPosTransPositionEnd;
          [self.posTransView setFrame:posFrame];
-         
-         //         CGRect curFrame = kCurTransPositionEnd;
-         //         [self.wordCurTransLabel setFrame:curFrame];
-         //         [self.wordCurTransLabel setAlpha:0.0];
          
          [self.wordCurLabel setAlpha:1.0];
          
@@ -280,7 +294,6 @@
     // Update Word
     [_todayVirtualActor updateWord];
     
-    
     // Update trans view
     [self updateTrans];
     
@@ -293,6 +306,7 @@
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
+//
 - (BOOL)checkHasInitUser
 {
     BOOL hasInit = [[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultKeyHasInitUser];
@@ -318,14 +332,84 @@
     [[self navigationController] pushViewController:wordViewController animated:YES];
 }
 
+- (IBAction)wordSliderLeftTouchDown:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:1.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchDown:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:1.0];
+    }];
+}
+
 - (IBAction)wordSliderLeftTouchUpInside:(id)sender {
     //
     [self decOperation];
+    
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:0.0];
+    }];
 }
 
 - (IBAction)wordSliderRightTouchUpInside:(id)sender {
     //
     [self incOperation];
+    
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderLeftTouchUpOutside:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchUpOutside:(id)sender {
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderLeftTouchDragEnter:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:1.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchDragEnter:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:1.0];
+    }];
+}
+
+- (IBAction)wordSliderLeftTouchDragExit:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:0.0];
+    }];
+}
+
+- (IBAction)wordSliderRightTouchDragExit:(id)sender
+{
+    //
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.knowhlImageView setAlpha:0.0];
+    }];
 }
 
 - (IBAction)helpButtonClicked:(id)sender

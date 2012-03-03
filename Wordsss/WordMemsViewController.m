@@ -149,7 +149,7 @@
     }
     // Sense
     else if ([[array lastObject] class] == [Word_Sense class]) {
-        NSString* string = [NSString stringWithFormat:@"意群 - %@", ((Sense*)[array objectAtIndex:0]).meaning_cn];
+        NSString* string = [NSString stringWithFormat:@"意群 - %@ / %@", ((Sense*)[array objectAtIndex:0]).parent.meaning_cn, ((Sense*)[array objectAtIndex:0]).meaning_cn];
         
         [headerView.titleLabel setText:string];
     }

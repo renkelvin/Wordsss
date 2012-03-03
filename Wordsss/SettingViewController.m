@@ -15,8 +15,8 @@ static char* nameArray[11] = {
     "高中",              // 3  - 3000  - High
     "CET4",             // 4  - 4000  - CET4
     "CET6",             // 5  - 6000  - CET6
-    "雅思",              // 6  - 8000  - IELTS
-    "托福",              // 7  - 9000  - TOFEL
+    "IELTS",            // 6  - 8000  - IELTS
+    "TOEFL",            // 7  - 9000  - TOEFL
     "SAT",              // 8  - 10000 - SAT
     "GRE",              // 9  - 12448 - GRE
     "超神"               // 10 - 42814 - HolyShit
@@ -30,7 +30,7 @@ static char* vocaArray[11] = {
     "4000",             // 4  - 4000  - CET4
     "6000",             // 5  - 6000  - CET6
     "8000",             // 6  - 8000  - IELTS
-    "9000",             // 7  - 9000  - TOFEL
+    "9000",             // 7  - 9000  - TOEFL
     "10000",            // 8  - 10000 - SAT
     "12000",            // 9  - 12448 - GRE
     "40000"             // 10 - 42814 - HolyShit
@@ -38,7 +38,7 @@ static char* vocaArray[11] = {
 
 @implementation SettingViewController
 
-@synthesize nameTextField, pickerView, pickerAccessoryView;
+@synthesize nameTextField, pickerView, pickerAccessoryView, levelPickerView;
 @synthesize curLabel, tarLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -176,7 +176,7 @@ static char* vocaArray[11] = {
 
 - (IBAction)resetButtonClicked:(id)sender
 {
-    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"title" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"destructive" otherButtonTitles:nil];
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"重置当前记忆数据" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles:nil];
     UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
     [actionSheet showFromTabBar:tabBar];
 }

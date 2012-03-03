@@ -70,7 +70,7 @@
     [_chartView setType:WORD];
     [_chartView setPoints:array];
     
-    if ([array count] <= 2) {
+    if ([array count] <= 1) {
         [self.phContainer setHidden:NO];
         [self.chartContainer setHidden:YES];
     }
@@ -124,23 +124,13 @@
                 {
                     [((InfoCell*)cell).infoLabel setText:@"记忆程度"];
                     
-                    //
                     WordRecord* wr = _wordVirtualActor.wordRecord;
-                    int lvl = [wr.level intValue];
-                    int rnd = rand() % 100;
-                    int deg;
-                    if (lvl == -1) {
-                        deg = 1000;
-                    }
-                    else if (lvl == 0) {
-                        deg = 1000;
+                    if (!wr) {
+                        [((InfoCell*)cell).valuLabel setText:@"尚未开始"];
                     }
                     else {
-                        deg = (lvl - 1) * 100 + rnd;
+                        [((InfoCell*)cell).valuLabel setText:[wr getMemLevelString]];
                     }
-                    float fdeg = (float)deg / 10;
-                    
-                    [((InfoCell*)cell).valuLabel setText:[NSString stringWithFormat:@"%.1f%%", fdeg]];
                     
                     break;
                 }   
@@ -148,7 +138,7 @@
                 {
                     [((InfoCell*)cell).infoLabel setText:@"难度评估"];
                     
-                    [((InfoCell*)cell).valuLabel setText:@"简单"];
+                    [((InfoCell*)cell).valuLabel setText:[_wordVirtualActor getMemDiffString]];
                     
                     break;
                 }   

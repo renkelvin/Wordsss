@@ -22,14 +22,18 @@
 #import "McecDictWord.h"
 #import "McecDictMeaning.h"
 
+#import "RKGraphView.h"
+
 #import "WordCellLabel.h"
 
 #define kPreTransPositionBeg CGRectMake(0, 223, 320, 129);
 #define kPreTransPositionEnd CGRectMake(0, 113, 320, 129);
 #define kPosTransPositionBeg CGRectMake(0, 122, 320, 122);
 #define kPosTransPositionEnd CGRectMake(0, 0, 320, 122);
-#define kCurTransPositionBeg CGRectMake(20, 20, 280, 37);
-#define kCurTransPositionEnd CGRectMake(20, 0, 280, 37);
+#define kCurTransPositionBeg CGRectMake(20, 11, 280, 37);
+#define kCurTransPositionEnd CGRectMake(20, -9, 280, 37);
+
+#define kAnimationInterval 0.15
 
 @interface TodayViewControllerV3 : UIViewController <UINavigationControllerDelegate>
 {
@@ -70,11 +74,31 @@
 
 @property (nonatomic, retain) IBOutlet UIView* wordPosCoverView;
 
+@property (nonatomic, retain) IBOutlet RKGraphView* infoLeftGraphView;
+@property (nonatomic, retain) IBOutlet RKGraphView* infoRightGraphView;
+
+@property (nonatomic, retain) IBOutlet UILabel* infoLeftNowLabel;
+@property (nonatomic, retain) IBOutlet UILabel* infoLeftSumLabel;
+@property (nonatomic, retain) IBOutlet UILabel* infoRightNowLabel;
+@property (nonatomic, retain) IBOutlet UILabel* infoRightSumLabel;
+
+@property (nonatomic, retain) IBOutlet UIImageView* dkhlImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* knowhlImageView;
+
 #pragma mark - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender;
+
+- (IBAction)wordSliderLeftTouchDown:(id)sender;
+- (IBAction)wordSliderRightTouchDown:(id)sender;
 - (IBAction)wordSliderLeftTouchUpInside:(id)sender;
 - (IBAction)wordSliderRightTouchUpInside:(id)sender;
+- (IBAction)wordSliderLeftTouchUpOutside:(id)sender;
+- (IBAction)wordSliderRightTouchUpOutside:(id)sender;
+- (IBAction)wordSliderLeftTouchDragEnter:(id)sender;
+- (IBAction)wordSliderRightTouchDragEnter:(id)sender;
+- (IBAction)wordSliderLeftTouchDragExit:(id)sender;
+- (IBAction)wordSliderRightTouchDragExit:(id)sender;
 
 - (IBAction)helpButtonClicked:(id)sender;
 

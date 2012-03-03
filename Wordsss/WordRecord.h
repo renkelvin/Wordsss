@@ -41,4 +41,6 @@
 
 - (void)nextDay;
 
+- (NSString*)getMemLevelString;
+
 @end

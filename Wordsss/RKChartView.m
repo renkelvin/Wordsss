@@ -111,8 +111,8 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    // TOO few points 0 or 1 or 2
-    if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
+    // TOO few points 0 or 1
+    if ([points count] == 0 || [points count] == 1) {
         return;
     }
     
@@ -142,6 +142,11 @@
     switch (self.type) {
         case USER:
         {        
+            // TOO few points 0 or 1 or 2
+            if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
+                return;
+            }
+            
             //
             self.minDay = [((StaRecord*)[points objectAtIndex:0]).day intValue];
             self.maxDay = [((StaRecord*)[points lastObject]).day intValue];
@@ -163,11 +168,6 @@
                 else {
                     break;
                 }
-            }
-            
-            // TOO few points 0 or 1 or 2
-            if ([points count] == 0 || [points count] == 1 || [points count] == 2) {
-                return;
             }
             
             //
@@ -221,25 +221,29 @@
             
             // Date label
             NSDate* date = ((StaRecord*)[self.points lastObject]).date;
-            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"YYYY 年 M 月 D 日"];
-            [self.dateLabel setText:[dateFormatter stringFromDate:date]];
+            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+            NSDateComponents *components = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit) fromDate:date];
+            int year = [components year];
+            int month = [components month];
+            int day = [components day];
+            NSString* dateString = [NSString stringWithFormat:@"%d年 - %d月 - %d日", year, month, day];
+            [self.dateLabel setText:dateString];
             
             break;
         }   
         case WORD:
         {
+            // TOO few points 0 or 1
+            if ([points count] == 0 || [points count] == 1) {
+                return;
+            }
+            
             //
             self.maxDay = [((HisRecord*)[points lastObject]).day intValue];
             self.minDay = self.maxDay - 14;
             
             self.maxValue = 100.0;
             self.minValue = 0.0;
-            
-            // TOO few points 0 or 1 or 2
-            if ([points count] == 0 || [points count] == 1) {
-                return;
-            }
             
             //
             UIBezierPath* aPath = [UIBezierPath bezierPath];
@@ -264,7 +268,9 @@
                      
                      [aPath addQuadCurveToPoint:p2 controlPoint:p3];
                      
-                     [aPath addLineToPoint:p4];
+                     if (inx != [points count]-1) {
+                         [aPath addLineToPoint:p4];
+                     }
                      
                      self.preRecord = obj;
                  }
@@ -274,16 +280,20 @@
             [aPath stroke];
             
             // Info label
-            [self.infoLabel setText:[NSString stringWithFormat:@"记忆程度"]];
+            [self.infoLabel setText:[NSString stringWithFormat:@"记忆曲线"]];
             
             // Date label
             NSDate* date = ((HisRecord*)[self.points lastObject]).date;
             if (!date) {
                 date = [NSDate date];
             }
-            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"YYYY 年 M 月 D 日"];
-            [self.dateLabel setText:[dateFormatter stringFromDate:date]];
+            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+            NSDateComponents *components = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit) fromDate:date];
+            int year = [components year];
+            int month = [components month];
+            int day = [components day];
+            NSString* dateString = [NSString stringWithFormat:@"%d年 - %d月 - %d日", year, month, day];
+            [self.dateLabel setText:dateString];
             
             break;
         }

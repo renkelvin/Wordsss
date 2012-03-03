@@ -22,6 +22,10 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 @synthesize wordRecordCur = _wordRecordCur;
 @synthesize wordRecordPos = _wordRecordPos;
 
+@synthesize todayWordSum;
+
+@synthesize wordRecordSet = _wordRecordSet;
+
 #pragma mark -
 
 - (id)init
@@ -61,8 +65,10 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     
     //
-    NSNumber* word_id = _wordRecordPre.word_id;
-    _wordPre = [wdm getWordWithId:word_id];
+    if (_wordRecordPre) {
+        NSNumber* word_id = _wordRecordPre.word_id;
+        _wordPre = [wdm getWordWithId:word_id];
+    }
 }
 
 - (void)updateWordRecord
@@ -72,13 +78,14 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     _wordRecordCur = _wordRecordPre;
     
     //
-    if ([_wordRecordSet count]) {
+    _wordRecordPre = nil;
+    while ([_wordRecordSet count]) {
         int index = rand() % [_wordRecordSet count];
         _wordRecordPre = (WordRecord*)[[_wordRecordSet allObjects] objectAtIndex:index];
-    }
-    else
-    {
-        _wordPre = nil;
+        
+        if ([_wordRecordPre.word_id intValue] != [_wordRecordCur.word_id intValue]) {
+            break;
+        }
     }
 }
 
@@ -266,6 +273,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self updateWord];
     [self updateWordRecord];
     [self updateWord];
+    
+    //
+    self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];
 }
 
 //
@@ -277,7 +287,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     float deltaTime = [[NSDate date] timeIntervalSinceDate:_user.status.date];
     
-    if ([_wordRecordSet count] >= 160) {
+    if ([_wordRecordSet count] >= 80) {
         return NO;  
     }
     
@@ -291,17 +301,19 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 //
 - (BOOL)checkNextDayByCount
 {
-    float memDegree = [_user.defult.memDegree floatValue];
+    // float memDegree = [_user.defult.memDegree floatValue];
     
     //
-    int wordRemainLimit = kTodayWordLimit * ((1-memDegree)*kWordRemainFactorMin + memDegree*kWordRemainFactorMax);
+    // int wordRemainLimit = kTodayWordLimit * ((1-memDegree)*kWordRemainFactorMin + memDegree*kWordRemainFactorMax);
+    int wordRemainLimit = 20;
     if ([_wordRecordSet count] <= wordRemainLimit) {
         NSLog(@"wordRemain: %d", [_wordRecordSet count]);
         return YES;
     }
     
     //
-    int totalViewLimit = kTodayWordLimit * ((1-memDegree)*kTotalViewFactorMin + memDegree*kTotalViewFactorMax);
+    // int totalViewLimit = kTodayWordLimit * ((1-memDegree)*kTotalViewFactorMin + memDegree*kTotalViewFactorMax);
+    int totalViewLimit = 300;
     if ([_user.status.dlc intValue] >= totalViewLimit) {
         NSLog(@"viewCount: %d", [_user.status.dlc intValue]);
         return YES;
@@ -341,14 +353,17 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self fillWordRecordSetFromWordRecord];
     // Even more wordRecordArray
     [self fillWordRecordSetFromWord];
+    
+    //
+    self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];
 }
 
 - (BOOL)checkWordRecord:(WordRecord*)wordRecord
 {
-    if ([wordRecord.dls intValue] >= 2) {
+    if ([wordRecord.dls intValue] >= 0) {
         return YES;
     }
-    if ([wordRecord.dlc intValue] >= 7) {
+    if ([wordRecord.dlc intValue] >= 5) {
         return YES;
     }
     
@@ -369,7 +384,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [wordRecord cleardl];
     
     //
-    [_wordRecordSet removeObject:wordRecord];
+    if (wordRecord) {
+        [_wordRecordSet removeObject:wordRecord];
+    }
 }
 
 - (void)setWordRecordCurLevelInc

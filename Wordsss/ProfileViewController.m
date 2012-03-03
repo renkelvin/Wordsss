@@ -9,17 +9,17 @@
 #import "ProfileViewController.h"
 
 static char* nameArray[11] = {
-    "NONE",         // 0  - 1     - Zero
-    "基础",          // 1  - 800   - Basic
-    "初中",          // 2  - 1500  - Middle
-    "高中",          // 3  - 3000  - High
-    "CET4",         // 4  - 4000  - CET4
-    "CET6",         // 5  - 6000  - CET6
-    "雅思",          // 6  - 8000  - IELTS
-    "托福",          // 7  - 9000  - TOFEL
-    "SAT",          // 8  - 10000 - SAT
-    "GRE",          // 9  - 12448 - GRE
-    "超神"       // 10 - 42814 - HolyShit
+    "NONE",          // 0  - 1     - Zero
+    "基础",           // 1  - 800   - Basic
+    "初中",           // 2  - 1500  - Middle
+    "高中",           // 3  - 3000  - High
+    "CET4",          // 4  - 4000  - CET4
+    "CET6",          // 5  - 6000  - CET6
+    "IELTS",          // 6  - 8000  - IELTS
+    "TOEFL",          // 7  - 9000  - TOEFL
+    "SAT",           // 8  - 10000 - SAT
+    "GRE",           // 9  - 12448 - GRE
+    "超神"            // 10 - 42814 - HolyShit
 };
 
 @implementation ProfileViewController
@@ -83,8 +83,9 @@ static char* nameArray[11] = {
 
 - (NSString*)getEval
 {
-    NSArray* array = [_profileVirtualActor getStaRecords];
+    NSString* string = [NSString string];
     
+    NSArray* array = [_profileVirtualActor getStaRecords];    
     if ([array count] == 0) {
         return @"无法评价";
     }
@@ -93,25 +94,41 @@ static char* nameArray[11] = {
     NSDate* endDate = [NSDate date];
     NSTimeInterval inter = [endDate timeIntervalSinceDate:staDate];
     
-    int nowVoca = [_profileVirtualActor getVocaNow] - [_profileVirtualActor getVocaCurrent];
-    int tarVoca = [_profileVirtualActor getVocaTarget] - [_profileVirtualActor getVocaCurrent]; 
-    
-    // 背85%足已
-    tarVoca *= 0.85;
-    
-    float percent = (float)nowVoca/(float)tarVoca;
-    inter /= percent;
-    
-    int month = (int)inter / (60*60*24*30);
-    inter = (int)inter % (60*60*24*30);
-    
-    //
-    NSString* string = [NSString string];
-    if (month >= 4) {
-        string = @"加快速度";
+    if (inter < 60*60*24) {
+        string = @"无法评价";
     }
     else {
-        string = @"又快又好";
+        int nowVoca = [_profileVirtualActor getVocaNow] - [_profileVirtualActor getVocaCurrent];
+        int tarVoca = [_profileVirtualActor getVocaTarget] - [_profileVirtualActor getVocaCurrent]; 
+        
+        // 背85%足已
+        tarVoca *= 0.85;
+        
+        float percent = (float)nowVoca/(float)tarVoca;
+        inter /= percent;
+        
+        int month = (int)inter / (60*60*24*30);
+        inter = (int)inter % (60*60*24*30);
+        
+        //
+        if (month >= 5) {
+            string = @"降低目标";
+        }
+        else if (month == 4) {
+            string = @"加快速度";
+        }
+        else if (month == 3) {
+            string = @"又快又好";
+        }
+        else if (month == 2) {
+            string = @"加深记忆";
+        }
+        else if (month == 1) {
+            string = @"更进一步";
+        }
+        else {
+            string = @"又快又好";
+        }
     }
     
     return string;
@@ -197,6 +214,11 @@ static char* nameArray[11] = {
     }
 }
 
+- (IBAction)evalQuesButtonClicked:(id)sender
+{
+    // TODO
+}
+
 #pragma mark - UITableViewDelegate
 
 
@@ -249,7 +271,7 @@ static char* nameArray[11] = {
                     NSString* string = nil;
                     NSArray* array = [_profileVirtualActor getStaRecords];
                     if ([array count] == 0) {   //
-                        string = @"0天";
+                        string = @"刚刚开始";
                     }
                     else {  //
                         NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
@@ -259,10 +281,18 @@ static char* nameArray[11] = {
                         int month = (int)inter / (60*60*24*30);
                         inter = (int)inter % (60*60*24*30);
                         int day = (int)inter / (60*60*24);
+                        inter = (int)inter % (60*60*24);
+                        int hour = (int)inter / (60*60);
+                        inter = (int)inter % (60*60);
                         
-                        string = [NSString stringWithFormat:@"%d天", day];
-                        if (month) {
-                            string = [[NSString stringWithFormat:@"%d月 ", month] stringByAppendingString:string];
+                        if (month == 0 && day == 0) {
+                            string = [NSString stringWithFormat:@"%d 小时", hour];
+                        }
+                        else {
+                            string = [NSString stringWithFormat:@"%d 天", day];
+                            if (month) {
+                                string = [[NSString stringWithFormat:@"%d 月 ", month] stringByAppendingString:string];
+                            }
                         }
                     }
                     
@@ -297,9 +327,13 @@ static char* nameArray[11] = {
                         inter = (int)inter % (60*60*24*30);
                         int day = (int)inter / (60*60*24);
                         
-                        string = [NSString stringWithFormat:@"%d天", day];
+                        string = [NSString stringWithFormat:@"%d 天", day];
                         if (month) {
-                            string = [[NSString stringWithFormat:@"%d月 ", month] stringByAppendingString:string];
+                            if (month >= 4) {
+                                month = 3;
+                            }
+                            
+                            string = [[NSString stringWithFormat:@"%d 月 ", month] stringByAppendingString:string];
                         }
                     }
                     

@@ -15,11 +15,11 @@ static char* nameArray[11] = {
     "高中",              // 3  - 3000  - High
     "CET4",             // 4  - 4000  - CET4
     "CET6",             // 5  - 6000  - CET6
-    "雅思",            // 6  - 8000  - IELTS
-    "托福",            // 7  - 9000  - TOFEL
+    "IELTS",            // 6  - 8000  - IELTS
+    "TOEFL",            // 7  - 9000  - TOEFL
     "SAT",              // 8  - 10000 - SAT
     "GRE",              // 9  - 12448 - GRE
-    "超神"           // 10 - 42814 - HolyShit
+    "超神"              // 10 - 42814 - HolyShit
 };
 
 static char* vocaArray[11] = {
@@ -30,7 +30,7 @@ static char* vocaArray[11] = {
     "4000",             // 4  - 4000  - CET4
     "6000",             // 5  - 6000  - CET6
     "8000",             // 6  - 8000  - IELTS
-    "9000",             // 7  - 9000  - TOFEL
+    "9000",             // 7  - 9000  - TOEFL
     "10000",            // 8  - 10000 - SAT
     "12000",            // 9  - 12448 - GRE
     "40000"             // 10 - 42814 - HolyShit
@@ -38,7 +38,7 @@ static char* vocaArray[11] = {
 
 @implementation Init2ndViewController
 
-@synthesize pickerView, pickerAccessoryView;
+@synthesize pickerView, pickerAccessoryView, nextStepButton;
 @synthesize curLabel, tarLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -127,6 +127,15 @@ static char* vocaArray[11] = {
      ];
 }
 
+- (void)next
+{
+    //
+    Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
+    [[self navigationController] pushViewController:ivc animated:YES];
+}
+
+#pragma mark - Instance method
+
 - (IBAction)doneButtonClicked:(id)sender
 {
     //
@@ -150,46 +159,57 @@ static char* vocaArray[11] = {
          {
              [self.pickerView setFrame:kInitPickerViewFrameHide];
              [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
-         }
-         ];
+         }];
     }
-    
-    // Hide pickerView
-    [UIView animateWithDuration:0.3 animations:^(void)
-     {
-         [self.pickerView setFrame:kInitPickerViewFrameHide];
-         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
-     }
-     ];
 }
-
-#pragma mark - Instance method
 
 - (IBAction)nextStep
 {
-    //
-    [self doneButtonClicked:nil];
-    
-    Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
-    
-    [[self navigationController] pushViewController:ivc animated:YES];
+    // Hide
+    if (self.pickerAccessoryView.frame.origin.y == 416) {
+        NSString* string = self.curLabel.text;
+        if ([string compare:@"未指定"] == NSOrderedSame) {
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"选择学习范围" message:@"请您选择您的学习范围：当前词汇水平以及目标水平。" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else {
+            [self next];
+        }
+    }
+    // Show
+    else {
+        //
+        int curRow = [self.pickerView selectedRowInComponent:0];
+        int tarRow = [self.pickerView selectedRowInComponent:1];
+        
+        // ERROR
+        if (curRow >= tarRow) {
+            [[[UIAlertView alloc] initWithTitle:@"范围无效" message:@"您必须从较低水平选择至较高水平。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil] show];
+        }
+        else {
+            _initVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
+            _initVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
+            
+            // Update label
+            [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];
+            [self.tarLabel setText:[NSString stringWithCString:nameArray[tarRow+1] encoding:4]];
+            
+            // Hide pickerView
+            [UIView animateWithDuration:0.3 animations:^(void)
+             {
+                 [self.pickerView setFrame:kInitPickerViewFrameHide];
+                 [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
+             }];
+            
+            //
+            [self next];
+        }
+    }
 }
 
 - (IBAction)lastStep
 {
     [[self navigationController] popViewControllerAnimated:YES];
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [[self navigationController] setDelegate:(id<UINavigationControllerDelegate>)viewController];
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    //    [self initNavigationBar];
 }
 
 #pragma mark - UIPickerViewDelegate

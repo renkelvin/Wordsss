@@ -31,6 +31,7 @@
 @property (nonatomic, retain) IBOutlet UILabel* tarLabel;
 
 @property (nonatomic, retain) IBOutlet UITextField* nameTextField;
+@property (nonatomic, retain) IBOutlet UIView* levelPickerView;
 @property (nonatomic, retain) IBOutlet UIPickerView* pickerView;
 @property (nonatomic, retain) IBOutlet UIView* pickerAccessoryView;
 

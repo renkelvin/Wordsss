@@ -35,6 +35,9 @@
     
     //
     _listsVirtualActor = [ListsVirtualActor listsVirtualActor];
+    
+    //
+    _listNameArray = [NSArray arrayWithObjects:@"数学词表", @"计算机词表", nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,9 +58,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-}
-
 #pragma - UITableViewDelegate
 
 - (IBAction)featureList1ButtonClicked:(id)sender
@@ -65,7 +65,7 @@
     // 物理
     NSDictionary* dict = [_listsVirtualActor getListDictionary];
     List* list = [dict objectForKey:@"物理词表"];
-    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    PHListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PHListViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];    
 }
@@ -74,8 +74,8 @@
 {
     // GRE红宝书
     NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = [dict objectForKey:@"GRE红宝书词表"];
-    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
+    List* list = [dict objectForKey:@"词表"];
+    GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];    
 }
@@ -84,10 +84,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ListViewController"];
-    ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
-    lvc = [lvc initWithList:cell.list];
-    [[self navigationController] pushViewController:lvc animated:YES];    
+    NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
+    
+    // 数学词表
+    if ([listName compare:@"数学词表"] == NSOrderedSame) {
+        MAListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAListViewController"];
+        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
+        lvc = [lvc initWithList:cell.list];
+        [[self navigationController] pushViewController:lvc animated:YES];    
+    }
+    
+    // 计算机词表
+    else if ([listName compare:@"计算机词表"] == NSOrderedSame) {
+        CSListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CSListViewController"];
+        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
+        lvc = [lvc initWithList:cell.list];
+        [[self navigationController] pushViewController:lvc animated:YES];    
+    }
 }
 
 #pragma - UITableViewDataSource
@@ -104,7 +117,24 @@
     
     [headerView setBackgroundColor:[UIColor clearColor]];
     
-    headerView.titleLabel.text = @"其他词表";
+    switch (section) {
+        case 0:
+        {
+            headerView.titleLabel.text = @"其他词表";
+            
+            break;
+        }   
+        case 1:
+        {
+            headerView.titleLabel.text = @"即将推出";
+            
+            break;
+        }   
+        default:
+        {
+            break;
+        }
+    }
     
     return headerView;
 }
@@ -112,7 +142,26 @@
 // Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[_listsVirtualActor getListDictionary] count] - 1;
+    switch (section) {
+        case 0:
+        {
+            return [[_listsVirtualActor getListDictionary] count] - 2;
+            
+            break;
+        }   
+        case 1:
+        {
+            return 4;
+            
+            break;
+        }   
+        default:
+        {
+            return 0;
+            
+            break;
+        }
+    }
 }
 
 // Cell
@@ -125,27 +174,29 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = nil;
-    switch (indexPath.row) {
-        case 0:     // 数学
+    switch (indexPath.section) {
+        case 0:
         {
-            list = [dict objectForKey:@"数学词表"];
+            NSDictionary* dict = [_listsVirtualActor getListDictionary];
+            List* list = nil;
+            NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
+            list = [dict objectForKey:listName];
+            
+            [(ListCell*)cell setList:list];
+            [(ListCell*)cell configCell];
+            
             break;
-        }
-        case 1:     // 计算机
+        }   
+        case 1:
         {
-            list = [dict objectForKey:@"计算机词表"];
+            
             break;
-        }
+        }   
         default:
         {
             break;
         }
     }
-    
-    [(ListCell*)cell setList:list];
-    [(ListCell*)cell configCell];
     
     return cell;
 }
