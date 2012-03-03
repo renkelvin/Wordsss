@@ -20,6 +20,8 @@
 #import "Rootaffix.h"
 #import "Sense.h"
 
+#import "MwcDictWord.h"
+
 #import "UserDataManager.h"
 
 #import "UserVirtualActor.h"
@@ -72,5 +74,6 @@
 - (NSMutableArray*)getHisRecords;
 
 - (NSString*)getMemDiffString;
+- (NSString*)getFullMeaning;
 
 @end

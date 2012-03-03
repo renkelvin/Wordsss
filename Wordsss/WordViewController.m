@@ -272,6 +272,16 @@
     }
 }
 
+- (BOOL)pasteMeaning
+{
+    UIPasteboard* pasteBoard = [UIPasteboard generalPasteboard];
+    
+    NSString* meaning = [_wordVirtualActor getFullMeaning];
+    [pasteBoard setString:meaning];
+    
+    return YES;
+}
+
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -285,11 +295,13 @@
         case 0:
         {
             [self addWordToPlan];
+            
             break;
         }
         case 1:
         {
-            NSLog(@"111");
+            [self pasteMeaning];
+            
             break;
         }
         default:

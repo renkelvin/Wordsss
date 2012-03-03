@@ -31,5 +31,6 @@
 - (WordRecord*)getWordRecord:(Word*)word;
 - (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
 - (SearchHis*)createSearchHis:(Word*)word;
+- (void)clearSearchHis;
 
 @end

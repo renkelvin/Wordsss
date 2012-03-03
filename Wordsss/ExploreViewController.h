@@ -21,7 +21,7 @@
 
 #import "WordViewController.h"
 
-@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, UITextFieldDelegate, UISearchBarDelegate, UIScrollViewDelegate> {
+@interface ExploreViewController : UIViewController <UITabBarDelegate, UITableViewDataSource, UITextFieldDelegate, UISearchBarDelegate, UIScrollViewDelegate, UIActionSheetDelegate> {
     //
     ExploreVirtualActor* _exploreVirtualActor;
     
@@ -41,6 +41,11 @@
 
 @property (nonatomic, retain) IBOutlet UIButton* coverButton;
 
+@property (nonatomic, retain) IBOutlet UIView* footerView;
+@property (nonatomic, retain) IBOutlet UIButton* footerButton;
+
 - (IBAction)coverButtonClicked:(id)sender;
+
+- (IBAction)footerButtonClicked:(id)sender;
 
 @end

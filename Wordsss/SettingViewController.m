@@ -176,7 +176,7 @@ static char* vocaArray[11] = {
 
 - (IBAction)resetButtonClicked:(id)sender
 {
-    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"重置当前记忆数据" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确定" otherButtonTitles:nil];
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"重置当前记忆数据" otherButtonTitles:nil];
     UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
     [actionSheet showFromTabBar:tabBar];
 }

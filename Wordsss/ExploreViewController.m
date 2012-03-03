@@ -12,7 +12,7 @@
 
 @synthesize searchBar = _searchBar;
 @synthesize tableView = _tableView;
-@synthesize coverButton;
+@synthesize coverButton, footerView, footerButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,10 +43,6 @@
     
     //
     [self refreshData];
-    
-    //
-    isReady = NO;
-    [self performSelectorInBackground:@selector(getWVA) withObject:nil];
 }
 
 - (void)getWVA
@@ -61,10 +57,17 @@
 {
     //
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     //
     [self.searchBar becomeFirstResponder];
+
+    //
+    isReady = NO;
+    [self performSelectorInBackground:@selector(getWVA) withObject:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -86,6 +89,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - IBAction
+
 - (IBAction)coverButtonClicked:(id)sender
 {
     [self.coverButton setHidden:YES];
@@ -93,7 +98,23 @@
     [self.searchBar resignFirstResponder];
 }
 
-#pragma - UITableViewDelegate
+- (IBAction)footerButtonClicked:(id)sender
+{
+    NSString* searchText = self.searchBar.text;
+    
+    if ([searchText compare:@""] == NSOrderedSame) {
+        if ([_rowArray count] != 0) {
+            UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"清空搜索历史" otherButtonTitles:nil];
+            UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
+            [actionSheet showFromTabBar:tabBar];
+        }
+    }
+    else {
+
+    }
+}
+
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -181,10 +202,36 @@
     return cell;
 }
 
-#pragma mark - 
+#pragma mark - refresh
+
+- (void)refreshFooter
+{
+    [self.tableView setTableFooterView:nil];
+    
+    NSString* searchText = self.searchBar.text;
+    
+    if ([searchText compare:@""] == NSOrderedSame) {
+        if ([_rowArray count] != 0) {
+            [self.tableView setTableFooterView:self.footerView];
+            [self.footerButton setTitle:@"清空搜索历史 ..." forState:UIControlStateNormal];
+            [self.footerButton setUserInteractionEnabled:YES];
+        }
+    }
+    else {
+        if ([_rowArray count] == 0) {
+            [self.tableView setTableFooterView:self.footerView];
+            [self.footerButton setTitle:@"无搜索结果" forState:UIControlStateNormal];
+            [self.footerButton setUserInteractionEnabled:NO];
+        }
+    }
+}
 
 - (void)refreshData
 {
+    //    if (!isReady) {
+    //        return;
+    //    }
+    
     NSString* searchText = self.searchBar.text;
     
     if ([searchText compare:@""] == NSOrderedSame) {
@@ -193,11 +240,12 @@
         _rowArray = [wdm getWordsWithIds:idArray];
     }
     else {
-        if (isReady) {
-            WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
-            _rowArray = [wva getWordsWithPrefix:searchText];
-        }
+        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
+        _rowArray = [wva getWordsWithPrefix:searchText];
     }
+    
+    //
+    [self refreshFooter];
 }
 
 - (void)reloadData
@@ -227,10 +275,10 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchbar
 {
-    //
-    [self refreshData];
-    //
-    [self reloadData];
+    //    //
+    //    [self refreshData];
+    //    //
+    //    [self reloadData];
     
     //
     [searchbar resignFirstResponder];    
@@ -240,6 +288,28 @@
 {
     //
     [self.searchBar resignFirstResponder];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+            [uva clearSearchHis];
+            
+            [_exploreVirtualActor updateSearchHis];
+            
+            [self refreshData];
+            [self reloadData];
+            
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

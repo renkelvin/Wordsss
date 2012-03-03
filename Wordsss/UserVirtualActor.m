@@ -83,4 +83,14 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     return sh;
 }
 
+- (void)clearSearchHis
+{
+    UserDataManager* udm = [UserDataManager userdataManager];
+    NSArray* array = [udm getSearchHis];
+    
+    for (SearchHis* sh in array) {
+        [udm.managedObjectContext deleteObject:sh];
+    }
+}
+
 @end

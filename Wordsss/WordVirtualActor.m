@@ -211,9 +211,38 @@
     
 }
 
+- (NSString*)getFullMeaning
+{
+    NSString* string = [NSString stringWithFormat:@"%@\n\n", _word.name];
+    
+    // AhdDictWord
+    if ([_word.word_dict.ahdDictWord count] != 0) {
+        string = [string stringByAppendingFormat:@"美国传统辞典\n"];
+        
+        for (AhdDictWord* word in _word.word_dict.ahdDictWord) {
+            string = [string stringByAppendingFormat:@"%@", [word getFullMeaningCN]];
+        }
+    }
+    
+    // MwcDictWord
+    if ([_word.word_dict.mwcDictWord count] != 0) {
+        string = [string stringByAppendingFormat:@"\n韦氏大学辞典\n"];
+
+        for (MwcDictWord* word in _word.word_dict.mwcDictWord) {
+            string = [string stringByAppendingFormat:@"%@", [word getFullMeaningEN]];
+        }   
+    }
+    
+    return string;
+}
+
 - (NSString*)getMemDiffString
 {
     int lvl = [_wordRecord.level intValue];
+    
+    if (lvl == 0) {
+        return @"无法评估";
+    }
     
     if ([_hisRecords count] > 3*lvl) {
         return @"困难";
