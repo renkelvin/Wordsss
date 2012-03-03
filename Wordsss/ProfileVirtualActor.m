@@ -80,7 +80,7 @@ static ProfileVirtualActor* sharedProfileVirtualActor = nil;
 
 - (int)getVocaNow
 {
-    int vocaNow = [_user.defult vocaCurrent] + 2 * (int)[_user.status getCount];
+    int vocaNow = [_user.defult vocaCurrent] + (49907.0 / 18859.0) * (int)[_user.status getCount];
     
     return vocaNow;
 }

@@ -127,12 +127,12 @@
 {
     WordRecord* wr = _wordVirtualActor.wordRecord;
     if (wr) {
-        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"1", @"2", nil];
+        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拷贝释义", nil];
         UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
         [actionSheet showFromTabBar:tabBar];
     }
     else {
-        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"请选择" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"加入计划" otherButtonTitles:@"1", @"2", nil];
+        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"加入当前记忆计划", @"拷贝释义", nil];
         UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
         [actionSheet showFromTabBar:tabBar];
     }
@@ -290,11 +290,6 @@
         case 1:
         {
             NSLog(@"111");
-            break;
-        }
-        case 2:
-        {
-            NSLog(@"222");
             break;
         }
         default:

@@ -153,8 +153,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-    [(WordCell*)cell setWord:[_rowArray objectAtIndex:indexPath.row]];
-    [(WordCell*)cell configCell];
+//    [(WordCell*)cell setWord:[_rowArray objectAtIndex:indexPath.row]];
+//    [(WordCell*)cell configCell];
+    
+    NSLog(@"%@", [_rowArray objectAtIndex:indexPath.row]);
     
     return cell;
 }
@@ -171,8 +173,11 @@
         _rowArray = [wdm getWordsWithIds:idArray];
     }
     else {
-        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-        _rowArray = [wdm getWordsWithPrefix:searchText];
+//        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+//        _rowArray = [wdm getWordsWithPrefix:searchText];
+
+        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
+        _rowArray = [wva getWordsWithPrefix:searchText];
     }
 }
 
@@ -186,7 +191,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     //    //
-    //    [self refreshData];
+        [self refreshData];
     //    //
     //    [self reloadData];
 }
