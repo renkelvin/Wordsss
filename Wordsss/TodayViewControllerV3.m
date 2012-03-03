@@ -133,7 +133,7 @@
     
     // info
     // View
-    int viewSum = 300;
+    int viewSum = 200;
     [self.infoLeftSumLabel setText:[NSString stringWithFormat:@"%d", viewSum]];
     int viewNow = [_todayVirtualActor.user.status.dlc intValue];
     [self.infoLeftNowLabel setText:[NSString stringWithFormat:@"%d", viewNow]];
@@ -433,7 +433,7 @@
 {
     HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
     
-    [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:hvc animated:NO];
+    [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:hvc animated:YES];
 }
 
 @end

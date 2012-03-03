@@ -34,10 +34,10 @@
     NSString* imgString = [NSString string];
     
     if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
-        imgString = @"cs_list_thumb.png";
+        imgString = @"wl_computer.png";
     }
     else if ([list.name compare:@"数学词表"] == NSOrderedSame) {
-        imgString = @"ma_list_thumb.png";
+        imgString = @"wl_math.png";
     }
     if ([list.name compare:@"物理词表"] == NSOrderedSame) {
         imgString = @"ph_list_thumb.png";

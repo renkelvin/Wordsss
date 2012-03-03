@@ -313,7 +313,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     //
     // int totalViewLimit = kTodayWordLimit * ((1-memDegree)*kTotalViewFactorMin + memDegree*kTotalViewFactorMax);
-    int totalViewLimit = 300;
+    int totalViewLimit = 200;
     if ([_user.status.dlc intValue] >= totalViewLimit) {
         NSLog(@"viewCount: %d", [_user.status.dlc intValue]);
         return YES;

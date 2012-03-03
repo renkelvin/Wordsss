@@ -216,7 +216,30 @@ static char* nameArray[11] = {
 
 - (IBAction)evalQuesButtonClicked:(id)sender
 {
-    // TODO
+    //
+    NSString* string = self.infoRightLabel.text;
+    
+    if ([string compare:@"降低目标"] == NSOrderedSame) {
+        ;
+    }
+    else if ([string compare:@"加快速度"] == NSOrderedSame) {
+        ;
+    }
+    else if ([string compare:@"又快又好"] == NSOrderedSame) {
+        ;
+    }
+    else if ([string compare:@"加深记忆"] == NSOrderedSame) {
+        ;
+    }
+    else if ([string compare:@"更进一步"] == NSOrderedSame) {
+        ;
+    }
+    else if ([string compare:@"无法评价"] == NSOrderedSame) {
+        ;
+    }
+    else {
+        ;
+    }
 }
 
 #pragma mark - UITableViewDelegate

@@ -30,7 +30,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //
     [self.scrollView setContentSize:CGSizeMake(960, 460)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+//    [self.view setAlpha:0.0];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+//    [UIView animateWithDuration:0.6 animations:^(void){
+//        [self.view setAlpha:1.0];
+//    }];
 }
 
 - (void)viewDidUnload
@@ -46,7 +59,14 @@
 
 - (IBAction)dismiss:(id)sender
 {
-    [self dismissModalViewControllerAnimated:NO];
+    [UIView animateWithDuration:0.3 
+                     animations:^(void){
+                         [self.view setAlpha:0.0];
+                     } 
+                     completion:^(BOOL finished){
+                         [self dismissModalViewControllerAnimated:NO];
+                     }
+     ];
 }
 
 #pragma mark - UIScrollViewDelegate

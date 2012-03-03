@@ -84,6 +84,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section != 0) {
+        return;
+    }
+    
     NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
     
     // 数学词表
@@ -107,7 +111,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 // Header
@@ -151,7 +155,7 @@
         }   
         case 1:
         {
-            return 4;
+            return 3;
             
             break;
         }   
@@ -189,6 +193,25 @@
         }   
         case 1:
         {
+            switch (indexPath.row) {
+                case 0:
+                    [((ListCell*)cell).nameLabel setText:@"DOTA词表"];
+                    [((ListCell*)cell).countLabel setText:@"即将推出"];
+                    [((ListCell*)cell).thumbImageView setImage:[UIImage imageNamed:@"wl_dota.jpg"]];
+                    break;
+                case 1:
+                    [((ListCell*)cell).nameLabel setText:@"TOEFL词表"];
+                    [((ListCell*)cell).countLabel setText:@"即将推出"];
+                    [((ListCell*)cell).thumbImageView setImage:[UIImage imageNamed:@"wl_toefl.png"]];
+                    break;
+                case 2:
+                    [((ListCell*)cell).nameLabel setText:@"TBBT词表"];
+                    [((ListCell*)cell).countLabel setText:@"即将推出"];
+                    [((ListCell*)cell).thumbImageView setImage:[UIImage imageNamed:@"wl_bbt.png"]];
+                    break;
+                default:
+                    break;
+            }
             
             break;
         }   

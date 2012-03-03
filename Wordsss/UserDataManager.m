@@ -106,7 +106,7 @@ static UserDataManager* sharedUserDataManager;
     
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"SearchHis"];
     [request setFetchLimit:10];
-    NSSortDescriptor* sortDesc = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    NSSortDescriptor* sortDesc = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     [request setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
     array = [self.managedObjectContext executeFetchRequest:request error:nil];
     

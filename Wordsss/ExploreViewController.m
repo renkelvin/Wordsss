@@ -64,7 +64,7 @@
 {
     //
     [self.searchBar becomeFirstResponder];
-
+    
     //
     isReady = NO;
     [self performSelectorInBackground:@selector(getWVA) withObject:nil];
@@ -110,7 +110,7 @@
         }
     }
     else {
-
+        
     }
 }
 
@@ -228,9 +228,9 @@
 
 - (void)refreshData
 {
-    //    if (!isReady) {
-    //        return;
-    //    }
+    if (!isReady) {
+        return;
+    }
     
     NSString* searchText = self.searchBar.text;
     
