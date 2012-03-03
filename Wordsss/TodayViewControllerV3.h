@@ -85,6 +85,9 @@
 @property (nonatomic, retain) IBOutlet UIImageView* dkhlImageView;
 @property (nonatomic, retain) IBOutlet UIImageView* knowhlImageView;
 
+@property (nonatomic, retain) IBOutlet UILabel* screenTitleLabel;
+@property (nonatomic, retain) IBOutlet UILabel* screenInfoLabel;
+
 #pragma mark - IBAction
 
 - (IBAction)wordDetailSelected:(id)sender;
@@ -109,5 +112,7 @@
 - (void)update;
 
 - (void)nextDay;
+
+- (void)showTitle:(NSString*)title info:(NSString*)info;
 
 @end

@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-//#import "RKNavigationController.h"
-//#import "RKNavigationControllerDelegate.h"
-
 #import "WordsssAppDelegate.h"
 #import "Init1stViewController.h"
 

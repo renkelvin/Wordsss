@@ -26,7 +26,7 @@
 @synthesize infoLeftGraphView, infoRightGraphView;
 @synthesize infoLeftNowLabel, infoLeftSumLabel, infoRightNowLabel, infoRightSumLabel;
 
-@synthesize dkhlImageView, knowhlImageView;
+@synthesize dkhlImageView, knowhlImageView, screenTitleLabel, screenInfoLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -210,6 +210,8 @@
 - (void)nextDay
 {
     [_todayVirtualActor nextDay];
+    
+    //
 }
 
 - (void)animate
@@ -324,29 +326,41 @@
     return YES;
 }
 
+//
+- (void)showTitle:(NSString*)title info:(NSString*)info
+{
+    //
+    [self.screenTitleLabel setText:title];
+    [self.screenInfoLabel setText:info];
+}
+
 #pragma mark - IBAction
 
-- (IBAction)wordDetailSelected:(id)sender{
+- (IBAction)wordDetailSelected:(id)sender
+{
     WordViewController* wordViewController = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[_todayVirtualActor.wordPos getTargetWord]];
     
     [[self navigationController] pushViewController:wordViewController animated:YES];
 }
 
-- (IBAction)wordSliderLeftTouchDown:(id)sender {
+- (IBAction)wordSliderLeftTouchDown:(id)sender 
+{
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
         [self.dkhlImageView setAlpha:1.0];
     }];
 }
 
-- (IBAction)wordSliderRightTouchDown:(id)sender {
+- (IBAction)wordSliderRightTouchDown:(id)sender
+{
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
         [self.knowhlImageView setAlpha:1.0];
     }];
 }
 
-- (IBAction)wordSliderLeftTouchUpInside:(id)sender {
+- (IBAction)wordSliderLeftTouchUpInside:(id)sender
+{
     //
     [self decOperation];
     
@@ -356,7 +370,8 @@
     }];
 }
 
-- (IBAction)wordSliderRightTouchUpInside:(id)sender {
+- (IBAction)wordSliderRightTouchUpInside:(id)sender
+{
     //
     [self incOperation];
     
@@ -366,21 +381,23 @@
     }];
 }
 
-- (IBAction)wordSliderLeftTouchUpOutside:(id)sender {
+- (IBAction)wordSliderLeftTouchUpOutside:(id)sender
+{
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
         [self.dkhlImageView setAlpha:0.0];
     }];
 }
 
-- (IBAction)wordSliderRightTouchUpOutside:(id)sender {
+- (IBAction)wordSliderRightTouchUpOutside:(id)sender
+{
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
         [self.knowhlImageView setAlpha:0.0];
     }];
 }
 
-- (IBAction)wordSliderLeftTouchDragEnter:(id)sender
+- (IBAction)wordSliderLeftTouchDragEnter:(id)sender 
 {
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
@@ -388,7 +405,7 @@
     }];
 }
 
-- (IBAction)wordSliderRightTouchDragEnter:(id)sender
+- (IBAction)wordSliderRightTouchDragEnter:(id)sender 
 {
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){

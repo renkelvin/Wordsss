@@ -20,6 +20,8 @@
 
 #import "UserVirtualActor.h"
 
+#import "RKTabBarController.h"
+
 #define kTodayWordLimit       120
 #define kTotalViewFactorMin   1.5
 #define kTotalViewFactorMax   4.5
@@ -35,7 +37,7 @@
     Word* _wordPre;
     Word* _wordCur;
     Word* _wordPos;
-
+    
     //
     
     //
