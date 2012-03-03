@@ -31,6 +31,9 @@
     
     //
     NSArray* _rowArray;
+    
+    //
+    BOOL isReady;
 }
 
 @property (nonatomic, retain) IBOutlet UISearchBar* searchBar;

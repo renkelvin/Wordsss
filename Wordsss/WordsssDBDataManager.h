@@ -29,7 +29,10 @@
 #pragma mark -
 
 - (NSArray*)getAllWord;
+- (NSArray*)getAllPureWord;
+
 - (Word*)getWordWithId:(NSNumber*)wordId;
+- (Word*)getWordWithName:(NSString*)wordName;
 
 - (NSArray*)getWordsWithIds:(NSArray*)idArray;
 - (NSArray*)getWordsWithPrefix:(NSString*)prefix;

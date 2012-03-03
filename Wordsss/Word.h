@@ -20,7 +20,7 @@
 #import "Word_Rootaffix.h"
 #import "Word_Sense.h"
 #import "Field.h"
-
+#import "PureWord.h"
 #import "AhdDictWord.h"
 #import "AhdDictMeaning.h"
 
@@ -36,6 +36,7 @@
 @property (nonatomic, retain) Word_List *word_list;
 @property (nonatomic, retain) Word_Relation *word_relation;
 @property (nonatomic, retain) Field *field;
+@property (nonatomic, retain) PureWord *pureWord;
 @property (nonatomic, retain) NSMutableSet *word_rootaffix;
 @property (nonatomic, retain) NSMutableSet *word_sense;
 @end
@@ -58,6 +59,7 @@
 - (void)removeWord_sense:(NSSet *)values;
 
 + (Word *)wordWithId:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context;
++ (Word *)wordWithName:(NSString *)wordName inManagedObjectContext:(NSManagedObjectContext *)context;
 
 - (Word*)getTargetWord;
 

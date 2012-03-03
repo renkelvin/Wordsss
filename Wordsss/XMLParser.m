@@ -443,6 +443,11 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         }
                                         else if ([attrString compare:@"word_name"] == NSOrderedSame) {
                                             ((Word*)object).name = string;
+                                            
+                                            // Create Pureword
+                                            PureWord* pw = [NSEntityDescription insertNewObjectForEntityForName:@"PureWord" inManagedObjectContext:[_dbm managedObjectContext]];
+                                            pw.name = string;
+                                            pw.word = (Word*)object;
                                         }
                                         
                                         break;

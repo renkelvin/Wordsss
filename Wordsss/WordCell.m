@@ -10,7 +10,7 @@
 
 @implementation WordCell
 
-@synthesize word;
+@synthesize word, pureWord;
 @synthesize addButton;
 @synthesize nameLabel, meaningLabel;
 @synthesize wordPosLevelImageView, wordPosLevelLeftImageView, wordPosLevelBodyImageView, wordPosLevelRightImageView;
@@ -31,35 +31,54 @@
     // Configure the view for the selected state
 }
 
-- (void)configCell
+- (void)getWordByPureWord
 {
-    // ahdDictWord Existing
-    if (self.word.word_dict.ahdDictWord) {
-        [self.nameLabel setText:self.word.name];
-        [self.meaningLabel setText:[self.word getSummaryMeaning]]; 
-    }
-    
-    // convOrig word Existing
-    else if (self.word.word_relation.convOrig) {
-        [self.nameLabel setText:self.word.name];
-        NSString* string = [NSString stringWithFormat:@"变形自\n%@ %@", self.word.word_relation.convOrig.name, [self.word.word_relation.convOrig getSummaryMeaning]];
-        [self.meaningLabel setText:string];
-    }
-    
-    // deriOrig word Existing
-    else if (self.word.word_relation.deriOrig) {
-        [self.nameLabel setText:self.word.name];
-        NSString* string = [NSString stringWithFormat:@"继承自\n%@ %@", self.word.word_relation.deriOrig.name, [self.word.word_relation.deriOrig getSummaryMeaning]];
-        [self.meaningLabel setText:string];
-    }
-    
-    //
-    else {
-        [self.nameLabel setText:self.word.name];
-        NSString* string = [NSString stringWithFormat:@""];
-        [self.meaningLabel setText:string];
+    if (self.pureWord && !self.word) {
+        // WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+        // self.word = [wdm getWordWithName:self.pureWord.name];
+        
+        self.word = self.pureWord.word;
     }
 }
+
+- (void)configCell
+{
+    if (!self.word) {
+        [self getWordByPureWord];
+    }
+    
+    if (self.word) {
+        // ahdDictWord Existing
+        if (self.word.word_dict.ahdDictWord) {
+            [self.nameLabel setText:self.word.name];
+            [self.meaningLabel setText:[self.word getSummaryMeaning]]; 
+        }
+        
+        // convOrig word Existing
+        else if (self.word.word_relation.convOrig) {
+            [self.nameLabel setText:self.word.name];
+            NSString* string = [NSString stringWithFormat:@"变形自\n%@ %@", self.word.word_relation.convOrig.name, [self.word.word_relation.convOrig getSummaryMeaning]];
+            [self.meaningLabel setText:string];
+        }
+        
+        // deriOrig word Existing
+        else if (self.word.word_relation.deriOrig) {
+            [self.nameLabel setText:self.word.name];
+            NSString* string = [NSString stringWithFormat:@"继承自\n%@ %@", self.word.word_relation.deriOrig.name, [self.word.word_relation.deriOrig getSummaryMeaning]];
+            [self.meaningLabel setText:string];
+        }
+        
+        //
+        else {
+            [self.nameLabel setText:self.word.name];
+            NSString* string = [NSString stringWithFormat:@""];
+            [self.meaningLabel setText:string];
+        }
+    }
+    else if (self.pureWord) {
+        [self.nameLabel setText:self.pureWord.name];
+    }
+}   
 
 - (IBAction)addButtonClicked:(id)sender
 {
@@ -105,6 +124,13 @@
             self.wordPosLevelRightImageView.frame = frame;
         }
     }
+}
+
+- (void)clear
+{
+    self.word = nil;
+    
+    self.pureWord = nil;
 }
 
 @end

@@ -10,11 +10,13 @@
 
 #import "WordsssDBDataManager.h"
 
+#import "PureWord.h"
+
 @interface WordsssDBVirtualActor : NSObject
 {
     //
-    NSMutableDictionary* _wordDict;
     NSArray* _allKeys;
+    NSMutableDictionary* _wordDict;
     
     //
     NSArray* _allPureWords;

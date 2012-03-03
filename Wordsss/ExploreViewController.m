@@ -43,6 +43,18 @@
     
     //
     [self refreshData];
+    
+    //
+    isReady = NO;
+    [self performSelectorInBackground:@selector(getWVA) withObject:nil];
+}
+
+- (void)getWVA
+{
+    //
+    [WordsssDBVirtualActor wordsssDBVirtualActor];
+    
+    isReady = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -50,10 +62,9 @@
     //
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
-    // [self.searchBar becomeFirstResponder];
     
     //
-    [WordsssDBVirtualActor wordsssDBVirtualActor];
+    [self.searchBar becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -90,7 +101,8 @@
     [self.searchBar resignFirstResponder];
     
     //
-    Word* word = [_rowArray objectAtIndex:indexPath.row];
+    WordCell* wc = (WordCell*)[tableView cellForRowAtIndexPath:indexPath];
+    Word* word = wc.word;
     
     WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];
     
@@ -153,10 +165,18 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
-//    [(WordCell*)cell setWord:[_rowArray objectAtIndex:indexPath.row]];
-//    [(WordCell*)cell configCell];
+    NSString* searchText = self.searchBar.text;
     
-    NSLog(@"%@", [_rowArray objectAtIndex:indexPath.row]);
+    if ([searchText compare:@""] == NSOrderedSame) {
+        [(WordCell*)cell clear];
+        [(WordCell*)cell setWord:[_rowArray objectAtIndex:indexPath.row]];
+        [(WordCell*)cell configCell];        
+    }
+    else {
+        [(WordCell*)cell clear];
+        [(WordCell*)cell setPureWord:[_rowArray objectAtIndex:indexPath.row]];
+        [(WordCell*)cell configCell];        
+    }
     
     return cell;
 }
@@ -173,11 +193,10 @@
         _rowArray = [wdm getWordsWithIds:idArray];
     }
     else {
-//        WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-//        _rowArray = [wdm getWordsWithPrefix:searchText];
-
-        WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
-        _rowArray = [wva getWordsWithPrefix:searchText];
+        if (isReady) {
+            WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
+            _rowArray = [wva getWordsWithPrefix:searchText];
+        }
     }
 }
 
@@ -190,10 +209,10 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    //    //
-        [self refreshData];
-    //    //
-    //    [self reloadData];
+    //
+    [self refreshData];
+    //
+    [self reloadData];
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar

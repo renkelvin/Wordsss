@@ -19,6 +19,7 @@
 
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSNumber * word_id;
+@property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) HisData *hisData;
 
 + (SearchHis*)insertSearchHis:(Word*)word user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context;

@@ -112,6 +112,7 @@
     </entity>
     <entity name="PureWord" representedClassName="PureWord" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="pureWord" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="Rootaffix" representedClassName="Rootaffix" syncable="YES">
         <attribute name="deformation" optional="YES" attributeType="String" syncable="YES"/>
@@ -138,6 +139,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="field" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Field" inverseName="word" inverseEntity="Field" syncable="YES"/>
         <relationship name="frequency" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Frequency" inverseName="word" inverseEntity="Frequency" syncable="YES"/>
+        <relationship name="pureWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PureWord" inverseName="word" inverseEntity="PureWord" syncable="YES"/>
         <relationship name="word_association" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Association" inverseName="word" inverseEntity="Word_Association" syncable="YES"/>
         <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="word" inverseEntity="Word_Dict" syncable="YES"/>
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="word" inverseEntity="Word_List" syncable="YES"/>
@@ -209,6 +211,7 @@
         <element name="MwcDictMeaning" positionX="-576" positionY="-882" width="128" height="75"/>
         <element name="MwcDictWord" positionX="-576" positionY="-783" width="128" height="90"/>
         <element name="PHListWord" positionX="-263" positionY="-216" width="128" height="90"/>
+        <element name="PureWord" positionX="160" positionY="192" width="128" height="60"/>
         <element name="Rootaffix" positionX="-999" positionY="-555" width="128" height="195"/>
         <element name="Sense" positionX="-999" positionY="-339" width="128" height="135"/>
         <element name="Word" positionX="-783" positionY="-531" width="128" height="195"/>
@@ -218,6 +221,5 @@
         <element name="Word_Relation" positionX="-801" positionY="-153" width="128" height="165"/>
         <element name="Word_Rootaffix" positionX="-1019" positionY="-498" width="128" height="90"/>
         <element name="Word_Sense" positionX="-1019" positionY="-342" width="128" height="120"/>
-        <element name="PureWord" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>

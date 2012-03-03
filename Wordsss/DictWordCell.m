@@ -70,12 +70,12 @@
         //
         [self addString:[self.ahdDictWord getFullTypeString] blue:NO];
         //
-        _criticalPoiont.y += 3;
+        _criticalPoiont.y += 5;
         //
         int i = 1;
         for (AhdDictMeaning* meaning in self.ahdDictWord.meaning) {
             //
-            _criticalPoiont.y += 3;
+            _criticalPoiont.y += 5;
             //
             NSString* shortMeaning = [meaning getShortMeaning];
             if (shortMeaning)

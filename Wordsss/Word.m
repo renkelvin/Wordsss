@@ -20,6 +20,7 @@
 @dynamic word_rootaffix;
 @dynamic word_sense;
 @dynamic field;
+@dynamic pureWord;
 
 static int freqArray[11] = {
     61854,      // 0  - 1     - Zero
@@ -44,8 +45,18 @@ static int freqArray[11] = {
     
     Word *result = [[context executeFetchRequest:request error:NULL] lastObject];
     
-    // [request release];
+    return result;
+}
+
++ (Word *)wordWithName:(NSString *)wordName inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
+    [request setEntity:[NSEntityDescription entityForName:@"Word" inManagedObjectContext:context]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"name == %@", wordName]];
+    
+    Word *result = [[context executeFetchRequest:request error:NULL] lastObject];
+        
     return result;
 }
 

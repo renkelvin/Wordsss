@@ -42,6 +42,11 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return [Word wordWithId:wordId inManagedObjectContext:self.managedObjectContext];
 }
 
+- (Word*)getWordWithName:(NSString*)wordName
+{
+    return [Word wordWithName:wordName inManagedObjectContext:self.managedObjectContext];
+}
+
 - (NSArray*)getWordsWithIds:(NSArray*)idArray
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];

@@ -9,12 +9,12 @@
 #import "SearchHis.h"
 #import "HisData.h"
 
-
 @implementation SearchHis
 
 @dynamic id;
 @dynamic word_id;
 @dynamic hisData;
+@dynamic date;
 
 + (SearchHis*)insertSearchHis:(Word*)word user:(User*)user inManagedObjectContext:(NSManagedObjectContext*)context
 {
@@ -22,6 +22,7 @@
     
     // Create
     searchHis = [NSEntityDescription insertNewObjectForEntityForName:@"SearchHis" inManagedObjectContext:context];
+    searchHis.date = [NSDate date];
     
     // Configure wordRecord
     searchHis.word_id = word.id;

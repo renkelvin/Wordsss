@@ -105,15 +105,10 @@ static UserDataManager* sharedUserDataManager;
     NSArray* array = [NSArray array];
     
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"SearchHis"];
-    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
-    
-    int count = [result count];
-    if (count > 10) {
-        count = 10;
-    }
-    if (count > 0) {
-        array = [result subarrayWithRange:NSMakeRange(0, count)];
-    }
+    [request setFetchLimit:10];
+    NSSortDescriptor* sortDesc = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDesc]];
+    array = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     return array;
 }
