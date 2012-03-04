@@ -221,23 +221,23 @@ static char* nameArray[11] = {
     
     NSString* title = string;
     NSString* message = nil;
-    if ([string compare:@"降低目标"] == NSOrderedSame) {
-        message = @"当前目标水平不适合你，请在设置中适当降低目标。";
+    if ([string compare:@"目标太难"] == NSOrderedSame) {
+        message = @"当前目标水平可能过高，可以适当降低目标来提升效率。";
     }
     else if ([string compare:@"加快速度"] == NSOrderedSame) {
-        message = @"请增加学习时间，以在合适时间内完成计划。";
+        message = @"当前计划进展过慢，请适当增加学习时间。";
     }
     else if ([string compare:@"又快又好"] == NSOrderedSame) {
-        message = @"又快又好，请继续保持！";
+        message = @"当前的学习强度和记忆效率良好。";
     }
     else if ([string compare:@"加深记忆"] == NSOrderedSame) {
-        message = @"请留意词汇的相关信息，加深记忆。";
+        message = @"当前记忆效果不如预期，可以适当减慢浏览速度认真记忆单词。";
     }
-    else if ([string compare:@"更进一步"] == NSOrderedSame) {
-        message = @"当前目标水平不适合你，请在设置中适当升高目标。";
+    else if ([string compare:@"目标太低"] == NSOrderedSame) {
+        message = @"当前目标水平可能过低，可以适当提高目标来提升效率。";
     }
     else if ([string compare:@"无法评价"] == NSOrderedSame) {
-        message = @"由于你刚刚开始使用，迅辞还无法作出评价。";
+        message = @"迅辞在一段时间后会根据您的学习情况自动在此处作出评价，请关注评价并作出相应调整。";
     }
     else {
         message = @"未知问题，无法评价";
@@ -335,7 +335,7 @@ static char* nameArray[11] = {
                     NSString* string = nil;
                     NSArray* array = [_profileVirtualActor getStaRecords];
                     if ([array count] == 0) {   //
-                        string = @"无法计算";
+                        string = @"暂时无法计算";
                     }
                     else {  //
                         NSDate* staDate = ((StaRecord*)[array objectAtIndex:0]).date;
