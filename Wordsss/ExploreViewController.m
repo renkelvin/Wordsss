@@ -67,7 +67,7 @@
     
     //
     isReady = NO;
-    [self performSelectorInBackground:@selector(getWVA) withObject:nil];
+    [self getWVA];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

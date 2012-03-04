@@ -85,10 +85,10 @@
     
     switch (section) {
         case 0:
-            headerView.titleLabel.text = @"美国传统词典";
+            headerView.titleLabel.text = @"中文释义";
             break;
         case 1:
-            headerView.titleLabel.text = @"韦氏大学词典";
+            headerView.titleLabel.text = @"英文释义";
             break;
         case 2:
             headerView.titleLabel.text = @"例句";

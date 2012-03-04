@@ -536,10 +536,20 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             }
                                         }
                                         else if ([attrString compare:@"description_en"] == NSOrderedSame) {
-                                            ((Rootaffix*)object).description_en = string;
+                                            if (!((Rootaffix*)object).description_en) {
+                                                ((Rootaffix*)object).description_en = string;
+                                            }
+                                            else {
+                                                ((Rootaffix*)object).description_en = [((Rootaffix*)object).description_en stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"description_cn"] == NSOrderedSame) {
-                                            ((Rootaffix*)object).description_cn = string;
+                                            if (!((Rootaffix*)object).description_cn) {
+                                                ((Rootaffix*)object).description_cn = string;
+                                            }
+                                            else {
+                                                ((Rootaffix*)object).description_cn = [((Rootaffix*)object).description_cn stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         break;
@@ -562,10 +572,20 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"Sense - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
-                                            ((Sense*)object).meaning_en = string;
+                                            if (!((Sense*)object).meaning_en) {
+                                                ((Sense*)object).meaning_en = string;
+                                            }
+                                            else {
+                                                ((Sense*)object).meaning_en = [((Sense*)object).meaning_en stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
-                                            ((Sense*)object).meaning_cn = string;
+                                            if (!((Sense*)object).meaning_cn) {
+                                                ((Sense*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((Sense*)object).meaning_cn = [((Sense*)object).meaning_cn stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         break;
@@ -706,10 +726,20 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"AhdDictMeaning - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
-                                            ((AhdDictMeaning*)object).meaning_cn = string;
+                                            if (!((AhdDictMeaning*)object).meaning_cn) {
+                                                ((AhdDictMeaning*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((AhdDictMeaning*)object).meaning_cn = [((AhdDictMeaning*)object).meaning_cn stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
-                                            ((AhdDictMeaning*)object).meaning_en = string;
+                                            if (!((AhdDictMeaning*)object).meaning_en) {
+                                                ((AhdDictMeaning*)object).meaning_en = string;
+                                            }
+                                            else {
+                                                ((AhdDictMeaning*)object).meaning_en = [((AhdDictMeaning*)object).meaning_en stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         break;
@@ -812,10 +842,20 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"AhdDictSentence - id: %@", string);
                                         }
                                         else if ([attrString compare:@"meaning_cn"] == NSOrderedSame) {
-                                            ((AhdDictSentence*)object).meaning_cn = string;
+                                            if (!((AhdDictSentence*)object).meaning_cn) {
+                                                ((AhdDictSentence*)object).meaning_cn = string;
+                                            }
+                                            else {
+                                                ((AhdDictSentence*)object).meaning_cn = [((AhdDictSentence*)object).meaning_cn stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"meaning_en"] == NSOrderedSame) {
-                                            ((AhdDictSentence*)object).meaning_en = string;
+                                            if (!((AhdDictSentence*)object).meaning_en) {
+                                                ((AhdDictSentence*)object).meaning_en = string;
+                                            }
+                                            else {
+                                                ((AhdDictSentence*)object).meaning_en = [((AhdDictSentence*)object).meaning_en stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         
                                         break;

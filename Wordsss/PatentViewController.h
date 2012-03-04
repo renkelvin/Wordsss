@@ -11,5 +11,6 @@
 @interface PatentViewController : UIViewController
 
 - (IBAction)dismiss:(id)sender;
+- (IBAction)lastStep;
 
 @end

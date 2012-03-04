@@ -13,7 +13,7 @@
 #import "SettingVirtualActor.h"
 
 #import "PatentViewController.h"
-#import "StudyRangeViewController.h"
+#import "AboutViewController.h"
 
 #import "Defult.h"
 

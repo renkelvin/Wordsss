@@ -47,7 +47,7 @@
     
     int i = 1;
     for (MwcDictMeaning* mwcDictMeaning in self.meaning) {
-        string = [string stringByAppendingFormat:@"%d. %@\n", i, mwcDictMeaning.meaning_en];
+        string = [string stringByAppendingFormat:@"%d %@\n", i, mwcDictMeaning.meaning_en];
         i++;
     }
     

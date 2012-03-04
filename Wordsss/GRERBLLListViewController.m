@@ -31,7 +31,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     //
-    [self.titleLabel setText:@"GRE红宝书"];
+    [self.titleLabel setText:@"GRE词汇精选"];
 }
 
 - (void)viewDidUnload

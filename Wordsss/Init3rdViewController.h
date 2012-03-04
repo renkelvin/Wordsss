@@ -10,7 +10,7 @@
 
 #import "WordsssAppDelegate.h"
 
-#import "TodayViewController.h"
+#import "TodayViewControllerV3.h"
 #import "HelpViewController.h"
 
 #import "InitVirtualActor.h"

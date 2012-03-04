@@ -8,12 +8,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wordsss/XMLParser.m"
-         timestampString = "352459132.355528"
+         timestampString = "352545928.513102"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "2011"
-         endingLineNumber = "2011"
+         startingLineNumber = "2051"
+         endingLineNumber = "2051"
          landmarkName = "-parser:parseErrorOccurred:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Wordsss/TodayVirtualActor.m"
+         timestampString = "352550208.589543"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
+         landmarkName = "-fillWordRecordSetFromWordRecord"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

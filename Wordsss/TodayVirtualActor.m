@@ -26,6 +26,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 
 @synthesize wordRecordSet = _wordRecordSet;
 
+@synthesize screenTitle, screenInfo;
+
 #pragma mark -
 
 - (id)init
@@ -114,7 +116,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
     _wordRecordSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    _newWordCount = [_wordRecordSet count];
+    _newWordCount = 0;
     
     //
     NSSet* tempSet = nil;
@@ -144,7 +146,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 {
     // Enough
     if ([_wordRecordSet count] >= kTodayWordLimit)
+    {
         return;
+    }
     
     // Get UserDataManager
     UserDataManager* udm = [UserDataManager userdataManager];
@@ -155,6 +159,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == 0"]];
     NSArray* new_wordRecord_array = [udm.managedObjectContext executeFetchRequest:request error:nil]; 
     
+    int a = [_wordRecordSet count];
     // Set new wordRecord
     for (WordRecord* wr in new_wordRecord_array) {
         // Set
@@ -165,13 +170,15 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {    
-            _newWordCount = [_wordRecordSet count] - _newWordCount;
+            int b = [_wordRecordSet count];
+            _newWordCount += (b - a);
             NSLog(@"fillWordRecordSetFromWordRecord!");
             return;
         }
     }
     
-    _newWordCount = [_wordRecordSet count] - _newWordCount;
+    int c = [_wordRecordSet count];
+    _newWordCount += (c - a);
     NSLog(@"fillWordRecordSetFromWordRecord: %d", [_wordRecordSet count]);
 }
 
@@ -201,6 +208,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"(NOT (word_dict == nil)) AND (NOT (id in %@)) AND (%d > frequency.freq AND frequency.freq >= %d)", word_id_set, freqCur, freqTar]];
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
+    int a = [_wordRecordSet count];
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     // Set new wordRecord
     for (Word* w in new_word_set) {
@@ -215,13 +223,15 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {
-            _newWordCount = [_wordRecordSet count] - _newWordCount;
+            int b = [_wordRecordSet count];
+            _newWordCount += (b - a);
             NSLog(@"fillWordRecordSetFromWord!");
             return;
         }
     }
     
-    _newWordCount = [_wordRecordSet count] - _newWordCount;
+    int c = [_wordRecordSet count];
+    _newWordCount += (c - a);
     NSLog(@"fillWordRecordSetFromWord: %d", [_wordRecordSet count]);
 }
 
@@ -251,6 +261,26 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     }
 }
 
+- (BOOL)isNeedUpdateScreen
+{
+    return _isNeedUpdateScreen;
+}
+
+- (void)setNeedUpdateScreen:(BOOL)need
+{
+    _isNeedUpdateScreen = need;
+}
+
+- (void)updateScreenTitle:(NSString*)title info:(NSString*)info
+{
+    //
+    self.screenTitle = title;
+    self.screenInfo = info;
+    
+    //
+    _isNeedUpdateScreen = YES;
+}
+
 - (void)prepare
 {
     // Init
@@ -262,7 +292,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     // Get wordRecordArray
     [self updateWordRecordSet];
-    // [self updateTestWordRecord];
     
     // First time launch
     if ([_wordRecordSet count] == 0) {
@@ -281,6 +310,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     //
     self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];
+    
+    //
+    [self updateScreenTitle:@"计划已更新" info:[NSString stringWithFormat:@"新增单词 %d 个", _newWordCount]];
 }
 
 //
@@ -318,7 +350,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     //
     // int totalViewLimit = kTodayWordLimit * ((1-memDegree)*kTotalViewFactorMin + memDegree*kTotalViewFactorMax);
-    int totalViewLimit = 200;
+    int totalViewLimit = 260;
     if ([_user.status.dlc intValue] >= totalViewLimit) {
         NSLog(@"viewCount: %d", [_user.status.dlc intValue]);
         return YES;
@@ -361,6 +393,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     //
     self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];
+    
+    //
+    [self updateScreenTitle:@"您的学习计划已更新" info:[NSString stringWithFormat:@"新增单词 %d 个", _newWordCount]];
 }
 
 - (BOOL)checkWordRecord:(WordRecord*)wordRecord

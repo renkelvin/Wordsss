@@ -26,7 +26,9 @@
 @synthesize infoLeftGraphView, infoRightGraphView;
 @synthesize infoLeftNowLabel, infoLeftSumLabel, infoRightNowLabel, infoRightSumLabel;
 
-@synthesize dkhlImageView, knowhlImageView, screenTitleLabel, screenInfoLabel;
+@synthesize dkhlImageView, knowhlImageView, screenTitleLabel, screenInfoLabel, coverImageView, coverView, blackCoverView;
+
+@synthesize isShowHelpAfterInit;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,9 +49,44 @@
 
 #pragma mark - View lifecycle
 
+- (void)coverAnimate
+{
+    //
+    RKTabBarController* tvc = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController);
+    [tvc.view addSubview:self.blackCoverView];
+    [self.blackCoverView setFrame:CGRectMake(0, 0, 320, 480)];
+    [tvc.view addSubview:self.coverView];
+    [self.coverView setFrame:CGRectMake(0, 0, 320, 480)];
+    
+    //
+    [UIView animateWithDuration:0.5
+                     animations:^(void) {
+                         //
+                         [self.coverView setFrame:CGRectMake(0, -480, 320, 480)];
+                     }
+                     completion:^(BOOL finished) {
+                         //
+                         [self.coverView removeFromSuperview];
+                     }];
+    
+    //
+    [self.blackCoverView setAlpha:0.8];
+    [UIView animateWithDuration:0.7
+                     animations:^(void) {
+                         //
+                         [self.blackCoverView setAlpha:0.0];
+                     }
+                     completion:^(BOOL finished) {
+                         //
+                         [self.blackCoverView removeFromSuperview];
+                     }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [WordsssDBVirtualActor wordsssDBVirtualActor];
     
     // Check has init user
     if ([self checkHasInitUser]) {
@@ -58,12 +95,25 @@
         
         // Update view
         [self update];
+        
+        // Cover animate
+         [self coverAnimate];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"mainbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    // Help view
+    if ([self.isShowHelpAfterInit boolValue]) {
+        // Present help
+        HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+        [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
+    }
 }
 
 - (void)viewDidUnload
@@ -133,7 +183,7 @@
     
     // info
     // View
-    int viewSum = 200;
+    int viewSum = 260;
     [self.infoLeftSumLabel setText:[NSString stringWithFormat:@"%d", viewSum]];
     int viewNow = [_todayVirtualActor.user.status.dlc intValue];
     [self.infoLeftNowLabel setText:[NSString stringWithFormat:@"%d", viewNow]];
@@ -151,6 +201,13 @@
     [self.infoRightGraphView setType:RIGHT];
     [self.infoRightGraphView setPercent:[NSNumber numberWithFloat:((float)(wordSum - wordNow)/(float)(wordSum - 20))]];
     [self.infoRightGraphView setNeedsDisplay];
+    
+    //
+    if ([_todayVirtualActor isNeedUpdateScreen]) {
+        NSString* title = _todayVirtualActor.screenTitle;
+        NSString* info = _todayVirtualActor.screenInfo;
+        [self showTitle:title info:info];
+    }
 }
 
 // update trans
@@ -210,9 +267,6 @@
 - (void)nextDay
 {
     [_todayVirtualActor nextDay];
-    
-    //
-    [self showTitle:@"计划更新" info:@"新增"];
 }
 
 - (void)animate
@@ -330,9 +384,37 @@
 //
 - (void)showTitle:(NSString*)title info:(NSString*)info
 {
-    //
-    [self.screenTitleLabel setText:title];
-    [self.screenInfoLabel setText:info];
+    [UIView animateWithDuration:0.3
+                     animations:^(void){
+                         [self.screenTitleLabel setAlpha:0.0];
+                         [self.screenInfoLabel setAlpha:0.0];
+                     } 
+                     completion:^(BOOL finished){
+                         //
+                         [self.screenTitleLabel setText:title];
+                         [self.screenInfoLabel setText:info];
+                         
+                         //
+                         [UIView animateWithDuration:0.3 
+                                          animations:^(void){
+                                              [self.screenTitleLabel setAlpha:1.0];
+                                              [self.screenInfoLabel setAlpha:1.0];
+                                          }
+                                          completion:^(BOOL finished){
+                                              [UIView animateWithDuration:1.0
+                                                                    delay:3.0 
+                                                                  options:UIViewAnimationOptionCurveEaseInOut 
+                                                               animations:^(void){
+                                                                   [self.screenTitleLabel setAlpha:0.2];
+                                                                   [self.screenInfoLabel setAlpha:0.2];
+                                                               }
+                                                               completion:^(BOOL finished){
+                                                                   
+                                                               }];
+                                          }];
+                     }];
+    
+    [_todayVirtualActor setNeedUpdateScreen:NO];
 }
 
 #pragma mark - IBAction

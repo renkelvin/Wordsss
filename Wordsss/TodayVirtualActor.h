@@ -49,6 +49,8 @@
     
     //
     int _newWordCount;
+    
+    BOOL _isNeedUpdateScreen;
 }
 
 @property (nonatomic, retain) User* user;
@@ -64,6 +66,9 @@
 @property (nonatomic, retain) NSNumber* todayWordSum;
 
 @property (nonatomic, retain) NSMutableSet* wordRecordSet;
+
+@property (nonatomic, retain) NSString* screenTitle;
+@property (nonatomic, retain) NSString* screenInfo;
 
 #pragma mark - Class method
 
@@ -84,5 +89,8 @@
 
 - (void)setWordRecordCurLevelInc;
 - (void)setWordRecordCurLevelDec;
+
+- (BOOL)isNeedUpdateScreen;
+- (void)setNeedUpdateScreen:(BOOL)need;
 
 @end

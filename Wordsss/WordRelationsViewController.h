@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 #import "WordViewController.h"
-#import "TodayViewController.h"
 
 #import "WordVirtualActor.h"
 

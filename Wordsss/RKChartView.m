@@ -226,7 +226,7 @@
             int year = [components year];
             int month = [components month];
             int day = [components day];
-            NSString* dateString = [NSString stringWithFormat:@"%d年 - %d月 - %d日", year, month, day];
+            NSString* dateString = [NSString stringWithFormat:@"%d 年 %d 月 %d 日", year, month, day];
             [self.dateLabel setText:dateString];
             
             break;
@@ -292,7 +292,7 @@
             int year = [components year];
             int month = [components month];
             int day = [components day];
-            NSString* dateString = [NSString stringWithFormat:@"%d年 - %d月 - %d日", year, month, day];
+            NSString* dateString = [NSString stringWithFormat:@"%d年 %d月 %d日", year, month, day];
             [self.dateLabel setText:dateString];
             
             break;

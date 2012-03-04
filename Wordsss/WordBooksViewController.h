@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TodayViewController.h"
-
 #import "WordVirtualActor.h"
 
 #import "AhdDictWord.h"

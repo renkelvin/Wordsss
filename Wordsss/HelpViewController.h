@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RKTabBarController.h"
+#import "TodayViewControllerV3.h"
+
 @interface HelpViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;

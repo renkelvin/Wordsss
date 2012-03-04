@@ -69,7 +69,6 @@
 		FE10A0A214A0F7D3005F1EC9 /* Word_Sense.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A0A114A0F7D3005F1EC9 /* Word_Sense.m */; };
 		FE17D58B143B02110067E780 /* tab_wordtoday.png in Resources */ = {isa = PBXBuildFile; fileRef = FE17D589143B02110067E780 /* tab_wordtoday.png */; };
 		FE17D58C143B02110067E780 /* tab_wordtoday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE17D58A143B02110067E780 /* tab_wordtoday@2x.png */; };
-		FE2040D014F26244002E9EDC /* TodayViewControllerV2.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */; };
 		FE2B069D14401C3900E1D159 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2B069C14401C3900E1D159 /* icon.png */; };
 		FE2E518914FCB7320011DCA4 /* WordsssDBVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E518814FCB7320011DCA4 /* WordsssDBVirtualActor.m */; };
 		FE2E834F143B289A004A2C56 /* profile_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E833F143B2899004A2C56 /* profile_active.png */; };
@@ -97,7 +96,6 @@
 		FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680014F28FDC00963B95 /* button_grey_done.png */; };
 		FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680114F28FDC00963B95 /* button_grey_done@2x.png */; };
 		FE52D5F41502B0400086C3FD /* PatentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE52D5F31502B0400086C3FD /* PatentViewController.m */; };
-		FE52D5F71503333D0086C3FD /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE52D5F61503333D0086C3FD /* WordsssDB.sqlite */; };
 		FE557BE815021852009017E2 /* PureWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE557BE715021852009017E2 /* PureWord.m */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
 		FE5C958A14AF11AD00DE10F2 /* AhdDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958914AF11AD00DE10F2 /* AhdDictMeaning.m */; };
@@ -164,7 +162,6 @@
 		FE6332D414ADEE5B005CBECF /* tofel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A214ADEE5A005CBECF /* tofel@2x.png */; };
 		FE6B999314AB4F4200AA3DEF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B999214AB4F4200AA3DEF /* Word.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
-		FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB714385AAD00DC9784 /* TodayViewController.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
 		FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */; };
 		FE772DBC143D9CC9004DDA0D /* RKDashBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE772DBB143D9CC9004DDA0D /* RKDashBoard.xib */; };
@@ -313,7 +310,11 @@
 		FEDD3ACB14FA5C9B00F73D11 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD3ACA14FA5C9B00F73D11 /* HelpViewController.m */; };
 		FEDE225C14A73C0D008908B0 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225B14A73C0D008908B0 /* Status.m */; };
 		FEDE225F14A74EDB008908B0 /* StaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225E14A74EDB008908B0 /* StaRecord.m */; };
-		FEDF063515034B82004F1430 /* StudyRangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF063415034B82004F1430 /* StudyRangeViewController.m */; };
+		FEDF0639150365D2004F1430 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF0638150365D2004F1430 /* AboutViewController.m */; };
+		FEDF06401503797C004F1430 /* title_large.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDF063E1503797C004F1430 /* title_large.png */; };
+		FEDF06411503797C004F1430 /* title_large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEDF063F1503797C004F1430 /* title_large@2x.png */; };
+		FEDF064715038532004F1430 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDF064615038531004F1430 /* MessageUI.framework */; };
+		FEDF0649150398B7004F1430 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEDF0648150398B7004F1430 /* WordsssDB.sqlite */; };
 		FEE0174014B366F100DCC353 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE0173F14B366F100DCC353 /* InfoCell.m */; };
 		FEE0175014B3687A00DCC353 /* button_next.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE0174214B3687A00DCC353 /* button_next.png */; };
 		FEE0175114B3687A00DCC353 /* button_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE0174314B3687A00DCC353 /* button_next@2x.png */; };
@@ -456,8 +457,6 @@
 		FE10A0A114A0F7D3005F1EC9 /* Word_Sense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_Sense.m; sourceTree = "<group>"; };
 		FE17D589143B02110067E780 /* tab_wordtoday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_wordtoday.png; sourceTree = "<group>"; };
 		FE17D58A143B02110067E780 /* tab_wordtoday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_wordtoday@2x.png"; sourceTree = "<group>"; };
-		FE2040CE14F26244002E9EDC /* TodayViewControllerV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewControllerV2.h; sourceTree = "<group>"; };
-		FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewControllerV2.m; sourceTree = "<group>"; };
 		FE2B069C14401C3900E1D159 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		FE2E518714FCB7320011DCA4 /* WordsssDBVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBVirtualActor.h; sourceTree = "<group>"; };
 		FE2E518814FCB7320011DCA4 /* WordsssDBVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBVirtualActor.m; sourceTree = "<group>"; };
@@ -493,7 +492,6 @@
 		FE4D51D314F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/WordsssTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE52D5F21502B0400086C3FD /* PatentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatentViewController.h; sourceTree = "<group>"; };
 		FE52D5F31502B0400086C3FD /* PatentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatentViewController.m; sourceTree = "<group>"; };
-		FE52D5F61503333D0086C3FD /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/5.0/Applications/094AE45F-3E31-4B78-848F-AD6639BAACDA/Documents/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE557BE615021852009017E2 /* PureWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureWord.h; sourceTree = "<group>"; };
 		FE557BE715021852009017E2 /* PureWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PureWord.m; sourceTree = "<group>"; };
 		FE5C958514AF0C6600DE10F2 /* Word_Relation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word_Relation.h; sourceTree = "<group>"; };
@@ -567,8 +565,6 @@
 		FE6B999214AB4F4200AA3DEF /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		FE6C8DB414385A2F00DC9784 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
-		FE6C8DB614385AAD00DC9784 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		FE6C8DB714385AAD00DC9784 /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		FE6C8DB914385AC400DC9784 /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
 		FE6C8DBA14385AC400DC9784 /* BooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
 		FE6C8DBC14385ACE00DC9784 /* ListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsViewController.h; sourceTree = "<group>"; };
@@ -762,8 +758,12 @@
 		FEDE225B14A73C0D008908B0 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		FEDE225D14A74EDB008908B0 /* StaRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaRecord.h; sourceTree = "<group>"; };
 		FEDE225E14A74EDB008908B0 /* StaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaRecord.m; sourceTree = "<group>"; };
-		FEDF063315034B82004F1430 /* StudyRangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyRangeViewController.h; sourceTree = "<group>"; };
-		FEDF063415034B82004F1430 /* StudyRangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyRangeViewController.m; sourceTree = "<group>"; };
+		FEDF0637150365D2004F1430 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		FEDF0638150365D2004F1430 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		FEDF063E1503797C004F1430 /* title_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_large.png; sourceTree = "<group>"; };
+		FEDF063F1503797C004F1430 /* title_large@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title_large@2x.png"; sourceTree = "<group>"; };
+		FEDF064615038531004F1430 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		FEDF0648150398B7004F1430 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = ../../../../Desktop/WordsssDB.sqlite; sourceTree = "<group>"; };
 		FEE0173E14B366F100DCC353 /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
 		FEE0173F14B366F100DCC353 /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
 		FEE0174214B3687A00DCC353 /* button_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_next.png; sourceTree = "<group>"; };
@@ -847,6 +847,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDF064715038532004F1430 /* MessageUI.framework in Frameworks */,
 				FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */,
 				FEBFBEFF1436DAF20028630E /* UIKit.framework in Frameworks */,
 				FEBFBF011436DAF20028630E /* Foundation.framework in Frameworks */,
@@ -925,10 +926,6 @@
 				FEE37B7614370C0700A0E6AC /* ProfileViewController.m */,
 				FEEE311D1439CB85001F7E90 /* ExploreViewController.h */,
 				FEEE311E1439CB85001F7E90 /* ExploreViewController.m */,
-				FE6C8DB614385AAD00DC9784 /* TodayViewController.h */,
-				FE6C8DB714385AAD00DC9784 /* TodayViewController.m */,
-				FE2040CE14F26244002E9EDC /* TodayViewControllerV2.h */,
-				FE2040CF14F26244002E9EDC /* TodayViewControllerV2.m */,
 				FE0DD79014FCE65D00C04EC3 /* TodayViewControllerV3.h */,
 				FE0DD79114FCE65D00C04EC3 /* TodayViewControllerV3.m */,
 				FE6C8DBC14385ACE00DC9784 /* ListsViewController.h */,
@@ -1047,7 +1044,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FE52D5F61503333D0086C3FD /* WordsssDB.sqlite */,
+				FEDF0648150398B7004F1430 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1063,10 +1060,10 @@
 				FE94A09214A9B57300BDCE18 /* Init3rdViewController.m */,
 				FEDD3AC914FA5C9B00F73D11 /* HelpViewController.h */,
 				FEDD3ACA14FA5C9B00F73D11 /* HelpViewController.m */,
+				FEDF0637150365D2004F1430 /* AboutViewController.h */,
+				FEDF0638150365D2004F1430 /* AboutViewController.m */,
 				FE52D5F21502B0400086C3FD /* PatentViewController.h */,
 				FE52D5F31502B0400086C3FD /* PatentViewController.m */,
-				FEDF063315034B82004F1430 /* StudyRangeViewController.h */,
-				FEDF063415034B82004F1430 /* StudyRangeViewController.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -1197,6 +1194,7 @@
 		FEBFBEFD1436DAF20028630E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEDF064615038531004F1430 /* MessageUI.framework */,
 				FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */,
 				FEBFBEFE1436DAF20028630E /* UIKit.framework */,
 				FEBFBF001436DAF20028630E /* Foundation.framework */,
@@ -1473,6 +1471,8 @@
 		FEF4DE99148E2B0F00E88653 /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
+				FEDF063E1503797C004F1430 /* title_large.png */,
+				FEDF063F1503797C004F1430 /* title_large@2x.png */,
 				FEE0176A14B368A800DCC353 /* arrow_down.png */,
 				FEE0176B14B368A800DCC353 /* arrow_down@2x.png */,
 				FEE0176C14B368A800DCC353 /* button_blue_bg.png */,
@@ -1939,7 +1939,9 @@
 				FEA3C5C8150257A2003B56F6 /* wl_toefl@2x.png in Resources */,
 				FEA3C5CB150259E9003B56F6 /* bg_sample.jpg in Resources */,
 				FEA3C5CC150259E9003B56F6 /* bg_sample@2x.jpg in Resources */,
-				FE52D5F71503333D0086C3FD /* WordsssDB.sqlite in Resources */,
+				FEDF06401503797C004F1430 /* title_large.png in Resources */,
+				FEDF06411503797C004F1430 /* title_large@2x.png in Resources */,
+				FEDF0649150398B7004F1430 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1980,7 +1982,6 @@
 				FEE37B7714370C0700A0E6AC /* ProfileViewController.m in Sources */,
 				FEE37BB714370F7600A0E6AC /* TestViewController.m in Sources */,
 				FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */,
-				FE6C8DB814385AAD00DC9784 /* TodayViewController.m in Sources */,
 				FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */,
 				FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */,
 				FEEE311A1439CB1B001F7E90 /* SettingViewController.m in Sources */,
@@ -2042,7 +2043,6 @@
 				FEE99F4D14C480F4003F70F9 /* PHListWord.m in Sources */,
 				FEE99F5014C483A1003F70F9 /* UserVirtualActor.m in Sources */,
 				FED1E21914C813A800013D07 /* List.m in Sources */,
-				FE2040D014F26244002E9EDC /* TodayViewControllerV2.m in Sources */,
 				FE3B9BC314F280CC00B4CE2C /* MwcDictWord.m in Sources */,
 				FE3B9BC614F280CD00B4CE2C /* MwcDictMeaning.m in Sources */,
 				FEFB985A14F8A7EF00DB8B85 /* SearchHis.m in Sources */,
@@ -2068,7 +2068,7 @@
 				FEB67EBD15010C2D00AC4B89 /* WordsssDB.xcdatamodeld in Sources */,
 				FE557BE815021852009017E2 /* PureWord.m in Sources */,
 				FE52D5F41502B0400086C3FD /* PatentViewController.m in Sources */,
-				FEDF063515034B82004F1430 /* StudyRangeViewController.m in Sources */,
+				FEDF0639150365D2004F1430 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

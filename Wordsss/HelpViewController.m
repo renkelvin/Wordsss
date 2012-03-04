@@ -59,6 +59,10 @@
 - (IBAction)dismiss:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
+    
+    NSArray* vcArray = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).viewControllers;
+    TodayViewControllerV3* tvc = (TodayViewControllerV3*)[(UINavigationController*)[vcArray objectAtIndex:2] topViewController];
+    [tvc setIsShowHelpAfterInit:[NSNumber numberWithBool:NO]];
 }
 
 #pragma mark - UIScrollViewDelegate

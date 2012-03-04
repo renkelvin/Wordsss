@@ -35,6 +35,8 @@
 
 #define kAnimationInterval 0.15
 
+#define kScaleRate (1.0/16.0)
+
 @interface TodayViewControllerV3 : UIViewController <UINavigationControllerDelegate>
 {
     //
@@ -87,6 +89,12 @@
 
 @property (nonatomic, retain) IBOutlet UILabel* screenTitleLabel;
 @property (nonatomic, retain) IBOutlet UILabel* screenInfoLabel;
+
+@property (nonatomic, retain) IBOutlet UIView* coverView;
+@property (nonatomic, retain) IBOutlet UIView* blackCoverView;
+@property (nonatomic, retain) IBOutlet UIImageView* coverImageView;
+
+@property (nonatomic, retain) NSNumber* isShowHelpAfterInit;
 
 #pragma mark - IBAction
 

@@ -74,14 +74,12 @@
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     [wdm saveContext];
     
-    // Present help
-    HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
-    [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:hvc animated:NO];
-
-    
     // Init todayViewController again
     NSArray* vcArray = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).viewControllers;
-    [[(UINavigationController*)[vcArray objectAtIndex:2] topViewController] viewDidLoad];
+    TodayViewControllerV3* tvc = (TodayViewControllerV3*)[(UINavigationController*)[vcArray objectAtIndex:2] topViewController];
+    [tvc setIsShowHelpAfterInit:[NSNumber numberWithBool:YES]];
+    [tvc.coverView setHidden:YES];
+    [tvc viewDidLoad];
     
     // Dissmiss View
     [self dismissModalViewControllerAnimated:YES];

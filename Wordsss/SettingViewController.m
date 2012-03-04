@@ -142,7 +142,7 @@ static char* vocaArray[11] = {
     RKTabBarController* tvc = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController);
     [self.levelPickerView setFrame:kLevelPickerViewFrameHide];
     [tvc.view addSubview:self.levelPickerView];
-
+    
     [UIView animateWithDuration:0.3 animations:^(void){
         [self.levelPickerView setFrame:kLevelPickerViewFrameShow];
     }];
@@ -170,8 +170,7 @@ static char* vocaArray[11] = {
         [UIView animateWithDuration:0.3 animations:^(void)
          {
              [self.levelPickerView setFrame:kLevelPickerViewFrameHide];
-         }
-         ];
+         }];
     }
 }
 
@@ -184,11 +183,14 @@ static char* vocaArray[11] = {
 
 - (IBAction)patentButtonClicked:(id)sender
 {
-    PatentViewController* pvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PatentViewController"];
+    //    PatentViewController* pvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PatentViewController"];
+    //    UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:pvc];
+    //    
+    //    [self presentModalViewController:nc animated:YES];
     
-    UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:pvc];
+    AboutViewController* avc = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
     
-    [self presentModalViewController:nc animated:YES];
+    [[self navigationController] pushViewController:avc animated:YES];
 }
 
 #pragma mark - UIPickerViewDelegate

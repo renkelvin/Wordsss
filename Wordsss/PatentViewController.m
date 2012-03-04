@@ -47,4 +47,9 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)lastStep
+{
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
 @end
