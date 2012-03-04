@@ -13,11 +13,12 @@
 #import "SettingVirtualActor.h"
 
 #import "PatentViewController.h"
+#import "StudyRangeViewController.h"
 
 #import "Defult.h"
 
-#define kInitPickerViewFrameHide CGRectMake(0, 416, 320, 260)
-#define kInitPickerViewFrameShow CGRectMake(0, 155, 320, 260)
+#define kLevelPickerViewFrameHide CGRectMake(0, 480, 320, 260)
+#define kLevelPickerViewFrameShow CGRectMake(0, 220, 320, 260)
 
 @interface SettingViewController : UIViewController <UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIActionSheetDelegate>
 {

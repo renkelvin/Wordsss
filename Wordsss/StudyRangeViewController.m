@@ -1,12 +1,12 @@
 //
-//  Init2ndViewController.m
+//  StudyRangeViewController.m
 //  Wordsss
 //
-//  Created by Ren Chuan on 12/27/11.
-//  Copyright (c) 2011 Ren Inc. All rights reserved.
+//  Created by Ren Chuan on 3/4/12.
+//  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
-#import "Init2ndViewController.h"
+#import "StudyRangeViewController.h"
 
 static char* nameArray[11] = {
     "未制定",             // 0  - 1     - Zero
@@ -36,7 +36,11 @@ static char* vocaArray[11] = {
     "40000"             // 10 - 42814 - HolyShit
 };
 
-@implementation Init2ndViewController
+@interface StudyRangeViewController ()
+
+@end
+
+@implementation StudyRangeViewController
 
 @synthesize pickerView, pickerAccessoryView, nextStepButton;
 @synthesize curLabel, tarLabel;
@@ -66,7 +70,7 @@ static char* vocaArray[11] = {
     [super viewDidLoad];
     
     //
-    _initVirtualActor = [InitVirtualActor initVirtualActor];
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidUnload
@@ -87,12 +91,6 @@ static char* vocaArray[11] = {
 - (IBAction)curLevelButtonClicked:(id)sender
 {
     //
-    //    int curRow = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
-    //    [self.pickerView selectRow:curRow inComponent:0 animated:YES];
-    //    int tarRow = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
-    //    [self.pickerView selectRow:tarRow inComponent:1 animated:YES];
-    
-    //
     curORtar = 0;
     
     // Show pickerView
@@ -107,12 +105,6 @@ static char* vocaArray[11] = {
 - (IBAction)tarLevelButtonClicked:(id)sender
 {
     //
-    //    int curRow = [_initVirtualActor.user.defult.currentLevel intValue] - 1;
-    //    [self.pickerView selectRow:curRow inComponent:0 animated:YES];
-    //    int tarRow = [_initVirtualActor.user.defult.targetLevel intValue] - 1;
-    //    [self.pickerView selectRow:tarRow inComponent:1 animated:YES];
-    
-    //
     curORtar = 1;
     
     // Show pickerView
@@ -126,9 +118,7 @@ static char* vocaArray[11] = {
 
 - (void)next
 {
-    //
-    Init3rdViewController* ivc = [self.storyboard instantiateViewControllerWithIdentifier:@"Init3rdViewController"];
-    [[self navigationController] pushViewController:ivc animated:YES];
+    
 }
 
 #pragma mark - Instance method
@@ -144,8 +134,8 @@ static char* vocaArray[11] = {
         [[[UIAlertView alloc] initWithTitle:@"范围无效" message:@"您必须从较低水平选择至较高水平。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil] show];
     }
     else {
-        _initVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
-        _initVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
+        _userVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
+        _userVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
         
         // Update label
         [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];
@@ -184,8 +174,8 @@ static char* vocaArray[11] = {
             [[[UIAlertView alloc] initWithTitle:@"范围无效" message:@"您必须从较低水平选择至较高水平。" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil] show];
         }
         else {
-            _initVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
-            _initVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
+            _userVirtualActor.user.defult.currentLevel = [NSNumber numberWithInt:curRow + 1];
+            _userVirtualActor.user.defult.targetLevel = [NSNumber numberWithInt:tarRow + 1];
             
             // Update label
             [self.curLabel setText:[NSString stringWithCString:nameArray[curRow+1] encoding:4]];

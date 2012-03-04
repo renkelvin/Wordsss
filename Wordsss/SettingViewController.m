@@ -118,10 +118,13 @@ static char* vocaArray[11] = {
     curORtar = 0;
     
     // Show pickerView
-    [UIView animateWithDuration:0.3 animations:^(void)
-     {
-         [self.levelPickerView setFrame:kInitPickerViewFrameShow];
-     }];
+    RKTabBarController* tvc = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController);
+    [self.levelPickerView setFrame:kLevelPickerViewFrameHide];
+    [tvc.view addSubview:self.levelPickerView];
+    
+    [UIView animateWithDuration:0.3 animations:^(void){
+        [self.levelPickerView setFrame:kLevelPickerViewFrameShow];
+    }];
 }
 
 - (IBAction)tarLevelButtonClicked:(id)sender
@@ -136,10 +139,13 @@ static char* vocaArray[11] = {
     curORtar = 1;
     
     // Show pickerView
-    [UIView animateWithDuration:0.3 animations:^(void)
-     {
-         [self.levelPickerView setFrame:kInitPickerViewFrameShow];
-     }];
+    RKTabBarController* tvc = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController);
+    [self.levelPickerView setFrame:kLevelPickerViewFrameHide];
+    [tvc.view addSubview:self.levelPickerView];
+
+    [UIView animateWithDuration:0.3 animations:^(void){
+        [self.levelPickerView setFrame:kLevelPickerViewFrameShow];
+    }];
 }
 
 - (IBAction)doneButtonClicked:(id)sender
@@ -163,7 +169,7 @@ static char* vocaArray[11] = {
         // Hide pickerView
         [UIView animateWithDuration:0.3 animations:^(void)
          {
-             [self.levelPickerView setFrame:kInitPickerViewFrameHide];
+             [self.levelPickerView setFrame:kLevelPickerViewFrameHide];
          }
          ];
     }

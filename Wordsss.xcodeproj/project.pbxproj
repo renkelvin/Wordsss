@@ -313,6 +313,7 @@
 		FEDD3ACB14FA5C9B00F73D11 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD3ACA14FA5C9B00F73D11 /* HelpViewController.m */; };
 		FEDE225C14A73C0D008908B0 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225B14A73C0D008908B0 /* Status.m */; };
 		FEDE225F14A74EDB008908B0 /* StaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDE225E14A74EDB008908B0 /* StaRecord.m */; };
+		FEDF063515034B82004F1430 /* StudyRangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF063415034B82004F1430 /* StudyRangeViewController.m */; };
 		FEE0174014B366F100DCC353 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE0173F14B366F100DCC353 /* InfoCell.m */; };
 		FEE0175014B3687A00DCC353 /* button_next.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE0174214B3687A00DCC353 /* button_next.png */; };
 		FEE0175114B3687A00DCC353 /* button_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEE0174314B3687A00DCC353 /* button_next@2x.png */; };
@@ -761,6 +762,8 @@
 		FEDE225B14A73C0D008908B0 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		FEDE225D14A74EDB008908B0 /* StaRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaRecord.h; sourceTree = "<group>"; };
 		FEDE225E14A74EDB008908B0 /* StaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaRecord.m; sourceTree = "<group>"; };
+		FEDF063315034B82004F1430 /* StudyRangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyRangeViewController.h; sourceTree = "<group>"; };
+		FEDF063415034B82004F1430 /* StudyRangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyRangeViewController.m; sourceTree = "<group>"; };
 		FEE0173E14B366F100DCC353 /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
 		FEE0173F14B366F100DCC353 /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
 		FEE0174214B3687A00DCC353 /* button_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_next.png; sourceTree = "<group>"; };
@@ -1062,6 +1065,8 @@
 				FEDD3ACA14FA5C9B00F73D11 /* HelpViewController.m */,
 				FE52D5F21502B0400086C3FD /* PatentViewController.h */,
 				FE52D5F31502B0400086C3FD /* PatentViewController.m */,
+				FEDF063315034B82004F1430 /* StudyRangeViewController.h */,
+				FEDF063415034B82004F1430 /* StudyRangeViewController.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -2063,6 +2068,7 @@
 				FEB67EBD15010C2D00AC4B89 /* WordsssDB.xcdatamodeld in Sources */,
 				FE557BE815021852009017E2 /* PureWord.m in Sources */,
 				FE52D5F41502B0400086C3FD /* PatentViewController.m in Sources */,
+				FEDF063515034B82004F1430 /* StudyRangeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
