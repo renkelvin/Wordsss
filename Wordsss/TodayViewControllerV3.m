@@ -212,6 +212,7 @@
     [_todayVirtualActor nextDay];
     
     //
+    [self showTitle:@"计划更新" info:@"新增"];
 }
 
 - (void)animate
@@ -433,7 +434,7 @@
 {
     HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
     
-    [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:hvc animated:YES];
+    [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
 }
 
 @end

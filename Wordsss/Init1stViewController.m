@@ -37,7 +37,6 @@
     [super viewDidLoad];
     
     // Init rknc delegate
-    [[self navigationController] setDelegate:self];
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     
     //

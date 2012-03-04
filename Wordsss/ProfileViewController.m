@@ -219,27 +219,32 @@ static char* nameArray[11] = {
     //
     NSString* string = self.infoRightLabel.text;
     
+    NSString* title = string;
+    NSString* message = nil;
     if ([string compare:@"降低目标"] == NSOrderedSame) {
-        ;
+        message = @"当前目标水平不适合你，请在设置中适当降低目标。";
     }
     else if ([string compare:@"加快速度"] == NSOrderedSame) {
-        ;
+        message = @"请增加学习时间，以在合适时间内完成计划。";
     }
     else if ([string compare:@"又快又好"] == NSOrderedSame) {
-        ;
+        message = @"又快又好，请继续保持！";
     }
     else if ([string compare:@"加深记忆"] == NSOrderedSame) {
-        ;
+        message = @"请留意词汇的相关信息，加深记忆。";
     }
     else if ([string compare:@"更进一步"] == NSOrderedSame) {
-        ;
+        message = @"当前目标水平不适合你，请在设置中适当升高目标。";
     }
     else if ([string compare:@"无法评价"] == NSOrderedSame) {
-        ;
+        message = @"由于你刚刚开始使用，迅辞还无法作出评价。";
     }
     else {
-        ;
+        message = @"未知问题，无法评价";
     }
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil];
+    [alert show];
 }
 
 #pragma mark - UITableViewDelegate

@@ -28,6 +28,8 @@
 #define kWordRemainFactorMin  0.1
 #define kWordRemainFactorMax  0.3
 
+@class TodayViewControllerV3;
+
 @interface TodayVirtualActor : NSObject
 {
     //
@@ -44,6 +46,9 @@
     WordRecord* _wordRecordPre;
     WordRecord* _wordRecordCur;
     WordRecord* _wordRecordPos;
+    
+    //
+    int _newWordCount;
 }
 
 @property (nonatomic, retain) User* user;

@@ -13,6 +13,8 @@
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) IBOutlet UIPageControl* pageControl;
 
+@property (nonatomic, retain) IBOutlet UIImageView* sampleImageView;
+
 - (IBAction)dismiss:(id)sender;
 
 @end

@@ -15,6 +15,7 @@
 @implementation HelpViewController
 
 @synthesize scrollView, pageControl;
+@synthesize sampleImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,16 +35,14 @@
     [self.scrollView setContentSize:CGSizeMake(960, 460)];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-//    [self.view setAlpha:0.0];
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
-//    [UIView animateWithDuration:0.6 animations:^(void){
-//        [self.view setAlpha:1.0];
-//    }];
+    [self.sampleImageView setHidden:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.sampleImageView setHidden:YES];
 }
 
 - (void)viewDidUnload
@@ -59,14 +58,7 @@
 
 - (IBAction)dismiss:(id)sender
 {
-    [UIView animateWithDuration:0.3 
-                     animations:^(void){
-                         [self.view setAlpha:0.0];
-                     } 
-                     completion:^(BOOL finished){
-                         [self dismissModalViewControllerAnimated:NO];
-                     }
-     ];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - UIScrollViewDelegate

@@ -113,7 +113,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // Get wordRecordSet
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d", [_user.status.day intValue]]];
-    _wordRecordSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];    
+    _wordRecordSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
+    _newWordCount = [_wordRecordSet count];
     
     //
     NSSet* tempSet = nil;
@@ -164,11 +165,13 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {    
+            _newWordCount = [_wordRecordSet count] - _newWordCount;
             NSLog(@"fillWordRecordSetFromWordRecord!");
             return;
         }
     }
     
+    _newWordCount = [_wordRecordSet count] - _newWordCount;
     NSLog(@"fillWordRecordSetFromWordRecord: %d", [_wordRecordSet count]);
 }
 
@@ -212,11 +215,13 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {
+            _newWordCount = [_wordRecordSet count] - _newWordCount;
             NSLog(@"fillWordRecordSetFromWord!");
             return;
         }
     }
     
+    _newWordCount = [_wordRecordSet count] - _newWordCount;
     NSLog(@"fillWordRecordSetFromWord: %d", [_wordRecordSet count]);
 }
 

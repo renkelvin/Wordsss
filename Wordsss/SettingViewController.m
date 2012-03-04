@@ -120,10 +120,8 @@ static char* vocaArray[11] = {
     // Show pickerView
     [UIView animateWithDuration:0.3 animations:^(void)
      {
-         [self.pickerView setFrame:kInitPickerViewFrameShow];
-         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameShow];
-     }
-     ];
+         [self.levelPickerView setFrame:kInitPickerViewFrameShow];
+     }];
 }
 
 - (IBAction)tarLevelButtonClicked:(id)sender
@@ -140,10 +138,8 @@ static char* vocaArray[11] = {
     // Show pickerView
     [UIView animateWithDuration:0.3 animations:^(void)
      {
-         [self.pickerView setFrame:kInitPickerViewFrameShow];
-         [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameShow];
-     }
-     ];
+         [self.levelPickerView setFrame:kInitPickerViewFrameShow];
+     }];
 }
 
 - (IBAction)doneButtonClicked:(id)sender
@@ -167,8 +163,7 @@ static char* vocaArray[11] = {
         // Hide pickerView
         [UIView animateWithDuration:0.3 animations:^(void)
          {
-             [self.pickerView setFrame:kInitPickerViewFrameHide];
-             [self.pickerAccessoryView setFrame:kInitPickerAccessoryViewFrameHide];
+             [self.levelPickerView setFrame:kInitPickerViewFrameHide];
          }
          ];
     }
@@ -179,6 +174,15 @@ static char* vocaArray[11] = {
     UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"重置当前记忆数据" otherButtonTitles:nil];
     UITabBar* tabBar = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).tabBar;
     [actionSheet showFromTabBar:tabBar];
+}
+
+- (IBAction)patentButtonClicked:(id)sender
+{
+    PatentViewController* pvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PatentViewController"];
+    
+    UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:pvc];
+    
+    [self presentModalViewController:nc animated:YES];
 }
 
 #pragma mark - UIPickerViewDelegate

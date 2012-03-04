@@ -228,10 +228,6 @@
 
 - (void)refreshData
 {
-    if (!isReady) {
-        return;
-    }
-    
     NSString* searchText = self.searchBar.text;
     
     if ([searchText compare:@""] == NSOrderedSame) {
@@ -240,6 +236,10 @@
         _rowArray = [wdm getWordsWithIds:idArray];
     }
     else {
+        if (!isReady) {
+            return;
+        }
+        
         WordsssDBVirtualActor* wva = [WordsssDBVirtualActor wordsssDBVirtualActor];
         _rowArray = [wva getWordsWithPrefix:searchText];
     }
