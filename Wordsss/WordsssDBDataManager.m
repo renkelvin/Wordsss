@@ -284,10 +284,10 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"WordsssDB.sqlite"];
+    NSURL *storeURL = [[self applicationCachesDirectory] URLByAppendingPathComponent:@"WordsssDB.sqlite"];
     
     // If no WordsssDB.sqlite
-    NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];	
+    NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];	
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
         [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
@@ -335,6 +335,14 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+/**
+ Returns the URL to the application's Caches directory.
+ */
+- (NSURL *)applicationCachesDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end
