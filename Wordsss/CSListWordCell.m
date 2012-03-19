@@ -88,4 +88,59 @@
     }
 }
 
+- (IBAction)addButtonClicked:(id)sender
+{
+    //
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    Word* w = nil;    
+    WordRecord* wr = nil;
+    
+    // Word
+    w = self.csListWord.word_list.word;
+    
+    //
+    if (w) {
+        //
+        [uva createWordRecord:w forUser:uva.user];
+        
+        //
+        wr = [uva getWordRecord:w];
+        
+        // WordPos Level Bar
+        if (wr) {
+            [self.addButton setHidden:YES];
+            
+            [self.wordPosLevelLeftImageView setHidden:NO];
+            [self.wordPosLevelBodyImageView setHidden:NO];
+            [self.wordPosLevelRightImageView setHidden:NO];
+            
+            int bodyWidth = 0;
+            
+            if ([wr.level intValue] == -1) {
+                bodyWidth = 281;
+            }
+            else {
+                bodyWidth = 281 / 11.0 * [wr.level intValue];
+            }
+            
+            CGRect frame;
+            
+            frame = self.wordPosLevelBodyImageView.frame;
+            frame.size.width = bodyWidth;
+            self.wordPosLevelBodyImageView.frame = frame;
+            
+            frame = self.wordPosLevelRightImageView.frame;
+            frame.origin.x = 20 + bodyWidth;
+            self.wordPosLevelRightImageView.frame = frame;
+        }
+        else {
+            [self.addButton setHidden:NO];
+            
+            [self.wordPosLevelLeftImageView setHidden:YES];
+            [self.wordPosLevelBodyImageView setHidden:YES];
+            [self.wordPosLevelRightImageView setHidden:YES];
+        }
+    }
+}
+
 @end

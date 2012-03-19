@@ -112,7 +112,7 @@ static char* nameArray[11] = {
         
         //
         if (month >= 5) {
-            string = @"降低目标";
+            string = @"目标太难";
         }
         else if (month == 4) {
             string = @"加快速度";
@@ -124,7 +124,7 @@ static char* nameArray[11] = {
             string = @"加深记忆";
         }
         else if (month == 1) {
-            string = @"更进一步";
+            string = @"目标太低";
         }
         else {
             string = @"又快又好";

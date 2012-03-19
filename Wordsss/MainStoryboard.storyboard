@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="75">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
         <!--Profile View Controller - Item-->
@@ -2058,14 +2058,14 @@
                                         <rect key="frame" x="103" y="30" width="45" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="迅辞" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9D0-XN-ibR" customClass="WordCellLabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="计划已更新" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="9D0-XN-ibR" customClass="WordCellLabel">
                                         <rect key="frame" x="173" y="35" width="127" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" red="0.30980392159999998" green="0.31764705879999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="记忆从未如此简单" lineBreakMode="characterWrap" numberOfLines="2" minimumFontSize="14" id="33F-Ok-8Qi" customClass="WordCellLabel">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="新增单词 0 个" lineBreakMode="characterWrap" numberOfLines="2" minimumFontSize="14" id="33F-Ok-8Qi" customClass="WordCellLabel">
                                         <rect key="frame" x="173" y="50" width="127" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2390,7 +2390,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addButtonClicked:" destination="ZGa-XG-grp" eventType="touchUpInside" id="LpJ-WR-gUb"/>
+                                                        <action selector="addButtonClicked:" destination="ZGa-XG-grp" eventType="touchUpInside" id="AFO-JG-JFK"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2552,7 +2552,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addButtonClicked:" destination="t9B-uH-LbH" eventType="touchUpInside" id="MPc-bV-nXs"/>
+                                                        <action selector="addButtonClicked:" destination="t9B-uH-LbH" eventType="touchUpInside" id="XDC-12-Rni"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2714,7 +2714,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addButtonClicked:" destination="sY9-BJ-x9N" eventType="touchUpInside" id="krM-6k-Rke"/>
+                                                        <action selector="addButtonClicked:" destination="sY9-BJ-x9N" eventType="touchUpInside" id="WDB-Wi-dNh"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2789,7 +2789,7 @@
         <scene sceneID="E9r-PN-51q">
             <objects>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="LIST" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="16" id="3Pl-RN-rfp">
-                    <rect key="frame" x="73" y="2" width="44" height="25"/>
+                    <rect key="frame" x="73" y="2" width="189" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -3002,7 +3002,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addButtonClicked:" destination="GPV-iA-LSY" eventType="touchUpInside" id="Yz4-Pt-OLc"/>
+                                                        <action selector="addButtonClicked:" destination="GPV-iA-LSY" eventType="touchUpInside" id="TKh-6x-o8t"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

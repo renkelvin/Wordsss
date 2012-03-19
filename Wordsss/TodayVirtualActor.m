@@ -395,7 +395,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];
     
     //
-    [self updateScreenTitle:@"您的学习计划已更新" info:[NSString stringWithFormat:@"新增单词 %d 个", _newWordCount]];
+    [self updateScreenTitle:@"计划已更新" info:[NSString stringWithFormat:@"新增单词 %d 个", _newWordCount]];
 }
 
 - (BOOL)checkWordRecord:(WordRecord*)wordRecord
