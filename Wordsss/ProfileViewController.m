@@ -73,7 +73,6 @@ static char* nameArray[11] = {
 - (void)viewWillAppear:(BOOL)animated
 {
     //
-    //    [self initNavigationBar];
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     //
     [self update];
@@ -212,6 +211,7 @@ static char* nameArray[11] = {
         [self.phContainer setHidden:NO];
         [self.chartContainer setHidden:YES];
     }
+    [_chartView setNeedsDisplay];
 }
 
 - (IBAction)evalQuesButtonClicked:(id)sender
