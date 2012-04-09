@@ -97,7 +97,7 @@
         [self update];
         
         // Cover animate
-         [self coverAnimate];
+        [self coverAnimate];
     }
 }
 
@@ -363,6 +363,33 @@
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
+- (void)incTopOperation
+{
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
+    
+    ifDec = YES;
+    
+    // Set wordRecord level
+    [_todayVirtualActor setWordRecordCurLevelIncTop];
+    
+    // Update WordRecord
+    [_todayVirtualActor updateWordRecord];
+    
+    // Update Word
+    [_todayVirtualActor updateWord];
+    
+    // Update trans view
+    [self updateTrans];
+    
+    //
+    [self animate];
+    
+    // Update view
+    //    [self update];
+    
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
+}
+
 //
 - (BOOL)checkHasInitUser
 {
@@ -514,9 +541,15 @@
 
 - (IBAction)helpButtonClicked:(id)sender
 {
-    HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    // Release
+    // HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    // [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
     
-    [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
+    // Develope
+    [self incTopOperation];
+    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+        [self.dkhlImageView setAlpha:0.0];
+    }];
 }
 
 @end

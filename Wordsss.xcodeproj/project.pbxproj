@@ -362,9 +362,6 @@
 		FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4DE9C148E2B7A00E88653 /* XMLParser.m */; };
 		FEF732E81495955100919A7C /* TodayVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF732E71495955100919A7C /* TodayVirtualActor.m */; };
 		FEF79D3014FC04D000CC3C00 /* Field.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF79D2F14FC04D000CC3C00 /* Field.m */; };
-		FEFA360D14C8496500A2FFBA /* cs_list_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFA360A14C8496500A2FFBA /* cs_list_thumb.png */; };
-		FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFA360B14C8496500A2FFBA /* ma_list_thumb.png */; };
-		FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FEFA360C14C8496500A2FFBA /* ph_list_thumb.png */; };
 		FEFB985A14F8A7EF00DB8B85 /* SearchHis.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB985914F8A7EF00DB8B85 /* SearchHis.m */; };
 		FEFB985E14F8A82100DB8B85 /* HisData.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB985D14F8A82100DB8B85 /* HisData.m */; };
 		FEFB986114F8B05600DB8B85 /* GRERBListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB986014F8B05600DB8B85 /* GRERBListWord.m */; };
@@ -826,9 +823,6 @@
 		FEF732E71495955100919A7C /* TodayVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayVirtualActor.m; sourceTree = "<group>"; };
 		FEF79D2E14FC04D000CC3C00 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
 		FEF79D2F14FC04D000CC3C00 /* Field.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Field.m; sourceTree = "<group>"; };
-		FEFA360A14C8496500A2FFBA /* cs_list_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cs_list_thumb.png; sourceTree = "<group>"; };
-		FEFA360B14C8496500A2FFBA /* ma_list_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ma_list_thumb.png; sourceTree = "<group>"; };
-		FEFA360C14C8496500A2FFBA /* ph_list_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ph_list_thumb.png; sourceTree = "<group>"; };
 		FEFB985814F8A7EF00DB8B85 /* SearchHis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHis.h; sourceTree = "<group>"; };
 		FEFB985914F8A7EF00DB8B85 /* SearchHis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHis.m; sourceTree = "<group>"; };
 		FEFB985C14F8A82100DB8B85 /* HisData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisData.h; sourceTree = "<group>"; };
@@ -1498,7 +1492,6 @@
 				FEA3C5BC150257A2003B56F6 /* wl_math@2x.png */,
 				FEA3C5BD150257A2003B56F6 /* wl_toefl.png */,
 				FEA3C5BE150257A2003B56F6 /* wl_toefl@2x.png */,
-				FEFA360A14C8496500A2FFBA /* cs_list_thumb.png */,
 				206A401414F8B223009B6D2F /* wl_fee.png */,
 				206A401514F8B223009B6D2F /* wl_fee@2x.png */,
 				206A401614F8B223009B6D2F /* wl_free.png */,
@@ -1510,8 +1503,6 @@
 				20663ED614F62BFD009FB251 /* wl_large_physics.png */,
 				20663ED714F62BFD009FB251 /* wl_large_physics@2x.png */,
 				20663ED814F62BFD009FB251 /* wl_small_edge.png */,
-				FEFA360B14C8496500A2FFBA /* ma_list_thumb.png */,
-				FEFA360C14C8496500A2FFBA /* ph_list_thumb.png */,
 			);
 			name = ListsView;
 			sourceTree = "<group>";
@@ -1863,9 +1854,6 @@
 				2043608A14C2853900170BD1 /* mainbar_bg@2x.png in Resources */,
 				2043608B14C2853900170BD1 /* thumb.png in Resources */,
 				2043608C14C2853900170BD1 /* thumb@2x.png in Resources */,
-				FEFA360D14C8496500A2FFBA /* cs_list_thumb.png in Resources */,
-				FEFA360E14C8496500A2FFBA /* ma_list_thumb.png in Resources */,
-				FEFA360F14C8496500A2FFBA /* ph_list_thumb.png in Resources */,
 				20663ECF14F6209B009FB251 /* ph_mem.png in Resources */,
 				20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */,
 				20663ED114F6209B009FB251 /* ph_related.png in Resources */,

@@ -461,4 +461,21 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     }
 }
 
+- (void)setWordRecordCurLevelIncTop
+{
+    [_user dlInc];
+    [_wordRecordCur setLevel:[NSNumber numberWithInt:-1]];
+    [_wordRecordCur dlInc];
+    
+    //
+    if ([self checkWordRecord:_wordRecordCur]) {
+        [self dropWordRecord:_wordRecordCur];
+    }
+    
+    //
+    if ([self checkNextDayByCount]) {
+        [self nextDay];
+    }
+}
+
 @end
