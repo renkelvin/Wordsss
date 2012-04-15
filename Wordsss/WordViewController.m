@@ -231,14 +231,13 @@
 - (void)addWordToPlan
 {
     //
-    TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     WordRecord* wr = nil;
     
     //
     if (self.word) {
         //
-        [uva createWordRecord:self.word forUser:tva.user];
+        [uva createWordRecord:self.word];
         [_wordVirtualActor prepare];
         
         //

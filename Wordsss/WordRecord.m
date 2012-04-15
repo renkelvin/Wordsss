@@ -78,13 +78,13 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     if ([self.level intValue] == 0) {
         self.level = [NSNumber numberWithInt:1];
     }
-    // GOT set to -1
+    // GOT set to 10
     else if ([self.level intValue] == 10) {
-        self.level = [NSNumber numberWithInt:-1];
+        self.level = [NSNumber numberWithInt:10];
     }
-    // ERR set to -1
+    // -1 set to 10
     else if ([self.level intValue] == -1) {
-        self.level = [NSNumber numberWithInt:-1];
+        self.level = [NSNumber numberWithInt:10];
     }
     // NORMAL ++
     else {
@@ -103,9 +103,9 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
     else if ([self.level intValue] == 1) {
         self.level = [NSNumber numberWithInt:1];
     }
-    // ERR set to -1
+    // -1 set to 9
     else if ([self.level intValue] == -1) {
-        self.level = [NSNumber numberWithInt:-1];
+        self.level = [NSNumber numberWithInt:9];
     }
     // NORMAL --
     else {
@@ -151,20 +151,16 @@ static int deltaArray[11] = {0, 1, 2, 3, 5, 7, 10, 15, 30, 60, 90};
         return;
     }
     else if ([self.dls intValue] > 0) {
-        if (level == 10) {
-            [self.memdata.user.status updateCount:-1 from:level];
-        }
-        else {
-            [self.memdata.user.status updateCount:(level+1) from:level];
+        if (level != 1) {
+            [self.memdata.user.status updateCount:level from:(level-1)];
         }
     }
     else if ([self.dls intValue] < 0) {
         if (level != -1 && level != 0 && level != 1) {
-            [self.memdata.user.status updateCount:(level-1) from:level];
+            [self.memdata.user.status updateCount:level from:(level+1)];
         }
     }
-    
-}
+   }
 
 - (void)dlInc
 {

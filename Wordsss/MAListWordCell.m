@@ -100,7 +100,7 @@
     //
     if (w) {
         //
-        [uva createWordRecord:w forUser:uva.user];
+        [uva createWordRecord:w];
 
         //
         wr = [uva getWordRecord:w];

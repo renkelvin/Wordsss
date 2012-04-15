@@ -65,10 +65,10 @@ static UserVirtualActor* sharedUserVirtualActor = nil;
     return wr;
 }
 
-- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user
+- (WordRecord*)createWordRecord:(Word*)word
 {
     UserDataManager* udm = [UserDataManager userdataManager];
-    WordRecord* wr = [udm createWordRecord:word forUser:user];
+    WordRecord* wr = [udm createWordRecord:word forUser:_user];
     
     [_wordRecordDict setObject:wr forKey:wr.word_id];
     

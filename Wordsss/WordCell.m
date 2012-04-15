@@ -79,16 +79,13 @@
         [self.nameLabel setText:self.pureWord.name];
     }
     
-    //
-    TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
-    
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     WordRecord* wr = nil;
     
     //
     if (self.word) {
         //
-        [uva createWordRecord:self.word forUser:tva.user];
+        [uva createWordRecord:self.word];
         
         //
         wr = [uva getWordRecord:self.word];
@@ -133,15 +130,13 @@
 - (IBAction)addButtonClicked:(id)sender
 {
     //
-    TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
-    
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     WordRecord* wr = nil;
     
     //
     if (self.word) {
         //
-        [uva createWordRecord:self.word forUser:tva.user];
+        [uva createWordRecord:self.word];
         
         //
         wr = [uva getWordRecord:self.word];

@@ -38,7 +38,7 @@
     //
     entity.day = [NSNumber numberWithInt:1];
     entity.date = [NSDate date];
-
+    
     return entity;
 }
 
@@ -127,6 +127,8 @@
         default:
             break;
     }
+    
+    NSLog(@"%f, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f", [self.count1 floatValue], [self.count2 floatValue], [self.count3 floatValue], [self.count4 floatValue], [self.count5 floatValue], [self.count6 floatValue], [self.count7 floatValue], [self.count8 floatValue], [self.count9 floatValue], [self.count10 floatValue], [self.countm floatValue]);
 }
 
 - (float)getCount

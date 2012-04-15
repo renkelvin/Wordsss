@@ -101,7 +101,7 @@ static char* nameArray[11] = {
         int tarVoca = [_profileVirtualActor getVocaTarget] - [_profileVirtualActor getVocaCurrent]; 
         
         // 背85%足已
-        tarVoca *= 0.85;
+        // tarVoca *= 0.85;
         
         float percent = (float)nowVoca/(float)tarVoca;
         inter /= percent;
@@ -144,7 +144,7 @@ static char* nameArray[11] = {
     [self.infoLeftLabel setText:[NSString stringWithFormat:@"%d / %d", nowVoca, tarVoca]];
     
     // Right labelr
-    [self.infoRightLabel setText:[NSString stringWithFormat:[self getEval]]];
+    [self.infoRightLabel setText:[self getEval]];
     
     // Progress circle
     int percent = (int)((float)nowVoca/(float)tarVoca * 100);
@@ -346,7 +346,7 @@ static char* nameArray[11] = {
                         int tarVoca = [_profileVirtualActor getVocaTarget] - [_profileVirtualActor getVocaCurrent]; 
                         
                         // 背85%足已
-                        tarVoca *= 0.85;
+                        // tarVoca *= 0.85;
                         
                         float percent = (float)nowVoca/(float)tarVoca;
                         inter /= percent;

@@ -56,6 +56,11 @@
     
     _listWordArray = array;
     
+    //    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    //    for (GRERBListWord* w in array) {
+    //        [uva createWordRecord:w.word_list.word];
+    //    }
+    
     return self;
 }
 

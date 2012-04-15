@@ -213,7 +213,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // Set new wordRecord
     for (Word* w in new_word_set) {
         // Get
-        WordRecord* wr = [uva createWordRecord:w forUser:_user];
+        WordRecord* wr = [uva createWordRecord:w];
         
         // Set
         [wr prepare:_user];
@@ -251,7 +251,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // Set new wordRecord
     for (Word* w in new_word_set) {
         // Get
-        WordRecord* wr = [uva createWordRecord:w forUser:_user];
+        WordRecord* wr = [uva createWordRecord:w];
         
         // Set
         [wr prepare:_user];
@@ -350,7 +350,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     //
     // int totalViewLimit = kTodayWordLimit * ((1-memDegree)*kTotalViewFactorMin + memDegree*kTotalViewFactorMax);
-    int totalViewLimit = 260;
+    int totalViewLimit = 300;
     if ([_user.status.dlc intValue] >= totalViewLimit) {
         NSLog(@"viewCount: %d", [_user.status.dlc intValue]);
         return YES;
@@ -464,7 +464,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 - (void)setWordRecordCurLevelIncTop
 {
     [_user dlInc];
-    [_wordRecordCur setLevel:[NSNumber numberWithInt:-1]];
+    [_wordRecordCur setLevel:[NSNumber numberWithInt:10]];
     [_wordRecordCur dlInc];
     
     //

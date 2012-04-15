@@ -29,7 +29,7 @@
 - (void)prepare;
 
 - (WordRecord*)getWordRecord:(Word*)word;
-- (WordRecord*)createWordRecord:(Word*)word forUser:(User*)user;
+- (WordRecord*)createWordRecord:(Word*)word;
 - (SearchHis*)createSearchHis:(Word*)word;
 - (void)clearSearchHis;
 

@@ -173,17 +173,17 @@
         [[_todayVirtualActor wordPos] configLabel:self.briefMeaningLabelT label:self.briefMeaningLabelM];
     }
     
-    //
-    if (ifDec) {
-        [self.briefMeaningButton setSelected:YES];
-    }
-    else {
-        [self.briefMeaningButton setSelected:NO];
-    }
+    // Up Highlight
+    //    if (ifDec) {
+    //        [self.briefMeaningButton setSelected:YES];
+    //    }
+    //    else {
+    //        [self.briefMeaningButton setSelected:NO];
+    //    }
     
     // info
     // View
-    int viewSum = 260;
+    int viewSum = 300;
     [self.infoLeftSumLabel setText:[NSString stringWithFormat:@"%d", viewSum]];
     int viewNow = [_todayVirtualActor.user.status.dlc intValue];
     [self.infoLeftNowLabel setText:[NSString stringWithFormat:@"%d", viewNow]];
@@ -255,13 +255,13 @@
         [[_todayVirtualActor wordPos] configLabel:self.briefMeaningTransLabelT label:self.briefMeaningTransLabelM];
     }
     
-    //
-    if (ifDec) {
-        [self.briefMeaningTransButton setSelected:YES];
-    }
-    else {
-        [self.briefMeaningTransButton setSelected:NO];
-    }
+    //    // Up Highlight
+    //    if (ifDec) {
+    //        [self.briefMeaningTransButton setSelected:YES];
+    //    }
+    //    else {
+    //        [self.briefMeaningTransButton setSelected:NO];
+    //    }
 }
 
 - (void)nextDay
@@ -282,7 +282,6 @@
     [self.wordCurLabel setAlpha:0.0];
     
     [self.wordPosCoverView setAlpha:0.0];
-    
     [self.wordPosCoverView setHidden:NO];
     //
     [UIView animateWithDuration:0.5 animations:^(void)
@@ -542,14 +541,14 @@
 - (IBAction)helpButtonClicked:(id)sender
 {
     // Release
-    // HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
-    // [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
+    HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
     
     // Develope
-    [self incTopOperation];
-    [UIView animateWithDuration:kAnimationInterval animations:^(void){
-        [self.dkhlImageView setAlpha:0.0];
-    }];
+    // [self incTopOperation];
+    // [UIView animateWithDuration:kAnimationInterval animations:^(void){
+    // [self.dkhlImageView setAlpha:0.0];
+    // }];
 }
 
 @end

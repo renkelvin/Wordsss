@@ -35,7 +35,6 @@
 - (IBAction)addButtonClicked:(id)sender
 {
     //
-    TodayVirtualActor* tva = [TodayVirtualActor todayVirtualActor];
     Word* word = nil;
     
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
@@ -64,7 +63,7 @@
     //
     if (word) {
         //
-        [uva createWordRecord:word forUser:tva.user];
+        [uva createWordRecord:word];
         
         //
         wr = [uva getWordRecord:word];
