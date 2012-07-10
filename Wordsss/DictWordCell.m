@@ -11,6 +11,7 @@
 @implementation DictWordCell
 
 @synthesize ahdDictWord, mwcDictWord, ahdDictSentence;
+@synthesize pronunciationLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -89,6 +90,9 @@
                 [self addString:longMeaning blue:NO];
             }
         }
+        
+        [self.pronunciationLabel setText:self.ahdDictWord.pronunciation];
+        [self.pronunciationLabel setFont:[UIFont fontWithName:@"Basemic" size:17.0]];
     }
     
     // MwcDictWord

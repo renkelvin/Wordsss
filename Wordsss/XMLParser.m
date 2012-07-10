@@ -79,8 +79,6 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
     return sharedXMLParser;
 }
 
-#pragma mark -
-
 - (void)createXmlParser
 {
     NSString* pathRes = [[NSBundle mainBundle] pathForResource:@"WordsssDB" ofType:@"xml"];
@@ -704,6 +702,9 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         }
                                         else if ([attrString compare:@"type"] == NSOrderedSame) {
                                             ((AhdDictWord*)object).type = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"pronunciation"] == NSOrderedSame) {
+                                            ((AhdDictWord*)object).pronunciation = string;
                                         }
                                         
                                         break;

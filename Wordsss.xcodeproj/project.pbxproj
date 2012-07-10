@@ -160,6 +160,7 @@
 		FE6332D214ADEE5B005CBECF /* tableview_section_head_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A014ADEE5A005CBECF /* tableview_section_head_bg@2x.png */; };
 		FE6332D314ADEE5B005CBECF /* tofel.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A114ADEE5A005CBECF /* tofel.png */; };
 		FE6332D414ADEE5B005CBECF /* tofel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A214ADEE5A005CBECF /* tofel@2x.png */; };
+		FE64123B15AC320D00D76C9B /* Basemic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE64123A15AC320D00D76C9B /* Basemic.ttf */; };
 		FE6B999314AB4F4200AA3DEF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B999214AB4F4200AA3DEF /* Word.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
@@ -299,6 +300,8 @@
 		FEBFBF281436DAF20028630E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF261436DAF20028630E /* InfoPlist.strings */; };
 		FEBFBF2A1436DAF20028630E /* WordsssTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF291436DAF20028630E /* WordsssTests.h */; };
 		FEBFBF2C1436DAF20028630E /* WordsssTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBF2B1436DAF20028630E /* WordsssTests.m */; };
+		FECE6B0015ABD75300E6CE67 /* WordsssDB.xml in Resources */ = {isa = PBXBuildFile; fileRef = FECE6AFF15ABD75300E6CE67 /* WordsssDB.xml */; };
+		FECE6B0215ABD94200E6CE67 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FECE6B0115ABD94200E6CE67 /* WordsssDB.sqlite */; };
 		FED1E21914C813A800013D07 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = FED1E21814C813A800013D07 /* List.m */; };
 		FED7747314ABA681007BB8D4 /* AhdDictSentence.m in Sources */ = {isa = PBXBuildFile; fileRef = FED7747214ABA681007BB8D4 /* AhdDictSentence.m */; };
 		FEDD3ABD14FA522C00F73D11 /* GRERBListListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD3ABC14FA522C00F73D11 /* GRERBListListCell.m */; };
@@ -557,6 +560,7 @@
 		FE6332A014ADEE5A005CBECF /* tableview_section_head_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tableview_section_head_bg@2x.png"; sourceTree = "<group>"; };
 		FE6332A114ADEE5A005CBECF /* tofel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tofel.png; sourceTree = "<group>"; };
 		FE6332A214ADEE5A005CBECF /* tofel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tofel@2x.png"; sourceTree = "<group>"; };
+		FE64123A15AC320D00D76C9B /* Basemic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Basemic.ttf; sourceTree = "<group>"; };
 		FE6B999114AB4F4200AA3DEF /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		FE6B999214AB4F4200AA3DEF /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
@@ -737,6 +741,8 @@
 		FEBFBF291436DAF20028630E /* WordsssTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsssTests.h; sourceTree = "<group>"; };
 		FEBFBF2B1436DAF20028630E /* WordsssTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsssTests.m; sourceTree = "<group>"; };
 		FECE6AFD15ABD31D00E6CE67 /* WordsssDB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WordsssDB 2.xcdatamodel"; sourceTree = "<group>"; };
+		FECE6AFF15ABD75300E6CE67 /* WordsssDB.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WordsssDB.xml; path = ../../../../Desktop/WordsssDB.xml; sourceTree = "<group>"; };
+		FECE6B0115ABD94200E6CE67 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = ../../../../Desktop/WordsssDB.sqlite; sourceTree = "<group>"; };
 		FED1E21714C813A800013D07 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		FED1E21814C813A800013D07 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		FED7747114ABA681007BB8D4 /* AhdDictSentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictSentence.h; sourceTree = "<group>"; };
@@ -911,6 +917,14 @@
 			name = DataManager;
 			sourceTree = "<group>";
 		};
+		FE64123415AC16E800D76C9B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE64123A15AC320D00D76C9B /* Basemic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		FE6C8DBF14385AD900DC9784 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1030,6 +1044,7 @@
 		FE8818FB14A2027900B5FE98 /* XML */ = {
 			isa = PBXGroup;
 			children = (
+				FECE6AFF15ABD75300E6CE67 /* WordsssDB.xml */,
 			);
 			name = XML;
 			sourceTree = "<group>";
@@ -1037,6 +1052,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				FECE6B0115ABD94200E6CE67 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -1272,6 +1288,7 @@
 				FEEE31A91439DFC2001F7E90 /* Default.png */,
 				FEE053DE14379ADC0068CDEC /* Default@2x.png */,
 				FEF4DE9E148E2BED00E88653 /* DataSource */,
+				FE64123415AC16E800D76C9B /* Fonts */,
 				FEB8ED23143B47200097E267 /* RKNavigation */,
 				FE17D587143AFCA90067E780 /* RKTabBar */,
 				FEE0174114B3685D00DCC353 /* InitView */,
@@ -1927,6 +1944,9 @@
 				FEA3C5CC150259E9003B56F6 /* bg_sample@2x.jpg in Resources */,
 				FEDF06401503797C004F1430 /* title_large.png in Resources */,
 				FEDF06411503797C004F1430 /* title_large@2x.png in Resources */,
+				FECE6B0015ABD75300E6CE67 /* WordsssDB.xml in Resources */,
+				FECE6B0215ABD94200E6CE67 /* WordsssDB.sqlite in Resources */,
+				FE64123B15AC320D00D76C9B /* Basemic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

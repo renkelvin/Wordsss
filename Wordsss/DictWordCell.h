@@ -22,6 +22,8 @@
 @property (nonatomic, retain) MwcDictWord* mwcDictWord;
 @property (nonatomic, retain) AhdDictSentence* ahdDictSentence;
 
+@property (nonatomic, retain) IBOutlet UILabel* pronunciationLabel;
+
 - (void)configCell;
 - (void)clear;
 
