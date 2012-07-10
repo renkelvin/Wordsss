@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1800" systemVersion="12A256" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AhdDictMeaning" representedClassName="AhdDictMeaning" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ahdDictSentence" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AhdDictSentence" inverseName="ahdDictMeaning" inverseEntity="AhdDictSentence" syncable="YES"/>
+        <relationship name="ahdDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AhdDictWord" inverseName="meaning" inverseEntity="AhdDictWord" syncable="YES"/>
+    </entity>
+    <entity name="AhdDictSentence" representedClassName="AhdDictSentence" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ahdDictMeaning" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AhdDictMeaning" inverseName="ahdDictSentence" inverseEntity="AhdDictMeaning" syncable="YES"/>
+    </entity>
+    <entity name="AhdDictWord" representedClassName="AhdDictWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pronunciation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AhdDictMeaning" inverseName="ahdDictWord" inverseEntity="AhdDictMeaning" syncable="YES"/>
+        <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="ahdDictWord" inverseEntity="Word_Dict" syncable="YES"/>
+    </entity>
+    <entity name="Association" representedClassName="Association" syncable="YES">
+        <attribute name="description_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="word_association" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Association" inverseName="association" inverseEntity="Word_Association" syncable="YES"/>
+    </entity>
+    <entity name="CSListWord" representedClassName="CSListWord" syncable="YES">
+        <attribute name="fullname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="csListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
+    <entity name="DotaListWord" representedClassName="DotaListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="dotaListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
+    <entity name="Field" representedClassName="Field" syncable="YES">
+        <attribute name="basic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="cet4" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="cet6" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gre" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="high" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="holyshit" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ielts" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="middle" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sat" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tofel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="field" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Frequency" representedClassName="Frequency" syncable="YES">
+        <attribute name="disp" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="freq" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ra" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="frequency" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="GRERBListMem" representedClassName="GRERBListMem" syncable="YES">
+        <attribute name="description_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="grerbListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GRERBListWord" inverseName="grerbListMem" inverseEntity="GRERBListWord" syncable="YES"/>
+    </entity>
+    <entity name="GRERBListWord" representedClassName="GRERBListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="grerbListMem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GRERBListMem" inverseName="grerbListWord" inverseEntity="GRERBListMem" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="grerbListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
+    <entity name="List" representedClassName="List" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="num" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="MAListWord" representedClassName="MAListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="maListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
+    <entity name="McecDictMeaning" representedClassName="McecDictMeaning" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="mcecDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="McecDictWord" inverseName="meaning" inverseEntity="McecDictWord" syncable="YES"/>
+    </entity>
+    <entity name="McecDictWord" representedClassName="McecDictWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="McecDictMeaning" inverseName="mcecDictWord" inverseEntity="McecDictMeaning" syncable="YES"/>
+        <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="mcecDictWord" inverseEntity="Word_Dict" syncable="YES"/>
+    </entity>
+    <entity name="MwcDictMeaning" representedClassName="MwcDictMeaning" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mwcDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MwcDictWord" inverseName="meaning" inverseEntity="MwcDictWord" syncable="YES"/>
+    </entity>
+    <entity name="MwcDictWord" representedClassName="MwcDictWord" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="etymology" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="function" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inflectform" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MwcDictMeaning" inverseName="mwcDictWord" inverseEntity="MwcDictMeaning" syncable="YES"/>
+        <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="mwcDictWord" inverseEntity="Word_Dict" syncable="YES"/>
+    </entity>
+    <entity name="PHListWord" representedClassName="PHListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="phListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
+    <entity name="PureWord" representedClassName="PureWord" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="pureWord" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Rootaffix" representedClassName="Rootaffix" syncable="YES">
+        <attribute name="deformation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="description_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="description_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phrase" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="word_rootaffix" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Rootaffix" inverseName="rootaffix" inverseEntity="Word_Rootaffix" syncable="YES"/>
+    </entity>
+    <entity name="Sense" representedClassName="Sense" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sense" inverseName="son" inverseEntity="Sense" syncable="YES"/>
+        <relationship name="son" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sense" inverseName="parent" inverseEntity="Sense" syncable="YES"/>
+        <relationship name="word_sense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Sense" inverseName="sense" inverseEntity="Word_Sense" syncable="YES"/>
+    </entity>
+    <entity name="Word" representedClassName="Word" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="field" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Field" inverseName="word" inverseEntity="Field" syncable="YES"/>
+        <relationship name="frequency" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Frequency" inverseName="word" inverseEntity="Frequency" syncable="YES"/>
+        <relationship name="pureWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PureWord" inverseName="word" inverseEntity="PureWord" syncable="YES"/>
+        <relationship name="word_association" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Association" inverseName="word" inverseEntity="Word_Association" syncable="YES"/>
+        <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="word" inverseEntity="Word_Dict" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="word" inverseEntity="Word_List" syncable="YES"/>
+        <relationship name="word_relation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Relation" syncable="YES"/>
+        <relationship name="word_rootaffix" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Rootaffix" inverseName="word" inverseEntity="Word_Rootaffix" syncable="YES"/>
+        <relationship name="word_sense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Sense" inverseName="word" inverseEntity="Word_Sense" syncable="YES"/>
+    </entity>
+    <entity name="Word_Association" representedClassName="Word_Association" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="association" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Association" inverseName="word_association" inverseEntity="Association" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_association" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word_Dict" representedClassName="Word_Dict" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="ahdDictWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AhdDictWord" inverseName="word_dict" inverseEntity="AhdDictWord" syncable="YES"/>
+        <relationship name="mcecDictWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="McecDictWord" inverseName="word_dict" inverseEntity="McecDictWord" syncable="YES"/>
+        <relationship name="mwcDictWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MwcDictWord" inverseName="word_dict" inverseEntity="MwcDictWord" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_dict" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word_List" representedClassName="Word_List" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="csListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CSListWord" inverseName="word_list" inverseEntity="CSListWord" syncable="YES"/>
+        <relationship name="dotaListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DotaListWord" inverseName="word_list" inverseEntity="DotaListWord" syncable="YES"/>
+        <relationship name="grerbListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GRERBListWord" inverseName="word_list" inverseEntity="GRERBListWord" syncable="YES"/>
+        <relationship name="maListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MAListWord" inverseName="word_list" inverseEntity="MAListWord" syncable="YES"/>
+        <relationship name="phListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PHListWord" inverseName="word_list" inverseEntity="PHListWord" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_list" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word_Relation" representedClassName="Word_Relation" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="antonym" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="conversion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="convOrig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="deriOrig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="derivative" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="synonym" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_relation" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word_Rootaffix" representedClassName="Word_Rootaffix" syncable="YES">
+        <attribute name="equation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="rootaffix" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Rootaffix" inverseName="word_rootaffix" inverseEntity="Rootaffix" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_rootaffix" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word_Sense" representedClassName="Word_Sense" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="sense" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sense" inverseName="word_sense" inverseEntity="Sense" syncable="YES"/>
+        <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_sense" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AhdDictMeaning" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AhdDictSentence" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AhdDictWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Association" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CSListWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="DotaListWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Field" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Frequency" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GRERBListMem" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GRERBListWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="List" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MAListWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="McecDictMeaning" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="McecDictWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MwcDictMeaning" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MwcDictWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PHListWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PureWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Rootaffix" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Sense" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Word" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Word_Association" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Word_Dict" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Word_List" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Word_Relation" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Word_Rootaffix" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Word_Sense" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

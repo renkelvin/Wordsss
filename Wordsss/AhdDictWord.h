@@ -19,6 +19,7 @@
 
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSNumber * type;
+@property (nonatomic, retain) NSString * pronunciation;
 @property (nonatomic, retain) NSMutableSet *meaning;
 @property (nonatomic, retain) Word_Dict *word_dict;
 @end

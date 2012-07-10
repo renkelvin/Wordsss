@@ -13,6 +13,7 @@
 @dynamic id;
 @dynamic type;
 @dynamic meaning;
+@dynamic pronunciation;
 @dynamic word_dict;
 
 #pragma mark -
