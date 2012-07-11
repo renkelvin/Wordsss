@@ -91,6 +91,8 @@
             }
         }
         
+        // PronunciationLabel
+        [self.pronunciationLabel setHidden:NO];
         [self.pronunciationLabel setText:self.ahdDictWord.pronunciation];
         [self.pronunciationLabel setFont:[UIFont fontWithName:@"Basemic" size:17.0]];
     }
