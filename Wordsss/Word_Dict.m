@@ -15,7 +15,6 @@
 @implementation Word_Dict
 
 @dynamic id;
-@dynamic mcecDictWord;
 @dynamic mwcDictWord;
 @dynamic word;
 @dynamic ahdDictWord;

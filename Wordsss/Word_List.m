@@ -24,5 +24,6 @@
 @dynamic phListWord;
 @dynamic word;
 @dynamic grerbListWord;
+@dynamic tbbtListWord;
 
 @end

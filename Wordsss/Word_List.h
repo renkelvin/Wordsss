@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class CSListWord, DotaListWord, GRERBListWord, MAListWord, PHListWord, Word;
+@class CSListWord, DotaListWord, GRERBListWord, MAListWord, PHListWord, TBBTListWord, Word;
 
 @interface Word_List : NSManagedObject
 
@@ -20,5 +20,6 @@
 @property (nonatomic, retain) PHListWord *phListWord;
 @property (nonatomic, retain) Word *word;
 @property (nonatomic, retain) GRERBListWord *grerbListWord;
+@property (nonatomic, retain) TBBTListWord *tbbtListWord;
 
 @end

@@ -81,17 +81,6 @@
         <attribute name="meaning" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="maListWord" inverseEntity="Word_List" syncable="YES"/>
     </entity>
-    <entity name="McecDictMeaning" representedClassName="McecDictMeaning" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="mcecDictWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="McecDictWord" inverseName="meaning" inverseEntity="McecDictWord" syncable="YES"/>
-    </entity>
-    <entity name="McecDictWord" representedClassName="McecDictWord" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="meaning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="McecDictMeaning" inverseName="mcecDictWord" inverseEntity="McecDictMeaning" syncable="YES"/>
-        <relationship name="word_dict" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_Dict" inverseName="mcecDictWord" inverseEntity="Word_Dict" syncable="YES"/>
-    </entity>
     <entity name="MwcDictMeaning" representedClassName="MwcDictMeaning" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning_en" optional="YES" attributeType="String" syncable="YES"/>
@@ -135,6 +124,20 @@
         <relationship name="son" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sense" inverseName="parent" inverseEntity="Sense" syncable="YES"/>
         <relationship name="word_sense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word_Sense" inverseName="sense" inverseEntity="Word_Sense" syncable="YES"/>
     </entity>
+    <entity name="TBBTListSentence" representedClassName="TBBTListSentence" syncable="YES">
+        <attribute name="beginTime" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="episode" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="season" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sentence" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tbbtListWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TBBTListWord" inverseName="tbbtListSentence" inverseEntity="TBBTListWord" syncable="YES"/>
+    </entity>
+    <entity name="TBBTListWord" representedClassName="TBBTListWord" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="tbbtListSentence" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TBBTListSentence" inverseName="tbbtListWord" inverseEntity="TBBTListSentence" syncable="YES"/>
+        <relationship name="word_list" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word_List" inverseName="tbbtListWord" inverseEntity="Word_List" syncable="YES"/>
+    </entity>
     <entity name="Word" representedClassName="Word" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -157,7 +160,6 @@
     <entity name="Word_Dict" representedClassName="Word_Dict" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="ahdDictWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AhdDictWord" inverseName="word_dict" inverseEntity="AhdDictWord" syncable="YES"/>
-        <relationship name="mcecDictWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="McecDictWord" inverseName="word_dict" inverseEntity="McecDictWord" syncable="YES"/>
         <relationship name="mwcDictWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MwcDictWord" inverseName="word_dict" inverseEntity="MwcDictWord" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_dict" inverseEntity="Word" syncable="YES"/>
     </entity>
@@ -168,6 +170,7 @@
         <relationship name="grerbListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GRERBListWord" inverseName="word_list" inverseEntity="GRERBListWord" syncable="YES"/>
         <relationship name="maListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MAListWord" inverseName="word_list" inverseEntity="MAListWord" syncable="YES"/>
         <relationship name="phListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PHListWord" inverseName="word_list" inverseEntity="PHListWord" syncable="YES"/>
+        <relationship name="tbbtListWord" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TBBTListWord" inverseName="word_list" inverseEntity="TBBTListWord" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_list" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="Word_Relation" representedClassName="Word_Relation" syncable="YES">
@@ -207,8 +210,6 @@
         <element name="GRERBListWord" positionX="0" positionY="0" width="0" height="0"/>
         <element name="List" positionX="0" positionY="0" width="0" height="0"/>
         <element name="MAListWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="McecDictMeaning" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="McecDictWord" positionX="0" positionY="0" width="0" height="0"/>
         <element name="MwcDictMeaning" positionX="0" positionY="0" width="0" height="0"/>
         <element name="MwcDictWord" positionX="0" positionY="0" width="0" height="0"/>
         <element name="PHListWord" positionX="0" positionY="0" width="0" height="0"/>
@@ -222,5 +223,7 @@
         <element name="Word_Relation" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Word_Rootaffix" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Word_Sense" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TBBTListWord" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TBBTListSentence" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

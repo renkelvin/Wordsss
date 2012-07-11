@@ -69,6 +69,8 @@
 		FE10A0A214A0F7D3005F1EC9 /* Word_Sense.m in Sources */ = {isa = PBXBuildFile; fileRef = FE10A0A114A0F7D3005F1EC9 /* Word_Sense.m */; };
 		FE17D58B143B02110067E780 /* tab_wordtoday.png in Resources */ = {isa = PBXBuildFile; fileRef = FE17D589143B02110067E780 /* tab_wordtoday.png */; };
 		FE17D58C143B02110067E780 /* tab_wordtoday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE17D58A143B02110067E780 /* tab_wordtoday@2x.png */; };
+		FE1EC34315AD5D4A00FD64CC /* TBBTListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1EC34215AD5D4A00FD64CC /* TBBTListWord.m */; };
+		FE1EC34615AD5D4A00FD64CC /* TBBTListSentence.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1EC34515AD5D4A00FD64CC /* TBBTListSentence.m */; };
 		FE2B069D14401C3900E1D159 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2B069C14401C3900E1D159 /* icon.png */; };
 		FE2E518914FCB7320011DCA4 /* WordsssDBVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2E518814FCB7320011DCA4 /* WordsssDBVirtualActor.m */; };
 		FE2E834F143B289A004A2C56 /* profile_active.png in Resources */ = {isa = PBXBuildFile; fileRef = FE2E833F143B2899004A2C56 /* profile_active.png */; };
@@ -456,6 +458,10 @@
 		FE10A0A114A0F7D3005F1EC9 /* Word_Sense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word_Sense.m; sourceTree = "<group>"; };
 		FE17D589143B02110067E780 /* tab_wordtoday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_wordtoday.png; sourceTree = "<group>"; };
 		FE17D58A143B02110067E780 /* tab_wordtoday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_wordtoday@2x.png"; sourceTree = "<group>"; };
+		FE1EC34115AD5D4A00FD64CC /* TBBTListWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListWord.h; sourceTree = "<group>"; };
+		FE1EC34215AD5D4A00FD64CC /* TBBTListWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListWord.m; sourceTree = "<group>"; };
+		FE1EC34415AD5D4A00FD64CC /* TBBTListSentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListSentence.h; sourceTree = "<group>"; };
+		FE1EC34515AD5D4A00FD64CC /* TBBTListSentence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListSentence.m; sourceTree = "<group>"; };
 		FE2B069C14401C3900E1D159 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		FE2E518714FCB7320011DCA4 /* WordsssDBVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsssDBVirtualActor.h; sourceTree = "<group>"; };
 		FE2E518814FCB7320011DCA4 /* WordsssDBVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsssDBVirtualActor.m; sourceTree = "<group>"; };
@@ -1588,6 +1594,10 @@
 				FEFB986614F8B80300DB8B85 /* Word_List.m */,
 				FE557BE615021852009017E2 /* PureWord.h */,
 				FE557BE715021852009017E2 /* PureWord.m */,
+				FE1EC34415AD5D4A00FD64CC /* TBBTListSentence.h */,
+				FE1EC34515AD5D4A00FD64CC /* TBBTListSentence.m */,
+				FE1EC34115AD5D4A00FD64CC /* TBBTListWord.h */,
+				FE1EC34215AD5D4A00FD64CC /* TBBTListWord.m */,
 			);
 			name = WordsssDB;
 			sourceTree = "<group>";
@@ -2074,6 +2084,8 @@
 				FE557BE815021852009017E2 /* PureWord.m in Sources */,
 				FE52D5F41502B0400086C3FD /* PatentViewController.m in Sources */,
 				FEDF0639150365D2004F1430 /* AboutViewController.m in Sources */,
+				FE1EC34315AD5D4A00FD64CC /* TBBTListWord.m in Sources */,
+				FE1EC34615AD5D4A00FD64CC /* TBBTListSentence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

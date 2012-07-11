@@ -14,7 +14,6 @@
 @interface Word_Dict : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
-@property (nonatomic, retain) NSMutableSet *mcecDictWord;
 @property (nonatomic, retain) NSMutableSet *mwcDictWord;
 @property (nonatomic, retain) Word *word;
 @property (nonatomic, retain) NSMutableSet *ahdDictWord;
