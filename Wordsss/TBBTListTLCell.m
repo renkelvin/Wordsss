@@ -30,7 +30,7 @@
 
 - (void)configCell
 {
-    [self.nameLabel setText:[NSString stringWithFormat:@"season: %d\tepisode: %d", [self.tbbtListSentence.season intValue], [self.tbbtListSentence.episode intValue]]];
+    [self.nameLabel setText:[NSString stringWithFormat:@"[%d]", [self.tbbtListSentence.beginTime intValue]]];
     
     [self.meaningLabel setText:[NSString stringWithFormat:@"%@", self.tbbtListSentence.sentence]];
 }
