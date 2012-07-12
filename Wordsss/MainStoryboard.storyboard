@@ -3786,6 +3786,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="navigationBackButtonClicked:" destination="1oU-pE-wPd" eventType="touchUpInside" id="Lck-4S-7hj"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="5ms-jW-gkB">
