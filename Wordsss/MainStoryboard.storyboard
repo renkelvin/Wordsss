@@ -3527,7 +3527,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="titleLabel" destination="9nC-h4-cN0" id="MAN-sD-1qR"/>
+                        <outlet property="titleLabel" destination="csC-8f-3FV" id="bvt-fc-5fs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJm-LC-bq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3688,6 +3688,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="VM4-at-eu6" id="TmN-os-dzU"/>
+                    </connections>
                 </viewController>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="LIST" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="16" id="VM4-at-eu6">
                     <rect key="frame" x="0.0" y="0.0" width="189" height="27"/>
@@ -3736,7 +3739,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TBBTListTLTableViewCell" lineBreakMode="tailTruncation" minimumFontSize="10" id="kFh-cO-vme">
-                                                    <rect key="frame" x="21" y="18" width="191" height="22"/>
+                                                    <rect key="frame" x="21" y="18" width="266" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -3745,8 +3748,8 @@
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Meaning" lineBreakMode="tailTruncation" minimumFontSize="12" id="LMz-T8-LTf">
-                                                    <rect key="frame" x="21" y="40" width="191" height="16"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" text="Meaning" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" id="LMz-T8-LTf">
+                                                    <rect key="frame" x="21" y="40" width="266" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>

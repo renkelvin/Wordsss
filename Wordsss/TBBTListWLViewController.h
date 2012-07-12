@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 
 #import "List.h"
+#import "TBBTListSentence.h"
 
 @interface TBBTListWLViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+{
+    NSArray* _listWordArray;
+}
+
+@property (nonatomic, retain) IBOutlet UILabel* titleLabel;
+
+#pragma mark - Instance method
+
+- (TBBTListWLViewController*)initWithListWordArray:(NSArray*)array;
 
 @end

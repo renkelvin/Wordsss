@@ -19,6 +19,8 @@
     NSNumber* _seasonNum;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel* titleLabel;
+
 #pragma mark - Instance method
 
 - (TBBTListELViewController*)initWithSeasonNum:(NSNumber*)seasonNum;

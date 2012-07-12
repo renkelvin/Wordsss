@@ -28,6 +28,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    //
+    [self.titleLabel setText:[NSString stringWithFormat:@"Season %d", [_seasonNum intValue]]];
 }
 
 - (void)viewDidUnload

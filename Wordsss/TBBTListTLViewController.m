@@ -28,6 +28,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    //
+    [self.titleLabel setText:[NSString stringWithFormat:@"S%dE%d", [_seasonNum intValue], [_episodeNum intValue]]];
 }
 
 - (void)viewDidUnload
@@ -95,13 +98,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    TBBTListWLViewController* twvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListWLViewController"];
+
+    TBBTListSentence* sentence = [_listSentenceArray objectAtIndex:indexPath.row];
+    NSArray* array = [sentence.tbbtListWord allObjects];
+    
+    twvc = [twvc initWithListWordArray:array];
+    [[self navigationController] pushViewController:twvc animated:YES];
 }
 
 @end

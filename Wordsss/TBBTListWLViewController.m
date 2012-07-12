@@ -28,6 +28,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    //
+    [self.titleLabel setText:[NSString stringWithFormat:@"Detail"]];
 }
 
 - (void)viewDidUnload
@@ -39,6 +42,15 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Instance method
+
+- (TBBTListWLViewController*)initWithListWordArray:(NSArray*)array
+{
+    _listWordArray = array;
+    
+    return self;
 }
 
 #pragma mark - IBAction
@@ -59,7 +71,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return [_listWordArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,6 +84,9 @@
     }
 
     // Configure the cell...
+    TBBTListWord* tbbtListWord = [_listWordArray objectAtIndex:indexPath.row];
+    [(TBBTListWLCell*)cell setTbbtListWord:tbbtListWord];
+    [(TBBTListWLCell*)cell configCell];
     
     return cell;
 }

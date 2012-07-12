@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "TBBTListWLViewController.h"
+
+#import "WordsssDBDataManager.h"
+
 @interface TBBTListTLViewController : UIViewController
 {
     NSNumber* _seasonNum;
@@ -15,6 +19,8 @@
     
     NSArray* _listSentenceArray;
 }
+
+@property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 
 #pragma mark - Instance method
 
