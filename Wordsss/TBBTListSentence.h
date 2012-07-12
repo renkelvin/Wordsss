@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSNumber * endTime;
 @property (nonatomic, retain) NSNumber * season;
 @property (nonatomic, retain) NSNumber * episode;
-@property (nonatomic, retain) NSSet *tbbtListWord;
+@property (nonatomic, retain) NSMutableSet *tbbtListWord;
 @end
 
 @interface TBBTListSentence (CoreDataGeneratedAccessors)

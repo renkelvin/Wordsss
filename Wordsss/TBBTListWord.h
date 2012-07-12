@@ -14,7 +14,7 @@
 @interface TBBTListWord : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
-@property (nonatomic, retain) NSSet *tbbtListSentence;
+@property (nonatomic, retain) NSMutableSet *tbbtListSentence;
 @property (nonatomic, retain) Word_List *word_list;
 @end
 

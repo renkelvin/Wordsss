@@ -48,8 +48,10 @@ NSMutableDictionary* csListWordDICT = nil;          //TTABLEDATA_CSLISTWORD
 NSMutableDictionary* maListWordDICT = nil;          //TTABLEDATA_MALISTWORD
 NSMutableDictionary* phListWordDICT = nil;          //TTABLEDATA_PHLISTWORD
 NSMutableDictionary* grerbListWordDICT = nil;       //TTABLEDATA_GRERBLISTWORD
-NSMutableDictionary* grerbListMemDICT = nil;       //TTABLEDATA_GRERBLISTMEM
+NSMutableDictionary* grerbListMemDICT = nil;        //TTABLEDATA_GRERBLISTMEM
 NSMutableDictionary* dotaListWordDICT = nil;        //TTABLEDATA_DOTALISTWORD
+NSMutableDictionary* tbbtListWordDICT = nil;        //TTABLEDATA_TBBTLISTWORD
+NSMutableDictionary* tbbtListSentenceDICT = nil;    //TTABLEDATA_TBBTLISTSENTENCE
 
 NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
 
@@ -115,8 +117,10 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
     maListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_MALISTWORD
     phListWordDICT = [NSMutableDictionary dictionary];          //TTABLEDATA_PHLISTWORD
     grerbListWordDICT = [NSMutableDictionary dictionary];       //TTABLEDATA_GRERBLISTWORD
-    grerbListMemDICT = [NSMutableDictionary dictionary];       //TTABLEDATA_GRERBLISTMEM
+    grerbListMemDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_GRERBLISTMEM
     dotaListWordDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_DOTALISTWORD
+    tbbtListWordDICT = [NSMutableDictionary dictionary];        //TTABLEDATA_TBBTLISTWORD
+    tbbtListSentenceDICT = [NSMutableDictionary dictionary];    //TTABLEDATA_TBBTLISTSENTENCE
     listDICT = [NSMutableDictionary dictionary];                //TTABLEDATA_LIST
 }
 
@@ -326,6 +330,18 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                     case TTABLEDATA_GRERBLISTMEM:   // GRERBListMem
                                     {
                                         object = (GRERBListMem*)[NSEntityDescription insertNewObjectForEntityForName:@"GRERBListMem" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_TBBTLISTWORD:   // TBBTListWord
+                                    {
+                                        object = (TBBTListWord*)[NSEntityDescription insertNewObjectForEntityForName:@"TBBTListWord" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_TBBTLISTSENTENCE:   // TBBTListSentence
+                                    {
+                                        object = (TBBTListSentence*)[NSEntityDescription insertNewObjectForEntityForName:@"TBBTListSentence" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
                                     }
@@ -1056,6 +1072,67 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         
                                         break;
                                     }
+
+                                    case TTABLEDATA_TBBTLISTWORD:   // TBBTListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"tbbt_list_word_id"] == NSOrderedSame) {
+                                            ((TBBTListWord*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [tbbtListWordDICT setValue:object forKey:string];
+                                            
+                                            // NSLog(@"TBBTListWord - id: %@", string);
+                                        }
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_TBBTLISTSENTENCE:   // TBBTListSentence
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"tbbt_list_sentence_id"] == NSOrderedSame) {
+                                            ((TBBTListSentence*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [tbbtListSentenceDICT setValue:object forKey:string];
+                                            
+                                            // NSLog(@"TBBTListSentence - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"sentence"] == NSOrderedSame) {
+                                            if (!((TBBTListSentence*)object).sentence) {
+                                                ((TBBTListSentence*)object).sentence = string;
+                                            }
+                                            else {
+                                                ((TBBTListSentence*)object).sentence = [((TBBTListSentence*)object).sentence stringByAppendingFormat:@"%@", string];
+                                            }
+                                        }
+                                        else if ([attrString compare:@"begin_time"] == NSOrderedSame) {
+                                            ((TBBTListSentence*)object).beginTime = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"end_time"] == NSOrderedSame) {
+                                            ((TBBTListSentence*)object).endTime = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"season"] == NSOrderedSame) {
+                                            ((TBBTListSentence*)object).season = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"episode"] == NSOrderedSame) {
+                                            ((TBBTListSentence*)object).episode = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_DOTALISTWORD:   // DOTAListWord
                                     {
                                         if (!attrDict)
@@ -1703,6 +1780,58 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_TBBTLISTWORD:   // TBBTListWord
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"tbbt_list_word_id"] == NSOrderedSame) {
+                                            object = (TBBTListWord *)[tbbtListWordDICT objectForKey:string];
+                                            
+                                            // NSLog(@"TBBTListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"word_list_id"] == NSOrderedSame) {
+                                            Word_List* word_list = [wordListDICT objectForKey:string];
+                                            
+                                            if (word_list) {
+                                                ((TBBTListWord*)object).word_list = word_list;
+                                                word_list.tbbtListWord = ((TBBTListWord*)object);
+                                            }
+                                        }
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_TBBTLISTWORDSENTENCE:   // tbbt_list_word_sentence
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"tbbt_list_word_id"] == NSOrderedSame) {
+                                            object = (TBBTListWord *)[tbbtListWordDICT objectForKey:string];
+                                            
+                                            // NSLog(@"TBBTListWord - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"tbbt_list_sentence_id"] == NSOrderedSame) {
+                                            TBBTListSentence* sentence = [tbbtListSentenceDICT objectForKey:string];
+                                            
+                                            if (sentence) {
+                                                [((TBBTListWord*)object).tbbtListSentence addObject:(TBBTListSentence*)sentence];
+                                                [sentence.tbbtListWord addObject:((TBBTListWord*)object)];
+                                            }
+                                        }
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_DOTALISTWORD:   // DotaListWord
                                     {
                                         if (!attrDict)
@@ -1972,6 +2101,18 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
         else if ([name compare:@"gre_list_memory"] == NSOrderedSame) {
             ist = TTABLEDATA_GRERBLISTMEM;
             NSLog(@"gre_list_mem");
+        }
+        else if ([name compare:@"tbbt_list_word"] == NSOrderedSame) {
+            ist = TTABLEDATA_TBBTLISTWORD;
+            NSLog(@"tbbt_list_word");
+        }
+        else if ([name compare:@"tbbt_list_sentence"] == NSOrderedSame) {
+            ist = TTABLEDATA_TBBTLISTSENTENCE;
+            NSLog(@"tbbt_list_sentence");
+        }
+        else if ([name compare:@"tbbt_word_sentence"] == NSOrderedSame) {
+            ist = TTABLEDATA_TBBTLISTWORDSENTENCE;
+            NSLog(@"tbbt_list_word_sentence");
         }
         else if ([name compare:@"dota_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALISTWORD;
