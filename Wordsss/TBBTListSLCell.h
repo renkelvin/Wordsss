@@ -10,7 +10,7 @@
 
 @interface TBBTListSLCell : UITableViewCell
 
-@property (nonatomic, retain) NSNumber* listNum;
+@property (nonatomic, retain) NSNumber* seasonNum;
 
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;

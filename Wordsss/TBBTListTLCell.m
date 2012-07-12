@@ -1,16 +1,14 @@
 //
-//  TBBTListELCell.m
+//  TBBTListTLCell.m
 //  Wordsss
 //
 //  Created by Ren Chuan on 7/12/12.
 //  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
-#import "TBBTListELCell.h"
+#import "TBBTListTLCell.h"
 
-@implementation TBBTListELCell
-
-@synthesize episodeNum;
+@implementation TBBTListTLCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -32,7 +30,7 @@
 
 - (void)configCell
 {
-    [self.nameLabel setText:[NSString stringWithFormat:@"Episode %d", [self.episodeNum intValue]]];
+    [self.nameLabel setText:[NSString stringWithFormat:@"Sentence"]];
     [self.meaningLabel setText:[NSString stringWithFormat:@"n 个词"]];
 }
 

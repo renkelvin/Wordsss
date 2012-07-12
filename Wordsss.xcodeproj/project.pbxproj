@@ -101,6 +101,8 @@
 		FE4B3AA515AECF7F001600ED /* TBBTListWLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AA415AECF7E001600ED /* TBBTListWLViewController.m */; };
 		FE4B3AA815AECF91001600ED /* TBBTListELCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AA715AECF91001600ED /* TBBTListELCell.m */; };
 		FE4B3AAB15AECF9D001600ED /* TBBTListWLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AAA15AECF9D001600ED /* TBBTListWLCell.m */; };
+		FE4B3AB315AED598001600ED /* TBBTListTLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AB215AED597001600ED /* TBBTListTLCell.m */; };
+		FE4B3AB615AED5AD001600ED /* TBBTListTLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AB515AED5AC001600ED /* TBBTListTLViewController.m */; };
 		FE52D5F41502B0400086C3FD /* PatentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE52D5F31502B0400086C3FD /* PatentViewController.m */; };
 		FE557BE815021852009017E2 /* PureWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE557BE715021852009017E2 /* PureWord.m */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
@@ -507,6 +509,10 @@
 		FE4B3AA715AECF91001600ED /* TBBTListELCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListELCell.m; sourceTree = "<group>"; };
 		FE4B3AA915AECF9C001600ED /* TBBTListWLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListWLCell.h; sourceTree = "<group>"; };
 		FE4B3AAA15AECF9D001600ED /* TBBTListWLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListWLCell.m; sourceTree = "<group>"; };
+		FE4B3AB115AED597001600ED /* TBBTListTLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListTLCell.h; sourceTree = "<group>"; };
+		FE4B3AB215AED597001600ED /* TBBTListTLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListTLCell.m; sourceTree = "<group>"; };
+		FE4B3AB415AED5AC001600ED /* TBBTListTLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListTLViewController.h; sourceTree = "<group>"; };
+		FE4B3AB515AED5AC001600ED /* TBBTListTLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListTLViewController.m; sourceTree = "<group>"; };
 		FE4D51D214F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/Wordsss/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE4D51D314F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/WordsssTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE52D5F21502B0400086C3FD /* PatentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatentViewController.h; sourceTree = "<group>"; };
@@ -941,34 +947,30 @@
 			name = DataManager;
 			sourceTree = "<group>";
 		};
-		FE64123415AC16E800D76C9B /* Fonts */ = {
+		FE4B3AAC15AED135001600ED /* TBBT */ = {
 			isa = PBXGroup;
 			children = (
-				FE64123A15AC320D00D76C9B /* Basemic.ttf */,
+				FE6B138B15AEC1ED001A54D4 /* TBBTListSLViewController.h */,
+				FE6B138C15AEC1ED001A54D4 /* TBBTListSLViewController.m */,
+				FE6B138E15AEC204001A54D4 /* TBBTListSLCell.h */,
+				FE6B138F15AEC204001A54D4 /* TBBTListSLCell.m */,
+				FE4B3A9F15AECF67001600ED /* TBBTListELViewController.h */,
+				FE4B3AA015AECF67001600ED /* TBBTListELViewController.m */,
+				FE4B3AA615AECF90001600ED /* TBBTListELCell.h */,
+				FE4B3AA715AECF91001600ED /* TBBTListELCell.m */,
+				FE4B3AB415AED5AC001600ED /* TBBTListTLViewController.h */,
+				FE4B3AB515AED5AC001600ED /* TBBTListTLViewController.m */,
+				FE4B3AB115AED597001600ED /* TBBTListTLCell.h */,
+				FE4B3AB215AED597001600ED /* TBBTListTLCell.m */,
+				FE4B3AA315AECF7E001600ED /* TBBTListWLViewController.h */,
+				FE4B3AA415AECF7E001600ED /* TBBTListWLViewController.m */,
+				FE4B3AA915AECF9C001600ED /* TBBTListWLCell.h */,
+				FE4B3AAA15AECF9D001600ED /* TBBTListWLCell.m */,
 			);
-			name = Fonts;
+			name = TBBT;
 			sourceTree = "<group>";
 		};
-		FE6B138815AEC141001A54D4 /* Subject */ = {
-			isa = PBXGroup;
-			children = (
-				FEBBA7F614FDF8AA00943F52 /* MAListViewController.h */,
-				FEBBA7F714FDF8AA00943F52 /* MAListViewController.m */,
-				FEBBA80E14FE01D500943F52 /* MAListWordCell.h */,
-				FEBBA80F14FE01D600943F52 /* MAListWordCell.m */,
-				FEBBA7F914FDF96D00943F52 /* PHListViewController.h */,
-				FEBBA7FA14FDF96D00943F52 /* PHListViewController.m */,
-				FEBBA81114FE01E300943F52 /* PHListWordCell.h */,
-				FEBBA81214FE01E400943F52 /* PHListWordCell.m */,
-				FEBBA7FC14FDF9C300943F52 /* CSListViewController.h */,
-				FEBBA7FD14FDF9C300943F52 /* CSListViewController.m */,
-				FEBBA81414FE01ED00943F52 /* CSListWordCell.h */,
-				FEBBA81514FE01ED00943F52 /* CSListWordCell.m */,
-			);
-			name = Subject;
-			sourceTree = "<group>";
-		};
-		FE6B138915AEC15B001A54D4 /* Books */ = {
+		FE4B3AAD15AED175001600ED /* GRERB */ = {
 			isa = PBXGroup;
 			children = (
 				FEBBA7FF14FDF9D500943F52 /* GRERBLLListViewController.h */,
@@ -980,24 +982,72 @@
 				FEDD3ABE14FA523C00F73D11 /* GRERBListWordCell.h */,
 				FEDD3ABF14FA523C00F73D11 /* GRERBListWordCell.m */,
 			);
+			name = GRERB;
+			sourceTree = "<group>";
+		};
+		FE4B3AAE15AED186001600ED /* MA */ = {
+			isa = PBXGroup;
+			children = (
+				FEBBA7F614FDF8AA00943F52 /* MAListViewController.h */,
+				FEBBA7F714FDF8AA00943F52 /* MAListViewController.m */,
+				FEBBA80E14FE01D500943F52 /* MAListWordCell.h */,
+				FEBBA80F14FE01D600943F52 /* MAListWordCell.m */,
+			);
+			name = MA;
+			sourceTree = "<group>";
+		};
+		FE4B3AAF15AED18D001600ED /* PH */ = {
+			isa = PBXGroup;
+			children = (
+				FEBBA7F914FDF96D00943F52 /* PHListViewController.h */,
+				FEBBA7FA14FDF96D00943F52 /* PHListViewController.m */,
+				FEBBA81114FE01E300943F52 /* PHListWordCell.h */,
+				FEBBA81214FE01E400943F52 /* PHListWordCell.m */,
+			);
+			name = PH;
+			sourceTree = "<group>";
+		};
+		FE4B3AB015AED193001600ED /* CS */ = {
+			isa = PBXGroup;
+			children = (
+				FEBBA7FC14FDF9C300943F52 /* CSListViewController.h */,
+				FEBBA7FD14FDF9C300943F52 /* CSListViewController.m */,
+				FEBBA81414FE01ED00943F52 /* CSListWordCell.h */,
+				FEBBA81514FE01ED00943F52 /* CSListWordCell.m */,
+			);
+			name = CS;
+			sourceTree = "<group>";
+		};
+		FE64123415AC16E800D76C9B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FE64123A15AC320D00D76C9B /* Basemic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		FE6B138815AEC141001A54D4 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				FE4B3AAE15AED186001600ED /* MA */,
+				FE4B3AAF15AED18D001600ED /* PH */,
+				FE4B3AB015AED193001600ED /* CS */,
+			);
+			name = Subject;
+			sourceTree = "<group>";
+		};
+		FE6B138915AEC15B001A54D4 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				FE4B3AAD15AED175001600ED /* GRERB */,
+			);
 			name = Books;
 			sourceTree = "<group>";
 		};
 		FE6B138A15AEC16F001A54D4 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
-				FE6B138B15AEC1ED001A54D4 /* TBBTListSLViewController.h */,
-				FE6B138C15AEC1ED001A54D4 /* TBBTListSLViewController.m */,
-				FE6B138E15AEC204001A54D4 /* TBBTListSLCell.h */,
-				FE6B138F15AEC204001A54D4 /* TBBTListSLCell.m */,
-				FE4B3A9F15AECF67001600ED /* TBBTListELViewController.h */,
-				FE4B3AA015AECF67001600ED /* TBBTListELViewController.m */,
-				FE4B3AA615AECF90001600ED /* TBBTListELCell.h */,
-				FE4B3AA715AECF91001600ED /* TBBTListELCell.m */,
-				FE4B3AA315AECF7E001600ED /* TBBTListWLViewController.h */,
-				FE4B3AA415AECF7E001600ED /* TBBTListWLViewController.m */,
-				FE4B3AA915AECF9C001600ED /* TBBTListWLCell.h */,
-				FE4B3AAA15AECF9D001600ED /* TBBTListWLCell.m */,
+				FE4B3AAC15AED135001600ED /* TBBT */,
 			);
 			name = Movie;
 			sourceTree = "<group>";
@@ -2146,6 +2196,8 @@
 				FE4B3AA515AECF7F001600ED /* TBBTListWLViewController.m in Sources */,
 				FE4B3AA815AECF91001600ED /* TBBTListELCell.m in Sources */,
 				FE4B3AAB15AECF9D001600ED /* TBBTListWLCell.m in Sources */,
+				FE4B3AB315AED598001600ED /* TBBTListTLCell.m in Sources */,
+				FE4B3AB615AED5AD001600ED /* TBBTListTLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

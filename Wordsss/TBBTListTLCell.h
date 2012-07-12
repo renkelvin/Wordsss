@@ -1,5 +1,5 @@
 //
-//  TBBTListELCell.h
+//  TBBTListTLCell.h
 //  Wordsss
 //
 //  Created by Ren Chuan on 7/12/12.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBBTListELCell : UITableViewCell
-
-@property (nonatomic, retain) NSNumber* episodeNum;
+@interface TBBTListTLCell : UITableViewCell
 
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* meaningLabel;

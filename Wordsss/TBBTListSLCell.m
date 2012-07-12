@@ -28,9 +28,11 @@
     // Configure the view for the selected state
 }
 
+#pragma mark - 
+
 - (void)configCell
 {
-    [self.nameLabel setText:[NSString stringWithFormat:@"Season %d", [self.listNum intValue]]];
+    [self.nameLabel setText:[NSString stringWithFormat:@"Season %d", [self.seasonNum intValue]]];
     [self.meaningLabel setText:[NSString stringWithFormat:@"n 个词"]];
 }
 

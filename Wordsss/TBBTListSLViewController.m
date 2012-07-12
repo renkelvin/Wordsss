@@ -51,7 +51,7 @@
 - (TBBTListSLViewController*)initWithList:(List*)list
 {
     _list = list;
-        
+    
     return self;
 }
 
@@ -80,12 +80,16 @@
 {
     static NSString *CellIdentifier = @"TBBTListSLTableViewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
-    NSNumber* listNum = [NSNumber numberWithInt:indexPath.row + 1];
-    [(TBBTListSLCell*)cell setListNum:listNum];
-    [(TBBTListSLCell*)cell configCell];
+  
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
 
+    // Configure the cell...
+    NSNumber* seasonNum = [NSNumber numberWithInt:indexPath.row + 1];
+    [(TBBTListSLCell*)cell setSeasonNum:seasonNum];
+    [(TBBTListSLCell*)cell configCell];
+    
     return cell;
 }
 
@@ -93,13 +97,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    TBBTListELViewController* tevc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListELViewController"];
+    tevc = [tevc initWithSeasonNum:[NSNumber numberWithInt:indexPath.row + 1]];
+    [[self navigationController] pushViewController:tevc animated:YES];
 }
 
 @end

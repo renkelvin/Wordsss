@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBBTListELViewController : UIViewController
+#import "List.h"
+
+@interface TBBTListELViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+{
+    NSNumber* _seasonNum;
+}
+
+#pragma mark - Instance method
+
+- (TBBTListELViewController*)initWithSeasonNum:(NSNumber*)seasonNum;
 
 @end

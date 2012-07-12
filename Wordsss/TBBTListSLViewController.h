@@ -10,6 +10,8 @@
 
 #import "List.h"
 
+#import "TBBTListELViewController.h"
+
 @interface TBBTListSLViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     List* _list;

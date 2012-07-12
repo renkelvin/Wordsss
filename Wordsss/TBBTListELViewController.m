@@ -7,6 +7,7 @@
 //
 
 #import "TBBTListELViewController.h"
+#import "TBBTListELCell.h"
 
 @interface TBBTListELViewController ()
 
@@ -45,6 +46,79 @@
 - (IBAction)navigationBackButtonClicked:(id)sender
 {
     [[self navigationController] popViewControllerAnimated:YES];       
+}
+
+#pragma mark - Instance method
+
+- (TBBTListELViewController*)initWithSeasonNum:(NSNumber*)seasonNum
+{
+    _seasonNum = seasonNum;
+    
+    return self;
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    switch ([_seasonNum intValue]) {
+        case 1:
+            return 17;
+            break;
+        case 2:
+            return 23;
+            break;
+        case 3:
+            return 23;
+            break;
+        case 4:
+            return 24;
+            break;
+        case 5:
+            return 24;
+            break;
+        default:
+            return 0;
+            break;
+    }
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"TBBTListELTableViewCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+
+    // Configure the cell...
+    NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
+    [(TBBTListELCell*)cell setEpisodeNum:episodeNum];
+    [(TBBTListELCell*)cell configCell];
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end

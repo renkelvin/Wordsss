@@ -1,19 +1,19 @@
 //
-//  TBBTListWLViewController.m
+//  TBBTListTLViewController.m
 //  Wordsss
 //
 //  Created by Ren Chuan on 7/12/12.
 //  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
-#import "TBBTListWLViewController.h"
-#import "TBBTListWLCell.h"
+#import "TBBTListTLViewController.h"
+#import "TBBTListTLCell.h"
 
-@interface TBBTListWLViewController ()
+@interface TBBTListTLViewController ()
 
 @end
 
-@implementation TBBTListWLViewController
+@implementation TBBTListTLViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,12 +59,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"TBBTListWLTableViewCell";
+    static NSString *CellIdentifier = @"TBBTListTLTableViewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
@@ -72,6 +72,9 @@
     }
 
     // Configure the cell...
+//    NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
+//    [(TBBTListTLCell*)cell setEpisodeNum:episodeNum];
+//    [(TBBTListTLCell*)cell configCell];
     
     return cell;
 }
