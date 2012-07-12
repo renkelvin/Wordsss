@@ -22,7 +22,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -30,7 +30,7 @@
 
 - (void)configCell
 {
-    [self.nameLabel setText:[NSString stringWithFormat:@"Sentence"]];
+    [self.nameLabel setText:[NSString stringWithFormat:@"%@", self.tbbtListSentence.sentence]];
     [self.meaningLabel setText:[NSString stringWithFormat:@"n 个词"]];
 }
 

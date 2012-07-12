@@ -48,6 +48,18 @@
     [[self navigationController] popViewControllerAnimated:YES];       
 }
 
+#pragma mark - Instance method
+
+- (TBBTListTLViewController*)initWithListSentenceArray:listSentenceArray seasonNum:seasonNum episodeNum:episodeNum
+{
+    _seasonNum = seasonNum;
+    _episodeNum = episodeNum;
+    
+    _listSentenceArray = listSentenceArray;
+    
+    return self;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -70,11 +82,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-
+    
     // Configure the cell...
-//    NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
-//    [(TBBTListTLCell*)cell setEpisodeNum:episodeNum];
-//    [(TBBTListTLCell*)cell configCell];
+    TBBTListSentence* tbbtListSentence = [_listSentenceArray objectAtIndex:indexPath.row];
+    [(TBBTListTLCell*)cell setTbbtListSentence:tbbtListSentence];
+    [(TBBTListTLCell*)cell configCell];
     
     return cell;
 }

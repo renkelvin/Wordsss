@@ -99,7 +99,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-
+    
     // Configure the cell...
     NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
     [(TBBTListELCell*)cell setEpisodeNum:episodeNum];
@@ -112,13 +112,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    TBBTListTLViewController* ttvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListTLViewController"];
+    
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    NSNumber* seasonNum = _seasonNum;
+    NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
+    NSArray* array = [wdm getTBBTListSentenceArrayWithSeason:seasonNum episode:episodeNum];
+    
+    ttvc = [ttvc initWithListSentenceArray:array seasonNum:_seasonNum episodeNum:episodeNum];
+    [[self navigationController] pushViewController:ttvc animated:YES];
 }
 
 @end

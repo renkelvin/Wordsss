@@ -42,4 +42,6 @@
 - (NSArray*)getRandomSenses:(int)count;
 - (NSArray*)getListWordArray:(List*)list;
 
+- (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode;
+
 @end

@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface TBBTListTLViewController : UIViewController
+{
+    NSNumber* _seasonNum;
+    NSNumber* _episodeNum;
+    
+    NSArray* _listSentenceArray;
+}
+
+#pragma mark - Instance method
+
+- (TBBTListTLViewController*)initWithListSentenceArray:listSentenceArray seasonNum:seasonNum episodeNum:episodeNum;
 
 @end

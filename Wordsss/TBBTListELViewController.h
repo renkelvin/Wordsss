@@ -10,6 +10,10 @@
 
 #import "List.h"
 
+#import "TBBTListTLViewController.h"
+
+#import "WordsssDBDataManager.h"
+
 @interface TBBTListELViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSNumber* _seasonNum;

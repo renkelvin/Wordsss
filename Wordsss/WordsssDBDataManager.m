@@ -215,6 +215,17 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return result;
 }
 
+- (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"TBBTListSentence"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(season == %d) AND (episode == %d)", [season intValue], [episode intValue]]];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"beginTime" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];
+    
+    return result;
+}
+
 #pragma mark - Core Data
 
 - (void)saveContext

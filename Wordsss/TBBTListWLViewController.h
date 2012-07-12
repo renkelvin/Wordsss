@@ -11,9 +11,5 @@
 #import "List.h"
 
 @interface TBBTListWLViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
-{
-    NSNumber* _seasonNum;
-    NSNumber* _episodeNum;
-}
 
 @end
