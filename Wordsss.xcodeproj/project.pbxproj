@@ -97,6 +97,10 @@
 		FE3B9BC614F280CD00B4CE2C /* MwcDictMeaning.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */; };
 		FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680014F28FDC00963B95 /* button_grey_done.png */; };
 		FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 200E680114F28FDC00963B95 /* button_grey_done@2x.png */; };
+		FE4B3AA115AECF68001600ED /* TBBTListELViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AA015AECF67001600ED /* TBBTListELViewController.m */; };
+		FE4B3AA515AECF7F001600ED /* TBBTListWLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AA415AECF7E001600ED /* TBBTListWLViewController.m */; };
+		FE4B3AA815AECF91001600ED /* TBBTListELCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AA715AECF91001600ED /* TBBTListELCell.m */; };
+		FE4B3AAB15AECF9D001600ED /* TBBTListWLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AAA15AECF9D001600ED /* TBBTListWLCell.m */; };
 		FE52D5F41502B0400086C3FD /* PatentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE52D5F31502B0400086C3FD /* PatentViewController.m */; };
 		FE557BE815021852009017E2 /* PureWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE557BE715021852009017E2 /* PureWord.m */; };
 		FE5C958714AF0C6600DE10F2 /* Word_Relation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C958614AF0C6600DE10F2 /* Word_Relation.m */; };
@@ -163,6 +167,8 @@
 		FE6332D314ADEE5B005CBECF /* tofel.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A114ADEE5A005CBECF /* tofel.png */; };
 		FE6332D414ADEE5B005CBECF /* tofel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE6332A214ADEE5A005CBECF /* tofel@2x.png */; };
 		FE64123B15AC320D00D76C9B /* Basemic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE64123A15AC320D00D76C9B /* Basemic.ttf */; };
+		FE6B138D15AEC1ED001A54D4 /* TBBTListSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B138C15AEC1ED001A54D4 /* TBBTListSLViewController.m */; };
+		FE6B139015AEC204001A54D4 /* TBBTListSLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B138F15AEC204001A54D4 /* TBBTListSLCell.m */; };
 		FE6B999314AB4F4200AA3DEF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B999214AB4F4200AA3DEF /* Word.m */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
@@ -493,6 +499,14 @@
 		FE3B9BC214F280CC00B4CE2C /* MwcDictWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MwcDictWord.m; sourceTree = "<group>"; };
 		FE3B9BC414F280CD00B4CE2C /* MwcDictMeaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MwcDictMeaning.h; sourceTree = "<group>"; };
 		FE3B9BC514F280CD00B4CE2C /* MwcDictMeaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MwcDictMeaning.m; sourceTree = "<group>"; };
+		FE4B3A9F15AECF67001600ED /* TBBTListELViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListELViewController.h; sourceTree = "<group>"; };
+		FE4B3AA015AECF67001600ED /* TBBTListELViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListELViewController.m; sourceTree = "<group>"; };
+		FE4B3AA315AECF7E001600ED /* TBBTListWLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListWLViewController.h; sourceTree = "<group>"; };
+		FE4B3AA415AECF7E001600ED /* TBBTListWLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListWLViewController.m; sourceTree = "<group>"; };
+		FE4B3AA615AECF90001600ED /* TBBTListELCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListELCell.h; sourceTree = "<group>"; };
+		FE4B3AA715AECF91001600ED /* TBBTListELCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListELCell.m; sourceTree = "<group>"; };
+		FE4B3AA915AECF9C001600ED /* TBBTListWLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListWLCell.h; sourceTree = "<group>"; };
+		FE4B3AAA15AECF9D001600ED /* TBBTListWLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListWLCell.m; sourceTree = "<group>"; };
 		FE4D51D214F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/Wordsss/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE4D51D314F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/WordsssTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE52D5F21502B0400086C3FD /* PatentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatentViewController.h; sourceTree = "<group>"; };
@@ -567,6 +581,10 @@
 		FE6332A114ADEE5A005CBECF /* tofel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tofel.png; sourceTree = "<group>"; };
 		FE6332A214ADEE5A005CBECF /* tofel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tofel@2x.png"; sourceTree = "<group>"; };
 		FE64123A15AC320D00D76C9B /* Basemic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Basemic.ttf; sourceTree = "<group>"; };
+		FE6B138B15AEC1ED001A54D4 /* TBBTListSLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListSLViewController.h; sourceTree = "<group>"; };
+		FE6B138C15AEC1ED001A54D4 /* TBBTListSLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListSLViewController.m; sourceTree = "<group>"; };
+		FE6B138E15AEC204001A54D4 /* TBBTListSLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListSLCell.h; sourceTree = "<group>"; };
+		FE6B138F15AEC204001A54D4 /* TBBTListSLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListSLCell.m; sourceTree = "<group>"; };
 		FE6B999114AB4F4200AA3DEF /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		FE6B999214AB4F4200AA3DEF /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
@@ -931,6 +949,59 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		FE6B138815AEC141001A54D4 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				FEBBA7F614FDF8AA00943F52 /* MAListViewController.h */,
+				FEBBA7F714FDF8AA00943F52 /* MAListViewController.m */,
+				FEBBA80E14FE01D500943F52 /* MAListWordCell.h */,
+				FEBBA80F14FE01D600943F52 /* MAListWordCell.m */,
+				FEBBA7F914FDF96D00943F52 /* PHListViewController.h */,
+				FEBBA7FA14FDF96D00943F52 /* PHListViewController.m */,
+				FEBBA81114FE01E300943F52 /* PHListWordCell.h */,
+				FEBBA81214FE01E400943F52 /* PHListWordCell.m */,
+				FEBBA7FC14FDF9C300943F52 /* CSListViewController.h */,
+				FEBBA7FD14FDF9C300943F52 /* CSListViewController.m */,
+				FEBBA81414FE01ED00943F52 /* CSListWordCell.h */,
+				FEBBA81514FE01ED00943F52 /* CSListWordCell.m */,
+			);
+			name = Subject;
+			sourceTree = "<group>";
+		};
+		FE6B138915AEC15B001A54D4 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				FEBBA7FF14FDF9D500943F52 /* GRERBLLListViewController.h */,
+				FEBBA80014FDF9D500943F52 /* GRERBLLListViewController.m */,
+				FEDD3ABB14FA522C00F73D11 /* GRERBListListCell.h */,
+				FEDD3ABC14FA522C00F73D11 /* GRERBListListCell.m */,
+				FEBBA80214FDF9E300943F52 /* GRERBWLListViewController.h */,
+				FEBBA80314FDF9E300943F52 /* GRERBWLListViewController.m */,
+				FEDD3ABE14FA523C00F73D11 /* GRERBListWordCell.h */,
+				FEDD3ABF14FA523C00F73D11 /* GRERBListWordCell.m */,
+			);
+			name = Books;
+			sourceTree = "<group>";
+		};
+		FE6B138A15AEC16F001A54D4 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				FE6B138B15AEC1ED001A54D4 /* TBBTListSLViewController.h */,
+				FE6B138C15AEC1ED001A54D4 /* TBBTListSLViewController.m */,
+				FE6B138E15AEC204001A54D4 /* TBBTListSLCell.h */,
+				FE6B138F15AEC204001A54D4 /* TBBTListSLCell.m */,
+				FE4B3A9F15AECF67001600ED /* TBBTListELViewController.h */,
+				FE4B3AA015AECF67001600ED /* TBBTListELViewController.m */,
+				FE4B3AA615AECF90001600ED /* TBBTListELCell.h */,
+				FE4B3AA715AECF91001600ED /* TBBTListELCell.m */,
+				FE4B3AA315AECF7E001600ED /* TBBTListWLViewController.h */,
+				FE4B3AA415AECF7E001600ED /* TBBTListWLViewController.m */,
+				FE4B3AA915AECF9C001600ED /* TBBTListWLCell.h */,
+				FE4B3AAA15AECF9D001600ED /* TBBTListWLCell.m */,
+			);
+			name = Movie;
+			sourceTree = "<group>";
+		};
 		FE6C8DBF14385AD900DC9784 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1162,26 +1233,9 @@
 		FEBBA7F414FDF72600943F52 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				FEBBA7F614FDF8AA00943F52 /* MAListViewController.h */,
-				FEBBA7F714FDF8AA00943F52 /* MAListViewController.m */,
-				FEBBA7F914FDF96D00943F52 /* PHListViewController.h */,
-				FEBBA7FA14FDF96D00943F52 /* PHListViewController.m */,
-				FEBBA7FC14FDF9C300943F52 /* CSListViewController.h */,
-				FEBBA7FD14FDF9C300943F52 /* CSListViewController.m */,
-				FEBBA7FF14FDF9D500943F52 /* GRERBLLListViewController.h */,
-				FEBBA80014FDF9D500943F52 /* GRERBLLListViewController.m */,
-				FEBBA80214FDF9E300943F52 /* GRERBWLListViewController.h */,
-				FEBBA80314FDF9E300943F52 /* GRERBWLListViewController.m */,
-				FEBBA80E14FE01D500943F52 /* MAListWordCell.h */,
-				FEBBA80F14FE01D600943F52 /* MAListWordCell.m */,
-				FEBBA81114FE01E300943F52 /* PHListWordCell.h */,
-				FEBBA81214FE01E400943F52 /* PHListWordCell.m */,
-				FEBBA81414FE01ED00943F52 /* CSListWordCell.h */,
-				FEBBA81514FE01ED00943F52 /* CSListWordCell.m */,
-				FEDD3ABB14FA522C00F73D11 /* GRERBListListCell.h */,
-				FEDD3ABC14FA522C00F73D11 /* GRERBListListCell.m */,
-				FEDD3ABE14FA523C00F73D11 /* GRERBListWordCell.h */,
-				FEDD3ABF14FA523C00F73D11 /* GRERBListWordCell.m */,
+				FE6B138815AEC141001A54D4 /* Subject */,
+				FE6B138915AEC15B001A54D4 /* Books */,
+				FE6B138A15AEC16F001A54D4 /* Movie */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -2086,6 +2140,12 @@
 				FEDF0639150365D2004F1430 /* AboutViewController.m in Sources */,
 				FE1EC34315AD5D4A00FD64CC /* TBBTListWord.m in Sources */,
 				FE1EC34615AD5D4A00FD64CC /* TBBTListSentence.m in Sources */,
+				FE6B138D15AEC1ED001A54D4 /* TBBTListSLViewController.m in Sources */,
+				FE6B139015AEC204001A54D4 /* TBBTListSLCell.m in Sources */,
+				FE4B3AA115AECF68001600ED /* TBBTListELViewController.m in Sources */,
+				FE4B3AA515AECF7F001600ED /* TBBTListWLViewController.m in Sources */,
+				FE4B3AA815AECF91001600ED /* TBBTListELCell.m in Sources */,
+				FE4B3AAB15AECF9D001600ED /* TBBTListWLCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

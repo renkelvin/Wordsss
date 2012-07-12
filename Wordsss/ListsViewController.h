@@ -18,6 +18,7 @@
 #import "PHListViewController.h"
 #import "CSListViewController.h"
 #import "GRERBLLListViewController.h"
+#import "TBBTListSLViewController.h"
 
 @interface ListsViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {

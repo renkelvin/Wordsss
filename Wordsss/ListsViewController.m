@@ -67,7 +67,7 @@
     List* list = [dict objectForKey:@"物理词表"];
     PHListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PHListViewController"];
     lvc = [lvc initWithList:list];
-    [[self navigationController] pushViewController:lvc animated:YES];    
+    [[self navigationController] pushViewController:lvc animated:YES];
 }
 
 - (IBAction)featureList2ButtonClicked:(id)sender
@@ -77,7 +77,7 @@
     List* list = [dict objectForKey:@"词表"];
     GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
     lvc = [lvc initWithList:list];
-    [[self navigationController] pushViewController:lvc animated:YES];    
+    [[self navigationController] pushViewController:lvc animated:YES];
 }
 
 #pragma - UITableViewDelegate
@@ -95,15 +95,20 @@
         MAListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAListViewController"];
         ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
         lvc = [lvc initWithList:cell.list];
-        [[self navigationController] pushViewController:lvc animated:YES];    
+        [[self navigationController] pushViewController:lvc animated:YES];
     }
     
     // 计算机词表
     else if ([listName compare:@"计算机词表"] == NSOrderedSame) {
-        CSListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CSListViewController"];
+//        CSListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CSListViewController"];
+//        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
+//        lvc = [lvc initWithList:cell.list];
+//        [[self navigationController] pushViewController:lvc animated:YES];
+        
+        TBBTListSLViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListSLViewController"];
         ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
         lvc = [lvc initWithList:cell.list];
-        [[self navigationController] pushViewController:lvc animated:YES];    
+        [[self navigationController] pushViewController:lvc animated:YES];
     }
 }
 
@@ -127,13 +132,13 @@
             headerView.titleLabel.text = @"其他词表";
             
             break;
-        }   
+        }
         case 1:
         {
             headerView.titleLabel.text = @"即将推出";
             
             break;
-        }   
+        }
         default:
         {
             break;
@@ -152,13 +157,13 @@
             return [[_listsVirtualActor getListDictionary] count] - 2;
             
             break;
-        }   
+        }
         case 1:
         {
             return 3;
             
             break;
-        }   
+        }
         default:
         {
             return 0;
@@ -190,7 +195,7 @@
             [(ListCell*)cell configCell];
             
             break;
-        }   
+        }
         case 1:
         {
             switch (indexPath.row) {
@@ -214,7 +219,7 @@
             }
             
             break;
-        }   
+        }
         default:
         {
             break;
