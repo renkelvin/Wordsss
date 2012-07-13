@@ -185,7 +185,6 @@ static char* vocaArray[11] = {
 {
     //    PatentViewController* pvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PatentViewController"];
     //    UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:pvc];
-    //    
     //    [self presentModalViewController:nc animated:YES];
     
     AboutViewController* avc = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];

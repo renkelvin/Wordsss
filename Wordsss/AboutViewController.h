@@ -19,5 +19,6 @@
 - (IBAction)patentButtonClicked:(id)sender;
 - (IBAction)shareButtonClicked:(id)sender;
 - (IBAction)feedbackButtonClicked:(id)sender;
+- (IBAction)rateButtonClicked:(id)sender;
 
 @end

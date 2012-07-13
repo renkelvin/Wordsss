@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1800" systemVersion="12A256" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1800" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="AhdDictMeaning" representedClassName="AhdDictMeaning" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
@@ -216,6 +216,8 @@
         <element name="PureWord" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Rootaffix" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Sense" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TBBTListSentence" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TBBTListWord" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Word" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Word_Association" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Word_Dict" positionX="0" positionY="0" width="0" height="0"/>
@@ -223,7 +225,5 @@
         <element name="Word_Relation" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Word_Rootaffix" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Word_Sense" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="TBBTListWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="TBBTListSentence" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
