@@ -1015,7 +1015,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 ((GRERBListWord*)object).meaning_cn = [((GRERBListWord*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
-                                        else if ([attrString compare:@"list"] == NSOrderedSame) {
+                                        else if ([attrString compare:@"list_id"] == NSOrderedSame) {
                                             ((GRERBListWord*)object).list = [NSNumber numberWithInt:[string intValue]];
                                         }
  
@@ -1266,7 +1266,12 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"List - id: %@", string);
                                         }
                                         else if ([attrString compare:@"name"] == NSOrderedSame) {
-                                            ((List*)object).name = string;
+                                            if (!((List*)object).name) {
+                                                ((List*)object).name = string;
+                                            }
+                                            else {
+                                                ((List*)object).name = [((List*)object).name stringByAppendingFormat:@"%@", string];
+                                            }
                                         }
                                         else if ([attrString compare:@"count"] == NSOrderedSame) {
                                             ((List*)object).num = [NSNumber numberWithInt:[string intValue]];

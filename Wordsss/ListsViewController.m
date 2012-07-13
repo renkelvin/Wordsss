@@ -231,7 +231,7 @@
         {
             switch (indexPath.row) {
                 case 0:
-                    list = [_listDict objectForKey:@"DOTA词表"];
+                    list = [_listDict objectForKey:@"Dota词表"];
                     break;
                 default:
                     break;

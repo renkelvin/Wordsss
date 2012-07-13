@@ -408,8 +408,8 @@
 		FEBFBF281436DAF20028630E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF261436DAF20028630E /* InfoPlist.strings */; };
 		FEBFBF2A1436DAF20028630E /* WordsssTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF291436DAF20028630E /* WordsssTests.h */; };
 		FEBFBF2C1436DAF20028630E /* WordsssTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBF2B1436DAF20028630E /* WordsssTests.m */; };
+		FEC0DE4C15B0843800C9F5E4 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEC0DE4B15B0843800C9F5E4 /* WordsssDB.sqlite */; };
 		FECE6B0015ABD75300E6CE67 /* WordsssDB.xml in Resources */ = {isa = PBXBuildFile; fileRef = FECE6AFF15ABD75300E6CE67 /* WordsssDB.xml */; };
-		FECE6B0215ABD94200E6CE67 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FECE6B0115ABD94200E6CE67 /* WordsssDB.sqlite */; };
 		FED1E21914C813A800013D07 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = FED1E21814C813A800013D07 /* List.m */; };
 		FED7747314ABA681007BB8D4 /* AhdDictSentence.m in Sources */ = {isa = PBXBuildFile; fileRef = FED7747214ABA681007BB8D4 /* AhdDictSentence.m */; };
 		FEDD3ABD14FA522C00F73D11 /* GRERBListListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDD3ABC14FA522C00F73D11 /* GRERBListListCell.m */; };
@@ -1034,9 +1034,9 @@
 		FEBFBF251436DAF20028630E /* WordsssTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsssTests-Info.plist"; sourceTree = "<group>"; };
 		FEBFBF291436DAF20028630E /* WordsssTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsssTests.h; sourceTree = "<group>"; };
 		FEBFBF2B1436DAF20028630E /* WordsssTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsssTests.m; sourceTree = "<group>"; };
+		FEC0DE4B15B0843800C9F5E4 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = ../../../../Desktop/WordsssDB.sqlite; sourceTree = "<group>"; };
 		FECE6AFD15ABD31D00E6CE67 /* WordsssDB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WordsssDB 2.xcdatamodel"; sourceTree = "<group>"; };
 		FECE6AFF15ABD75300E6CE67 /* WordsssDB.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WordsssDB.xml; path = ../../../../Desktop/WordsssDB.xml; sourceTree = "<group>"; };
-		FECE6B0115ABD94200E6CE67 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = ../../../../Desktop/WordsssDB.sqlite; sourceTree = "<group>"; };
 		FED1E21714C813A800013D07 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		FED1E21814C813A800013D07 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		FED7747114ABA681007BB8D4 /* AhdDictSentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AhdDictSentence.h; sourceTree = "<group>"; };
@@ -1704,7 +1704,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FECE6B0115ABD94200E6CE67 /* WordsssDB.sqlite */,
+				FEC0DE4B15B0843800C9F5E4 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -2586,9 +2586,9 @@
 				FEDF06401503797C004F1430 /* title_large.png in Resources */,
 				FEDF06411503797C004F1430 /* title_large@2x.png in Resources */,
 				FECE6B0015ABD75300E6CE67 /* WordsssDB.xml in Resources */,
-				FECE6B0215ABD94200E6CE67 /* WordsssDB.sqlite in Resources */,
 				FE64123B15AC320D00D76C9B /* Basemic.ttf in Resources */,
 				FE82EA6D15B0497B007F8DF8 /* us_pos.tree in Resources */,
+				FEC0DE4C15B0843800C9F5E4 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
