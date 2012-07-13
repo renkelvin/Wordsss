@@ -37,7 +37,7 @@
     _listsVirtualActor = [ListsVirtualActor listsVirtualActor];
     
     //
-    _listNameArray = [NSArray arrayWithObjects:@"数学词表", @"计算机词表", nil];
+    _listDict = [_listsVirtualActor getListDictionary];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,20 +62,18 @@
 
 - (IBAction)featureList1ButtonClicked:(id)sender
 {
-    // 物理
-    NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = [dict objectForKey:@"物理词表"];
-    PHListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PHListViewController"];
+    // TBBT词表
+    List* list = [_listDict objectForKey:@"TBBT词表"];
+    TBBTListSLViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListSLViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];
 }
 
 - (IBAction)featureList2ButtonClicked:(id)sender
 {
-    // GRE红宝书
-    NSDictionary* dict = [_listsVirtualActor getListDictionary];
-    List* list = [dict objectForKey:@"词表"];
-    GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
+    // 数学词表
+    List* list = [_listDict objectForKey:@"数学词表"];
+    MAListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAListViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];
 }
@@ -84,31 +82,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section != 0) {
-        return;
-    }
+    ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
     
-    NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
-    
-    // 数学词表
-    if ([listName compare:@"数学词表"] == NSOrderedSame) {
+    if ([cell.list.name compare:@"数学词表"] == NSOrderedSame) {
         MAListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAListViewController"];
-        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
         lvc = [lvc initWithList:cell.list];
         [[self navigationController] pushViewController:lvc animated:YES];
     }
-    
-    // 计算机词表
-    else if ([listName compare:@"计算机词表"] == NSOrderedSame) {
-//        CSListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CSListViewController"];
-//        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
-//        lvc = [lvc initWithList:cell.list];
-//        [[self navigationController] pushViewController:lvc animated:YES];
-        
-        TBBTListSLViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListSLViewController"];
-        ListCell* cell = (ListCell*)[tableView cellForRowAtIndexPath:indexPath];
+    else if ([cell.list.name compare:@"物理词表"] == NSOrderedSame) {
+        PHListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"PHListViewController"];
         lvc = [lvc initWithList:cell.list];
         [[self navigationController] pushViewController:lvc animated:YES];
+    }
+    else if ([cell.list.name compare:@"计算机词表"] == NSOrderedSame) {
+        CSListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CSListViewController"];
+        lvc = [lvc initWithList:cell.list];
+        [[self navigationController] pushViewController:lvc animated:YES];
+    }
+    else if ([cell.list.name compare:@"GRE红宝书"] == NSOrderedSame) {
+        GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
+        lvc = [lvc initWithList:cell.list];
+        [[self navigationController] pushViewController:lvc animated:YES];
+    }
+    else if ([cell.list.name compare:@"GRE蓝宝书"] == NSOrderedSame) {
+        //
+    }
+    else if ([cell.list.name compare:@"TBBT词表"] == NSOrderedSame) {
+        TBBTListSLViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListSLViewController"];
+        lvc = [lvc initWithList:cell.list];
+        [[self navigationController] pushViewController:lvc animated:YES];
+    }
+    else if ([cell.list.name compare:@"DOTA词表"] == NSOrderedSame) {
+        //
     }
 }
 
@@ -116,7 +121,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 // Header
@@ -129,14 +134,17 @@
     switch (section) {
         case 0:
         {
-            headerView.titleLabel.text = @"其他词表";
-            
+            headerView.titleLabel.text = @"考试用书";
             break;
         }
         case 1:
         {
-            headerView.titleLabel.text = @"即将推出";
-            
+            headerView.titleLabel.text = @"学科词表";
+            break;
+        }
+        case 2:
+        {
+            headerView.titleLabel.text = @"游戏词表";
             break;
         }
         default:
@@ -152,22 +160,24 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case 0:
+        case 0: // 考试用书
         {
-            return [[_listsVirtualActor getListDictionary] count] - 2;
-            
+            return 2;
             break;
         }
-        case 1:
+        case 1: // 学科词表
         {
             return 3;
-            
+            break;
+        }
+        case 2: // 游戏词表
+        {
+            return 1;
             break;
         }
         default:
         {
             return 0;
-            
             break;
         }
     }
@@ -183,48 +193,57 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WordBooksTableViewCellIndentifier];
     }
     
+    List* list = nil;
+    
     switch (indexPath.section) {
         case 0:
         {
-            NSDictionary* dict = [_listsVirtualActor getListDictionary];
-            List* list = nil;
-            NSString* listName = [_listNameArray objectAtIndex:indexPath.row];
-            list = [dict objectForKey:listName];
-            
-            [(ListCell*)cell setList:list];
-            [(ListCell*)cell configCell];
-            
+            switch (indexPath.row) {
+                case 0:
+                    list = [_listDict objectForKey:@"GRE红宝书"];
+                    break;
+                case 1:
+                    list = [_listDict objectForKey:@"GRE蓝宝书"];
+                    break;
+                default:
+                    break;
+            };
             break;
         }
         case 1:
         {
             switch (indexPath.row) {
                 case 0:
-                    [((ListCell*)cell).nameLabel setText:@"DOTA词表"];
-                    [((ListCell*)cell).countLabel setText:@"即将推出"];
-                    [((ListCell*)cell).thumbImageView setImage:[UIImage imageNamed:@"wl_dota.jpg"]];
+                    list = [_listDict objectForKey:@"数学词表"];
                     break;
                 case 1:
-                    [((ListCell*)cell).nameLabel setText:@"TOEFL词表"];
-                    [((ListCell*)cell).countLabel setText:@"即将推出"];
-                    [((ListCell*)cell).thumbImageView setImage:[UIImage imageNamed:@"wl_toefl.png"]];
+                    list = [_listDict objectForKey:@"物理词表"];
                     break;
                 case 2:
-                    [((ListCell*)cell).nameLabel setText:@"TBBT词表"];
-                    [((ListCell*)cell).countLabel setText:@"即将推出"];
-                    [((ListCell*)cell).thumbImageView setImage:[UIImage imageNamed:@"wl_bbt.png"]];
+                    list = [_listDict objectForKey:@"计算机词表"];
                     break;
                 default:
                     break;
-            }
-            
+            };
+            break;
+        }
+        case 2:
+        {
+            switch (indexPath.row) {
+                case 0:
+                    list = [_listDict objectForKey:@"DOTA词表"];
+                    break;
+                default:
+                    break;
+            };
             break;
         }
         default:
-        {
             break;
-        }
     }
+    
+    [(ListCell*)cell setList:list];
+    [(ListCell*)cell configCell];
     
     return cell;
 }

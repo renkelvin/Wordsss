@@ -1015,7 +1015,10 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                                 ((GRERBListWord*)object).meaning_cn = [((GRERBListWord*)object).meaning_cn stringByAppendingFormat:@"%@", string];
                                             }
                                         }
-                                        
+                                        else if ([attrString compare:@"list"] == NSOrderedSame) {
+                                            ((GRERBListWord*)object).list = [NSNumber numberWithInt:[string intValue]];
+                                        }
+ 
                                         break;
                                     }
                                     case TTABLEDATA_GRERBLISTMEM:   // GRERBListMem

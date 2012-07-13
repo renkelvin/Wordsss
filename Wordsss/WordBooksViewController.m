@@ -8,6 +8,8 @@
 
 #import "WordBooksViewController.h"
 
+#import "FliteTTS.h"
+
 @implementation WordBooksViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,6 +50,14 @@
     _wordVirtualActor = wordVirtualActor;
     
     return self;
+}
+
+#pragma mark - IBAction
+
+- (IBAction)speakButtonClicked:(id)sender
+{
+    FliteTTS* fliteEngine = [FliteTTS fliteTTSEngine];
+    [fliteEngine speakText:_wordVirtualActor.word.name];
 }
 
 #pragma - UITableViewDelegate

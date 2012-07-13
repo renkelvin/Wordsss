@@ -51,12 +51,14 @@
 {
     _listNum = listNum;
     
-    int a = [listNum intValue] - 1;
-    int b = [listNum intValue];
-    a = countArray[a];
-    b = countArray[b];
+    //    int a = [listNum intValue] - 1;
+    //    int b = [listNum intValue];
+    //    a = countArray[a];
+    //    b = countArray[b];
+    //    
+    //    _listWordArray = [listWordArray subarrayWithRange:NSMakeRange(a, b - a)];
     
-    _listWordArray = [listWordArray subarrayWithRange:NSMakeRange(a, b - a)];
+    _listWordArray = listWordArray;
     
     return self;
 }
@@ -94,11 +96,7 @@
 // Cell number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int num = 0;
-    
-    num = [_listWordArray count];
-    
-    return num;
+    return [_listWordArray count];
 }
 
 // Header View

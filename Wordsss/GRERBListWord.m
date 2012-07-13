@@ -17,5 +17,6 @@
 @dynamic meaning_en;
 @dynamic word_list;
 @dynamic grerbListMem;
+@dynamic list;
 
 @end

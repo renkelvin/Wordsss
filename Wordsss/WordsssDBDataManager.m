@@ -215,6 +215,17 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return result;
 }
 
+- (NSArray*)getGRERBListWordArrayWithList:(NSNumber*)listNum
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"GRERBListWord"];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"list == %d", [listNum intValue]]];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"word_list.word.name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];
+    
+    return result;
+}
+
 - (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"TBBTListSentence"];
@@ -298,10 +309,12 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     NSURL *storeURL = [[self applicationCachesDirectory] URLByAppendingPathComponent:@"WordsssDB.sqlite"];
     
     // If no WordsssDB.sqlite
-    NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];	
-    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-        NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
-        [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
+    if (!NO) {
+        NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+            NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
+            [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
+        }
     }
     
     NSError *error = nil;

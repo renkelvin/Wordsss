@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    
     //
     [self.titleLabel setText:[NSString stringWithFormat:@"Detail"]];
 }
@@ -82,7 +82,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-
+    
     // Configure the cell...
     TBBTListWord* tbbtListWord = [_listWordArray objectAtIndex:indexPath.row];
     [(TBBTListWLCell*)cell setTbbtListWord:tbbtListWord];
@@ -95,13 +95,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    TBBTListWLCell* cell = (TBBTListWLCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    Word* word = nil;
+    if (cell.tbbtListWord) {
+        word = cell.tbbtListWord.word_list.word;
+    }
+    
+    WordViewController* wvc = [[self.storyboard instantiateViewControllerWithIdentifier:@"WordViewController"] init:[word getTargetWord]];        
+    [[self navigationController] pushViewController:wvc animated:YES];
 }
 
 @end

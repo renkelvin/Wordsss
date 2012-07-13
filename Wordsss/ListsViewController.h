@@ -26,7 +26,7 @@
     ListsVirtualActor* _listsVirtualActor;
     
     //
-    NSArray* _listNameArray;
+    NSDictionary* _listDict;
 }
 
 - (IBAction)featureList1ButtonClicked:(id)sender;

@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSString * meaning_en;
 @property (nonatomic, retain) Word_List *word_list;
 @property (nonatomic, retain) NSMutableSet *grerbListMem;
+@property (nonatomic, retain) NSNumber * list;
+
 @end
 
 @interface GRERBListWord (CoreDataGeneratedAccessors)

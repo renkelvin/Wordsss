@@ -51,10 +51,10 @@
 {
     _list = list;
     
-    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    NSArray* array = [wdm getListWordArray:_list];
-    
-    _listWordArray = array;
+    //    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    //    NSArray* array = [wdm getListWordArray:_list];
+    //    
+    //    _listWordArray = array;
     
     //    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     //    for (GRERBListWord* w in array) {
@@ -77,7 +77,11 @@
 {
     // 
     GRERBWLListViewController* gwvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBWLListViewController"];        
-    gwvc = [gwvc initWithListWordArray:_listWordArray listNum:[NSNumber numberWithInt:indexPath.row + 1]];
+    
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    NSArray* array = [wdm getGRERBListWordArrayWithList:[NSNumber numberWithInt:indexPath.row + 1]];
+    
+    gwvc = [gwvc initWithListWordArray:array listNum:[NSNumber numberWithInt:indexPath.row + 1]];
     [[self navigationController] pushViewController:gwvc animated:YES];
 }
 

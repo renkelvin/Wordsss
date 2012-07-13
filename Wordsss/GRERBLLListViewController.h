@@ -21,7 +21,6 @@
 @interface GRERBLLListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     List* _list;
-    NSArray* _listWordArray;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;

@@ -68,16 +68,26 @@
 {
     // AhdDictWord
     if (self.ahdDictWord) {
-        //
+        // Pronunciation
+        if (self.ahdDictWord.pronunciation) {
+            [self.pronunciationLabel setHidden:NO];
+            [self.pronunciationLabel setText:[NSString stringWithFormat:@"3%@5", self.ahdDictWord.pronunciation]];
+            [self.pronunciationLabel setFont:[UIFont fontWithName:@"Basemic" size:15.0]];
+   
+            _criticalPoiont.y += 20;
+}
+
+        //type
         [self addString:[self.ahdDictWord getFullTypeString] blue:NO];
-        //
+
         _criticalPoiont.y += 5;
+        
         //
         int i = 1;
         for (AhdDictMeaning* meaning in self.ahdDictWord.meaning) {
-            //
+
             _criticalPoiont.y += 5;
-            //
+
             NSString* shortMeaning = [meaning getShortMeaning];
             if (shortMeaning)
             {          
@@ -89,12 +99,7 @@
             if (longMeaning) {
                 [self addString:longMeaning blue:NO];
             }
-        }
-        
-        // PronunciationLabel
-        [self.pronunciationLabel setHidden:NO];
-        [self.pronunciationLabel setText:self.ahdDictWord.pronunciation];
-        [self.pronunciationLabel setFont:[UIFont fontWithName:@"Basemic" size:17.0]];
+        }        
     }
     
     // MwcDictWord
@@ -133,6 +138,9 @@
     self.ahdDictWord = nil;
     self.mwcDictWord = nil;
     self.ahdDictSentence = nil;
+    
+    //
+    [self.pronunciationLabel setHidden:YES];
 }
 
 - (CGFloat)getHeight

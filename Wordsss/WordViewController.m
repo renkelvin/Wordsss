@@ -49,7 +49,7 @@
 
 // update
 - (void)update
-{    
+{
     // WordPos Level Bar
     if ([_wordVirtualActor wordRecord]) {
         [self.wordPosLevelLeftImageView setHidden:NO];
@@ -120,7 +120,7 @@
 
 - (IBAction)navigationBackButtonClicked:(id)sender
 {
-    [[self navigationController] popViewControllerAnimated:YES];       
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (IBAction)navigationBookmarksButtonClicked:(id)sender
@@ -160,7 +160,7 @@
             break;
         case 3:
             [self.wordStatisticsSectionButton setSelected:YES];
-            break;            
+            break;
         default:
             break;
     }
@@ -197,7 +197,7 @@
     //        NSLog(@"%@", list.maListWord.meaning);
     //        NSLog(@"%@", list.phListWord.meaning);
     //        frame = kWordViewSectionFrameShort;
-    //        
+    //
     //        // Show translate to list bar
     //        [self.transToListButton setHidden:NO];
     //    }

@@ -11,6 +11,8 @@
 #import "List.h"
 #import "TBBTListSentence.h"
 
+#import "WordViewController.h"
+
 @interface TBBTListWLViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSArray* _listWordArray;

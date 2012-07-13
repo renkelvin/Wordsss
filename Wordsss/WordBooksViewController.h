@@ -17,6 +17,8 @@
 #import "DictWordCell.h"
 #import "RKTableHeader.h"
 
+@class FliteTTS;
+
 @interface WordBooksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     //
@@ -24,5 +26,7 @@
 }
 
 - (WordBooksViewController*)init:(WordVirtualActor*)wordVirtualActor;
+
+- (IBAction)speakButtonClicked:(id)sender;
 
 @end
