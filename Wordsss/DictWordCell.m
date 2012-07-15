@@ -79,7 +79,7 @@
             // frame.origin.x = self.pronunciationLabel.frame.origin.x + self.pronunciationLabel.frame.origin.x + self.pronunciationLabel.frame.size.width + 5;
             // [self.pronunciationButton setFrame:frame];
             
-            _criticalPoiont.y += 20;
+            _criticalPoiont.y += 23;
         }
         
         //type

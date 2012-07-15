@@ -414,8 +414,6 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 {
     UserDataManager* udm = [UserDataManager userdataManager];
     
-    [wordRecord levelUpdate];
-    
     //
     [udm createHisRecord:wordRecord forUser:_user];
     
@@ -434,9 +432,12 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [_user dlInc];
     [_wordRecordCur dlInc];
     
+    // 
+    [_wordRecordCur levelUpdate];
+    
     //
-    if ([self checkWordRecord:_wordRecordCur]) {
-        [self dropWordRecord:_wordRecordCur];
+    if ([self checkWordRecord:_wordRecordPos]) {
+        [self dropWordRecord:_wordRecordPos];
     }
     
     //
@@ -451,8 +452,30 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [_wordRecordCur dlDec];
     
     //
-    if ([self checkWordRecord:_wordRecordCur]) {
-        [self dropWordRecord:_wordRecordCur];
+    [_wordRecordCur levelUpdate];
+    
+    //
+    if ([self checkWordRecord:_wordRecordPos]) {
+        [self dropWordRecord:_wordRecordPos];
+    }
+    
+    //
+    if ([self checkNextDayByCount]) {
+        [self nextDay];
+    }
+}
+
+- (void)setWordRecordPosLevelDec
+{
+    [_user dlInc];
+    [_wordRecordPos dlDec];
+    
+    //
+    [_wordRecordPos levelUpdate];
+    
+    //
+    if ([self checkWordRecord:_wordRecordPos]) {
+        [self dropWordRecord:_wordRecordPos];
     }
     
     //

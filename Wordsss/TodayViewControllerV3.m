@@ -28,6 +28,8 @@
 
 @synthesize dkhlImageView, knowhlImageView, screenTitleLabel, screenInfoLabel, coverImageView, coverView, blackCoverView;
 
+@synthesize regretButton, regretTransButton;
+
 @synthesize isShowHelpAfterInit;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,7 +44,7 @@
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];    
+    [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
 }
@@ -92,6 +94,9 @@
     if ([self checkHasInitUser]) {
         // Get todayVirtualActor
         _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
+                
+        //
+        ifDec = YES;
         
         // Update view
         [self update];
@@ -157,15 +162,17 @@
             bodyWidth = 313 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
         }
         
-        CGRect frame;
-        
-        frame = self.wordPosLevelBodyImageView.frame;
-        frame.size.width = bodyWidth;
-        self.wordPosLevelBodyImageView.frame = frame;
-        
-        frame = self.wordPosLevelRightImageView.frame;
-        frame.origin.x = 1 + bodyWidth + 2;
-        self.wordPosLevelRightImageView.frame = frame;
+        [UIView animateWithDuration:0.3
+                         animations:^(void) {
+                             CGRect frame;
+                             frame = self.wordPosLevelBodyImageView.frame;
+                             frame.size.width = bodyWidth;
+                             self.wordPosLevelBodyImageView.frame = frame;
+                             
+                             frame = self.wordPosLevelRightImageView.frame;
+                             frame.origin.x = 1 + bodyWidth + 2;
+                             self.wordPosLevelRightImageView.frame = frame;
+                         }];
     }
     
     // WordPos Brief Meaning
@@ -173,13 +180,13 @@
         [[_todayVirtualActor wordPos] configLabel:self.briefMeaningLabelT label:self.briefMeaningLabelM];
     }
     
-    // Up Highlight
-    //    if (ifDec) {
-    //        [self.briefMeaningButton setSelected:YES];
-    //    }
-    //    else {
-    //        [self.briefMeaningButton setSelected:NO];
-    //    }
+    //
+    if (ifDec) {
+        [self.regretButton setHidden:YES];
+    }
+    else {
+        [self.regretButton setHidden:NO];
+    }
     
     // info
     // View
@@ -239,15 +246,18 @@
             bodyWidth = 313 / 11.0 * [[_todayVirtualActor wordRecordPos].level intValue];
         }
         
-        CGRect frame;
-        
-        frame = self.wordPosLevelBodyTransImageView.frame;
-        frame.size.width = bodyWidth;
-        self.wordPosLevelBodyTransImageView.frame = frame;
-        
-        frame = self.wordPosLevelRightTransImageView.frame;
-        frame.origin.x = 1 + bodyWidth + 2;
-        self.wordPosLevelRightTransImageView.frame = frame;
+        [UIView animateWithDuration:0.3
+                         animations:^(void) {
+                             CGRect frame;
+                             
+                             frame = self.wordPosLevelBodyTransImageView.frame;
+                             frame.size.width = bodyWidth;
+                             self.wordPosLevelBodyTransImageView.frame = frame;
+                             
+                             frame = self.wordPosLevelRightTransImageView.frame;
+                             frame.origin.x = 1 + bodyWidth + 2;
+                             self.wordPosLevelRightTransImageView.frame = frame;
+                         }];
     }
     
     // WordPos Brief Meaning
@@ -255,13 +265,13 @@
         [[_todayVirtualActor wordPos] configLabel:self.briefMeaningTransLabelT label:self.briefMeaningTransLabelM];
     }
     
-    //    // Up Highlight
-    //    if (ifDec) {
-    //        [self.briefMeaningTransButton setSelected:YES];
-    //    }
-    //    else {
-    //        [self.briefMeaningTransButton setSelected:NO];
-    //    }
+    //
+    if (ifDec) {
+        [self.regretTransButton setHidden:YES];
+    }
+    else {
+        [self.regretTransButton setHidden:NO];
+    }
 }
 
 - (void)nextDay
@@ -306,7 +316,7 @@
      }];
 }
 
-// 
+//
 - (void)incOperation
 {
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
@@ -334,7 +344,7 @@
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
-// 
+//
 - (void)decOperation
 {
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
@@ -362,6 +372,29 @@
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
 }
 
+//
+- (void)regretOperation
+{
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
+    
+    ifDec = YES;
+    
+    // Set wordRecord level
+    [_todayVirtualActor setWordRecordPosLevelDec];
+    
+    // Update trans view
+    [self updateTrans];
+    
+    // // Animate
+    // [self animate];
+    
+    // Update view
+    [self update];
+    
+    NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordPos.name, _todayVirtualActor.wordRecordPos.level, _todayVirtualActor.wordRecordPos.dlc, _todayVirtualActor.wordRecordPos.dls);
+}
+
+//
 - (void)incTopOperation
 {
     NSLog(@"%@ lvl:%@ dlc:%@ dls:%@", _todayVirtualActor.wordCur.name, _todayVirtualActor.wordRecordCur.level, _todayVirtualActor.wordRecordCur.dlc, _todayVirtualActor.wordRecordCur.dls);
@@ -414,22 +447,22 @@
                      animations:^(void){
                          [self.screenTitleLabel setAlpha:0.0];
                          [self.screenInfoLabel setAlpha:0.0];
-                     } 
+                     }
                      completion:^(BOOL finished){
                          //
                          [self.screenTitleLabel setText:title];
                          [self.screenInfoLabel setText:info];
                          
                          //
-                         [UIView animateWithDuration:0.3 
+                         [UIView animateWithDuration:0.3
                                           animations:^(void){
                                               [self.screenTitleLabel setAlpha:1.0];
                                               [self.screenInfoLabel setAlpha:1.0];
                                           }
                                           completion:^(BOOL finished){
                                               [UIView animateWithDuration:1.0
-                                                                    delay:3.0 
-                                                                  options:UIViewAnimationOptionCurveEaseInOut 
+                                                                    delay:3.0
+                                                                  options:UIViewAnimationOptionCurveEaseInOut
                                                                animations:^(void){
                                                                    [self.screenTitleLabel setAlpha:0.2];
                                                                    [self.screenInfoLabel setAlpha:0.2];
@@ -452,7 +485,7 @@
     [[self navigationController] pushViewController:wordViewController animated:YES];
 }
 
-- (IBAction)wordSliderLeftTouchDown:(id)sender 
+- (IBAction)wordSliderLeftTouchDown:(id)sender
 {
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
@@ -472,6 +505,7 @@
 {
     //
     [self decOperation];
+    // [self regretOperation];
     
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
@@ -506,7 +540,7 @@
     }];
 }
 
-- (IBAction)wordSliderLeftTouchDragEnter:(id)sender 
+- (IBAction)wordSliderLeftTouchDragEnter:(id)sender
 {
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
@@ -514,7 +548,7 @@
     }];
 }
 
-- (IBAction)wordSliderRightTouchDragEnter:(id)sender 
+- (IBAction)wordSliderRightTouchDragEnter:(id)sender
 {
     //
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
@@ -536,6 +570,11 @@
     [UIView animateWithDuration:kAnimationInterval animations:^(void){
         [self.knowhlImageView setAlpha:0.0];
     }];
+}
+
+- (IBAction)regretButtonClicked:(id)sender
+{
+    [self regretOperation];
 }
 
 - (IBAction)helpButtonClicked:(id)sender

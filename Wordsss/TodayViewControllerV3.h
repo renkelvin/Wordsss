@@ -94,6 +94,9 @@
 @property (nonatomic, retain) IBOutlet UIView* blackCoverView;
 @property (nonatomic, retain) IBOutlet UIImageView* coverImageView;
 
+@property (nonatomic, retain) IBOutlet UIButton* regretButton;
+@property (nonatomic, retain) IBOutlet UIButton* regretTransButton;
+
 @property (nonatomic, retain) NSNumber* isShowHelpAfterInit;
 
 #pragma mark - IBAction

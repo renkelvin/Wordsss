@@ -89,6 +89,8 @@
 
 - (void)setWordRecordCurLevelInc;
 - (void)setWordRecordCurLevelDec;
+
+- (void)setWordRecordPosLevelDec;
 - (void)setWordRecordCurLevelIncTop;
 
 - (BOOL)isNeedUpdateScreen;
