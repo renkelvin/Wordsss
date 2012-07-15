@@ -112,7 +112,7 @@
         lvc = [lvc initWithList:cell.list];
         [[self navigationController] pushViewController:lvc animated:YES];
     }
-    else if ([cell.list.name compare:@"DOTA词表"] == NSOrderedSame) {
+    else if ([cell.list.name compare:@"Dota词表"] == NSOrderedSame) {
         //
     }
 }

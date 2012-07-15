@@ -37,22 +37,22 @@
         imgString = @"wl_math.png";
     }
     else if ([list.name compare:@"物理词表"] == NSOrderedSame) {
-        imgString = @"";
+        imgString = @"wl_physics.png";
     }
     else if ([list.name compare:@"计算机词表"] == NSOrderedSame) {
         imgString = @"wl_computer.png";
     }
     else if ([list.name compare:@"GRE红宝书"] == NSOrderedSame) {
-        imgString = @"";
+        imgString = @"wl_grerb.png";
     }
     else if ([list.name compare:@"GRE蓝宝书"] == NSOrderedSame) {
-        imgString = @"";
+        imgString = @"wl_grebb.png";
     }
     else if ([list.name compare:@"TBBT词表"] == NSOrderedSame) {
         imgString = @"wl_bbt.png";
     }
-    else if ([list.name compare:@"DOTA词表"] == NSOrderedSame) {
-        imgString = @"wl_dota.png";
+    else if ([list.name compare:@"Dota词表"] == NSOrderedSame) {
+        imgString = @"wl_dota.jpg";
     }
     
     return imgString;
