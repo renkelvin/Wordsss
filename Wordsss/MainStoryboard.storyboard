@@ -1332,7 +1332,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" text="6s*8d9*n" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="Gwc-Ue-7dH">
-                                                    <rect key="frame" x="20" y="10" width="120" height="15"/>
+                                                    <rect key="frame" x="42" y="8" width="260" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1341,11 +1341,11 @@
                                                     <color key="textColor" red="0.61960784313725492" green="0.76470588235294112" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FhV-MI-xyP">
-                                                    <rect key="frame" x="99" y="6" width="24" height="24"/>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FhV-MI-xyP">
+                                                    <rect key="frame" x="20" y="8" width="16" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal">
+                                                    <state key="normal" image="sound.png">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1361,6 +1361,7 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="pronunciationButton" destination="FhV-MI-xyP" id="slZ-nT-G9X"/>
                                             <outlet property="pronunciationLabel" destination="Gwc-Ue-7dH" id="uun-oi-tRs"/>
                                         </connections>
                                     </tableViewCell>
@@ -2702,10 +2703,6 @@
                                                     <rect key="frame" x="301" y="73" width="2" height="3"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_arrow_dark.png" id="i9c-FR-kRf">
-                                                    <rect key="frame" x="295" y="31" width="10" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" text="CSListWord" autoshrinkMode="minimumFontSize" id="fgz-LT-M1U">
                                                     <rect key="frame" x="21" y="18" width="98" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2741,6 +2738,10 @@
                                                         <action selector="addButtonClicked:" destination="sY9-BJ-x9N" eventType="touchUpInside" id="WDB-Wi-dNh"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_arrow_dark.png" id="i9c-FR-kRf">
+                                                    <rect key="frame" x="295" y="31" width="10" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -2872,13 +2873,46 @@
                                                     <color key="textColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fny-je-KKJ">
+                                                    <rect key="frame" x="220" y="22" width="73" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <state key="normal" image="button_join.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_0.png" id="RBg-kT-eHI">
+                                                    <rect key="frame" x="18" y="72" width="285" height="6"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="level_body.png" id="2Gr-mP-Swc">
+                                                    <rect key="frame" x="20" y="73" width="281" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_left.png" id="db3-rv-coT">
+                                                    <rect key="frame" x="19" y="73" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" image="level_right.png" id="P6t-vg-7VD">
+                                                    <rect key="frame" x="301" y="73" width="2" height="3"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="addButton" destination="fny-je-KKJ" id="YtV-Qw-FcG"/>
                                             <outlet property="meaningLabel" destination="Wqi-uL-VpN" id="3ym-hD-C6r"/>
                                             <outlet property="nameLabel" destination="YyV-vj-QWz" id="KVF-hJ-aHO"/>
+                                            <outlet property="wordPosLevelBodyImageView" destination="2Gr-mP-Swc" id="G2d-dG-h6C"/>
+                                            <outlet property="wordPosLevelImageView" destination="RBg-kT-eHI" id="PvB-le-ClS"/>
+                                            <outlet property="wordPosLevelLeftImageView" destination="db3-rv-coT" id="6lO-jk-Jzh"/>
+                                            <outlet property="wordPosLevelRightImageView" destination="P6t-vg-7VD" id="JFb-28-3Ag"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3926,6 +3960,7 @@
         <image name="segments_translations_active.png" width="29" height="29"/>
         <image name="shadow_down.png" width="320" height="13"/>
         <image name="shadow_up.png" width="320" height="13"/>
+        <image name="sound.png" width="16" height="16"/>
         <image name="tableview_cell_arrow_dark.png" width="10" height="15"/>
         <image name="tableview_cell_divider.png" width="320" height="3"/>
         <image name="textfield_bg.png" width="300" height="49"/>
@@ -3975,6 +4010,7 @@
         <class className="DictWordCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DictWordCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="pronunciationButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="pronunciationLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

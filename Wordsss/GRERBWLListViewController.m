@@ -50,14 +50,7 @@
 - (GRERBWLListViewController*)initWithListWordArray:(NSArray*)listWordArray listNum:(NSNumber*)listNum
 {
     _listNum = listNum;
-    
-    //    int a = [listNum intValue] - 1;
-    //    int b = [listNum intValue];
-    //    a = countArray[a];
-    //    b = countArray[b];
-    //    
-    //    _listWordArray = [listWordArray subarrayWithRange:NSMakeRange(a, b - a)];
-    
+        
     _listWordArray = listWordArray;
     
     return self;

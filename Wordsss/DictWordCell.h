@@ -23,6 +23,7 @@
 @property (nonatomic, retain) AhdDictSentence* ahdDictSentence;
 
 @property (nonatomic, retain) IBOutlet UILabel* pronunciationLabel;
+@property (nonatomic, retain) IBOutlet UIButton* pronunciationButton;
 
 - (void)configCell;
 - (void)clear;

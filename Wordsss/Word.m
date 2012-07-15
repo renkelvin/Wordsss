@@ -146,8 +146,7 @@ static int freqArray[11] = {
 - (void)configLabel:(WordCellLabel*)labelT label:(WordCellLabel*)labelM
 {
     //
-    // [labelT setText:[NSString stringWithFormat:@"%@ %@", [self getWordLevel], [self getShortTypeString]]];
-    [labelT setText:[NSString stringWithFormat:@"%@", [self getFullTypeString]]];
+    [labelT setText:[NSString stringWithFormat:@"%@", [self getShortTypeString]]];
     
     // ahdDictWord Existing
     if (self.word_dict.ahdDictWord) {

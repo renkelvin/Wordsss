@@ -80,7 +80,7 @@
         [picker setToRecipients:[NSArray arrayWithObject:receiver]];
         
         [picker setSubject:subject];
-        NSString *emailBody = [NSString stringWithFormat:@"反馈类型（功能建议 / 程序漏洞）：\n\n描述："];
+        NSString *emailBody = [NSString stringWithFormat:@"描述：\n"];
         [picker setMessageBody:emailBody isHTML:NO];
         
         [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:picker animated:YES];

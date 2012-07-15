@@ -34,8 +34,10 @@
 
 - (void)configCell
 {
+    //
     [self.nameLabel setText:[NSString stringWithFormat:@"List %d", [self.listNum intValue]]];
     
+    //
     int count[51] = {
         0,
         108,  219,  331,  439,  550,  669,  759,  875,  980,  1003,

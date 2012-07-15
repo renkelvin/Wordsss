@@ -11,7 +11,7 @@
 @implementation DictWordCell
 
 @synthesize ahdDictWord, mwcDictWord, ahdDictSentence;
-@synthesize pronunciationLabel;
+@synthesize pronunciationButton, pronunciationLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -73,24 +73,29 @@
             [self.pronunciationLabel setHidden:NO];
             [self.pronunciationLabel setText:[NSString stringWithFormat:@"3%@5", self.ahdDictWord.pronunciation]];
             [self.pronunciationLabel setFont:[UIFont fontWithName:@"Basemic" size:15.0]];
-   
+            
+            [self.pronunciationButton setHidden:NO];
+            // CGRect frame = self.pronunciationButton.frame;
+            // frame.origin.x = self.pronunciationLabel.frame.origin.x + self.pronunciationLabel.frame.origin.x + self.pronunciationLabel.frame.size.width + 5;
+            // [self.pronunciationButton setFrame:frame];
+            
             _criticalPoiont.y += 20;
-}
-
+        }
+        
         //type
         [self addString:[self.ahdDictWord getFullTypeString] blue:NO];
-
+        
         _criticalPoiont.y += 5;
         
         //
         int i = 1;
         for (AhdDictMeaning* meaning in self.ahdDictWord.meaning) {
-
+            
             _criticalPoiont.y += 5;
-
+            
             NSString* shortMeaning = [meaning getShortMeaning];
             if (shortMeaning)
-            {          
+            {
                 [self addString:[NSString stringWithFormat:@"%d. %@", i, shortMeaning] blue:YES];
                 i++;
             }
@@ -99,7 +104,7 @@
             if (longMeaning) {
                 [self addString:longMeaning blue:NO];
             }
-        }        
+        }
     }
     
     // MwcDictWord
@@ -140,6 +145,7 @@
     self.ahdDictSentence = nil;
     
     //
+    [self.pronunciationButton setHidden:YES];
     [self.pronunciationLabel setHidden:YES];
 }
 
