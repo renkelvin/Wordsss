@@ -22,6 +22,7 @@
 
 + (Defult*)insertEntity:(NSDictionary*)dict inManagedObjectContext:(NSManagedObjectContext*)context;
 
+- (NSString*)fieldTarget;
 - (int)freqCurrent;
 - (int)freqTarget;
 - (int)vocaCurrent;

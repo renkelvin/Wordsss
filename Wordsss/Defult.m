@@ -19,7 +19,7 @@ static int freqArray[11] = {
     9,          // 6  - 8000  - IELTS
     8,          // 7  - 9000  - TOEFL
     7,          // 8  - 10000 - SAT
-    5,          // 9  - 12448 - GRE
+    3,          // 9  - 12448 - GRE
     1           // 10 - 42814 - HolyShit
 };
 
@@ -33,8 +33,22 @@ static int vocaArray[11] = {
     8000,       // 6  - 8000  - IELTS
     9000,       // 7  - 9000  - TOEFL
     10000,      // 8  - 10000 - SAT
-    12000,      // 9  - 12448 - GRE
+    20000,      // 9  - 20000 - GRE
     40000       // 10 - 42814 - HolyShit
+};
+
+static char* fieldArray[11] = {
+    "zero",          // 0  - 1     - Zero
+    "basic",        // 1  - 800   - Basic
+    "middle",       // 2  - 1500  - Middle
+    "high",       // 3  - 3000  - High
+    "cet4",       // 4  - 4000  - CET4
+    "cet6",       // 5  - 6000  - CET6
+    "ielts",       // 6  - 8000  - IELTS
+    "toefl",       // 7  - 9000  - TOEFL
+    "sat",      // 8  - 10000 - SAT
+    "gre",      // 9  - 20000 - GRE
+    "holyshit"       // 10 - 42814 - HolyShit
 };
 
 @implementation Defult
@@ -55,6 +69,11 @@ static int vocaArray[11] = {
     entity.memDegree = [NSNumber numberWithFloat:0.5];
     
     return entity;
+}
+
+- (NSString*)fieldTarget
+{
+    return [NSString stringWithFormat:@"%s", fieldArray[[self.currentLevel intValue]]];
 }
 
 - (int)freqCurrent
