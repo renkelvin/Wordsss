@@ -1874,7 +1874,7 @@
                                 <rect key="frame" x="166" y="13" width="144" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="wl_large_math.png">
+                                <state key="normal" image="wl_large_gre.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -3535,28 +3535,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="ltv-52-MYO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="22" id="ltv-52-MYO">
                                 <rect key="frame" x="0.0" y="2" width="320" height="365"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TBBTListELTableViewCell" rowHeight="88" id="uaR-Gq-DDL" customClass="TBBTListELCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="88"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TBBTListELTableViewCell" rowHeight="68" id="uaR-Gq-DDL" customClass="TBBTListELCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_divider.png" id="o2c-NJ-qMi">
-                                                    <rect key="frame" x="0.0" y="87" width="320" height="3"/>
+                                                    <rect key="frame" x="0.0" y="67" width="320" height="3"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" image="tableview_cell_arrow_dark.png" id="b3k-eQ-AWl">
-                                                    <rect key="frame" x="295" y="31" width="10" height="15"/>
+                                                    <rect key="frame" x="295" y="27" width="10" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" text="TBBTListELTableViewCell" autoshrinkMode="minimumFontSize" id="iJW-4b-tra">
-                                                    <rect key="frame" x="21" y="18" width="191" height="22"/>
+                                                    <rect key="frame" x="21" y="13" width="191" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -3566,7 +3566,7 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="12" text="Meaning" autoshrinkMode="minimumFontSize" id="gOc-of-glE">
-                                                    <rect key="frame" x="21" y="40" width="191" height="16"/>
+                                                    <rect key="frame" x="21" y="35" width="191" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -4003,7 +4003,7 @@
         <image name="translation_bg_hl.png" width="320" height="88"/>
         <image name="translation_to_wordlist.png" width="309" height="31"/>
         <image name="wl_free.png" width="41" height="20"/>
-        <image name="wl_large_math.png" width="144" height="84"/>
+        <image name="wl_large_gre.png" width="144" height="84"/>
         <image name="wl_large_tbbt.png" width="144" height="84"/>
         <image name="wl_small_edge.png" width="52" height="53"/>
         <image name="word_focus_bg.png" width="320" height="160"/>

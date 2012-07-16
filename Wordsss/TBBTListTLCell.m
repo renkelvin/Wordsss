@@ -26,12 +26,25 @@
     // Configure the view for the selected state
 }
 
-#pragma mark - 
+#pragma mark -
 
 - (void)configCell
 {
-    [self.nameLabel setText:[NSString stringWithFormat:@"[%d]", [self.tbbtListSentence.beginTime intValue]]];
+    //
+    int ms = [self.tbbtListSentence.beginTime intValue];
+    int min = ms / (60*1000);
+    ms %= 60*1000;
+    int sec = ms / 1000;
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setMinute:min];
+    [comps setSecond:sec];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *date = [gregorian dateFromComponents:comps];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss"];
+    [self.nameLabel setText:[NSString stringWithFormat:@"[%@]", [dateFormatter stringFromDate:date]]];
     
+    //
     [self.meaningLabel setText:[NSString stringWithFormat:@"%@", self.tbbtListSentence.sentence]];
 }
 

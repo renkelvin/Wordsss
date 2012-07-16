@@ -42,6 +42,8 @@
 		206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401914F8B223009B6D2F /* wl_paid@2x.png */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
+		FE07C16315B30D4900D22053 /* wl_toefl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE07C16115B30D4900D22053 /* wl_toefl.jpg */; };
+		FE07C16415B30D4900D22053 /* wl_toefl@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE07C16215B30D4900D22053 /* wl_toefl@2x.jpg */; };
 		FE0C9CB214C28C2B00AA3819 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */; };
 		FE0DD79214FCE65D00C04EC3 /* TodayViewControllerV3.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0DD79114FCE65D00C04EC3 /* TodayViewControllerV3.m */; };
 		FE0DD7A414FCEF1E00C04EC3 /* dk.png in Resources */ = {isa = PBXBuildFile; fileRef = FE0DD79414FCEF1E00C04EC3 /* dk.png */; };
@@ -535,6 +537,8 @@
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
 		FE060C5C143CD7040026228C /* RKTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKTabBarController.xib; sourceTree = "<group>"; };
 		FE060C5D143CD7040026228C /* RKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTabBarController.h; sourceTree = "<group>"; };
+		FE07C16115B30D4900D22053 /* wl_toefl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wl_toefl.jpg; sourceTree = "<group>"; };
+		FE07C16215B30D4900D22053 /* wl_toefl@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wl_toefl@2x.jpg"; sourceTree = "<group>"; };
 		FE0C9CB114C28C2A00AA3819 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FE0DD79014FCE65D00C04EC3 /* TodayViewControllerV3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewControllerV3.h; sourceTree = "<group>"; };
 		FE0DD79114FCE65D00C04EC3 /* TodayViewControllerV3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewControllerV3.m; sourceTree = "<group>"; };
@@ -2148,6 +2152,8 @@
 		FEF4DE9A148E2B2E00E88653 /* ListsView */ = {
 			isa = PBXGroup;
 			children = (
+				FE07C16115B30D4900D22053 /* wl_toefl.jpg */,
+				FE07C16215B30D4900D22053 /* wl_toefl@2x.jpg */,
 				FE58921215B285C400D5ED06 /* wl_large_math.png */,
 				FE58921315B285C400D5ED06 /* wl_large_math@2x.png */,
 				FE58920E15B2729000D5ED06 /* wl_large_tbbt.png */,
@@ -2613,6 +2619,8 @@
 				FE58921515B285C400D5ED06 /* wl_large_math@2x.png in Resources */,
 				FE1F84FF15B2A16B00C514DC /* sound.png in Resources */,
 				FE1F850015B2A16B00C514DC /* sound@2x.png in Resources */,
+				FE07C16315B30D4900D22053 /* wl_toefl.jpg in Resources */,
+				FE07C16415B30D4900D22053 /* wl_toefl@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

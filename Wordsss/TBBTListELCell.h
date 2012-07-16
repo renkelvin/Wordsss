@@ -10,6 +10,7 @@
 
 @interface TBBTListELCell : UITableViewCell
 
+@property (nonatomic, retain) NSNumber* seasonNum;
 @property (nonatomic, retain) NSNumber* episodeNum;
 
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;

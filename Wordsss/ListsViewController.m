@@ -71,9 +71,9 @@
 
 - (IBAction)featureList2ButtonClicked:(id)sender
 {
-    // 数学词表
-    List* list = [_listDict objectForKey:@"数学词表"];
-    MAListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MAListViewController"];
+    // GRERB词表
+    List* list = [_listDict objectForKey:@"GRE红宝书"];
+    GRERBLLListViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBLLListViewController"];
     lvc = [lvc initWithList:list];
     [[self navigationController] pushViewController:lvc animated:YES];
 }
@@ -162,7 +162,7 @@
     switch (section) {
         case 0: // 考试用书
         {
-            return 2;
+            return 1;
             break;
         }
         case 1: // 学科词表
@@ -200,9 +200,6 @@
         {
             switch (indexPath.row) {
                 case 0:
-                    list = [_listDict objectForKey:@"GRE红宝书"];
-                    break;
-                case 1:
                     list = [_listDict objectForKey:@"GRE蓝宝书"];
                     break;
                 default:

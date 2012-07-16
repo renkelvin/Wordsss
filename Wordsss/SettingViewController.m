@@ -22,19 +22,19 @@ static char* nameArray[11] = {
     "超神"               // 10 - 42814 - HolyShit
 };
 
-static char* vocaArray[11] = {
-    "1",                // 0  - 1     - Zero
-    "800",              // 1  - 800   - Basic
-    "1500",             // 2  - 1500  - Middle
-    "3000",             // 3  - 3000  - High
-    "4000",             // 4  - 4000  - CET4
-    "6000",             // 5  - 6000  - CET6
-    "8000",             // 6  - 8000  - IELTS
-    "9000",             // 7  - 9000  - TOEFL
-    "10000",            // 8  - 10000 - SAT
-    "12000",            // 9  - 12448 - GRE
-    "40000"             // 10 - 42814 - HolyShit
-};
+//static char* vocaArray[11] = {
+//    "1",                // 0  - 1     - Zero
+//    "800",              // 1  - 800   - Basic
+//    "1500",             // 2  - 1500  - Middle
+//    "3000",             // 3  - 3000  - High
+//    "4000",             // 4  - 4000  - CET4
+//    "6000",             // 5  - 6000  - CET6
+//    "8000",             // 6  - 8000  - IELTS
+//    "9000",             // 7  - 9000  - TOEFL
+//    "10000",            // 8  - 10000 - SAT
+//    "12000",            // 9  - 12448 - GRE
+//    "40000"             // 10 - 42814 - HolyShit
+//};
 
 @implementation SettingViewController
 
@@ -197,7 +197,8 @@ static char* vocaArray[11] = {
 {
     NSString* string = [NSString string];
     
-    string = [NSString stringWithFormat:@"%@ - %@", [NSString stringWithCString:nameArray[row+1] encoding:4], [NSString stringWithCString:vocaArray[row+1] encoding:4]];
+    // string = [NSString stringWithFormat:@"%@ - %@", [NSString stringWithCString:nameArray[row+1] encoding:4], [NSString stringWithCString:vocaArray[row+1] encoding:4]];
+    string = [NSString stringWithFormat:@"%@", [NSString stringWithCString:nameArray[row+1] encoding:4]];
     
     return string;
 }

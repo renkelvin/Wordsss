@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    
     //
     [self.titleLabel setText:[NSString stringWithFormat:@"Season %d", [_seasonNum intValue]]];
 }
@@ -48,7 +48,7 @@
 
 - (IBAction)navigationBackButtonClicked:(id)sender
 {
-    [[self navigationController] popViewControllerAnimated:YES];       
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 #pragma mark - Instance method
@@ -106,6 +106,7 @@
     // Configure the cell...
     NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
     [(TBBTListELCell*)cell setEpisodeNum:episodeNum];
+    [(TBBTListELCell*)cell setSeasonNum:_seasonNum];
     [(TBBTListELCell*)cell configCell];
     
     return cell;
