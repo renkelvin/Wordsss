@@ -104,7 +104,7 @@
         lvc = [lvc initWithList:cell.list];
         [[self navigationController] pushViewController:lvc animated:YES];
     }
-    else if ([cell.list.name compare:@"GRE蓝宝书"] == NSOrderedSame) {
+    else if ([cell.list.name compare:@"新托福词汇分类突破"] == NSOrderedSame) {
         //
     }
     else if ([cell.list.name compare:@"TBBT词表"] == NSOrderedSame) {
@@ -200,7 +200,7 @@
         {
             switch (indexPath.row) {
                 case 0:
-                    list = [_listDict objectForKey:@"GRE蓝宝书"];
+                    list = [_listDict objectForKey:@"新托福词汇分类突破"];
                     break;
                 default:
                     break;

@@ -182,7 +182,60 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     NSLog(@"fillWordRecordSetFromWordRecord: %d", [_wordRecordSet count]);
 }
 
-- (void)fillWordRecordSetFromWord
+- (void)fillWordRecordSetFromWordByFrequency
+{
+    // Enough
+    if ([_wordRecordSet count] >= kTodayWordLimit)
+        return;
+    
+    // NOT Enough
+    // Get existing wordRecord
+    NSMutableSet* word_id_set = [NSMutableArray array];
+    for (WordRecord* wr in _wordRecordSet) {
+        [word_id_set addObject:wr.word_id];
+    }
+    // Get frequency range
+    int freqCur = [_user.defult freqCurrent];
+    int freqTar = [_user.defult freqTarget];
+    
+    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
+    
+    // Get new word
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Word"];
+    // NSString* pred_1 = [NSString stringWithFormat:@"(NOT (word_dict == nil))"];                // 有意思
+    // NSString* pred_2 = [NSString stringWithFormat:@"(NOT (id in %@))", word_id_set];            // 非已有
+    // NSString* pred_3 = [NSString stringWithFormat:@"(%d >= frequency.frequency AND frequency.frequency >= %d)", max, min];      // 够难度
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(NOT (word_dict == nil)) AND (NOT (id in %@)) AND (%d > frequency.freq AND frequency.freq >= %d)", word_id_set, freqCur, freqTar]];
+    NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
+    
+    int a = [_wordRecordSet count];
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    // Set new wordRecord
+    for (Word* w in new_word_set) {
+        // Get
+        WordRecord* wr = [uva createWordRecord:w];
+        
+        // Set
+        [wr prepare:_user];
+        
+        // Add
+        [_wordRecordSet addObject:wr];
+        
+        if ([_wordRecordSet count] >= kTodayWordLimit)
+        {
+            int b = [_wordRecordSet count];
+            _newWordCount += (b - a);
+            NSLog(@"fillWordRecordSetFromWord!");
+            return;
+        }
+    }
+    
+    int c = [_wordRecordSet count];
+    _newWordCount += (c - a);
+    NSLog(@"fillWordRecordSetFromWord: %d", [_wordRecordSet count]);
+}
+
+- (void)fillWordRecordSetFromWordByField
 {
     // Enough
     if ([_wordRecordSet count] >= kTodayWordLimit)
@@ -297,7 +350,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     if ([_wordRecordSet count] == 0) {
         // More wordRecordArray
         [self fillWordRecordSetFromWordRecord];
-        [self fillWordRecordSetFromWord];
+        [self fillWordRecordSetFromWordByFrequency];
     }
     
     // Get WordRecord Word
@@ -389,7 +442,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // More wordRecordArray
     [self fillWordRecordSetFromWordRecord];
     // Even more wordRecordArray
-    [self fillWordRecordSetFromWord];
+    [self fillWordRecordSetFromWordByFrequency];
     
     //
     self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];

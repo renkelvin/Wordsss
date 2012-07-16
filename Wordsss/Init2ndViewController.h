@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "RKNavigationController.h"
-//#import "RKNavigationControllerDelegate.h"
-
 #import "Init3rdViewController.h"
 
 #import "InitVirtualActor.h"

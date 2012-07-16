@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1416" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1800" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="AhdDictMeaning" representedClassName="AhdDictMeaning" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="meaning_cn" optional="YES" attributeType="String" syncable="YES"/>
@@ -38,8 +38,11 @@
     </entity>
     <entity name="Field" representedClassName="Field" syncable="YES">
         <attribute name="basic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bec" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="cet4" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="cet6" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="get" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gmat" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="gre" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="high" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="holyshit" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -47,6 +50,8 @@
         <attribute name="ielts" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="middle" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="sat" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tem4" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tem8" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="tofel" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="field" inverseEntity="Word" syncable="YES"/>
     </entity>
@@ -199,32 +204,32 @@
         <relationship name="word" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Word" inverseName="word_sense" inverseEntity="Word" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AhdDictMeaning" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="AhdDictSentence" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="AhdDictWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Association" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="CSListWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="DotaListWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Field" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Frequency" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="GRERBListMem" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="GRERBListWord" positionX="0" positionY="0" width="0" height="135"/>
-        <element name="List" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MAListWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MwcDictMeaning" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MwcDictWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PHListWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PureWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Rootaffix" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Sense" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="TBBTListSentence" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="TBBTListWord" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Word" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Word_Association" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Word_Dict" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Word_List" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Word_Relation" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Word_Rootaffix" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Word_Sense" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AhdDictMeaning" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="AhdDictSentence" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="AhdDictWord" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Association" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="CSListWord" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="DotaListWord" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="Field" positionX="0" positionY="0" width="128" height="300"/>
+        <element name="Frequency" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="GRERBListMem" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="GRERBListWord" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="List" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="MAListWord" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="MwcDictMeaning" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="MwcDictWord" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="PHListWord" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="PureWord" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="Rootaffix" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="Sense" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="TBBTListSentence" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="TBBTListWord" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Word" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="Word_Association" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Word_Dict" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Word_List" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Word_Relation" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Word_Rootaffix" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Word_Sense" positionX="0" positionY="0" width="128" height="120"/>
     </elements>
 </model>

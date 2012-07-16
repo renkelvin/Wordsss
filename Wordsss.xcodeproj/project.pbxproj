@@ -354,6 +354,9 @@
 		FE96613F14C1BDC8008E1C8C /* DotaListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96613E14C1BDC8008E1C8C /* DotaListWord.m */; };
 		FE96614214C1BE80008E1C8C /* CSListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96614114C1BE80008E1C8C /* CSListWord.m */; };
 		FE96614B14C1D68B008E1C8C /* ListsVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE96614A14C1D68B008E1C8C /* ListsVirtualActor.m */; };
+		FE98ACF615B39FE0007C3CA1 /* undo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE98ACF515B39FE0007C3CA1 /* undo@2x.png */; };
+		FE98ACF915B3A00C007C3CA1 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = FE98ACF815B3A00C007C3CA1 /* undo.png */; };
+		FE98AD0015B3AF1F007C3CA1 /* Field.m in Sources */ = {isa = PBXBuildFile; fileRef = FE98ACFF15B3AF1F007C3CA1 /* Field.m */; };
 		FEA3C5A615024F54003B56F6 /* help_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA3C5A015024F54003B56F6 /* help_1.png */; };
 		FEA3C5A715024F54003B56F6 /* help_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA3C5A115024F54003B56F6 /* help_1@2x.png */; };
 		FEA3C5A815024F54003B56F6 /* help_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA3C5A215024F54003B56F6 /* help_2.png */; };
@@ -479,7 +482,6 @@
 		FEF3307814AC816E00E5E3B5 /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307714AC816E00E5E3B5 /* WordCell.m */; };
 		FEF4DE9D148E2B7A00E88653 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4DE9C148E2B7A00E88653 /* XMLParser.m */; };
 		FEF732E81495955100919A7C /* TodayVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF732E71495955100919A7C /* TodayVirtualActor.m */; };
-		FEF79D3014FC04D000CC3C00 /* Field.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF79D2F14FC04D000CC3C00 /* Field.m */; };
 		FEFB985A14F8A7EF00DB8B85 /* SearchHis.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB985914F8A7EF00DB8B85 /* SearchHis.m */; };
 		FEFB985E14F8A82100DB8B85 /* HisData.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB985D14F8A82100DB8B85 /* HisData.m */; };
 		FEFB986114F8B05600DB8B85 /* GRERBListWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFB986014F8B05600DB8B85 /* GRERBListWord.m */; };
@@ -968,6 +970,10 @@
 		FE96614114C1BE80008E1C8C /* CSListWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSListWord.m; sourceTree = "<group>"; };
 		FE96614914C1D68B008E1C8C /* ListsVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsVirtualActor.h; sourceTree = "<group>"; };
 		FE96614A14C1D68B008E1C8C /* ListsVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsVirtualActor.m; sourceTree = "<group>"; };
+		FE98ACF515B39FE0007C3CA1 /* undo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo@2x.png"; sourceTree = "<group>"; };
+		FE98ACF815B3A00C007C3CA1 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
+		FE98ACFE15B3AF1F007C3CA1 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		FE98ACFF15B3AF1F007C3CA1 /* Field.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Field.m; sourceTree = "<group>"; };
 		FEA3C5A015024F54003B56F6 /* help_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_1.png; sourceTree = "<group>"; };
 		FEA3C5A115024F54003B56F6 /* help_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help_1@2x.png"; sourceTree = "<group>"; };
 		FEA3C5A215024F54003B56F6 /* help_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_2.png; sourceTree = "<group>"; };
@@ -1136,8 +1142,6 @@
 		FEF4DE9C148E2B7A00E88653 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		FEF732E61495955100919A7C /* TodayVirtualActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayVirtualActor.h; sourceTree = "<group>"; };
 		FEF732E71495955100919A7C /* TodayVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayVirtualActor.m; sourceTree = "<group>"; };
-		FEF79D2E14FC04D000CC3C00 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
-		FEF79D2F14FC04D000CC3C00 /* Field.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Field.m; sourceTree = "<group>"; };
 		FEFB985814F8A7EF00DB8B85 /* SearchHis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHis.h; sourceTree = "<group>"; };
 		FEFB985914F8A7EF00DB8B85 /* SearchHis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchHis.m; sourceTree = "<group>"; };
 		FEFB985C14F8A82100DB8B85 /* HisData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HisData.h; sourceTree = "<group>"; };
@@ -2045,6 +2049,8 @@
 		FEEE31A41439DF61001F7E90 /* TodayView */ = {
 			isa = PBXGroup;
 			children = (
+				FE98ACF815B3A00C007C3CA1 /* undo.png */,
+				FE98ACF515B39FE0007C3CA1 /* undo@2x.png */,
 				FE5FF2D814FF47CC0067D950 /* dk_hl.png */,
 				FE5FF2D914FF47CC0067D950 /* dk_hl@2x.png */,
 				FE5FF2DA14FF47CC0067D950 /* know_hl.png */,
@@ -2195,8 +2201,8 @@
 		FEF732EC1495998000919A7C /* WordsssDB */ = {
 			isa = PBXGroup;
 			children = (
-				FEF79D2E14FC04D000CC3C00 /* Field.h */,
-				FEF79D2F14FC04D000CC3C00 /* Field.m */,
+				FE98ACFE15B3AF1F007C3CA1 /* Field.h */,
+				FE98ACFF15B3AF1F007C3CA1 /* Field.m */,
 				FEFB986214F8B05600DB8B85 /* GRERBListMem.h */,
 				FEFB986314F8B05600DB8B85 /* GRERBListMem.m */,
 				FEFB985F14F8B05600DB8B85 /* GRERBListWord.h */,
@@ -2621,6 +2627,8 @@
 				FE1F850015B2A16B00C514DC /* sound@2x.png in Resources */,
 				FE07C16315B30D4900D22053 /* wl_toefl.jpg in Resources */,
 				FE07C16415B30D4900D22053 /* wl_toefl@2x.jpg in Resources */,
+				FE98ACF615B39FE0007C3CA1 /* undo@2x.png in Resources */,
+				FE98ACF915B3A00C007C3CA1 /* undo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2732,7 +2740,6 @@
 				FEDD3ABD14FA522C00F73D11 /* GRERBListListCell.m in Sources */,
 				FEDD3AC014FA523C00F73D11 /* GRERBListWordCell.m in Sources */,
 				FEDD3ACB14FA5C9B00F73D11 /* HelpViewController.m in Sources */,
-				FEF79D3014FC04D000CC3C00 /* Field.m in Sources */,
 				FE2E518914FCB7320011DCA4 /* WordsssDBVirtualActor.m in Sources */,
 				FE0DD79214FCE65D00C04EC3 /* TodayViewControllerV3.m in Sources */,
 				FEBBA7F814FDF8AA00943F52 /* MAListViewController.m in Sources */,
@@ -2854,6 +2861,7 @@
 				FE82EA6F15B0497B007F8DF8 /* us_text.c in Sources */,
 				FE82EA7015B0497B007F8DF8 /* usenglish.c in Sources */,
 				FE82EA7115B0497B007F8DF8 /* FliteTTS.m in Sources */,
+				FE98AD0015B3AF1F007C3CA1 /* Field.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

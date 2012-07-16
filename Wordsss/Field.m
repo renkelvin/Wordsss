@@ -2,7 +2,7 @@
 //  Field.m
 //  Wordsss
 //
-//  Created by Ren Chuan on 2/28/12.
+//  Created by Kelvin Ren on 7/16/12.
 //  Copyright (c) 2012 Ren Inc. All rights reserved.
 //
 
@@ -12,17 +12,22 @@
 
 @implementation Field
 
-@dynamic id;
 @dynamic basic;
-@dynamic middle;
-@dynamic high;
 @dynamic cet4;
 @dynamic cet6;
-@dynamic ielts;
-@dynamic tofel;
-@dynamic sat;
 @dynamic gre;
+@dynamic high;
 @dynamic holyshit;
+@dynamic id;
+@dynamic ielts;
+@dynamic middle;
+@dynamic sat;
+@dynamic tofel;
+@dynamic bec;
+@dynamic get;
+@dynamic tem4;
+@dynamic tem8;
+@dynamic gmat;
 @dynamic word;
 
 @end

@@ -1342,7 +1342,7 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 </label>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FhV-MI-xyP">
-                                                    <rect key="frame" x="20" y="8" width="16" height="16"/>
+                                                    <rect key="frame" x="16" y="4" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" image="sound.png">
@@ -1991,11 +1991,11 @@
                                         <rect key="frame" x="295" y="78" width="10" height="15"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="N0i-2J-RQi">
-                                        <rect key="frame" x="240" y="12" width="16" height="16"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="N0i-2J-RQi">
+                                        <rect key="frame" x="235" y="12" width="16" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal">
+                                        <state key="normal" image="undo.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -2089,11 +2089,11 @@
                                         <rect key="frame" x="295" y="78" width="10" height="15"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="XzX-jr-bIp">
-                                        <rect key="frame" x="240" y="12" width="16" height="16"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="XzX-jr-bIp">
+                                        <rect key="frame" x="235" y="12" width="16" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal">
+                                        <state key="normal" image="undo.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -3448,6 +3448,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="pl7-vz-59Z">
                                                     <rect key="frame" x="6" y="6" width="135" height="76"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -4002,6 +4003,7 @@
         <image name="translation_bg.png" width="320" height="88"/>
         <image name="translation_bg_hl.png" width="320" height="88"/>
         <image name="translation_to_wordlist.png" width="309" height="31"/>
+        <image name="undo.png" width="16" height="16"/>
         <image name="wl_free.png" width="41" height="20"/>
         <image name="wl_large_gre.png" width="144" height="84"/>
         <image name="wl_large_tbbt.png" width="144" height="84"/>

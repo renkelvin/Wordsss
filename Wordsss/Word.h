@@ -69,7 +69,6 @@
 - (NSString*)getBriefMeaning;
 - (NSString*)getSummaryMeaning;
 
-- (NSString*)getWordLevel;
 - (NSString*)getShortTypeString;
 - (NSString*)getFullTypeString;
 

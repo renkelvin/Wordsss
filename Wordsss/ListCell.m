@@ -45,8 +45,8 @@
     else if ([list.name compare:@"GRE红宝书"] == NSOrderedSame) {
         imgString = @"wl_grerb.png";
     }
-    else if ([list.name compare:@"GRE蓝宝书"] == NSOrderedSame) {
-        imgString = @"wl_grebb.png";
+    else if ([list.name compare:@"新托福词汇分类突破"] == NSOrderedSame) {
+        imgString = @"wl_toefl.jpg";
     }
     else if ([list.name compare:@"TBBT词表"] == NSOrderedSame) {
         imgString = @"wl_bbt.png";
