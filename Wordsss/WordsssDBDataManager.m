@@ -129,7 +129,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 {
     NSArray* array = [NSArray array];
     
-    // Get 
+    // Get
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Association"];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
@@ -149,7 +149,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 {
     NSArray* array = [NSArray array];
     
-    // Get 
+    // Get
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Rootaffix"];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
@@ -169,7 +169,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
 {
     NSArray* array = [NSArray array];
     
-    // Get 
+    // Get
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Sense"];
     NSArray* fetchResult = [self.managedObjectContext executeFetchRequest:request error:nil];
     
@@ -202,12 +202,12 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
         listWord = @"GRERBListWord";
     }
     
-    // 
+    //
     if (!listWord) {
         return nil;
     }
     
-    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:listWord];    
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:listWord];
     NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"word_list.word.name" ascending:YES];
     [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];
@@ -254,7 +254,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
              */
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
-        } 
+        }
     }
 }
 
@@ -291,7 +291,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
         return _managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"WordsssDB" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
 
@@ -311,10 +311,10 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     // If no WordsssDB.sqlite
     if (!NO) {
         NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];
-        if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-            NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
-            [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
-        }
+        NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
+        
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+        [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
     }
     
     NSError *error = nil;
@@ -338,7 +338,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
          * Simply deleting the existing store:
          [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
          
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter: 
+         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
          [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
          
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
@@ -346,7 +346,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }    
+    }
     
     return _persistentStoreCoordinator;
 }

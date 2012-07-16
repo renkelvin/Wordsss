@@ -45,7 +45,7 @@ static char* fieldArray[11] = {
     "cet4",       // 4  - 4000  - CET4
     "cet6",       // 5  - 6000  - CET6
     "ielts",       // 6  - 8000  - IELTS
-    "toefl",       // 7  - 9000  - TOEFL
+    "tofel",       // 7  - 9000  - TOEFL
     "sat",      // 8  - 10000 - SAT
     "gre",      // 9  - 20000 - GRE
     "holyshit"       // 10 - 42814 - HolyShit
@@ -73,7 +73,7 @@ static char* fieldArray[11] = {
 
 - (NSString*)fieldTarget
 {
-    return [NSString stringWithFormat:@"%s", fieldArray[[self.currentLevel intValue]]];
+    return [NSString stringWithUTF8String:fieldArray[[self.targetLevel intValue]]];
 }
 
 - (int)freqCurrent

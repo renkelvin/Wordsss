@@ -109,7 +109,6 @@
 		FE4B3AB615AED5AD001600ED /* TBBTListTLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4B3AB515AED5AC001600ED /* TBBTListTLViewController.m */; };
 		FE52D5F41502B0400086C3FD /* PatentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE52D5F31502B0400086C3FD /* PatentViewController.m */; };
 		FE557BE815021852009017E2 /* PureWord.m in Sources */ = {isa = PBXBuildFile; fileRef = FE557BE715021852009017E2 /* PureWord.m */; };
-		FE58920915B1E91200D5ED06 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FE58920815B1E91200D5ED06 /* WordsssDB.sqlite */; };
 		FE58921015B2729000D5ED06 /* wl_large_tbbt.png in Resources */ = {isa = PBXBuildFile; fileRef = FE58920E15B2729000D5ED06 /* wl_large_tbbt.png */; };
 		FE58921115B2729000D5ED06 /* wl_large_tbbt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE58920F15B2729000D5ED06 /* wl_large_tbbt@2x.png */; };
 		FE58921415B285C400D5ED06 /* wl_large_math.png in Resources */ = {isa = PBXBuildFile; fileRef = FE58921215B285C400D5ED06 /* wl_large_math.png */; };
@@ -420,6 +419,7 @@
 		FEBFBF281436DAF20028630E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF261436DAF20028630E /* InfoPlist.strings */; };
 		FEBFBF2A1436DAF20028630E /* WordsssTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FEBFBF291436DAF20028630E /* WordsssTests.h */; };
 		FEBFBF2C1436DAF20028630E /* WordsssTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBF2B1436DAF20028630E /* WordsssTests.m */; };
+		FEC1E8AA15B47B0E00D13C97 /* WordsssDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FEC1E8A915B47B0E00D13C97 /* WordsssDB.sqlite */; };
 		FECE6B0015ABD75300E6CE67 /* WordsssDB.xml in Resources */ = {isa = PBXBuildFile; fileRef = FECE6AFF15ABD75300E6CE67 /* WordsssDB.xml */; };
 		FED1E21914C813A800013D07 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = FED1E21814C813A800013D07 /* List.m */; };
 		FED7747314ABA681007BB8D4 /* AhdDictSentence.m in Sources */ = {isa = PBXBuildFile; fileRef = FED7747214ABA681007BB8D4 /* AhdDictSentence.m */; };
@@ -631,7 +631,6 @@
 		FE52D5F31502B0400086C3FD /* PatentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatentViewController.m; sourceTree = "<group>"; };
 		FE557BE615021852009017E2 /* PureWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureWord.h; sourceTree = "<group>"; };
 		FE557BE715021852009017E2 /* PureWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PureWord.m; sourceTree = "<group>"; };
-		FE58920815B1E91200D5ED06 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = "../../../../Library/Application Support/iPhone Simulator/6.0/Applications/760369B7-89CB-49B8-8B4A-EF0A6C193141/Library/Caches/WordsssDB.sqlite"; sourceTree = "<group>"; };
 		FE58920E15B2729000D5ED06 /* wl_large_tbbt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_large_tbbt.png; sourceTree = "<group>"; };
 		FE58920F15B2729000D5ED06 /* wl_large_tbbt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_large_tbbt@2x.png"; sourceTree = "<group>"; };
 		FE58921215B285C400D5ED06 /* wl_large_math.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_large_math.png; sourceTree = "<group>"; };
@@ -1057,6 +1056,7 @@
 		FEBFBF251436DAF20028630E /* WordsssTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsssTests-Info.plist"; sourceTree = "<group>"; };
 		FEBFBF291436DAF20028630E /* WordsssTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsssTests.h; sourceTree = "<group>"; };
 		FEBFBF2B1436DAF20028630E /* WordsssTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsssTests.m; sourceTree = "<group>"; };
+		FEC1E8A915B47B0E00D13C97 /* WordsssDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = WordsssDB.sqlite; path = ../../../../Desktop/WordsssDB.sqlite; sourceTree = "<group>"; };
 		FECE6AFD15ABD31D00E6CE67 /* WordsssDB 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WordsssDB 2.xcdatamodel"; sourceTree = "<group>"; };
 		FECE6AFF15ABD75300E6CE67 /* WordsssDB.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WordsssDB.xml; path = ../../../../Desktop/WordsssDB.xml; sourceTree = "<group>"; };
 		FED1E21714C813A800013D07 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
@@ -1726,7 +1726,7 @@
 		FE8818FC14A2029000B5FE98 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				FE58920815B1E91200D5ED06 /* WordsssDB.sqlite */,
+				FEC1E8A915B47B0E00D13C97 /* WordsssDB.sqlite */,
 			);
 			name = SQLite;
 			sourceTree = "<group>";
@@ -2618,7 +2618,6 @@
 				FECE6B0015ABD75300E6CE67 /* WordsssDB.xml in Resources */,
 				FE64123B15AC320D00D76C9B /* Basemic.ttf in Resources */,
 				FE82EA6D15B0497B007F8DF8 /* us_pos.tree in Resources */,
-				FE58920915B1E91200D5ED06 /* WordsssDB.sqlite in Resources */,
 				FE58921015B2729000D5ED06 /* wl_large_tbbt.png in Resources */,
 				FE58921115B2729000D5ED06 /* wl_large_tbbt@2x.png in Resources */,
 				FE58921415B285C400D5ED06 /* wl_large_math.png in Resources */,
@@ -2629,6 +2628,7 @@
 				FE07C16415B30D4900D22053 /* wl_toefl@2x.jpg in Resources */,
 				FE98ACF615B39FE0007C3CA1 /* undo@2x.png in Resources */,
 				FE98ACF915B3A00C007C3CA1 /* undo.png in Resources */,
+				FEC1E8AA15B47B0E00D13C97 /* WordsssDB.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

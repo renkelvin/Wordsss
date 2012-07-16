@@ -23,11 +23,12 @@ static NSString* attrString = nil;
 
 NSMutableDictionary* wordDICT = nil;                //TTABLEDATA_WORD
 NSMutableDictionary* frequencyDICT = nil;           //TTABLEDATA_FREQUENCY
+NSMutableDictionary* fieldDICT = nil;               //TTABLEDATA_FIELD
 
 NSMutableDictionary* wordAssociationDICT = nil;     //TTABLEDATA_WORDASSOCIATION
 NSMutableDictionary* associationDICT = nil;         //TTABLEDATA_ASSOCIATION
 NSMutableDictionary* wordRootaffixDICT = nil;       //TTABLEDATA_WORDROOTAFFIX
-NSMutableDictionary* rootaffixDICT = nil;           //TTABLEDATA_ROOTAFFIX  
+NSMutableDictionary* rootaffixDICT = nil;           //TTABLEDATA_ROOTAFFIX
 NSMutableDictionary* wordSenseDICT = nil;           //TTABLEDATA_WORDSENSE
 NSMutableDictionary* senseDICT = nil;               //TTABLEDATA_SENSE
 NSMutableDictionary* senseFamilyDICT = nil;         //TTABLEDATA_SENSEFAMILY
@@ -97,10 +98,11 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
 {
     wordDICT = [NSMutableDictionary dictionary];                //TTABLEDATA_WORD
     frequencyDICT = [NSMutableDictionary dictionary];           //TTABLEDATA_FREQUENCY
+    fieldDICT = [NSMutableDictionary dictionary];               //TTABLEDATA_FIELD
     wordAssociationDICT = [NSMutableDictionary dictionary];     //TTABLEDATA_WORDASSOCIATION
     associationDICT = [NSMutableDictionary dictionary];         //TTABLEDATA_ASSOCIATION
     wordRootaffixDICT = [NSMutableDictionary dictionary];       //TTABLEDATA_WORDROOTAFFIX
-    rootaffixDICT = [NSMutableDictionary dictionary];           //TTABLEDATA_ROOTAFFIX  
+    rootaffixDICT = [NSMutableDictionary dictionary];           //TTABLEDATA_ROOTAFFIX
     wordSenseDICT = [NSMutableDictionary dictionary];           //TTABLEDATA_WORDSENSE
     senseDICT = [NSMutableDictionary dictionary];               //TTABLEDATA_SENSE
     senseFamilyDICT = [NSMutableDictionary dictionary];         //TTABLEDATA_SENSEFAMILY
@@ -213,6 +215,12 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         
                                         break;
                                     }
+                                    case TTABLEDATA_FIELD:   // Field
+                                    {
+                                        object = (Field*)[NSEntityDescription insertNewObjectForEntityForName:@"Field" inManagedObjectContext:[_dbm managedObjectContext]];
+                                        
+                                        break;
+                                    }
                                     case TTABLEDATA_ASSOCIATION:   // Association
                                     {
                                         object = (Association*)[NSEntityDescription insertNewObjectForEntityForName:@"Association" inManagedObjectContext:[_dbm managedObjectContext]];
@@ -266,7 +274,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         object = (McecDictMeaning*)[NSEntityDescription insertNewObjectForEntityForName:@"McecDictMeaning" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
-                                    }    
+                                    }
                                     case TTABLEDATA_MWCDICTWORD:   // MWCCDictWord
                                     {
                                         object = (MwcDictWord*)[NSEntityDescription insertNewObjectForEntityForName:@"MwcDictWord" inManagedObjectContext:[_dbm managedObjectContext]];
@@ -278,7 +286,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         object = (MwcDictMeaning*)[NSEntityDescription insertNewObjectForEntityForName:@"MwcDictMeaning" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
-                                    }    
+                                    }
                                     case TTABLEDATA_AHDDICTWORD:   // AhdDictWord
                                     {
                                         object = (AhdDictWord*)[NSEntityDescription insertNewObjectForEntityForName:@"AhdDictWord" inManagedObjectContext:[_dbm managedObjectContext]];
@@ -290,13 +298,13 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         object = (AhdDictMeaning*)[NSEntityDescription insertNewObjectForEntityForName:@"AhdDictMeaning" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
-                                    }    
+                                    }
                                     case TTABLEDATA_AHDDICTSENTENCE:   // AhdDictSentence
                                     {
                                         object = (AhdDictSentence*)[NSEntityDescription insertNewObjectForEntityForName:@"AhdDictSentence" inManagedObjectContext:[_dbm managedObjectContext]];
                                         
                                         break;
-                                    }    
+                                    }
                                     case TTABLEDATA_WORDLIST:   // Word_List
                                     {
                                         object = (Word_List*)[NSEntityDescription insertNewObjectForEntityForName:@"Word_List" inManagedObjectContext:[_dbm managedObjectContext]];
@@ -376,14 +384,14 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                             }
                             
                             break;
-                        } 
+                        }
                     }
                     
                     break;
                 }
                 default:
                 {
-                    break; 
+                    break;
                 }
             }
             
@@ -629,6 +637,71 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         }
                                         else if ([attrString compare:@"frequency3"] == NSOrderedSame) {
                                             ((Frequency*)object).disp = [NSNumber numberWithFloat:[string floatValue]];
+                                        }
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_FIELD:   // Field
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_id"] == NSOrderedSame) {
+                                            ((Field*)object).id = [NSNumber numberWithInt:[string intValue]];
+                                            
+                                            [fieldDICT setValue:object forKey:string];
+                                            
+                                            // NSLog(@"Field - id: %@", string);
+                                        }
+                                        else if ([attrString compare:@"basic"] == NSOrderedSame) {
+                                            ((Field*)object).basic = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"middle"] == NSOrderedSame) {
+                                            ((Field*)object).middle = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"high"] == NSOrderedSame) {
+                                            ((Field*)object).high = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"cet4"] == NSOrderedSame) {
+                                            ((Field*)object).cet4 = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"cet6"] == NSOrderedSame) {
+                                            ((Field*)object).cet6 = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"bec"] == NSOrderedSame) {
+                                            ((Field*)object).bec = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"get"] == NSOrderedSame) {
+                                            ((Field*)object).get = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"tem4"] == NSOrderedSame) {
+                                            ((Field*)object).tem4 = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"tem8"] == NSOrderedSame) {
+                                            ((Field*)object).tem8 = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"ielts"] == NSOrderedSame) {
+                                            ((Field*)object).ielts = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"toefl"] == NSOrderedSame) {
+                                            ((Field*)object).tofel = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"sat"] == NSOrderedSame) {
+                                            ((Field*)object).sat = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"gre"] == NSOrderedSame) {
+                                            ((Field*)object).gre = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"gmat"] == NSOrderedSame) {
+                                            ((Field*)object).gmat = [NSNumber numberWithInt:[string intValue]];
+                                        }
+                                        else if ([attrString compare:@"holyshit"] == NSOrderedSame) {
+                                            ((Field*)object).holyshit = [NSNumber numberWithInt:[string intValue]];
                                         }
                                         
                                         break;
@@ -1018,7 +1091,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         else if ([attrString compare:@"list_id"] == NSOrderedSame) {
                                             ((GRERBListWord*)object).list = [NSNumber numberWithInt:[string intValue]];
                                         }
- 
+                                        
                                         break;
                                     }
                                     case TTABLEDATA_GRERBLISTMEM:   // GRERBListMem
@@ -1075,7 +1148,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         
                                         break;
                                     }
-
+                                        
                                     case TTABLEDATA_TBBTLISTWORD:   // TBBTListWord
                                     {
                                         if (!attrDict)
@@ -1221,7 +1294,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         break;
                                     }
                                     case TTABLEDATA_WORDSENSE:   // Word_Sense
-                                    {                                        
+                                    {
                                         if (!attrDict)
                                             break;
                                         
@@ -1249,7 +1322,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                         break;
                                     }
                                     case TTABLEDATA_LIST:   // List
-                                    {                                        
+                                    {
                                         if (!attrDict)
                                             break;
                                         
@@ -1311,8 +1384,33 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             Word* word = [wordDICT objectForKey:string];
                                             
                                             if (word) {
-                                                ((Word_Dict*)object).word = word;
+                                                ((Frequency*)object).word = word;
                                                 word.frequency = ((Frequency*)object);
+                                            }
+                                        }
+                                        
+                                        break;
+                                    }
+                                    case TTABLEDATA_FIELD:   // Field
+                                    {
+                                        if (!attrDict)
+                                            break;
+                                        
+                                        attrString = [attrDict objectForKey:@"name"];
+                                        
+                                        if (!attrString)
+                                            break;
+                                        
+                                        if ([attrString compare:@"word_id"] == NSOrderedSame) {
+                                            object = (Field *)[fieldDICT objectForKey:string];
+                                            
+                                            // NSLog(@"Field - id: %@", string);
+                                            
+                                            Word* word = [wordDICT objectForKey:string];
+                                            
+                                            if (word) {
+                                                ((Field*)object).word = word;
+                                                word.field = ((Field*)object);
                                             }
                                         }
                                         
@@ -1434,7 +1532,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"SenseFamily - id: %@", string);
                                         }
                                         else if ([attrString compare:@"parent_sense_id"] == NSOrderedSame) {
-                                            object = (Sense*)[senseDICT objectForKey:string];                                            
+                                            object = (Sense*)[senseDICT objectForKey:string];
                                         }
                                         else if ([attrString compare:@"son_sense_id"] == NSOrderedSame) {
                                             Sense* sense = [senseDICT objectForKey:string];
@@ -1490,7 +1588,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             
                                             // NSLog(@"McecDictMeaning - id: %@", string);
                                         }
-                                        else if ([attrString compare:@"mcec_dict_word_id"] == NSOrderedSame) {                                            
+                                        else if ([attrString compare:@"mcec_dict_word_id"] == NSOrderedSame) {
                                             McecDictWord* word = [McecDictWord wordWithId:[NSNumber numberWithInt:[string intValue]] inManagedObjectContext:_dbm.managedObjectContext];
                                             
                                             if (word && object) {
@@ -1881,7 +1979,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"Conversion - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
-                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                            object = (Word*)[wordDICT objectForKey:string];
                                         }
                                         else if ([attrString compare:@"convresion_word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1908,7 +2006,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"Derivation - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
-                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                            object = (Word*)[wordDICT objectForKey:string];
                                         }
                                         else if ([attrString compare:@"derivation_word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1935,7 +2033,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"Synonym - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
-                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                            object = (Word*)[wordDICT objectForKey:string];
                                         }
                                         else if ([attrString compare:@"synonym_word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1962,7 +2060,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                                             // NSLog(@"Antonym - id: %@", string);
                                         }
                                         else if ([attrString compare:@"base_word_id"] == NSOrderedSame) {
-                                            object = (Word*)[wordDICT objectForKey:string];                                            
+                                            object = (Word*)[wordDICT objectForKey:string];
                                         }
                                         else if ([attrString compare:@"antonym_word_id"] == NSOrderedSame) {
                                             Word* word = [wordDICT objectForKey:string];
@@ -1990,7 +2088,7 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
                 }
                 default:
                 {
-                    break; 
+                    break;
                 }
             }
             
@@ -2029,6 +2127,10 @@ NSMutableDictionary* listDICT = nil;                //TTABLEDATA_LIST
         else if ([name compare:@"frequency"] == NSOrderedSame) {
             ist = TTABLEDATA_FREQUENCY;
             NSLog(@"frequency");
+        }
+        else if ([name compare:@"field"] == NSOrderedSame) {
+            ist = TTABLEDATA_FIELD;
+            NSLog(@"field");
         }
         else if ([name compare:@"dota_list_word"] == NSOrderedSame) {
             ist = TTABLEDATA_DOTALISTWORD;
