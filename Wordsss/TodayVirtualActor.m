@@ -490,8 +490,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [_wordRecordCur levelUpdate];
     
     //
-    if ([self checkWordRecord:_wordRecordPos]) {
-        [self dropWordRecord:_wordRecordPos];
+    if ([self checkWordRecord:_wordRecordCur]) {
+        [self dropWordRecord:_wordRecordCur];
     }
     
     //
@@ -509,8 +509,8 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [_wordRecordCur levelUpdate];
     
     //
-    if ([self checkWordRecord:_wordRecordPos]) {
-        [self dropWordRecord:_wordRecordPos];
+    if ([self checkWordRecord:_wordRecordCur]) {
+        [self dropWordRecord:_wordRecordCur];
     }
     
     //
@@ -526,6 +526,9 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     //
     [_wordRecordPos levelUpdate];
+    
+    // Add Back
+    [_wordRecordSet addObject:_wordRecordPos];
     
     //
     if ([self checkWordRecord:_wordRecordPos]) {
