@@ -35,7 +35,6 @@ static ListsVirtualActor* sharedListsVirtualActor = nil;
     _listDictionary = [NSMutableDictionary dictionary];
     for (List* list in array) {
         [_listDictionary setValue:list forKey:list.name];
-        NSLog(@"%@", list.name);
     }
 }
 

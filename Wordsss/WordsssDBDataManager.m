@@ -226,10 +226,10 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return result;
 }
 
-- (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode
+- (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode level:(NSString*)level
 {
     NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"TBBTListSentence"];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"(season == %d) AND (episode == %d)", [season intValue], [episode intValue]]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(season == %d) AND (episode == %d) AND (ANY tbbtListWord.word_list.word.field.%K == %@)", [season intValue], [episode intValue], level, [NSNumber numberWithBool:YES]]];
     NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"beginTime" ascending:YES];
     [request setSortDescriptors:[NSArray arrayWithObject:descri]];
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:NULL];

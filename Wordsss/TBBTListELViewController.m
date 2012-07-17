@@ -118,10 +118,12 @@
 {
     TBBTListTLViewController* ttvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListTLViewController"];
     
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    NSString* level = [uva.user.defult fieldTarget];
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     NSNumber* seasonNum = _seasonNum;
     NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
-    NSArray* array = [wdm getTBBTListSentenceArrayWithSeason:seasonNum episode:episodeNum];
+    NSArray* array = [wdm getTBBTListSentenceArrayWithSeason:seasonNum episode:episodeNum level:level];
     
     ttvc = [ttvc initWithListSentenceArray:array seasonNum:_seasonNum episodeNum:episodeNum];
     [[self navigationController] pushViewController:ttvc animated:YES];

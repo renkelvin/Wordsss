@@ -69,6 +69,8 @@
 - (NSString*)getBriefMeaning;
 - (NSString*)getSummaryMeaning;
 
+- (NSString*)getMeaningCN;
+
 - (NSString*)getShortTypeString;
 - (NSString*)getFullTypeString;
 

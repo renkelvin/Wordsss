@@ -15,6 +15,8 @@
 
 @implementation TBBTListTLViewController
 
+@synthesize ttableView, tableViewHeaderButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,9 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    
     //
     [self.titleLabel setText:[NSString stringWithFormat:@"S%dE%d", [_seasonNum intValue], [_episodeNum intValue]]];
+    [self.ttableView setTableHeaderView:self.tableViewHeaderButton];
 }
 
 - (void)viewDidUnload
@@ -48,7 +51,7 @@
 
 - (IBAction)navigationBackButtonClicked:(id)sender
 {
-    [[self navigationController] popViewControllerAnimated:YES];       
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 #pragma mark - Instance method
@@ -61,6 +64,24 @@
     _listSentenceArray = listSentenceArray;
     
     return self;
+}
+
+#pragma mark - IBAction
+
+- (IBAction)headerButtonCicked:(id)sender
+{
+    TBBTListWLViewController* twvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListWLViewController"];
+    
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    NSString* level = [uva.user.defult fieldTarget];
+    NSMutableSet* allWords = [NSMutableSet set];
+    for (TBBTListSentence* sentence in _listSentenceArray) {
+        [allWords addObjectsFromArray:[sentence.tbbtListWord allObjects]];
+    }
+    NSArray* array = [[allWords allObjects] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(word_list.word.field.%K == %@)", level, [NSNumber numberWithBool:YES]]];
+    
+    twvc = [twvc initWithListWordArray:array];
+    [[self navigationController] pushViewController:twvc animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -99,9 +120,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TBBTListWLViewController* twvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListWLViewController"];
-
+    
+    UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
+    NSString* level = [uva.user.defult fieldTarget];
     TBBTListSentence* sentence = [_listSentenceArray objectAtIndex:indexPath.row];
-    NSArray* array = [sentence.tbbtListWord allObjects];
+    NSArray* array = [[sentence.tbbtListWord allObjects] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(word_list.word.field.%K == %@)", level, [NSNumber numberWithBool:YES]]];
     
     twvc = [twvc initWithListWordArray:array];
     [[self navigationController] pushViewController:twvc animated:YES];

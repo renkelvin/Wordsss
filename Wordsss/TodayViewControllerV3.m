@@ -94,7 +94,7 @@
     if ([self checkHasInitUser]) {
         // Get todayVirtualActor
         _todayVirtualActor = [TodayVirtualActor todayVirtualActor];
-                
+        
         //
         ifDec = YES;
         
@@ -580,14 +580,14 @@
 - (IBAction)helpButtonClicked:(id)sender
 {
     // Release
-    HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
-    [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
+     HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+     [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
     
-    // Develope
-    // [self incTopOperation];
-    // [UIView animateWithDuration:kAnimationInterval animations:^(void){
-    // [self.dkhlImageView setAlpha:0.0];
-    // }];
+//    // Develope
+//    [self incTopOperation];
+//    [UIView animateWithDuration:kAnimationInterval animations:^(void){
+//        [self.dkhlImageView setAlpha:0.0];
+//    }];
 }
 
 @end

@@ -30,18 +30,17 @@
     // Configure the view for the selected state
 }
 
-#pragma mark - 
+#pragma mark -
 
 - (void)configCell
 {
     //
     [self.nameLabel setText:self.tbbtListWord.word_list.word.name];
-    [self.meaningLabel setText:@""];
+    [self.meaningLabel setText:[self.tbbtListWord.word_list.word getMeaningCN]];
     
     //
-    //
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
-    Word* w = nil;    
+    Word* w = nil;
     WordRecord* wr = nil;
     
     // Word
@@ -93,7 +92,7 @@
 {
     //
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
-    Word* w = nil;    
+    Word* w = nil;
     WordRecord* wr = nil;
     
     // Word

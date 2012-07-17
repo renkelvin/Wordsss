@@ -14,6 +14,8 @@
 #import "Sense.h"
 #import "List.h"
 
+#import "UserDataManager.h"
+
 @interface WordsssDBDataManager : NSObject
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -43,6 +45,6 @@
 - (NSArray*)getListWordArray:(List*)list;
 
 - (NSArray*)getGRERBListWordArrayWithList:(NSNumber*)listNum;
-- (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode;
+- (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode level:(NSString*)level;
 
 @end

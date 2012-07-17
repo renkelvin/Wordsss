@@ -12,7 +12,7 @@
 
 #import "WordsssDBDataManager.h"
 
-@interface TBBTListTLViewController : UIViewController
+@interface TBBTListTLViewController : UIViewController <UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSNumber* _seasonNum;
     NSNumber* _episodeNum;
@@ -21,6 +21,13 @@
 }
 
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
+
+@property (nonatomic, retain) IBOutlet UITableView* ttableView;
+@property (nonatomic, retain) IBOutlet UIView* tableViewHeaderButton;
+
+#pragma mark - IBAction
+
+- (IBAction)headerButtonCicked:(id)sender;
 
 #pragma mark - Instance method
 

@@ -379,6 +379,8 @@
 		FEA3C5CB150259E9003B56F6 /* bg_sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEA3C5C9150259E9003B56F6 /* bg_sample.jpg */; };
 		FEA3C5CC150259E9003B56F6 /* bg_sample@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEA3C5CA150259E9003B56F6 /* bg_sample@2x.jpg */; };
 		FEA569B81494A0C80071C0DB /* Wordsss.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEA569B61494A0C80071C0DB /* Wordsss.xcdatamodeld */; };
+		FEAB19AB15B514C8006CE953 /* tableViewHeaderButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAB19A915B514C8006CE953 /* tableViewHeaderButton.png */; };
+		FEAB19AC15B514C8006CE953 /* tableViewHeaderButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEAB19AA15B514C8006CE953 /* tableViewHeaderButton@2x.png */; };
 		FEABC54C143C8A2E005AB8C1 /* WordBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */; };
 		FEABC54F143C8A41005AB8C1 /* WordMemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC54E143C8A41005AB8C1 /* WordMemsViewController.m */; };
 		FEABC552143C8A53005AB8C1 /* WordListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEABC551143C8A53005AB8C1 /* WordListsViewController.m */; };
@@ -996,6 +998,8 @@
 		FEA3C5C9150259E9003B56F6 /* bg_sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_sample.jpg; sourceTree = "<group>"; };
 		FEA3C5CA150259E9003B56F6 /* bg_sample@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_sample@2x.jpg"; sourceTree = "<group>"; };
 		FEA569B71494A0C80071C0DB /* Wordsss.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wordsss.xcdatamodel; sourceTree = "<group>"; };
+		FEAB19A915B514C8006CE953 /* tableViewHeaderButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableViewHeaderButton.png; sourceTree = "<group>"; };
+		FEAB19AA15B514C8006CE953 /* tableViewHeaderButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tableViewHeaderButton@2x.png"; sourceTree = "<group>"; };
 		FEABC54A143C8A2E005AB8C1 /* WordBooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordBooksViewController.h; sourceTree = "<group>"; };
 		FEABC54B143C8A2E005AB8C1 /* WordBooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordBooksViewController.m; sourceTree = "<group>"; };
 		FEABC54D143C8A41005AB8C1 /* WordMemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordMemsViewController.h; sourceTree = "<group>"; };
@@ -2158,6 +2162,8 @@
 		FEF4DE9A148E2B2E00E88653 /* ListsView */ = {
 			isa = PBXGroup;
 			children = (
+				FEAB19A915B514C8006CE953 /* tableViewHeaderButton.png */,
+				FEAB19AA15B514C8006CE953 /* tableViewHeaderButton@2x.png */,
 				FE07C16115B30D4900D22053 /* wl_toefl.jpg */,
 				FE07C16215B30D4900D22053 /* wl_toefl@2x.jpg */,
 				FE58921215B285C400D5ED06 /* wl_large_math.png */,
@@ -2629,6 +2635,8 @@
 				FE98ACF615B39FE0007C3CA1 /* undo@2x.png in Resources */,
 				FE98ACF915B3A00C007C3CA1 /* undo.png in Resources */,
 				FEC1E8AA15B47B0E00D13C97 /* WordsssDB.sqlite in Resources */,
+				FEAB19AB15B514C8006CE953 /* tableViewHeaderButton.png in Resources */,
+				FEAB19AC15B514C8006CE953 /* tableViewHeaderButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

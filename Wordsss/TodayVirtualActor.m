@@ -541,7 +541,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
 - (void)setWordRecordCurLevelIncTop
 {
     [_user dlInc];
-    [_wordRecordCur setLevel:[NSNumber numberWithInt:10]];
+    [_wordRecordCur setLevel:[NSNumber numberWithInt:-1]];
     [_wordRecordCur dlInc];
     
     //
