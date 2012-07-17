@@ -31,7 +31,7 @@ static int vocaArray[11] = {
     4000,       // 4  - 4000  - CET4
     6000,       // 5  - 6000  - CET6
     8000,       // 6  - 8000  - IELTS
-    9000,       // 7  - 9000  - TOEFL
+    10000,       // 7 - 10000  - TOEFL
     10000,      // 8  - 10000 - SAT
     20000,      // 9  - 20000 - GRE
     40000       // 10 - 42814 - HolyShit
@@ -44,9 +44,9 @@ static char* fieldArray[11] = {
     "high",       // 3  - 3000  - High
     "cet4",       // 4  - 4000  - CET4
     "cet6",       // 5  - 6000  - CET6
-    "ielts",       // 6  - 8000  - IELTS
+    "tofel",       // 6  - 8000  - IELTS
     "tofel",       // 7  - 9000  - TOEFL
-    "sat",      // 8  - 10000 - SAT
+    "tofel",      // 8  - 10000 - SAT
     "gre",      // 9  - 20000 - GRE
     "holyshit"       // 10 - 42814 - HolyShit
 };
