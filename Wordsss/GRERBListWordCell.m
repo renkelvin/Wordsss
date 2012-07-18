@@ -36,6 +36,7 @@
 {
     //
     [self.nameLabel setText:self.grerbListWord.word_list.word.name];
+    NSLog(@"%@", self.grerbListWord.meaning_cn);
     [self.meaningLabel setText:self.grerbListWord.meaning_cn];
     
     //
