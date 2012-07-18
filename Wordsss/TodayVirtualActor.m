@@ -8,6 +8,9 @@
 
 #import "TodayVirtualActor.h"
 
+#import "UserDataManager.h"
+#import "WordsssDBDataManager.h"
+
 static TodayVirtualActor* sharedTodayVirtualActor = nil;
 
 @implementation TodayVirtualActor

@@ -313,8 +313,19 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
         NSString* filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"WordsssDB.sqlite"];
         NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"WordsssDB" ofType:@"sqlite"];
         
-        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+        // Force to v1.1
+        BOOL hasV11 = [[NSUserDefaults standardUserDefaults] boolForKey:@"kUserDefaultKeyHasChangeWDBV11"];
+        if (!hasV11) {
+            [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+            [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
+            
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kUserDefaultKeyHasChangeWDBV11"];
+        }
+        
+        // If no file
+        if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         [[NSFileManager defaultManager] copyItemAtPath:filePathRes toPath:filePath error:NULL];
+        }
     }
     
     NSError *error = nil;

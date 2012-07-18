@@ -8,6 +8,8 @@
 
 #import "WordsssAppDelegate.h"
 
+#import "UserDataManager.h"
+
 @implementation WordsssAppDelegate
 
 @synthesize window = _window;
@@ -37,7 +39,9 @@
     
 	[dict setObject:[NSNumber numberWithInt:0] forKey:kUserDefaultKeyLoginCount];
 	[dict setObject:[NSNumber numberWithBool:NO] forKey:kUserDefaultKeyHasInitUser];
-	
+    
+	[dict setObject:[NSNumber numberWithBool:NO] forKey:kUserDefaultKeyHasChangeWDBV11];
+    
 	[userDefault registerDefaults:dict];
 }
 

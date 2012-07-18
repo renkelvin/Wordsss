@@ -11,11 +11,12 @@
 #import "RKTabBarController.h"
 
 #import "XMLParser.h"
-#import "UserDataManager.h"
 #import "TodayVirtualActor.h"
 
 #define kUserDefaultKeyLoginCount @"kUserDefaultKeyLoginCount"
 #define kUserDefaultKeyHasInitUser @"kUserDefaultKeyHasInitUser"
+
+#define kUserDefaultKeyHasChangeWDBV11 @"kUserDefaultKeyHasChangeWDBV11"
 
 @interface WordsssAppDelegate : UIResponder <UIApplicationDelegate>
 
