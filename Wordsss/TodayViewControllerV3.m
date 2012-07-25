@@ -9,6 +9,8 @@
 #import "TodayViewControllerV3.h"
 #import "WordViewController.h"
 
+#import "FliteTTS.h"
+
 @implementation TodayViewControllerV3
 
 @synthesize posTransView;
@@ -182,10 +184,10 @@
     
     //
     if (ifDec) {
-        [self.regretButton setHidden:YES];
+        [self.regretButton setEnabled:NO];
     }
     else {
-        [self.regretButton setHidden:NO];
+        [self.regretButton setEnabled:YES];
     }
     
     // info
@@ -267,10 +269,10 @@
     
     //
     if (ifDec) {
-        [self.regretTransButton setHidden:YES];
+        [self.regretTransButton setEnabled:NO];
     }
     else {
-        [self.regretTransButton setHidden:NO];
+        [self.regretTransButton setEnabled:YES];
     }
 }
 
@@ -588,6 +590,12 @@
 //    [UIView animateWithDuration:kAnimationInterval animations:^(void){
 //        [self.dkhlImageView setAlpha:0.0];
 //    }];
+}
+
+- (IBAction)speakButtonClicked:(id)sender
+{
+    FliteTTS* fliteEngine = [FliteTTS fliteTTSEngine];
+    [fliteEngine speakText:_todayVirtualActor.wordPos.name];
 }
 
 @end

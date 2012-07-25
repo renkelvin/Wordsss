@@ -60,10 +60,10 @@
     [fliteEngine speakText:_wordVirtualActor.word.name];
 }
 
-#pragma - UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
 
-#pragma - UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
