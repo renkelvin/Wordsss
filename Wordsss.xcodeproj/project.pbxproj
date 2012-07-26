@@ -2357,7 +2357,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = "Ren Inc.";
+				ORGANIZATIONNAME = Mondev;
 			};
 			buildConfigurationList = FEBFBEF41436DAF20028630E /* Build configuration list for PBXProject "Wordsss" */;
 			compatibilityVersion = "Xcode 3.2";
