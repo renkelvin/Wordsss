@@ -581,15 +581,18 @@
 
 - (IBAction)helpButtonClicked:(id)sender
 {
-    // Release
-     HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
-     [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
-    
-//    // Develope
-//    [self incTopOperation];
-//    [UIView animateWithDuration:kAnimationInterval animations:^(void){
-//        [self.dkhlImageView setAlpha:0.0];
-//    }];
+    if (NO) {
+        // Develope
+        [self incTopOperation];
+        [UIView animateWithDuration:kAnimationInterval animations:^(void){
+            [self.dkhlImageView setAlpha:0.0];
+        }];
+    }
+    else {
+        // Release
+        HelpViewController* hvc = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpViewController"];
+        [self presentViewController:hvc animated:UIModalTransitionStyleCrossDissolve completion:^(void){}];
+    }
 }
 
 - (IBAction)speakButtonClicked:(id)sender

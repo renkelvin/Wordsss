@@ -50,7 +50,7 @@ static UserDataManager* sharedUserDataManager;
     user.profile = [Profile insertEntity:nil inManagedObjectContext:__managedObjectContext];
     
     user.memdata = [MemData insertEntity:nil inManagedObjectContext:__managedObjectContext];
-    user.hisdata = [HisData insertEntity:nil inManagedObjectContext:__managedObjectContext];    
+    user.hisdata = [HisData insertEntity:nil inManagedObjectContext:__managedObjectContext];
     
     return user;
 }
@@ -156,7 +156,7 @@ static UserDataManager* sharedUserDataManager;
              */
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
-        } 
+        }
     }
 }
 
@@ -193,7 +193,7 @@ static UserDataManager* sharedUserDataManager;
         return __managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Wordsss" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
+    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return __managedObjectModel;
 }
 
@@ -231,7 +231,7 @@ static UserDataManager* sharedUserDataManager;
          * Simply deleting the existing store:
          [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
          
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter: 
+         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
          [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
          
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
@@ -252,6 +252,39 @@ static UserDataManager* sharedUserDataManager;
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Clear
+
+- (void)clear
+{
+    // Delete duplicates
+    [self deleteDuplicates];
+}
+
+- (void)deleteDuplicates
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"WordRecord"];
+    NSSortDescriptor* descri = [[NSSortDescriptor alloc] initWithKey:@"word_id" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:descri]];
+    
+    NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    int word_id = -1;
+    for (WordRecord* wr in result) {
+        if ([wr.word_id intValue] == word_id) {
+            NSLog(@"Duplicate! word_id: %@", wr.word_id);
+            [self.managedObjectContext deleteObject:wr];
+        }
+        word_id = [wr.word_id intValue];
+    }
+}
+
+#pragma mark -
+
+- (void)doDebug
+{
+    [self clear];
 }
 
 @end

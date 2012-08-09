@@ -380,4 +380,11 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     return [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+#pragma mark -
+
+- (void)doDebug
+{
+
+}
+
 @end

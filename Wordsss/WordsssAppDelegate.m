@@ -15,7 +15,7 @@
 @synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{   
+{
     if (NO) {
         // Create xmlParser
         XMLParser* xmlParser = [XMLParser xmlParser];
@@ -56,12 +56,15 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
     
     // Save context
     [[UserDataManager userdataManager] saveContext];
+    
+    // Clear
+    // [[UserDataManager userdataManager] clear];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

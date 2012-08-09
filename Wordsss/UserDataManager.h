@@ -42,4 +42,8 @@
 
 - (void)resetAll;
 
+- (void)clear;
+
+- (void)doDebug;
+
 @end

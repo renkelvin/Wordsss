@@ -47,4 +47,6 @@
 - (NSArray*)getGRERBListWordArrayWithList:(NSNumber*)listNum;
 - (NSArray*)getTBBTListSentenceArrayWithSeason:(NSNumber*)season episode:(NSNumber*)episode level:(NSString*)level;
 
+- (void)doDebug;
+
 @end

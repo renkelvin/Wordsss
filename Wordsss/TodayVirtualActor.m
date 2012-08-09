@@ -509,10 +509,11 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [_wordRecordCur dlDec];
     
     //
-    [_wordRecordCur levelUpdate];
-    
-    //
     if ([self checkWordRecord:_wordRecordCur]) {
+        //
+        [_wordRecordCur levelUpdate];
+        
+        //
         [self dropWordRecord:_wordRecordCur];
     }
     
