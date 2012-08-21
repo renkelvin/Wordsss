@@ -64,7 +64,7 @@
     [[UserDataManager userdataManager] saveContext];
     
     // Clear
-    // [[UserDataManager userdataManager] clear];
+    [[UserDataManager userdataManager] clear];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
