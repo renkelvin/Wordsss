@@ -466,6 +466,7 @@
 		FEEE31AA1439DFC2001F7E90 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE31A91439DFC2001F7E90 /* Default.png */; };
 		FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */; };
 		FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */; };
+		FEF1E4E31610BD5B00DF68F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEF1E4E21610BD5B00DF68F9 /* Default-568h@2x.png */; };
 		FEF3307214AC80E500E5E3B5 /* DictWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307114AC80E500E5E3B5 /* DictWordCell.m */; };
 		FEF3307514AC816200E5E3B5 /* WordCellLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307414AC816200E5E3B5 /* WordCellLabel.m */; };
 		FEF3307814AC816E00E5E3B5 /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307714AC816E00E5E3B5 /* WordCell.m */; };
@@ -1110,6 +1111,7 @@
 		FEEE31A91439DFC2001F7E90 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_bg.png; sourceTree = "<group>"; };
 		FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bg@2x.png"; sourceTree = "<group>"; };
+		FEF1E4E21610BD5B00DF68F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		FEF3307014AC80E500E5E3B5 /* DictWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictWordCell.h; sourceTree = "<group>"; };
 		FEF3307114AC80E500E5E3B5 /* DictWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictWordCell.m; sourceTree = "<group>"; };
 		FEF3307314AC816200E5E3B5 /* WordCellLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellLabel.h; sourceTree = "<group>"; };
@@ -1916,6 +1918,7 @@
 				FE87370E143DDFB8002FDDE8 /* icon@2x.png */,
 				FEEE31A91439DFC2001F7E90 /* Default.png */,
 				FEE053DE14379ADC0068CDEC /* Default@2x.png */,
+				FEF1E4E21610BD5B00DF68F9 /* Default-568h@2x.png */,
 				FEF4DE9E148E2BED00E88653 /* DataSource */,
 				FE64123415AC16E800D76C9B /* Fonts */,
 				FEB8ED23143B47200097E267 /* RKNavigation */,
@@ -2585,6 +2588,7 @@
 				1BCCC80D15C018A800F9482B /* button_voice_hover.png in Resources */,
 				1BCCC81115C018C400F9482B /* wl_physics.png in Resources */,
 				1BCCC81215C018C400F9482B /* wl_physics@2x.png in Resources */,
+				FEF1E4E31610BD5B00DF68F9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2865,7 +2869,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Apple Club Tongji (752DRL3CLE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2881,7 +2885,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4BF2D3CE-3490-4913-BD4C-669AB9737AD1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
@@ -2893,7 +2897,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Apple Club Tongji (752DRL3CLE)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2903,7 +2907,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4BF2D3CE-3490-4913-BD4C-669AB9737AD1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

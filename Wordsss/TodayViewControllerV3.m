@@ -581,7 +581,7 @@
 
 - (IBAction)helpButtonClicked:(id)sender
 {
-    if (NO) {
+    if (YES) {
         // Develope
         [self incTopOperation];
         [UIView animateWithDuration:kAnimationInterval animations:^(void){
