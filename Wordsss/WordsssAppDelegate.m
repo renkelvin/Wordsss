@@ -38,6 +38,7 @@
 	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
     
 	[dict setObject:[NSNumber numberWithInt:0] forKey:kUserDefaultKeyLoginCount];
+    
 	[dict setObject:[NSNumber numberWithBool:NO] forKey:kUserDefaultKeyHasInitUser];
     
 	[dict setObject:[NSNumber numberWithBool:NO] forKey:kUserDefaultKeyHasChangeWDBV11];

@@ -9,8 +9,6 @@
 #import "TodayViewControllerV3.h"
 #import "WordViewController.h"
 
-#import "FliteTTS.h"
-
 @implementation TodayViewControllerV3
 
 @synthesize posTransView;
@@ -597,8 +595,7 @@
 
 - (IBAction)speakButtonClicked:(id)sender
 {
-    FliteTTS* fliteEngine = [FliteTTS fliteTTSEngine];
-    [fliteEngine speakText:_todayVirtualActor.wordPos.name];
+    // TODO: ~
 }
 
 @end
