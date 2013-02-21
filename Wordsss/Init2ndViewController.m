@@ -8,33 +8,21 @@
 
 #import "Init2ndViewController.h"
 
-static char* nameArray[11] = {
-    "未制定",             // 0  - 1     - Zero
-    "基础",              // 1  - 800   - Basic
-    "初中",              // 2  - 1500  - Middle
-    "高中",              // 3  - 3000  - High
-    "CET4",             // 4  - 4000  - CET4
-    "CET6",             // 5  - 6000  - CET6
-    "IELTS",            // 6  - 8000  - IELTS
-    "TOEFL",            // 7  - 9000  - TOEFL
-    "SAT",              // 8  - 10000 - SAT
-    "GRE",              // 9  - 12448 - GRE
-    "超神"              // 10 - 42814 - HolyShit
+static char* nameArray[13] = {
+    "未制定",      // 0    - Zero
+    "基础",       // 1    - Basic
+    "初中",       // 2    - Middle
+    "高中",       // 3    - High
+    "CET4",     // 4    - CET4
+    "CET6",     // 5    - CET6
+    "考研",       // 6    - GET
+    "IELTS",    // 7    - IELTS
+    "TOEFL",    // 8    - TOEFL
+    "SAT",      // 9    - SAT
+    "GRE",      // 10   - GRE
+    "GMAT",     // 11   - GMAT
+    "超神"        // 12   - HolyShit
 };
-
-//static char* vocaArray[11] = {
-//    "1",                // 0  - 1     - Zero
-//    "800",              // 1  - 800   - Basic
-//    "1500",             // 2  - 1500  - Middle
-//    "3000",             // 3  - 3000  - High
-//    "4000",             // 4  - 4000  - CET4
-//    "6000",             // 5  - 6000  - CET6
-//    "8000",             // 6  - 8000  - IELTS
-//    "9000",             // 7  - 9000  - TOEFL
-//    "10000",            // 8  - 10000 - SAT
-//    "12000",            // 9  - 12448 - GRE
-//    "40000"             // 10 - 42814 - HolyShit
-//};
 
 @implementation Init2ndViewController
 
@@ -229,7 +217,7 @@ static char* nameArray[11] = {
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 10;
+    return 12;
 }
 
 @end

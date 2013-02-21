@@ -26,20 +26,6 @@ static WordsssDBVirtualActor* sharedWordsssDBVirtualActor = nil;
 
 - (void)prepare
 {
-    //    //
-    //    WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    //    
-    //    if (!_wordDict) {
-    //        NSArray* array = [wdm getAllWord];
-    //        _wordDict = [NSMutableDictionary dictionaryWithCapacity:[array count]];
-    //        
-    //        for (Word* word in array) {
-    //            [_wordDict setValue:word forKey:word.name];
-    //        }
-    //        
-    //        _allKeys = [_wordDict allKeys];
-    //    }
-    
     //
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     if (!_allPureWords) {

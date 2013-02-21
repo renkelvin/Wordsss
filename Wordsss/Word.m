@@ -22,20 +22,6 @@
 @dynamic field;
 @dynamic pureWord;
 
-//static int freqArray[11] = {
-//    61854,      // 0  - 1     - Zero
-//    126,        // 1  - 800   - Basic
-//    70,         // 2  - 1500  - Middle
-//    34,         // 3  - 3000  - High
-//    23,         // 4  - 4000  - CET4
-//    14,         // 5  - 6000  - CET6
-//    9,          // 6  - 8000  - IELTS
-//    8,          // 7  - 9000  - TOEFL
-//    7,          // 8  - 10000 - SAT
-//    5,          // 9  - 12448 - GRE
-//    1           // 10 - 42814 - HolyShit
-//};
-
 + (Word *)wordWithId:(NSNumber *)wordId inManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];

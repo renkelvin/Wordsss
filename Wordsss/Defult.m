@@ -9,46 +9,52 @@
 #import "Defult.h"
 #import "User.h"
 
-static int freqArray[11] = {
-    61854,      // 0  - 1     - Zero
-    126,        // 1  - 800   - Basic
-    70,         // 2  - 1500  - Middle
-    34,         // 3  - 3000  - High
-    23,         // 4  - 4000  - CET4
-    14,         // 5  - 6000  - CET6
-    9,          // 6  - 8000  - IELTS
-    8,          // 7  - 9000  - TOEFL
-    7,          // 8  - 10000 - SAT
-    3,          // 9  - 12448 - GRE
-    1           // 10 - 42814 - HolyShit
+static int freqArray[13] = {
+    61854,      // 0    - Zero
+    126,        // 1    - Basic
+    70,         // 2    - Middle
+    34,         // 3    - High
+    23,         // 4    - CET4
+    14,         // 5    - CET6
+    8,          // 6    - GET
+    8,          // 7    - IELTS
+    8,          // 8    - TOEFL
+    8,          // 9    - SAT
+    3,          // 10   - GRE
+    3,          // 11   - GMAT
+    1           // 12   - HolyShit
 };
 
-static int vocaArray[11] = {
-    0,          // 0  - 1     - Zero
-    800,        // 1  - 800   - Basic
-    1500,       // 2  - 1500  - Middle
-    3000,       // 3  - 3000  - High
-    4000,       // 4  - 4000  - CET4
-    6000,       // 5  - 6000  - CET6
-    8000,       // 6  - 8000  - IELTS
-    10000,       // 7 - 10000  - TOEFL
-    10000,      // 8  - 10000 - SAT
-    20000,      // 9  - 20000 - GRE
-    40000       // 10 - 42814 - HolyShit
+static int vocaArray[13] = {
+    0,          // 0    - Zero
+    800,        // 1    - Basic
+    1500,       // 2    - Middle
+    3000,       // 3    - High
+    4000,       // 4    - CET4
+    6000,       // 5    - CET6
+    10000,      // 6    - GET
+    10000,      // 7    - IELTS
+    10000,      // 8    - TOEFL
+    10000,      // 9    - SAT
+    20000,      // 10   - GRE
+    20000,      // 11   - GMAT
+    40000       // 12   - HolyShit
 };
 
-static char* fieldArray[11] = {
-    "zero",          // 0  - 1     - Zero
-    "basic",        // 1  - 800   - Basic
-    "middle",       // 2  - 1500  - Middle
-    "high",       // 3  - 3000  - High
-    "cet4",       // 4  - 4000  - CET4
-    "cet6",       // 5  - 6000  - CET6
-    "tofel",       // 6  - 8000  - IELTS
-    "tofel",       // 7  - 9000  - TOEFL
-    "tofel",      // 8  - 10000 - SAT
-    "gre",      // 9  - 20000 - GRE
-    "holyshit"       // 10 - 42814 - HolyShit
+static char* fieldArray[13] = {
+    "zero",     // 0    - Zero
+    "basic",    // 1    - Basic
+    "middle",   // 2    - Middle
+    "high",     // 3    - High
+    "cet4",     // 4    - CET4
+    "cet6",     // 5    - CET6
+    "get",      // 6    - GET
+    "ielts",    // 7    - IELTS
+    "tofel",    // 8    - TOEFL
+    "sat",      // 9    - SAT
+    "gre",      // 10    - GRE
+    "gmat",     // 11    - GRE
+    "holyshit"  // 12   - HolyShit
 };
 
 @implementation Defult
