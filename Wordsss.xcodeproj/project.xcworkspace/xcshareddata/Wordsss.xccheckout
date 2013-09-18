@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>552E60E3-5DD7-46AF-BD6F-6691FA8CDFFA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Wordsss</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>58CCA47F-A570-4697-B531-92680EAFB0A8</key>
+		<string>https://github.com/RenKelvin/Wordsss.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Wordsss.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>58CCA47F-A570-4697-B531-92680EAFB0A8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RenKelvin/Wordsss.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>58CCA47F-A570-4697-B531-92680EAFB0A8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>58CCA47F-A570-4697-B531-92680EAFB0A8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Wordsss</string>
+		</dict>
+	</array>
+</dict>
+</plist>

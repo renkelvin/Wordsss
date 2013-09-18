@@ -181,6 +181,7 @@
 		FE6B138D15AEC1ED001A54D4 /* TBBTListSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B138C15AEC1ED001A54D4 /* TBBTListSLViewController.m */; };
 		FE6B139015AEC204001A54D4 /* TBBTListSLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B138F15AEC204001A54D4 /* TBBTListSLCell.m */; };
 		FE6B999314AB4F4200AA3DEF /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B999214AB4F4200AA3DEF /* Word.m */; };
+		FE6BC13117EA73CD001AD939 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BC13017EA73CD001AD939 /* Images.xcassets */; };
 		FE6C8DB514385A2F00DC9784 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DB414385A2F00DC9784 /* UserDataManager.m */; };
 		FE6C8DBB14385AC400DC9784 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBA14385AC400DC9784 /* BooksViewController.m */; };
 		FE6C8DBE14385ACE00DC9784 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6C8DBD14385ACE00DC9784 /* ListsViewController.m */; };
@@ -584,6 +585,7 @@
 		FE6B138F15AEC204001A54D4 /* TBBTListSLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListSLCell.m; sourceTree = "<group>"; };
 		FE6B999114AB4F4200AA3DEF /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		FE6B999214AB4F4200AA3DEF /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
+		FE6BC13017EA73CD001AD939 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../迅辞/Images.xcassets"; sourceTree = "<group>"; };
 		FE6C8DB314385A2F00DC9784 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
 		FE6C8DB414385A2F00DC9784 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
 		FE6C8DB914385AC400DC9784 /* BooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
@@ -1336,6 +1338,7 @@
 		FEE053D2143798490068CDEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE6BC13017EA73CD001AD939 /* Images.xcassets */,
 				FE2B069C14401C3900E1D159 /* icon.png */,
 				FE87370E143DDFB8002FDDE8 /* icon@2x.png */,
 				FEEE31A91439DFC2001F7E90 /* Default.png */,
@@ -1707,7 +1710,7 @@
 		FEBFBEF11436DAF20028630E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Mondev;
 			};
 			buildConfigurationList = FEBFBEF41436DAF20028630E /* Build configuration list for PBXProject "Wordsss" */;
@@ -1885,6 +1888,7 @@
 				FEE0177314B368A800DCC353 /* arrow_down@2x.png in Resources */,
 				FEE0177414B368A800DCC353 /* button_blue_bg.png in Resources */,
 				FEE0177514B368A800DCC353 /* button_blue_bg@2x.png in Resources */,
+				FE6BC13117EA73CD001AD939 /* Images.xcassets in Resources */,
 				FEE0177614B368A800DCC353 /* button_red_bg.png in Resources */,
 				FEE0177714B368A800DCC353 /* button_red_bg@2x.png in Resources */,
 				FEE0177814B368A800DCC353 /* button_select_to_bg.png in Resources */,
@@ -2122,7 +2126,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xie Cheng (AXP8APNT95)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xie Cheng (AXP8APNT95)";
@@ -2140,6 +2143,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "16F3CAA9-973A-41FC-BF67-1A912F0D8B6D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "16F3CAA9-973A-41FC-BF67-1A912F0D8B6D";
 				SDKROOT = iphoneos;
@@ -2150,7 +2154,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xie Cheng (AXP8APNT95)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xie Cheng (AXP8APNT95)";
@@ -2161,6 +2164,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "16F3CAA9-973A-41FC-BF67-1A912F0D8B6D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "16F3CAA9-973A-41FC-BF67-1A912F0D8B6D";
@@ -2172,7 +2176,8 @@
 		FEBFBF301436DAF20028630E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2197,7 +2202,8 @@
 		FEBFBF311436DAF20028630E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
