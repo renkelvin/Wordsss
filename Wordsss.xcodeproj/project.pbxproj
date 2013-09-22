@@ -1712,6 +1712,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Mondev;
+				TargetAttributes = {
+					FEBFBEF91436DAF20028630E = {
+						DevelopmentTeam = QYBQ942P7G;
+					};
+				};
 			};
 			buildConfigurationList = FEBFBEF41436DAF20028630E /* Build configuration list for PBXProject "Wordsss" */;
 			compatibilityVersion = "Xcode 3.2";
