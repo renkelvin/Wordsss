@@ -193,7 +193,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     // NOT Enough
     // Get existing wordRecord
-    NSMutableSet* word_id_set = [NSMutableArray array];
+    NSMutableSet* word_id_set = [[NSMutableSet alloc] init];
     for (WordRecord* wr in _wordRecordSet) {
         [word_id_set addObject:wr.word_id];
     }
@@ -246,7 +246,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     // NOT Enough
     // Get existing wordRecord
-    NSMutableSet* word_id_set = [NSMutableArray array];
+    NSMutableSet* word_id_set = [[NSMutableSet alloc] init];
     for (WordRecord* wr in _wordRecordSet) {
         [word_id_set addObject:wr.word_id];
     }

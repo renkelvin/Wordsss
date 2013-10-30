@@ -504,7 +504,6 @@
 		FE4B3AB215AED597001600ED /* TBBTListTLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListTLCell.m; sourceTree = "<group>"; };
 		FE4B3AB415AED5AC001600ED /* TBBTListTLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBBTListTLViewController.h; sourceTree = "<group>"; };
 		FE4B3AB515AED5AC001600ED /* TBBTListTLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBBTListTLViewController.m; sourceTree = "<group>"; };
-		FE4D51D214F63486008168E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/RenKelvin/Documents/Code/Wordsss/Wordsss/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		FE52D5F21502B0400086C3FD /* PatentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatentViewController.h; sourceTree = "<group>"; };
 		FE52D5F31502B0400086C3FD /* PatentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatentViewController.m; sourceTree = "<group>"; };
 		FE557BE615021852009017E2 /* PureWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureWord.h; sourceTree = "<group>"; };
@@ -1307,7 +1306,6 @@
 			isa = PBXGroup;
 			children = (
 				FEBFBF081436DAF20028630E /* Wordsss-Info.plist */,
-				FEBFBF091436DAF20028630E /* InfoPlist.strings */,
 				FEBFBF0C1436DAF20028630E /* main.m */,
 				FEBFBF0E1436DAF20028630E /* Wordsss-Prefix.pch */,
 			);
@@ -2115,17 +2113,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		FEBFBF091436DAF20028630E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE4D51D214F63486008168E9 /* zh-Hans */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		FEBFBF2D1436DAF20028630E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2184,8 +2171,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2209,8 +2196,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
