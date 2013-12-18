@@ -19,8 +19,9 @@
 
 #import "WordVirtualActor.h"
 
-#define kWordViewSectionFrame CGRectMake(0, 49, 320, 318)
-#define kWordViewSectionFrameShort CGRectMake(0, 49 + 31 + 10, 320, 318 - 31 - 10)
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define kWordViewSectionFrame CGRectMake(0, 47, 320, (kScreenHeight - 160))
+#define kWordViewSectionFrameShort CGRectMake(0, 47 + 31 + 10, 320, (kScreenHeight - 160) - 31 - 10)
 
 @interface WordViewController : UIViewController <UINavigationControllerDelegate, UIActionSheetDelegate>
 {

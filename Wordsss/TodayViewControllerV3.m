@@ -432,7 +432,7 @@
         
         UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:ivc];
         
-        [self presentModalViewController:nc animated:YES];
+        [self presentModalViewController:nc animated:NO];
         
         return NO;
     }
