@@ -644,10 +644,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchBar contentMode="redraw" placeholder="搜索" id="ydN-cm-boc">
+                <searchBar contentMode="redraw" placeholder="搜索" showsCancelButton="YES" id="ydN-cm-boc">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="alphabet"/>
                     <connections>
                         <outlet property="delegate" destination="11" id="rx5-Pv-MyU"/>
                     </connections>
@@ -959,7 +959,7 @@
                                 <rect key="frame" x="26" y="114" width="274" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="o2t-ig-XYS" id="UbM-3X-Ujr"/>
                                 </connections>

@@ -78,9 +78,8 @@ static BOOL FIRSTTIME = YES;
 - (void)showCustomTabBar{
     
     //
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    CGFloat height = screenBounds.size.height;
-    CGRect tabBarFrame = CGRectMake(0, height - 65, 320, 62);
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    CGRect tabBarFrame = CGRectMake(0, screenHeight - 65, 320, 62);
 	customTabBarView = [[[NSBundle mainBundle] loadNibNamed:@"RKTabBarController" owner:self options:nil] lastObject];
     [customTabBarView setFrame:tabBarFrame];
     

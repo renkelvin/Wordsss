@@ -12,10 +12,11 @@
 
 #import "InitVirtualActor.h"
 
-#define kInitPickerViewFrameHide CGRectMake(0, 460, 320, 216)
-#define kInitPickerViewFrameShow CGRectMake(0, 199, 320, 216)
-#define kInitPickerAccessoryViewFrameHide CGRectMake(0, 416, 320, 44)
-#define kInitPickerAccessoryViewFrameShow CGRectMake(0, 155, 320, 44)
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define kInitPickerViewFrameHide CGRectMake(0, (kScreenHeight - 20 - 44) + 44, 320, 216)
+#define kInitPickerViewFrameShow CGRectMake(0, (kScreenHeight - 20 - 44) - 216, 320, 216)
+#define kInitPickerAccessoryViewFrameHide CGRectMake(0, (kScreenHeight - 20 - 44), 320, 44)
+#define kInitPickerAccessoryViewFrameShow CGRectMake(0, (kScreenHeight - 20 - 44) - 216 - 44, 320, 44)
 
 @interface Init2ndViewController : UIViewController <UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 {
