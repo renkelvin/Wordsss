@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3017" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="75">
     <dependencies>
         <deployment defaultVersion="1280" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Profile View Controller - Item-->
@@ -10,19 +10,19 @@
             <objects>
                 <viewController id="6" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_body.png" id="136">
-                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="top" image="bg_deeper.png" id="207">
-                                <rect key="frame" x="0.0" y="141" width="320" height="290"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="41" sectionHeaderHeight="28" sectionFooterHeight="22" id="276">
-                                <rect key="frame" x="0.0" y="143" width="320" height="221"/>
+                                <rect key="frame" x="0.0" y="98" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -72,11 +72,11 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="basicinfo_bg.png" id="279">
-                                <rect key="frame" x="20" y="82" width="280" height="40"/>
+                                <rect key="frame" x="20" y="35" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="6387 / 8000" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="344">
-                                <rect key="frame" x="35" y="92" width="82" height="20"/>
+                                <rect key="frame" x="35" y="45" width="82" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" red="0.40392156862745099" green="0.45098039215686275" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,7 +85,7 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="又快又好" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="343">
-                                <rect key="frame" x="204" y="92" width="65" height="20"/>
+                                <rect key="frame" x="204" y="45" width="65" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -95,11 +95,11 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="process_25.png" id="280">
-                                <rect key="frame" x="126" y="67" width="70" height="70"/>
+                                <rect key="frame" x="126" y="20" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TOEFL" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="aVb-tE-bQr">
-                                <rect key="frame" x="140" y="92" width="43" height="17"/>
+                                <rect key="frame" x="140" y="45" width="43" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -108,8 +108,23 @@
                                 <color key="shadowColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="h9n-Ka-Z6T">
+                                <rect key="frame" x="266" y="44" width="26" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="info_blue.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="evalQuesButtonClicked:" destination="6" eventType="touchUpInside" id="ocT-l7-TpJ"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" id="281">
-                                <rect key="frame" x="0.0" y="251" width="320" height="180"/>
+                                <rect key="frame" x="0.0" y="275" width="320" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" image="chart_bg.png" id="304">
@@ -190,24 +205,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="h9n-Ka-Z6T">
-                                <rect key="frame" x="266" y="91" width="26" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="info_blue.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="evalQuesButtonClicked:" destination="6" eventType="touchUpInside" id="ocT-l7-TpJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="90"/>
                     <navigationItem key="navigationItem" id="i8N-UU-7ay">
                         <connections>
@@ -238,12 +239,13 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="492" y="-957"/>
+            <point key="canvasLocation" x="492" y="-1177"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="40">
             <objects>
                 <navigationController id="9" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="96"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="17">
@@ -256,18 +258,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="841"/>
+            <point key="canvasLocation" x="0.0" y="937"/>
         </scene>
         <!--Setting View Controller - Item-->
         <scene sceneID="42">
             <objects>
                 <viewController id="10" customClass="SettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zO6-dG-ceo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="elc-oS-DoL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="姓名" lineBreakMode="tailTruncation" minimumFontSize="10" id="0Xf-WZ-lTE">
@@ -410,6 +412,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="98"/>
                     <navigationItem key="navigationItem" id="qmK-vo-7Rx">
                         <connections>
@@ -480,46 +483,41 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="492" y="1454"/>
+            <point key="canvasLocation" x="492" y="1638"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="sM9-Eh-yr1">
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="1yK-0X-bni" customClass="HelpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mm0-em-b6Y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="bottom" image="bg_sample.jpg" id="6lE-qm-x86">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_sample.jpg" id="6lE-qm-x86">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view alpha="0.59999999999999998" contentMode="scaleToFill" id="u03-zs-dBO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="1e0-f5-Ad1">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" image="help_1.png" id="buY-oe-THk">
-                                        <rect key="frame" x="20" y="20" width="281" height="394"/>
+                                        <rect key="frame" x="20" y="0.0" width="281" height="568"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" image="help_2.png" id="Kd3-lm-5lj">
-                                        <rect key="frame" x="340" y="20" width="281" height="394"/>
+                                        <rect key="frame" x="340" y="87" width="281" height="394"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="center" image="help_3.png" id="TXV-Rr-ep9">
-                                        <rect key="frame" x="660" y="20" width="281" height="394"/>
+                                        <rect key="frame" x="660" y="87" width="281" height="394"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hvL-6X-kF3">
-                                        <rect key="frame" x="678" y="354" width="245" height="44"/>
+                                        <rect key="frame" x="678" y="462" width="245" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -548,6 +546,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="u92-I1-nMW"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -559,22 +558,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYp-DP-qqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="1454"/>
+            <point key="canvasLocation" x="1659" y="1638"/>
         </scene>
         <!--Explore View Controller-->
         <scene sceneID="44">
             <objects>
                 <viewController id="11" customClass="ExploreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="15">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="181">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="22" id="282">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -630,6 +629,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="B6s-1N-OQR">
                         <connections>
                             <outlet property="titleView" destination="ydN-cm-boc" id="QwS-fX-MuR"/>
@@ -677,7 +677,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="492" y="-352"/>
+            <point key="canvasLocation" x="492" y="-460"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="88">
@@ -706,6 +706,7 @@
         <scene sceneID="116">
             <objects>
                 <navigationController id="108" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="121"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="109">
                         <autoresizingMask key="autoresizingMask"/>
@@ -723,11 +724,11 @@
             <objects>
                 <viewController storyboardIdentifier="WordViewController" id="131" customClass="WordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="132">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_body.png" id="183">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="184">
@@ -836,6 +837,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="dcm-AY-Lm6">
                         <barButtonItem key="leftBarButtonItem" style="done" id="QwA-d9-LAt">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="A70-AG-sTr">
@@ -910,6 +912,7 @@
         <scene sceneID="146">
             <objects>
                 <navigationController id="138" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="174"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="139">
                         <autoresizingMask key="autoresizingMask"/>
@@ -920,18 +923,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="145" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-957"/>
+            <point key="canvasLocation" x="0.0" y="-1177"/>
         </scene>
         <!--Init 1st View Controller-->
         <scene sceneID="Cta-8S-Rx2">
             <objects>
                 <viewController storyboardIdentifier="Init1stViewController" id="o2t-ig-XYS" customClass="Init1stViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7RM-ot-y8A">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="1Bs-LN-sYg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="title.png" id="gMs-b9-LLJ">
@@ -963,6 +966,7 @@
                             </textField>
                         </subviews>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="9RM-rF-9xa">
                         <barButtonItem key="rightBarButtonItem" style="done" id="vDn-By-qFh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="du0-DX-ueZ">
@@ -991,18 +995,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCD-C7-C7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="-1543"/>
+            <point key="canvasLocation" x="492" y="-1895"/>
         </scene>
         <!--Init 2nd View Controller-->
         <scene sceneID="IHK-u2-t38">
             <objects>
                 <viewController storyboardIdentifier="Init2ndViewController" id="iRs-0F-x4h" customClass="Init2ndViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eai-nV-1ZP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="E5U-KD-Re7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="可以在应用内随时更改当前设置" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="82i-Sb-Ajy">
@@ -1098,22 +1102,23 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <pickerView contentMode="scaleToFill" id="ZyW-Jm-r7d">
-                                <rect key="frame" x="0.0" y="460" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="548" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="iRs-0F-x4h" id="KlR-vc-ZHz"/>
                                     <outlet property="delegate" destination="iRs-0F-x4h" id="wew-mt-mOi"/>
                                 </connections>
                             </pickerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="4as-SD-wpC">
-                                <rect key="frame" x="0.0" y="480" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pNC-AH-h9K"/>
                                     <barButtonItem style="plain" id="UN8-Di-Kgh">
                                         <button key="customView" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HKr-am-LPC">
-                                            <rect key="frame" x="262" y="7" width="56" height="30"/>
+                                            <rect key="frame" x="248" y="7" width="56" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" image="button_grey_done.png">
@@ -1132,6 +1137,7 @@
                             </toolbar>
                         </subviews>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="gNc-QY-E44">
                         <barButtonItem key="leftBarButtonItem" style="done" id="TQ7-9N-eQz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mE8-su-sUA">
@@ -1182,18 +1188,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOF-7A-KQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="-1543"/>
+            <point key="canvasLocation" x="988" y="-1895"/>
         </scene>
         <!--Init 3rd View Controller-->
         <scene sceneID="tS4-wI-zx6">
             <objects>
                 <viewController storyboardIdentifier="Init3rdViewController" id="6cs-VQ-wTi" customClass="Init3rdViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mkm-vs-GBQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="N2C-qD-KNC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="guide_title_start.png" id="Oa5-TG-7Ko">
@@ -1247,6 +1253,7 @@
                             </imageView>
                         </subviews>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="lbU-L5-Med">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="yPa-C9-gc4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uOl-Ck-GXL">
@@ -1270,12 +1277,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPd-mu-lZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="-1543"/>
+            <point key="canvasLocation" x="1444" y="-1895"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="158">
             <objects>
                 <navigationController id="150" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="176"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="151">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1286,12 +1294,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="157" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-352"/>
+            <point key="canvasLocation" x="0.0" y="-460"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="170">
             <objects>
                 <navigationController id="162" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="180"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="163">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1302,18 +1311,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="169" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1454"/>
+            <point key="canvasLocation" x="0.0" y="1638"/>
         </scene>
         <!--Word Books View Controller-->
         <scene sceneID="195">
             <objects>
                 <viewController storyboardIdentifier="WordBooksViewController" id="192" customClass="WordBooksViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLh-aC-afm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="22" id="vTL-N8-ZYL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1381,11 +1390,11 @@
             <objects>
                 <viewController storyboardIdentifier="WordMemsViewController" id="229" customClass="WordMemsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="230">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="22" id="253">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1506,11 +1515,11 @@
             <objects>
                 <viewController storyboardIdentifier="WordRelationsViewController" id="233" customClass="WordRelationsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="234">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="261">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1620,11 +1629,11 @@
             <objects>
                 <viewController storyboardIdentifier="WordStatisticsViewController" id="237" customClass="WordStatisticsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="238">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="41" sectionHeaderHeight="28" sectionFooterHeight="22" id="248">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="388"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1774,15 +1783,15 @@
             <objects>
                 <viewController id="307" customClass="ListsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="308">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="313">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="22" id="314">
-                                <rect key="frame" x="0.0" y="110" width="320" height="370"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="345"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1881,6 +1890,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="8Tp-80-l0P">
                         <connections>
                             <outlet property="titleView" destination="MRM-Vu-MxX" id="WtO-xg-Seb"/>
@@ -1899,14 +1909,14 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="492" y="841"/>
+            <point key="canvasLocation" x="492" y="937"/>
         </scene>
         <!--Today View ControllerV3-->
         <scene sceneID="1Un-Ob-zbk">
             <objects>
                 <viewController id="r7G-Qa-14J" customClass="TodayViewControllerV3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1X-Yx-RyO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="i4Q-7H-qCq">
@@ -2300,6 +2310,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="WRr-LR-bLx">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="8B0-Uu-viB">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="4Iq-3r-sT1">
@@ -2395,15 +2406,15 @@
             <objects>
                 <viewController storyboardIdentifier="MAListViewController" id="970-Vj-N1J" customClass="MAListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3PJ-nW-DMJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="xjX-Rb-7Jp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="9LA-ci-8Wh">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2495,6 +2506,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Vmp-OF-avU">
                         <barButtonItem key="leftBarButtonItem" style="done" id="Egi-p3-sJ4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZkW-x4-EC6">
@@ -2549,22 +2561,22 @@
                 </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5R-2J-iHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="841"/>
+            <point key="canvasLocation" x="890" y="937"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="z20-PT-8pw">
             <objects>
                 <viewController storyboardIdentifier="PHListViewController" id="q0L-nc-6lV" customClass="PHListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXE-At-cDb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="dsR-1G-Jmn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="pjY-Rq-AFJ">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2656,6 +2668,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="8cw-Ne-LZU">
                         <barButtonItem key="leftBarButtonItem" style="done" id="BJM-Ol-fJy">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jOe-Kh-thy">
@@ -2710,22 +2723,22 @@
                 </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKq-LN-HJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287" y="841"/>
+            <point key="canvasLocation" x="1287" y="937"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="uVW-4Q-JiH">
             <objects>
                 <viewController storyboardIdentifier="CSListViewController" id="giL-zN-ZfV" customClass="CSListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KEv-HP-hZf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="ZWN-1c-ida">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="Xc9-wk-uOj">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2817,6 +2830,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="g0b-xY-wuB">
                         <barButtonItem key="leftBarButtonItem" style="done" id="nLG-uR-u16">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cj8-sZ-blL">
@@ -2871,22 +2885,22 @@
                 </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fM-4U-QYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="841"/>
+            <point key="canvasLocation" x="1659" y="937"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="E9r-PN-51q">
             <objects>
                 <viewController storyboardIdentifier="GRERBLLListViewController" id="H8w-IS-FaQ" customClass="GRERBLLListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pSx-mD-HjT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="OE5-hP-Y8m">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="22" id="QIA-GV-wwJ">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2975,6 +2989,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="ogM-HZ-DGY">
                         <barButtonItem key="leftBarButtonItem" style="done" id="9sx-YF-ujm">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eht-Er-gxL">
@@ -3029,22 +3044,22 @@
                 </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOt-89-R1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="841"/>
+            <point key="canvasLocation" x="2038" y="937"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="ZKt-vF-wBa">
             <objects>
                 <viewController storyboardIdentifier="GRERBWLListViewController" id="x3Q-Bt-iZr" customClass="GRERBWLListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xaC-qW-gPU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="kbA-dC-nXT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="g8C-9h-bQx">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3136,6 +3151,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="3hf-KY-RPi">
                         <barButtonItem key="leftBarButtonItem" style="done" id="T6B-R6-fLq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9O6-Ty-L9e">
@@ -3190,18 +3206,18 @@
                 </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDa-7I-yKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="841"/>
+            <point key="canvasLocation" x="2414" y="937"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="yHD-1u-VQP">
             <objects>
                 <viewController storyboardIdentifier="AboutViewController" id="dry-7g-qcJ" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="inb-YZ-l9Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="ODu-TU-Aiy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Oaf-44-flW">
@@ -3285,6 +3301,7 @@
                             </label>
                         </subviews>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mZm-mD-yUX">
                         <barButtonItem key="leftBarButtonItem" style="done" id="gnB-s8-96c">
@@ -3337,22 +3354,23 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="890" y="1454"/>
+            <point key="canvasLocation" x="890" y="1638"/>
         </scene>
         <!--Patent View Controller-->
         <scene sceneID="ImC-Mi-X18">
             <objects>
                 <viewController storyboardIdentifier="PatentViewController" id="A70-EL-N70" customClass="PatentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xlt-TZ-U8h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="FLe-fg-FRt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="81C-2i-yMP">
                         <barButtonItem key="leftBarButtonItem" style="done" id="jQd-Zm-p2p">
@@ -3408,22 +3426,22 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="1287" y="1454"/>
+            <point key="canvasLocation" x="1287" y="1638"/>
         </scene>
         <!--ListSL View Controller-->
         <scene sceneID="hpP-Tl-TbX">
             <objects>
                 <viewController storyboardIdentifier="TBBTListSLViewController" id="9Ny-hn-wQh" customClass="TBBTListSLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q4x-AO-NWX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="kfX-49-eeR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="22" id="MWZ-ju-HsX">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3479,6 +3497,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="2fn-c6-AHI">
                         <barButtonItem key="leftBarButtonItem" style="done" id="Xi0-P0-3f8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="INM-0M-KPX">
@@ -3533,22 +3552,22 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="2800" y="841"/>
+            <point key="canvasLocation" x="2800" y="937"/>
         </scene>
         <!--ListEL View Controller-->
         <scene sceneID="XQn-dO-7kM">
             <objects>
                 <viewController storyboardIdentifier="TBBTListELViewController" id="eeg-d9-cI0" customClass="TBBTListELViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4tr-Ls-AEh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="2t6-yX-ESb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="22" id="ltv-52-MYO">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3604,6 +3623,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="dT5-9P-8OK">
                         <barButtonItem key="leftBarButtonItem" id="Ymw-mv-sBl">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aUp-74-n2l">
@@ -3658,22 +3678,22 @@
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </objects>
-            <point key="canvasLocation" x="3175" y="841"/>
+            <point key="canvasLocation" x="3175" y="937"/>
         </scene>
         <!--ListWL View Controller-->
         <scene sceneID="eBH-hY-2We">
             <objects>
                 <viewController storyboardIdentifier="TBBTListWLViewController" id="Rxs-Tx-FjT" customClass="TBBTListWLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1AU-tx-hlN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="C7Z-1s-he2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="uHG-VN-HsI">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3765,6 +3785,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="BN3-uo-1db">
                         <barButtonItem key="leftBarButtonItem" style="done" id="j7r-Iq-qJo">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9EL-wZ-CjW">
@@ -3819,22 +3840,22 @@
                 </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDf-4x-FP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3908" y="841"/>
+            <point key="canvasLocation" x="3908" y="937"/>
         </scene>
         <!--ListTL View Controller-->
         <scene sceneID="yYS-Ka-MGM">
             <objects>
                 <viewController storyboardIdentifier="TBBTListTLViewController" id="1oU-pE-wPd" customClass="TBBTListTLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="onf-1j-YPd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="lJl-nU-lW1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="on5-N1-18c">
-                                <rect key="frame" x="0.0" y="2" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -3890,6 +3911,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="TJF-dS-fXh">
                         <barButtonItem key="leftBarButtonItem" style="done" id="laR-Hd-u3D">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vPc-mx-CuI">
@@ -3975,7 +3997,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3540" y="841"/>
+            <point key="canvasLocation" x="3540" y="937"/>
         </scene>
     </scenes>
     <resources>
@@ -4054,6 +4076,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
