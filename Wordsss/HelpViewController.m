@@ -58,7 +58,7 @@
 
 - (IBAction)dismiss:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
     
     NSArray* vcArray = ((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController).viewControllers;
     TodayViewControllerV3* tvc = (TodayViewControllerV3*)[(UINavigationController*)[vcArray objectAtIndex:2] topViewController];

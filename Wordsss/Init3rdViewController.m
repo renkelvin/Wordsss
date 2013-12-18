@@ -82,7 +82,7 @@
     [tvc viewDidLoad];
     
     // Dissmiss View
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (void)showLoadingIndicator

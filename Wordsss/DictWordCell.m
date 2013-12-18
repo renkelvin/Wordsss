@@ -39,7 +39,7 @@
         //
         UIFont *fontBlue = label.font;
         CGSize sizeBlue = CGSizeMake(280,2000);
-        CGSize labelsizeBlue = [string sizeWithFont:fontBlue constrainedToSize:sizeBlue lineBreakMode:UILineBreakModeWordWrap];
+        CGSize labelsizeBlue = [string sizeWithFont:fontBlue constrainedToSize:sizeBlue lineBreakMode: NSLineBreakByWordWrapping];
         label.frame = CGRectMake(_criticalPoiont.x, _criticalPoiont.y, labelsizeBlue.width, labelsizeBlue.height);
         //
         [self addSubview:label];
@@ -54,7 +54,7 @@
         //
         UIFont *fontGrey = label.font;
         CGSize sizeGrey = CGSizeMake(280,2000);
-        CGSize labelsizeGrey = [string sizeWithFont:fontGrey constrainedToSize:sizeGrey lineBreakMode:UILineBreakModeWordWrap];
+        CGSize labelsizeGrey = [string sizeWithFont:fontGrey constrainedToSize:sizeGrey lineBreakMode: NSLineBreakByWordWrapping];
         label.frame = CGRectMake(_criticalPoiont.x, _criticalPoiont.y, labelsizeGrey.width, labelsizeGrey.height);
         //
         [self addSubview:label];

@@ -44,7 +44,7 @@
 
 - (IBAction)dismiss:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 - (IBAction)lastStep

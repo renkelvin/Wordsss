@@ -83,7 +83,7 @@
         NSString *emailBody = [NSString stringWithFormat:@"描述：\n"];
         [picker setMessageBody:emailBody isHTML:NO];
         
-        [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:picker animated:YES];
+        [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentViewController:picker animated:YES completion:^(void){}];
     }
 }
 
@@ -113,7 +113,7 @@
         
         NSString *body = [NSString stringWithFormat:@"推荐你使用迅辞记忆单词。迅辞是先进而简明的智能词汇记忆助理, 拥有前所未有的交互式算法和优雅易用设计。在 App Store 搜索“迅辞”即可下载至 iOS 设备。"];
         [picker setBody:body];
-        [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:picker animated:YES];
+        [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentViewController:picker animated:YES completion:^(void){}];
     }
 }
 
@@ -135,7 +135,7 @@
         [picker setSubject:subject];
         NSString *emailBody = [NSString stringWithFormat:@"迅辞是先进而简明的智能词汇记忆助理, 拥有前所未有的交互式算法和优雅易用设计。在 App Store 搜索“迅辞”即可下载至 iOS 设备。"];
         [picker setMessageBody:emailBody isHTML:NO];
-        [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentModalViewController:picker animated:YES];
+        [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) presentViewController:picker animated:YES completion:^(void){}];
     }
 }
 
@@ -150,7 +150,7 @@
     {
         case MFMailComposeResultCancelled: {
             message = NSLocalizedString(@"发送取消", nil);
-            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissModalViewControllerAnimated:YES];
+            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissViewControllerAnimated:YES completion:^(void){}];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message 
                                                                 message:nil
                                                                delegate:nil
@@ -161,7 +161,7 @@
         }
         case MFMailComposeResultSaved: {
             message = NSLocalizedString(@"保存成功", nil);
-            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissModalViewControllerAnimated:YES];
+            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissViewControllerAnimated:YES completion:^(void){}];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message 
                                                                 message:nil
                                                                delegate:nil
@@ -172,7 +172,7 @@
         }
         case MFMailComposeResultSent: {
             message = NSLocalizedString(@"发送成功", nil);
-            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissModalViewControllerAnimated:YES];
+            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissViewControllerAnimated:YES completion:^(void){}];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message 
                                                                 message:NSLocalizedString(@"感谢您使用迅辞！", nil)
                                                                delegate:nil
@@ -207,7 +207,7 @@
     {
         case MessageComposeResultCancelled: {
             message = NSLocalizedString(@"您已取消发送", nil);
-            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissModalViewControllerAnimated:YES];
+            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissViewControllerAnimated:YES completion:^(void){}];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message 
                                                                 message:nil
                                                                delegate:nil
@@ -218,7 +218,7 @@
         }
         case MessageComposeResultSent: {
             message = NSLocalizedString(@"发送成功", nil);
-            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissModalViewControllerAnimated:YES];
+            [((RKTabBarController*)[[UIApplication sharedApplication] delegate].window.rootViewController) dismissViewControllerAnimated:YES completion:^(void){}];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message 
                                                                 message:NSLocalizedString(@"感谢您使用迅辞！", nil)
                                                                delegate:nil
