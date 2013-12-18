@@ -78,7 +78,9 @@ static BOOL FIRSTTIME = YES;
 - (void)showCustomTabBar{
     
     //
-    CGRect tabBarFrame = CGRectMake(0, 480 - 62, 320, 62);    
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    CGFloat height = screenBounds.size.height;
+    CGRect tabBarFrame = CGRectMake(0, height - 65, 320, 62);
 	customTabBarView = [[[NSBundle mainBundle] loadNibNamed:@"RKTabBarController" owner:self options:nil] lastObject];
     [customTabBarView setFrame:tabBarFrame];
     
@@ -93,14 +95,14 @@ static BOOL FIRSTTIME = YES;
         {
             case 0:
             {
-                btn.frame = CGRectMake(32 - 25, 62 - 49 + 1, 50, 48);
+                btn.frame = CGRectMake(32 - 25, 65 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"profile.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"profile_active.png"] forState:UIControlStateSelected];
                 break;
             }
             case 1:
             {
-                btn.frame = CGRectMake(96 - 25, 62 - 49 + 1, 50, 48);
+                btn.frame = CGRectMake(96 - 25, 65 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"search.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"search_active.png"] forState:UIControlStateSelected];
                 break;
@@ -114,14 +116,14 @@ static BOOL FIRSTTIME = YES;
             }
             case 3:
             {
-                btn.frame = CGRectMake(224 - 25, 62 - 49 + 1, 50, 48);
+                btn.frame = CGRectMake(224 - 25, 65 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"wordlist.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"wordlist_active.png"] forState:UIControlStateSelected];
                 break;
             }
             case 4:
             {
-                btn.frame = CGRectMake(288 - 25, 62 - 49 + 1, 50, 48);
+                btn.frame = CGRectMake(288 - 25, 65 - 49 + 1, 50, 48);
                 [btn setImage:[UIImage imageNamed:@"settings.png"] forState:UIControlStateNormal];
                 [btn setImage:[UIImage imageNamed:@"settings_active.png"] forState:UIControlStateSelected];
                 break;
@@ -135,7 +137,7 @@ static BOOL FIRSTTIME = YES;
 	[self.view addSubview:customTabBarView];
 }
 
-// 
+//
 - (void)selectTab:(UIButton *)button
 {
     
