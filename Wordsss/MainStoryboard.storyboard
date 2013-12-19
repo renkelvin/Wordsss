@@ -1977,8 +1977,23 @@
                                         <rect key="frame" x="295" y="78" width="10" height="15"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fJV-ud-2SO">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="button_voice_on.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="regretButtonClicked:" destination="r7G-Qa-14J" eventType="touchDragInside" id="24M-aI-Exr"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fvZ-0y-MAM">
-                                        <rect key="frame" x="-2" y="1" width="280" height="40"/>
+                                        <rect key="frame" x="44" y="0.0" width="232" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
@@ -1993,7 +2008,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N0i-2J-RQi">
-                                        <rect key="frame" x="276" y="1" width="44" height="39"/>
+                                        <rect key="frame" x="276" y="0.0" width="44" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="button_revert.png">
@@ -2091,7 +2106,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="G8Y-Z0-dWX">
-                                        <rect key="frame" x="-2" y="1" width="280" height="40"/>
+                                        <rect key="frame" x="44" y="0.0" width="232" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
@@ -2106,7 +2121,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XzX-jr-bIp">
-                                        <rect key="frame" x="276" y="1" width="44" height="39"/>
+                                        <rect key="frame" x="276" y="0.0" width="44" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="button_revert.png">
@@ -4013,6 +4028,7 @@
         <image name="button_revert.png" width="44" height="40"/>
         <image name="button_select_to_bg.png" width="146" height="40"/>
         <image name="button_voice_hover.png" width="280" height="40"/>
+        <image name="button_voice_on.png" width="40" height="40"/>
         <image name="chart_bg.png" width="320" height="131"/>
         <image name="chart_cover.png" width="40" height="172"/>
         <image name="chart_popover_bg.png" width="300" height="169"/>

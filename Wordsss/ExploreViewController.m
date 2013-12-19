@@ -21,7 +21,7 @@
         // Custom initialization
     }
     return self;
-}    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -57,7 +57,7 @@
 {
     //
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];    
+    [self.searchBar setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -191,12 +191,12 @@
     if ([searchText compare:@""] == NSOrderedSame) {
         [(WordCell*)cell clear];
         [(WordCell*)cell setWord:[_rowArray objectAtIndex:indexPath.row]];
-        [(WordCell*)cell configCell];        
+        [(WordCell*)cell configCell];
     }
     else {
         [(WordCell*)cell clear];
         [(WordCell*)cell setPureWord:[_rowArray objectAtIndex:indexPath.row]];
-        [(WordCell*)cell configCell];        
+        [(WordCell*)cell configCell];
     }
     
     return cell;
@@ -273,15 +273,16 @@
     [self.coverButton setHidden:YES];
 }
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchbar
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    //    //
-    //    [self refreshData];
-    //    //
-    //    [self reloadData];
-    
     //
-    [searchbar resignFirstResponder];    
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    //
+    [searchBar resignFirstResponder];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
