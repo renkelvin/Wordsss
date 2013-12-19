@@ -54,7 +54,7 @@
 
 - (IBAction)speakButtonClicked:(id)sender
 {
-    // TODO: ~
+    // TODO:
 }
 
 #pragma mark - UITableViewDelegate

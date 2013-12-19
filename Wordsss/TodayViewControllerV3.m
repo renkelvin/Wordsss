@@ -9,6 +9,10 @@
 #import "TodayViewControllerV3.h"
 #import "WordViewController.h"
 
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AudioToolbox/AudioToolbox.h>
+
 @implementation TodayViewControllerV3
 
 @synthesize posTransView;
@@ -595,7 +599,14 @@
 
 - (IBAction)speakButtonClicked:(id)sender
 {
-    // TODO: ~
+    return ;
+    
+    // TODO:
+    NSString* filePathRes = [[NSBundle mainBundle]  pathForResource:@"test" ofType:@"m4a"];
+    NSURL* fileURL = [NSURL fileURLWithPath:filePathRes];
+    
+    AVAudioPlayer* player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
+    [player play];
 }
 
 @end
