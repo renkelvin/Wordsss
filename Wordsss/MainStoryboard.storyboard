@@ -1978,7 +1978,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fJV-ud-2SO">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="40"/>
+                                        <rect key="frame" x="-2" y="1" width="44" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="button_voice_on.png">
@@ -2008,7 +2008,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N0i-2J-RQi">
-                                        <rect key="frame" x="276" y="0.0" width="44" height="40"/>
+                                        <rect key="frame" x="276" y="1" width="44" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="button_revert.png">
@@ -2121,7 +2121,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XzX-jr-bIp">
-                                        <rect key="frame" x="276" y="0.0" width="44" height="40"/>
+                                        <rect key="frame" x="276" y="1" width="44" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="button_revert.png">
@@ -2320,9 +2320,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="WRr-LR-bLx">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="8B0-Uu-viB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="8B0-Uu-viB">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="4Iq-3r-sT1">
-                                <rect key="frame" x="263" y="5" width="41" height="33"/>
+                                <rect key="frame" x="16" y="5" width="41" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="button_info.png">
