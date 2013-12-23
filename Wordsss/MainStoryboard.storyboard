@@ -2320,7 +2320,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="WRr-LR-bLx">
-                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="8B0-Uu-viB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="done" id="8B0-Uu-viB">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="4Iq-3r-sT1">
                                 <rect key="frame" x="16" y="5" width="41" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
