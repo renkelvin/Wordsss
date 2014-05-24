@@ -1247,9 +1247,9 @@
 		FEBBA7F414FDF72600943F52 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				FE6B138815AEC141001A54D4 /* Subject */,
 				FE6B138915AEC15B001A54D4 /* Books */,
 				FE6B138A15AEC16F001A54D4 /* Movie */,
+				FE6B138815AEC141001A54D4 /* Subject */,
 			);
 			name = List;
 			sourceTree = "<group>";
