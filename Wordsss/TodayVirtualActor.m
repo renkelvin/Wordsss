@@ -125,24 +125,24 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     NSSet* tempSet = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+0", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    NSLog(@"Word record in day %d+0: %d", [_user.status.day intValue], [tempSet count]);
+    NSLog(@"Word record in day %d+0: %lu", [_user.status.day intValue], (unsigned long)[tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+1", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    NSLog(@"Word record in day %d+1: %d", [_user.status.day intValue], [tempSet count]);
+    NSLog(@"Word record in day %d+1: %lu", [_user.status.day intValue], (unsigned long)[tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+2", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    NSLog(@"Word record in day %d+2: %d", [_user.status.day intValue], [tempSet count]);
+    NSLog(@"Word record in day %d+2: %lu", [_user.status.day intValue], (unsigned long)[tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+3", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    NSLog(@"Word record in day %d+3: %d", [_user.status.day intValue], [tempSet count]);
+    NSLog(@"Word record in day %d+3: %lu", [_user.status.day intValue], (unsigned long)[tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+4", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    NSLog(@"Word record in day %d+4: %d", [_user.status.day intValue], [tempSet count]);
+    NSLog(@"Word record in day %d+4: %lu", [_user.status.day intValue], (unsigned long)[tempSet count]);
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == %d+5", [_user.status.day intValue]]];
     tempSet = [NSMutableSet setWithArray:[udm.managedObjectContext executeFetchRequest:request error:nil]];
-    NSLog(@"Word record in day %d+5: %d", [_user.status.day intValue], [tempSet count]);
+    NSLog(@"Word record in day %d+5: %lu", [_user.status.day intValue], (unsigned long)[tempSet count]);
     
-    NSLog(@"updataWordRecordSet: %d", [_wordRecordSet count]);
+    NSLog(@"updataWordRecordSet: %lu", (unsigned long)[_wordRecordSet count]);
 }
 
 - (void)fillWordRecordSetFromWordRecord
@@ -182,7 +182,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     int c = [_wordRecordSet count];
     _newWordCount += (c - a);
-    NSLog(@"fillWordRecordSetFromWordRecord: %d", [_wordRecordSet count]);
+    NSLog(@"fillWordRecordSetFromWordRecord: %lu", (unsigned long)[_wordRecordSet count]);
 }
 
 - (void)fillWordRecordSetFromWordByFrequency
@@ -235,7 +235,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     int c = [_wordRecordSet count];
     _newWordCount += (c - a);
-    NSLog(@"fillWordRecordSetFromWordByFrequency: %d", [_wordRecordSet count]);
+    NSLog(@"fillWordRecordSetFromWordByFrequency: %lu", (unsigned long)[_wordRecordSet count]);
 }
 
 - (void)fillWordRecordSetFromWordByField
@@ -287,7 +287,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     
     int c = [_wordRecordSet count];
     _newWordCount += (c - a);
-    NSLog(@"fillWordRecordSetFromWordByField: %d", [_wordRecordSet count]);
+    NSLog(@"fillWordRecordSetFromWordByField: %lu", (unsigned long)[_wordRecordSet count]);
 }
 
 - (void)updateTestWordRecord
@@ -400,7 +400,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     // int wordRemainLimit = kTodayWordLimit * ((1-memDegree)*kWordRemainFactorMin + memDegree*kWordRemainFactorMax);
     int wordRemainLimit = 20;
     if ([_wordRecordSet count] <= wordRemainLimit) {
-        NSLog(@"wordRemain: %d", [_wordRecordSet count]);
+        NSLog(@"wordRemain: %lu", (unsigned long)[_wordRecordSet count]);
         return YES;
     }
     

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FEBFBEF91436DAF20028630E"
-               BuildableName = "&#36805;&#36766;.app"
-               BlueprintName = "&#36805;&#36766;"
+               BuildableName = "&#x8fc5;&#x8f9e;.app"
+               BlueprintName = "&#x8fc5;&#x8f9e;"
                ReferencedContainer = "container:Wordsss.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -24,25 +24,24 @@
    </BuildAction>
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FEBFBF191436DAF20028630E"
-               BuildableName = "WordsssTests.octest"
-               BlueprintName = "WordsssTests"
-               ReferencedContainer = "container:Wordsss.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FEBFBEF91436DAF20028630E"
+            BuildableName = "&#x8fc5;&#x8f9e;.app"
+            BlueprintName = "&#x8fc5;&#x8f9e;"
+            ReferencedContainer = "container:Wordsss.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
@@ -53,8 +52,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FEBFBEF91436DAF20028630E"
-            BuildableName = "&#36805;&#36766;.app"
-            BlueprintName = "&#36805;&#36766;"
+            BuildableName = "&#x8fc5;&#x8f9e;.app"
+            BlueprintName = "&#x8fc5;&#x8f9e;"
             ReferencedContainer = "container:Wordsss.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FEBFBEF91436DAF20028630E"
-            BuildableName = "&#36805;&#36766;.app"
-            BlueprintName = "&#36805;&#36766;"
+            BuildableName = "&#x8fc5;&#x8f9e;.app"
+            BlueprintName = "&#x8fc5;&#x8f9e;"
             ReferencedContainer = "container:Wordsss.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
