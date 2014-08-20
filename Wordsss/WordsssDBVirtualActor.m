@@ -42,12 +42,12 @@ static WordsssDBVirtualActor* sharedWordsssDBVirtualActor = nil;
      {
          if ([obj.name compare:strSta] == NSOrderedSame || [obj.name compare:strSta] == NSOrderedDescending) {
              if (a == -1) {
-                 a = inx;
+                 a = (int)inx;
              }
          }
          
          if ([obj.name compare:strEnd] == NSOrderedDescending) {
-             b = inx;
+             b = (int)inx;
              
              *stop = YES;
          }
@@ -67,11 +67,11 @@ static WordsssDBVirtualActor* sharedWordsssDBVirtualActor = nil;
     [_allKeys enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger inx, BOOL* stop)
      {
          if ([obj compare:strSta] == NSOrderedSame || [obj compare:strSta] == NSOrderedAscending) {
-             a = inx;
+             a = (int)inx;
          }
          
          if ([obj compare:strEnd] == NSOrderedAscending) {
-             b = inx;
+             b = (int)inx;
          }
      }];
     

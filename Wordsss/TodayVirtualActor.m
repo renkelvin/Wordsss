@@ -162,7 +162,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"day == 0"]];
     NSArray* new_wordRecord_array = [udm.managedObjectContext executeFetchRequest:request error:nil];
     
-    int a = [_wordRecordSet count];
+    int a = (int)[_wordRecordSet count];
     // Set new wordRecord
     for (WordRecord* wr in new_wordRecord_array) {
         // Set
@@ -173,14 +173,14 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {
-            int b = [_wordRecordSet count];
+            int b = (int)[_wordRecordSet count];
             _newWordCount += (b - a);
             NSLog(@"fillWordRecordSetFromWordRecord!");
             return;
         }
     }
     
-    int c = [_wordRecordSet count];
+    int c = (int)[_wordRecordSet count];
     _newWordCount += (c - a);
     NSLog(@"fillWordRecordSetFromWordRecord: %lu", (unsigned long)[_wordRecordSet count]);
 }
@@ -211,7 +211,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"(NOT (word_dict == nil)) AND (NOT (id in %@)) AND (%d > frequency.freq AND frequency.freq >= %d)", word_id_set, freqCur, freqTar]];
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
-    int a = [_wordRecordSet count];
+    int a = (int)[_wordRecordSet count];
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     // Set new wordRecord
     for (Word* w in new_word_set) {
@@ -226,14 +226,14 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {
-            int b = [_wordRecordSet count];
+            int b = (int)[_wordRecordSet count];
             _newWordCount += (b - a);
             NSLog(@"fillWordRecordSetFromWordByFrequency!");
             return;
         }
     }
     
-    int c = [_wordRecordSet count];
+    int c = (int)[_wordRecordSet count];
     _newWordCount += (c - a);
     NSLog(@"fillWordRecordSetFromWordByFrequency: %lu", (unsigned long)[_wordRecordSet count]);
 }
@@ -263,7 +263,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [request setPredicate:[NSPredicate predicateWithFormat:@"(NOT (word_dict == nil)) AND (NOT (id in %@)) AND (field.%K == %@)", word_id_set, fieldTarget, [NSNumber numberWithBool:YES]]];
     NSSet* new_word_set = [NSMutableSet setWithArray:[wdm.managedObjectContext executeFetchRequest:request error:nil]];
     
-    int a = [_wordRecordSet count];
+    int a = (int)[_wordRecordSet count];
     UserVirtualActor* uva = [UserVirtualActor userVirtualActor];
     // Set new wordRecord
     for (Word* w in new_word_set) {
@@ -278,14 +278,14 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
         
         if ([_wordRecordSet count] >= kTodayWordLimit)
         {
-            int b = [_wordRecordSet count];
+            int b = (int)[_wordRecordSet count];
             _newWordCount += (b - a);
             NSLog(@"fillWordRecordSetFromWordByField!");
             return;
         }
     }
     
-    int c = [_wordRecordSet count];
+    int c = (int)[_wordRecordSet count];
     _newWordCount += (c - a);
     NSLog(@"fillWordRecordSetFromWordByField: %lu", (unsigned long)[_wordRecordSet count]);
 }
@@ -365,7 +365,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self updateWord];
     
     //
-    self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];
+    self.todayWordSum = [NSNumber numberWithInt:(int)[_wordRecordSet count]];
     
     //
     [self updateScreenTitle:@"计划已更新" info:[NSString stringWithFormat:@"新增单词 %d 个", _newWordCount]];
@@ -449,7 +449,7 @@ static TodayVirtualActor* sharedTodayVirtualActor = nil;
     [self fillWordRecordSetFromWordByFrequency];
     
     //
-    self.todayWordSum = [NSNumber numberWithInt:[_wordRecordSet count]];
+    self.todayWordSum = [NSNumber numberWithInt:(int)[_wordRecordSet count]];
     
     //
     [self updateScreenTitle:@"计划已更新" info:[NSString stringWithFormat:@"新增单词 %d 个", _newWordCount]];

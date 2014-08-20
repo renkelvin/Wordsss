@@ -104,7 +104,7 @@
     }
     
     // Configure the cell...
-    NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
+    NSNumber* episodeNum = [NSNumber numberWithInt:(int)(indexPath.row + 1)];
     [(TBBTListELCell*)cell setEpisodeNum:episodeNum];
     [(TBBTListELCell*)cell setSeasonNum:_seasonNum];
     [(TBBTListELCell*)cell configCell];
@@ -122,7 +122,7 @@
     NSString* level = [uva.user.defult fieldTarget];
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
     NSNumber* seasonNum = _seasonNum;
-    NSNumber* episodeNum = [NSNumber numberWithInt:indexPath.row + 1];
+    NSNumber* episodeNum = [NSNumber numberWithInt:(int)(indexPath.row + 1)];
     NSArray* array = [wdm getTBBTListSentenceArrayWithSeason:seasonNum episode:episodeNum level:level];
     
     ttvc = [ttvc initWithListSentenceArray:array seasonNum:_seasonNum episodeNum:episodeNum];

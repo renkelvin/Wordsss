@@ -84,7 +84,7 @@ static BOOL FIRSTTIME = YES;
     [customTabBarView setFrame:tabBarFrame];
     
 	// Create buttons
-	int viewCount = self.viewControllers.count;
+	int viewCount = (int)self.viewControllers.count;
 	self.buttons = [NSMutableArray arrayWithCapacity:viewCount];
 	for (int i = 0; i < viewCount; i++) {
 		UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];

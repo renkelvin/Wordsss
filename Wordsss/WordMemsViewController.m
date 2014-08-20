@@ -100,7 +100,7 @@
 // Section number
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    int num = [[_wordVirtualActor getWordMems] count];
+    int num = (int)[[_wordVirtualActor getWordMems] count];
     
     return num;
 }
@@ -113,15 +113,15 @@
     NSArray* array = [[_wordVirtualActor getWordMems] objectAtIndex:section];
     // Association
     if ([[array lastObject] class] == [Word_Association class]) {
-        num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count];
+        num = (int)[[[_wordVirtualActor getWordMems] objectAtIndex:section] count];
     }
     // Rootaffix
     else if ([[array lastObject] class] == [Word_Rootaffix class]) {
-        num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
+        num = (int)[[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
     }
     // Sense
     else if ([[array lastObject] class] == [Word_Sense class]) {
-        num = [[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
+        num = (int)[[[_wordVirtualActor getWordMems] objectAtIndex:section] count] - 1;
     }
     
     return num;

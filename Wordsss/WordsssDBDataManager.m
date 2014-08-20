@@ -115,7 +115,7 @@ static WordsssDBDataManager* sharedWordsssDBDataManager = nil;
     NSArray* result = [self.managedObjectContext executeFetchRequest:request error:nil];
     
     if ([result count] != 0) {
-        int count = [result count];
+        int count = (int)[result count];
         if (count > 10) {
             count = 10;
         }

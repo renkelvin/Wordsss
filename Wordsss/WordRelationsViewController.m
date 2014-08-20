@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    int count = [[_wordVirtualActor getDerivative]count] + [[_wordVirtualActor getSynonym]count] + [[_wordVirtualActor getAntonym]count];
+    int count = (int)[[_wordVirtualActor getDerivative]count] + (int)[[_wordVirtualActor getSynonym]count] + (int)[[_wordVirtualActor getAntonym]count];
     if (!count) {
         [self.mainTableView setHidden:YES];
         [self.placeHolderImageView setHidden:NO];

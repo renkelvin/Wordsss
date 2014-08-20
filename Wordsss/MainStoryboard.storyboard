@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="75">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="75">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller - Item-->
+        <!--Item-->
         <scene sceneID="34">
             <objects>
                 <viewController id="6" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -241,7 +241,7 @@
             </objects>
             <point key="canvasLocation" x="492" y="-1177"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="40">
             <objects>
                 <navigationController id="9" sceneMemberID="viewController">
@@ -259,7 +259,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="937"/>
         </scene>
-        <!--Setting View Controller - Item-->
+        <!--Item-->
         <scene sceneID="42">
             <objects>
                 <viewController id="10" customClass="SettingViewController" sceneMemberID="viewController">
@@ -701,7 +701,7 @@
             </objects>
             <point key="canvasLocation" x="-590" y="251"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="116">
             <objects>
                 <navigationController id="108" sceneMemberID="viewController">
@@ -900,7 +900,7 @@
             </objects>
             <point key="canvasLocation" x="890" y="251"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="146">
             <objects>
                 <navigationController id="138" sceneMemberID="viewController">
@@ -1271,7 +1271,7 @@
             </objects>
             <point key="canvasLocation" x="1444" y="-1895"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="158">
             <objects>
                 <navigationController id="150" sceneMemberID="viewController">
@@ -1288,7 +1288,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="-460"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Item-->
         <scene sceneID="170">
             <objects>
                 <navigationController id="162" sceneMemberID="viewController">
@@ -1993,7 +1993,7 @@
                                         <rect key="frame" x="295" y="78" width="10" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fJV-ud-2SO">
+                                    <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fJV-ud-2SO">
                                         <rect key="frame" x="-2" y="1" width="44" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -4101,6 +4101,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>

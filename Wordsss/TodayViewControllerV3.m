@@ -206,7 +206,7 @@
     //
     int wordSum = [_todayVirtualActor.todayWordSum intValue];
     [self.infoRightSumLabel setText:[NSString stringWithFormat:@"%d", wordSum - 20]];
-    int wordNow = [_todayVirtualActor.wordRecordSet count];
+    int wordNow = (int)[_todayVirtualActor.wordRecordSet count];
     [self.infoRightNowLabel setText:[NSString stringWithFormat:@"%d", wordSum - wordNow]];
     
     [self.infoRightGraphView setType:RIGHT];

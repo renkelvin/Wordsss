@@ -86,7 +86,7 @@
     }
 
     // Configure the cell...
-    NSNumber* seasonNum = [NSNumber numberWithInt:indexPath.row + 1];
+    NSNumber* seasonNum = [NSNumber numberWithInt:(int)(indexPath.row + 1)];
     [(TBBTListSLCell*)cell setSeasonNum:seasonNum];
     [(TBBTListSLCell*)cell configCell];
     
@@ -98,7 +98,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TBBTListELViewController* tevc = [self.storyboard instantiateViewControllerWithIdentifier:@"TBBTListELViewController"];
-    tevc = [tevc initWithSeasonNum:[NSNumber numberWithInt:indexPath.row + 1]];
+    tevc = [tevc initWithSeasonNum:[NSNumber numberWithInt:(int)(indexPath.row + 1)]];
     [[self navigationController] pushViewController:tevc animated:YES];
 }
 

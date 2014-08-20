@@ -89,7 +89,7 @@
 {
     int num = 0;
     
-    num = [_listWordArray count];
+    num = (int)[_listWordArray count];
     
     return num;
 }

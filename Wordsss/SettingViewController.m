@@ -139,8 +139,8 @@ static char* nameArray[13] = {
 - (IBAction)doneButtonClicked:(id)sender
 {
     //
-    int curRow = [self.pickerView selectedRowInComponent:0];
-    int tarRow = [self.pickerView selectedRowInComponent:1];
+    int curRow = (int)[self.pickerView selectedRowInComponent:0];
+    int tarRow = (int)[self.pickerView selectedRowInComponent:1];
     
     // ERROR
     if (curRow >= tarRow) {

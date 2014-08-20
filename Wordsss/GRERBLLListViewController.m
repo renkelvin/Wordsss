@@ -79,9 +79,9 @@
     GRERBWLListViewController* gwvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GRERBWLListViewController"];        
     
     WordsssDBDataManager* wdm = [WordsssDBDataManager wordsssDBDataManager];
-    NSArray* array = [wdm getGRERBListWordArrayWithList:[NSNumber numberWithInt:indexPath.row + 1]];
+    NSArray* array = [wdm getGRERBListWordArrayWithList:[NSNumber numberWithInt:(int)(indexPath.row + 1)]];
     
-    gwvc = [gwvc initWithListWordArray:array listNum:[NSNumber numberWithInt:indexPath.row + 1]];
+    gwvc = [gwvc initWithListWordArray:array listNum:[NSNumber numberWithInt:(int)(indexPath.row + 1)]];
     [[self navigationController] pushViewController:gwvc animated:YES];
 }
 
@@ -132,7 +132,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ListTableViewCellIndentifier];
     }
     
-    NSNumber* listNum = [NSNumber numberWithInt:indexPath.row + 1];
+    NSNumber* listNum = [NSNumber numberWithInt:(int)(indexPath.row + 1)];
     [(GRERBListListCell*)cell setListNum:listNum];
     [(GRERBListListCell*)cell configCell];
     

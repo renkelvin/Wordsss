@@ -87,11 +87,11 @@
      */
     
     // Log in count ++
-    int count = [[NSUserDefaults standardUserDefaults] integerForKey:kUserDefaultKeyLoginCount];
+    int count = (int)[[NSUserDefaults standardUserDefaults] integerForKey:kUserDefaultKeyLoginCount];
 	[[NSUserDefaults standardUserDefaults] setInteger:(count + 1) forKey:kUserDefaultKeyLoginCount];
     
     // Init rand seed
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

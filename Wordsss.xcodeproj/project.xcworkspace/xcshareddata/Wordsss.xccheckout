@@ -10,29 +10,29 @@
 	<string>Wordsss</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>58CCA47F-A570-4697-B531-92680EAFB0A8</key>
+		<key>9BF043A69C0D5083D70E72BD81CFAC99FD1284D5</key>
 		<string>https://github.com/RenKelvin/Wordsss.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Wordsss.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>58CCA47F-A570-4697-B531-92680EAFB0A8</key>
+		<key>9BF043A69C0D5083D70E72BD81CFAC99FD1284D5</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/RenKelvin/Wordsss.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>58CCA47F-A570-4697-B531-92680EAFB0A8</string>
+	<string>9BF043A69C0D5083D70E72BD81CFAC99FD1284D5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>58CCA47F-A570-4697-B531-92680EAFB0A8</string>
+			<string>9BF043A69C0D5083D70E72BD81CFAC99FD1284D5</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Wordsss</string>
 		</dict>

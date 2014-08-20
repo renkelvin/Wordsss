@@ -223,9 +223,9 @@
             NSDate* date = ((StaRecord*)[self.points lastObject]).date;
             NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
             NSDateComponents *components = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit) fromDate:date];
-            int year = [components year];
-            int month = [components month];
-            int day = [components day];
+            int year = (int)[components year];
+            int month = (int)[components month];
+            int day = (int)[components day];
             NSString* dateString = [NSString stringWithFormat:@"%d 年 %d 月 %d 日", year, month, day];
             [self.dateLabel setText:dateString];
             
@@ -289,9 +289,9 @@
             }
             NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
             NSDateComponents *components = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit) fromDate:date];
-            int year = [components year];
-            int month = [components month];
-            int day = [components day];
+            int year = (int)[components year];
+            int month = (int)[components month];
+            int day = (int)[components day];
             NSString* dateString = [NSString stringWithFormat:@"%d年 %d月 %d日", year, month, day];
             [self.dateLabel setText:dateString];
             
