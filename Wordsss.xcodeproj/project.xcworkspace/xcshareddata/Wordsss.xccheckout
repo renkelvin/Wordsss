@@ -14,7 +14,7 @@
 		<string>https://github.com/RenKelvin/Wordsss.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Wordsss.xcodeproj/project.xcworkspace</string>
+	<string>Wordsss.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9BF043A69C0D5083D70E72BD81CFAC99FD1284D5</key>

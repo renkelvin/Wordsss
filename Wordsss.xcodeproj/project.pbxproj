@@ -360,8 +360,6 @@
 		FEE99F5014C483A1003F70F9 /* UserVirtualActor.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE99F4F14C483A1003F70F9 /* UserVirtualActor.m */; };
 		FEEE311A1439CB1B001F7E90 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEE31181439CB1B001F7E90 /* SettingViewController.m */; };
 		FEEE311F1439CB85001F7E90 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEE311E1439CB85001F7E90 /* ExploreViewController.m */; };
-		FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */; };
-		FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */; };
 		FEF3307214AC80E500E5E3B5 /* DictWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307114AC80E500E5E3B5 /* DictWordCell.m */; };
 		FEF3307514AC816200E5E3B5 /* WordCellLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307414AC816200E5E3B5 /* WordCellLabel.m */; };
 		FEF3307814AC816E00E5E3B5 /* WordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF3307714AC816E00E5E3B5 /* WordCell.m */; };
@@ -824,8 +822,6 @@
 		FEEE31181439CB1B001F7E90 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		FEEE311D1439CB85001F7E90 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
 		FEEE311E1439CB85001F7E90 /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
-		FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bar_bg.png; sourceTree = "<group>"; };
-		FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bg@2x.png"; sourceTree = "<group>"; };
 		FEF3307014AC80E500E5E3B5 /* DictWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictWordCell.h; sourceTree = "<group>"; };
 		FEF3307114AC80E500E5E3B5 /* DictWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictWordCell.m; sourceTree = "<group>"; };
 		FEF3307314AC816200E5E3B5 /* WordCellLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCellLabel.h; sourceTree = "<group>"; };
@@ -872,8 +868,6 @@
 		FE17D587143AFCA90067E780 /* RKTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				FEEE52B8143AF2AD00187CD6 /* tab_bar_bg.png */,
-				FEEE52B9143AF2AD00187CD6 /* tab_bar_bg@2x.png */,
 				FE2E833F143B2899004A2C56 /* profile_active.png */,
 				FE2E8340143B2899004A2C56 /* profile_active@2x.png */,
 				FE2E8341143B2899004A2C56 /* profile.png */,
@@ -1711,7 +1705,7 @@
 				ORGANIZATIONNAME = Mondev;
 				TargetAttributes = {
 					FEBFBEF91436DAF20028630E = {
-						DevelopmentTeam = 2XYAGB2947;
+						DevelopmentTeam = N9KJV72CSL;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1745,8 +1739,6 @@
 				FE46A0A214F5628F00B623B5 /* button_grey_done.png in Resources */,
 				FE46A0A314F5628F00B623B5 /* button_grey_done@2x.png in Resources */,
 				FE7743A61439F9E900BCAA7E /* MainStoryboard.storyboard in Resources */,
-				FEEE52BA143AF2AD00187CD6 /* tab_bar_bg.png in Resources */,
-				FEEE52BB143AF2AD00187CD6 /* tab_bar_bg@2x.png in Resources */,
 				FE17D58B143B02110067E780 /* tab_wordtoday.png in Resources */,
 				FE17D58C143B02110067E780 /* tab_wordtoday@2x.png in Resources */,
 				FE2E834F143B289A004A2C56 /* profile_active.png in Resources */,
@@ -2135,7 +2127,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "16F3CAA9-973A-41FC-BF67-1A912F0D8B6D";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "16F3CAA9-973A-41FC-BF67-1A912F0D8B6D";
@@ -2156,7 +2148,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "16F3CAA9-973A-41FC-BF67-1A912F0D8B6D";

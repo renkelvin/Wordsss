@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    int count = [[_wordVirtualActor getWordMems]count];
+    int count = (int)[[_wordVirtualActor getWordMems]count];
     
     if (!count) {
         [self.mainTableView setHidden:YES];
