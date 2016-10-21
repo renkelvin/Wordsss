@@ -11,7 +11,7 @@
             <objects>
                 <viewController id="6" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_body.png" id="136">
@@ -266,7 +266,7 @@
             <objects>
                 <viewController id="10" customClass="SettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zO6-dG-ceo">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="elc-oS-DoL">
@@ -491,7 +491,7 @@
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="1yK-0X-bni" customClass="HelpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mm0-em-b6Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_sample.jpg" id="6lE-qm-x86">
@@ -566,7 +566,7 @@
             <objects>
                 <viewController id="11" customClass="ExploreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="15">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="181">
@@ -726,7 +726,7 @@
             <objects>
                 <viewController storyboardIdentifier="WordViewController" id="131" customClass="WordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="132">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_body.png" id="183">
@@ -926,7 +926,7 @@
             <objects>
                 <viewController storyboardIdentifier="Init1stViewController" id="o2t-ig-XYS" customClass="Init1stViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7RM-ot-y8A">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="1Bs-LN-sYg">
@@ -998,7 +998,7 @@
             <objects>
                 <viewController storyboardIdentifier="Init2ndViewController" id="iRs-0F-x4h" customClass="Init2ndViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eai-nV-1ZP">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="E5U-KD-Re7">
@@ -1191,7 +1191,7 @@
             <objects>
                 <viewController storyboardIdentifier="Init3rdViewController" id="6cs-VQ-wTi" customClass="Init3rdViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mkm-vs-GBQ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="N2C-qD-KNC">
@@ -1316,7 +1316,7 @@
             <objects>
                 <viewController storyboardIdentifier="WordBooksViewController" id="192" customClass="WordBooksViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLh-aC-afm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="22" id="vTL-N8-ZYL">
@@ -1405,7 +1405,7 @@
             <objects>
                 <viewController storyboardIdentifier="WordMemsViewController" id="229" customClass="WordMemsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="230">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="22" id="253">
@@ -1530,7 +1530,7 @@
             <objects>
                 <viewController storyboardIdentifier="WordRelationsViewController" id="233" customClass="WordRelationsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="234">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="22" id="261">
@@ -1644,7 +1644,7 @@
             <objects>
                 <viewController storyboardIdentifier="WordStatisticsViewController" id="237" customClass="WordStatisticsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="238">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="41" sectionHeaderHeight="28" sectionFooterHeight="22" id="248">
@@ -1798,7 +1798,7 @@
             <objects>
                 <viewController id="307" customClass="ListsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="308">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="313">
@@ -1931,7 +1931,7 @@
             <objects>
                 <viewController id="r7G-Qa-14J" customClass="TodayViewControllerV3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1X-Yx-RyO">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="i4Q-7H-qCq">
@@ -2436,7 +2436,7 @@
             <objects>
                 <viewController storyboardIdentifier="MAListViewController" id="970-Vj-N1J" customClass="MAListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3PJ-nW-DMJ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="xjX-Rb-7Jp">
@@ -2598,7 +2598,7 @@
             <objects>
                 <viewController storyboardIdentifier="PHListViewController" id="q0L-nc-6lV" customClass="PHListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXE-At-cDb">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="dsR-1G-Jmn">
@@ -2760,7 +2760,7 @@
             <objects>
                 <viewController storyboardIdentifier="CSListViewController" id="giL-zN-ZfV" customClass="CSListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KEv-HP-hZf">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="ZWN-1c-ida">
@@ -2922,7 +2922,7 @@
             <objects>
                 <viewController storyboardIdentifier="GRERBLLListViewController" id="H8w-IS-FaQ" customClass="GRERBLLListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pSx-mD-HjT">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="OE5-hP-Y8m">
@@ -3081,7 +3081,7 @@
             <objects>
                 <viewController storyboardIdentifier="GRERBWLListViewController" id="x3Q-Bt-iZr" customClass="GRERBWLListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xaC-qW-gPU">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="kbA-dC-nXT">
@@ -3243,7 +3243,7 @@
             <objects>
                 <viewController storyboardIdentifier="AboutViewController" id="dry-7g-qcJ" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="inb-YZ-l9Z">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="ODu-TU-Aiy">
@@ -3391,7 +3391,7 @@
             <objects>
                 <viewController storyboardIdentifier="PatentViewController" id="A70-EL-N70" customClass="PatentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xlt-TZ-U8h">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="FLe-fg-FRt">
@@ -3463,7 +3463,7 @@
             <objects>
                 <viewController storyboardIdentifier="TBBTListSLViewController" id="9Ny-hn-wQh" customClass="TBBTListSLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q4x-AO-NWX">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="kfX-49-eeR">
@@ -3589,7 +3589,7 @@
             <objects>
                 <viewController storyboardIdentifier="TBBTListELViewController" id="eeg-d9-cI0" customClass="TBBTListELViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4tr-Ls-AEh">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="2t6-yX-ESb">
@@ -3715,7 +3715,7 @@
             <objects>
                 <viewController storyboardIdentifier="TBBTListWLViewController" id="Rxs-Tx-FjT" customClass="TBBTListWLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1AU-tx-hlN">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="C7Z-1s-he2">
@@ -3877,7 +3877,7 @@
             <objects>
                 <viewController storyboardIdentifier="TBBTListTLViewController" id="1oU-pE-wPd" customClass="TBBTListTLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="onf-1j-YPd">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_deeper.png" id="lJl-nU-lW1">
@@ -4107,6 +4107,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

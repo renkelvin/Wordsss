@@ -106,7 +106,7 @@
         [self update];
 
         // Cover animate
-        [self coverAnimate];
+        // [self coverAnimate];
     }
 }
 
