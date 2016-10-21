@@ -42,6 +42,7 @@
 		206A401D14F8B223009B6D2F /* wl_free@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401714F8B223009B6D2F /* wl_free@2x.png */; };
 		206A401E14F8B223009B6D2F /* wl_paid.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401814F8B223009B6D2F /* wl_paid.png */; };
 		206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401914F8B223009B6D2F /* wl_paid@2x.png */; };
+		C750FC3B2D7A9EF81C17705C /* libPods-Wordsss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
 		FE07C16315B30D4900D22053 /* wl_toefl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE07C16115B30D4900D22053 /* wl_toefl.jpg */; };
@@ -411,6 +412,9 @@
 		206A401714F8B223009B6D2F /* wl_free@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_free@2x.png"; sourceTree = "<group>"; };
 		206A401814F8B223009B6D2F /* wl_paid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_paid.png; sourceTree = "<group>"; };
 		206A401914F8B223009B6D2F /* wl_paid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_paid@2x.png"; sourceTree = "<group>"; };
+		4AE6C9FDFEE61E45871C653A /* Pods-Wordsss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.release.xcconfig"; sourceTree = "<group>"; };
+		BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wordsss.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F169222334C5C6040ADD2576 /* Pods-Wordsss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.debug.xcconfig"; sourceTree = "<group>"; };
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
 		FE060C5C143CD7040026228C /* RKTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RKTabBarController.xib; sourceTree = "<group>"; };
 		FE060C5D143CD7040026228C /* RKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKTabBarController.h; sourceTree = "<group>"; };
@@ -739,7 +743,7 @@
 		FEBF172314A5E4400045B8A5 /* ProfileVirtualActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVirtualActor.m; sourceTree = "<group>"; };
 		FEBF173614A648B10045B8A5 /* RKChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKChartView.h; sourceTree = "<group>"; };
 		FEBF173714A648B10045B8A5 /* RKChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKChartView.m; sourceTree = "<group>"; };
-		FEBFBEFA1436DAF20028630E /* 迅辞.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "迅辞.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBFBEFA1436DAF20028630E /* Wordsss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBFBEFE1436DAF20028630E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FEBFBF001436DAF20028630E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEBFBF021436DAF20028630E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -859,12 +863,22 @@
 				FEBFBF011436DAF20028630E /* Foundation.framework in Frameworks */,
 				FEBFBF031436DAF20028630E /* CoreGraphics.framework in Frameworks */,
 				FEBFBF051436DAF20028630E /* CoreData.framework in Frameworks */,
+				C750FC3B2D7A9EF81C17705C /* libPods-Wordsss.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		476F6F13F673CA9F9C04E8B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F169222334C5C6040ADD2576 /* Pods-Wordsss.debug.xcconfig */,
+				4AE6C9FDFEE61E45871C653A /* Pods-Wordsss.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FE17D587143AFCA90067E780 /* RKTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1254,13 +1268,14 @@
 				FEBFBF061436DAF20028630E /* Wordsss */,
 				FEBFBEFD1436DAF20028630E /* Frameworks */,
 				FEBFBEFB1436DAF20028630E /* Products */,
+				476F6F13F673CA9F9C04E8B2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		FEBFBEFB1436DAF20028630E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEBFBEFA1436DAF20028630E /* 迅辞.app */,
+				FEBFBEFA1436DAF20028630E /* Wordsss.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1278,6 +1293,7 @@
 				FEBFBF021436DAF20028630E /* CoreGraphics.framework */,
 				FEBFBF041436DAF20028630E /* CoreData.framework */,
 				FEBFBF1B1436DAF20028630E /* SenTestingKit.framework */,
+				BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1678,21 +1694,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEBFBEF91436DAF20028630E /* 迅辞 */ = {
+		FEBFBEF91436DAF20028630E /* Wordsss */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "迅辞" */;
+			buildConfigurationList = FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "Wordsss" */;
 			buildPhases = (
+				F5A065CF0E9967E9E9FF66BB /* [CP] Check Pods Manifest.lock */,
 				FEBFBEF61436DAF20028630E /* Sources */,
 				FEBFBEF71436DAF20028630E /* Frameworks */,
 				FEBFBEF81436DAF20028630E /* Resources */,
+				7C0A9028CEAB63F5C21B46DC /* [CP] Embed Pods Frameworks */,
+				45F4B1FB54127BCA2804AD51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "迅辞";
+			name = Wordsss;
 			productName = Wordsss;
-			productReference = FEBFBEFA1436DAF20028630E /* 迅辞.app */;
+			productReference = FEBFBEFA1436DAF20028630E /* Wordsss.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1726,7 +1745,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEBFBEF91436DAF20028630E /* 迅辞 */,
+				FEBFBEF91436DAF20028630E /* Wordsss */,
 			);
 		};
 /* End PBXProject section */
@@ -1994,6 +2013,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		45F4B1FB54127BCA2804AD51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C0A9028CEAB63F5C21B46DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5A065CF0E9967E9E9FF66BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FEBFBEF61436DAF20028630E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -2191,6 +2258,7 @@
 		};
 		FEBFBF301436DAF20028630E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F169222334C5C6040ADD2576 /* Pods-Wordsss.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2219,6 +2287,7 @@
 		};
 		FEBFBF311436DAF20028630E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AE6C9FDFEE61E45871C653A /* Pods-Wordsss.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -2256,7 +2325,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "迅辞" */ = {
+		FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "Wordsss" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FEBFBF301436DAF20028630E /* Debug */,
