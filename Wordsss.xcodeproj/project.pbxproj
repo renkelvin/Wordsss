@@ -42,6 +42,7 @@
 		206A401D14F8B223009B6D2F /* wl_free@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401714F8B223009B6D2F /* wl_free@2x.png */; };
 		206A401E14F8B223009B6D2F /* wl_paid.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401814F8B223009B6D2F /* wl_paid.png */; };
 		206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401914F8B223009B6D2F /* wl_paid@2x.png */; };
+		A5FC62011DBABBE4001010D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */; };
 		C750FC3B2D7A9EF81C17705C /* libPods-Wordsss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
@@ -413,6 +414,7 @@
 		206A401814F8B223009B6D2F /* wl_paid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_paid.png; sourceTree = "<group>"; };
 		206A401914F8B223009B6D2F /* wl_paid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_paid@2x.png"; sourceTree = "<group>"; };
 		4AE6C9FDFEE61E45871C653A /* Pods-Wordsss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.release.xcconfig"; sourceTree = "<group>"; };
+		A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wordsss.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F169222334C5C6040ADD2576 /* Pods-Wordsss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.debug.xcconfig"; sourceTree = "<group>"; };
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
@@ -1318,8 +1320,9 @@
 			isa = PBXGroup;
 			children = (
 				FEBFBF0C1436DAF20028630E /* main.m */,
-				FEBFBF081436DAF20028630E /* Wordsss-Info.plist */,
 				FEBFBF0E1436DAF20028630E /* Wordsss-Prefix.pch */,
+				A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */,
+				FEBFBF081436DAF20028630E /* Wordsss-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1922,6 +1925,7 @@
 				2043608214C2853000170BD1 /* confirm_hl.png in Resources */,
 				2043608314C2853000170BD1 /* main_word_chn_bg@2x.png in Resources */,
 				2043608914C2853900170BD1 /* mainbar_bg.png in Resources */,
+				A5FC62011DBABBE4001010D6 /* GoogleService-Info.plist in Resources */,
 				2043608A14C2853900170BD1 /* mainbar_bg@2x.png in Resources */,
 				20663ECF14F6209B009FB251 /* ph_mem.png in Resources */,
 				20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */,

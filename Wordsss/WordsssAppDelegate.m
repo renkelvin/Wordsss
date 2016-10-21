@@ -7,8 +7,9 @@
 //
 
 #import "WordsssAppDelegate.h"
-
 #import "UserDataManager.h"
+
+#import "Firebase.h"
 
 @implementation WordsssAppDelegate
 
@@ -26,7 +27,10 @@
     
     // Create main view
     [self.window makeKeyAndVisible];
-    
+
+    // Firebase
+    [FIRApp configure];
+
     return YES;
 }
 
