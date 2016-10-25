@@ -4,5 +4,6 @@
 target 'Wordsss' do
 
     pod 'Firebase/Core'
+    pod 'Firebase/Crash'
     
 end

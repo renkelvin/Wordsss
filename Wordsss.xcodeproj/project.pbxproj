@@ -42,6 +42,7 @@
 		206A401D14F8B223009B6D2F /* wl_free@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401714F8B223009B6D2F /* wl_free@2x.png */; };
 		206A401E14F8B223009B6D2F /* wl_paid.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401814F8B223009B6D2F /* wl_paid.png */; };
 		206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401914F8B223009B6D2F /* wl_paid@2x.png */; };
+		A5D527B51DBF0236004F33A9 /* ServiceAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = A5D527B41DBF0236004F33A9 /* ServiceAccount.json */; };
 		A5FC62011DBABBE4001010D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */; };
 		C750FC3B2D7A9EF81C17705C /* libPods-Wordsss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
@@ -414,6 +415,7 @@
 		206A401814F8B223009B6D2F /* wl_paid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_paid.png; sourceTree = "<group>"; };
 		206A401914F8B223009B6D2F /* wl_paid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_paid@2x.png"; sourceTree = "<group>"; };
 		4AE6C9FDFEE61E45871C653A /* Pods-Wordsss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.release.xcconfig"; sourceTree = "<group>"; };
+		A5D527B41DBF0236004F33A9 /* ServiceAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ServiceAccount.json; sourceTree = "<group>"; };
 		A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wordsss.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F169222334C5C6040ADD2576 /* Pods-Wordsss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1319,6 +1321,7 @@
 		FEBFBF071436DAF20028630E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5D527B41DBF0236004F33A9 /* ServiceAccount.json */,
 				FEBFBF0C1436DAF20028630E /* main.m */,
 				FEBFBF0E1436DAF20028630E /* Wordsss-Prefix.pch */,
 				A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */,
@@ -1701,12 +1704,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "Wordsss" */;
 			buildPhases = (
-				F5A065CF0E9967E9E9FF66BB /* [CP] Check Pods Manifest.lock */,
 				FEBFBEF61436DAF20028630E /* Sources */,
 				FEBFBEF71436DAF20028630E /* Frameworks */,
 				FEBFBEF81436DAF20028630E /* Resources */,
 				7C0A9028CEAB63F5C21B46DC /* [CP] Embed Pods Frameworks */,
+				F5A065CF0E9967E9E9FF66BB /* [CP] Check Pods Manifest.lock */,
 				45F4B1FB54127BCA2804AD51 /* [CP] Copy Pods Resources */,
+				A5D527B31DBF01FC004F33A9 /* Firebase Crash Report Script */,
 			);
 			buildRules = (
 			);
@@ -1833,6 +1837,7 @@
 				FEFFDE2A143F737E002B7126 /* pre_word_translation_bg.png in Resources */,
 				FE6332A314ADEE5B005CBECF /* basicinfo_bg.png in Resources */,
 				FE6332A414ADEE5B005CBECF /* basicinfo_bg@2x.png in Resources */,
+				A5D527B51DBF0236004F33A9 /* ServiceAccount.json in Resources */,
 				FE6332A514ADEE5B005CBECF /* cet4.png in Resources */,
 				FE6332A614ADEE5B005CBECF /* cet4@2x.png in Resources */,
 				FE6332A714ADEE5B005CBECF /* cet6.png in Resources */,
@@ -2047,6 +2052,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A5D527B31DBF01FC004F33A9 /* Firebase Crash Report Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Firebase Crash Report Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:999749806528:ios:170c419205aa4a17\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"/Users/Ren/Code/Wordsss/Wordsss/ServiceAccount.json\"";
 		};
 		F5A065CF0E9967E9E9FF66BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
