@@ -42,8 +42,8 @@
 		206A401D14F8B223009B6D2F /* wl_free@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401714F8B223009B6D2F /* wl_free@2x.png */; };
 		206A401E14F8B223009B6D2F /* wl_paid.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401814F8B223009B6D2F /* wl_paid.png */; };
 		206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 206A401914F8B223009B6D2F /* wl_paid@2x.png */; };
+		296A8BC61FBEC2820089EB21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 296A8BC51FBEC2820089EB21 /* GoogleService-Info.plist */; };
 		A5D527B51DBF0236004F33A9 /* ServiceAccount.json in Resources */ = {isa = PBXBuildFile; fileRef = A5D527B41DBF0236004F33A9 /* ServiceAccount.json */; };
-		A5FC62011DBABBE4001010D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */; };
 		C750FC3B2D7A9EF81C17705C /* libPods-Wordsss.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */; };
 		FE060C5E143CD7040026228C /* RKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE060C5B143CD7040026228C /* RKTabBarController.m */; };
 		FE060C5F143CD7040026228C /* RKTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE060C5C143CD7040026228C /* RKTabBarController.xib */; };
@@ -414,9 +414,9 @@
 		206A401714F8B223009B6D2F /* wl_free@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_free@2x.png"; sourceTree = "<group>"; };
 		206A401814F8B223009B6D2F /* wl_paid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_paid.png; sourceTree = "<group>"; };
 		206A401914F8B223009B6D2F /* wl_paid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wl_paid@2x.png"; sourceTree = "<group>"; };
+		296A8BC51FBEC2820089EB21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AE6C9FDFEE61E45871C653A /* Pods-Wordsss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.release.xcconfig"; sourceTree = "<group>"; };
 		A5D527B41DBF0236004F33A9 /* ServiceAccount.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ServiceAccount.json; sourceTree = "<group>"; };
-		A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE9AF32C20A69ED39498B86A /* libPods-Wordsss.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wordsss.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F169222334C5C6040ADD2576 /* Pods-Wordsss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wordsss.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wordsss/Pods-Wordsss.debug.xcconfig"; sourceTree = "<group>"; };
 		FE060C5B143CD7040026228C /* RKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKTabBarController.m; sourceTree = "<group>"; };
@@ -1324,7 +1324,7 @@
 				A5D527B41DBF0236004F33A9 /* ServiceAccount.json */,
 				FEBFBF0C1436DAF20028630E /* main.m */,
 				FEBFBF0E1436DAF20028630E /* Wordsss-Prefix.pch */,
-				A5FC62001DBABBE4001010D6 /* GoogleService-Info.plist */,
+				296A8BC51FBEC2820089EB21 /* GoogleService-Info.plist */,
 				FEBFBF081436DAF20028630E /* Wordsss-Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1704,11 +1704,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEBFBF2F1436DAF20028630E /* Build configuration list for PBXNativeTarget "Wordsss" */;
 			buildPhases = (
+				F5A065CF0E9967E9E9FF66BB /* [CP] Check Pods Manifest.lock */,
 				FEBFBEF61436DAF20028630E /* Sources */,
 				FEBFBEF71436DAF20028630E /* Frameworks */,
 				FEBFBEF81436DAF20028630E /* Resources */,
 				7C0A9028CEAB63F5C21B46DC /* [CP] Embed Pods Frameworks */,
-				F5A065CF0E9967E9E9FF66BB /* [CP] Check Pods Manifest.lock */,
 				45F4B1FB54127BCA2804AD51 /* [CP] Copy Pods Resources */,
 				A5D527B31DBF01FC004F33A9 /* Firebase Crash Report Script */,
 			);
@@ -1727,7 +1727,7 @@
 		FEBFBEF11436DAF20028630E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Mondev;
 				TargetAttributes = {
 					FEBFBEF91436DAF20028630E = {
@@ -1930,7 +1930,6 @@
 				2043608214C2853000170BD1 /* confirm_hl.png in Resources */,
 				2043608314C2853000170BD1 /* main_word_chn_bg@2x.png in Resources */,
 				2043608914C2853900170BD1 /* mainbar_bg.png in Resources */,
-				A5FC62011DBABBE4001010D6 /* GoogleService-Info.plist in Resources */,
 				2043608A14C2853900170BD1 /* mainbar_bg@2x.png in Resources */,
 				20663ECF14F6209B009FB251 /* ph_mem.png in Resources */,
 				20663ED014F6209B009FB251 /* ph_mem@2x.png in Resources */,
@@ -1945,6 +1944,7 @@
 				206A401B14F8B223009B6D2F /* wl_fee@2x.png in Resources */,
 				206A401C14F8B223009B6D2F /* wl_free.png in Resources */,
 				206A401D14F8B223009B6D2F /* wl_free@2x.png in Resources */,
+				296A8BC61FBEC2820089EB21 /* GoogleService-Info.plist in Resources */,
 				206A401E14F8B223009B6D2F /* wl_paid.png in Resources */,
 				206A401F14F8B223009B6D2F /* wl_paid@2x.png in Resources */,
 				FEDD3AC514FA545800F73D11 /* shadow_down.png in Resources */,
@@ -2073,13 +2073,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wordsss-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2202,12 +2205,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2246,12 +2255,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2296,8 +2311,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wordsss/Wordsss-Prefix.pch";
 				INFOPLIST_FILE = "Wordsss/Wordsss-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuanren.webster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2324,8 +2339,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wordsss/Wordsss-Prefix.pch";
 				INFOPLIST_FILE = "Wordsss/Wordsss-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = me.chuanren.webster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -19,10 +19,10 @@
 {
     if (NO) {
         // Create xmlParser
-        XMLParser* xmlParser = [XMLParser xmlParser];
+        // XMLParser* xmlParser = [XMLParser xmlParser];
         
         // Generate WordsssDB.sqlite
-        [xmlParser go];
+        // [xmlParser go];
     }
     
     // Create main view
